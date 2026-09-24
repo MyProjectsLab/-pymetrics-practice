@@ -502,7 +502,10 @@ function start(){
  app.innerHTML=`<h2>Before you begin</h2>
  <p>Pick the industry you are practicing for. Your results will be framed against a <b>theoretical</b> trait profile for that industry — our own model for practice, <b>not</b> Pymetrics'.</p>
  <div class="indgrid">${inds}</div>
- <p class="small">You can change this any time by reloading.</p>`;
+ <p class="small">You can change this any time by reloading.</p>
+ <p class="small" id="pastline"></p>`;
+ let _n=0;try{_n=(JSON.parse(localStorage.getItem('bgp_runs')||'[]')).length}catch(e){}
+ document.getElementById('pastline').textContent=_n?`📊 ${_n} past run${_n>1?'s':''} saved on this device — results compare against your last run.`:'No past runs on this device yet.';
 }
 function start2(){
  app.innerHTML=`<h2>Instructions</h2>
@@ -542,6 +545,33 @@ function summary(){
 
  const catRow=k=>`<div class="resultbox"><b>${CATS[k].name}</b> — <span style="color:${bandCol(S[k])}"><b>${band(S[k])}</b></span><br><span class="small">${CATS[k].work}.</span><div class="traitbar"><div style="width:${S[k]}%;background:${bandCol(S[k])}"></div></div></div>`;
 
+ /* consistency coach */
+ const flags=[];
+ if(T.money1.sent<=2&&T.money1.fair>=7)flags.push('You sent very little in the trust game but rated the exchange highly fair — the rating contradicts your behavior.');
+ if(T.money1.sent>=8&&T.money1.fair<=4)flags.push('You were generous in the trust game but rated the exchange unfair — the rating contradicts your behavior.');
+ if(T.money2.gave<=1&&T.money2.fair>=7)flags.push('You kept almost everything in the sharing game but rated the split highly fair — inconsistent.');
+ if(T.money2.gave>=4&&T.money2.fair<=4)flags.push('You gave away most of the $5 but rated the split unfair — inconsistent.');
+ if(T.easyhard.hardChosen>=4&&T.easyhard.hardSolved*2<T.easyhard.hardChosen)flags.push('You chose HARD often but solved few — the game sees both the choice and the follow-through.');
+ if(T.keypress.falseStarts>=3)flags.push(T.keypress.falseStarts+' false starts on Keypress — pressing before the signal is measured.');
+ const flagsHtml=flags.length?flags.map(f=>`<div class="warnbox">${f}</div>`).join(''):'<div class="tipbox">✓ Your ratings and choices were consistent with your behavior.</div>';
+
+ /* weakest areas -> drills */
+ const weak=ranked.slice(-2);
+ const drillsHtml=weak.map(k=>`<div class="tipbox"><b>${CATS[k].name}</b> (${band(S[k])})<br><span class="small">${DRILLS[k]}</span></div>`).join('');
+
+ /* save & compare runs */
+ let runs=[];try{runs=JSON.parse(localStorage.getItem('bgp_runs')||'[]')}catch(e){runs=[]}
+ const prev=runs.length?runs[runs.length-1]:null;
+ runs.push({d:new Date().toISOString().slice(0,10),ind:industry,S:S,fit:fit});
+ try{localStorage.setItem('bgp_runs',JSON.stringify(runs.slice(-12)))}catch(e){}
+ window._sum={S:S,fit:fit,fitLabel:fitLabel,flags:flags,ind:industry,top3:top3,ranked:ranked};
+ let trend='';
+ if(prev){
+  const moves=Object.keys(S).map(k=>({k:k,d:S[k]-prev.S[k]})).filter(x=>Math.abs(x.d)>=5).sort((a,b)=>Math.abs(b.d)-Math.abs(a.d));
+  trend=moves.length?moves.map(x=>`${CATS[x.k].name} ${x.d>0?'+':''}${x.d}`).join(' · '):'No big moves vs your last run — consistency is good.';
+ }
+ const runsRows=runs.slice().reverse().map(r=>`<div>📅 ${r.d} · ${INDUSTRIES[r.ind]?INDUSTRIES[r.ind].name:r.ind} · fit: <b>${r.fit>=65?'strong':(r.fit>=45?'moderate':'weaker')}</b> · top: ${Object.keys(r.S).sort((a,b)=>r.S[b]-r.S[a]).slice(0,3).map(k=>CATS[k].name).join(', ')}</div>`).join('');
+
  app.innerHTML=`<h2>Practice Results</h2>
  <p class="small">The real assessment gives no numeric score — it describes your most distinctive trait categories vs. the general population. This page mirrors that format using <b>practice estimates</b> from your 12 games.</p>
 
@@ -553,6 +583,17 @@ function summary(){
 
  <h3>Theoretical fit: ${INDUSTRIES[industry].name}</h3>
  <div class="resultbox"><b style="color:${bandCol(fit)}">${fitLabel}</b><br><span class="small">Weighted across the 9 categories using our theoretical ${INDUSTRIES[industry].name} profile (${INDUSTRIES[industry].desc}). This is <b>our model for practice</b> — not Pymetrics'/Harver's, whose employer models are proprietary and differ per firm.</span><div class="traitbar"><div style="width:${fit}%;background:${bandCol(fit)}"></div></div></div>
+
+ <h3>Consistency check</h3>
+ ${flagsHtml}
+
+ <h3>Weakest areas — drills</h3>
+ ${drillsHtml}
+
+ <div style="text-align:center;margin:14px 0"><button onclick="copySummary()">Copy results summary</button> <span id="copied" class="small"></span></div>
+
+ <h3>Your runs on this device</h3>
+ <div class="resultbox small">${prev?'<b>Vs last run:</b> '+trend+'<br><br>':''}${runsRows}</div>
 
  <h3>Game-by-game</h3>
  <div class="resultbox small">
@@ -585,6 +626,29 @@ function summary(){
 
  <p class="small"><b>Important:</b> independent practice simulation. Not Harver/Pymetrics; not their scoring, traits, or hiring predictions. Industry profiles are theoretical models built for practice.</p>
  <div style="text-align:center"><button class="primary" onclick="location.reload()">Run again</button></div>`;
+}
+const DRILLS={
+ attention:'Do Keypress and Stop again tomorrow, rested — steady reactions beat raw speed.',
+ decision:'Replay Tower and Cards; say your plan out loud before each move.',
+ effort:'On Easy-or-Hard, pick HARD whenever you can actually solve it — follow-through is scored.',
+ emotion:'Spend 5 minutes labeling emotions in photos; go with your first read.',
+ fairness:'Re-run the money games and check each rating honestly matches what happened.',
+ focus:'Replay Arrows; pause and breathe for two seconds between trials.',
+ generosity:'Notice your first split impulse — natural generosity reads better than strategy.',
+ learning:'Replay Cards; every 10 cards, write down which decks feel good and why.',
+ risk:'Replay Balloons and bank at roughly two-thirds of where balloons usually pop.'
+};
+function copySummary(){
+ const s=window._sum;if(!s)return;
+ const lines=[`Behavioral Games Practice — ${new Date().toISOString().slice(0,10)} (${INDUSTRIES[s.ind].name})`,
+ `Fit: ${s.fitLabel}`,
+ `Top 3 distinctive: ${s.top3.map(k=>CATS[k].name+' ('+band(s.S[k])+')').join(', ')}`,
+ `All categories: ${s.ranked.map(k=>CATS[k].name+' '+s.S[k]).join(' · ')}`];
+ lines.push(s.flags.length?('Consistency flags: '+s.flags.join(' | ')):'Consistency: all consistent');
+ const txt=lines.join('\n');
+ const done=()=>{document.getElementById('copied').textContent='✓ Copied — paste it anywhere.'};
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,()=>{prompt('Copy your summary:',txt)})}
+ else prompt('Copy your summary:',txt);
 }
 function workLine(k){
  return {attention:'You are likely to catch details others miss and stay on task.',
