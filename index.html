@@ -73,6 +73,9 @@ const CATS={
  learning:{name:'Learning',work:'adapting quickly from experience'},
  risk:{name:'Risk Tolerance',work:'taking smart risks under uncertainty'}
 };
+const CATSRC={attention:'Games 5 · 7 · 8',decision:'Games 2 · 6 · 10',effort:'Games 5 · 6',emotion:'Game 12',fairness:'Games 3 · 4',focus:'Games 7 · 9',generosity:'Games 3 · 4',learning:'Game 11',risk:'Games 1 · 11'};
+const GNAMES={1:'Balloons',2:'Tower',3:'Money Exchange',4:'Sharing',5:'Keypress',6:'Easy or Hard',7:'Digits',8:'Stop',9:'Arrows',10:'Lengths',11:'Cards',12:'Faces'};
+const EXPECT={1:180,2:150,3:60,4:45,5:90,6:120,7:150,8:90,9:180,10:120,11:150,12:240};
 /* Theoretical industry profiles — our inference for practice framing, NOT Pymetrics' models. */
 const INDUSTRIES={
  finance:{name:'Finance',desc:'Funds, asset management, PE',w:{attention:1,decision:1,effort:.8,emotion:.7,fairness:.5,focus:1,generosity:.5,learning:.9,risk:.9}},
@@ -87,11 +90,16 @@ let industry='finance';
 const app=document.getElementById('app'), bar=document.getElementById('bar');
 let stage=0;
 let T={}; // trait inputs per game
+let timeLog={}; // per-game timing: timeLog[gameN]={start,end}
 function setProgress(p){bar.style.width=p+"%"}
-function next(){stage++;
+function next(){
+ const now=Date.now();
+ if(stage>=1&&stage<=12){timeLog[stage]=timeLog[stage]||{};timeLog[stage].end=now}
+ stage++;
  const fns=[null,balloonsIntro,towerIntro,money1Intro,money2Intro,keypressIntro,easyHardIntro,digitsIntro,stopIntro,arrowsIntro,lengthsIntro,cardsIntro,facesIntro];
- if(stage<=12)fns[stage](); else summary();
+ if(stage<=12){timeLog[stage]={start:now};fns[stage]()} else summary();
 }
+function fmtT(s){s=Math.max(0,Math.round(s));return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')}
 
 /* ============ Game 1 — Balloons (risk) ============
    39 balloons, $0.05/pump, 3 colours with different pop odds (hidden). */
@@ -512,7 +520,8 @@ function start(){
 }
 function start2(){
  app.innerHTML=`<h2>Instructions</h2>
- <p>12 short games, about 25 minutes. Do it in one sitting: quiet room, rested, full screen, stable internet. Use a laptop if possible.</p>
+ <div class="resultbox" style="text-align:center;font-size:21px"><b>⏱ About 25 minutes total</b><br><span class="small">12 games · one sitting · no pausing</span></div>
+ <p>Do it in one sitting: quiet room, rested, full screen, stable internet. Use a laptop if possible.</p>
  <div class="warnbox"><b>Why this matters:</b> the real test is one attempt. Your profile is shared with <b>every</b> employer you apply to, and candidates report waiting about a year before any retake. No do-overs — so treat this practice like the real thing.</div>
  <p>Do not try to guess a “good personality.” Play naturally and consistently.</p>
  <button class="primary" onclick="next()">Start — ${INDUSTRIES[industry].name} profile</button>
@@ -547,7 +556,7 @@ function summary(){
  const fit=Math.round(num/den);
  const fitLabel=fit>=65?'strong theoretical fit':(fit>=45?'moderate theoretical fit':'weaker theoretical fit');
 
- const catRow=k=>`<div class="resultbox"><b>${CATS[k].name}</b> — <span style="color:${bandCol(S[k])}"><b>${band(S[k])}</b></span><br><span class="small">${CATS[k].work}.</span><div class="traitbar"><div style="width:${S[k]}%;background:${bandCol(S[k])}"></div></div></div>`;
+ const catRow=k=>`<div class="resultbox"><b>${CATS[k].name}</b> — <span style="color:${bandCol(S[k])}"><b>${band(S[k])}</b></span><br><span class="small">${CATS[k].work}.</span><br><span class="small">Measured in: ${CATSRC[k]}</span><div class="traitbar"><div style="width:${S[k]}%;background:${bandCol(S[k])}"></div></div></div>`;
 
  /* consistency coach */
  const flags=[];
@@ -576,6 +585,21 @@ function summary(){
  }
  const runsRows=runs.slice().reverse().map(r=>`<div>📅 ${r.d} · ${INDUSTRIES[r.ind]?INDUSTRIES[r.ind].name:r.ind} · fit: <b>${r.fit>=65?'strong':(r.fit>=45?'moderate':'weaker')}</b> · top: ${Object.keys(r.S).sort((a,b)=>r.S[b]-r.S[a]).slice(0,3).map(k=>CATS[k].name).join(', ')}</div>`).join('');
 
+ /* timing report */
+ let totalS=0;const tFlags=[];const tRows=[];
+ const selfPaced=[1,2,3,4,6,9,10,11,12];
+ for(let g=1;g<=12;g++){
+  const t=timeLog[g];if(!t||!t.start||!t.end)continue;
+  const d=(t.end-t.start)/1000;totalS+=d;const e=EXPECT[g];let note='';
+  if(d>e*1.6){note=' — slower than typical';tFlags.push(`Game ${g} (${GNAMES[g]}) took ${fmtT(d)} vs ~${fmtT(e)} typical — keep a steadier pace on the real thing.`)}
+  else if(d<e*0.35&&selfPaced.includes(g)){note=' — faster than typical';tFlags.push(`Game ${g} (${GNAMES[g]}) took only ${fmtT(d)} vs ~${fmtT(e)} typical — rushing hurts accuracy.`)}
+  tRows.push(`<div>Game ${g} — ${GNAMES[g]}: <b>${fmtT(d)}</b> <span class="small">(typical ~${fmtT(e)}${note})</span></div>`);
+ }
+ const timingHtml=`<h3>Timing</h3>
+ <div class="resultbox"><b>Total session: ${fmtT(totalS)}</b> <span class="small">(the real assessment runs about 25 minutes)</span></div>
+ <div class="resultbox small">${tRows.join('')}</div>
+ ${tFlags.length?tFlags.map(f=>`<div class="warnbox">${f}</div>`).join(''):'<div class="tipbox">✓ Steady pacing across all 12 games.</div>'}`;
+
  app.innerHTML=`<h2>Practice Results</h2>
  <p class="small">The real assessment gives no numeric score — it describes your most distinctive trait categories vs. the general population. This page mirrors that format using <b>practice estimates</b> from your 12 games.</p>
 
@@ -599,19 +623,22 @@ function summary(){
  <h3>Your runs on this device</h3>
  <div class="resultbox small">${prev?'<b>Vs last run:</b> '+trend+'<br><br>':''}${runsRows}</div>
 
- <h3>Game-by-game</h3>
+ ${timingHtml}
+
+ <h3>Game-by-game, in order</h3>
  <div class="resultbox small">
- Balloons: avg ${avgP.toFixed(1)} pumps · ${T.balloons.pops} pops · $${bBank.toFixed(2)} banked<br>
- Tower: ${T.tower.map(r=>r.moves+' moves (best '+r.optimal+', first move '+r.firstMoveS+'s)').join(' · ')}<br>
- Money exchange: sent $${T.money1.sent}, fairness ${T.money1.fair}/10 · gave $${T.money2.gave}, fairness ${T.money2.fair}/10<br>
- Keypress: ${T.keypress.hits}/14 starts · ${T.keypress.falseStarts} false starts · ${T.keypress.misses} misses<br>
- Easy/Hard: chose hard ${T.easyhard.hardChosen}/6, solved ${T.easyhard.hardSolved}, earned $${ehEarn}<br>
- Digits: longest span ${T.digits.best}<br>
- Stop: ${T.stop.hits}/8 red hits · ${T.stop.falseAlarms} false alarms<br>
- Arrows: ${T.arrows.errors} errors / 40<br>
- Lengths: ${T.lengths.correct}/20 correct · $${T.lengths.earned.toFixed(2)} earned<br>
- Cards: finished $${T.cards.total} · good decks in last 20 picks: ${T.cards.goodLate}/20<br>
- Faces: ${T.faces.correct}/12 correct
+ Game 1 — Balloons: avg ${avgP.toFixed(1)} pumps · ${T.balloons.pops} pops · $${bBank.toFixed(2)} banked<br>
+ Game 2 — Tower: ${T.tower.map(r=>r.moves+' moves (best '+r.optimal+', first move '+r.firstMoveS+'s)').join(' · ')}<br>
+ Game 3 — Money Exchange: sent $${T.money1.sent}, fairness ${T.money1.fair}/10<br>
+ Game 4 — Sharing: gave $${T.money2.gave}, fairness ${T.money2.fair}/10<br>
+ Game 5 — Keypress: ${T.keypress.hits}/14 starts · ${T.keypress.falseStarts} false starts · ${T.keypress.misses} misses<br>
+ Game 6 — Easy or Hard: chose hard ${T.easyhard.hardChosen}/6, solved ${T.easyhard.hardSolved}, earned $${ehEarn}<br>
+ Game 7 — Digits: longest span ${T.digits.best}<br>
+ Game 8 — Stop: ${T.stop.hits}/8 red hits · ${T.stop.falseAlarms} false alarms<br>
+ Game 9 — Arrows: ${T.arrows.errors} errors / 40<br>
+ Game 10 — Lengths: ${T.lengths.correct}/20 correct · $${T.lengths.earned.toFixed(2)} earned<br>
+ Game 11 — Cards: finished $${T.cards.total} · good decks in last 20 picks: ${T.cards.goodLate}/20<br>
+ Game 12 — Faces: ${T.faces.correct}/12 correct
  </div>
 
  <h3>Before the real assessment</h3>
