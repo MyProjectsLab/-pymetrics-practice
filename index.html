@@ -103,8 +103,7 @@ function fmtT(s){s=Math.max(0,Math.round(s));return Math.floor(s/60)+':'+String(
 
 /* ============ Game 1 — Balloons (risk) ============
    39 balloons, $0.05/pump, 3 colours with different pop odds (hidden). */
-let bRound=0,bVal=0,bThresh=0,bBank=0,bPumps=[],bPops=0,bT0=0,bTimer=null;
-function bTick(){const el=document.getElementById('btime');if(!el)return;const s=Math.floor((Date.now()-bT0)/1000);el.textContent=Math.floor(s/60)+':'+String(s%60).padStart(2,'0')}
+let bRound=0,bVal=0,bThresh=0,bBank=0,bPumps=[],bPops=0;
 const BCOL={red:{c:'#ef4444',min:4,max:11},blue:{c:'#3b82f6',min:6,max:16},green:{c:'#22c55e',min:9,max:24}};
 let bCol='red';
 function balloonsIntro(){
@@ -114,9 +113,8 @@ function balloonsIntro(){
  <p>39 balloons, about 3 minutes.</p><button class="primary" onclick="newBalloon()">Begin</button>`;
 }
 function newBalloon(){
- if(bRound>=39){if(bTimer){clearInterval(bTimer);bTimer=null}T.balloons={pumps:bPumps,pops:bPops};next();return}
+ if(bRound>=39){T.balloons={pumps:bPumps,pops:bPops};next();return}
  bRound++;bVal=0;
- if(bRound===1){bT0=Date.now();if(bTimer)clearInterval(bTimer);bTimer=setInterval(bTick,500)}
  const cols=Object.keys(BCOL);bCol=cols[Math.floor(Math.random()*3)];
  const r=BCOL[bCol];bThresh=r.min+Math.floor(Math.random()*(r.max-r.min+1));
  renderBalloon(false);
@@ -125,7 +123,6 @@ function renderBalloon(popped){
  const size=90+Math.min(70,Math.round(bVal/0.05)*2.2);
  const col=BCOL[bCol].c;
  app.innerHTML=`<h2>Balloon ${bRound}/39</h2>
- <p class="small" style="margin-top:-8px">⏱ <span id="btime">0:00</span> elapsed</p>
  <div class="balloon" style="width:${size}px;height:${size*1.22}px;background:${col}"></div>
  ${popped?'<div class="big">💥</div>':''}
  <p style="text-align:center">This balloon: <b>$${bVal.toFixed(2)}</b> · Banked: <b>$${bBank.toFixed(2)}</b></p>
