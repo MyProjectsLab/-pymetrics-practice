@@ -230,7 +230,7 @@ function trustIntro(){
 function trustRoundFn(){
  if(trustRound>=4){next();return}
  trustRound++;
- app.innerHTML=`<h2>Game 8</h2><p class="small">Round ${trustRound+1}/4 · Total earned so far: <b>$${trustTotal.toFixed(2)}</b></p><p>You have $10. How much do you send? (0–10)</p><input id="trust" type="number" inputmode="numeric" min="0" max="10"><button onclick="submitTrust()">Send</button>`;
+ app.innerHTML=`<h2>Game 8</h2><p class="small">Round ${trustRound}/4 · Total earned so far: <b>$${trustTotal.toFixed(2)}</b></p><p>You have $10. How much do you send? (0–10)</p><input id="trust" type="number" inputmode="numeric" min="0" max="10"><button onclick="submitTrust()">Send</button>`;
  document.getElementById('trust').focus();
 }
 function submitTrust(){
