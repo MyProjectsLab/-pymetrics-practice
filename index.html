@@ -97,9 +97,10 @@ function next(){
  if(stage>=1&&stage<=12){timeLog[stage]=timeLog[stage]||{};timeLog[stage].end=now}
  stage++;
  const fns=[null,balloonsIntro,towerIntro,money1Intro,money2Intro,keypressIntro,easyHardIntro,digitsIntro,stopIntro,arrowsIntro,lengthsIntro,cardsIntro,facesIntro];
- if(stage<=12){timeLog[stage]={start:now};fns[stage]()} else summary();
+ if(stage<=12){timeLog[stage]=timeLog[stage]||{};fns[stage]()} else summary();
 }
 function fmtT(s){s=Math.max(0,Math.round(s));return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')}
+function t0(){const t=timeLog[stage]=timeLog[stage]||{};if(!t.start)t.start=Date.now()}
 
 /* ============ Game 1 — Balloons (risk) ============
    39 balloons, $0.05/pump, 3 colours with different pop odds (hidden). */
@@ -113,6 +114,7 @@ function balloonsIntro(){
  <p>39 balloons, about 3 minutes.</p><button class="primary" onclick="newBalloon()">Begin</button>`;
 }
 function newBalloon(){
+ t0();
  if(bRound>=39){T.balloons={pumps:bPumps,pops:bPops};next();return}
  bRound++;bVal=0;
  const cols=Object.keys(BCOL);bCol=cols[Math.floor(Math.random()*3)];
@@ -168,6 +170,7 @@ function towerIntro(){
  <p>2 puzzles.</p><button class="primary" onclick="twPuzzle()">Begin</button>`;
 }
 function twPuzzle(){
+ t0();
  if(twIdx>=TW_PUZ.length){T.tower=twRes;next();return}
  const P=TW_PUZ[twIdx];
  twState=P.start.map(p=>p.slice());twMoves=0;twSel=-1;twFirstT=0;
@@ -207,6 +210,7 @@ function money1Intro(){
  <button class="primary" onclick="m1Ask()">Begin</button>`;
 }
 function m1Ask(){
+ t0();
  app.innerHTML=`<h2>Money Exchange</h2><p>You have $10. How much do you send? (0–10)</p><input id="m1" type="number" inputmode="numeric" min="0" max="10"><button class="primary" onclick="m1Send()">Send</button>`;
  document.getElementById('m1').focus();
 }
@@ -228,6 +232,7 @@ function money2Intro(){
  <button class="primary" onclick="m2Ask()">Begin</button>`;
 }
 function m2Ask(){
+ t0();
  app.innerHTML=`<h2>Sharing</h2><p>You have $5. How much do you <b>give</b> to your partner? (0–5)</p><input id="m2" type="number" inputmode="numeric" min="0" max="5"><button class="primary" onclick="m2Send()">Split</button>`;
  document.getElementById('m2').focus();
 }
@@ -249,6 +254,7 @@ function keypressIntro(){
  <p>About 20 trials.</p><button class="primary" onclick="kpStart_()">Begin</button>`;
 }
 function kpStart_(){
+ t0();
  kpTrials=Array.from({length:20},(_,i)=>i<14?'START':'STOP').sort(()=>Math.random()-.5);
  kpIdx=0;document.addEventListener('keydown',kpKey);kpTrial();
 }
@@ -293,6 +299,7 @@ function easyHardIntro(){
  <p>6 rounds.</p><button class="primary" onclick="ehRound()">Begin</button>`;
 }
 function ehRound(){
+ t0();
  if(ehIdx>=EH.length){T.easyhard={hardChosen:ehHard,hardSolved:ehHardOk,earned:ehEarn};next();return}
  const c=EH[ehIdx];
  app.innerHTML=`<h2>Easy or Hard</h2><p class="small">Round ${ehIdx+1}/6 · Earned: $${ehEarn}</p>
@@ -323,6 +330,7 @@ function digitsIntro(){
  <button class="primary" onclick="dgRoundFn()">Begin</button>`;
 }
 function dgRoundFn(){
+ t0();
  dgRound++;dgSeq=Array.from({length:dgLen},()=>Math.floor(Math.random()*10));
  let i=0;
  app.innerHTML=`<h2>Digits</h2><p class="small">Round ${dgRound} · ${dgLen} digits — watch…</p><div class="big" id="dgd">·</div>`;
@@ -350,6 +358,7 @@ function stopIntro(){
  <p>24 trials.</p><button class="primary" onclick="stStart_()">Begin</button>`;
 }
 function stStart_(){
+ t0();
  stTrials=Array.from({length:24},(_,i)=>i<8?'red':(i<16?'green':'blue')).sort(()=>Math.random()-.5);
  stIdx=0;document.addEventListener('keydown',stKey);stTrial();
 }
@@ -389,6 +398,7 @@ function arrowsIntro(){
  <p>On a phone, tap the matching arrow button. 40 trials.</p><button class="primary" onclick="arStart_()">Begin</button>`;
 }
 function arStart_(){
+ t0();
  arIdx=0;document.addEventListener('keydown',arKey);arTrial();
 }
 function arTrial(){
@@ -425,6 +435,7 @@ function lengthsIntro(){
  <p>20 trials.</p><button class="primary" onclick="leTrial()">Begin</button>`;
 }
 function leTrial(){
+ t0();
  if(leIdx>=20){T.lengths={correct:leCorrect,earned:leEarn};next();return}
  leIdx++;
  const long=Math.random()<0.5, w=long?86:34;
@@ -456,6 +467,7 @@ function cardsIntro(){
  <p>40 cards.</p><button class="primary" onclick="caTrial()">Begin</button>`;
 }
 function caTrial(){
+ t0();
  if(caIdx>=40){
   const good=caPicks.slice(20).filter(d=>d==='C'||d==='D').length;
   T.cards={total:caTotal,goodLate:good};next();return}
@@ -493,6 +505,7 @@ function facesIntro(){
  <p>12 faces.</p><button class="primary" onclick="faTrial()">Begin</button>`;
 }
 function faTrial(){
+ t0();
  if(faIdx>=FEMO.length){T.faces={correct:faCorrect};next();return}
  const f=FEMO[faIdx],withStory=faIdx%3===2;
  const story=withStory?`<p class="small">Scenario: ${['They just heard unexpected news.','They lost something valuable.','Someone took credit for their work.'][faIdx%3]}</p>`:'';
