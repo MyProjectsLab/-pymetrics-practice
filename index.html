@@ -39,13 +39,13 @@ td,th{border-bottom:1px solid #ddd;padding:8px;text-align:left}
 
 <script>
 const app=document.getElementById('app'), bar=document.getElementById('bar');
-let stage=0, results={balloon:[],gonogo:{hits:0,misses:0,falseAlarms:0,rt:[]},memory:[],learning:[],fairness:[],arrows:{rt:[],errors:0},dots:[],trust:[]};
+let stage=0, results={balloon:[],gonogo:{hits:0,misses:0,falseAlarms:0,rt:[]},memory:[],learning:[],fairness:[],arrows:{rt:[],errors:0},dots:[],trust:[],tower:[],line:[],patterns:[],timepref:[]};
 
 function setProgress(p){bar.style.width=p+"%"}
-function next(){stage++; if(stage===1) balloonIntro(); else if(stage===2) goNoGoIntro(); else if(stage===3) memoryIntro(); else if(stage===4) learningIntro(); else if(stage===5) fairnessIntro(); else if(stage===6) arrowsIntro(); else if(stage===7) dotsIntro(); else if(stage===8) trustIntro(); else summary();}
+function next(){stage++; if(stage===1) balloonIntro(); else if(stage===2) goNoGoIntro(); else if(stage===3) memoryIntro(); else if(stage===4) learningIntro(); else if(stage===5) fairnessIntro(); else if(stage===6) arrowsIntro(); else if(stage===7) dotsIntro(); else if(stage===8) trustIntro(); else if(stage===9) towerIntro(); else if(stage===10) lineIntro(); else if(stage===11) patternsIntro(); else if(stage===12) timeIntro(); else summary();}
 
 function start(){
- app.innerHTML=`<h2>Instructions</h2><p>Do this in one sitting, without notes or calculators. Use a laptop if possible. There are eight short games and it should take about 20 minutes.</p><p>Do not try to guess a “good personality.” Just play naturally.</p><button onclick="next()">Start</button>`;
+ app.innerHTML=`<h2>Instructions</h2><p>Do this in one sitting, without notes or calculators. Use a laptop if possible. There are twelve short games and it should take about 30 minutes.</p><p>Do not try to guess a “good personality.” Just play naturally.</p><button onclick="next()">Start</button>`;
 }
 start();
 
@@ -77,7 +77,7 @@ function bank(){
 
 let goTrials=[],goIndex=0,goStart=0,goTimer=null,activeTrial=false;
 function goNoGoIntro(){
- setProgress(16);
+ setProgress(12);
  app.innerHTML=`<h2>Game 2 — Attention / inhibition</h2><p class="measure">What this measures: sustained attention and impulse control.</p><p>Tap the screen (or press the <b>space bar</b>) as quickly as possible when you see a green circle. Do <b>not</b> respond when you see a red circle.</p><p>There will be 24 trials. Each trial lasts under a second — the bar shows the time left.</p><button onclick="startGoNoGo()">Begin</button>`;
 }
 function startGoNoGo(){
@@ -113,7 +113,7 @@ function finishTrial(pressed){
 
 let memSeq=[],memLen=4,memRound=0;
 function memoryIntro(){
- setProgress(28);
+ setProgress(20);
  app.innerHTML=`<h2>Game 3 — Working memory</h2><p class="measure">What this measures: working memory capacity.</p><p>You will briefly see a sequence of digits. Then type the sequence <b>backward</b>.</p><p>Do not write anything down.</p><button onclick="memoryRound()">Begin</button>`;
 }
 function memoryRound(){
@@ -139,7 +139,7 @@ const learnStim=[
  {x:'◆',p:.3},{x:'⬟',p:.7},{x:'⬢',p:.72},{x:'⬤',p:.28}
 ];
 function learningIntro(){
- setProgress(40);
+ setProgress(28);
  app.innerHTML=`<h2>Game 4 — Learning from feedback</h2><p class="measure">What this measures: learning from probabilistic feedback; deciding under uncertainty.</p><p>Each symbol is more likely to belong to Group A or Group B. The feedback is probabilistic, so the same symbol may occasionally give surprising feedback.</p><p>Use the feedback to learn the better choice over 24 rounds.</p><button onclick="learningRound()">Begin</button>`;
 }
 function learningRound(){
@@ -161,7 +161,7 @@ function chooseLearn(choice){
 let fairRound=0;
 const offers=[5,2,1,4,3,2];
 function fairnessIntro(){
- setProgress(52);
+ setProgress(36);
  app.innerHTML=`<h2>Game 5 — Fairness / value tradeoff</h2><p class="measure">What this measures: sensitivity to fairness vs. pure payoff.</p><p>Another person has $10 and offers you part of it. If you accept, you receive the offer and they keep the rest. If you reject, both get $0.</p><p>6 rounds.</p><button onclick="fairRoundFn()">Begin</button>`;
 }
 function fairRoundFn(){
@@ -177,7 +177,7 @@ function fairChoice(c){
 let arTrials=[],arIndex=0,arStart=0,arActive=false;
 const ARROWS=['←','→','↑','↓'];
 function arrowsIntro(){
- setProgress(64);
+ setProgress(44);
  app.innerHTML=`<h2>Game 6 — Processing speed</h2><p class="measure">What this measures: how quickly and accurately you process simple visual cues.</p><p>Press the <b>arrow key</b> matching the arrow you see, as fast as you can. On a phone, tap the matching arrow button.</p><p>20 trials.</p><button onclick="startArrows()">Begin</button>`;
 }
 function startArrows(){
@@ -201,7 +201,7 @@ function arTap(x){ arRespond(x) }
 
 let dotRounds=0,dotTrue=0;
 function dotsIntro(){
- setProgress(76);
+ setProgress(52);
  app.innerHTML=`<h2>Game 7 — Numerical estimation</h2><p class="measure">What this measures: quantitative intuition under time pressure.</p><p>You will briefly see a cloud of dots, then estimate how many there were.</p><p>6 rounds.</p><button onclick="dotsRound()">Begin</button>`;
 }
 function dotsRound(){
@@ -224,7 +224,7 @@ function submitDots(){
 
 let trustRound=0,trustTotal=0;
 function trustIntro(){
- setProgress(88);
+ setProgress(60);
  app.innerHTML=`<h2>Game 8 — Trust / generosity</h2><p class="measure">What this measures: trust and generosity in a social exchange.</p><p>Each round you get <b>$10</b>. Send any amount to your partner — it <b>triples</b> on the way, and they send some back.</p><p>4 rounds.</p><button onclick="trustRoundFn()">Begin</button>`;
 }
 function trustRoundFn(){
@@ -241,6 +241,126 @@ function submitTrust(){
  app.innerHTML=`<h2>Game 8</h2><p>You sent <b>$${s}</b> → it became <b>$${tripled.toFixed(2)}</b> → your partner returned <b>$${back.toFixed(2)}</b>.</p><p>You earned <b>$${earned.toFixed(2)}</b> this round.</p><button onclick="trustRoundFn()">Next</button>`;
 }
 
+/* ---- Game 9 — Planning (Tower) ---- */
+let towerPuzzles=[
+ {start:[[3,2,1],[],[]],target:[[],[],[3,2,1]]},
+ {start:[[3,2],[],[1]],target:[[],[3,2,1],[]]}
+];
+let towerIdx=0,towerState=null,towerMoves=0,towerSel=-1,towerOpt=0;
+function towerKey(s){return s.map(p=>p.join(',')).join('|')}
+function towerOptimal(start,target){
+ const tk=towerKey(target),q=[[start.map(p=>p.slice()),0]],seen=new Set([towerKey(start)]);
+ while(q.length){const cur=q.shift(),s=cur[0],d=cur[1];
+  if(towerKey(s)===tk)return d;
+  for(let i=0;i<3;i++)for(let j=0;j<3;j++){if(i===j||!s[i].length)continue;
+   const top=s[i][s[i].length-1];
+   if(s[j].length&&s[j][s[j].length-1]<top)continue;
+   const ns=s.map(p=>p.slice());ns[i].pop();ns[j].push(top);
+   const k=towerKey(ns);if(!seen.has(k)){seen.add(k);q.push([ns,d+1])}}}
+ return 99;
+}
+function towerIntro(){
+ setProgress(68);
+ app.innerHTML=`<h2>Game 9 — Planning</h2><p class="measure">What this measures: planning ahead and sequencing moves.</p><p>Rearrange the discs to match the <b>target</b> layout shown under each peg. Tap a peg to lift its top disc, then tap another peg to place it. A bigger disc can never sit on a smaller one.</p><p>2 puzzles. Fewer moves is better — plan the whole sequence before you start moving.</p><button onclick="towerPuzzle()">Begin</button>`;
+}
+function towerPuzzle(){
+ if(towerIdx>=towerPuzzles.length){next();return}
+ const P=towerPuzzles[towerIdx];
+ towerState=P.start.map(p=>p.slice());towerMoves=0;towerSel=-1;
+ towerOpt=towerOptimal(P.start,P.target);
+ renderTower();
+}
+function renderTower(){
+ const target=towerPuzzles[towerIdx].target;
+ let pegs='';
+ for(let i=0;i<3;i++){
+  const discs=towerState[i].map(d=>`<div style="width:${28+d*26}px;height:22px;background:${towerSel===i?'#999':'#333'};border-radius:6px;margin:3px auto"></div>`).join('');
+  const tdiscs=target[i].map(d=>`<div style="width:${28+d*26}px;height:9px;background:#bbb;border-radius:4px;margin:1px auto"></div>`).join('');
+  pegs+=`<div style="flex:1;text-align:center"><div style="min-height:100px;display:flex;flex-direction:column-reverse;justify-content:flex-start;border-bottom:3px solid #333;padding-bottom:4px">${discs||'<div style="height:25px"></div>'}</div><button onclick="towerTap(${i})" style="margin-top:8px">Peg ${i+1}</button><div class="small" style="margin-top:6px">target</div><div style="display:flex;flex-direction:column-reverse;min-height:34px;justify-content:flex-start">${tdiscs||'<div style="height:9px"></div>'}</div></div>`;
+ }
+ app.innerHTML=`<h2>Game 9</h2><p class="small">Puzzle ${towerIdx+1}/${towerPuzzles.length} · Moves: <b>${towerMoves}</b> · Best possible: <b>${towerOpt}</b></p><div style="display:flex;gap:8px">${pegs}</div>`;
+}
+function towerTap(i){
+ const target=towerPuzzles[towerIdx].target;
+ if(towerSel===-1){if(towerState[i].length){towerSel=i;renderTower()}return}
+ if(i===towerSel){towerSel=-1;renderTower();return}
+ const from=towerState[towerSel],to=towerState[i],d=from[from.length-1];
+ if(!to.length||to[to.length-1]>d){from.pop();to.push(d);towerMoves++}
+ towerSel=-1;
+ if(towerKey(towerState)===towerKey(target)){
+  results.tower.push({moves:towerMoves,optimal:towerOpt});
+  app.innerHTML=`<h2>Game 9</h2><p>Solved in <b>${towerMoves}</b> moves (best possible: ${towerOpt}).</p><button onclick="towerIdx++;towerPuzzle()">Next</button>`;
+ } else renderTower();
+}
+
+/* ---- Game 10 — Risk calibration ---- */
+let lineRound=0,lineVal=0,lineTarget=0,lineGrowing=false,lineTimer=null;
+function lineIntro(){
+ setProgress(76);
+ app.innerHTML=`<h2>Game 10 — Risk calibration</h2><p class="measure">What this measures: calibrating risk — pushing for more without overshooting.</p><p><b>Hold</b> the button to grow the bar. Get as close to the red target line as you can <b>without going past it</b>. Going over scores 0.</p><p>5 rounds.</p><button onclick="lineRoundFn()">Begin</button>`;
+}
+function lineRoundFn(){
+ if(lineRound>=5){next();return}
+ lineRound++;lineVal=0;lineGrowing=false;
+ lineTarget=40+Math.floor(Math.random()*51);
+ app.innerHTML=`<h2>Game 10</h2><p class="small">Round ${lineRound}/5</p><div style="position:relative;height:34px;background:#eee;border-radius:8px;overflow:hidden"><div style="position:absolute;top:0;bottom:0;width:3px;background:#c00;left:${lineTarget}%"></div><div id="lbar" style="height:100%;width:0%;background:#333"></div></div><p><button id="lhold">HOLD TO GROW</button> <button onclick="lineStop()">STOP</button></p>`;
+ const hold=document.getElementById('lhold');
+ hold.onpointerdown=()=>{lineGrowing=true};
+ window.onpointerup=()=>{lineGrowing=false};
+ lineTimer=setInterval(()=>{if(lineGrowing){lineVal=Math.min(100,lineVal+0.9);const b=document.getElementById('lbar');if(b)b.style.width=lineVal+'%'}},30);
+}
+function lineStop(){
+ clearInterval(lineTimer);window.onpointerup=null;
+ const score=lineVal<=lineTarget?Math.round(100*(1-(lineTarget-lineVal)/lineTarget)):0;
+ results.line.push(score);
+ app.innerHTML=`<h2>Game 10</h2><p>You stopped at <b>${lineVal.toFixed(0)}%</b> — target was <b>${lineTarget}%</b>. Score: <b>${score}</b></p><button onclick="lineRoundFn()">Next</button>`;
+}
+
+/* ---- Game 11 — Pattern reasoning ---- */
+const patItems=[
+ {rows:[['▲','▲▲','▲▲▲'],['●','●●','?']],options:['●●●','●●','●●●●','▲▲▲'],correct:0,rule:'Each row adds one shape.'},
+ {rows:[['■','■■','■■■'],['★','★★','?']],options:['★★','★★★','★★★★','■■■'],correct:1,rule:'Each row adds one shape.'},
+ {rows:[['🔴','🔵','🔴'],['🔵','🔴','?']],options:['🔴','🔵','🟢','🟡'],correct:1,rule:'Colors alternate across each row.'},
+ {rows:[['■■■','■■','■'],['▲▲▲','▲▲','?']],options:['▲▲▲','▲▲','▲','●'],correct:2,rule:'Each row removes one shape.'},
+ {rows:[['●','●●●','●●●●●'],['■','■■■','?']],options:['■■','■■■■','■■■■■','■■■■■■'],correct:2,rule:'Odd counts across the row: 1, 3, 5.'},
+ {rows:[['★','★★★★','?'],['●','●●●●','●●●●●●●']],options:['★★','★★★★★','★★★★★★★','★★★★'],correct:2,rule:'Each row adds three shapes: 1, 4, 7.'}
+];
+let patIdx=0;
+function patternsIntro(){
+ setProgress(84);
+ app.innerHTML=`<h2>Game 11 — Pattern reasoning</h2><p class="measure">What this measures: logical reasoning — spotting rules in visual patterns.</p><p>Each puzzle shows two rows with one piece missing. Find the rule and pick the missing piece.</p><p>6 puzzles.</p><button onclick="patPuzzle()">Begin</button>`;
+}
+function patPuzzle(){
+ if(patIdx>=patItems.length){next();return}
+ const it=patItems[patIdx];
+ const grid=it.rows.map(r=>`<div style="display:flex;gap:8px;justify-content:center;margin:6px 0">${r.map(c=>`<div style="border:1px solid #ccc;border-radius:8px;padding:10px 14px;font-size:22px;min-width:44px;text-align:center;${c==='?'?'background:#f0f0f0;font-weight:bold':''}">${c}</div>`).join('')}</div>`).join('');
+ app.innerHTML=`<h2>Game 11</h2><p class="small">Puzzle ${patIdx+1}/${patItems.length}</p>${grid}<div>${it.options.map((o,i)=>`<button onclick="patChoose(${i})">${o}</button>`).join('')}</div>`;
+}
+function patChoose(i){
+ const it=patItems[patIdx],ok=i===it.correct;
+ results.patterns.push({correct:ok});
+ app.innerHTML=`<h2>Game 11</h2><div class="big">${ok?'✓':'×'}</div><p>${ok?'Correct.':'Not quite — the answer was '+it.options[it.correct]+'.'}</p><p class="small">Rule: ${it.rule}</p><button onclick="patIdx++;patPuzzle()">Next</button>`;
+}
+
+/* ---- Game 12 — Time preference ---- */
+const timeChoices=[
+ {now:50,later:75,days:30},{now:40,later:60,days:7},{now:80,later:85,days:60},
+ {now:30,later:55,days:14},{now:60,later:90,days:90},{now:45,later:50,days:3}
+];
+let timeIdx=0;
+function timeIntro(){
+ setProgress(92);
+ app.innerHTML=`<h2>Game 12 — Time preference</h2><p class="measure">What this measures: patience — how you trade off “now” vs. “later”.</p><p>Choose between a smaller amount today and a larger amount later. There are no right answers.</p><p>6 choices.</p><button onclick="timeQ()">Begin</button>`;
+}
+function timeQ(){
+ if(timeIdx>=timeChoices.length){next();return}
+ const c=timeChoices[timeIdx];
+ app.innerHTML=`<h2>Game 12</h2><p class="small">Choice ${timeIdx+1}/${timeChoices.length}</p><p>Would you rather have…</p><button onclick="timeChoose('now')">$${c.now} today</button><button onclick="timeChoose('later')">$${c.later} in ${c.days} days</button>`;
+}
+function timeChoose(ch){
+ results.timepref.push({choice:ch});timeIdx++;timeQ();
+}
+
 function summary(){
  setProgress(100);
  const avgPumps=(results.balloon.reduce((a,b)=>a+b.pumps,0)/results.balloon.length).toFixed(1);
@@ -255,6 +375,10 @@ function summary(){
  const arMean=results.arrows.rt.length?(results.arrows.rt.reduce((a,b)=>a+b,0)/results.arrows.rt.length).toFixed(0):'—';
  const dotErr=results.dots.length?Math.round(100*results.dots.reduce((a,b)=>a+b.err,0)/results.dots.length):'—';
  const trustSent=results.trust.reduce((a,b)=>a+b.sent,0).toFixed(0);
+ const towerEff=results.tower.length?Math.round(100*results.tower.reduce((a,b)=>a+b.optimal/b.moves,0)/results.tower.length):'—';
+ const lineMean=results.line.length?Math.round(results.line.reduce((a,b)=>a+b,0)/results.line.length):'—';
+ const patScore=results.patterns.filter(x=>x.correct).length;
+ const patience=results.timepref.filter(x=>x.choice==='later').length;
 
  const tips=[];
  if(results.gonogo.falseAlarms>2){
@@ -289,7 +413,25 @@ function summary(){
    tips.push('Estimation: your calibration looked reasonable. Trust your first read on the real assessment rather than second-guessing.');
  }
 
- tips.push('Risk / fairness / trust games: there is no target amount to pump, bank, accept, or send. Do not try to imitate a “Blackstone personality”; respond naturally and consistently.');
+ if(towerEff!=='—'&&towerEff<75){
+   tips.push('Planning game: extra moves usually mean acting before the full sequence was clear. Pause, trace the disc moves in your head, then execute.');
+ } else {
+   tips.push('Planning game: your solutions were close to optimal — that “think first, then move” habit is exactly what the real assessment rewards.');
+ }
+
+ if(lineMean!=='—'&&lineMean<60){
+   tips.push('Risk calibration: several overshoots or very cautious stops. Build a repeatable “stop just short” habit rather than chasing the line.');
+ } else {
+   tips.push('Risk calibration: well judged — consistent near-target stops without overshooting is the skill being practiced.');
+ }
+
+ if(patScore<=3){
+   tips.push('Pattern reasoning: slow down and check each row separately for a rule (counts, colors, order) before picking. Eliminate options that break the rule.');
+ } else {
+   tips.push('Pattern reasoning: strong rule-spotting. Keep the same systematic check on the real assessment.');
+ }
+
+ tips.push('Risk / fairness / trust / time-preference games: there is no target amount to pump, bank, accept, send, or choose. Do not try to imitate a “Blackstone personality”; respond naturally and consistently.');
  tips.push('For the real assessment: complete it rested, uninterrupted, with stable internet, and follow each game’s instructions exactly.');
 
  app.innerHTML=`<h2>Practice Results</h2>
@@ -301,6 +443,10 @@ function summary(){
  <div class="resultbox"><b>Processing speed</b><br>${arMean} ms mean response · ${results.arrows.errors} wrong-key presses</div>
  <div class="resultbox"><b>Numerical estimation</b><br>${dotErr}% mean absolute error</div>
  <div class="resultbox"><b>Trust / generosity</b><br>$${trustSent} total sent across 4 rounds</div>
+ <div class="resultbox"><b>Planning</b><br>${towerEff}% move efficiency across ${results.tower.length} puzzles</div>
+ <div class="resultbox"><b>Risk calibration</b><br>${lineMean} mean score (0–100)</div>
+ <div class="resultbox"><b>Pattern reasoning</b><br>${patScore}/${patItems.length} correct</div>
+ <div class="resultbox"><b>Time preference</b><br>Chose the later reward ${patience}/${timeChoices.length} times</div>
  <h3>Practical tips for the real assessment</h3>
  ${tips.map(t=>`<div class="tipbox">${t}</div>`).join('')}
  <p class="small"><b>Important:</b> these are descriptive practice results only. They are not Harver/Pymetrics scores, personality diagnoses, or predictions of Blackstone hiring outcomes. The tips are about test-taking conditions and consistency, not about trying to manufacture a preferred personality.</p>
