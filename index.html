@@ -91,9 +91,11 @@ const app=document.getElementById('app'), bar=document.getElementById('bar');
 let stage=0;
 let T={}; // trait inputs per game
 let timeLog={}; // per-game timing: timeLog[gameN]={start,end}
+let sessionT0=0; // wall-clock session start (includes instruction screens)
 function setProgress(p){bar.style.width=p+"%"}
 function next(){
  const now=Date.now();
+ if(stage===0)sessionT0=now;
  if(stage>=1&&stage<=12){timeLog[stage]=timeLog[stage]||{};timeLog[stage].end=now}
  stage++;
  const fns=[null,balloonsIntro,towerIntro,money1Intro,money2Intro,keypressIntro,easyHardIntro,digitsIntro,stopIntro,arrowsIntro,lengthsIntro,cardsIntro,facesIntro];
@@ -605,8 +607,9 @@ function summary(){
   else if(d<e*0.35&&selfPaced.includes(g)){note=' — faster than typical';tFlags.push(`Game ${g} (${GNAMES[g]}) took only ${fmtT(d)} vs ~${fmtT(e)} typical — rushing hurts accuracy.`)}
   tRows.push(`<div>Game ${g} — ${GNAMES[g]}: <b>${fmtT(d)}</b> <span class="small">(typical ~${fmtT(e)}${note})</span></div>`);
  }
+ const sessionS=sessionT0?(Date.now()-sessionT0)/1000:totalS;
  const timingHtml=`<h3>Timing</h3>
- <div class="resultbox"><b>Total session: ${fmtT(totalS)}</b> <span class="small">(the real assessment runs about 25 minutes)</span></div>
+ <div class="resultbox"><b>Total session: ${fmtT(sessionS)}</b> <span class="small">(pure gameplay ${fmtT(totalS)} · the real assessment runs about 25 minutes)</span></div>
  <div class="resultbox small">${tRows.join('')}</div>
  ${tFlags.length?tFlags.map(f=>`<div class="warnbox">${f}</div>`).join(''):'<div class="tipbox">✓ Steady pacing across all 12 games.</div>'}`;
 
