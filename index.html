@@ -512,7 +512,8 @@ function start2(){
  <p>12 short games, about 25 minutes. Do it in one sitting: quiet room, rested, full screen, stable internet. Use a laptop if possible.</p>
  <div class="warnbox"><b>Why this matters:</b> on the real assessment your profile is typically locked in — candidates report one playthrough is reused across <b>all</b> employers you apply to, with a long wait before any retake. Treat this practice like the real thing.</div>
  <p>Do not try to guess a “good personality.” Play naturally and consistently.</p>
- <button class="primary" onclick="next()">Start — ${INDUSTRIES[industry].name} profile</button>`;
+ <button class="primary" onclick="next()">Start — ${INDUSTRIES[industry].name} profile</button>
+ <button onclick="start()">← Change industry</button>`;
 }
 /* ============ results: trait-category report ============ */
 function clamp(v,a,b){return Math.max(a,Math.min(b,v))}
