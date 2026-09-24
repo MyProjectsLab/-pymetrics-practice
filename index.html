@@ -2,25 +2,33 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>Behavioral Games Practice</title>
 <style>
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;max-width:760px;margin:30px auto;padding:0 18px;line-height:1.45}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;max-width:760px;margin:30px auto;padding:0 18px;line-height:1.45;overscroll-behavior:none}
 .card{border:1px solid #ddd;border-radius:14px;padding:22px;margin:18px 0;box-shadow:0 2px 10px rgba(0,0,0,.05)}
-button{font-size:18px;padding:12px 18px;margin:6px;border-radius:10px;border:1px solid #aaa;background:#fff;cursor:pointer}
+button{font-size:18px;padding:12px 18px;margin:6px;border-radius:10px;border:1px solid #aaa;background:#fff;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 button:hover{background:#f5f5f5}
-button{touch-action:manipulation}
-.tapzone{display:flex;align-items:center;justify-content:center;min-height:200px;border-radius:14px;user-select:none;-webkit-user-select:none}
+button:active{background:#eee}
+.tapzone{display:flex;align-items:center;justify-content:center;min-height:200px;border-radius:14px;user-select:none;-webkit-user-select:none;touch-action:manipulation}
 .big{font-size:48px;text-align:center;margin:28px 0}
 .small{color:#666;font-size:14px}
 .hidden{display:none}
 .progress{height:8px;background:#eee;border-radius:6px;overflow:hidden;margin:10px 0 24px}
 .progress>div{height:100%;background:#333;width:0%}
+.timerbar{height:6px;background:#eee;border-radius:4px;margin-top:12px;overflow:hidden}
+.timerbar>div{height:100%;background:#888;width:100%;transition:width .9s linear}
 input[type=number]{font-size:22px;width:90px;padding:8px}
 table{border-collapse:collapse;width:100%}
 td,th{border-bottom:1px solid #ddd;padding:8px;text-align:left}
 .resultbox{border:1px solid #ddd;border-radius:12px;padding:14px;margin:10px 0;background:#fafafa}
 .tipbox{border-left:4px solid #333;padding:10px 14px;margin:14px 0;background:#f7f7f7}
+.measure{color:#555;font-size:14px;font-style:italic}
+@media (max-width:480px){
+ button{font-size:20px;padding:14px 22px;margin:8px 6px}
+ .big{font-size:40px}
+ .tapzone{min-height:170px}
+}
 </style>
 </head>
 <body>
@@ -31,20 +39,20 @@ td,th{border-bottom:1px solid #ddd;padding:8px;text-align:left}
 
 <script>
 const app=document.getElementById('app'), bar=document.getElementById('bar');
-let stage=0, results={balloon:[],gonogo:{hits:0,misses:0,falseAlarms:0,rt:[]},memory:[],learning:[],fairness:[]};
+let stage=0, results={balloon:[],gonogo:{hits:0,misses:0,falseAlarms:0,rt:[]},memory:[],learning:[],fairness:[],arrows:{rt:[],errors:0},dots:[],trust:[]};
 
 function setProgress(p){bar.style.width=p+"%"}
-function next(){stage++; if(stage===1) balloonIntro(); else if(stage===2) goNoGoIntro(); else if(stage===3) memoryIntro(); else if(stage===4) learningIntro(); else if(stage===5) fairnessIntro(); else summary();}
+function next(){stage++; if(stage===1) balloonIntro(); else if(stage===2) goNoGoIntro(); else if(stage===3) memoryIntro(); else if(stage===4) learningIntro(); else if(stage===5) fairnessIntro(); else if(stage===6) arrowsIntro(); else if(stage===7) dotsIntro(); else if(stage===8) trustIntro(); else summary();}
 
 function start(){
- app.innerHTML=`<h2>Instructions</h2><p>Do this in one sitting, without notes or calculators. Use a laptop if possible. There are five short games and it should take about 12–15 minutes.</p><p>Do not try to guess a “good personality.” Just play naturally.</p><button onclick="next()">Start</button>`;
+ app.innerHTML=`<h2>Instructions</h2><p>Do this in one sitting, without notes or calculators. Use a laptop if possible. There are eight short games and it should take about 20 minutes.</p><p>Do not try to guess a “good personality.” Just play naturally.</p><button onclick="next()">Start</button>`;
 }
 start();
 
 let bRound=0,bValue=0,bThreshold=0,bBank=0;
 function balloonIntro(){
- setProgress(5);
- app.innerHTML=`<h2>Game 1 — Risk / reward</h2><p>Each pump adds $0.25. You can bank at any time. If the balloon pops first, you get $0 for that balloon.</p><p>There will be 8 balloons. Pop points vary.</p><button onclick="newBalloon()">Begin</button>`;
+ setProgress(4);
+ app.innerHTML=`<h2>Game 1 — Risk / reward</h2><p class="measure">What this measures: risk tolerance under uncertainty.</p><p>Each pump adds $0.25. You can bank at any time. If the balloon pops first, you get $0 for that balloon.</p><p>There will be 8 balloons. Pop points vary.</p><button onclick="newBalloon()">Begin</button>`;
 }
 function newBalloon(){
  if(bRound>=8){next();return}
@@ -69,8 +77,8 @@ function bank(){
 
 let goTrials=[],goIndex=0,goStart=0,goTimer=null,activeTrial=false;
 function goNoGoIntro(){
- setProgress(25);
- app.innerHTML=`<h2>Game 2 — Attention / inhibition</h2><p>Tap the screen (or press the <b>space bar</b>) as quickly as possible when you see a green circle. Do <b>not</b> respond when you see a red circle.</p><p>There will be 24 trials.</p><button onclick="startGoNoGo()">Begin</button>`;
+ setProgress(16);
+ app.innerHTML=`<h2>Game 2 — Attention / inhibition</h2><p class="measure">What this measures: sustained attention and impulse control.</p><p>Tap the screen (or press the <b>space bar</b>) as quickly as possible when you see a green circle. Do <b>not</b> respond when you see a red circle.</p><p>There will be 24 trials. Each trial lasts under a second — the bar shows the time left.</p><button onclick="startGoNoGo()">Begin</button>`;
 }
 function startGoNoGo(){
  goTrials=Array.from({length:24},(_,i)=>i<18?'go':'nogo').sort(()=>Math.random()-.5);
@@ -82,9 +90,11 @@ function showTrial(){
  app.innerHTML=`<h2>Game 2</h2><p class="small">Trial ${goIndex+1}/24</p><div class="tapzone"><div class="big">+</div></div>`;
  setTimeout(()=>{
    let t=goTrials[goIndex];
-   app.innerHTML=`<h2>Game 2</h2><p class="small">Trial ${goIndex+1}/24</p><div id="tapzone" class="tapzone"><div class="big">${t==='go'?'🟢':'🔴'}</div></div>`;
+   app.innerHTML=`<h2>Game 2</h2><p class="small">Trial ${goIndex+1}/24</p><div id="tapzone" class="tapzone"><div class="big">${t==='go'?'🟢':'🔴'}</div></div><div class="timerbar"><div id="tfill"></div></div>`;
    goStart=performance.now(); activeTrial=true;
    document.getElementById('tapzone').addEventListener('pointerdown',tapHandler,{once:true});
+   const tf=document.getElementById('tfill');
+   requestAnimationFrame(()=>requestAnimationFrame(()=>{tf.style.width='0%'}));
    goTimer=setTimeout(()=>finishTrial(false),900);
  },400+Math.random()*500);
 }
@@ -103,8 +113,8 @@ function finishTrial(pressed){
 
 let memSeq=[],memLen=4,memRound=0;
 function memoryIntro(){
- setProgress(45);
- app.innerHTML=`<h2>Game 3 — Working memory</h2><p>You will briefly see a sequence of digits. Then type the sequence <b>backward</b>.</p><p>Do not write anything down.</p><button onclick="memoryRound()">Begin</button>`;
+ setProgress(28);
+ app.innerHTML=`<h2>Game 3 — Working memory</h2><p class="measure">What this measures: working memory capacity.</p><p>You will briefly see a sequence of digits. Then type the sequence <b>backward</b>.</p><p>Do not write anything down.</p><button onclick="memoryRound()">Begin</button>`;
 }
 function memoryRound(){
  if(memRound>=7){next();return}
@@ -119,7 +129,7 @@ function submitMem(){
  const ans=document.getElementById('mem').value.replace(/\D/g,'');
  const correct=memSeq.slice().reverse().join('');
  results.memory.push({len:memLen,correct:ans===correct});
- if(ans===correct && memLen<9)memLen++; else if(!ans!==false && memLen>4){}
+ if(ans===correct && memLen<9)memLen++;
  memoryRound();
 }
 
@@ -129,8 +139,8 @@ const learnStim=[
  {x:'◆',p:.3},{x:'⬟',p:.7},{x:'⬢',p:.72},{x:'⬤',p:.28}
 ];
 function learningIntro(){
- setProgress(65);
- app.innerHTML=`<h2>Game 4 — Learning from feedback</h2><p>Each symbol is more likely to belong to Group A or Group B. The feedback is probabilistic, so the same symbol may occasionally give surprising feedback.</p><p>Use the feedback to learn the better choice over 24 rounds.</p><button onclick="learningRound()">Begin</button>`;
+ setProgress(40);
+ app.innerHTML=`<h2>Game 4 — Learning from feedback</h2><p class="measure">What this measures: learning from probabilistic feedback; deciding under uncertainty.</p><p>Each symbol is more likely to belong to Group A or Group B. The feedback is probabilistic, so the same symbol may occasionally give surprising feedback.</p><p>Use the feedback to learn the better choice over 24 rounds.</p><button onclick="learningRound()">Begin</button>`;
 }
 function learningRound(){
  if(learnRound>=24){next();return}
@@ -151,8 +161,8 @@ function chooseLearn(choice){
 let fairRound=0;
 const offers=[5,2,1,4,3,2];
 function fairnessIntro(){
- setProgress(85);
- app.innerHTML=`<h2>Game 5 — Fairness / value tradeoff</h2><p>Another person has $10 and offers you part of it. If you accept, you receive the offer and they keep the rest. If you reject, both get $0.</p><button onclick="fairRoundFn()">Begin</button>`;
+ setProgress(52);
+ app.innerHTML=`<h2>Game 5 — Fairness / value tradeoff</h2><p class="measure">What this measures: sensitivity to fairness vs. pure payoff.</p><p>Another person has $10 and offers you part of it. If you accept, you receive the offer and they keep the rest. If you reject, both get $0.</p><p>6 rounds.</p><button onclick="fairRoundFn()">Begin</button>`;
 }
 function fairRoundFn(){
  if(fairRound>=offers.length){next();return}
@@ -162,6 +172,73 @@ function fairRoundFn(){
 }
 function fairChoice(c){
  results.fairness.push({offer:+app.dataset.offer,choice:c}); fairRound++; fairRoundFn();
+}
+
+let arTrials=[],arIndex=0,arStart=0,arActive=false;
+const ARROWS=['←','→','↑','↓'];
+function arrowsIntro(){
+ setProgress(64);
+ app.innerHTML=`<h2>Game 6 — Processing speed</h2><p class="measure">What this measures: how quickly and accurately you process simple visual cues.</p><p>Press the <b>arrow key</b> matching the arrow you see, as fast as you can. On a phone, tap the matching arrow button.</p><p>20 trials.</p><button onclick="startArrows()">Begin</button>`;
+}
+function startArrows(){
+ arTrials=Array.from({length:20},()=>ARROWS[Math.floor(Math.random()*4)]);
+ arIndex=0; document.addEventListener('keydown',arKey); showArrow();
+}
+function showArrow(){
+ if(arIndex>=arTrials.length){document.removeEventListener('keydown',arKey); next(); return}
+ const a=arTrials[arIndex];
+ app.innerHTML=`<h2>Game 6</h2><p class="small">Trial ${arIndex+1}/20</p><div class="big">${a}</div><div>${ARROWS.map(x=>`<button onclick="arTap('${x}')">${x}</button>`).join('')}</div>`;
+ arStart=performance.now(); arActive=true;
+}
+function arRespond(key){
+ if(!arActive) return; arActive=false;
+ const rt=performance.now()-arStart, correct=key===arTrials[arIndex];
+ results.arrows.rt.push(rt); if(!correct) results.arrows.errors++;
+ arIndex++; setTimeout(showArrow,250);
+}
+function arKey(e){ const map={ArrowLeft:'←',ArrowRight:'→',ArrowUp:'↑',ArrowDown:'↓'}; if(map[e.code]){e.preventDefault(); arRespond(map[e.code])} }
+function arTap(x){ arRespond(x) }
+
+let dotRounds=0,dotTrue=0;
+function dotsIntro(){
+ setProgress(76);
+ app.innerHTML=`<h2>Game 7 — Numerical estimation</h2><p class="measure">What this measures: quantitative intuition under time pressure.</p><p>You will briefly see a cloud of dots, then estimate how many there were.</p><p>6 rounds.</p><button onclick="dotsRound()">Begin</button>`;
+}
+function dotsRound(){
+ if(dotRounds>=6){next();return}
+ dotRounds++;
+ const n=20+Math.floor(Math.random()*61); dotTrue=n;
+ let pts='';
+ for(let i=0;i<n;i++){const x=(Math.random()*92+2).toFixed(1),y=(Math.random()*86+5).toFixed(1);pts+=`<div style="position:absolute;left:${x}%;top:${y}%;width:8px;height:8px;border-radius:50%;background:#333"></div>`}
+ app.innerHTML=`<h2>Game 7</h2><p class="small">Round ${dotRounds}/6 — look carefully…</p><div style="position:relative;height:220px;border:1px solid #ddd;border-radius:12px;overflow:hidden">${pts}</div>`;
+ setTimeout(()=>{
+  app.innerHTML=`<h2>Game 7</h2><p>How many dots did you see?</p><input id="dots" type="number" inputmode="numeric" min="0"><button onclick="submitDots()">Submit</button>`;
+  document.getElementById('dots').focus();
+ },1400);
+}
+function submitDots(){
+ const g=+document.getElementById('dots').value||0;
+ results.dots.push({true:dotTrue,guess:g,err:Math.abs(g-dotTrue)/dotTrue});
+ dotsRound();
+}
+
+let trustRound=0,trustTotal=0;
+function trustIntro(){
+ setProgress(88);
+ app.innerHTML=`<h2>Game 8 — Trust / generosity</h2><p class="measure">What this measures: trust and generosity in a social exchange.</p><p>Each round you get <b>$10</b>. Send any amount to your partner — it <b>triples</b> on the way, and they send some back.</p><p>4 rounds.</p><button onclick="trustRoundFn()">Begin</button>`;
+}
+function trustRoundFn(){
+ if(trustRound>=4){next();return}
+ trustRound++;
+ app.innerHTML=`<h2>Game 8</h2><p class="small">Round ${trustRound+1}/4 · Total earned so far: <b>$${trustTotal.toFixed(2)}</b></p><p>You have $10. How much do you send? (0–10)</p><input id="trust" type="number" inputmode="numeric" min="0" max="10"><button onclick="submitTrust()">Send</button>`;
+ document.getElementById('trust').focus();
+}
+function submitTrust(){
+ const s=Math.max(0,Math.min(10,+document.getElementById('trust').value||0));
+ const tripled=s*3, back=tripled*(0.25+Math.random()*0.5);
+ const earned=(10-s)+back; trustTotal+=earned;
+ results.trust.push({sent:s,earned});
+ app.innerHTML=`<h2>Game 8</h2><p>You sent <b>$${s}</b> → it became <b>$${tripled.toFixed(2)}</b> → your partner returned <b>$${back.toFixed(2)}</b>.</p><p>You earned <b>$${earned.toFixed(2)}</b> this round.</p><button onclick="trustRoundFn()">Next</button>`;
 }
 
 function summary(){
@@ -175,6 +252,9 @@ function summary(){
  let optimal=0;
  for(const r of results.learning){ const best=r.p>=.5?'A':'B'; if(r.choice===best) optimal++}
  const learnPct=Math.round(100*optimal/results.learning.length);
+ const arMean=results.arrows.rt.length?(results.arrows.rt.reduce((a,b)=>a+b,0)/results.arrows.rt.length).toFixed(0):'—';
+ const dotErr=results.dots.length?Math.round(100*results.dots.reduce((a,b)=>a+b.err,0)/results.dots.length):'—';
+ const trustSent=results.trust.reduce((a,b)=>a+b.sent,0).toFixed(0);
 
  const tips=[];
  if(results.gonogo.falseAlarms>2){
@@ -197,7 +277,19 @@ function summary(){
    tips.push('Learning game: you adapted to probabilistic feedback reasonably well. Keep updating from repeated evidence rather than a single result.');
  }
 
- tips.push('Risk/fairness games: there is no target amount to pump, bank, accept, or reject. Do not try to imitate a “Blackstone personality”; respond naturally and consistently.');
+ if(results.arrows.errors>2){
+   tips.push('Processing speed: a few wrong-key presses crept in. Slow down a fraction — clean accuracy beats raw speed here.');
+ } else {
+   tips.push('Processing speed: solid accuracy. On the real assessment, keep a steady rhythm rather than rushing the first trials and fading.');
+ }
+
+ if(dotErr!=='—'&&dotErr>30){
+   tips.push('Estimation: your guesses ran wide of the mark. A useful habit is anchoring — compare the cloud to a known quantity (e.g. “about four rows of ten”).');
+ } else {
+   tips.push('Estimation: your calibration looked reasonable. Trust your first read on the real assessment rather than second-guessing.');
+ }
+
+ tips.push('Risk / fairness / trust games: there is no target amount to pump, bank, accept, or send. Do not try to imitate a “Blackstone personality”; respond naturally and consistently.');
  tips.push('For the real assessment: complete it rested, uninterrupted, with stable internet, and follow each game’s instructions exactly.');
 
  app.innerHTML=`<h2>Practice Results</h2>
@@ -206,6 +298,9 @@ function summary(){
  <div class="resultbox"><b>Working memory</b><br>Longest correctly reversed span: ${memBest} digits</div>
  <div class="resultbox"><b>Learning from feedback</b><br>Higher-probability choice on ${learnPct}% of trials</div>
  <div class="resultbox"><b>Fairness / value trade-off</b><br>Lowest offer accepted: ${accepted}</div>
+ <div class="resultbox"><b>Processing speed</b><br>${arMean} ms mean response · ${results.arrows.errors} wrong-key presses</div>
+ <div class="resultbox"><b>Numerical estimation</b><br>${dotErr}% mean absolute error</div>
+ <div class="resultbox"><b>Trust / generosity</b><br>$${trustSent} total sent across 4 rounds</div>
  <h3>Practical tips for the real assessment</h3>
  ${tips.map(t=>`<div class="tipbox">${t}</div>`).join('')}
  <p class="small"><b>Important:</b> these are descriptive practice results only. They are not Harver/Pymetrics scores, personality diagnoses, or predictions of Blackstone hiring outcomes. The tips are about test-taking conditions and consistency, not about trying to manufacture a preferred personality.</p>
