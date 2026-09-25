@@ -521,14 +521,14 @@ function faAns(o){
 }
 
 function start(){
+ let _n=0;try{_n=(JSON.parse(localStorage.getItem('bgp_runs')||'[]')).length}catch(e){}
  const inds=Object.keys(INDUSTRIES).map(k=>`<button onclick="industry='${k}';start2()" style="${k===industry?'border-color:#2563eb;background:#eff6ff':''}"><b>${INDUSTRIES[k].name}</b><span>${INDUSTRIES[k].desc}</span></button>`).join('');
  app.innerHTML=`<h2>Before you begin</h2>
  <p>Pick the industry you are practicing for. Your results will be framed against a <b>theoretical</b> trait profile for that industry — our own model for practice, <b>not</b> Pymetrics'.</p>
  <div class="indgrid">${inds}</div>
  <p class="small">You can change this any time by reloading.</p>
- <p class="small" id="pastline"></p>`;
- let _n=0;try{_n=(JSON.parse(localStorage.getItem('bgp_runs')||'[]')).length}catch(e){}
- document.getElementById('pastline').textContent=_n?`📊 ${_n} past run${_n>1?'s':''} saved on this device — results compare against your last run.`:'No past runs on this device yet.';
+ <p class="small">${_n?`📊 ${_n} past run${_n>1?'s':''} saved on this device — results compare against your last run.`:'No past runs on this device yet.'}</p>
+ ${_n?`<button onclick="showHistory()">📊 View past results</button>`:''}`;
 }
 function start2(){
  app.innerHTML=`<h2>Instructions</h2>
@@ -538,6 +538,38 @@ function start2(){
  <p>Do not try to guess a “good personality.” Play naturally and consistently.</p>
  <button class="primary" onclick="next()">Start — ${INDUSTRIES[industry].name} profile</button>
  <button onclick="start()">← Change industry</button>`;
+}
+/* ============ past results menu ============ */
+function getRuns(){let r=[];try{r=JSON.parse(localStorage.getItem('bgp_runs')||'[]')}catch(e){}return r}
+function showHistory(){
+ setProgress(0);
+ const runs=getRuns();
+ if(!runs.length){app.innerHTML=`<h2>Past results</h2><div class="resultbox">No runs saved on this device yet.</div><button class="primary" onclick="start()">← Back to menu</button>`;return}
+ const rows=runs.map((r,i)=>({r:r,i:i})).reverse().map(({r,i})=>{
+  const top=(r.top3||Object.keys(r.S).sort((a,b)=>r.S[b]-r.S[a]).slice(0,3)).map(k=>CATS[k].name).join(', ');
+  return `<div class="resultbox"><b>📅 ${r.d}</b> · ${INDUSTRIES[r.ind]?INDUSTRIES[r.ind].name:r.ind} · <b>${r.fitLabel||('fit '+r.fit)}</b><br><span class="small">Top: ${top}</span><br><button onclick="showRun(${i})">View details</button></div>`;
+ }).join('');
+ app.innerHTML=`<h2>Past results</h2><p class="small">${runs.length} run${runs.length>1?'s':''} saved on this device.</p>${rows}<button class="primary" onclick="start()">← Back to menu</button>`;
+ window.scrollTo(0,0);
+}
+function showRun(i){
+ setProgress(0);
+ const runs=getRuns();const r=runs[i];
+ if(!r){showHistory();return}
+ const SS=r.S;
+ const ranked=Object.keys(SS).sort((a,b)=>SS[b]-SS[a]);
+ const top3=r.top3||ranked.slice(0,3);
+ const catH=k=>`<div class="resultbox"><b>${CATS[k].name}</b> — <span style="color:${bandCol(SS[k])}"><b>${band(SS[k])}</b></span><br><span class="small">${CATS[k].work}.</span><br><span class="small">Measured in: ${CATSRC[k].map(g=>'Game '+g+' '+GNAMES[g]).join(' · ')}</span><div class="traitbar"><div style="width:${SS[k]}%;background:${bandCol(SS[k])}"></div></div></div>`;
+ app.innerHTML=`<h2>Run — ${r.d}</h2>
+ <div class="resultbox"><b>${INDUSTRIES[r.ind]?INDUSTRIES[r.ind].name:r.ind}</b> profile · Theoretical fit: <b>${r.fitLabel||r.fit}</b></div>
+ <h3>Top 3 distinctive categories</h3>${top3.map(catH).join('')}
+ <h3>All 9 categories</h3>${ranked.map(catH).join('')}
+ ${r.ts?`<h3>Timing</h3><div class="resultbox"><b>Total session: ${fmtT(r.ts.session)}</b> <span class="small">(pure gameplay ${fmtT(r.ts.total)})</span></div>`:''}
+ ${r.gbg?`<h3>Game-by-game, in order</h3><div class="resultbox small">${r.gbg.join('<br>')}</div>`:''}
+ ${r.flags&&r.flags.length?`<h3>Consistency</h3>`+r.flags.map(f=>`<div class="warnbox">${f}</div>`).join(''):''}
+ <button onclick="showHistory()">← All past results</button>
+ <button class="primary" onclick="start()">New run</button>`;
+ window.scrollTo(0,0);
 }
 /* ============ results: trait-category report ============ */
 function clamp(v,a,b){return Math.max(a,Math.min(b,v))}
@@ -587,7 +619,21 @@ function summary(){
  /* save & compare runs */
  let runs=[];try{runs=JSON.parse(localStorage.getItem('bgp_runs')||'[]')}catch(e){runs=[]}
  const prev=runs.length?runs[runs.length-1]:null;
- runs.push({d:new Date().toISOString().slice(0,10),ind:industry,S:S,fit:fit});
+ const gbgLines=[
+ `Game 1 — Balloons: avg ${avgP.toFixed(1)} pumps · ${T.balloons.pops} pops · $${bBank.toFixed(2)} banked`,
+ `Game 2 — Tower: ${T.tower.map(r=>r.moves+' moves (best '+r.optimal+', first move '+r.firstMoveS+'s)').join(' · ')}`,
+ `Game 3 — Money Exchange: sent $${T.money1.sent}, fairness ${T.money1.fair}/10`,
+ `Game 4 — Sharing: gave $${T.money2.gave}, fairness ${T.money2.fair}/10`,
+ `Game 5 — Keypress: ${T.keypress.hits}/14 starts · ${T.keypress.falseStarts} false starts · ${T.keypress.misses} misses`,
+ `Game 6 — Easy or Hard: chose hard ${T.easyhard.hardChosen}/6, solved ${T.easyhard.hardSolved}, earned $${ehEarn}`,
+ `Game 7 — Digits: longest span ${T.digits.best}`,
+ `Game 8 — Stop: ${T.stop.hits}/8 red hits · ${T.stop.falseAlarms} false alarms`,
+ `Game 9 — Arrows: ${T.arrows.errors} errors / 40`,
+ `Game 10 — Lengths: ${T.lengths.correct}/20 correct · $${T.lengths.earned.toFixed(2)} earned`,
+ `Game 11 — Cards: finished $${T.cards.total} · good decks in last 20 picks: ${T.cards.goodLate}/20`,
+ `Game 12 — Faces: ${T.faces.correct}/12 correct`
+ ];
+ runs.push({d:new Date().toISOString().slice(0,10),ind:industry,S:S,fit:fit,fitLabel:fitLabel,top3:top3,flags:flags,gbg:gbgLines,ts:{total:Math.round(totalS),session:Math.round(sessionS)}});
  try{localStorage.setItem('bgp_runs',JSON.stringify(runs.slice(-12)))}catch(e){}
  window._sum={S:S,fit:fit,fitLabel:fitLabel,flags:flags,ind:industry,top3:top3,ranked:ranked};
  let trend='';
@@ -635,24 +681,12 @@ function summary(){
 
  <h3>Your runs on this device</h3>
  <div class="resultbox small">${prev?'<b>Vs last run:</b> '+trend+'<br><br>':''}${runsRows}</div>
+ <button onclick="showHistory()">📊 All past results</button>
 
  ${timingHtml}
 
  <h3>Game-by-game, in order</h3>
- <div class="resultbox small">
- Game 1 — Balloons: avg ${avgP.toFixed(1)} pumps · ${T.balloons.pops} pops · $${bBank.toFixed(2)} banked<br>
- Game 2 — Tower: ${T.tower.map(r=>r.moves+' moves (best '+r.optimal+', first move '+r.firstMoveS+'s)').join(' · ')}<br>
- Game 3 — Money Exchange: sent $${T.money1.sent}, fairness ${T.money1.fair}/10<br>
- Game 4 — Sharing: gave $${T.money2.gave}, fairness ${T.money2.fair}/10<br>
- Game 5 — Keypress: ${T.keypress.hits}/14 starts · ${T.keypress.falseStarts} false starts · ${T.keypress.misses} misses<br>
- Game 6 — Easy or Hard: chose hard ${T.easyhard.hardChosen}/6, solved ${T.easyhard.hardSolved}, earned $${ehEarn}<br>
- Game 7 — Digits: longest span ${T.digits.best}<br>
- Game 8 — Stop: ${T.stop.hits}/8 red hits · ${T.stop.falseAlarms} false alarms<br>
- Game 9 — Arrows: ${T.arrows.errors} errors / 40<br>
- Game 10 — Lengths: ${T.lengths.correct}/20 correct · $${T.lengths.earned.toFixed(2)} earned<br>
- Game 11 — Cards: finished $${T.cards.total} · good decks in last 20 picks: ${T.cards.goodLate}/20<br>
- Game 12 — Faces: ${T.faces.correct}/12 correct
- </div>
+ <div class="resultbox small">${gbgLines.join('<br>')}</div>
 
  <h3>Before the real assessment</h3>
  <div class="resultbox"><b>What the science actually says</b><br><span class="small">
