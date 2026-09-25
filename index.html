@@ -1,717 +1,1272 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>Behavioral Games Practice</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Behavioral Games Practice — Familiarization Simulator</title>
 <style>
-:root{--ink:#1c1c1e;--mut:#6b7280;--line:#e5e7eb;--acc:#2563eb;--good:#16a34a;--bad:#dc2626;--card:#ffffff;--bg:#f6f7f9}
-*{box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink);max-width:780px;margin:0 auto;padding:0 16px 60px;line-height:1.5}
-.hero{background:linear-gradient(135deg,#1e3a8a,#2563eb);color:#fff;border-radius:0 0 20px 20px;padding:26px 22px;margin:0 -16px 18px}
-.hero h1{margin:0 0 6px;font-size:26px}
-.hero p{margin:4px 0;opacity:.92;font-size:14px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;margin:16px 0;box-shadow:0 2px 12px rgba(0,0,0,.06)}
-button{font-size:17px;padding:13px 20px;margin:6px;border-radius:12px;border:1px solid #c9ccd1;background:#fff;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;transition:transform .06s,background .15s}
-button:hover{background:#f1f5f9}
-button:active{transform:scale(.97);background:#e8edf3}
-button.primary{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:600}
-button.primary:hover{background:#1d4ed8}
-.big{font-size:52px;text-align:center;margin:26px 0}
-.small{color:var(--mut);font-size:14px}
-.measure{color:#4b5563;font-size:14px;font-style:italic;background:#f1f5f9;border-radius:8px;padding:8px 12px}
-.hidden{display:none}
-.progress{height:8px;background:#e5e7eb;border-radius:6px;overflow:hidden;margin:12px 0 20px}
-.progress>div{height:100%;background:linear-gradient(90deg,#2563eb,#60a5fa);width:0%;transition:width .4s}
-.timerbar{height:6px;background:#eee;border-radius:4px;margin-top:12px;overflow:hidden}
-.timerbar>div{height:100%;background:var(--acc);width:100%;transition:width 1s linear}
-input[type=number]{font-size:22px;width:100px;padding:10px;border-radius:10px;border:1px solid #c9ccd1}
-input[type=range]{width:100%}
-.resultbox{border:1px solid var(--line);border-radius:12px;padding:14px;margin:10px 0;background:#fafbfc}
-.tipbox{border-left:4px solid var(--acc);padding:10px 14px;margin:12px 0;background:#eff6ff;border-radius:0 10px 10px 0}
-.warnbox{border-left:4px solid #d97706;padding:10px 14px;margin:12px 0;background:#fffbeb;border-radius:0 10px 10px 0}
-.traitbar{height:10px;background:#e5e7eb;border-radius:6px;overflow:hidden;margin:6px 0}
-.traitbar>div{height:100%;border-radius:6px}
-.tapzone{display:flex;align-items:center;justify-content:center;min-height:190px;border-radius:14px;user-select:none;-webkit-user-select:none;touch-action:manipulation;background:#f8fafc;border:1px dashed #cbd5e1}
-.indgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
-.indgrid button{text-align:left;padding:14px}
-.indgrid b{display:block}
-.indgrid span{font-size:13px;color:var(--mut)}
-.balloon{width:90px;height:110px;border-radius:50% 50% 50% 50%/55% 55% 45% 45%;margin:10px auto;position:relative;transition:width .18s,height .18s;box-shadow:inset -8px -10px 0 rgba(0,0,0,.12)}
-.balloon::after{content:"";position:absolute;left:50%;bottom:-12px;transform:translateX(-50%);border:7px solid transparent}
-.face{width:150px;height:150px;border-radius:50%;background:#fde68a;margin:14px auto;position:relative;border:3px solid #d97706}
-.face .eye{position:absolute;top:44px;width:16px;height:16px;border-radius:50%;background:#1c1c1e}
-.face .mouth{position:absolute;left:50%;transform:translateX(-50%);bottom:34px;height:8px;border-radius:6px;background:#1c1c1e}
-.deck{display:inline-block;width:110px;height:150px;border-radius:12px;margin:8px;color:#fff;font-weight:700;font-size:20px;cursor:pointer;border:none}
-.deck small{display:block;font-size:12px;font-weight:400;opacity:.85}
-@media (max-width:480px){
- button{font-size:19px;padding:15px 22px}
- .big{font-size:42px}
- .indgrid{grid-template-columns:1fr}
- .hero h1{font-size:22px}
-}
+:root{--ink:#1f2937;--mut:#6b7280;--blue:#2563eb;--blue-d:#1d4ed8;--green:#16a34a;--red:#dc2626;--amber:#b45309;--card:#ffffff;--line:#e5e7eb}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);
+background:linear-gradient(135deg,#4c63d2 0%,#7c5cbf 50%,#9a6bc4 100%);min-height:100vh;font-size:17px;line-height:1.55;touch-action:manipulation}
+#topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);padding:10px 16px}
+#gamelabel{font-weight:700;font-size:15px;color:var(--ink)}
+#barwrap{height:8px;background:#e5e7eb;border-radius:99px;margin-top:6px;overflow:hidden}
+#bar{height:100%;width:0;background:linear-gradient(90deg,var(--blue),#7c3aed);border-radius:99px;transition:width .4s}
+main{max-width:680px;margin:0 auto;padding:20px 16px 60px}
+.card{background:var(--card);border-radius:18px;padding:26px 22px;margin:0 0 18px;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+h1{font-size:30px;margin:.2em 0}
+h2{font-size:24px;margin:.2em 0 .6em}
+h3{font-size:20px;margin:1.2em 0 .5em}
+p{margin:.7em 0}
+.small{font-size:14px;color:var(--mut)}
+button{font-family:inherit;font-size:18px;padding:14px 22px;border-radius:14px;border:2px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;min-height:56px;margin:6px 6px 6px 0;font-weight:600}
+button.primary{background:var(--blue);border-color:var(--blue);color:#fff}
+button.primary:active{background:var(--blue-d)}
+button.big{font-size:21px;padding:18px 26px;min-height:72px;min-width:200px}
+button:active{transform:scale(.98)}
+button:disabled{opacity:.5;cursor:default}
+.readbox{background:#fef2f2;border-left:7px solid var(--red);border-radius:12px;padding:18px;margin:18px 0}
+.readbox .rh{font-size:26px;font-weight:800;letter-spacing:.5px;margin:0 0 8px}
+.readbox p{margin:.5em 0}
+.kw{display:inline-block;border:2px solid var(--ink);border-radius:8px;padding:2px 10px;margin:3px;font-weight:800;font-size:15px;background:#fff}
+.warnbox{background:#fffbeb;border:2px solid #f59e0b;border-radius:12px;padding:14px 16px;margin:14px 0}
+.tipbox{background:#eff6ff;border:2px solid #93c5fd;border-radius:12px;padding:14px 16px;margin:14px 0}
+.resultbox{background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0}
+.exbox{background:#f0fdf4;border:2px dashed var(--green);border-radius:12px;padding:16px;margin:14px 0}
+.exred{font-size:34px;font-weight:800;letter-spacing:2px}
+.exsmall{font-size:15px}
+input[type=number],input[type=text]{font-size:20px;padding:12px;border-radius:12px;border:2px solid var(--line);width:140px;text-align:center;margin:6px}
+input[type=range]{width:100%;margin:10px 0}
+.nosel{user-select:none;-webkit-user-select:none}
+.stim{min-height:220px;display:flex;align-items:center;justify-content:center;font-size:64px;font-weight:800}
+.count{font-size:96px;font-weight:800;text-align:center;padding:40px 0}
+.tapbtn{font-size:26px;font-weight:800;min-height:110px;min-width:230px;border-radius:20px}
+.arrowbtn{font-size:56px;min-width:120px;min-height:110px}
+.pegrow{display:flex;justify-content:space-around;align-items:flex-end;min-height:230px;margin:10px 0}
+.peg{width:30%;min-height:210px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;border-bottom:8px solid #9ca3af;cursor:pointer;padding-bottom:4px}
+.peg.sel{outline:4px solid var(--blue);border-radius:12px}
+.disk{height:34px;border-radius:8px;margin:2px 0;color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+.deckbtn{min-width:130px;min-height:96px;font-size:20px}
+.facebtn{font-size:17px;min-height:60px;min-width:44%}
+.padbtn{font-size:24px;min-width:76px;min-height:64px}
+.checklist{list-style:none;padding:0}
+.checklist li{padding:8px 0 8px 34px;position:relative;font-size:17px}
+.checklist li:before{content:"☐";position:absolute;left:0;font-size:20px}
+details{margin:14px 0}
+summary{font-weight:700;cursor:pointer;font-size:18px;padding:8px 0}
+table.metrics{width:100%;border-collapse:collapse;font-size:16px}
+table.metrics td{padding:7px 4px;border-bottom:1px solid var(--line)}
+table.metrics td:last-child{text-align:right;font-weight:700}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:100;display:flex;align-items:center;justify-content:center;padding:20px}
+.overlay .card{max-width:480px;margin:0}
+textarea.copyarea{width:100%;min-height:220px;font-size:14px;border-radius:12px;border:2px solid var(--line);padding:10px}
+@media (max-width:480px){.card{padding:20px 16px}h1{font-size:26px}.readbox .rh{font-size:24px}}
 </style>
 </head>
 <body>
-<div class="hero">
-<h1>🎮 Behavioral Games Practice</h1>
-<p>An independent practice simulation inspired by game-based hiring assessments.<br>It is <b>not</b> Harver/Pymetrics and does not reproduce their scoring.</p>
-</div>
-<div class="progress"><div id="bar"></div></div>
-<div id="app" class="card"></div>
-
+<div id="topbar"><div id="gamelabel">Behavioral Games Practice</div><div id="barwrap"><div id="bar"></div></div></div>
+<main id="app"></main>
 <script>
-/* ============ data ============ */
-const CATS={
- attention:{name:'Attention',work:'staying focused on details without getting distracted'},
- decision:{name:'Decision Making',work:'making sound calls with incomplete information'},
- effort:{name:'Effort',work:'persisting and pushing for high standards'},
- emotion:{name:'Emotion',work:'reading people and keeping composure'},
- fairness:{name:'Fairness',work:'valuing equitable outcomes'},
- focus:{name:'Focus',work:'concentrating amid competing demands'},
- generosity:{name:'Generosity',work:'sharing credit and resources with others'},
- learning:{name:'Learning',work:'adapting quickly from experience'},
- risk:{name:'Risk Tolerance',work:'taking smart risks under uncertainty'}
+"use strict";
+/* ================= utilities ================= */
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+function ri(rng,lo,hi){return lo+Math.floor(rng()*(hi-lo+1));}
+function pickR(rng,arr){return arr[Math.floor(rng()*arr.length)];}
+function shuffleR(rng,arr){var a=arr.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(rng()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+function hashStr(s){var h=2166136261;for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}return h>>>0;}
+function median(arr){if(!arr.length)return 0;var a=arr.slice().sort(function(x,y){return x-y;});var m=Math.floor(a.length/2);return a.length%2?a[m]:(a[m-1]+a[m])/2;}
+function mean(arr){if(!arr.length)return 0;return arr.reduce(function(a,b){return a+b;},0)/arr.length;}
+function fmtT(s){s=Math.max(0,Math.round(s));return Math.floor(s/60)+":"+String(s%60).padStart(2,"0");}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");}
+var app=document.getElementById("app"),barEl=document.getElementById("bar"),labelEl=document.getElementById("gamelabel");
+function setApp(html){app.innerHTML=html;window.scrollTo(0,0);}
+function setHeader(txt,pct){labelEl.textContent=txt;barEl.style.width=pct+"%";}
+function on(id,ev,fn){var el=document.getElementById(id);if(el)el.addEventListener(ev,fn);return el;}
+/* ================= game metadata (no trait language) ================= */
+var GKEYS=["balloons","tower","money","sharing","keypress","easyhard","digits","stop","arrows","lengths","cards","faces"];
+var GTITLES={balloons:"Balloons",tower:"Planning",money:"Money Exchange",sharing:"Sharing",keypress:"Keypress",easyhard:"Easy or Hard",digits:"Digit Memory",stop:"Stop Signal",arrows:"Arrows",lengths:"Visual Comparison",cards:"Card Decks",faces:"Faces"};
+var INVOLVED={
+balloons:"This task involved repeated choices under uncertainty where potential reward increased alongside potential loss.",
+tower:"This task involved planning several moves ahead while respecting constraints.",
+money:"This task involved deciding how much to entrust to another participant, with the amount multiplied and part of it returned.",
+sharing:"This task involved deciding how to split an amount with another participant.",
+keypress:"This task involved rapid responding while inhibiting responses to non-targets.",
+easyhard:"This task involved choosing between easier and harder tasks for different rewards, then completing the chosen task.",
+digits:"This task involved holding and manipulating a sequence of digits over a short period.",
+stop:"This task involved responding quickly while withholding the response for one specific signal.",
+arrows:"This task involved responding to a target while ignoring conflicting surrounding information.",
+lengths:"This task involved making quick visual comparisons.",
+cards:"This exercise required learning from repeated, somewhat noisy feedback.",
+faces:"This task involved identifying expressions from faces."};
+/* balanced order templates: reaction games (keypress/stop/arrows) never back-to-back */
+var ORDER_TEMPLATES=[
+["balloons","tower","money","sharing","keypress","easyhard","digits","stop","lengths","arrows","cards","faces"],
+["tower","balloons","sharing","money","arrows","digits","easyhard","stop","cards","keypress","lengths","faces"],
+["money","cards","balloons","tower","stop","easyhard","sharing","digits","keypress","lengths","arrows","faces"]];
+
+/* ================= reading reminder ================= */
+function readReminder(full){
+ var kw=["ONLY","EXCEPT","NOT","BEFORE","AFTER","FIRST","LAST","SAME","DIFFERENT"].map(function(k){return '<span class="kw">'+k+'</span>';}).join("");
+ var h='<div class="readbox"><p class="rh">READ EVERY SINGLE WORD<br>BEFORE YOU ACT</p>';
+ if(full){
+  h+='<p>Small details and qualifiers can <b>completely change the rule</b>. Do not react only to the first familiar word, color or shape you notice.</p>';
+  h+='<div class="exbox"><p style="margin:0 0 6px"><b>Example:</b> Respond <b>ONLY</b> to a <span class="exred">RED</span> <span class="exsmall">circle</span>.</p>';
+  h+='<p style="margin:0"><b>RED</b> is part of the instruction. A circle by itself is <b>not</b> enough.</p></div>';
+  h+='<p>Pay special attention to words such as:</p><p>'+kw+'</p>';
+  h+='<p>And to: <b>colors, shapes, capitalization, whether a rule changed, timing requirements, small qualifiers</b>.</p>';
+  h+='<p><b>Treat every new game as a completely new set of instructions.</b> Never assume the rule is the same as the previous game.</p>';
+ }else{
+  h+='<p style="margin:0">Small details can completely change the rule. '+kw+'</p>';
+ }
+ return h+'</div>';
+}
+
+/* ================= run state ================= */
+var S=null; /* run state */
+function getRuns(){var r=[];try{r=JSON.parse(localStorage.getItem("bgp_runs2")||"[]");}catch(e){}return r;}
+function gameRng(key){var n=(S.restarts&&S.restarts[key])||0;return mulberry32(hashStr(S.seed+":"+key+":"+n));}
+
+/* ================= start + pretest screens ================= */
+function startScreen(){
+ setHeader("Behavioral Games Practice",0);
+ var runs=getRuns();
+ var repeat=runs.length?'<div class="readbox"><p class="rh" style="font-size:24px">YOU MAY RECOGNIZE THE GAME.<br>DO NOT ASSUME YOU REMEMBER THE RULE.<br>READ THE NEW INSTRUCTIONS COMPLETELY.</p></div>':"";
+ setApp('<div class="card"><h1>Behavioral Games Practice</h1>'
+ +'<div class="warnbox"><b>This simulator is for familiarization only. It is not Harver/Pymetrics.</b> The real assessment may use different games, instructions, timing and scoring.</div>'
+ +'<div class="resultbox" style="text-align:center;font-size:20px"><b>About 25 minutes &middot; 12 games &middot; one sitting</b></div>'
+ +readReminder(true)
+ +'<h3>Before you start — checklist</h3><ul class="checklist">'
+ +'<li>quiet room</li><li>rested</li><li>not hungry</li><li>stable internet</li>'
+ +'<li>notifications off, phone on Do Not Disturb</li><li>no other browser tabs needed</li>'
+ +'<li>ideally laptop/desktop (mobile works too)</li>'
+ +'<li>no notes or calculator unless the instructions explicitly allow them</li>'
+ +'<li>complete it without interruption</li></ul>'
+ +'<div class="tipbox"><b>Do not try to guess what Blackstone wants. Play naturally and consistently.</b></div>'
+ +'<p>The point of this practice is to <b>remove the surprise factor</b>, not to train a personality.</p>'
+ +'<div class="resultbox"><b>How many runs?</b><br><span class="small">We recommend <b>one</b> serious complete run. A second run is acceptable only if the first was mainly spent learning the interface or was interrupted. Do not repeat runs to move metrics or change behavior.</span></div>'
+ +'<p class="small">🔒 Your practice results remain on <b>this device only</b>. They are not sent to Blackstone, Harver/Pymetrics, ChatGPT or any employer. No account needed; nothing is uploaded.</p>'
+ +repeat
+ +'<button class="primary big" id="b-go">Continue</button> '
+ +(runs.length?'<button id="b-hist">Past runs ('+runs.length+')</button>':"")
+ +'</div>');
+ on("b-go","click",newRun);
+ if(runs.length)on("b-hist","click",historyScreen);
+}
+
+/* ================= engine ================= */
+function curKey(){return S.order[S.idx];}
+function showIntro(){
+ var k=curKey();
+ setHeader("Game "+(S.idx+1)+" of 12 — "+GTITLES[k],Math.round(S.idx/12*100));
+ INTRO[k]();
+}
+function showTutorial(){
+ var k=curKey();
+ setHeader("Game "+(S.idx+1)+" of 12 — "+GTITLES[k]+" (practice example)",Math.round(S.idx/12*100));
+ TUT[k](showReady);
+}
+function showReady(){
+ var k=curKey();
+ setApp('<div class="card"><h2>'+GTITLES[k]+'</h2><div class="tipbox" style="font-size:20px"><b>Ready for the actual practice?</b><br><span class="small">The example is over. What comes next counts for this practice run.</span></div>'
+ +'<button class="primary big" id="b-start">Start</button></div>');
+ on("b-start","click",beginPlay);
+}
+var timedCtx=null; /* {key} while a timed game is playing */
+function beginPlay(){
+ var k=curKey();
+ S.runId=(S.runId||0)+1;
+ S.times[k]={start:Date.now()};
+ if(TIMED[k])timedCtx={key:k,pending:false};
+ setHeader("Game "+(S.idx+1)+" of 12 — "+GTITLES[k],Math.round(S.idx/12*100));
+ PLAY[k]();
+}
+function finishGame(k,metrics){
+ S.times[k].end=Date.now();
+ S.metrics[k]=metrics;
+ timedCtx=null;
+ S.idx++;
+ if(S.idx<12)showIntro();else showResults();
+}
+function tutRetry(k){
+ S.tutRetries[k]=(S.tutRetries[k]||0)+1;
+}
+function countdownThen(fn){
+ var steps=["3","2","1","GO"];
+ var i=0;
+ setApp('<div class="card nosel"><div class="count" id="cd">3</div><p class="small" style="text-align:center">Taps during the countdown do not count.</p></div>');
+ var el=document.getElementById("cd");
+ var iv=setInterval(function(){i++;if(i<steps.length){el.textContent=steps[i];}else{clearInterval(iv);fn();}},650);
+}
+/* interruption handling */
+document.addEventListener("visibilitychange",function(){
+ if(document.hidden&&timedCtx&&!timedCtx.pending){
+  timedCtx.pending=true;
+  S.interruptions=(S.interruptions||0)+1;
+  if(S.interruptedKeys.indexOf(timedCtx.key)<0)S.interruptedKeys.push(timedCtx.key);
+ }
+});
+function checkInterruptResume(){
+ /* call at safe points (between trials): if interrupted while hidden, offer restart */
+ if(timedCtx&&timedCtx.pending){
+  timedCtx.pending=false;
+  var k=timedCtx.key;timedCtx=null;
+  setApp('<div class="overlay"><div class="card"><h2>Game interrupted</h2>'
+  +'<p>This game was <b>INTERRUPTED</b> (the page was hidden — tab switch, call, lock screen). Reaction times from an interrupted game would be distorted, so they are discarded.</p>'
+  +'<button class="primary big" id="b-restart">Restart this game</button></div></div>');
+  on("b-restart","click",function(){
+   S.restarts=S.restarts||{};S.restarts[k]=(S.restarts[k]||0)+1;
+   delete S.metrics[k];delete S.times[k];
+   beginPlay();
+  });
+  return true;
+ }
+ return false;
+}
+var INTRO={},TUT={},PLAY={},TIMED={};
+function newRun(){
+ var seed=(Date.now()^Math.floor(Math.random()*4294967296))>>>0;
+ var R=mulberry32(seed^0x9e3779b9);
+ var order=ORDER_TEMPLATES[Math.floor(R()*ORDER_TEMPLATES.length)].slice();
+ S={seed:seed,order:order,idx:0,metrics:{},times:{},tutRetries:{},restarts:{},interruptions:0,interruptedKeys:[],t0:Date.now()};
+ showIntro();
+}
+/* ================= Game 1 — Balloons ================= */
+INTRO.balloons=function(){
+ setApp('<div class="card"><h2>Game 1 of 12 — Balloons</h2>'+readReminder(false)
+ +'<p>You will see <b>39 balloons</b>, one at a time. Each <b>PUMP</b> adds <b>$0.05</b> (hypothetical money) to the balloon. The balloon can <b>pop at any pump</b> — if it pops, you lose that balloon\'s money.</p>'
+ +'<p>Press <b>BANK</b> at any time to keep the balloon\'s money and move to the next balloon. Balloons come in <b>three colors</b>.</p>'
+ +'<button class="primary big" id="b-tut">Begin practice example</button></div>');
+ on("b-tut","click",showTutorial);
 };
-const CATSRC={attention:[5,7,8],decision:[2,6,10],effort:[5,6],emotion:[12],fairness:[3,4],focus:[7,9],generosity:[3,4],learning:[11],risk:[1,11]};
-const GNAMES={1:'Balloons',2:'Tower',3:'Money Exchange',4:'Sharing',5:'Keypress',6:'Easy or Hard',7:'Digits',8:'Stop',9:'Arrows',10:'Lengths',11:'Cards',12:'Faces'};
-const EXPECT={1:180,2:150,3:15,4:15,5:90,6:120,7:150,8:90,9:180,10:120,11:150,12:240};
-const GPRACTICE={1:'risk-taking under uncertainty',2:'planning ahead',3:'trust and reciprocity',4:'generosity',5:'following cues under time pressure',6:'effort vs. reward choices',7:'working memory',8:'impulse control',9:'selective attention',10:'attention to detail',11:'learning from feedback',12:'reading emotions'};
-/* Industry list kept only to label runs saved before the clean version (no fit scoring since). */
-const INDUSTRIES={
- finance:{name:'Finance',desc:'Funds, asset management, PE',w:{attention:1,decision:1,effort:.8,emotion:.7,fairness:.5,focus:1,generosity:.5,learning:.9,risk:.9}},
- consulting:{name:'Consulting',desc:'Strategy & advisory',w:{attention:.9,decision:1,effort:.9,emotion:.6,fairness:.6,focus:.8,generosity:.9,learning:1,risk:.6}},
- tech:{name:'Tech & Engineering',desc:'Software, product, data',w:{attention:.9,decision:1,effort:.7,emotion:.5,fairness:.5,focus:1,generosity:.5,learning:1,risk:.6}},
- sales:{name:'Sales & Trading',desc:'Client-facing, markets',w:{attention:.7,decision:.7,effort:1,emotion:.9,fairness:.6,focus:.7,generosity:1,learning:.7,risk:1}},
- general:{name:'General',desc:'Balanced view',w:{attention:1,decision:1,effort:1,emotion:1,fairness:1,focus:1,generosity:1,learning:1,risk:1}}
+TUT.balloons=function(done){
+ var pumped=false;
+ setApp('<div class="card"><h2>Practice example — this does not count</h2>'
+ +'<p>Pump the balloon <b>at least once</b>, then press <b>BANK</b>.</p>'
+ +'<div class="stim"><div id="bl" style="width:90px;height:110px;border-radius:50%;background:#e05252;transition:all .2s"></div></div>'
+ +'<p style="text-align:center;font-size:22px">Balloon value: $<span id="bv">0.00</span></p>'
+ +'<div style="text-align:center"><button class="big" id="b-pump">PUMP</button> <button class="big" id="b-bank">BANK</button></div>'
+ +'<p class="small" id="tmsg"></p></div>');
+ var v=0,sz=90;
+ on("b-pump","click",function(){v+=0.05;sz+=9;var b=document.getElementById("bl");b.style.width=sz+"px";b.style.height=(sz+20)+"px";document.getElementById("bv").textContent=v.toFixed(2);pumped=true;});
+ on("b-bank","click",function(){
+  if(!pumped){document.getElementById("tmsg").textContent="Pump at least once first, so you see how pumping works.";return;}
+  done();
+ });
 };
-/* Industry list kept only to label runs saved before the clean version. No fit scoring. */
-
-/* ============ state ============ */
-const app=document.getElementById('app'), bar=document.getElementById('bar');
-let stage=0;
-let T={}; // trait inputs per game
-let timeLog={}; // per-game timing: timeLog[gameN]={start,end}
-let sessionT0=0; // wall-clock session start (includes instruction screens)
-function setProgress(p){bar.style.width=p+"%"}
-function next(){
- const now=Date.now();
- if(stage===0)sessionT0=now;
- if(stage>=1&&stage<=12){timeLog[stage]=timeLog[stage]||{};timeLog[stage].end=now}
- stage++;
- const fns=[null,balloonsIntro,towerIntro,money1Intro,money2Intro,keypressIntro,easyHardIntro,digitsIntro,stopIntro,arrowsIntro,lengthsIntro,cardsIntro,facesIntro];
- if(stage<=12){timeLog[stage]=timeLog[stage]||{};fns[stage]()} else summary();
-}
-function fmtT(s){s=Math.max(0,Math.round(s));return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')}
-function t0(){const t=timeLog[stage]=timeLog[stage]||{};if(!t.start)t.start=Date.now()}
-
-/* ============ Game 1 — Balloons (risk) ============
-   39 balloons, $0.05/pump, 3 colours with different pop odds (hidden). */
-let bRound=0,bVal=0,bThresh=0,bBank=0,bPumps=[],bPops=0;
-const BCOL={red:{c:'#ef4444',min:4,max:11},blue:{c:'#3b82f6',min:6,max:16},green:{c:'#22c55e',min:9,max:24}};
-let bCol='red';
-function balloonsIntro(){
- setProgress(3);
- app.innerHTML=`<h2>Game 1 — Balloons</h2><p class="measure">Traits: <b>Risk Tolerance</b> — ${CATS.risk.work}.</p>
- <p>Each pump adds <b>$0.05</b>. Bank any time to keep it. If the balloon pops, you get $0 for that balloon. Balloons come in colours — pop points vary.</p>
- <p>39 balloons, about 3 minutes.</p><button class="primary" onclick="newBalloon()">Begin</button>`;
-}
-function newBalloon(){
- t0();
- if(bRound>=39){T.balloons={pumps:bPumps,pops:bPops};next();return}
- bRound++;bVal=0;
- const cols=Object.keys(BCOL);bCol=cols[Math.floor(Math.random()*3)];
- const r=BCOL[bCol];bThresh=r.min+Math.floor(Math.random()*(r.max-r.min+1));
- renderBalloon(false);
-}
-function renderBalloon(popped){
- const size=90+Math.min(70,Math.round(bVal/0.05)*2.2);
- const col=BCOL[bCol].c;
- app.innerHTML=`<h2>Balloon ${bRound}/39</h2>
- <div class="balloon" style="width:${size}px;height:${size*1.22}px;background:${col}"></div>
- ${popped?'<div class="big">💥</div>':''}
- <p style="text-align:center">This balloon: <b>$${bVal.toFixed(2)}</b> · Banked: <b>$${bBank.toFixed(2)}</b></p>
- ${popped?`<p style="text-align:center">It popped.</p><div style="text-align:center"><button class="primary" onclick="newBalloon()">Next balloon</button></div>`
- :`<div style="text-align:center"><button onclick="pump()">PUMP (+$0.05)</button><button class="primary" onclick="bank()">BANK</button></div>`}`;
-}
-function pump(){
- bVal+=0.05;
- if(Math.round(bVal/0.05)>=bThresh){
-  bPumps.push(Math.round(bVal/0.05));bPops++;
-  renderBalloon(true);
- } else renderBalloon(false);
-}
-function bank(){
- bPumps.push(Math.round(bVal/0.05));bBank+=bVal;
- newBalloon();
-}
-
-/* ============ Game 2 — Tower of Hanoi (planning) ============
-   Scored on fewest moves AND time to first move. */
-let twState=null,twMoves=0,twSel=-1,twOpt=0,twFirstT=0,twStartT=0,twIdx=0,twRes=[];
-const TW_PUZ=[
- {start:[[3,2,1],[],[]],target:[[],[],[3,2,1]]},
- {start:[[3,2],[],[1]],target:[[],[3,2,1],[]]}
-];
-function twKey(s){return s.map(p=>p.join(',')).join('|')}
-function twOptimal(start,target){
- const tk=twKey(target),q=[[start.map(p=>p.slice()),0]],seen=new Set([twKey(start)]);
- while(q.length){const cur=q.shift(),s=cur[0],d=cur[1];
-  if(twKey(s)===tk)return d;
-  for(let i=0;i<3;i++)for(let j=0;j<3;j++){if(i===j||!s[i].length)continue;
-   const top=s[i][s[i].length-1];
-   if(s[j].length&&s[j][s[j].length-1]<top)continue;
-   const ns=s.map(p=>p.slice());ns[i].pop();ns[j].push(top);
-   const k=twKey(ns);if(!seen.has(k)){seen.add(k);q.push([ns,d+1])}}}
- return 99;
-}
-function towerIntro(){
- setProgress(11);
- app.innerHTML=`<h2>Game 2 — Tower</h2><p class="measure">Traits: <b>Decision Making, Focus</b> — planning ahead and sequencing moves.</p>
- <p>Rearrange the discs to match the <b>target</b> under each peg. Tap a peg to lift its top disc, then tap another peg to place it. A bigger disc can never sit on a smaller one.</p>
- <p class="small">Tip from candidates: think before your <b>first</b> move — it is scored too.</p>
- <p>2 puzzles.</p><button class="primary" onclick="twPuzzle()">Begin</button>`;
-}
-function twPuzzle(){
- t0();
- if(twIdx>=TW_PUZ.length){T.tower=twRes;next();return}
- const P=TW_PUZ[twIdx];
- twState=P.start.map(p=>p.slice());twMoves=0;twSel=-1;twFirstT=0;
- twOpt=twOptimal(P.start,P.target);
- twStartT=performance.now();
- twRender();
-}
-function twRender(){
- const target=TW_PUZ[twIdx].target;
- let pegs='';
- for(let i=0;i<3;i++){
-  const discs=twState[i].map(d=>`<div style="width:${28+d*26}px;height:22px;background:${twSel===i?'#93c5fd':'#1e3a8a'};border-radius:6px;margin:3px auto"></div>`).join('');
-  const tdiscs=target[i].map(d=>`<div style="width:${28+d*26}px;height:9px;background:#cbd5e1;border-radius:4px;margin:1px auto"></div>`).join('');
-  pegs+=`<div style="flex:1;text-align:center"><div style="min-height:100px;display:flex;flex-direction:column-reverse;justify-content:flex-start;border-bottom:3px solid #334155;padding-bottom:4px">${discs||'<div style="height:25px"></div>'}</div><button onclick="twTap(${i})" style="margin-top:8px">Peg ${i+1}</button><div class="small" style="margin-top:6px">target</div><div style="display:flex;flex-direction:column-reverse;min-height:34px;justify-content:flex-start">${tdiscs||'<div style="height:9px"></div>'}</div></div>`;
+PLAY.balloons=function(){
+ var rng=gameRng("balloons");
+ var colors=["#e05252","#4a7de0","#3fae6a"];
+ var cnames=["red","blue","green"];
+ var order=[];for(var i=0;i<39;i++)order.push(i%3);
+ order=shuffleR(rng,order);
+ var classes=shuffleR(rng,[{lo:12,hi:20},{lo:8,hi:14},{lo:4,hi:9}]);
+ var rounds=order.map(function(ci){var cl=classes[ci];return{ci:ci,pop:ri(rng,cl.lo,cl.hi)};});
+ var r=0,pumps=0,banked=0,pops=0,val=0;
+ var perColor=[{pumps:0,pops:0,banked:0},{pumps:0,pops:0,banked:0},{pumps:0,pops:0,banked:0}];
+ var allPumps=[];
+ function render(){
+  var rd=rounds[r];
+  setApp('<div class="card nosel"><h2>Balloon '+(r+1)+' / 39</h2>'
+  +'<div class="stim"><div id="bl" style="width:'+(90+pumps*9)+'px;height:'+(110+pumps*9)+'px;border-radius:50%;background:'+colors[rd.ci]+';transition:all .2s"></div></div>'
+  +'<p style="text-align:center;font-size:22px">Balloon value: $<span id="bv">'+val.toFixed(2)+'</span> &nbsp;·&nbsp; Total banked: $<span id="bt">'+banked.toFixed(2)+'</span></p>'
+  +'<div style="text-align:center"><button class="big" id="b-pump">PUMP</button> <button class="big" id="b-bank">BANK</button></div></div>');
+  on("b-pump","click",doPump);on("b-bank","click",doBank);
  }
- app.innerHTML=`<h2>Tower</h2><p class="small">Puzzle ${twIdx+1}/${TW_PUZ.length} · Moves: <b>${twMoves}</b> · Fewest possible: <b>${twOpt}</b></p><div style="display:flex;gap:8px">${pegs}</div>`;
-}
-function twTap(i){
- if(!twFirstT)twFirstT=(performance.now()-twStartT)/1000;
- if(twSel===-1){if(twState[i].length){twSel=i;twRender()}return}
- if(i===twSel){twSel=-1;twRender();return}
- const from=twState[twSel],to=twState[i],d=from[from.length-1];
- if(!to.length||to[to.length-1]>d){from.pop();to.push(d);twMoves++}
- twSel=-1;
- if(twKey(twState)===twKey(TW_PUZ[twIdx].target)){
-  twRes.push({moves:twMoves,optimal:twOpt,firstMoveS:+twFirstT.toFixed(1)});
-  app.innerHTML=`<h2>Tower</h2><p>Solved in <b>${twMoves}</b> moves (fewest: ${twOpt}). First move after ${twFirstT.toFixed(1)}s.</p><button class="primary" onclick="twIdx++;twPuzzle()">Next</button>`;
- } else twRender();
-}
-
-/* ============ Game 3 — Money Exchange 1 (trust + fairness) ============ */
-let m1Sent=0,m1Back=0;
-function money1Intro(){
- setProgress(19);
- app.innerHTML=`<h2>Game 3 — Money Exchange</h2><p class="measure">Traits: <b>Generosity, Fairness</b> — ${CATS.generosity.work}; ${CATS.fairness.work}.</p>
- <p>You have <b>$10</b>, your partner has <b>$0</b>. Send any amount — it <b>triples</b> on the way. They send some back. Afterwards you will rate the fairness.</p>
- <button class="primary" onclick="m1Ask()">Begin</button>`;
-}
-function m1Ask(){
- t0();
- app.innerHTML=`<h2>Money Exchange</h2><p>You have $10. How much do you send? (0–10)</p><input id="m1" type="number" inputmode="numeric" min="0" max="10"><button class="primary" onclick="m1Send()">Send</button>`;
- document.getElementById('m1').focus();
-}
-function m1Send(){
- m1Sent=Math.max(0,Math.min(10,+document.getElementById('m1').value||0));
- const tripled=m1Sent*3;m1Back=tripled*(0.3+Math.random()*0.35);
- app.innerHTML=`<h2>Money Exchange</h2><p>You sent <b>$${m1Sent}</b> → became <b>$${tripled.toFixed(2)}</b> → your partner returned <b>$${m1Back.toFixed(2)}</b>.</p>
- <p>How fair was this exchange?</p><p class="small">1 = very unfair · 10 = very fair</p>
- <input id="m1f" type="range" min="1" max="10" value="5" oninput="document.getElementById('m1fv').textContent=this.value"> <b id="m1fv">5</b>/10<br><br>
- <button class="primary" onclick="T.money1={sent:m1Sent,fair:+document.getElementById('m1f').value};next()">Continue</button>
- <p class="small">Tip from candidates: make the rating match what actually happened.</p>`;
-}
-
-/* ============ Game 4 — Money Exchange 2 (altruism) ============ */
-function money2Intro(){
- setProgress(27);
- app.innerHTML=`<h2>Game 4 — Sharing</h2><p class="measure">Traits: <b>Generosity, Fairness</b>.</p>
- <p>You receive an extra <b>$5</b>. Split it with your partner however you like — keep any portion. Then rate the fairness.</p>
- <button class="primary" onclick="m2Ask()">Begin</button>`;
-}
-function m2Ask(){
- t0();
- app.innerHTML=`<h2>Sharing</h2><p>You have $5. How much do you <b>give</b> to your partner? (0–5)</p><input id="m2" type="number" inputmode="numeric" min="0" max="5"><button class="primary" onclick="m2Send()">Split</button>`;
- document.getElementById('m2').focus();
-}
-function m2Send(){
- const give=Math.max(0,Math.min(5,+document.getElementById('m2').value||0));
- app.innerHTML=`<h2>Sharing</h2><p>You kept <b>$${(5-give).toFixed(0)}</b> and gave <b>$${give.toFixed(0)}</b>.</p>
- <p>How fair was this split?</p><p class="small">1 = very unfair · 10 = very fair</p>
- <input id="m2f" type="range" min="1" max="10" value="5" oninput="document.getElementById('m2fv').textContent=this.value"> <b id="m2fv">5</b>/10<br><br>
- <button class="primary" onclick="T.money2={gave:${give},fair:+document.getElementById('m2f').value};next()">Continue</button>`;
-}
-
-/* ============ Game 5 — Keypress (START/STOP) ============ */
-let kpTrials=[],kpIdx=0,kpStart=0,kpActive=false,kpHits=0,kpFalse=0,kpMiss=0,kpRT=[];
-function keypressIntro(){
- setProgress(35);
- app.innerHTML=`<h2>Game 5 — Keypress</h2><p class="measure">Traits: <b>Attention, Effort</b> — reacting fast without jumping the gun.</p>
- <p>Press the <b>space bar</b> (or tap the screen) as fast as you can when you see <b>START</b>. Do nothing on <b>STOP</b>.</p>
- <p class="small">Never press before the word appears.</p>
- <p>About 20 trials.</p><button class="primary" onclick="kpStart_()">Begin</button>`;
-}
-function kpStart_(){
- t0();
- kpTrials=Array.from({length:20},(_,i)=>i<14?'START':'STOP').sort(()=>Math.random()-.5);
- kpIdx=0;document.addEventListener('keydown',kpKey);kpTrial();
-}
-function kpTrial(){
- if(kpIdx>=kpTrials.length){document.removeEventListener('keydown',kpKey);T.keypress={hits:kpHits,falseStarts:kpFalse,misses:kpMiss,rt:kpRT};next();return}
- kpActive=false;
- app.innerHTML=`<h2>Keypress</h2><p class="small">Trial ${kpIdx+1}/20</p><div class="tapzone"><div class="big">…</div></div>`;
- setTimeout(()=>{
-  const w=kpTrials[kpIdx];
-  app.innerHTML=`<h2>Keypress</h2><p class="small">Trial ${kpIdx+1}/20</p><div id="kpz" class="tapzone"><div class="big" style="font-size:40px;color:${w==='START'?'#16a34a':'#dc2626'}">${w}</div></div>`;
-  kpStart=performance.now();kpActive=true;
-  document.getElementById('kpz').addEventListener('pointerdown',kpTap,{once:true});
-  setTimeout(()=>kpEnd(false),1100);
- },500+Math.random()*700);
-}
-function kpTap(){if(kpActive)kpEnd(true)}
-function kpKey(e){if(e.code==='Space'){e.preventDefault();kpTap()}}
-function kpEnd(pressed){
- if(!kpActive)return;kpActive=false;
- const w=kpTrials[kpIdx],rt=performance.now()-kpStart;
- if(w==='START'&&pressed){kpHits++;kpRT.push(rt)}
- else if(w==='START'&&!pressed)kpMiss++;
- else if(w==='STOP'&&pressed)kpFalse++;
- kpIdx++;setTimeout(kpTrial,250);
-}
-
-/* ============ Game 6 — Easy or Hard ============
-   The CHOICE ITSELF is the data point. */
-const EH=[
- {e:1,h:4,q:'14 + 27 = ?',a:'41'},
- {e:1,h:5,q:'9 × 7 = ?',a:'63'},
- {e:2,h:6,q:'125 − 68 = ?',a:'57'},
- {e:2,h:8,q:'15 × 12 = ?',a:'180'},
- {e:3,h:9,q:'7³ = ?',a:'343'},
- {e:3,h:12,q:'144 ÷ 12 + 25 = ?',a:'37'}
-];
-let ehIdx=0,ehHard=0,ehHardOk=0,ehEarn=0;
-function easyHardIntro(){
- setProgress(43);
- app.innerHTML=`<h2>Game 6 — Easy or Hard</h2><p class="measure">Traits: <b>Effort, Decision Making</b> — choosing challenge vs. safety.</p>
- <p>Each round: take the <b>easy</b> option for a small guaranteed amount, or the <b>hard</b> option for more — but you must solve a quick problem to earn it. A wrong answer earns $0.</p>
- <p>6 rounds.</p><button class="primary" onclick="ehRound()">Begin</button>`;
-}
-function ehRound(){
- t0();
- if(ehIdx>=EH.length){T.easyhard={hardChosen:ehHard,hardSolved:ehHardOk,earned:ehEarn};next();return}
- const c=EH[ehIdx];
- app.innerHTML=`<h2>Easy or Hard</h2><p class="small">Round ${ehIdx+1}/6 · Earned: $${ehEarn}</p>
- <button onclick="ehPick('e')">EASY — $${c.e} guaranteed</button>
- <button class="primary" onclick="ehPick('h')">HARD — $${c.h} if you solve it</button>`;
-}
-function ehPick(which){
- const c=EH[ehIdx];
- if(which==='e'){ehEarn+=c.e;ehIdx++;ehRound();return}
- ehHard++;
- app.innerHTML=`<h2>Easy or Hard</h2><p>Solve for $${c.h}:</p><p class="big" style="font-size:36px">${c.q}</p><input id="eha" inputmode="numeric" autocomplete="off"><button class="primary" onclick="ehAns()">Submit</button>`;
- document.getElementById('eha').focus();
-}
-function ehAns(){
- const c=EH[ehIdx],ok=document.getElementById('eha').value.trim()===c.a;
- if(ok){ehHardOk++;ehEarn+=c.h}
- ehIdx++;
- app.innerHTML=`<h2>Easy or Hard</h2><div class="big">${ok?'✓':'×'}</div><p>${ok?`Correct — $${c.h} earned.`:'Wrong — $0.'}</p><button class="primary" onclick="ehRound()">Next</button>`;
-}
-
-/* ============ start ============ */
-/* ============ Game 7 — Digits (flashing digit span) ============ */
-let dgLen=3,dgRound=0,dgSeq=[],dgBest=0;
-function digitsIntro(){
- setProgress(51);
- app.innerHTML=`<h2>Game 7 — Digits</h2><p class="measure">Traits: <b>Attention, Focus</b> — holding information in mind.</p>
- <p>Digits will <b>flash one at a time</b>. Then type them back <b>in order</b>. The sequence grows by one each round you get right.</p>
- <button class="primary" onclick="dgRoundFn()">Begin</button>`;
-}
-function dgRoundFn(){
- t0();
- dgRound++;dgSeq=Array.from({length:dgLen},()=>Math.floor(Math.random()*10));
- let i=0;
- app.innerHTML=`<h2>Digits</h2><p class="small">Round ${dgRound} · ${dgLen} digits — watch…</p><div class="big" id="dgd">·</div>`;
- const iv=setInterval(()=>{
-  if(i>=dgSeq.length){clearInterval(iv);
-   app.innerHTML=`<h2>Digits</h2><p>Type the digits in order:</p><input id="dg" inputmode="numeric" autocomplete="off"><button class="primary" onclick="dgAns()">Submit</button>`;
-   document.getElementById('dg').focus();return}
-  document.getElementById('dgd').textContent=dgSeq[i];i++;
- },650);
-}
-function dgAns(){
- const ok=document.getElementById('dg').value.replace(/\D/g,'')===dgSeq.join('');
- if(ok){dgBest=Math.max(dgBest,dgLen);dgLen++;
-  if(dgLen>9){T.digits={best:dgBest};next();return}
-  dgRoundFn();
- } else {T.digits={best:dgBest};next();}
-}
-
-/* ============ Game 8 — Stop (press ONLY on red) ============ */
-let stTrials=[],stIdx=0,stStart=0,stActive=false,stHits=0,stFalse=0,stMiss=0,stRT=[];
-function stopIntro(){
- setProgress(59);
- app.innerHTML=`<h2>Game 8 — Stop</h2><p class="measure">Traits: <b>Attention</b> — responding only to the right signal.</p>
- <p>Press the <b>space bar</b> (or tap) as fast as you can when you see a <b style="color:#dc2626">red</b> circle. Do <b>nothing</b> for any other colour.</p>
- <p>24 trials.</p><button class="primary" onclick="stStart_()">Begin</button>`;
-}
-function stStart_(){
- t0();
- stTrials=Array.from({length:24},(_,i)=>i<8?'red':(i<16?'green':'blue')).sort(()=>Math.random()-.5);
- stIdx=0;document.addEventListener('keydown',stKey);stTrial();
-}
-function stTrial(){
- if(stIdx>=stTrials.length){document.removeEventListener('keydown',stKey);T.stop={hits:stHits,falseAlarms:stFalse,misses:stMiss,rt:stRT};next();return}
- stActive=false;
- app.innerHTML=`<h2>Stop</h2><p class="small">Trial ${stIdx+1}/24</p><div class="tapzone"><div class="big">+</div></div>`;
- setTimeout(()=>{
-  const c=stTrials[stIdx],em=c==='red'?'🔴':(c==='green'?'🟢':'🔵');
-  app.innerHTML=`<h2>Stop</h2><p class="small">Trial ${stIdx+1}/24</p><div id="stz" class="tapzone"><div class="big">${em}</div></div><div class="timerbar"><div id="tfill"></div></div>`;
-  stStart=performance.now();stActive=true;
-  document.getElementById('stz').addEventListener('pointerdown',stTap,{once:true});
-  const tf=document.getElementById('tfill');
-  requestAnimationFrame(()=>requestAnimationFrame(()=>{tf.style.width='0%'}));
-  setTimeout(()=>stEnd(false),1000);
- },400+Math.random()*500);
-}
-function stTap(){if(stActive)stEnd(true)}
-function stKey(e){if(e.code==='Space'){e.preventDefault();stTap()}}
-function stEnd(pressed){
- if(!stActive)return;stActive=false;
- const c=stTrials[stIdx],rt=performance.now()-stStart;
- if(c==='red'&&pressed){stHits++;stRT.push(rt)}
- else if(c==='red'&&!pressed)stMiss++;
- else if(c!=='red'&&pressed)stFalse++;
- stIdx++;setTimeout(stTrial,220);
-}
-
-/* ============ Game 9 — Arrows (flanker) ============
-   Blue/black → respond to the MIDDLE arrow. Red → respond to the SIDE arrows. */
-let arIdx=0,arRT=[],arErr=0;
-const ARD=['←','→','↑','↓'];
-function arrowsIntro(){
- setProgress(67);
- app.innerHTML=`<h2>Game 9 — Arrows</h2><p class="measure">Traits: <b>Focus, Attention</b> — filtering distractions.</p>
- <p>You will see 5 arrows. <b>Blue or black:</b> press the key matching the <b>middle</b> arrow. <b style="color:#dc2626">Red:</b> press the key matching the <b>outer</b> arrows.</p>
- <p>On a phone, tap the matching arrow button. 40 trials.</p><button class="primary" onclick="arStart_()">Begin</button>`;
-}
-function arStart_(){
- t0();
- arIdx=0;document.addEventListener('keydown',arKey);arTrial();
-}
-function arTrial(){
- if(arIdx>=40){document.removeEventListener('keydown',arKey);T.arrows={rt:arRT,errors:arErr};next();return}
- const mid=ARD[Math.floor(Math.random()*4)];
- let side=ARD[Math.floor(Math.random()*4)];
- if(Math.random()<0.5)side=mid; // congruent half the time
- const red=Math.random()<0.3;
- const col=red?'#dc2626':(Math.random()<0.5?'#1e3a8a':'#111827');
- const target=red?side:mid;
- const seq=[side,side,mid,side,side].join('');
- app.innerHTML=`<h2>Arrows</h2><p class="small">Trial ${arIdx+1}/40</p><div class="big" style="color:${col};letter-spacing:6px">${seq}</div>
- <div>${ARD.map(x=>`<button onclick="arTap('${x}')">${x}</button>`).join('')}</div>
- <p class="small">${red?'RED → match the <b>outer</b> arrows':'BLUE/BLACK → match the <b>middle</b> arrow'}</p>`;
- app.dataset.target=target;
- arStartT=performance.now();arActive2=true;
-}
-let arActive2=false,arStartT=0;
-function arResp(key){
- if(!arActive2)return;arActive2=false;
- arRT.push(performance.now()-arStartT);
- if(key!==app.dataset.target)arErr++;
- arIdx++;setTimeout(arTrial,200);
-}
-function arKey(e){const m={ArrowLeft:'←',ArrowRight:'→',ArrowUp:'↑',ArrowDown:'↓'};if(m[e.code]){e.preventDefault();arResp(m[e.code])}}
-function arTap(x){arResp(x)}
-
-/* ============ Game 10 — Lengths (mouth judgement, intermittent payout) ============ */
-let leIdx=0,leCorrect=0,leEarn=0;
-function lengthsIntro(){
- setProgress(75);
- app.innerHTML=`<h2>Game 10 — Lengths</h2><p class="measure">Traits: <b>Decision Making</b> — judging under uncertainty.</p>
- <p>A face appears with a <b>long</b> or <b>short</b> mouth. Judge it as fast as you can. Payouts are intermittent — not every correct answer pays.</p>
- <p>20 trials.</p><button class="primary" onclick="leTrial()">Begin</button>`;
-}
-function leTrial(){
- t0();
- if(leIdx>=20){T.lengths={correct:leCorrect,earned:leEarn};next();return}
- leIdx++;
- const long=Math.random()<0.5, w=long?86:34;
- const ex=30+Math.floor(Math.random()*90);
- app.innerHTML=`<h2>Lengths</h2><p class="small">Trial ${leIdx}/20 · Earned: $${leEarn.toFixed(2)}</p>
- <div class="face"><div class="eye" style="left:${ex}px"></div><div class="eye" style="right:${ex}px"></div><div class="mouth" style="width:${w}px"></div></div>
- <div style="text-align:center"><button onclick="leAns(true)">LONG</button><button onclick="leAns(false)">SHORT</button></div>`;
- app.dataset.long=long;
-}
-function leAns(saidLong){
- const wasLong=app.dataset.long==='true',ok=saidLong===wasLong;
- if(ok){leCorrect++; if(Math.random()<0.6){const pay=0.5+Math.random()*1.5;leEarn+=pay}}
- leTrial();
-}
-
-/* ============ Game 11 — Cards (Iowa Gambling Task) ============ */
-let caIdx=0,caTotal=2000,caPicks=[];
-const DECKS=[
- {n:'A',win:100,lossP:.5,lossMin:150,lossMax:350},
- {n:'B',win:100,lossP:.15,lossMin:800,lossMax:1250},
- {n:'C',win:50,lossP:.5,lossMin:25,lossMax:75},
- {n:'D',win:50,lossP:.15,lossMin:200,lossMax:300}
-];
-const DECKC=['#7c3aed','#db2777','#059669','#ea580c'];
-function cardsIntro(){
- setProgress(83);
- app.innerHTML=`<h2>Game 11 — Cards</h2><p class="measure">Traits: <b>Learning, Risk Tolerance, Decision Making</b> — learning which risks pay.</p>
- <p>You start with <b>$2,000</b>. Pick cards from 4 decks. Every card wins money; some also lose money. Learn which decks are good.</p>
- <p>40 cards.</p><button class="primary" onclick="caTrial()">Begin</button>`;
-}
-function caTrial(){
- t0();
- if(caIdx>=40){
-  const good=caPicks.slice(20).filter(d=>d==='C'||d==='D').length;
-  T.cards={total:caTotal,goodLate:good};next();return}
- caIdx++;
- app.innerHTML=`<h2>Cards</h2><p class="small">Card ${caIdx}/40 · Total: <b>$${caTotal}</b></p><div style="text-align:center">${DECKS.map((d,i)=>`<button class="deck" style="background:${DECKC[i]}" onclick="caPick(${i})">${d.n}<small>deck</small></button>`).join('')}</div>`;
-}
-function caPick(i){
- const d=DECKS[i];
- let delta=d.win,msg=`+$${d.win}`;
- if(Math.random()<d.lossP){const L=Math.round(d.lossMin+Math.random()*(d.lossMax-d.lossMin));delta-=L;msg=`+$${d.win} − $${L}`}
- caTotal+=delta;caPicks.push(d.n);
- app.innerHTML=`<h2>Cards</h2><div class="big">${delta>=0?'💰':'💸'}</div><p style="text-align:center">Deck ${d.n}: <b>${msg}</b></p><p style="text-align:center">Total: <b>$${caTotal}</b></p><div style="text-align:center"><button class="primary" onclick="caTrial()">Next card</button></div>`;
-}
-
-/* ============ Game 12 — Faces (emotion labelling) ============ */
-const FEMO=[
- {e:'😊',a:'Happy',o:['Happy','Sad','Angry','Afraid']},
- {e:'😢',a:'Sad',o:['Angry','Sad','Surprised','Happy']},
- {e:'😠',a:'Angry',o:['Disgusted','Happy','Angry','Sad']},
- {e:'😨',a:'Afraid',o:['Surprised','Afraid','Angry','Neutral']},
- {e:'😲',a:'Surprised',o:['Afraid','Happy','Surprised','Neutral']},
- {e:'🤢',a:'Disgusted',o:['Angry','Disgusted','Sad','Happy']},
- {e:'😐',a:'Neutral',o:['Sad','Neutral','Afraid','Happy']},
- {e:'😍',a:'Happy',o:['Surprised','Happy','Neutral','Afraid']},
- {e:'😭',a:'Sad',o:['Sad','Angry','Disgusted','Happy']},
- {e:'😡',a:'Angry',o:['Happy','Afraid','Sad','Angry']},
- {e:'😱',a:'Afraid',o:['Surprised','Disgusted','Afraid','Happy']},
- {e:'😮',a:'Surprised',o:['Neutral','Surprised','Sad','Angry']}
-];
-let faIdx=0,faCorrect=0;
-function facesIntro(){
- setProgress(91);
- app.innerHTML=`<h2>Game 12 — Faces</h2><p class="measure">Traits: <b>Emotion</b> — ${CATS.emotion.work}.</p>
- <p>Label the emotion on each face, then read a short scenario and label it again. Go with your first read.</p>
- <p>12 faces.</p><button class="primary" onclick="faTrial()">Begin</button>`;
-}
-function faTrial(){
- t0();
- if(faIdx>=FEMO.length){T.faces={correct:faCorrect};next();return}
- const f=FEMO[faIdx],withStory=faIdx%3===2;
- const story=withStory?`<p class="small">Scenario: ${['They just heard unexpected news.','They lost something valuable.','Someone took credit for their work.'][faIdx%3]}</p>`:'';
- app.innerHTML=`<h2>Faces</h2><p class="small">Face ${faIdx+1}/${FEMO.length}</p><div class="big">${f.e}</div>${story}<div style="text-align:center">${f.o.map(o=>`<button onclick="faAns('${o}')">${o}</button>`).join('')}</div>`;
-}
-function faAns(o){
- const ok=o===FEMO[faIdx].a;
- if(ok)faCorrect++;
- faIdx++;
- app.innerHTML=`<h2>Faces</h2><div class="big">${ok?'✓':'×'}</div><p style="text-align:center">${ok?'Correct.':`It was <b>${FEMO[faIdx-1].a}</b>.`}</p><div style="text-align:center"><button class="primary" onclick="faTrial()">Next</button></div>`;
-}
-
-function start(){
- setProgress(0);
- let _n=0;try{_n=(JSON.parse(localStorage.getItem('bgp_runs')||'[]')).length}catch(e){}
- app.innerHTML=`<h2>Instructions</h2>
- <div class="resultbox" style="text-align:center;font-size:21px"><b>⏱ About 25 minutes total</b><br><span class="small">12 games · one sitting · no pausing</span></div>
- <p>Do it in one sitting: quiet room, rested, full screen, stable internet. Use a laptop if possible.</p>
- <div class="warnbox"><b>Why this matters:</b> the real test is one attempt. Pymetrics' terms state each game can only be played once in a 12-month period and your profile can't be reset during that time — if you apply to another employer using Pymetrics within that window, the same result is used. The employer that invited you sees your profile. So treat this practice like the real thing.</div>
- <p>Understand the mechanics, follow the instructions, and respond naturally. Don't try to guess a "good personality."</p>
- <button class="primary" onclick="next()">Start</button>
- ${_n?`<p class="small">📊 ${_n} past run${_n>1?'s':''} saved on this device.</p><button onclick="showHistory()">📊 View past results</button>`:`<p class="small">No past runs on this device yet.</p>`}`;
-}
-/* ============ past results menu ============ */
-function getRuns(){let r=[];try{r=JSON.parse(localStorage.getItem('bgp_runs')||'[]')}catch(e){}return r}
-function showHistory(){
- setProgress(0);
- const runs=getRuns();
- if(!runs.length){app.innerHTML=`<h2>Past results</h2><div class="resultbox">No runs saved on this device yet.</div><button class="primary" onclick="start()">← Back to menu</button>`;return}
- const rows=runs.map((r,i)=>({r:r,i:i})).reverse().map(({r,i})=>{
-  const top=(r.top3||Object.keys(r.S).sort((a,b)=>r.S[b]-r.S[a]).slice(0,3)).map(k=>CATS[k].name).join(', ');
-  return `<div class="resultbox"><b>📅 ${r.d}</b>${r.ind&&INDUSTRIES[r.ind]?' · '+INDUSTRIES[r.ind].name:''}<br><span class="small">Top: ${top}</span><br><button onclick="showRun(${i})">View details</button></div>`;
- }).join('');
- app.innerHTML=`<h2>Past results</h2><p class="small">${runs.length} run${runs.length>1?'s':''} saved on this device.</p>${rows}<button class="primary" onclick="start()">← Back to menu</button>`;
- window.scrollTo(0,0);
-}
-function showRun(i){
- setProgress(0);
- const runs=getRuns();const r=runs[i];
- if(!r){showHistory();return}
- const SS=r.S;
- const ranked=Object.keys(SS).sort((a,b)=>SS[b]-SS[a]);
- const top3=r.top3||ranked.slice(0,3);
- const catH=k=>`<div class="resultbox"><b>${CATS[k].name}</b> — <span style="color:${bandCol(SS[k])}"><b>${band(SS[k])}</b></span><br><span class="small">${CATS[k].work}.</span><br><span class="small">Measured in: ${CATSRC[k].map(g=>'Game '+g+' '+GNAMES[g]).join(' · ')}</span><div class="traitbar"><div style="width:${SS[k]}%;background:${bandCol(SS[k])}"></div></div></div>`;
- app.innerHTML=`<h2>Run — ${r.d}</h2>
- <div class="resultbox"><b>Practice run — ${r.d}</b>${r.ind&&INDUSTRIES[r.ind]?' · '+INDUSTRIES[r.ind].name+' (old label)':''}<br><span class="small">Descriptive summary of this practice run — our own scoring, not Pymetrics'/Harver's.</span></div>
- <h3>Top 3 distinctive categories</h3>${top3.map(catH).join('')}
- <h3>All 9 categories</h3>${ranked.map(catH).join('')}
- ${r.ts?`<h3>Timing</h3><div class="resultbox"><b>Total session: ${fmtT(r.ts.session)}</b> <span class="small">(pure gameplay ${fmtT(r.ts.total)})</span></div>`:''}
- ${r.gbg?`<h3>Game-by-game, in order</h3><div class="resultbox small">${r.gbg.join('<br>')}</div>`:''}
- ${r.flags&&r.flags.length?`<h3>Consistency</h3>`+r.flags.map(f=>`<div class="warnbox">${f}</div>`).join(''):''}
- <button onclick="showHistory()">← All past results</button>
- <button class="primary" onclick="start()">New run</button>`;
- window.scrollTo(0,0);
-}
-/* ============ results: trait-category report ============ */
-function clamp(v,a,b){return Math.max(a,Math.min(b,v))}
-function band(s){return s>=65?'distinctive strength':(s>=40?'typical range':'less typical')}
-function bandCol(s){return s>=65?'#16a34a':(s>=40?'#2563eb':'#d97706')}
-function summary(){
- setProgress(100);
- const S={};
- const avgP=T.balloons.pumps.reduce((a,b)=>a+b,0)/T.balloons.pumps.length;
- S.risk=clamp(Math.round(50+(avgP-8)*5-T.balloons.pops*2),0,100);
- const twEff=T.tower.reduce((a,r)=>a+r.optimal/Math.max(1,r.moves),0)/T.tower.length*100;
- S.decision=clamp(Math.round(twEff*0.6+(T.lengths.correct/20*100)*0.4),0,100);
- S.effort=clamp(Math.round(T.easyhard.hardChosen/6*70+T.keypress.hits/14*30),0,100);
- S.emotion=Math.round(T.faces.correct/12*100);
- S.fairness=Math.round(((T.money1.fair+T.money2.fair)/2-1)/9*100);
- const arAcc=(40-T.arrows.errors)/40*100;
- S.focus=clamp(Math.round(arAcc*0.6+clamp((T.digits.best-3)/6,0,1)*100*0.4),0,100);
- S.generosity=Math.round((T.money1.sent/10*100+T.money2.gave/5*100)/2);
- S.learning=Math.round(T.cards.goodLate/20*100);
- const kpA=(T.keypress.hits-T.keypress.falseStarts*2)/14*100;
- const stA=(T.stop.hits-T.stop.falseAlarms*2)/8*100;
- S.attention=clamp(Math.round(kpA*0.5+stA*0.5),0,100);
-
- const ranked=Object.keys(S).sort((a,b)=>S[b]-S[a]);
- const top3=ranked.slice(0,3);
-
- const catRow=k=>`<div class="resultbox"><b>${CATS[k].name}</b> — <span style="color:${bandCol(S[k])}"><b>${band(S[k])}</b></span><br><span class="small">${CATS[k].work}.</span><br><span class="small">Measured in: ${CATSRC[k].map(g=>'Game '+g+' '+GNAMES[g]).join(' · ')}</span><div class="traitbar"><div style="width:${S[k]}%;background:${bandCol(S[k])}"></div></div></div>`;
-
- /* consistency coach */
- const flags=[];
- if(T.money1.sent<=2&&T.money1.fair>=7)flags.push('You sent very little in the trust game but rated the exchange highly fair — the rating contradicts your behavior.');
- if(T.money1.sent>=8&&T.money1.fair<=4)flags.push('You were generous in the trust game but rated the exchange unfair — the rating contradicts your behavior.');
- if(T.money2.gave<=1&&T.money2.fair>=7)flags.push('You kept almost everything in the sharing game but rated the split highly fair — inconsistent.');
- if(T.money2.gave>=4&&T.money2.fair<=4)flags.push('You gave away most of the $5 but rated the split unfair — inconsistent.');
- if(T.easyhard.hardChosen>=4&&T.easyhard.hardSolved*2<T.easyhard.hardChosen)flags.push('You chose HARD often but solved few — the game sees both the choice and the follow-through.');
- if(T.keypress.falseStarts>=3)flags.push(T.keypress.falseStarts+' false starts on Keypress — pressing before the signal is measured.');
- const flagsHtml=flags.length?flags.map(f=>`<div class="warnbox">${f}</div>`).join(''):'<div class="tipbox">✓ Your ratings and choices were consistent with your behavior.</div>';
-
- /* weakest areas -> drills removed: practice the format, don't engineer a profile */
-
- /* save & compare runs */
- let runs=[];try{runs=JSON.parse(localStorage.getItem('bgp_runs')||'[]')}catch(e){runs=[]}
- const prev=runs.length?runs[runs.length-1]:null;
- const gbgLines=[
- `Game 1 — Balloons: avg ${avgP.toFixed(1)} pumps · ${T.balloons.pops} pops · $${bBank.toFixed(2)} banked · <i>practices ${GPRACTICE[1]}</i>`,
- `Game 2 — Tower: ${T.tower.map(r=>r.moves+' moves (best '+r.optimal+', first move '+r.firstMoveS+'s)').join(' · ')} · <i>practices ${GPRACTICE[2]}</i>`,
- `Game 3 — Money Exchange: sent $${T.money1.sent}, fairness ${T.money1.fair}/10 · <i>practices ${GPRACTICE[3]}</i>`,
- `Game 4 — Sharing: gave $${T.money2.gave}, fairness ${T.money2.fair}/10 · <i>practices ${GPRACTICE[4]}</i>`,
- `Game 5 — Keypress: ${T.keypress.hits}/14 starts · ${T.keypress.falseStarts} false starts · ${T.keypress.misses} misses · <i>practices ${GPRACTICE[5]}</i>`,
- `Game 6 — Easy or Hard: chose hard ${T.easyhard.hardChosen}/6, solved ${T.easyhard.hardSolved}, earned $${ehEarn} · <i>practices ${GPRACTICE[6]}</i>`,
- `Game 7 — Digits: longest span ${T.digits.best} · <i>practices ${GPRACTICE[7]}</i>`,
- `Game 8 — Stop: ${T.stop.hits}/8 red hits · ${T.stop.falseAlarms} false alarms · <i>practices ${GPRACTICE[8]}</i>`,
- `Game 9 — Arrows: ${T.arrows.errors} errors / 40 · <i>practices ${GPRACTICE[9]}</i>`,
- `Game 10 — Lengths: ${T.lengths.correct}/20 correct · $${T.lengths.earned.toFixed(2)} earned · <i>practices ${GPRACTICE[10]}</i>`,
- `Game 11 — Cards: finished $${T.cards.total} · good decks in last 20 picks: ${T.cards.goodLate}/20 · <i>practices ${GPRACTICE[11]}</i>`,
- `Game 12 — Faces: ${T.faces.correct}/12 correct · <i>practices ${GPRACTICE[12]}</i>`
- ];
- runs.push({d:new Date().toISOString().slice(0,10),S:S,top3:top3,flags:flags,gbg:gbgLines,ts:{total:Math.round(totalS),session:Math.round(sessionS)}});
- try{localStorage.setItem('bgp_runs',JSON.stringify(runs.slice(-12)))}catch(e){}
- window._sum={S:S,flags:flags,top3:top3,ranked:ranked};
- let trend='';
- if(prev){
-  const moves=Object.keys(S).map(k=>({k:k,d:S[k]-prev.S[k]})).filter(x=>Math.abs(x.d)>=5).sort((a,b)=>Math.abs(b.d)-Math.abs(a.d));
-  trend=moves.length?moves.map(x=>`${CATS[x.k].name} ${x.d>0?'+':''}${x.d}`).join(' · '):'No big moves vs your last run — consistency is good.';
+ function doPump(){
+  if(checkInterruptResume())return;
+  pumps++;val+=0.05;perColor[rounds[r].ci].pumps++;
+  if(pumps>=rounds[r].pop){
+   pops++;perColor[rounds[r].ci].pops++;allPumps.push(pumps);
+   setApp('<div class="card"><h2>💥 It popped!</h2><p>The '+cnames[rounds[r].ci]+' balloon popped after '+pumps+' pumps. You lose this balloon\'s money.</p><button class="primary" id="b-nx">Next balloon</button></div>');
+   on("b-nx","click",nextRound);return;
+  }
+  render();
  }
- const runsRows=runs.slice().reverse().map(r=>`<div>📅 ${r.d}${r.ind&&INDUSTRIES[r.ind]?' · '+INDUSTRIES[r.ind].name:''} · top: ${Object.keys(r.S).sort((a,b)=>r.S[b]-r.S[a]).slice(0,3).map(k=>CATS[k].name).join(', ')}</div>`).join('');
-
- /* timing report */
- let totalS=0;const tFlags=[];const tRows=[];
- const selfPaced=[1,2,3,4,6,9,10,11,12];
- for(let g=1;g<=12;g++){
-  const t=timeLog[g];if(!t||!t.start||!t.end)continue;
-  const d=(t.end-t.start)/1000;totalS+=d;const e=EXPECT[g];let note='';
-  if(d>e*1.6){note=' — slower than typical';tFlags.push(`Game ${g} (${GNAMES[g]}) took ${fmtT(d)} vs ~${fmtT(e)} typical — keep a steadier pace on the real thing.`)}
-  else if(d<e*0.35&&selfPaced.includes(g)){note=' — faster than typical';tFlags.push(`Game ${g} (${GNAMES[g]}) took only ${fmtT(d)} vs ~${fmtT(e)} typical — rushing hurts accuracy.`)}
-  tRows.push(`<div>Game ${g} — ${GNAMES[g]}: <b>${fmtT(d)}</b> <span class="small">(typical ~${fmtT(e)}${note})</span></div>`);
+ function doBank(){
+  if(checkInterruptResume())return;
+  banked+=val;perColor[rounds[r].ci].banked+=val;allPumps.push(pumps);
+  nextRound();
  }
- const sessionS=sessionT0?(Date.now()-sessionT0)/1000:totalS;
- const timingHtml=`<h3>Timing</h3>
- <div class="resultbox"><b>Total session: ${fmtT(sessionS)}</b> <span class="small">(pure gameplay ${fmtT(totalS)} · the real assessment runs about 25 minutes)</span></div>
- <div class="resultbox small">${tRows.join('')}</div>
- ${tFlags.length?tFlags.map(f=>`<div class="warnbox">${f}</div>`).join(''):'<div class="tipbox">✓ Steady pacing across all 12 games.</div>'}`;
+ function nextRound(){
+  r++;pumps=0;val=0;
+  if(r>=39){finishGame("balloons",{rounds:39,totalPumps:allPumps.reduce(function(a,b){return a+b;},0),avgPumps:mean(allPumps),pops:pops,banked:Math.round(banked*100)/100,perColor:perColor.map(function(c,i){return{color:cnames[i],pumps:c.pumps,pops:c.pops,banked:Math.round(c.banked*100)/100};})});return;}
+  render();
+ }
+ render();
+};
 
- app.innerHTML=`<h2>Practice Results</h2>
- <p class="small">Descriptive summary of this practice run — our own estimates, not Pymetrics'/Harver's scores. The goal: know the format, not chase a number.</p>
- <p class="small">The real assessment gives no numeric score — it describes your most distinctive trait categories vs. the general population. This page mirrors that format using <b>practice estimates</b> from your 12 games.</p>
-
- <h3>Your 3 most distinctive categories</h3>
- ${top3.map(k=>`<div class="tipbox"><b>${CATS[k].name}</b> — ${CATS[k].work}.<br><span class="small">What this means at work: ${workLine(k)}</span></div>`).join('')}
-
- <h3>All 9 categories</h3>
- ${ranked.map(catRow).join('')}
-
-
- <h3>Consistency check</h3>
- ${flagsHtml}
-
- <div style="text-align:center;margin:14px 0"><button onclick="copySummary()">Copy results summary</button> <span id="copied" class="small"></span></div>
-
- <h3>Your runs on this device</h3>
- <div class="resultbox small">${prev?'<b>Vs last run:</b> '+trend+'<br><br>':''}${runsRows}</div>
- <button onclick="showHistory()">📊 All past results</button>
-
- ${timingHtml}
-
- <h3>Game-by-game, in order</h3>
- <div class="resultbox small">${gbgLines.join('<br>')}</div>
-
- <h3>Before the real assessment</h3>
- <div class="resultbox"><b>What the science actually says</b><br><span class="small">
- • These game types come from decades of published lab research: Balloons = Balloon Analogue Risk Task (Lejuez et al., 2002) · Tower = Tower of London (Shallice, 1982) · Arrows = flanker task (Eriksen &amp; Eriksen, 1974) · Cards = Iowa Gambling Task (Bechara et al., 1994) · Digits = digit span · Money games = trust/dictator games (Berg, Dickhaut &amp; McCabe, 1995) · Faces = emotion recognition (Baron-Cohen et al., 2001).<br>
- • Games correlate moderately with conventional cognitive tests (meta-analysis, Bipp et al., 2024: corrected r≈.45) — but peer-reviewed evidence that they predict job performance is thin, and none covers tenure.<br>
- • Vendor debiasing audits check statistical parity, not whether the games measure real ability; independent deployment research (Stanford HAI, 2026) found bias reappearing at the individual-job level.<br>
- • Single rounds of trust/generosity games are noisy in the literature — treat those scores as rough.<br>
- • Practice mainly removes the surprise penalty (Leutner et al., 2023: test–retest ≈.68). There is no personality to fake; consistency beats strategy.</span></div>
- <div class="warnbox"><b>One shot matters:</b> Pymetrics' terms state each game can only be played once in a 12-month period and your profile can't be reset during that time — if you apply to another employer using Pymetrics within that window, the same result is used. Do it once, rested, undistracted, full-screen.</div>
- <div class="tipbox">Never press before the signal appears (START, red circle). False starts are measured.</div>
- <div class="tipbox">On fairness ratings: make the number match what actually happened in the exchange.</div>
- <div class="tipbox">After the real assessment you get a personal feedback report; the employer receives its own fuller version for their decision.</div>
- <div class="tipbox">There is no “ideal personality” to imitate. Understand the mechanics, follow the instructions, and respond naturally.</div>
-
- <p class="small"><b>Important:</b> independent practice simulation. Not Harver/Pymetrics; not their scoring, traits, or hiring predictions.</p>
- <div style="text-align:center"><button class="primary" onclick="location.reload()">Run again</button></div>`;
+/* ================= Game 2 — Tower ================= */
+function towerBFS(start,target,n){
+ var enc=function(s){return s.join("");};
+ var seen={};seen[enc(start)]=0;
+ var q=[start.slice()];
+ while(q.length){
+  var s=q.shift();var d=seen[enc(s)];
+  if(enc(s)===enc(target))return d;
+  for(var a=0;a<3;a++)for(var b=0;b<3;b++){
+   if(a===b)continue;
+   var topA=-1;for(var i=0;i<n;i++)if(s[i]===a&&(topA<0||i<topA))topA=i;
+   if(topA<0)continue;
+   var topB=-1;for(var j=0;j<n;j++)if(s[j]===b&&(topB<0||j<topB))topB=j;
+   if(topB>=0&&topB<topA)continue;
+   var ns=s.slice();ns[topA]=b;
+   if(!(enc(ns)in seen)){seen[enc(ns)]=d+1;q.push(ns);}
+  }
+ }
+ return -1;
 }
-/* Neutral practice guidance: understand the mechanics, follow the instructions, respond naturally. */
-function copySummary(){
- const s=window._sum;if(!s)return;
- const lines=[`Behavioral Games Practice — ${new Date().toISOString().slice(0,10)} (practice estimates, not employer scores)`,
- `Top 3 distinctive: ${s.top3.map(k=>CATS[k].name+' ('+band(s.S[k])+')').join(', ')}`,
- `All categories: ${s.ranked.map(k=>CATS[k].name+' '+s.S[k]).join(' · ')}`];
- lines.push(s.flags.length?('Consistency flags: '+s.flags.join(' | ')):'Consistency: all consistent');
- const txt=lines.join('\n');
- const done=()=>{document.getElementById('copied').textContent='✓ Copied — paste it anywhere.'};
- if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,()=>{prompt('Copy your summary:',txt)})}
- else prompt('Copy your summary:',txt);
+function towerGenBank(rng){
+ var bank=[];
+ for(var p=0;p<12;p++){
+  var n=p<6?3:4;
+  var start=[],target=[];
+  for(var d=0;d<n;d++){start.push(ri(rng,0,2));target.push(2);}
+  var opt=towerBFS(start,target,n);
+  var minOpt=n===3?5:8;
+  var guard=0;
+  while((opt<minOpt||enc2(start)===enc2(target))&&guard++<60){
+   start=[];for(var d2=0;d2<n;d2++)start.push(ri(rng,0,2));
+   opt=towerBFS(start,target,n);
+  }
+  bank.push({n:n,start:start,optimal:opt});
+ }
+ return bank;
+ function enc2(s){return s.join("");}
 }
-function workLine(k){
- return {attention:'You are likely to catch details others miss and stay on task.',
- decision:'You are likely to make steady calls even when information is incomplete.',
- effort:'You are likely to take on hard problems and persist until they are solved.',
- emotion:'You are likely to read people well and stay composed.',
- fairness:'You are likely to notice inequity and prefer balanced outcomes.',
- focus:'You are likely to concentrate through noise and competing demands.',
- generosity:'You are likely to share resources and credit with others.',
- learning:'You are likely to adapt fast when the rules change.',
- risk:'You are likely to size up uncertain bets calmly.'}[k];
+INTRO.tower=function(){
+ setApp('<div class="card"><h2>Game 2 of 12 — Planning</h2>'+readReminder(false)
+ +'<p>Three pegs hold a stack of disks. <b>Move the disks so they match the target picture.</b></p>'
+ +'<p>Rules: move <b>one disk at a time</b>; a <b>larger disk can never go on top of a smaller disk</b>.</p>'
+ +'<p>Tap a peg to pick up its top disk, then tap another peg to place it.</p>'
+ +'<button class="primary big" id="b-tut">Begin practice example</button></div>');
+ on("b-tut","click",showTutorial);
+};
+function towerPlayUI(cfg,onSolved,opts){
+ opts=opts||{};
+ var n=cfg.n;
+ var pegs=[[],[],[]];
+ for(var d=n-1;d>=0;d--)pegs[cfg.start[d]].push(d+1); /* disk sizes 1..n, 1 smallest */
+ var sel=-1,moves=0,t0=Date.now(),firstMoveS=null,msg="";
+ function render(){
+  var ph="";
+  for(var p=0;p<3;p++){
+   var disks=pegs[p].slice().reverse().map(function(sz){
+    var w=60+sz*(130/n);
+    return '<div class="disk" style="width:'+w+'px;background:'+["#8b5cf6","#6366f1","#3b82f6","#0ea5e9"][sz%4]+'">'+sz+'</div>';
+   }).join("");
+   ph+='<div class="peg'+(sel===p?" sel":"")+'" data-p="'+p+'">'+disks+'</div>';
+  }
+  var target="Target: all disks on the <b>right</b> peg, largest at the bottom.";
+  setApp('<div class="card nosel"><h2>'+(opts.title||"Planning")+'</h2><p>'+target+'</p>'
+  +'<div class="pegrow">'+ph+'</div>'
+  +'<p>Moves: <b>'+moves+'</b>'+(opts.showOptimal?' · Fewest possible: <b>'+cfg.optimal+'</b>':"")+'</p>'
+  +'<p class="small" id="tmsg">'+msg+'</p></div>');
+  var els=app.querySelectorAll(".peg");
+  for(var i=0;i<els.length;i++)els[i].addEventListener("click",pegClick);
+ }
+ function pegClick(e){
+  var p=+e.currentTarget.getAttribute("data-p");msg="";
+  if(sel<0){
+   if(!pegs[p].length){msg="That peg is empty.";render();return;}
+   sel=p;render();return;
+  }
+  if(p===sel){sel=-1;render();return;}
+  var moving=pegs[sel][pegs[sel].length-1];
+  var destTop=pegs[p][pegs[p].length-1];
+  if(destTop!==undefined&&destTop<moving){msg="A larger disk can't go on top of a smaller one.";sel=-1;render();return;}
+  pegs[sel].pop();pegs[p].push(moving);moves++;
+  if(firstMoveS===null)firstMoveS=(Date.now()-t0)/1000;
+  sel=-1;
+  var won=pegs[0].length===0&&pegs[1].length===0&&pegs[2].length===n;
+  if(won){onSolved({moves:moves,optimal:cfg.optimal,secs:(Date.now()-t0)/1000,firstMoveS:firstMoveS===null?0:Math.round(firstMoveS*10)/10});return;}
+  render();
+ }
+ render();
 }
+TUT.tower=function(done){
+ var cfg={n:2,start:[0,0],optimal:3};
+ towerPlayUI(cfg,function(res){done();},{title:"Practice example — this does not count"});
+};
+PLAY.tower=function(){
+ var rng=gameRng("tower");
+ var bank=towerGenBank(rng);
+ var p3=bank.filter(function(p){return p.n===3;});
+ var p4=bank.filter(function(p){return p.n===4;});
+ var puzzles=[pickR(rng,p3),pickR(rng,p4)];
+ var results=[],pi=0;
+ function nextPuzzle(){
+  if(pi>=puzzles.length){finishGame("tower",{puzzles:results});return;}
+  var cfg=puzzles[pi];
+  towerPlayUI(cfg,function(res){results.push(res);pi++;nextPuzzle();},{title:"Puzzle "+(pi+1)+" of 2",showOptimal:false});
+ }
+ nextPuzzle();
+};
+/* ================= Game 3 — Money Exchange ================= */
+INTRO.money=function(){
+ setApp('<div class="card"><h2>Game 3 of 12 — Money Exchange</h2>'+readReminder(false)
+ +'<p>You have <b>$10</b>. Your partner has <b>$0</b>.</p><p>Decide how much of your $10 to <b>send</b> to your partner. Whatever you send is <b>tripled</b>, and your partner then decides how much to return to you. Afterwards you will rate the fairness of the exchange from 1 to 10.</p>'
+ +'<button class="primary big" id="b-tut">Begin practice example</button></div>');
+ on("b-tut","click",showTutorial);
+};
+function moneyFlow(isTut,retF,done){
+ var stage="send";
+ function render(){
+  if(stage==="send"){
+   setApp('<div class="card">'+(isTut?'<h2>Practice example — this does not count</h2>':"<h2>Money Exchange</h2>")
+   +'<p>You have <b>$10</b>. How much do you send? (0–10)</p>'
+   +'<input id="amt" type="number" inputmode="numeric" min="0" max="10" value="4">'
+   +'<div><button class="primary big" id="b-send">Send</button></div></div>');
+   on("b-send","click",function(){
+    var v=Math.max(0,Math.min(10,Math.round(+document.getElementById("amt").value||0)));
+    var f=(retF===null||retF===undefined)?(0.35+Math.random()*0.25):retF;
+    stage="fair";window._m1={sent:v,ret:Math.round(v*3*f)};
+    render();
+   });
+  }else{
+   var m=window._m1;
+   setApp('<div class="card">'+(isTut?'<h2>Practice example — this does not count</h2>':"<h2>Money Exchange</h2>")
+   +'<p>You sent <b>$'+m.sent+'</b> → tripled to <b>$'+(m.sent*3)+'</b> → your partner returned <b>$'+m.ret+'</b>.</p>'
+   +'<p>How fair was this exchange? <span class="small">1 = very unfair · 10 = very fair</span></p>'
+   +'<input id="fair" type="range" min="1" max="10" value="5" style="width:100%"><p style="font-size:26px;text-align:center"><span id="fv">5</span>/10</p>'
+   +'<div style="text-align:center"><button class="primary big" id="b-cont">Continue</button></div></div>');
+   on("fair","input",function(e){document.getElementById("fv").textContent=e.target.value;});
+   on("b-cont","click",function(){done(m.sent,m.ret,+document.getElementById("fair").value);});
+  }
+ }
+ render();
+}
+TUT.money=function(done){moneyFlow(true,null,function(){done();});};
+PLAY.money=function(){
+ var rng=gameRng("money");
+ var retF=0.3+rng()*0.35;
+ moneyFlow(false,retF,function(sent,ret,fair){
+  finishGame("money",{sent:sent,returned:ret,fairness:fair});
+ });
+};
 
-start();
+/* ================= Game 4 — Sharing ================= */
+INTRO.sharing=function(){
+ setApp('<div class="card"><h2>Game 4 of 12 — Sharing</h2>'+readReminder(false)
+ +'<p>You receive an extra <b>$5</b>. Decide how much to <b>give</b> to your partner and how much to <b>keep</b>. Afterwards you will rate the fairness of the split from 1 to 10.</p>'
+ +'<button class="primary big" id="b-tut">Begin practice example</button></div>');
+ on("b-tut","click",showTutorial);
+};
+function sharingFlow(isTut,done){
+ var stage="give";
+ function render(){
+  if(stage==="give"){
+   setApp('<div class="card">'+(isTut?'<h2>Practice example — this does not count</h2>':"<h2>Sharing</h2>")
+   +'<p>You have <b>$5</b>. How much do you <b>give</b> to your partner? (0–5)</p>'
+   +'<input id="amt" type="number" inputmode="numeric" min="0" max="5" value="2">'
+   +'<div><button class="primary big" id="b-give">Split</button></div></div>');
+   on("b-give","click",function(){
+    var v=Math.max(0,Math.min(5,Math.round(+document.getElementById("amt").value||0)));
+    stage="fair";window._m2={gave:v};
+    render();
+   });
+  }else{
+   var m=window._m2;
+   setApp('<div class="card">'+(isTut?'<h2>Practice example — this does not count</h2>':"<h2>Sharing</h2>")
+   +'<p>You kept <b>$'+(5-m.gave)+'</b> and gave <b>$'+m.gave+'</b>.</p>'
+   +'<p>How fair was this split? <span class="small">1 = very unfair · 10 = very fair</span></p>'
+   +'<input id="fair" type="range" min="1" max="10" value="5" style="width:100%"><p style="font-size:26px;text-align:center"><span id="fv">5</span>/10</p>'
+   +'<div style="text-align:center"><button class="primary big" id="b-cont">Continue</button></div></div>');
+   on("fair","input",function(e){document.getElementById("fv").textContent=e.target.value;});
+   on("b-cont","click",function(){done(m.gave,+document.getElementById("fair").value);});
+  }
+ }
+ render();
+}
+TUT.sharing=function(done){sharingFlow(true,function(){done();});};
+PLAY.sharing=function(){sharingFlow(false,function(gave,fair){finishGame("sharing",{gave:gave,kept:5-gave,fairness:fair});});};
+
+/* ================= Game 5 — Keypress ================= */
+INTRO.keypress=function(){
+ setApp('<div class="card"><h2>Game 5 of 12 — Keypress</h2>'+readReminder(false)
+ +'<p>First a countdown: <b>3 · 2 · 1 · GO</b>. Then a word appears in the center.</p>'
+ +'<p>Respond <b>ONLY</b> when you see <b>START</b> — tap the big <b>TAP</b> button (or press any key) as fast as you can.</p>'
+ +'<p>Do <b>NOT</b> respond when you see <b>STOP</b>.</p>'
+ +'<p>The pause before each word varies, so you cannot predict it.</p>'
+ +'<button class="primary big" id="b-tut">Begin practice example</button></div>');
+ on("b-tut","click",showTutorial);
+};
+function keypressTrials(seq,opts,done){
+ /* generic runner: seq of "START"/"STOP"; opts.tutorial bool */
+ var i=0,hits=0,misses=0,falseAlarms=0,correctRej=0,premature=0,rts=[];
+ var stimOn=false,responded=false,stimT0=0,cd=false;
+ var rid=S.runId;
+ function alive(){return rid===S.runId;}
+ function renderFix(msg){
+  setApp('<div class="card nosel"><p style="text-align:center" class="small">'+(opts.tutorial?"Practice example — this does not count":"Trial "+(i+1)+" of "+seq.length)+'</p>'
+  +'<div class="stim" id="stim"><span style="font-size:56px;color:#9ca3af">+</span></div>'
+  +'<p id="fb" style="text-align:center;min-height:28px;font-weight:700">'+(msg||"")+'</p>'
+  +'<div style="text-align:center"><button class="tapbtn" id="b-tap">TAP</button></div>'
+  +'<p class="small" style="text-align:center">Tap the button or press any key — but ONLY for START.</p></div>');
+  on("b-tap","click",respond);
+ }
+ function trial(){
+  if(!alive())return;
+  if(checkInterruptResume())return;
+  if(i>=seq.length){cleanup();done({hits:hits,misses:misses,falseAlarms:falseAlarms,correctRej:correctRej,premature:premature,rts:rts,trials:seq.length});return;}
+  responded=false;stimOn=false;
+  renderFix("");
+  var iti=900+Math.random()*1300;
+  setTimeout(function(){
+   if(!alive())return;
+   if(checkInterruptResume())return;
+   stimOn=true;stimT0=performance.now();
+   var st=document.getElementById("stim");
+   if(st)st.innerHTML='<span style="font-size:64px;color:'+(seq[i]==="START"?"#16a34a":"#dc2626")+'">'+seq[i]+'</span>';
+   setTimeout(function(){
+    if(!alive())return;
+    if(stimOn&&!responded){
+     stimOn=false;
+     if(seq[i]==="START"){misses++;flash("Missed");}
+     else{correctRej++;flash("Correct — withheld");}
+    }
+   },1500);
+  },iti);
+ }
+ function flash(msg){var f=document.getElementById("fb");if(f){f.textContent=msg;}setTimeout(function(){if(alive()){i++;trial();}},450);}
+ function respond(){
+  if(!alive()||responded||cd)return;
+  if(!stimOn){premature++;var f=document.getElementById("fb");if(f){f.textContent="Too early — wait for the word.";f.style.color="#dc2626";setTimeout(function(){if(f){f.textContent="";f.style.color="";}},700);}return;}
+  responded=true;stimOn=false;
+  var rt=performance.now()-stimT0;
+  if(seq[i]==="START"){hits++;rts.push(rt);flash("Correct");}
+  else{falseAlarms++;flash("Incorrect — that was STOP");}
+ }
+ function keyH(e){respond();}
+ document.addEventListener("keydown",keyH);
+ function cleanup(){document.removeEventListener("keydown",keyH);}
+ var origDone=done;
+ done=function(res){cleanup();origDone(res);};
+ trial();
+}
+TUT.keypress=function(done){
+ var seq=["START","STOP","START"];
+ keypressTrials(seq,{tutorial:true},function(res){
+  if(res.hits===2&&res.falseAlarms===0&&res.premature===0){done();}
+  else{tutRetry("keypress");setApp('<div class="card"><h2>Practice example — this does not count</h2><div class="warnbox">Not quite. Remember: respond <b>ONLY</b> to <b>START</b>. Never respond to <b>STOP</b>, and never tap before the word appears.</div><button class="primary big" id="b-re">Try the example again</button></div>');on("b-re","click",function(){TUT.keypress(done);});}
+ });
+};
+PLAY.keypress=function(){
+ countdownThen(function(){
+  var rng=gameRng("keypress");
+  var seq=[];for(var i=0;i<10;i++){seq.push("START");seq.push("STOP");}
+  seq=shuffleR(rng,seq);
+  keypressTrials(seq,{tutorial:false},function(res){
+   finishGame("keypress",{trials:20,hits:res.hits,misses:res.misses,falseAlarms:res.falseAlarms,premature:res.premature,medianRT:Math.round(median(res.rts)),meanRT:Math.round(mean(res.rts))});
+  });
+ });
+};
+
+/* ================= Game 6 — Easy or Hard ================= */
+function mathBank(rng){
+ var easy=[],hard=[];
+ function add(arr,q,a){arr.push({q:q,a:a});}
+ for(var i=0;i<6;i++){
+  var t=ri(rng,0,3);
+  if(t===0){var a=ri(rng,6,60),b=ri(rng,6,60);add(easy,a+" + "+b+" = ?",a+b);}
+  else if(t===1){var c=ri(rng,12,99),d=ri(rng,5,c-1);add(easy,c+" − "+d+" = ?",c-d);}
+  else if(t===2){var e=ri(rng,2,9),f=ri(rng,3,9);add(easy,e+" × "+f+" = ?",e*f);}
+  else{var g=ri(rng,4,40)*2;add(easy,"Half of "+g+" = ?",g/2);}
+ }
+ for(var j=0;j<6;j++){
+  var u=ri(rng,0,5);
+  if(u===0){var h=ri(rng,12,19),k=ri(rng,3,9);add(hard,h+" × "+k+" = ?",h*k);}
+  else if(u===1){var dv=pickR(rng,[3,4,6,8,12]),qq=ri(rng,4,14),cc=ri(rng,5,40);add(hard,(dv*qq)+" ÷ "+dv+" + "+cc+" = ?",qq+cc);}
+  else if(u===2){var p=pickR(rng,[10,15,20,25,50]),nn=pickR(rng,[2,4,5,8,10])*20;add(hard,p+"% of "+nn+" = ?",Math.round(p/100*nn));}
+  else if(u===3){var s1=ri(rng,3,9),s2=ri(rng,3,9);add(hard,s1+"² + "+s2+"² = ?",s1*s1+s2*s2);}
+  else if(u===4){var fr=pickR(rng,[[1,2],[1,4],[3,4],[2,3]]),bb=pickR(rng,[2,3,4,5,6])*fr[1];add(hard,fr[0]+"/"+fr[1]+" of "+bb+" = ?",Math.round(fr[0]/fr[1]*bb));}
+  else{var m1=ri(rng,4,20),m2=ri(rng,2,9),m3=ri(rng,2,9);add(hard,m1+" + "+m2+" × "+m3+" = ?",m1+m2*m3);}
+ }
+ return{easy:shuffleR(rng,easy),hard:shuffleR(rng,hard)};
+}
+INTRO.easyhard=function(){
+ setApp('<div class="card"><h2>Game 6 of 12 — Easy or Hard</h2>'+readReminder(false)
+ +'<p>6 rounds. Each round, <b>choose</b>:</p><p><b>EASY</b> task → <b>$1</b> (hypothetical) if you solve it<br><b>HARD</b> task → <b>$4</b> (hypothetical) if you solve it</p>'
+ +'<p>Then you must <b>actually solve</b> the task you chose. You get 2 attempts per question.</p>'
+ +'<button class="primary big" id="b-tut">Begin practice example</button></div>');
+ on("b-tut","click",showTutorial);
+};
+function mathQuestionFlow(q,attempts,done){
+ var left=attempts;
+ function render(msg){
+  setApp('<div class="card"><h2>'+(q.tut?"Practice example — this does not count":"Solve it")+'</h2>'
+  +'<p style="font-size:30px;font-weight:800;text-align:center">'+esc(q.q)+'</p>'
+  +'<div style="text-align:center"><input id="ans" type="number" inputmode="numeric" style="font-size:26px;width:170px">'
+  +'<div><button class="primary big" id="b-ok">Submit</button></div></div>'
+  +'<p style="min-height:28px;font-weight:700" id="mmsg">'+(msg||"")+'</p>'
+  +'<p class="small">Attempts left: '+left+'</p></div>');
+  on("b-ok","click",function(){
+   var v=+document.getElementById("ans").value;
+   if(v===q.a){done(true);}
+   else{left--;if(left<=0){done(false);}else{if(q.tut)tutRetry("easyhard");render("Not quite — try again.");}}
+  });
+  var inp=document.getElementById("ans");if(inp)inp.focus();
+ }
+ render("");
+}
+TUT.easyhard=function(done){
+ var rng=gameRng("easyhard-tut");
+ var bank=mathBank(rng);
+ var q=bank.easy[0];q.tut=true;
+ mathQuestionFlow(q,99,function(ok){
+  if(ok)done();
+  else{tutRetry("easyhard");TUT.easyhard(done);}
+ });
+};
+PLAY.easyhard=function(){
+ var rng=gameRng("easyhard");
+ var bank=mathBank(rng);
+ var ei=0,hi=0,round=0,results=[],earned=0;
+ function choose(){
+  if(round>=6){finishGame("easyhard",{rounds:6,easyChosen:results.filter(function(r){return r.choice==="easy";}).length,hardChosen:results.filter(function(r){return r.choice==="hard";}).length,correct:results.filter(function(r){return r.correct;}).length,earned:earned,detail:results.map(function(r){return r.choice+":"+(r.correct?"correct":"wrong");}).join(", ")});return;}
+  setApp('<div class="card"><h2>Round '+(round+1)+' of 6</h2><p>Choose your task:</p>'
+  +'<div style="text-align:center"><button class="big" id="b-e">EASY<br><span class="small">$1 if solved</span></button> '
+  +'<button class="big" id="b-h">HARD<br><span class="small">$4 if solved</span></button></div></div>');
+  on("b-e","click",function(){doQ("easy",bank.easy[ei++],1);});
+  on("b-h","click",function(){doQ("hard",bank.hard[hi++],4);});
+ }
+ function doQ(choice,q,reward){
+  q.tut=false;
+  mathQuestionFlow(q,2,function(ok){
+   var e=ok?reward:0;earned+=e;
+   results.push({choice:choice,correct:ok,earned:e});
+   setApp('<div class="card"><h2>'+(ok?"Correct":"Incorrect")+'</h2><p>'+(ok?"You earned <b>$"+e+"</b> (hypothetical).":"The answer was <b>"+q.a+"</b>.")+'</p><button class="primary" id="b-nx">Next round</button></div>');
+   on("b-nx","click",function(){round++;choose();});
+  });
+ }
+ choose();
+};
+/* ================= Game 7 — Digit Memory (backward) ================= */
+function digitSeq(rng,len){
+ for(var t=0;t<80;t++){
+  var s=[];for(var i=0;i<len;i++)s.push(ri(rng,0,9));
+  var ok=true,counts={};
+  for(var j=0;j<len;j++){
+   counts[s[j]]=(counts[s[j]]||0)+1;
+   if(counts[s[j]]>2)ok=false;
+   if(j>0&&s[j]===s[j-1])ok=false;
+  }
+  /* reject runs of 4+ monotonic steps */
+  var run=1,dir=0;
+  for(var k=1;k<len;k++){
+   var d=s[k]-s[k-1];
+   if(Math.abs(d)===1&&d===dir){run++;}
+   else if(Math.abs(d)===1){run=2;dir=d;}
+   else{run=1;dir=0;}
+   if(run>=4)ok=false;
+  }
+  if(ok)return s;
+ }
+ var s2=[];for(var m=0;m<len;m++)s2.push(ri(rng,0,9));return s2;
+}
+INTRO.digits=function(){
+ setApp('<div class="card"><h2>Game 7 of 12 — Digit Memory</h2>'+readReminder(false)
+ +'<p>Digits flash <b>one at a time</b>. Watch carefully, then enter them <b>BACKWARD</b> — in <b>reverse order</b>.</p>'
+ +'<p>Example: you see <b>4 – 9 – 2</b> → you enter <b>2 – 9 – 4</b>.</p>'
+ +'<p>Sequences get longer as you succeed. <b>No notes.</b></p>'
+ +'<button class="primary big" id="b-tut">Begin practice example</button></div>');
+ on("b-tut","click",showTutorial);
+};
+function digitTrial(seq,isTut,done){
+ var rid=S.runId;function alive(){return rid===S.runId;}
+ var entered=[];
+ function showSeq(i){
+  if(!alive())return;
+  if(checkInterruptResume())return;
+  if(i>=seq.length){enterPhase();return;}
+  setApp('<div class="card nosel"><h2>'+(isTut?"Practice example — this does not count":"Watch…")+'</h2><div class="stim"><span id="dg">'+seq[i]+'</span></div></div>');
+  setTimeout(function(){if(!alive())return;setApp('<div class="card nosel"><div class="stim"></div></div>');setTimeout(function(){showSeq(i+1);},350);},800);
+ }
+ function enterPhase(){
+  if(!alive())return;
+  if(checkInterruptResume())return;
+  setApp('<div class="card"><h2>'+(isTut?"Practice example — this does not count":"Your turn")+'</h2>'
+  +'<p>Enter the digits <b>BACKWARD</b> (reverse order):</p>'
+  +'<p style="font-size:32px;font-weight:800;min-height:44px;text-align:center" id="dsp">'+entered.join(" – ")+'</p>'
+  +'<div style="text-align:center" id="pad"></div>'
+  +'<div style="text-align:center;margin-top:8px"><button id="b-clr">Clear</button><button id="b-back">⌫</button><button class="primary" id="b-sub">Submit</button></div></div>');
+  var pad=document.getElementById("pad");
+  for(var d=0;d<=9;d++){var b=document.createElement("button");b.className="padbtn";b.textContent=d;(function(x){b.addEventListener("click",function(){entered.push(x);document.getElementById("dsp").textContent=entered.join(" – ");});})(d);pad.appendChild(b);}
+  on("b-clr","click",function(){entered=[];document.getElementById("dsp").textContent="";});
+  on("b-back","click",function(){entered.pop();document.getElementById("dsp").textContent=entered.join(" – ");});
+  on("b-sub","click",function(){
+   var rev=seq.slice().reverse().join("");
+   done(entered.join("")===rev);
+  });
+ }
+ showSeq(0);
+}
+TUT.digits=function(done){
+ var rng=gameRng("digits-tut");
+ var seq=digitSeq(rng,3);
+ digitTrial(seq,true,function(ok){
+  if(ok)done();
+  else{tutRetry("digits");setApp('<div class="card"><h2>Practice example — this does not count</h2><div class="warnbox">Not quite — remember <b>BACKWARD</b> (reverse order). Watch again.</div><button class="primary big" id="b-re">Try again</button></div>');on("b-re","click",function(){TUT.digits(done);});}
+ });
+};
+PLAY.digits=function(){
+ var rng=gameRng("digits");
+ var len=3,correct=0,errors=0,longest=0;
+ function trial(){
+  var seq=digitSeq(rng,len);
+  digitTrial(seq,false,function(ok){
+   if(ok){correct++;longest=len;len++;if(len>9){finish();}else trial();}
+   else{errors++;finish();}
+  });
+ }
+ function finish(){finishGame("digits",{longestSpan:longest,totalCorrect:correct,errors:errors});}
+ trial();
+};
+
+/* ================= Game 8 — Stop Signal ================= */
+var STOPV=[
+ {shape:"●",color:"#dc2626",cname:"red",sname:"circle",label:"RED circle"},
+ {shape:"▲",color:"#2563eb",cname:"blue",sname:"triangle",label:"BLUE triangle"},
+ {shape:"■",color:"#16a34a",cname:"green",sname:"square",label:"GREEN square"}];
+function stopStimHTML(v,big){
+ return '<span style="font-size:'+(big||96)+'px;color:'+v.color+'">'+v.shape+'</span>';
+}
+INTRO.stop=function(){
+ var rng=gameRng("stop");
+ var v=STOPV[Math.floor(rng()*STOPV.length)];
+ S._stopV=v;
+ setApp('<div class="card"><h2>Game 8 of 12 — Stop Signal</h2>'+readReminder(false)
+ +'<div class="exbox"><p style="margin:0">Respond to <b>every</b> shape <b>EXCEPT</b> a <span class="exred" style="color:'+v.color+'">'+v.label.split(" ")[0]+'</span> <span class="exsmall">'+v.label.split(" ")[1].toLowerCase()+'</span>.</p>'
+ +'<p style="margin:6px 0 0">Tap the <b>TAP</b> button (or press any key) for every shape you see — but <b>withhold</b> your tap when the '+v.label.toLowerCase()+' appears. Read carefully: color <b>and</b> shape both matter.</p></div>'
+ +'<button class="primary big" id="b-tut">Begin practice example</button></div>');
+ on("b-tut","click",showTutorial);
+};
+function stopTrials(trials,v,opts,done){
+ var i=0,hits=0,misses=0,falseAlarms=0,correctInhib=0,premature=0,rts=[];
+ var stimOn=false,responded=false,stimT0=0;
+ var rid=S.runId;function alive(){return rid===S.runId;}
+ function renderFix(){
+  setApp('<div class="card nosel"><p style="text-align:center" class="small">'+(opts.tutorial?"Practice example — this does not count":"Trial "+(i+1)+" of "+trials.length)+'</p>'
+  +'<div class="stim" id="stim"><span style="font-size:56px;color:#9ca3af">+</span></div>'
+  +'<p id="fb" style="text-align:center;min-height:28px;font-weight:700"></p>'
+  +'<div style="text-align:center"><button class="tapbtn" id="b-tap">TAP</button></div>'
+  +'<p class="small" style="text-align:center">Tap for every shape EXCEPT the '+v.label.toLowerCase()+'.</p></div>');
+  on("b-tap","click",respond);
+ }
+ function trial(){
+  if(!alive())return;
+  if(checkInterruptResume())return;
+  if(i>=trials.length){cleanup();done({hits:hits,misses:misses,falseAlarms:falseAlarms,correctInhib:correctInhib,premature:premature,rts:rts,trials:trials.length});return;}
+  responded=false;stimOn=false;renderFix();
+  setTimeout(function(){
+   if(!alive())return;
+   if(checkInterruptResume())return;
+   stimOn=true;stimT0=performance.now();
+   var st=document.getElementById("stim");if(st)st.innerHTML=stopStimHTML(trials[i]);
+   setTimeout(function(){
+    if(!alive())return;
+    if(stimOn&&!responded){
+     stimOn=false;
+     if(trials[i].stop){correctInhib++;flash("Correct — withheld");}
+     else{misses++;flash("Missed");}
+    }
+   },1200);
+  },900+Math.random()*1300);
+ }
+ function flash(msg){var f=document.getElementById("fb");if(f)f.textContent=msg;setTimeout(function(){if(alive()){i++;trial();}},450);}
+ function respond(){
+  if(!alive()||responded)return;
+  if(!stimOn){premature++;var f=document.getElementById("fb");if(f){f.textContent="Too early — wait for the shape.";f.style.color="#dc2626";setTimeout(function(){if(f){f.textContent="";f.style.color="";}},700);}return;}
+  responded=true;stimOn=false;var rt=performance.now()-stimT0;
+  if(trials[i].stop){falseAlarms++;flash("Incorrect — that was the "+v.label.toLowerCase());}
+  else{hits++;rts.push(rt);flash("Correct");}
+ }
+ function keyH(){respond();}
+ document.addEventListener("keydown",keyH);
+ function cleanup(){document.removeEventListener("keydown",keyH);}
+ var od=done;done=function(r){cleanup();od(r);};
+ trial();
+}
+TUT.stop=function(done){
+ var v=S._stopV;
+ var others=STOPV.filter(function(x){return x.label!==v.label;});
+ var nearMiss={shape:v.shape,color:others[0].color,stop:false}; /* same shape, different color */
+ var trials=[{shape:others[0].shape,color:others[0].color,stop:false},nearMiss,{shape:v.shape,color:v.color,stop:true},{shape:others[1].shape,color:others[1].color,stop:false}];
+ stopTrials(trials,v,{tutorial:true},function(res){
+  if(res.hits===3&&res.falseAlarms===0&&res.premature===0)done();
+  else{tutRetry("stop");setApp('<div class="card"><h2>Practice example — this does not count</h2><div class="warnbox">Not quite. Tap for <b>every</b> shape <b>except</b> the '+v.label.toLowerCase()+' — color <b>and</b> shape both matter.</div><button class="primary big" id="b-re">Try the example again</button></div>');on("b-re","click",function(){TUT.stop(done);});}
+ });
+};
+PLAY.stop=function(){
+ var v=S._stopV;
+ countdownThen(function(){
+  var rng=gameRng("stop");
+  var pool=[];
+  STOPV.forEach(function(x){
+   ["●","▲","■"].forEach(function(sh){
+    ["#dc2626","#2563eb","#16a34a"].forEach(function(co){
+     if(!(sh===v.shape&&co===v.color))pool.push({shape:sh,color:co,stop:false});
+    });
+   });
+  });
+  var trials=[];
+  for(var i=0;i<18;i++)trials.push(pickR(rng,pool));
+  for(var j=0;j<6;j++)trials.push({shape:v.shape,color:v.color,stop:true});
+  trials=shuffleR(rng,trials);
+  stopTrials(trials,v,{tutorial:false},function(res){
+   finishGame("stop",{trials:24,hits:res.hits,misses:res.misses,falseAlarms:res.falseAlarms,correctInhibitions:res.correctInhib,premature:res.premature,medianRT:Math.round(median(res.rts)),meanRT:Math.round(mean(res.rts)),target:v.label});
+  });
+ });
+};
+
+/* ================= Game 9 — Arrows ================= */
+var ARULES=[
+ {id:"middle",text:"Respond to the direction of the <b>MIDDLE</b> arrow only. Ignore the others."},
+ {id:"opposite",text:"Respond to the <b>OPPOSITE</b> direction of the middle arrow."},
+ {id:"outside",text:"Respond to the direction of the <b>OUTER</b> arrows (the four surrounding arrows). Ignore the middle one."}];
+INTRO.arrows=function(){
+ var rng=gameRng("arrows");
+ var rule=ARULES[Math.floor(rng()*ARULES.length)];
+ S._arule=rule;
+ setApp('<div class="card"><h2>Game 9 of 12 — Arrows</h2>'+readReminder(false)
+ +'<div class="exbox"><p style="margin:0;font-size:44px;text-align:center">← ← → ← ←</p><p style="margin:8px 0 0">'+rule.text+'</p></div>'
+ +'<p>Tap <b>◀ LEFT</b> or <b>▶ RIGHT</b> (or use arrow keys) as fast as you can.</p>'
+ +'<button class="primary big" id="b-tut">Begin practice example</button></div>');
+ on("b-tut","click",showTutorial);
+};
+function arrowsTrials(trials,rule,opts,done){
+ var i=0,correct=0,incorrect=0,premature=0,rts=[],congC=0,congT=0,incongC=0,incongT=0;
+ var stimOn=false,answered=false,stimT0=0;
+ var rid=S.runId;function alive(){return rid===S.runId;}
+ function answerFor(t){
+  if(rule.id==="middle")return t.mid;
+  if(rule.id==="opposite")return t.mid==="L"?"R":"L";
+  return t.outer;
+ }
+ function render(){
+  setApp('<div class="card nosel"><p style="text-align:center" class="small">'+(opts.tutorial?"Practice example — this does not count":"Trial "+(i+1)+" of "+trials.length)+'</p>'
+  +'<div class="stim" id="stim"><span style="font-size:56px;color:#9ca3af">+</span></div>'
+  +'<p id="fb" style="text-align:center;min-height:28px;font-weight:700"></p>'
+  +'<div style="text-align:center"><button class="arrowbtn" id="b-l">◀</button> <button class="arrowbtn" id="b-r">▶</button></div></div>');
+  on("b-l","click",function(){respond("L");});on("b-r","click",function(){respond("R");});
+ }
+ function trial(){
+  if(!alive())return;
+  if(checkInterruptResume())return;
+  if(i>=trials.length){cleanup();done({correct:correct,incorrect:incorrect,premature:premature,rts:rts,congC:congC,congT:congT,incongC:incongC,incongT:incongT,trials:trials.length});return;}
+  answered=false;stimOn=false;render();
+  setTimeout(function(){
+   if(!alive())return;
+   if(checkInterruptResume())return;
+   stimOn=true;stimT0=performance.now();
+   var t=trials[i];
+   var arr=function(d){return d==="L"?"←":"→";};
+   var s="";
+   for(var k=0;k<5;k++)s+=arr(k===2?t.mid:t.outer)+" ";
+   var st=document.getElementById("stim");if(st)st.innerHTML='<span style="font-size:52px">'+s+'</span>';
+   setTimeout(function(){if(!alive())return;if(stimOn&&!answered){stimOn=false;incorrect++;if(t.congruent){congT++;}else{incongT++;}flash("Missed — no response");}},2500);
+  },800+Math.random()*1200);
+ }
+ function flash(msg){var f=document.getElementById("fb");if(f)f.textContent=msg;setTimeout(function(){if(alive()){i++;trial();}},450);}
+ function respond(dir){
+  if(!alive()||answered)return;
+  if(!stimOn){premature++;return;}
+  answered=true;stimOn=false;var rt=performance.now()-stimT0;
+  var t=trials[i];var ok=dir===answerFor(t);
+  if(t.congruent){congT++;if(ok)congC++;}else{incongT++;if(ok)incongC++;}
+  if(ok){correct++;rts.push(rt);flash("Correct");}else{incorrect++;flash("Incorrect");}
+ }
+ function keyH(e){if(e.key==="ArrowLeft")respond("L");else if(e.key==="ArrowRight")respond("R");}
+ document.addEventListener("keydown",keyH);
+ function cleanup(){document.removeEventListener("keydown",keyH);}
+ var od=done;done=function(r){cleanup();od(r);};
+ trial();
+}
+TUT.arrows=function(done){
+ var rule=S._arule;
+ var trials=[{mid:"L",outer:"L",congruent:true},{mid:"R",outer:"L",congruent:false},{mid:"R",outer:"R",congruent:true},{mid:"L",outer:"R",congruent:false}];
+ arrowsTrials(trials,rule,{tutorial:true},function(res){
+  if(res.correct===4)done();
+  else{tutRetry("arrows");setApp('<div class="card"><h2>Practice example — this does not count</h2><div class="warnbox">Not quite. Re-read the rule: '+rule.text+'</div><button class="primary big" id="b-re">Try the example again</button></div>');on("b-re","click",function(){TUT.arrows(done);});}
+ });
+};
+PLAY.arrows=function(){
+ var rule=S._arule;
+ countdownThen(function(){
+  var rng=gameRng("arrows");
+  var trials=[];
+  for(var i=0;i<20;i++){var d=rng()<0.5?"L":"R";trials.push({mid:d,outer:d,congruent:true});}
+  for(var j=0;j<20;j++){var m=rng()<0.5?"L":"R";trials.push({mid:m,outer:m==="L"?"R":"L",congruent:false});}
+  trials=shuffleR(rng,trials);
+  arrowsTrials(trials,rule,{tutorial:false},function(res){
+   finishGame("arrows",{trials:40,correct:res.correct,incorrect:res.incorrect,accuracy:Math.round(res.correct/40*100),medianRT:Math.round(median(res.rts)),meanRT:Math.round(mean(res.rts)),congruentAccuracy:res.congT?Math.round(res.congC/res.congT*100):null,incongruentAccuracy:res.incongT?Math.round(res.incongC/res.incongT*100):null,rule:rule.id,premature:res.premature});
+  });
+ });
+};
+
+/* ================= Game 10 — Visual Comparison ================= */
+INTRO.lengths=function(){
+ var rng=gameRng("lengths");
+ var rule=rng()<0.5?"longer":"shorter";
+ S._lrule=rule;
+ setApp('<div class="card"><h2>Game 10 of 12 — Visual Comparison</h2>'+readReminder(false)
+ +'<p>Two horizontal lines appear. Tap which line is <b>'+rule.toUpperCase()+'</b> — the <b>LEFT</b> one or the <b>RIGHT</b> one.</p>'
+ +'<p>Each correct answer earns <b>$0.10</b> (hypothetical).</p>'
+ +'<button class="primary big" id="b-tut">Begin practice example</button></div>');
+ on("b-tut","click",showTutorial);
+};
+function lengthsTrials(trials,rule,opts,done){
+ var i=0,correct=0,incorrect=0,rts=[],earned=0;
+ var stimOn=false,answered=false,stimT0=0;
+ var rid=S.runId;function alive(){return rid===S.runId;}
+ function trial(){
+  if(!alive())return;
+  if(checkInterruptResume())return;
+  if(i>=trials.length){done({correct:correct,incorrect:incorrect,rts:rts,earned:Math.round(earned*100)/100,trials:trials.length});return;}
+  answered=false;stimOn=false;
+  var t=trials[i];
+  setApp('<div class="card nosel"><p style="text-align:center" class="small">'+(opts.tutorial?"Practice example — this does not count":"Trial "+(i+1)+" of "+trials.length)+'</p>'
+  +'<p style="text-align:center">Which line is <b>'+rule.toUpperCase()+'</b>?</p>'
+  +'<div style="margin:26px 0"><div style="height:10px;background:#1f2937;border-radius:5px;width:'+t.lw+'px;margin:18px auto"></div>'
+  +'<div style="height:10px;background:#1f2937;border-radius:5px;width:'+t.rw+'px;margin:18px auto"></div></div>'
+  +'<p id="fb" style="text-align:center;min-height:28px;font-weight:700"></p>'
+  +'<div style="text-align:center"><button class="big" id="b-l">LEFT line</button> <button class="big" id="b-r">RIGHT line</button></div></div>');
+  on("b-l","click",function(){respond("L");});on("b-r","click",function(){respond("R");});
+  stimOn=true;stimT0=performance.now();
+  setTimeout(function(){if(!alive())return;if(stimOn&&!answered){stimOn=false;incorrect++;var f=document.getElementById("fb");if(f)f.textContent="Missed — no response";setTimeout(function(){if(alive()){i++;trial();}},600);}},5000);
+  function respond(side){
+   if(!alive()||answered||!stimOn)return;
+   answered=true;stimOn=false;var rt=performance.now()-stimT0;
+   var correctSide=(rule==="longer")?(t.lw>t.rw?"L":"R"):(t.lw<t.rw?"L":"R");
+   var f=document.getElementById("fb");
+   if(side===correctSide){correct++;rts.push(rt);earned+=opts.tutorial?0:0.10;if(f){f.textContent="Correct"+(opts.tutorial?"":"  +$0.10");f.style.color="#16a34a";}}
+   else{incorrect++;if(f){f.textContent="Incorrect";f.style.color="#dc2626";}}
+   setTimeout(function(){if(alive()){i++;trial();}},550);
+  }
+ }
+ trial();
+}
+TUT.lengths=function(done){
+ var rule=S._lrule;
+ var trials=[{lw:260,rw:170},{lw:170,rw:260}];
+ lengthsTrials(trials,rule,{tutorial:true},function(res){
+  if(res.correct===2)done();
+  else{tutRetry("lengths");setApp('<div class="card"><h2>Practice example — this does not count</h2><div class="warnbox">Not quite. The rule is: tap the <b>'+rule.toUpperCase()+'</b> line.</div><button class="primary big" id="b-re">Try the example again</button></div>');on("b-re","click",function(){TUT.lengths(done);});}
+ });
+};
+PLAY.lengths=function(){
+ var rule=S._lrule;
+ var rng=gameRng("lengths");
+ var trials=[];
+ for(var i=0;i<20;i++){
+  var base=ri(rng,180,250),diff=0.06+rng()*0.12;
+  var longer=Math.round(base*(1+diff));
+  if(rng()<0.5)trials.push({lw:longer,rw:base});else trials.push({lw:base,rw:longer});
+ }
+ trials=shuffleR(rng,trials);
+ lengthsTrials(trials,rule,{tutorial:false},function(res){
+  finishGame("lengths",{trials:20,correct:res.correct,incorrect:res.incorrect,accuracy:Math.round(res.correct/20*100),medianRT:Math.round(median(res.rts)),meanRT:Math.round(mean(res.rts)),earned:res.earned,rule:rule});
+ });
+};
+TIMED.keypress=true;TIMED.stop=true;TIMED.arrows=true;TIMED.digits=true;TIMED.lengths=true;
+/* ================= Game 11 — Card Decks ================= */
+INTRO.cards=function(){
+ setApp('<div class="card"><h2>Game 11 of 12 — Card Decks</h2>'+readReminder(false)
+ +'<p>Four decks: <b>A · B · C · D</b>. You start with <b>$2,000</b> (hypothetical).</p>'
+ +'<p>Pick <b>40 cards</b>, one at a time, from any deck. Each card wins or loses money — you see the result immediately. Some decks are better than others <b>in the long run</b>; you have to figure out which.</p>'
+ +'<p>Goal: finish with as much as possible.</p>'
+ +'<button class="primary big" id="b-tut">Begin practice example</button></div>');
+ on("b-tut","click",showTutorial);
+};
+TUT.cards=function(done){
+ var n=0;
+ function render(msg){
+  setApp('<div class="card"><h2>Practice example — this does not count</h2><p>Pick any deck <b>3 times</b>. Watch what each card does.</p>'
+  +'<p style="font-size:22px">Total: $<b id="ct">2000</b> · Picks: '+(n)+'/3</p>'
+  +'<p id="fb" style="min-height:28px;font-weight:700">'+(msg||"")+'</p>'
+  +'<div style="text-align:center">'+["A","B","C","D"].map(function(d){return '<button class="deckbtn" data-d="'+d+'">'+d+'</button>';}).join("")+'</div></div>');
+  var btns=app.querySelectorAll(".deckbtn");
+  for(var i=0;i<btns.length;i++)btns[i].addEventListener("click",function(){
+   n++;
+   var f=document.getElementById("fb");
+   if(f)f.textContent="You picked a card. In the real game each card wins or loses money.";
+   if(n>=3)done();else render("");
+  });
+ }
+ render("");
+};
+PLAY.cards=function(){
+ var rng=gameRng("cards");
+ var goodSeq=shuffleR(rng,[60,60,-30,60,40,60,-20,60,50,60]);
+ var badSeq=shuffleR(rng,[100,-350,100,100,-300,100,100,-250,100,100]);
+ var goodDecks=shuffleR(rng,[0,1,2,3]).slice(0,2);
+ var seqs=[0,1,2,3].map(function(d){return goodDecks.indexOf(d)>=0?goodSeq.slice():badSeq.slice();});
+ var ptr=[0,0,0,0],total=2000,n=0,picks=[];
+ var names=["A","B","C","D"];
+ function render(msg){
+  setApp('<div class="card nosel"><h2>Card Decks</h2>'
+  +'<p style="font-size:22px">Total: $<b>'+total+'</b> · Pick '+(n+1)+' of 40</p>'
+  +'<p id="fb" style="min-height:30px;font-weight:700;font-size:20px">'+(msg||"")+'</p>'
+  +'<div style="text-align:center">'+names.map(function(d,i){return '<button class="deckbtn" data-d="'+i+'">'+d+'</button>';}).join("")+'</div></div>');
+  var btns=app.querySelectorAll(".deckbtn");
+  for(var i=0;i<btns.length;i++)btns[i].addEventListener("click",function(e){
+   var d=+e.currentTarget.getAttribute("data-d");
+   var out=seqs[d][ptr[d]%10];ptr[d]++;
+   total+=out;n++;picks.push({deck:d,good:goodDecks.indexOf(d)>=0,out:out});
+   if(n>=40){
+    var ppd=[0,0,0,0];picks.forEach(function(p){ppd[p.deck]++;});
+    var last20=picks.slice(-20),first20=picks.slice(0,20);
+    finishGame("cards",{picks:40,finalTotal:total,picksPerDeck:ppd,goodDecks:goodDecks.map(function(d){return names[d];}).join(", "),goodEarly:first20.filter(function(p){return p.good;}).length,goodLate:last20.filter(function(p){return p.good;}).length});
+    return;
+   }
+   render((out>=0?"+$":"−$")+Math.abs(out));
+  });
+ }
+ render("");
+};
+
+/* ================= Game 12 — Faces ================= */
+var FEMOTIONS=["happy","sad","angry","surprised","fearful","neutral"];
+INTRO.faces=function(){
+ setApp('<div class="card"><h2>Game 12 of 12 — Faces</h2>'+readReminder(false)
+ +'<p>You will see <b>12 abstract drawn faces</b> (not real people). For each one, choose the <b>expression</b> it shows:</p>'
+ +'<p>happy · sad · angry · surprised · fearful · neutral</p>'
+ +'<p>Go with your first reading.</p>'
+ +'<button class="primary big" id="b-tut">Begin practice example</button></div>');
+ on("b-tut","click",showTutorial);
+};
+function drawFace(cv,frng,emotion,exaggerate){
+ var ctx=cv.getContext("2d");
+ if(!ctx)return false;
+ var W=cv.width,H=cv.height;
+ var tone=pickR(frng,["#f2d7c4","#e8b98f","#c98d5e","#a06a42"]);
+ var hw=52+frng()*14,hh=60+frng()*12;
+ var eyeDX=20+frng()*8,eyeY=78+frng()*8,eyeR=(emotion==="surprised"||emotion==="fearful")?11:8;
+ var browY=eyeY-24,mouthY=128+frng()*8;
+ var ex=exaggerate?1.6:1;
+ ctx.clearRect(0,0,W,H);
+ ctx.fillStyle=tone;ctx.strokeStyle="rgba(0,0,0,.25)";ctx.lineWidth=3;
+ ctx.beginPath();ctx.ellipse(90,95,hw,hh,0,0,Math.PI*2);ctx.fill();ctx.stroke();
+ /* eyes */
+ [-1,1].forEach(function(s){
+  var exx=90+s*eyeDX;
+  ctx.fillStyle="#fff";ctx.beginPath();ctx.ellipse(exx,eyeY,eyeR,eyeR*1.25,0,0,Math.PI*2);ctx.fill();ctx.stroke();
+  ctx.fillStyle="#222";ctx.beginPath();ctx.arc(exx,eyeY+1,eyeR*0.45,0,Math.PI*2);ctx.fill();
+ });
+ /* brows */
+ ctx.strokeStyle="#3a2a1a";ctx.lineWidth=5;ctx.lineCap="round";
+ function brow(s,innerDy,outerDy){
+  var x1=90+s*eyeDX-s*(eyeR+4),x2=90+s*eyeDX+s*(eyeR+4);
+  var yOuter=browY+outerDy*ex,yInner=browY+innerDy*ex;
+  ctx.beginPath();ctx.moveTo(x1,yOuter);ctx.lineTo(x2,yInner);ctx.stroke();
+ }
+ if(emotion==="angry"){brow(-1,10,-2);brow(1,10,-2);}
+ else if(emotion==="sad"){brow(-1,-9,2);brow(1,-9,2);}
+ else if(emotion==="surprised"||emotion==="fearful"){brow(-1,-4,-6);brow(1,-4,-6);}
+ else{brow(-1,0,0);brow(1,0,0);}
+ /* mouth */
+ ctx.strokeStyle="#5a3a28";ctx.lineWidth=5;
+ ctx.beginPath();
+ if(emotion==="happy"){ctx.arc(90,mouthY-6,24*ex,0.15*Math.PI,0.85*Math.PI);}
+ else if(emotion==="sad"){ctx.arc(90,mouthY+16,22*ex,1.15*Math.PI,1.85*Math.PI);}
+ else if(emotion==="angry"){ctx.moveTo(90-22,mouthY+4);ctx.lineTo(90+22,mouthY+4);}
+ else if(emotion==="surprised"){ctx.ellipse(90,mouthY+4,10*ex,14*ex,0,0,Math.PI*2);}
+ else if(emotion==="fearful"){for(var x=0;x<=4;x++){var px=90-20+x*10,py=mouthY+(x%2?4:-4)*ex;if(x===0)ctx.moveTo(px,py);else ctx.lineTo(px,py);}}
+ else{ctx.moveTo(90-20,mouthY);ctx.lineTo(90+20,mouthY);}
+ ctx.stroke();
+ return true;
+}
+function facesTrials(faces,opts,done){
+ var i=0,correct=0;
+ function trial(){
+  if(i>=faces.length){done({trials:faces.length,correct:correct});return;}
+  var f=faces[i];
+  var labels=shuffleR(f.frng,FEMOTIONS.slice());
+  setApp('<div class="card"><h2>'+(opts.tutorial?"Practice example — this does not count":"Face "+(i+1)+" of "+faces.length)+'</h2>'
+  +'<div style="text-align:center"><canvas id="fc" width="180" height="190" style="max-width:100%"></canvas></div>'
+  +'<p>Which expression is shown?</p>'
+  +'<div style="text-align:center">'+labels.map(function(l){return '<button class="facebtn" data-e="'+l+'">'+l+'</button>';}).join("")+'</div>'
+  +'<p id="fb" style="min-height:28px;font-weight:700"></p></div>');
+  var cv=document.getElementById("fc");
+  drawFace(cv,f.frng,f.emotion,opts.tutorial);
+  var btns=app.querySelectorAll(".facebtn");
+  for(var b=0;b<btns.length;b++)btns[b].addEventListener("click",function(e){
+   var ans=e.currentTarget.getAttribute("data-e");
+   var fb=document.getElementById("fb");
+   if(opts.tutorial){
+    if(ans===f.emotion){correct++;i++;setTimeout(trial,300);}
+    else{tutRetry("faces");if(fb){fb.textContent="Not quite — look again and try.";fb.style.color="#dc2626";}}
+   }else{
+    if(ans===f.emotion)correct++;
+    i++;setTimeout(trial,250);
+   }
+  });
+ }
+ trial();
+}
+TUT.faces=function(done){
+ var frng=mulberry32(hashStr(S.seed+":faces-tut"));
+ var faces=[{emotion:"happy",frng:mulberry32(hashStr(S.seed+":fh"))},{emotion:"sad",frng:mulberry32(hashStr(S.seed+":fs"))}];
+ facesTrials(faces,{tutorial:true},function(){done();});
+};
+PLAY.faces=function(){
+ var frng=gameRng("faces");
+ var emos=shuffleR(frng,FEMOTIONS.concat(FEMOTIONS));
+ var faces=emos.map(function(e,i){return{emotion:e,frng:mulberry32(hashStr(S.seed+":face"+i))};});
+ facesTrials(faces,{tutorial:false},function(res){
+  finishGame("faces",{trials:12,correct:res.correct,accuracy:Math.round(res.correct/12*100)});
+ });
+};
+/* ================= results ================= */
+function tbl(rows){
+ return '<table class="metrics">'+rows.map(function(r){return '<tr><td>'+r[0]+'</td><td>'+r[1]+'</td></tr>';}).join("")+'</table>';
+}
+function gameMetricsHTML(k,m){
+ if(!m)return '<p class="small">No data.</p>';
+ switch(k){
+  case "balloons":return tbl([["Rounds","39"],["Total pumps",m.totalPumps],["Average pumps per balloon",m.avgPumps.toFixed(1)],["Explosions",m.pops+" / 39"],["Hypothetical money banked","$"+m.banked.toFixed(2)]])
+   +'<p class="small">'+m.perColor.map(function(c){return c.color+": "+c.pumps+" pumps · "+c.pops+" pops · $"+c.banked.toFixed(2)+" banked";}).join("<br>")+'</p>';
+  case "tower":return m.puzzles.map(function(p,i){return '<p><b>Puzzle '+(i+1)+':</b> '+p.moves+' moves <span class="small">(fewest possible: '+p.optimal+')</span><br><span class="small">Completion time: '+Math.round(p.secs)+'s · Time before first move: '+p.firstMoveS+'s</span></p>';}).join("");
+  case "money":return tbl([["Sent","$"+m.sent],["Returned","$"+m.returned],["Fairness rating",m.fairness+" / 10"]]);
+  case "sharing":return tbl([["Gave","$"+m.gave],["Kept","$"+m.kept],["Fairness rating",m.fairness+" / 10"]]);
+  case "keypress":return tbl([["Hits",m.hits+" / "+m.trials],["Misses",m.misses],["False alarms",m.falseAlarms],["Premature responses",m.premature],["Median reaction time",m.medianRT+" ms"],["Mean reaction time",m.meanRT+" ms"]]);
+  case "easyhard":return tbl([["Rounds","6"],["Easy tasks chosen",m.easyChosen],["Hard tasks chosen",m.hardChosen],["Solved correctly",m.correct+" / 6"],["Hypothetical money earned","$"+m.earned]]);
+  case "digits":return tbl([["Longest sequence reversed",m.longestSpan+" digits"],["Sequences correct",m.totalCorrect],["Errors",m.errors]]);
+  case "stop":return tbl([["Withhold target",m.target],["Correct responses",m.hits+" / "+m.trials],["Missed responses",m.misses],["False alarms",m.falseAlarms],["Correct withholds",m.correctInhibitions],["Premature responses",m.premature],["Median reaction time",m.medianRT+" ms"],["Mean reaction time",m.meanRT+" ms"]]);
+  case "arrows":return tbl([["Rule used",m.rule],["Correct",m.correct+" / "+m.trials],["Accuracy",m.accuracy+"%"],["Median reaction time",m.medianRT+" ms"],["Mean reaction time",m.meanRT+" ms"],["Accuracy — matching trials",m.congruentAccuracy+"%"],["Accuracy — conflicting trials",m.incongruentAccuracy+"%"],["Premature responses",m.premature]]);
+  case "lengths":return tbl([["Rule used","tap the "+m.rule+" line"],["Correct",m.correct+" / "+m.trials],["Accuracy",m.accuracy+"%"],["Median reaction time",m.medianRT+" ms"],["Mean reaction time",m.meanRT+" ms"],["Hypothetical money earned","$"+m.earned.toFixed(2)]]);
+  case "cards":return tbl([["Cards picked","40"],["Final total","$"+m.finalTotal],["Picks — deck A / B / C / D",m.picksPerDeck.join(" / ")],["Decks that were better in the long run",m.goodDecks],["Better-deck picks — first 20",m.goodEarly+" / 20"],["Better-deck picks — last 20",m.goodLate+" / 20"]]);
+  case "faces":return tbl([["Correct",m.correct+" / "+m.trials],["Accuracy",m.accuracy+"%"]]);
+ }
+ return "";
+}
+function mechFeedbackHTML(){
+ var out=[];
+ var prem=0,miss=0;
+ ["keypress","stop","arrows"].forEach(function(k){if(S.metrics[k])prem+=S.metrics[k].premature||0;});
+ ["keypress","stop"].forEach(function(k){if(S.metrics[k])miss+=S.metrics[k].misses||0;});
+ if(prem>=3)out.push('<div class="tipbox">You made several <b>premature responses</b> ('+prem+'). On the real assessment, wait until the actual signal appears.</div>');
+ if(miss>=4)out.push('<div class="tipbox">You missed several target signals ('+miss+'). Make sure you are rested and distraction-free for the real assessment.</div>');
+ Object.keys(S.tutRetries).forEach(function(k){
+  if(S.tutRetries[k]>=3)out.push('<div class="tipbox">You needed several tries on the practice example for <b>'+GTITLES[k]+'</b>. Read every qualifier before starting the real game.</div>');
+ });
+ return out.join("");
+}
+function renderResults(rec,live){
+ setHeader("Practice results",100);
+ var intStatus=rec.interruptions===0?"<b>Uninterrupted</b>":"<b>Interrupted — "+rec.interruptions+" game(s) restarted</b>";
+ var games=rec.order||GKEYS;
+ var perGame=games.map(function(k){
+  var m=rec.metrics[k];
+  var t=rec.gameTimes&&rec.gameTimes[k]?'<p class="small">Game time: '+fmtT(rec.gameTimes[k])+'</p>':"";
+  return '<div class="card"><h3>'+GTITLES[k]+'</h3>'+gameMetricsHTML(k,m)+t+'<p class="small"><i>'+INVOLVED[k]+'</i></p></div>';
+ }).join("");
+ var mech=live?mechFeedbackHTML():"";
+ setApp('<div class="card"><h1>Practice results</h1>'
+ +'<p class="small">Objective practice metrics only — descriptive, not scores. This simulator does not reproduce Harver/Pymetrics scoring.</p>'
+ +'<div class="resultbox">Run: <b>'+rec.dateStr+'</b> · Total session time: <b>'+fmtT(rec.totalS)+'</b><br>'+intStatus+'</div>'
+ +mech+'</div>'
+ +perGame
+ +'<div class="card"><div class="readbox"><p class="rh">READ THE FULL INSTRUCTION — EVERY TIME</p>'
+ +'<p>The real assessment may use <b>different rules</b> than this simulator.</p>'
+ +'<p><b>Do not assume anything based on this practice.</b></p>'
+ +'<div class="exbox"><p style="margin:0">If the instruction says <span class="exred">RED</span> <span class="exsmall">circle</span>, <b>both</b> details matter.</p></div>'
+ +'<p>Watch carefully for <b>ONLY, EXCEPT, NOT, BEFORE, AFTER</b>, colors, shapes, capitalization and rule changes.</p></div></div>'
+ +'<div class="card"><h2>You are ready for the real assessment.</h2>'
+ +'<p>You have now experienced multiple styles of game-based tasks. You know what it feels like to switch rules, react under time pressure, inhibit responses, remember information and learn from uncertain feedback.</p>'
+ +'<p><b>For the real Blackstone assessment:</b></p><ul>'
+ +'<li>read every instruction slowly,</li><li>pay attention to every word,</li>'
+ +'<li>do not assume the real game follows these rules,</li><li>do not try to guess the desired personality,</li>'
+ +'<li>respond naturally,</li><li>stay consistent,</li><li>do it rested,</li>'
+ +'<li>eliminate interruptions,</li><li>finish it in one sitting.</li></ul>'
+ +'<p><b>There is no need to keep practicing repeatedly. Familiarity was the goal.</b></p></div>'
+ +'<div class="card"><details><summary>About these practice-game formats</summary>'
+ +'<p class="small">Many of these game types are loosely inspired by established cognitive/behavioral research tasks — for example, balloon risk tasks (Lejuez et al., 2002), Tower of London planning tasks (Shallice, 1982), flanker interference tasks (Eriksen &amp; Eriksen, 1974), card-deck learning tasks in the tradition of the Iowa Gambling Task (Bechara et al., 1994), digit-span memory tasks, and trust/dictator economic games (Berg, Dickhaut &amp; McCabe, 1995).</p>'
+ +'<p class="small">This simulator <b>does not reproduce validated psychometric instruments</b>, Harver/Pymetrics games, or any employer\'s scoring model. It exists only to remove the surprise factor.</p></details>'
+ +'<p class="small">Candidate data and retesting rules are governed by the assessment provider and employer. Follow the instructions in your Blackstone invitation.</p>'
+ +'<p class="small">🔒 Your practice results remain on this device. They are not sent to Blackstone, Harver/Pymetrics, ChatGPT or any employer.</p></div>'
+ +'<div class="card" style="text-align:center">'
+ +(live?'<button class="primary" id="b-copy">Copy results summary</button> ':"")
+ +'<button id="b-hist2">Past runs</button> '
+ +(live?'<button id="b-del">Delete all practice history</button> ':"")
+ +'<button class="primary" id="b-new">Start a new run</button>'
+ +'<p class="small" id="copied"></p></div>');
+ if(live){
+  on("b-copy","click",function(){copySummary(rec);});
+  on("b-del","click",confirmDelete);
+ }
+ on("b-hist2","click",historyScreen);
+ on("b-new","click",startScreen);
+}
+function showResults(){
+ var totalS=(Date.now()-S.t0)/1000;
+ var now=new Date();
+ var dateStr=now.toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric"});
+ var rec={d:now.toISOString().slice(0,10),dateStr:dateStr,seed:S.seed,order:S.order.slice(),totalS:Math.round(totalS),
+  interruptions:S.interruptions,interruptedKeys:S.interruptedKeys.slice(),metrics:S.metrics,gameTimes:{},tutRetries:S.tutRetries};
+ GKEYS.forEach(function(k){if(S.times[k]&&S.times[k].end)rec.gameTimes[k]=Math.round((S.times[k].end-S.times[k].start)/1000);});
+ var runs=getRuns();runs.push(rec);
+ try{localStorage.setItem("bgp_runs2",JSON.stringify(runs.slice(-20)));}catch(e){}
+ renderResults(rec,true);
+ window._lastRec=rec;
+}
+function summaryText(rec){
+ var L=["Behavioral Games Practice — objective practice summary ("+rec.dateStr+")","Total session time: "+fmtT(rec.totalS),(rec.interruptions===0?"Uninterrupted":"Interrupted — "+rec.interruptions+" game(s) restarted"),""];
+ (rec.order||GKEYS).forEach(function(k){
+  var m=rec.metrics[k];if(!m)return;
+  L.push("== "+GTITLES[k]+" ==");
+  var tmp=document.createElement("div");tmp.innerHTML=gameMetricsHTML(k,m);
+  var rows=tmp.querySelectorAll("tr");
+  for(var i=0;i<rows.length;i++){var tds=rows[i].querySelectorAll("td");L.push(tds[0].textContent+": "+tds[1].textContent);}
+  var ps=tmp.querySelectorAll("p");
+  for(var j=0;j<ps.length;j++){var t=ps[j].textContent.trim();if(t)L.push(t);}
+  L.push("");
+ });
+ L.push("Familiarization only — not Harver/Pymetrics scoring.");
+ return L.join("\n");
+}
+function copySummary(rec){
+ var txt=summaryText(rec);
+ function done(){var c=document.getElementById("copied");if(c)c.textContent="Copied — you can paste it anywhere.";}
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,function(){fallback();});}
+ else fallback();
+ function fallback(){
+  setApp('<div class="card"><h2>Copy your results</h2><textarea class="copyarea" id="ta">'+esc(txt)+'</textarea><p class="small">Select all and copy manually.</p><button class="primary" id="b-back">Back to results</button></div>');
+  var ta=document.getElementById("ta");ta.focus();ta.select();
+  on("b-back","click",function(){renderResults(window._lastRec,true);});
+ }
+}
+/* ================= history ================= */
+function historyScreen(){
+ setHeader("Past runs",100);
+ var runs=getRuns();
+ if(!runs.length){setApp('<div class="card"><h2>Past runs</h2><p>No practice runs saved on this device yet.</p><button class="primary" id="b-back">Back</button></div>');on("b-back","click",startScreen);return;}
+ var items=runs.map(function(r,i){
+  var prem=0;Object.keys(r.metrics||{}).forEach(function(k){prem+=((r.metrics[k]||{}).premature||0);});
+  var mech=prem>0?'<br><span class="small">Premature responses: '+prem+'</span>':"";
+  return '<div class="resultbox"><b>Run — '+esc(r.dateStr||r.d)+'</b><br><span class="small">'+fmtT(r.totalS||0)+' total · '+(r.interruptions===0?"Uninterrupted":"Interrupted — "+r.interruptions+" restarted")+mech+'</span><br><button id="v'+i+'">View details</button></div>';
+ }).reverse().join("");
+ setApp('<div class="card"><h2>Past runs</h2><p class="small">Stored on this device only. No trait comparisons — just when you ran and basic mechanical notes.</p>'
+ +items+'<div style="margin-top:12px"><button class="primary" id="b-back">Back</button> <button id="b-del2">Delete all practice history</button></div></div>');
+ runs.forEach(function(r,i){on("v"+i,"click",function(){renderResults(r,false);});});
+ on("b-back","click",startScreen);
+ on("b-del2","click",confirmDelete);
+}
+function confirmDelete(){
+ setApp('<div class="overlay"><div class="card"><h2>Delete all practice history?</h2><p>This clears every saved run on this device. This cannot be undone.</p><button id="b-yes" style="border-color:#dc2626;color:#dc2626">Yes, delete everything</button> <button class="primary" id="b-no">Cancel</button></div></div>');
+ on("b-yes","click",function(){try{localStorage.removeItem("bgp_runs2");}catch(e){}startScreen();});
+ on("b-no","click",function(){if(window._lastRec)renderResults(window._lastRec,true);else startScreen();});
+}
+/* ================= init ================= */
+window.BGP_DEBUG={state:function(){return S;},showResults:showResults,newRun:newRun,renderResults:renderResults,getRuns:getRuns,intro:function(){showIntro();}};
+startScreen();
 </script>
 </body>
 </html>
+
+
+
+
+
+
