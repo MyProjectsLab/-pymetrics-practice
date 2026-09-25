@@ -118,7 +118,7 @@ function pickTemplate(){
  var KEY="bgp_templates_used",used=[];
  try{used=JSON.parse(localStorage.getItem(KEY)||"[]");}catch(e){used=[];}
  used=used.filter(function(i){return i>=0&&i<ORDER_TEMPLATES.length;});
- if(used.length>=ORDER_TEMPLATES.length)used=[]; /* full cycle done -> reset, new random order */
+ if(used.length>=ORDER_TEMPLATES.length){used=[];mathUsedClear();} /* full cycle done -> reset, new random order, fresh question history */
  var avail=[];
  for(var i=0;i<ORDER_TEMPLATES.length;i++)if(used.indexOf(i)<0)avail.push(i);
  var ti=avail[Math.floor(Math.random()*avail.length)];
@@ -533,8 +533,8 @@ cards:[
 '<p>Four decks: <b>A · B · C · D</b>. You start with <b>$2,000</b> (hypothetical).</p><p>Pick <b>40 cards</b>, one at a time, from any deck. Each card wins or loses money — you see the result immediately. Some decks are better than others <b>in the long run</b>; you have to figure out which.</p><p>Goal: finish with as much as possible.</p>',
 '<p>There are four decks — <b>A · B · C · D</b> — and you begin with <b>$2,000</b> (hypothetical).</p><p>Draw <b>40 cards</b> total, one per turn, from whichever deck you like. Every card gains or loses money, shown at once. <b>Over many draws</b> some decks pay better than others; discover which.</p><p>Goal: end with the largest total you can.</p>'],
 faces:[
-'<p>You will see <b>12 abstract drawn faces</b> (not real people). For each one, choose the <b>expression</b> it shows:</p><p>happy · sad · angry · surprised · fearful · neutral</p><p>Go with your first reading.</p>',
-'<p><b>12 abstract drawn faces</b> (not real people) appear one at a time. Label the <b>expression</b> on each:</p><p>neutral · fearful · surprised · angry · sad · happy</p><p>Trust your first reading.</p>']
+'<p>You will see <b>12 abstract drawn faces</b> (not real people). For each one, choose the <b>expression</b> it shows:</p><p>happy · sad · angry · surprised · fearful · neutral</p><p>Choose the expression you think is shown.</p>',
+'<p><b>12 abstract drawn faces</b> (not real people) appear one at a time. Label the <b>expression</b> on each:</p><p>neutral · fearful · surprised · angry · sad · happy</p><p>Choose the expression you think is shown.</p>']
 };
 /* ================= Game 5 — Keypress ================= */
 INTRO.keypress=function(){
@@ -622,25 +622,37 @@ PLAY.keypress=function(){
 };
 
 /* ================= Game 6 — Easy or Hard ================= */
+var MATH_USED_KEY="bgp_math_used";
+function mathUsedGet(){var o={};try{var a=JSON.parse(localStorage.getItem(MATH_USED_KEY)||"[]");for(var i=0;i<a.length;i++)o[a[i]]=1;}catch(e){}return o;}
+function mathUsedAdd(sig){try{var a=JSON.parse(localStorage.getItem(MATH_USED_KEY)||"[]");if(a.indexOf(sig)<0){a.push(sig);localStorage.setItem(MATH_USED_KEY,JSON.stringify(a));}}catch(e){}}
+function mathUsedClear(){try{localStorage.removeItem(MATH_USED_KEY);}catch(e){}}
+/* mathBank rejects any question already shown in the current 10-run cycle */
 function mathBank(rng){
  var easy=[],hard=[];
- function add(arr,q,a){arr.push({q:q,a:a});}
- for(var i=0;i<6;i++){
-  var t=ri(rng,0,3);
-  if(t===0){var a=ri(rng,6,60),b=ri(rng,6,60);add(easy,a+" + "+b+" = ?",a+b);}
-  else if(t===1){var c=ri(rng,12,99),d=ri(rng,5,c-1);add(easy,c+" − "+d+" = ?",c-d);}
-  else if(t===2){var e=ri(rng,2,9),f=ri(rng,3,9);add(easy,e+" × "+f+" = ?",e*f);}
-  else{var g=ri(rng,4,40)*2;add(easy,"Half of "+g+" = ?",g/2);}
+ var used=mathUsedGet();
+ function bankAdd(arr,gen){
+  for(var guard=0;guard<300;guard++){
+   var qa=gen(),sig=qa.q+" = "+qa.a;
+   if(!used[sig]){used[sig]=1;mathUsedAdd(sig);arr.push(qa);return;}
+  }
+  arr.push(gen()); /* practically unreachable: question space is far larger than a cycle */
  }
- for(var j=0;j<6;j++){
-  var u=ri(rng,0,5);
-  if(u===0){var h=ri(rng,12,19),k=ri(rng,3,9);add(hard,h+" × "+k+" = ?",h*k);}
-  else if(u===1){var dv=pickR(rng,[3,4,6,8,12]),qq=ri(rng,4,14),cc=ri(rng,5,40);add(hard,(dv*qq)+" ÷ "+dv+" + "+cc+" = ?",qq+cc);}
-  else if(u===2){var p=pickR(rng,[10,15,20,25,50]),nn=pickR(rng,[2,4,5,8,10])*20;add(hard,p+"% of "+nn+" = ?",Math.round(p/100*nn));}
-  else if(u===3){var s1=ri(rng,3,9),s2=ri(rng,3,9);add(hard,s1+"² + "+s2+"² = ?",s1*s1+s2*s2);}
-  else if(u===4){var fr=pickR(rng,[[1,2],[1,4],[3,4],[2,3]]),bb=pickR(rng,[2,3,4,5,6])*fr[1];add(hard,fr[0]+"/"+fr[1]+" of "+bb+" = ?",Math.round(fr[0]/fr[1]*bb));}
-  else{var m1=ri(rng,4,20),m2=ri(rng,2,9),m3=ri(rng,2,9);add(hard,m1+" + "+m2+" × "+m3+" = ?",m1+m2*m3);}
- }
+ var easyGens=[
+  function(){var a=ri(rng,6,60),b=ri(rng,6,60);return{q:a+" + "+b+" = ?",a:a+b};},
+  function(){var c=ri(rng,12,99),d=ri(rng,5,c-1);return{q:c+" − "+d+" = ?",a:c-d};},
+  function(){var e=ri(rng,2,9),f=ri(rng,3,9);return{q:e+" × "+f+" = ?",a:e*f};},
+  function(){var g=ri(rng,4,40)*2;return{q:"Half of "+g+" = ?",a:g/2};}
+ ];
+ var hardGens=[
+  function(){var h=ri(rng,12,19),k=ri(rng,3,9);return{q:h+" × "+k+" = ?",a:h*k};},
+  function(){var dv=pickR(rng,[3,4,6,8,12]),qq=ri(rng,4,14),cc=ri(rng,5,40);return{q:(dv*qq)+" ÷ "+dv+" + "+cc+" = ?",a:qq+cc};},
+  function(){var p=pickR(rng,[10,15,20,25,50]),nn=pickR(rng,[2,4,5,8,10])*20;return{q:p+"% of "+nn+" = ?",a:Math.round(p/100*nn)};},
+  function(){var s1=ri(rng,3,9),s2=ri(rng,3,9);return{q:s1+"² + "+s2+"² = ?",a:s1*s1+s2*s2};},
+  function(){var fr=pickR(rng,[[1,2],[1,4],[3,4],[2,3]]),bb=pickR(rng,[2,3,4,5,6])*fr[1];return{q:fr[0]+"/"+fr[1]+" of "+bb+" = ?",a:Math.round(fr[0]/fr[1]*bb)};},
+  function(){var m1=ri(rng,4,20),m2=ri(rng,2,9),m3=ri(rng,2,9);return{q:m1+" + "+m2+" × "+m3+" = ?",a:m1+m2*m3};}
+ ];
+ for(var i=0;i<6;i++)bankAdd(easy,easyGens[ri(rng,0,3)]);
+ for(var j=0;j<6;j++)bankAdd(hard,hardGens[ri(rng,0,5)]);
  return{easy:shuffleR(rng,easy),hard:shuffleR(rng,hard)};
 }
 INTRO.easyhard=function(){
