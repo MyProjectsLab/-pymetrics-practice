@@ -1258,7 +1258,7 @@ function renderResults(rec,live){
  +'<div class="card" style="text-align:center">'
  +(live?'<button class="primary" id="b-copy">Copy results summary</button> ':"")
  +'<button id="b-hist2">Past runs</button> '
- +(live?'<button id="b-del">Delete all practice history</button> ':"")
+ +(live?'<button id="b-del">Delete saved results</button> ':"")
  +'<button class="primary" id="b-new">Start a new run</button>'
  +'<p class="small" id="copied"></p></div>');
  if(live){
@@ -1317,13 +1317,13 @@ function historyScreen(){
   return '<div class="resultbox"><b>Run — '+esc(r.dateStr||r.d)+'</b><br><span class="small">'+fmtT(r.totalS||0)+' total · '+(r.interruptions===0?"Uninterrupted":"Interrupted — "+r.interruptions+" restarted")+mech+'</span><br><button id="v'+i+'">View details</button></div>';
  }).reverse().join("");
  setApp('<div class="card"><h2>Past runs</h2><p class="small">Stored on this device only. No trait comparisons — just when you ran and basic mechanical notes.</p>'
- +items+'<div style="margin-top:12px"><button class="primary" id="b-back">Back</button> <button id="b-del2">Delete all practice history</button></div></div>');
+ +items+'<div style="margin-top:12px"><button class="primary" id="b-back">Back</button> <button id="b-del2">Delete saved results</button></div></div>');
  runs.forEach(function(r,i){on("v"+i,"click",function(){renderResults(r,false);});});
  on("b-back","click",startScreen);
  on("b-del2","click",confirmDelete);
 }
 function confirmDelete(){
- setApp('<div class="overlay"><div class="card"><h2>Delete all practice history?</h2><p>This clears every saved run on this device. This cannot be undone.</p><button id="b-yes" style="border-color:#dc2626;color:#dc2626">Yes, delete everything</button> <button class="primary" id="b-no">Cancel</button></div></div>');
+ setApp('<div class="overlay"><div class="card"><h2>Delete saved results?</h2><p>This removes completed run results stored on this device. It does not reset the anti-repeat question/test rotation.</p><button id="b-yes" style="border-color:#dc2626;color:#dc2626">Yes, delete everything</button> <button class="primary" id="b-no">Cancel</button></div></div>');
  on("b-yes","click",function(){try{localStorage.removeItem("bgp_runs2");}catch(e){}startScreen();});
  on("b-no","click",function(){if(window._lastRec)renderResults(window._lastRec,true);else startScreen();});
 }
