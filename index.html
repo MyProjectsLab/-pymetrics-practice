@@ -73,7 +73,7 @@ const CATS={
  learning:{name:'Learning',work:'adapting quickly from experience'},
  risk:{name:'Risk Tolerance',work:'taking smart risks under uncertainty'}
 };
-const CATSRC={attention:'Games 5 · 7 · 8',decision:'Games 2 · 6 · 10',effort:'Games 5 · 6',emotion:'Game 12',fairness:'Games 3 · 4',focus:'Games 7 · 9',generosity:'Games 3 · 4',learning:'Game 11',risk:'Games 1 · 11'};
+const CATSRC={attention:[5,7,8],decision:[2,6,10],effort:[5,6],emotion:[12],fairness:[3,4],focus:[7,9],generosity:[3,4],learning:[11],risk:[1,11]};
 const GNAMES={1:'Balloons',2:'Tower',3:'Money Exchange',4:'Sharing',5:'Keypress',6:'Easy or Hard',7:'Digits',8:'Stop',9:'Arrows',10:'Lengths',11:'Cards',12:'Faces'};
 const EXPECT={1:180,2:150,3:60,4:45,5:90,6:120,7:150,8:90,9:180,10:120,11:150,12:240};
 /* Theoretical industry profiles — our inference for practice framing, NOT Pymetrics' models. */
@@ -568,7 +568,7 @@ function summary(){
  const fit=Math.round(num/den);
  const fitLabel=fit>=65?'strong theoretical fit':(fit>=45?'moderate theoretical fit':'weaker theoretical fit');
 
- const catRow=k=>`<div class="resultbox"><b>${CATS[k].name}</b> — <span style="color:${bandCol(S[k])}"><b>${band(S[k])}</b></span><br><span class="small">${CATS[k].work}.</span><br><span class="small">Measured in: ${CATSRC[k]}</span><div class="traitbar"><div style="width:${S[k]}%;background:${bandCol(S[k])}"></div></div></div>`;
+ const catRow=k=>`<div class="resultbox"><b>${CATS[k].name}</b> — <span style="color:${bandCol(S[k])}"><b>${band(S[k])}</b></span><br><span class="small">${CATS[k].work}.</span><br><span class="small">Measured in: ${CATSRC[k].map(g=>'Game '+g+' '+GNAMES[g]).join(' · ')}</span><div class="traitbar"><div style="width:${S[k]}%;background:${bandCol(S[k])}"></div></div></div>`;
 
  /* consistency coach */
  const flags=[];
