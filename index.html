@@ -255,9 +255,9 @@ function newRun(){
 }
 /* ================= Game 1 — Balloons ================= */
 INTRO.balloons=function(){
+ var ph=pickR(gameRng("balloons"),PHR.balloons);
  setApp('<div class="card"><h2>Balloons</h2>'+readReminder(false)
- +'<p>You will see <b>39 balloons</b>, one at a time. Each <b>PUMP</b> adds <b>$0.05</b> (hypothetical money) to the balloon. The balloon can <b>pop at any pump</b> — if it pops, you lose that balloon\'s money.</p>'
- +'<p>Press <b>BANK</b> at any time to keep the balloon\'s money and move to the next balloon. Balloons come in <b>three colors</b>.</p>'
+ +ph
  +'<button class="primary big" id="b-tut">Begin practice example</button></div>');
  on("b-tut","click",showTutorial);
 };
@@ -357,10 +357,9 @@ function towerGenBank(rng){
  function enc2(s){return s.join("");}
 }
 INTRO.tower=function(){
+ var ph=pickR(gameRng("tower"),PHR.tower);
  setApp('<div class="card"><h2>Planning</h2>'+readReminder(false)
- +'<p>Three pegs hold a stack of disks. <b>Move the disks so they match the target picture.</b></p>'
- +'<p>Rules: move <b>one disk at a time</b>; a <b>larger disk can never go on top of a smaller disk</b>.</p>'
- +'<p>Tap a peg to pick up its top disk, then tap another peg to place it.</p>'
+ +ph
  +'<button class="primary big" id="b-tut">Begin practice example</button></div>');
  on("b-tut","click",showTutorial);
 };
@@ -426,8 +425,9 @@ PLAY.tower=function(){
 };
 /* ================= Game 3 — Money Exchange ================= */
 INTRO.money=function(){
+ var ph=pickR(gameRng("money"),PHR.money);
  setApp('<div class="card"><h2>Money Exchange</h2>'+readReminder(false)
- +'<p>You have <b>$10</b>. Your partner has <b>$0</b>.</p><p>Decide how much of your $10 to <b>send</b> to your partner. Whatever you send is <b>tripled</b>, and your partner then decides how much to return to you. Afterwards you will rate the fairness of the exchange from 1 to 10.</p>'
+ +ph
  +'<button class="primary big" id="b-tut">Begin practice example</button></div>');
  on("b-tut","click",showTutorial);
 };
@@ -469,8 +469,9 @@ PLAY.money=function(){
 
 /* ================= Game 4 — Sharing ================= */
 INTRO.sharing=function(){
+ var ph=pickR(gameRng("sharing"),PHR.sharing);
  setApp('<div class="card"><h2>Sharing</h2>'+readReminder(false)
- +'<p>You receive an extra <b>$5</b>. Decide how much to <b>give</b> to your partner and how much to <b>keep</b>. Afterwards you will rate the fairness of the split from 1 to 10.</p>'
+ +ph
  +'<button class="primary big" id="b-tut">Begin practice example</button></div>');
  on("b-tut","click",showTutorial);
 };
@@ -503,18 +504,52 @@ function sharingFlow(isTut,done){
 TUT.sharing=function(done){sharingFlow(true,function(){done();});};
 PLAY.sharing=function(){sharingFlow(false,function(gave,fair){finishGame("sharing",{gave:gave,kept:5-gave,fairness:fair});});};
 
+/* equivalent signal-word pairs for Keypress: same go/no-go rule, different words.
+   Chosen in INTRO, taught by the tutorial, used in scored practice. */
+var KPAIRS=[{go:"START",nogo:"STOP"},{go:"PRESS",nogo:"HOLD"},{go:"MOVE",nogo:"STAY"}];
+/* equivalent instruction phrasings: identical rules, different words — forces re-reading.
+   The tutorial always follows the intro, so every version is taught before scored practice. */
+var PHR={
+balloons:[
+'<p>You will see <b>39 balloons</b>, one at a time. Each <b>PUMP</b> adds <b>$0.05</b> (hypothetical money) to the balloon. The balloon can <b>pop at any pump</b> — if it pops, you lose that balloon\'s money.</p><p>Press <b>BANK</b> at any time to keep the balloon\'s money and move to the next balloon. Balloons come in <b>three colors</b>.</p>',
+'<p><b>39 balloons</b> appear one by one. Every <b>PUMP</b> adds <b>$0.05</b> (hypothetical) to the current balloon — but <b>any pump can pop it</b>, and a popped balloon pays nothing.</p><p>You may press <b>BANK</b> whenever you like to secure the balloon\'s money and move on. There are <b>three balloon colors</b>.</p>',
+'<p>One at a time, you get <b>39 balloons</b>. <b>PUMP</b> to grow the balloon\'s value by <b>$0.05</b> (hypothetical) per pump. The balloon may <b>burst on any pump</b>; a burst balloon is worth $0.</p><p><b>BANK</b> at any moment to lock in the money and advance to the next balloon. Balloons come in <b>three colors</b>.</p>'],
+tower:[
+'<p>Three pegs hold a stack of disks. <b>Move the disks so they match the target picture.</b></p><p>Rules: move <b>one disk at a time</b>; a <b>larger disk can never go on top of a smaller disk</b>.</p><p>Tap a peg to pick up its top disk, then tap another peg to place it.</p>',
+'<p>You see three pegs with disks, plus a <b>target arrangement</b> to reproduce.</p><p>Rules: lift <b>only one disk at a time</b>; <b>never place a larger disk onto a smaller one</b>.</p><p>Tap a peg to lift its top disk, then tap the peg where it should go.</p>'],
+money:[
+'<p>You have <b>$10</b>. Your partner has <b>$0</b>.</p><p>Decide how much of your $10 to <b>send</b> to your partner. Whatever you send is <b>tripled</b>, and your partner then decides how much to return to you. Afterwards you will rate the fairness of the exchange from 1 to 10.</p>',
+'<p>You start with <b>$10</b>; your partner starts with <b>$0</b>.</p><p>Choose an amount of your $10 to <b>send</b>. The sent amount is <b>tripled</b> before your partner receives it, then your partner chooses how much to send back. Afterwards, rate the fairness of the whole exchange from 1 to 10.</p>'],
+sharing:[
+'<p>You receive an extra <b>$5</b>. Decide how much to <b>give</b> to your partner and how much to <b>keep</b>. Afterwards you will rate the fairness of the split from 1 to 10.</p>',
+'<p>An extra <b>$5</b> is yours to divide. Choose how much to <b>give</b> your partner; you <b>keep</b> the rest. Afterwards, rate the fairness of the resulting split from 1 to 10.</p>'],
+easyhard:[
+'<p>6 rounds. Each round, <b>choose</b>:</p><p><b>EASY</b> task → <b>$1</b> (hypothetical) if you solve it<br><b>HARD</b> task → <b>$4</b> (hypothetical) if you solve it</p><p>Then you must <b>actually solve</b> the task you chose. You get 2 attempts per question.</p>',
+'<p>There are <b>6 rounds</b>. Every round begins with a <b>choice</b>:</p><p><b>EASY</b> task → <b>$1</b> (hypothetical) for solving it<br><b>HARD</b> task → <b>$4</b> (hypothetical) for solving it</p><p>Whichever you pick, you must then <b>solve it for real</b> — 2 attempts per question.</p>'],
+digits:[
+'<p>Digits flash <b>one at a time</b>. Watch carefully, then enter them <b>BACKWARD</b> — in <b>reverse order</b>.</p><p>Example: you see <b>4 – 9 – 2</b> → you enter <b>2 – 9 – 4</b>.</p><p>Sequences get longer as you succeed. <b>No notes.</b></p>',
+'<p>Watch: digits appear <b>one by one</b>. When they finish, type them <b>BACKWARD</b> — <b>last digit first</b>.</p><p>Example: shown <b>4 – 9 – 2</b> → type <b>2 – 9 – 4</b>.</p><p>Each success makes the next sequence longer. <b>No notes.</b></p>'],
+cards:[
+'<p>Four decks: <b>A · B · C · D</b>. You start with <b>$2,000</b> (hypothetical).</p><p>Pick <b>40 cards</b>, one at a time, from any deck. Each card wins or loses money — you see the result immediately. Some decks are better than others <b>in the long run</b>; you have to figure out which.</p><p>Goal: finish with as much as possible.</p>',
+'<p>There are four decks — <b>A · B · C · D</b> — and you begin with <b>$2,000</b> (hypothetical).</p><p>Draw <b>40 cards</b> total, one per turn, from whichever deck you like. Every card gains or loses money, shown at once. <b>Over many draws</b> some decks pay better than others; discover which.</p><p>Goal: end with the largest total you can.</p>'],
+faces:[
+'<p>You will see <b>12 abstract drawn faces</b> (not real people). For each one, choose the <b>expression</b> it shows:</p><p>happy · sad · angry · surprised · fearful · neutral</p><p>Go with your first reading.</p>',
+'<p><b>12 abstract drawn faces</b> (not real people) appear one at a time. Label the <b>expression</b> on each:</p><p>neutral · fearful · surprised · angry · sad · happy</p><p>Trust your first reading.</p>']
+};
 /* ================= Game 5 — Keypress ================= */
 INTRO.keypress=function(){
+ var pair=pickR(gameRng("keypress"),KPAIRS);
+ S._kpair=pair;
  setApp('<div class="card"><h2>Keypress</h2>'+readReminder(false)
  +'<p>First a countdown: <b>3 · 2 · 1 · GO</b>. Then a word appears in the center.</p>'
- +'<p>Respond <b>ONLY</b> when you see <b>START</b> — tap the big <b>TAP</b> button (or press any key) as fast as you can.</p>'
- +'<p>Do <b>NOT</b> respond when you see <b>STOP</b>.</p>'
+ +'<p>Respond <b>ONLY</b> when you see <b>'+pair.go+'</b> — tap the big <b>TAP</b> button (or press any key) as fast as you can.</p>'
+ +'<p>Do <b>NOT</b> respond when you see <b>'+pair.nogo+'</b>.</p>'
  +'<p>The pause before each word varies, so you cannot predict it.</p>'
  +'<button class="primary big" id="b-tut">Begin practice example</button></div>');
  on("b-tut","click",showTutorial);
 };
-function keypressTrials(seq,opts,done){
- /* generic runner: seq of "START"/"STOP"; opts.tutorial bool */
+function keypressTrials(seq,pair,opts,done){
+ /* generic runner: seq of "go"/"nogo"; opts.tutorial bool */
  var i=0,hits=0,misses=0,falseAlarms=0,correctRej=0,premature=0,rts=[];
  var stimOn=false,responded=false,stimT0=0,cd=false;
  var rid=S.runId;
@@ -524,7 +559,7 @@ function keypressTrials(seq,opts,done){
   +'<div class="stim" id="stim"><span style="font-size:56px;color:#9ca3af">+</span></div>'
   +'<p id="fb" style="text-align:center;min-height:28px;font-weight:700">'+(msg||"")+'</p>'
   +'<div style="text-align:center"><button class="tapbtn" id="b-tap">TAP</button></div>'
-  +'<p class="small" style="text-align:center">Tap the button or press any key — but ONLY for START.</p></div>');
+  +'<p class="small" style="text-align:center">Tap the button or press any key — but ONLY for '+pair.go+'.</p></div>');
   on("b-tap","click",respond);
  }
  function trial(){
@@ -539,12 +574,12 @@ function keypressTrials(seq,opts,done){
    if(checkInterruptResume())return;
    stimOn=true;stimT0=performance.now();
    var st=document.getElementById("stim");
-   if(st)st.innerHTML='<span style="font-size:64px;color:'+(seq[i]==="START"?"#16a34a":"#dc2626")+'">'+seq[i]+'</span>';
+   if(st)st.innerHTML='<span style="font-size:64px;color:'+(seq[i]==="go"?"#16a34a":"#dc2626")+'">'+(seq[i]==="go"?pair.go:pair.nogo)+'</span>';
    setTimeout(function(){
     if(!alive())return;
     if(stimOn&&!responded){
      stimOn=false;
-     if(seq[i]==="START"){misses++;flash("Missed");}
+     if(seq[i]==="go"){misses++;flash("Missed");}
      else{correctRej++;flash("Correct — withheld");}
     }
    },1500);
@@ -556,8 +591,8 @@ function keypressTrials(seq,opts,done){
   if(!stimOn){premature++;var f=document.getElementById("fb");if(f){f.textContent="Too early — wait for the word.";f.style.color="#dc2626";setTimeout(function(){if(f){f.textContent="";f.style.color="";}},700);}return;}
   responded=true;stimOn=false;
   var rt=performance.now()-stimT0;
-  if(seq[i]==="START"){hits++;rts.push(rt);flash("Correct");}
-  else{falseAlarms++;flash("Incorrect — that was STOP");}
+  if(seq[i]==="go"){hits++;rts.push(rt);flash("Correct");}
+  else{falseAlarms++;flash("Incorrect — that was "+pair.nogo);}
  }
  function keyH(e){respond();}
  document.addEventListener("keydown",keyH);
@@ -567,19 +602,21 @@ function keypressTrials(seq,opts,done){
  trial();
 }
 TUT.keypress=function(done){
- var seq=["START","STOP","START"];
- keypressTrials(seq,{tutorial:true},function(res){
+ var pair=S._kpair;
+ var seq=["go","nogo","go"];
+ keypressTrials(seq,pair,{tutorial:true},function(res){
   if(res.hits===2&&res.falseAlarms===0&&res.premature===0){done();}
-  else{tutRetry("keypress");setApp('<div class="card"><h2>Practice example — this does not count</h2><div class="warnbox">Not quite. Remember: respond <b>ONLY</b> to <b>START</b>. Never respond to <b>STOP</b>, and never tap before the word appears.</div><button class="primary big" id="b-re">Try the example again</button></div>');on("b-re","click",function(){TUT.keypress(done);});}
+  else{tutRetry("keypress");setApp('<div class="card"><h2>Practice example — this does not count</h2><div class="warnbox">Not quite. Remember: respond <b>ONLY</b> to <b>'+pair.go+'</b>. Never respond to <b>'+pair.nogo+'</b>, and never tap before the word appears.</div><button class="primary big" id="b-re">Try the example again</button></div>');on("b-re","click",function(){TUT.keypress(done);});}
  });
 };
 PLAY.keypress=function(){
+ var pair=S._kpair;
  countdownThen(function(){
   var rng=gameRng("keypress");
-  var seq=[];for(var i=0;i<10;i++){seq.push("START");seq.push("STOP");}
+  var seq=[];for(var i=0;i<10;i++){seq.push("go");seq.push("nogo");}
   seq=shuffleR(rng,seq);
-  keypressTrials(seq,{tutorial:false},function(res){
-   finishGame("keypress",{trials:20,hits:res.hits,misses:res.misses,falseAlarms:res.falseAlarms,premature:res.premature,medianRT:Math.round(median(res.rts)),meanRT:Math.round(mean(res.rts))});
+  keypressTrials(seq,pair,{tutorial:false},function(res){
+   finishGame("keypress",{trials:20,signals:pair.go+"/"+pair.nogo,hits:res.hits,misses:res.misses,falseAlarms:res.falseAlarms,premature:res.premature,medianRT:Math.round(median(res.rts)),meanRT:Math.round(mean(res.rts))});
   });
  });
 };
@@ -607,9 +644,9 @@ function mathBank(rng){
  return{easy:shuffleR(rng,easy),hard:shuffleR(rng,hard)};
 }
 INTRO.easyhard=function(){
+ var ph=pickR(gameRng("easyhard"),PHR.easyhard);
  setApp('<div class="card"><h2>Easy or Hard</h2>'+readReminder(false)
- +'<p>6 rounds. Each round, <b>choose</b>:</p><p><b>EASY</b> task → <b>$1</b> (hypothetical) if you solve it<br><b>HARD</b> task → <b>$4</b> (hypothetical) if you solve it</p>'
- +'<p>Then you must <b>actually solve</b> the task you chose. You get 2 attempts per question.</p>'
+ +ph
  +'<button class="primary big" id="b-tut">Begin practice example</button></div>');
  on("b-tut","click",showTutorial);
 };
@@ -646,9 +683,11 @@ PLAY.easyhard=function(){
  var ei=0,hi=0,round=0,results=[],earned=0;
  function choose(){
   if(round>=6){finishGame("easyhard",{rounds:6,easyChosen:results.filter(function(r){return r.choice==="easy";}).length,hardChosen:results.filter(function(r){return r.choice==="hard";}).length,correct:results.filter(function(r){return r.correct;}).length,earned:earned,detail:results.map(function(r){return r.choice+":"+(r.correct?"correct":"wrong");}).join(", ")});return;}
+  var eB='<button class="big" id="b-e">EASY<br><span class="small">$1 if solved</span></button>';
+  var hB='<button class="big" id="b-h">HARD<br><span class="small">$4 if solved</span></button>';
+  var btns=rng()<0.5?eB+' '+hB:hB+' '+eB; /* EASY/HARD left-right randomized: no intrinsic spatial meaning */
   setApp('<div class="card"><h2>Round '+(round+1)+' of 6</h2><p>Choose your task:</p>'
-  +'<div style="text-align:center"><button class="big" id="b-e">EASY<br><span class="small">$1 if solved</span></button> '
-  +'<button class="big" id="b-h">HARD<br><span class="small">$4 if solved</span></button></div></div>');
+  +'<div style="text-align:center">'+btns+'</div></div>');
   on("b-e","click",function(){doQ("easy",bank.easy[ei++],1);});
   on("b-h","click",function(){doQ("hard",bank.hard[hi++],4);});
  }
@@ -687,10 +726,9 @@ function digitSeq(rng,len){
  var s2=[];for(var m=0;m<len;m++)s2.push(ri(rng,0,9));return s2;
 }
 INTRO.digits=function(){
+ var ph=pickR(gameRng("digits"),PHR.digits);
  setApp('<div class="card"><h2>Digit Memory</h2>'+readReminder(false)
- +'<p>Digits flash <b>one at a time</b>. Watch carefully, then enter them <b>BACKWARD</b> — in <b>reverse order</b>.</p>'
- +'<p>Example: you see <b>4 – 9 – 2</b> → you enter <b>2 – 9 – 4</b>.</p>'
- +'<p>Sequences get longer as you succeed. <b>No notes.</b></p>'
+ +ph
  +'<button class="primary big" id="b-tut">Begin practice example</button></div>');
  on("b-tut","click",showTutorial);
 };
@@ -993,10 +1031,9 @@ PLAY.lengths=function(){
 TIMED.keypress=true;TIMED.stop=true;TIMED.arrows=true;TIMED.digits=true;TIMED.lengths=true;
 /* ================= Game 11 — Card Decks ================= */
 INTRO.cards=function(){
+ var ph=pickR(gameRng("cards"),PHR.cards);
  setApp('<div class="card"><h2>Card Decks</h2>'+readReminder(false)
- +'<p>Four decks: <b>A · B · C · D</b>. You start with <b>$2,000</b> (hypothetical).</p>'
- +'<p>Pick <b>40 cards</b>, one at a time, from any deck. Each card wins or loses money — you see the result immediately. Some decks are better than others <b>in the long run</b>; you have to figure out which.</p>'
- +'<p>Goal: finish with as much as possible.</p>'
+ +ph
  +'<button class="primary big" id="b-tut">Begin practice example</button></div>');
  on("b-tut","click",showTutorial);
 };
@@ -1050,10 +1087,9 @@ PLAY.cards=function(){
 /* ================= Game 12 — Faces ================= */
 var FEMOTIONS=["happy","sad","angry","surprised","fearful","neutral"];
 INTRO.faces=function(){
+ var ph=pickR(gameRng("faces"),PHR.faces);
  setApp('<div class="card"><h2>Faces</h2>'+readReminder(false)
- +'<p>You will see <b>12 abstract drawn faces</b> (not real people). For each one, choose the <b>expression</b> it shows:</p>'
- +'<p>happy · sad · angry · surprised · fearful · neutral</p>'
- +'<p>Go with your first reading.</p>'
+ +ph
  +'<button class="primary big" id="b-tut">Begin practice example</button></div>');
  on("b-tut","click",showTutorial);
 };
