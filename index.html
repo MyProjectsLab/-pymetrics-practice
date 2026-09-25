@@ -234,7 +234,7 @@ function newRun(){
 }
 /* ================= Game 1 — Balloons ================= */
 INTRO.balloons=function(){
- setApp('<div class="card"><h2>Game 1 of 12 — Balloons</h2>'+readReminder(false)
+ setApp('<div class="card"><h2>Balloons</h2>'+readReminder(false)
  +'<p>You will see <b>39 balloons</b>, one at a time. Each <b>PUMP</b> adds <b>$0.05</b> (hypothetical money) to the balloon. The balloon can <b>pop at any pump</b> — if it pops, you lose that balloon\'s money.</p>'
  +'<p>Press <b>BANK</b> at any time to keep the balloon\'s money and move to the next balloon. Balloons come in <b>three colors</b>.</p>'
  +'<button class="primary big" id="b-tut">Begin practice example</button></div>');
@@ -336,7 +336,7 @@ function towerGenBank(rng){
  function enc2(s){return s.join("");}
 }
 INTRO.tower=function(){
- setApp('<div class="card"><h2>Game 2 of 12 — Planning</h2>'+readReminder(false)
+ setApp('<div class="card"><h2>Planning</h2>'+readReminder(false)
  +'<p>Three pegs hold a stack of disks. <b>Move the disks so they match the target picture.</b></p>'
  +'<p>Rules: move <b>one disk at a time</b>; a <b>larger disk can never go on top of a smaller disk</b>.</p>'
  +'<p>Tap a peg to pick up its top disk, then tap another peg to place it.</p>'
@@ -405,7 +405,7 @@ PLAY.tower=function(){
 };
 /* ================= Game 3 — Money Exchange ================= */
 INTRO.money=function(){
- setApp('<div class="card"><h2>Game 3 of 12 — Money Exchange</h2>'+readReminder(false)
+ setApp('<div class="card"><h2>Money Exchange</h2>'+readReminder(false)
  +'<p>You have <b>$10</b>. Your partner has <b>$0</b>.</p><p>Decide how much of your $10 to <b>send</b> to your partner. Whatever you send is <b>tripled</b>, and your partner then decides how much to return to you. Afterwards you will rate the fairness of the exchange from 1 to 10.</p>'
  +'<button class="primary big" id="b-tut">Begin practice example</button></div>');
  on("b-tut","click",showTutorial);
@@ -448,7 +448,7 @@ PLAY.money=function(){
 
 /* ================= Game 4 — Sharing ================= */
 INTRO.sharing=function(){
- setApp('<div class="card"><h2>Game 4 of 12 — Sharing</h2>'+readReminder(false)
+ setApp('<div class="card"><h2>Sharing</h2>'+readReminder(false)
  +'<p>You receive an extra <b>$5</b>. Decide how much to <b>give</b> to your partner and how much to <b>keep</b>. Afterwards you will rate the fairness of the split from 1 to 10.</p>'
  +'<button class="primary big" id="b-tut">Begin practice example</button></div>');
  on("b-tut","click",showTutorial);
@@ -484,7 +484,7 @@ PLAY.sharing=function(){sharingFlow(false,function(gave,fair){finishGame("sharin
 
 /* ================= Game 5 — Keypress ================= */
 INTRO.keypress=function(){
- setApp('<div class="card"><h2>Game 5 of 12 — Keypress</h2>'+readReminder(false)
+ setApp('<div class="card"><h2>Keypress</h2>'+readReminder(false)
  +'<p>First a countdown: <b>3 · 2 · 1 · GO</b>. Then a word appears in the center.</p>'
  +'<p>Respond <b>ONLY</b> when you see <b>START</b> — tap the big <b>TAP</b> button (or press any key) as fast as you can.</p>'
  +'<p>Do <b>NOT</b> respond when you see <b>STOP</b>.</p>'
@@ -586,7 +586,7 @@ function mathBank(rng){
  return{easy:shuffleR(rng,easy),hard:shuffleR(rng,hard)};
 }
 INTRO.easyhard=function(){
- setApp('<div class="card"><h2>Game 6 of 12 — Easy or Hard</h2>'+readReminder(false)
+ setApp('<div class="card"><h2>Easy or Hard</h2>'+readReminder(false)
  +'<p>6 rounds. Each round, <b>choose</b>:</p><p><b>EASY</b> task → <b>$1</b> (hypothetical) if you solve it<br><b>HARD</b> task → <b>$4</b> (hypothetical) if you solve it</p>'
  +'<p>Then you must <b>actually solve</b> the task you chose. You get 2 attempts per question.</p>'
  +'<button class="primary big" id="b-tut">Begin practice example</button></div>');
@@ -666,7 +666,7 @@ function digitSeq(rng,len){
  var s2=[];for(var m=0;m<len;m++)s2.push(ri(rng,0,9));return s2;
 }
 INTRO.digits=function(){
- setApp('<div class="card"><h2>Game 7 of 12 — Digit Memory</h2>'+readReminder(false)
+ setApp('<div class="card"><h2>Digit Memory</h2>'+readReminder(false)
  +'<p>Digits flash <b>one at a time</b>. Watch carefully, then enter them <b>BACKWARD</b> — in <b>reverse order</b>.</p>'
  +'<p>Example: you see <b>4 – 9 – 2</b> → you enter <b>2 – 9 – 4</b>.</p>'
  +'<p>Sequences get longer as you succeed. <b>No notes.</b></p>'
@@ -736,7 +736,7 @@ INTRO.stop=function(){
  var rng=gameRng("stop");
  var v=STOPV[Math.floor(rng()*STOPV.length)];
  S._stopV=v;
- setApp('<div class="card"><h2>Game 8 of 12 — Stop Signal</h2>'+readReminder(false)
+ setApp('<div class="card"><h2>Stop Signal</h2>'+readReminder(false)
  +'<div class="exbox"><p style="margin:0">Respond to <b>every</b> shape <b>EXCEPT</b> a <span class="exred" style="color:'+v.color+'">'+v.label.split(" ")[0]+'</span> <span class="exsmall">'+v.label.split(" ")[1].toLowerCase()+'</span>.</p>'
  +'<p style="margin:6px 0 0">Tap the <b>TAP</b> button (or press any key) for every shape you see — but <b>withhold</b> your tap when the '+v.label.toLowerCase()+' appears. Read carefully: color <b>and</b> shape both matter.</p></div>'
  +'<button class="primary big" id="b-tut">Begin practice example</button></div>');
@@ -829,7 +829,7 @@ INTRO.arrows=function(){
  var rng=gameRng("arrows");
  var rule=ARULES[Math.floor(rng()*ARULES.length)];
  S._arule=rule;
- setApp('<div class="card"><h2>Game 9 of 12 — Arrows</h2>'+readReminder(false)
+ setApp('<div class="card"><h2>Arrows</h2>'+readReminder(false)
  +'<div class="exbox"><p style="margin:0;font-size:44px;text-align:center">← ← → ← ←</p><p style="margin:8px 0 0">'+rule.text+'</p></div>'
  +'<p>Tap <b>◀ LEFT</b> or <b>▶ RIGHT</b> (or use arrow keys) as fast as you can.</p>'
  +'<button class="primary big" id="b-tut">Begin practice example</button></div>');
@@ -910,7 +910,7 @@ INTRO.lengths=function(){
  var rng=gameRng("lengths");
  var rule=rng()<0.5?"longer":"shorter";
  S._lrule=rule;
- setApp('<div class="card"><h2>Game 10 of 12 — Visual Comparison</h2>'+readReminder(false)
+ setApp('<div class="card"><h2>Visual Comparison</h2>'+readReminder(false)
  +'<p>Two horizontal lines appear. Tap which line is <b>'+rule.toUpperCase()+'</b> — the <b>LEFT</b> one or the <b>RIGHT</b> one.</p>'
  +'<p>Each correct answer earns <b>$0.10</b> (hypothetical).</p>'
  +'<button class="primary big" id="b-tut">Begin practice example</button></div>');
@@ -972,7 +972,7 @@ PLAY.lengths=function(){
 TIMED.keypress=true;TIMED.stop=true;TIMED.arrows=true;TIMED.digits=true;TIMED.lengths=true;
 /* ================= Game 11 — Card Decks ================= */
 INTRO.cards=function(){
- setApp('<div class="card"><h2>Game 11 of 12 — Card Decks</h2>'+readReminder(false)
+ setApp('<div class="card"><h2>Card Decks</h2>'+readReminder(false)
  +'<p>Four decks: <b>A · B · C · D</b>. You start with <b>$2,000</b> (hypothetical).</p>'
  +'<p>Pick <b>40 cards</b>, one at a time, from any deck. Each card wins or loses money — you see the result immediately. Some decks are better than others <b>in the long run</b>; you have to figure out which.</p>'
  +'<p>Goal: finish with as much as possible.</p>'
@@ -1029,7 +1029,7 @@ PLAY.cards=function(){
 /* ================= Game 12 — Faces ================= */
 var FEMOTIONS=["happy","sad","angry","surprised","fearful","neutral"];
 INTRO.faces=function(){
- setApp('<div class="card"><h2>Game 12 of 12 — Faces</h2>'+readReminder(false)
+ setApp('<div class="card"><h2>Faces</h2>'+readReminder(false)
  +'<p>You will see <b>12 abstract drawn faces</b> (not real people). For each one, choose the <b>expression</b> it shows:</p>'
  +'<p>happy · sad · angry · surprised · fearful · neutral</p>'
  +'<p>Go with your first reading.</p>'
