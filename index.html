@@ -100,11 +100,32 @@ arrows:"This task involved responding to a target while ignoring conflicting sur
 lengths:"This task involved making quick visual comparisons.",
 cards:"This exercise required learning from repeated, somewhat noisy feedback.",
 faces:"This task involved identifying expressions from faces."};
-/* balanced order templates: reaction games (keypress/stop/arrows) never back-to-back */
+/* balanced order templates: reaction games (keypress/stop/arrows) never back-to-back;
+   demanding games distributed across the session; ~same total difficulty/duration */
 var ORDER_TEMPLATES=[
 ["balloons","tower","money","sharing","keypress","easyhard","digits","stop","lengths","arrows","cards","faces"],
 ["tower","balloons","sharing","money","arrows","digits","easyhard","stop","cards","keypress","lengths","faces"],
-["money","cards","balloons","tower","stop","easyhard","sharing","digits","keypress","lengths","arrows","faces"]];
+["money","cards","balloons","tower","stop","easyhard","sharing","digits","keypress","lengths","arrows","faces"],
+["sharing","money","tower","balloons","keypress","cards","digits","arrows","easyhard","stop","lengths","faces"],
+["easyhard","digits","balloons","money","stop","tower","sharing","arrows","cards","keypress","faces","lengths"],
+["digits","easyhard","sharing","balloons","arrows","money","tower","keypress","cards","stop","faces","lengths"],
+["cards","money","digits","sharing","stop","balloons","easyhard","arrows","tower","keypress","lengths","faces"],
+["balloons","sharing","easyhard","cards","keypress","money","digits","stop","tower","arrows","faces","lengths"],
+["tower","digits","money","easyhard","arrows","sharing","balloons","stop","cards","keypress","faces","lengths"],
+["faces","lengths","keypress","cards","money","stop","digits","sharing","tower","arrows","balloons","easyhard"]];
+/* pick a template no-reuse-until-all-used; cycle resets (reshuffled) after all 10 presented */
+function pickTemplate(){
+ var KEY="bgp_templates_used",used=[];
+ try{used=JSON.parse(localStorage.getItem(KEY)||"[]");}catch(e){used=[];}
+ used=used.filter(function(i){return i>=0&&i<ORDER_TEMPLATES.length;});
+ if(used.length>=ORDER_TEMPLATES.length)used=[]; /* full cycle done -> reset, new random order */
+ var avail=[];
+ for(var i=0;i<ORDER_TEMPLATES.length;i++)if(used.indexOf(i)<0)avail.push(i);
+ var ti=avail[Math.floor(Math.random()*avail.length)];
+ used.push(ti);
+ try{localStorage.setItem(KEY,JSON.stringify(used));}catch(e){}
+ return ti;
+}
 
 /* ================= reading reminder ================= */
 function readReminder(full){
@@ -227,9 +248,9 @@ function checkInterruptResume(){
 var INTRO={},TUT={},PLAY={},TIMED={};
 function newRun(){
  var seed=(Date.now()^Math.floor(Math.random()*4294967296))>>>0;
- var R=mulberry32(seed^0x9e3779b9);
- var order=ORDER_TEMPLATES[Math.floor(R()*ORDER_TEMPLATES.length)].slice();
- S={seed:seed,order:order,idx:0,metrics:{},times:{},tutRetries:{},restarts:{},interruptions:0,interruptedKeys:[],t0:Date.now()};
+ var tpl=pickTemplate();
+ var order=ORDER_TEMPLATES[tpl].slice();
+ S={seed:seed,tpl:tpl,order:order,idx:0,metrics:{},times:{},tutRetries:{},restarts:{},interruptions:0,interruptedKeys:[],t0:Date.now()};
  showIntro();
 }
 /* ================= Game 1 — Balloons ================= */
@@ -1203,7 +1224,7 @@ function showResults(){
  var totalS=(Date.now()-S.t0)/1000;
  var now=new Date();
  var dateStr=now.toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric"});
- var rec={d:now.toISOString().slice(0,10),dateStr:dateStr,seed:S.seed,order:S.order.slice(),totalS:Math.round(totalS),
+ var rec={d:now.toISOString().slice(0,10),dateStr:dateStr,seed:S.seed,tpl:S.tpl,order:S.order.slice(),totalS:Math.round(totalS),
   interruptions:S.interruptions,interruptedKeys:S.interruptedKeys.slice(),metrics:S.metrics,gameTimes:{},tutRetries:S.tutRetries};
  GKEYS.forEach(function(k){if(S.times[k]&&S.times[k].end)rec.gameTimes[k]=Math.round((S.times[k].end-S.times[k].start)/1000);});
  var runs=getRuns();runs.push(rec);
