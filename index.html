@@ -76,7 +76,8 @@ const CATS={
 const CATSRC={attention:[5,7,8],decision:[2,6,10],effort:[5,6],emotion:[12],fairness:[3,4],focus:[7,9],generosity:[3,4],learning:[11],risk:[1,11]};
 const GNAMES={1:'Balloons',2:'Tower',3:'Money Exchange',4:'Sharing',5:'Keypress',6:'Easy or Hard',7:'Digits',8:'Stop',9:'Arrows',10:'Lengths',11:'Cards',12:'Faces'};
 const EXPECT={1:180,2:150,3:15,4:15,5:90,6:120,7:150,8:90,9:180,10:120,11:150,12:240};
-/* Theoretical industry profiles — our inference for practice framing, NOT Pymetrics' models. */
+const GPRACTICE={1:'risk-taking under uncertainty',2:'planning ahead',3:'trust and reciprocity',4:'generosity',5:'following cues under time pressure',6:'effort vs. reward choices',7:'working memory',8:'impulse control',9:'selective attention',10:'attention to detail',11:'learning from feedback',12:'reading emotions'};
+/* Industry list kept only to label runs saved before the clean version (no fit scoring since). */
 const INDUSTRIES={
  finance:{name:'Finance',desc:'Funds, asset management, PE',w:{attention:1,decision:1,effort:.8,emotion:.7,fairness:.5,focus:1,generosity:.5,learning:.9,risk:.9}},
  consulting:{name:'Consulting',desc:'Strategy & advisory',w:{attention:.9,decision:1,effort:.9,emotion:.6,fairness:.6,focus:.8,generosity:.9,learning:1,risk:.6}},
@@ -84,7 +85,7 @@ const INDUSTRIES={
  sales:{name:'Sales & Trading',desc:'Client-facing, markets',w:{attention:.7,decision:.7,effort:1,emotion:.9,fairness:.6,focus:.7,generosity:1,learning:.7,risk:1}},
  general:{name:'General',desc:'Balanced view',w:{attention:1,decision:1,effort:1,emotion:1,fairness:1,focus:1,generosity:1,learning:1,risk:1}}
 };
-let industry='finance';
+/* Industry list kept only to label runs saved before the clean version. No fit scoring. */
 
 /* ============ state ============ */
 const app=document.getElementById('app'), bar=document.getElementById('bar');
@@ -521,23 +522,15 @@ function faAns(o){
 }
 
 function start(){
+ setProgress(0);
  let _n=0;try{_n=(JSON.parse(localStorage.getItem('bgp_runs')||'[]')).length}catch(e){}
- const inds=Object.keys(INDUSTRIES).map(k=>`<button onclick="industry='${k}';start2()" style="${k===industry?'border-color:#2563eb;background:#eff6ff':''}"><b>${INDUSTRIES[k].name}</b><span>${INDUSTRIES[k].desc}</span></button>`).join('');
- app.innerHTML=`<h2>Before you begin</h2>
- <p>Pick the industry you are practicing for. Your results will be framed against a <b>theoretical</b> trait profile for that industry — our own model for practice, <b>not</b> Pymetrics'.</p>
- <div class="indgrid">${inds}</div>
- <p class="small">You can change this any time by reloading.</p>
- <p class="small">${_n?`📊 ${_n} past run${_n>1?'s':''} saved on this device — results compare against your last run.`:'No past runs on this device yet.'}</p>
- ${_n?`<button onclick="showHistory()">📊 View past results</button>`:''}`;
-}
-function start2(){
  app.innerHTML=`<h2>Instructions</h2>
  <div class="resultbox" style="text-align:center;font-size:21px"><b>⏱ About 25 minutes total</b><br><span class="small">12 games · one sitting · no pausing</span></div>
  <p>Do it in one sitting: quiet room, rested, full screen, stable internet. Use a laptop if possible.</p>
- <div class="warnbox"><b>Why this matters:</b> the real test is one attempt. Your profile is shared with <b>every</b> employer you apply to, and candidates report waiting about a year before any retake. No do-overs — so treat this practice like the real thing.</div>
- <p>Do not try to guess a “good personality.” Play naturally and consistently.</p>
- <button class="primary" onclick="next()">Start — ${INDUSTRIES[industry].name} profile</button>
- <button onclick="start()">← Change industry</button>`;
+ <div class="warnbox"><b>Why this matters:</b> the real test is one attempt. Pymetrics' terms state each game can only be played once in a 12-month period and your profile can't be reset during that time — if you apply to another employer using Pymetrics within that window, the same result is used. The employer that invited you sees your profile. So treat this practice like the real thing.</div>
+ <p>Understand the mechanics, follow the instructions, and respond naturally. Don't try to guess a "good personality."</p>
+ <button class="primary" onclick="next()">Start</button>
+ ${_n?`<p class="small">📊 ${_n} past run${_n>1?'s':''} saved on this device.</p><button onclick="showHistory()">📊 View past results</button>`:`<p class="small">No past runs on this device yet.</p>`}`;
 }
 /* ============ past results menu ============ */
 function getRuns(){let r=[];try{r=JSON.parse(localStorage.getItem('bgp_runs')||'[]')}catch(e){}return r}
@@ -547,7 +540,7 @@ function showHistory(){
  if(!runs.length){app.innerHTML=`<h2>Past results</h2><div class="resultbox">No runs saved on this device yet.</div><button class="primary" onclick="start()">← Back to menu</button>`;return}
  const rows=runs.map((r,i)=>({r:r,i:i})).reverse().map(({r,i})=>{
   const top=(r.top3||Object.keys(r.S).sort((a,b)=>r.S[b]-r.S[a]).slice(0,3)).map(k=>CATS[k].name).join(', ');
-  return `<div class="resultbox"><b>📅 ${r.d}</b> · ${INDUSTRIES[r.ind]?INDUSTRIES[r.ind].name:r.ind} · <b>${r.fitLabel||('fit '+r.fit)}</b><br><span class="small">Top: ${top}</span><br><button onclick="showRun(${i})">View details</button></div>`;
+  return `<div class="resultbox"><b>📅 ${r.d}</b>${r.ind&&INDUSTRIES[r.ind]?' · '+INDUSTRIES[r.ind].name:''}<br><span class="small">Top: ${top}</span><br><button onclick="showRun(${i})">View details</button></div>`;
  }).join('');
  app.innerHTML=`<h2>Past results</h2><p class="small">${runs.length} run${runs.length>1?'s':''} saved on this device.</p>${rows}<button class="primary" onclick="start()">← Back to menu</button>`;
  window.scrollTo(0,0);
@@ -561,7 +554,7 @@ function showRun(i){
  const top3=r.top3||ranked.slice(0,3);
  const catH=k=>`<div class="resultbox"><b>${CATS[k].name}</b> — <span style="color:${bandCol(SS[k])}"><b>${band(SS[k])}</b></span><br><span class="small">${CATS[k].work}.</span><br><span class="small">Measured in: ${CATSRC[k].map(g=>'Game '+g+' '+GNAMES[g]).join(' · ')}</span><div class="traitbar"><div style="width:${SS[k]}%;background:${bandCol(SS[k])}"></div></div></div>`;
  app.innerHTML=`<h2>Run — ${r.d}</h2>
- <div class="resultbox"><b>${INDUSTRIES[r.ind]?INDUSTRIES[r.ind].name:r.ind}</b> profile · Theoretical fit: <b>${r.fitLabel||r.fit}</b></div>
+ <div class="resultbox"><b>Practice run — ${r.d}</b>${r.ind&&INDUSTRIES[r.ind]?' · '+INDUSTRIES[r.ind].name+' (old label)':''}<br><span class="small">Descriptive summary of this practice run — our own scoring, not Pymetrics'/Harver's.</span></div>
  <h3>Top 3 distinctive categories</h3>${top3.map(catH).join('')}
  <h3>All 9 categories</h3>${ranked.map(catH).join('')}
  ${r.ts?`<h3>Timing</h3><div class="resultbox"><b>Total session: ${fmtT(r.ts.session)}</b> <span class="small">(pure gameplay ${fmtT(r.ts.total)})</span></div>`:''}
@@ -595,10 +588,6 @@ function summary(){
 
  const ranked=Object.keys(S).sort((a,b)=>S[b]-S[a]);
  const top3=ranked.slice(0,3);
- const W=INDUSTRIES[industry].w;
- let num=0,den=0;for(const k of Object.keys(S)){num+=S[k]*W[k];den+=W[k]}
- const fit=Math.round(num/den);
- const fitLabel=fit>=65?'strong theoretical fit':(fit>=45?'moderate theoretical fit':'weaker theoretical fit');
 
  const catRow=k=>`<div class="resultbox"><b>${CATS[k].name}</b> — <span style="color:${bandCol(S[k])}"><b>${band(S[k])}</b></span><br><span class="small">${CATS[k].work}.</span><br><span class="small">Measured in: ${CATSRC[k].map(g=>'Game '+g+' '+GNAMES[g]).join(' · ')}</span><div class="traitbar"><div style="width:${S[k]}%;background:${bandCol(S[k])}"></div></div></div>`;
 
@@ -612,36 +601,34 @@ function summary(){
  if(T.keypress.falseStarts>=3)flags.push(T.keypress.falseStarts+' false starts on Keypress — pressing before the signal is measured.');
  const flagsHtml=flags.length?flags.map(f=>`<div class="warnbox">${f}</div>`).join(''):'<div class="tipbox">✓ Your ratings and choices were consistent with your behavior.</div>';
 
- /* weakest areas -> drills */
- const weak=ranked.slice(-2);
- const drillsHtml=weak.map(k=>`<div class="tipbox"><b>${CATS[k].name}</b> (${band(S[k])})<br><span class="small">${DRILLS[k]}</span></div>`).join('');
+ /* weakest areas -> drills removed: practice the format, don't engineer a profile */
 
  /* save & compare runs */
  let runs=[];try{runs=JSON.parse(localStorage.getItem('bgp_runs')||'[]')}catch(e){runs=[]}
  const prev=runs.length?runs[runs.length-1]:null;
  const gbgLines=[
- `Game 1 — Balloons: avg ${avgP.toFixed(1)} pumps · ${T.balloons.pops} pops · $${bBank.toFixed(2)} banked`,
- `Game 2 — Tower: ${T.tower.map(r=>r.moves+' moves (best '+r.optimal+', first move '+r.firstMoveS+'s)').join(' · ')}`,
- `Game 3 — Money Exchange: sent $${T.money1.sent}, fairness ${T.money1.fair}/10`,
- `Game 4 — Sharing: gave $${T.money2.gave}, fairness ${T.money2.fair}/10`,
- `Game 5 — Keypress: ${T.keypress.hits}/14 starts · ${T.keypress.falseStarts} false starts · ${T.keypress.misses} misses`,
- `Game 6 — Easy or Hard: chose hard ${T.easyhard.hardChosen}/6, solved ${T.easyhard.hardSolved}, earned $${ehEarn}`,
- `Game 7 — Digits: longest span ${T.digits.best}`,
- `Game 8 — Stop: ${T.stop.hits}/8 red hits · ${T.stop.falseAlarms} false alarms`,
- `Game 9 — Arrows: ${T.arrows.errors} errors / 40`,
- `Game 10 — Lengths: ${T.lengths.correct}/20 correct · $${T.lengths.earned.toFixed(2)} earned`,
- `Game 11 — Cards: finished $${T.cards.total} · good decks in last 20 picks: ${T.cards.goodLate}/20`,
- `Game 12 — Faces: ${T.faces.correct}/12 correct`
+ `Game 1 — Balloons: avg ${avgP.toFixed(1)} pumps · ${T.balloons.pops} pops · $${bBank.toFixed(2)} banked · <i>practices ${GPRACTICE[1]}</i>`,
+ `Game 2 — Tower: ${T.tower.map(r=>r.moves+' moves (best '+r.optimal+', first move '+r.firstMoveS+'s)').join(' · ')} · <i>practices ${GPRACTICE[2]}</i>`,
+ `Game 3 — Money Exchange: sent $${T.money1.sent}, fairness ${T.money1.fair}/10 · <i>practices ${GPRACTICE[3]}</i>`,
+ `Game 4 — Sharing: gave $${T.money2.gave}, fairness ${T.money2.fair}/10 · <i>practices ${GPRACTICE[4]}</i>`,
+ `Game 5 — Keypress: ${T.keypress.hits}/14 starts · ${T.keypress.falseStarts} false starts · ${T.keypress.misses} misses · <i>practices ${GPRACTICE[5]}</i>`,
+ `Game 6 — Easy or Hard: chose hard ${T.easyhard.hardChosen}/6, solved ${T.easyhard.hardSolved}, earned $${ehEarn} · <i>practices ${GPRACTICE[6]}</i>`,
+ `Game 7 — Digits: longest span ${T.digits.best} · <i>practices ${GPRACTICE[7]}</i>`,
+ `Game 8 — Stop: ${T.stop.hits}/8 red hits · ${T.stop.falseAlarms} false alarms · <i>practices ${GPRACTICE[8]}</i>`,
+ `Game 9 — Arrows: ${T.arrows.errors} errors / 40 · <i>practices ${GPRACTICE[9]}</i>`,
+ `Game 10 — Lengths: ${T.lengths.correct}/20 correct · $${T.lengths.earned.toFixed(2)} earned · <i>practices ${GPRACTICE[10]}</i>`,
+ `Game 11 — Cards: finished $${T.cards.total} · good decks in last 20 picks: ${T.cards.goodLate}/20 · <i>practices ${GPRACTICE[11]}</i>`,
+ `Game 12 — Faces: ${T.faces.correct}/12 correct · <i>practices ${GPRACTICE[12]}</i>`
  ];
- runs.push({d:new Date().toISOString().slice(0,10),ind:industry,S:S,fit:fit,fitLabel:fitLabel,top3:top3,flags:flags,gbg:gbgLines,ts:{total:Math.round(totalS),session:Math.round(sessionS)}});
+ runs.push({d:new Date().toISOString().slice(0,10),S:S,top3:top3,flags:flags,gbg:gbgLines,ts:{total:Math.round(totalS),session:Math.round(sessionS)}});
  try{localStorage.setItem('bgp_runs',JSON.stringify(runs.slice(-12)))}catch(e){}
- window._sum={S:S,fit:fit,fitLabel:fitLabel,flags:flags,ind:industry,top3:top3,ranked:ranked};
+ window._sum={S:S,flags:flags,top3:top3,ranked:ranked};
  let trend='';
  if(prev){
   const moves=Object.keys(S).map(k=>({k:k,d:S[k]-prev.S[k]})).filter(x=>Math.abs(x.d)>=5).sort((a,b)=>Math.abs(b.d)-Math.abs(a.d));
   trend=moves.length?moves.map(x=>`${CATS[x.k].name} ${x.d>0?'+':''}${x.d}`).join(' · '):'No big moves vs your last run — consistency is good.';
  }
- const runsRows=runs.slice().reverse().map(r=>`<div>📅 ${r.d} · ${INDUSTRIES[r.ind]?INDUSTRIES[r.ind].name:r.ind} · fit: <b>${r.fit>=65?'strong':(r.fit>=45?'moderate':'weaker')}</b> · top: ${Object.keys(r.S).sort((a,b)=>r.S[b]-r.S[a]).slice(0,3).map(k=>CATS[k].name).join(', ')}</div>`).join('');
+ const runsRows=runs.slice().reverse().map(r=>`<div>📅 ${r.d}${r.ind&&INDUSTRIES[r.ind]?' · '+INDUSTRIES[r.ind].name:''} · top: ${Object.keys(r.S).sort((a,b)=>r.S[b]-r.S[a]).slice(0,3).map(k=>CATS[k].name).join(', ')}</div>`).join('');
 
  /* timing report */
  let totalS=0;const tFlags=[];const tRows=[];
@@ -660,6 +647,7 @@ function summary(){
  ${tFlags.length?tFlags.map(f=>`<div class="warnbox">${f}</div>`).join(''):'<div class="tipbox">✓ Steady pacing across all 12 games.</div>'}`;
 
  app.innerHTML=`<h2>Practice Results</h2>
+ <p class="small">Descriptive summary of this practice run — our own estimates, not Pymetrics'/Harver's scores. The goal: know the format, not chase a number.</p>
  <p class="small">The real assessment gives no numeric score — it describes your most distinctive trait categories vs. the general population. This page mirrors that format using <b>practice estimates</b> from your 12 games.</p>
 
  <h3>Your 3 most distinctive categories</h3>
@@ -668,14 +656,9 @@ function summary(){
  <h3>All 9 categories</h3>
  ${ranked.map(catRow).join('')}
 
- <h3>Theoretical fit: ${INDUSTRIES[industry].name}</h3>
- <div class="resultbox"><b style="color:${bandCol(fit)}">${fitLabel}</b><br><span class="small">Weighted across the 9 categories using our theoretical ${INDUSTRIES[industry].name} profile (${INDUSTRIES[industry].desc}). This is <b>our model for practice</b> — not Pymetrics'/Harver's, whose employer models are proprietary and differ per firm.</span><div class="traitbar"><div style="width:${fit}%;background:${bandCol(fit)}"></div></div></div>
 
  <h3>Consistency check</h3>
  ${flagsHtml}
-
- <h3>Weakest areas — drills</h3>
- ${drillsHtml}
 
  <div style="text-align:center;margin:14px 0"><button onclick="copySummary()">Copy results summary</button> <span id="copied" class="small"></span></div>
 
@@ -695,31 +678,19 @@ function summary(){
  • Vendor debiasing audits check statistical parity, not whether the games measure real ability; independent deployment research (Stanford HAI, 2026) found bias reappearing at the individual-job level.<br>
  • Single rounds of trust/generosity games are noisy in the literature — treat those scores as rough.<br>
  • Practice mainly removes the surprise penalty (Leutner et al., 2023: test–retest ≈.68). There is no personality to fake; consistency beats strategy.</span></div>
- <div class="warnbox"><b>One shot matters:</b> candidates report a single playthrough is reused across <b>all</b> employers you apply to, with a long wait before any retake. Do it once, rested, undistracted, full-screen.</div>
+ <div class="warnbox"><b>One shot matters:</b> Pymetrics' terms state each game can only be played once in a 12-month period and your profile can't be reset during that time — if you apply to another employer using Pymetrics within that window, the same result is used. Do it once, rested, undistracted, full-screen.</div>
  <div class="tipbox">Never press before the signal appears (START, red circle). False starts are measured.</div>
- <div class="tipbox">On the Tower: don't touch anything at first. Study the puzzle and plan your moves, then start. The test measures how long you think before your first move — planning first reads as careful, moving instantly reads as impulsive.</div>
  <div class="tipbox">On fairness ratings: make the number match what actually happened in the exchange.</div>
- <div class="tipbox">You will see <b>no score</b> when you finish the real thing — just a completion message. The trait report goes to the employer. Silence is normal.</div>
- <div class="tipbox">There is no “ideal personality” to imitate. Play naturally and stay consistent across games.</div>
+ <div class="tipbox">After the real assessment you get a personal feedback report; the employer receives its own fuller version for their decision.</div>
+ <div class="tipbox">There is no “ideal personality” to imitate. Understand the mechanics, follow the instructions, and respond naturally.</div>
 
- <p class="small"><b>Important:</b> independent practice simulation. Not Harver/Pymetrics; not their scoring, traits, or hiring predictions. Industry profiles are theoretical models built for practice.</p>
+ <p class="small"><b>Important:</b> independent practice simulation. Not Harver/Pymetrics; not their scoring, traits, or hiring predictions.</p>
  <div style="text-align:center"><button class="primary" onclick="location.reload()">Run again</button></div>`;
 }
-const DRILLS={
- attention:'Do Keypress and Stop again tomorrow, rested — steady reactions beat raw speed.',
- decision:'Replay Tower and Cards; say your plan out loud before each move.',
- effort:'On Easy-or-Hard, pick HARD whenever you can actually solve it — follow-through is scored.',
- emotion:'Spend 5 minutes labeling emotions in photos; go with your first read.',
- fairness:'Re-run the money games and check each rating honestly matches what happened.',
- focus:'Replay Arrows; pause and breathe for two seconds between trials.',
- generosity:'Notice your first split impulse — natural generosity reads better than strategy.',
- learning:'Replay Cards; every 10 cards, write down which decks feel good and why.',
- risk:'Replay Balloons and bank at roughly two-thirds of where balloons usually pop.'
-};
+/* Neutral practice guidance: understand the mechanics, follow the instructions, respond naturally. */
 function copySummary(){
  const s=window._sum;if(!s)return;
- const lines=[`Behavioral Games Practice — ${new Date().toISOString().slice(0,10)} (${INDUSTRIES[s.ind].name})`,
- `Fit: ${s.fitLabel}`,
+ const lines=[`Behavioral Games Practice — ${new Date().toISOString().slice(0,10)} (practice estimates, not employer scores)`,
  `Top 3 distinctive: ${s.top3.map(k=>CATS[k].name+' ('+band(s.S[k])+')').join(', ')}`,
  `All categories: ${s.ranked.map(k=>CATS[k].name+' '+s.S[k]).join(' · ')}`];
  lines.push(s.flags.length?('Consistency flags: '+s.flags.join(' | ')):'Consistency: all consistent');
