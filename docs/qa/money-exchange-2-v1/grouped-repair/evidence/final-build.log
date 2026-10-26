@@ -1,0 +1,61 @@
+
+> assessment-practice@0.0.0 build
+> tsc -b && vite build && node scripts/build-analytics.mjs
+
+vite v8.3.1 building client environment for production...
+transforming...
+✓ 2121 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/money2.html                                               0.38 kB │ gzip:   0.28 kB
+dist/money.html                                                0.97 kB │ gzip:   0.42 kB
+dist/arrows.html                                               1.05 kB │ gzip:   0.42 kB
+dist/index.html                                                1.09 kB │ gzip:   0.50 kB
+dist/mouth-v12.html                                            1.26 kB │ gzip:   0.44 kB
+dist/assets/inter-latin-wght-normal-Dx4kXJAl.woff2            48.25 kB
+dist/assets/newsreader-latin-standard-normal-s-izfB6B.woff2  132.00 kB
+dist/assets/main-CknmI52u.css                                  0.65 kB │ gzip:   0.42 kB
+dist/assets/Journey-DMz5qejt.css                               2.43 kB │ gzip:   0.89 kB
+dist/assets/money-74cPbKTW.css                                 3.00 kB │ gzip:   0.99 kB
+dist/assets/Landing-DsprEsbN.css                              11.00 kB │ gzip:   2.52 kB
+dist/assets/App-BY04rYSD.css                                  16.63 kB │ gzip:   4.19 kB
+dist/assets/order-Bm0U3G5q.js                                  0.07 kB │ gzip:   0.08 kB
+dist/assets/order-D3MputHG.js                                  0.07 kB │ gzip:   0.08 kB
+dist/assets/order-CUT1Fj4x.js                                  0.07 kB │ gzip:   0.08 kB
+dist/assets/presentation-order-CiXGT4RC.js                     0.08 kB │ gzip:   0.09 kB
+dist/assets/modulepreload-polyfill-P2Xu9kJm.js                 0.67 kB │ gzip:   0.38 kB
+dist/assets/main-D69rgzl1.js                                   0.96 kB │ gzip:   0.53 kB
+dist/assets/preload-helper-BZ1Pz5am.js                         1.21 kB │ gzip:   0.69 kB
+dist/assets/presentation-order-CDmugooz.js                     1.45 kB │ gzip:   0.55 kB
+dist/assets/order-BDDacuac.js                                  1.45 kB │ gzip:   0.56 kB
+dist/assets/order-CXQs3p2A.js                                  1.45 kB │ gzip:   0.56 kB
+dist/assets/order-CFdHPQ2j.js                                  1.45 kB │ gzip:   0.55 kB
+dist/assets/Shell-BUWFrLk9.js                                  1.79 kB │ gzip:   0.72 kB
+dist/assets/react-dom-CLGruyau.js                              3.86 kB │ gzip:   1.39 kB
+dist/assets/App-BTbcDgHV.js                                    5.42 kB │ gzip:   1.96 kB
+dist/assets/jsx-runtime-DLNB9Qsn.js                            8.26 kB │ gzip:   3.12 kB
+dist/assets/mouth-BHSqs-8L.js                                  9.78 kB │ gzip:   3.50 kB
+dist/assets/Landing-Dzp28fMu.js                               15.11 kB │ gzip:   5.35 kB
+dist/assets/money-CdqQ_SyU.js                                 73.79 kB │ gzip:  20.42 kB
+dist/assets/money2-BrT6KfPR.js                                77.76 kB │ gzip:  23.75 kB
+dist/assets/client-tjx74mzK.js                               206.83 kB │ gzip:  64.78 kB
+dist/assets/arrows-SH0IezeK.js                               304.89 kB │ gzip:  54.33 kB
+dist/assets/Journey-BjlgKg2R.js                              439.40 kB │ gzip:  93.79 kB
+dist/assets/App-zfiGngK_.js                                  851.85 kB │ gzip: 192.63 kB
+
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 139ms
+vite v8.3.1 building client environment for production...
+transforming...
+✓ 6 modules transformed.
+rendering chunks...
+computing gzip size...
+dist-analytics/platform-B2bkFrLQ.js  0.62 kB │ gzip: 0.40 kB
+dist-analytics/purge.js              1.32 kB │ gzip: 0.64 kB
+dist-analytics/collector.js          5.18 kB │ gzip: 2.07 kB
+
+✓ built in 11ms

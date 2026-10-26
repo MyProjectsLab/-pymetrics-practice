@@ -1,0 +1,17 @@
+normal adaptive C W C W C W, native Enter, saved report and byte-identical reload/history PASS
+keypad trusted input and protected feedback blur PASS
+untrusted input rejected; held physical key repeat suppressed PASS
+committed arm held delivery, same-request retry, and late callback cannot double rotate PASS
+genuine checkpoint failure disables Next; one same-byte retry recovers PASS
+committed held checkpoint then feedback End reconciles before terminal; late callback fenced PASS
+terminal held delivery shows unsaved draft; retry confirms same bytes PASS
+individual deletion_first: shared Next/deletion boundary without notifications PASS
+individual next_first: shared Next/deletion boundary without notifications PASS
+all deletion_first: shared Next/deletion boundary without notifications PASS
+all next_first: shared Next/deletion boundary without notifications PASS
+eligible local-auditory full callback-injected journey, save and exact reload PASS
+auditory unavailable disclosure with no voices, visual remains usable PASS
+200 percent CSS zoom keyboard entry, normal button Enter, and report focus PASS
+required first frame missing, late callback fenced, saved Invalid with zero exposure PASS
+saved report held authority read hides numbers until current root is verified PASS
+held terminal delivery plus other-tab deletion retires retry and late saved copy PASS

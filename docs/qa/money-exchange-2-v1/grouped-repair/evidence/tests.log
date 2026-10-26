@@ -1,0 +1,35 @@
+
+> assessment-practice@0.0.0 test
+> vitest run src/money-exchange-2
+
+
+ RUN  v4.1.11 /private/tmp/money-exchange-2-v1-recovery
+
+ ❯ src/money-exchange-2/storage-v2.test.ts (26 tests | 1 failed) 1353ms
+     × D3 incomplete survivor proof survives deletion of newer attempt 5ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/money-exchange-2/storage-v2.test.ts > storage V2 deletion contract > D3 incomplete survivor proof survives deletion of newer attempt
+Error: Money Exchange 2: proof request conflict
+ ❯ assert src/money-exchange-2/legacy-core.ts:263:75
+    261| export const money=(cents:number)=>`$${(cents/100).toFixed(2)}`;
+    262| export const action=(cents:number)=>`${cents<0?'Take':'Give'} ${money(…
+    263| export function assert(ok:unknown,reason:string):asserts ok {if(!ok)th…
+       |                                                                           ^
+    264| const record=(value:unknown)=>value && typeof value==='object' && !Arr…
+    265| const integer=(v:number)=>Number.isSafeInteger(v)&&v>=0;
+ ❯ validateState src/money-exchange-2/core.ts:93:41
+ ❯ Module.validateRoot src/money-exchange-2/core.ts:160:256
+ ❯ apply src/money-exchange-2/storage-v2.test.ts:10:141
+ ❯ Object.act src/money-exchange-2/storage-v2.test.ts:11:72
+ ❯ src/money-exchange-2/storage-v2.test.ts:29:190
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 3 passed (4)
+      Tests  1 failed | 110 passed (111)
+   Start at  14:52:21
+   Duration  6.72s (transform 154ms, setup 115ms, import 165ms, tests 7.84s, environment 674ms)
+

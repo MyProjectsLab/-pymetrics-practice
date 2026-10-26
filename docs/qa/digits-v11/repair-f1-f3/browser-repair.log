@@ -1,0 +1,19 @@
+F1 committed-undelivered arm blur invalidation and fresh rotation PASS
+F1 committed-undelivered arm freeze invalidation and fresh rotation PASS
+F1 committed-undelivered arm page_exit invalidation and fresh rotation PASS
+F1 committed-undelivered arm hidden invalidation and fresh rotation PASS
+F1 committed-undelivered arm viewport_changed invalidation and fresh rotation PASS
+F1 timeout-only same request then blur after timeout preserves observation PASS
+F1 uncommitted owner admission blur leaves no scored journal PASS
+F1 one deletion before held-arm cancellation has no resurrection PASS
+F1 all deletion before held-arm cancellation has no resurrection PASS
+F2 undeclared trusted paste labels live and reopened report without changing journal PASS
+F2 undeclared trusted paste then entry blur labels unresolved Invalid PASS
+F3 one next_first factual review without durable authority PASS
+F3 one delete_first factual review without durable authority PASS
+F3 all next_first factual review without durable authority PASS
+F3 all delete_first factual review without durable authority PASS
+F1 canceled arm authority read failure cannot turn Retry Start into presentation PASS
+F1 canceled terminal genuine save failure retains exact retry bytes PASS
+F2 declared assistance remains distinct from actual use FAIL
+F1 native active transaction canceled before put, absent read then old callback cannot commit PASS

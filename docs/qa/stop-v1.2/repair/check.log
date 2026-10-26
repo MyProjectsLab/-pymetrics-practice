@@ -1,0 +1,59 @@
+
+> assessment-practice@0.0.0 check
+> npm run lint && npm test && npm run forms:check && npm run drills:check && npm run build
+
+
+> assessment-practice@0.0.0 lint
+> oxlint
+
+docs/qa/m5/repair-f1-f3/cross-tab.mjs:47:49: warning eslint(no-unused-vars): Parameter 's' is declared but never used. Unused parameters should start with a '_'. help: Consider removing this parameter.
+src/App.tsx:62:57: warning react-hooks(exhaustive-deps): React Hook useEffect has a missing dependency: 'refreshHistory' help: Either include it or remove the dependency array.
+
+> assessment-practice@0.0.0 test
+> vitest run
+
+
+ RUN  v4.1.11 /Users/renzo/Documents/Assessment Practice/App
+
+(node:13635) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+ Test Files  37 passed (37)
+      Tests  658 passed (658)
+   Start at  16:30:37
+   Duration  5.64s (transform 1.57s, setup 1.32s, import 2.91s, tests 11.57s, environment 4.74s)
+
+
+> assessment-practice@0.0.0 forms:check
+> node scripts/generate-stop-forms.mjs --check
+
+14 stored Stop manifests match the deterministic generator.
+
+> assessment-practice@0.0.0 drills:check
+> node scripts/generate-stop-drills.mjs --check
+
+5 stored drill manifests match the deterministic generator.
+
+> assessment-practice@0.0.0 build
+> tsc -b && vite build && node scripts/build-analytics.mjs
+
+vite v8.3.1 building client environment for production...
+transforming...
+✓ 64 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.50 kB │ gzip:   0.30 kB
+dist/assets/index-BFu-PDJW.css    5.39 kB │ gzip:   1.94 kB
+dist/assets/index-D8pj7mZZ.js   413.89 kB │ gzip: 122.46 kB
+
+✓ built in 71ms
+vite v8.3.1 building client environment for production...
+transforming...
+✓ 6 modules transformed.
+rendering chunks...
+computing gzip size...
+dist-analytics/platform-B2bkFrLQ.js  0.62 kB │ gzip: 0.40 kB
+dist-analytics/purge.js              1.32 kB │ gzip: 0.64 kB
+dist-analytics/collector.js          5.18 kB │ gzip: 2.07 kB
+
+✓ built in 11ms

@@ -1,0 +1,11 @@
+warm-up completed
+injected report render failure reached retry boundary
+same-tab retry restored report
+file:///Users/renzo/Documents/Assessment%20Practice/App/docs/qa/m3/repair/browser-recovery.mjs:13
+const data=await page.evaluate(async()=>({result:(await import('/src/stop/run.ts')).activeTabResults().at(-1),exposure:(await import('/src/stop/exposure.ts')).stopExposure.snapshot(),observations:window.audit,text:document.body.innerText,focus:document.activeElement?.textContent,userAgent:navigator.userAgent}));assert.deepEqual(data.result.summarySnapshot.counts,{hits:57,misses:3,withholds:17,falseAlarms:3});assert.equal(data.result.validity,'valid');assert.equal(data.result.summarySnapshot.timing.count,57);assert.equal(data.result.events.filter(e=>e.type==='session_completed').length,1);assert.equal(data.observations.inputs.filter(e=>!e.prevented).length,0);assert(data.result.events.some(e=>e.type==='quality_note'&&e.payload.ruleId==='stop_validity_v1.five_extra_inputs'));assert(data.text.includes('Five or more extra response-key presses were recorded after trials had resolved. They did not change the recorded trial outcomes.'));assert.equal(data.exposure.length,1);assert(!data.text.includes('Valid with timing note'));assert(data.result.summarySnapshot.speedAccuracy.includes('false-alarm rate decreased by 20 percentage points')); assert.deepEqual(errors,[]);await page.screenshot({path:out+'/recovered-report.png',fullPage:true});await writeFile(out+'/browser-recovery.json',JSON.stringify({browser:browser.version(),errors,...data},null,2));console.log(JSON.stringify({status:'passed',browser:browser.version(),form:data.result.form.id,counts:data.result.summarySnapshot.counts,timing:data.result.summarySnapshot.timing}));
+                                                                                                                                                                                                                                                                                                                                                      ^
+
+TypeError: Cannot read properties of undefined (reading 'summarySnapshot')
+    at file:///Users/renzo/Documents/Assessment%20Practice/App/docs/qa/m3/repair/browser-recovery.mjs:13:343
+
+Node.js v24.13.1
