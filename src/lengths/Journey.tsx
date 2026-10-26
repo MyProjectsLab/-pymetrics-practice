@@ -758,7 +758,7 @@ export function LengthsJourney({ onLibrary }: { onLibrary: () => void }) {
         <button onClick={() => void deleteAll()}>Delete all Lengths data</button>
         <button className="secondary" onClick={() => setDeleteAllConfirm(false)}>Cancel</button>
       </div> : <button className="secondary" onClick={() => setDeleteAllConfirm(true)}>Delete all Lengths data</button>)}
-      {step === 'guide' && <section className="panel"><h1 ref={heading} tabIndex={-1}>Choose the longer bar</h1>
+      {step === 'guide' && <section className="panel"><p className="eyebrow">How it works</p><h1 ref={heading} tabIndex={-1}>Choose the longer bar</h1>
         <p>Two horizontal bars appear together. Choose the side with the longer bar: Left or Right. The bars are never equal.</p>
         <p>Practice has four blocks of 24 trials. The first response during each 1,400-millisecond window counts. You can pause between blocks.</p>
         <p className="note">{disclosure}</p><div className="actions"><button onClick={() => prepare('examples')}>See examples</button><button className="secondary" disabled={!orderedReportsAvailable} onClick={() => void loadHistory()}>Lengths history</button></div>

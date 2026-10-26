@@ -460,7 +460,7 @@ export function MoneyExchangeJourney({ runtime, boundary, onLibrary, mock, repor
   const control=screen==='instructions' || screen==='ready' || ['award','connecting','connected','partner_rules','return_explanation','transfer','transfer_busy','response_ready','final_allocation','fairness'].includes(screen)
   if(reportTarget&&!['report','help'].includes(screen))return <Shell onLibrary={returnToMock}><section className="journey panel"><h1>Saved Money Exchange 1 report</h1><p role={error?'alert':'status'}>{error||'Checking the exact retained result…'}</p><button onClick={()=>void returnToMock()}>Return to mock</button></section></Shell>
   return <Shell onLibrary={returnToMock}><div className="journey-top"><button className="secondary" onClick={()=>void returnToMock()}><span aria-hidden="true">← </span>{mock||reportTarget?'Return to mock':'Main menu'}</button><p>Money Exchange 1 · Practice</p></div><section className="panel money-journey" aria-labelledby="money-title">
-    <div className="money-header"><div><h1 id="money-title" tabIndex={-1} ref={headingRef}>{stepTitle(screen)}</h1></div>
+    <div className="money-header"><div>{screen === 'guide' && <p className="eyebrow">How it works</p>}<h1 id="money-title" tabIndex={-1} ref={headingRef}>{stepTitle(screen)}</h1></div>
       {control && <div className="money-header-actions">{screen!=='instructions' && <button className="secondary" onClick={()=>void restart()}>Restart</button>}
         <button className="secondary" onClick={()=>void returnToMock()}>{mock||reportTarget?'Return to mock':'Close'}</button></div>}
       {screen==='test_complete' && <button className="secondary" onClick={()=>void returnToMock()}>{mock||reportTarget?'Return to mock':'Close'}</button>}</div>

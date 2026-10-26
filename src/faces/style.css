@@ -74,3 +74,5 @@ a{color:#0e7490}
 .start-options > summary{cursor:pointer;min-height:44px;display:list-item;padding:.65rem 0;font-weight:600}
 .start-options .actions{margin:0}
 .start-options button{background:transparent;border-color:transparent;color:#0e7490;text-decoration:underline}
+
+.panel details.start-options > summary { font-weight:500; }

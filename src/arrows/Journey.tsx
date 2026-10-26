@@ -1004,7 +1004,7 @@ export function ArrowsJourney({ onLibrary, exclusive, mock, reportTarget }: { on
         <button onClick={() => void deleteAll()}>Delete all Arrows data</button>
         <button className="secondary" onClick={() => setDeleteAllConfirm(false)}>Cancel</button>
       </div> : <button className="secondary" onClick={() => setDeleteAllConfirm(true)}>Delete all Arrows data</button>)}
-    {step === 'guide' && <section className="panel"><h1 ref={heading} tabIndex={-1}>Arrows</h1>
+    {step === 'guide' && <section className="panel"><p className="eyebrow">How it works</p><h1 ref={heading} tabIndex={-1}>Arrows</h1>
       <QuickRules rules={['Red / SIDES: follow the four side arrows.', 'Blue or black / MIDDLE: follow the middle arrow.', 'Choose Left or Right. Your first response within 1.5 seconds counts.']} note="Five sets of 27, with breaks between sets. Keep this tab open and focused during each set."/>
       <button onClick={()=>prepare('quiz')}>Continue</button>
       <details className="start-options"><summary>Examples and saved results</summary><div className="actions"><button className="secondary" onClick={()=>prepare('examples')}>See an example</button><button className="secondary" disabled={!orderedReportsAvailable} onClick={()=>void loadHistory()}>Saved results</button>{canSkip&&<button className="secondary" onClick={()=>void skipGuide()}>Skip instructions</button>}</div><p>Black rows can show horizontal marks on either side of the middle arrow.</p><p>{disclosure}</p></details>

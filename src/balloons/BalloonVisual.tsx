@@ -19,18 +19,19 @@ const shards = [
 ] as const
 
 /** Decorative projection of public, committed state; it receives no risk profile or threshold. */
-export function BalloonIdentity({ type, successfulPumps = 0, outcome = null, reducedMotion = false, compact = false, showIdentity = true }: {
+export function BalloonIdentity({ type, successfulPumps = 0, outcome = null, reducedMotion = false, compact = false, showIdentity = true, playStage = false }: {
   type: VisibleType
   successfulPumps?: number
   outcome?: Outcome | null
   reducedMotion?: boolean
   compact?: boolean
   showIdentity?: boolean
+  playStage?: boolean
 }) {
   const id = useId().replaceAll(':', '')
   const identity = identities[type]
   const pumps = Number.isFinite(successfulPumps) ? Math.max(0, Math.min(32, successfulPumps)) : 0
-  const scale = .5 + pumps * .65 / 32
+  const scale = playStage ? (.3 + pumps * .6 / 32) * 320 / 222 : .5 + pumps * .65 / 32
   return <div className={`balloons-identity${compact ? ' balloons-identity-compact' : ''}`}>
     <svg className="balloon-art" viewBox="0 0 320 320" aria-hidden="true" focusable="false"
       data-motion={reducedMotion ? 'reduced' : 'normal'} data-successful-pumps={pumps} data-outcome={outcome ?? 'active'}>
@@ -42,7 +43,7 @@ export function BalloonIdentity({ type, successfulPumps = 0, outcome = null, red
               : <path d="M0 0h20M0 0v20" stroke="#725412" strokeWidth="1.5" />}
         </pattern>
       </defs>
-      {outcome === 'burst' ? <g data-balloon-burst transform={`translate(160 ${266 - 112 * scale}) scale(${scale})`} fill={identity.fill}>
+      {outcome === 'burst' ? <g data-balloon-burst transform={`translate(160 ${playStage ? 154 : 266 - 112 * scale}) scale(${scale})`} fill={identity.fill}>
         <path d="m-8-17 9-12 8 15 21 4-17 13 2 19-16-10-15 11 3-22-17-12Z" opacity=".55" />
         {shards.map((shard, index) => <path key={index} d={shard.path} className="balloon-shard" style={{ '--shard-x': `${shard.x}px`, '--shard-y': `${shard.y}px`, '--shard-angle': `${shard.angle}deg` } as CSSProperties} />)}
       </g> : <g data-balloon-body className="balloon-inflatable" style={{ transform: `scale(${scale})` }}>

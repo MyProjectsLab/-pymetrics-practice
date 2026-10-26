@@ -3,7 +3,7 @@ import type { StopVisualProfile } from './contracts'
 
 export function Guide({ onNext, onTouch }: { onNext: () => void; onTouch?: () => void }) {
   return <>
-    <p className="eyebrow">Stop · Guide</p>
+    <p className="eyebrow">How it works</p>
     <h1 tabIndex={-1}>Learn the Stop task</h1>
     <p className="lead">A symbol will appear briefly. Press your response key when you see GO. Do nothing when you see NO-GO. The symbol disappears quickly, but you can still respond until the response window closes.</p>
     <p className="note">The standard timed Stop game requires a physical keyboard. On a phone, you can play a separate touch practice by tapping anywhere on its play screen for GO. Touch results are page-only and cannot be compared with keyboard results.</p>

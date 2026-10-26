@@ -123,3 +123,5 @@ body:has(.mock-return-bar) .stop-live:not([hidden]) .stop-reminder { top: 5rem; 
 .panel > .actions:has(+ details.start-options) > button { margin-bottom:0; }
 
 .journey .journey-top button { margin:0; }
+
+.panel details.start-options > summary { font-weight:500; }

@@ -307,7 +307,7 @@ export function StopJourney({ recorder, mode = 'baseline', specificationVersion 
     </div>
     <div className="panel">
       {step === 'new-guide' && <div className="simple-stop-guide">
-        <p className="eyebrow">Stop · How it works</p><h1 tabIndex={-1}>Stop</h1>
+        <p className="eyebrow">How it works</p><h1 tabIndex={-1}>Stop</h1>
         <div className="rule-grid"><div><Stimulus kind="GO" profile={setup.visualProfile}/><p>GO — press {setup.binding.label} once</p></div><div><Stimulus kind="NO_GO" profile={setup.visualProfile}/><p>NO-GO — wait</p></div></div>
         <p>You can respond after the signal disappears, until its response window closes.</p><button onClick={()=>{retireNewAction();moveNewStep('new-question')}}>Continue</button>
         <details className="start-options"><summary>Examples and previous practice</summary>

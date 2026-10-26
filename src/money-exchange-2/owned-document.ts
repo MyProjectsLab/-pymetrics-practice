@@ -5,6 +5,7 @@ const css=':host{display:block}'
 const protectedCss = `
 :host{all:initial;display:block;min-height:100vh;background:#ffffff;color:#14213d;font:18px system-ui;direction:ltr;writing-mode:horizontal-tb}
 fieldset[data-money-stage]{all:initial;box-sizing:border-box;display:block;width:calc(100% - 64px);max-width:1800px;min-height:650px;margin:32px auto;padding:32px 48px;border:0;border-radius:12px;background:#fff;color:#14213d;font:18px system-ui;direction:ltr;writing-mode:horizontal-tb}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#0e7490;margin:0 0 12px;text-align:left}
 legend{font-size:1.6rem;font-weight:650;color:#14213d;float:left;width:100%;margin-bottom:24px;text-align:center}
 output{display:block;margin:12px auto;max-width:1000px;line-height:1.5;color:#14213d;text-align:center;clear:both}
 label{display:inline-block;margin:12px 8px;color:#14213d}
@@ -23,7 +24,8 @@ nav[data-site-nav] a{color:#0e7490;min-height:44px;display:inline-flex;align-ite
 nav[data-site-nav] a.ap-wordmark{gap:1rem;font:600 1rem/1.1 'AP Inter',Arial,sans-serif;color:#14213d;text-decoration:none}nav[data-site-nav] .ap-wordmark svg{width:40px;height:40px;flex-shrink:0;color:#0891b2}
 nav[data-site-nav] a:focus-visible{outline:3px solid #0891b2;outline-offset:3px}
 main[data-money-main]{display:block}
-@media(max-width:600px){fieldset[data-card]{width:100%;margin:8px 0}fieldset[data-money-stage]{width:calc(100% - 16px);margin:8px;padding:16px;min-height:450px}legend{font-size:1.25rem}img[data-money-result],img[data-money-pair]{margin:16px auto}button{padding:10px 16px}fieldset[aria-label]{gap:6px}fieldset[aria-label] label{min-width:30px}}
+@media(max-width:600px){fieldset[data-card]{width:100%;margin:8px 0}fieldset[data-money-stage]{width:calc(100% - 16px);margin:8px;padding:16px;min-height:450px}.eyebrow{font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#0e7490;margin:0 0 12px;text-align:left}
+legend{font-size:1.25rem}img[data-money-result],img[data-money-pair]{margin:16px auto}button{padding:10px 16px}fieldset[aria-label]{gap:6px}fieldset[aria-label] label{min-width:30px}}
 fieldset[data-money-stage^="choice_"]{position:relative;max-width:2400px;height:calc(100svh - 64px);min-height:650px;padding:100px 48px 140px}
 fieldset[data-money-stage^="choice_"] legend{position:absolute;top:25%;left:25%;width:50%;font-size:clamp(24px,1.5vw,40px);float:none}
 fieldset[data-money-stage^="choice_"]>output:not([data-decision-value]):not([data-endpoints]):not([data-money-semantics]){position:absolute;top:31%;left:25%;width:50%;font-size:clamp(16px,1vw,24px)}
@@ -159,7 +161,7 @@ export class OwnedDocument {
     this.#renderEpoch++;const eventEpoch=this.#renderEpoch;this.#preparedResultEpoch=0
     this.#resultImage=null;this.#resultMeaning=null;this.#resultSizeProof=null
     const heading = document.createElement('legend');heading.tabIndex=-1
-    heading.append(document.createTextNode(view.title)); made.push(heading)
+    heading.append(document.createTextNode(view.title)); if(view.stage==='library'){const eyebrow=document.createElement('output');eyebrow.className='eyebrow';eyebrow.textContent='How it works';made.push(eyebrow)}made.push(heading)
     made.push(siteNav)
     for (const line of view.lines) { const item=document.createElement('output'); item.append(document.createTextNode(line)); made.push(item) }
     if (view.amount) {
