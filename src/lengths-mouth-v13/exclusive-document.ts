@@ -1,3 +1,4 @@
+import { loadGameFonts } from '../design/gameFonts'
 /** Owns the complete scored display. The ordinary React document is detached
  * during play so unrelated app styling cannot change what a trial paints. */
 const TASK_CSS = `
@@ -63,6 +64,7 @@ export class ExclusiveMouthDocument {
   #uiCss: string
 
   constructor(uiCss: string, mockContext = false) {
+    loadGameFonts()
     this.#exitLabel = mockContext ? 'Return to mock' : 'End this attempt'
     this.#exitText.data = this.#exitLabel
     if (window.top !== window || !this.#doctype || this.#doctype.name !== 'html' || this.#doctype.publicId || this.#doctype.systemId)

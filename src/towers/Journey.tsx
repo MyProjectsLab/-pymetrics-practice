@@ -869,6 +869,7 @@ export function TowersJourney({ onLibrary, runtime, mock, reportTarget }: { onLi
   const msLeft = Math.max(0, 120000 - elapsed)
   if(reportTarget&&(step!=='report'||!report||!run))return <Shell onLibrary={onLibrary}><section className="journey panel"><h1>Saved Towers report</h1><p role={error?'alert':'status'}>{error||'Checking the exact retained result…'}</p><button onClick={onLibrary}>Return to mock</button></section></Shell>
   return <Shell onLibrary={() => void endAttempt('library')}><section ref={section} className="journey towers-journey">
+    {step === 'guide' && <div className="journey-top"><button className="secondary" onClick={() => void endAttempt('library')}><span aria-hidden="true">← </span>{mock?'Return to mock':'Main menu'}</button><p>Towers · Practice</p></div>}
     {settlementNotice && <p role="status" className="panel">{settlementNotice}</p>}
     {error && <p role="alert" className="panel">{error}</p>}
     {!store && <button onClick={() => void retryStorage()}>Try local storage again</button>}
@@ -881,8 +882,7 @@ export function TowersJourney({ onLibrary, runtime, mock, reportTarget }: { onLi
     {displayRevoked.current && pendingOnsetResolution.current && <div className="panel">
       <button disabled={busy} onClick={() => void retryOnsetResolution()}>Check saved board outcome</button>
     </div>}
-    {step === 'guide' && <AssessmentUsageNotice />}
-    {step === 'guide' && <div className="panel"><h1 tabIndex={-1}>Towers</h1><QuickRules rules={['Move only the top disk of a tower.', 'Select its tower, then the destination tower.', 'Match the target board within two minutes. Aim to use few moves.']} note={'Undo reverses a move. Clear All resets the board; the clock keeps running.'}/><div className="actions"><button onClick={() => goStep('check')}>Continue</button></div><details className="start-options"><summary>Examples and saved results</summary><div className="actions"><button className="secondary" onClick={() => goStep('example')}>See an example</button><button className="secondary" onClick={() => void loadHistory()}>Saved results</button>{skipAvailable&&<button className="secondary" onClick={()=>{void skipTutorial()}}>Skip instructions</button>}</div></details></div>}
+    {step === 'guide' && <div className="panel"><h1 tabIndex={-1}>Towers</h1><QuickRules rules={['Move only the top disk of a tower.', 'Select its tower, then the destination tower.', 'Match the target board within two minutes. Aim to use few moves.']} note={'Undo reverses a move. Clear All resets the board; the clock keeps running.'}/><div className="actions"><button onClick={() => goStep('check')}>Continue</button></div><details className="start-options"><summary>Examples and saved results</summary><div className="actions"><button className="secondary" onClick={() => goStep('example')}>See an example</button><button className="secondary" onClick={() => void loadHistory()}>Saved results</button>{skipAvailable&&<button className="secondary" onClick={()=>{void skipTutorial()}}>Skip instructions</button>}</div></details><AssessmentUsageNotice /></div>}
     {step === 'example' && <div className="panel"><h1 tabIndex={-1}>Try one move</h1>
       <p>This untimed example is separate from your scored puzzle. Disks are listed from bottom to top.</p>
       <div className="towers-example"><span>{exampleMoved ? 'Tower 1: Gold, Leaf' :

@@ -1,0 +1,7 @@
+.site-header { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; padding-block:1.4rem; border-bottom:1px solid #e4e7ef; }
+.site-header .ap-wordmark { display:inline-flex; align-items:center; gap:1rem; color:#14213d; text-decoration:none; }
+.site-header .ap-wordmark svg { width:40px; height:40px; flex-shrink:0; color:#0891b2; }
+.site-header .ap-wordmark > span { font:600 1rem/1.1 'AP Inter',Arial,sans-serif; }
+.site-header nav { display:flex; flex-wrap:wrap; gap:1rem; align-items:center; }
+.site-header nav a { color:#0e7490; font-weight:600; }
+@media(max-width:520px){.site-header{align-items:flex-start;flex-direction:column;gap:.6rem}}

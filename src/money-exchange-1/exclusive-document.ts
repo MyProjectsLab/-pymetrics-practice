@@ -1,3 +1,5 @@
+import { decorateSiteBrand } from '../design/siteBrand'
+import { loadGameFonts } from '../design/gameFonts'
 import indexCss from '../index.css?inline'
 import appCss from '../App.css?inline'
 import moneyCss from './money-exchange-1.css?inline'
@@ -16,9 +18,10 @@ button:focus-visible,input:focus-visible{outline:3px solid #995500;outline-offse
 img[data-money-result]{display:block;width:100%;max-width:700px;height:auto;object-fit:contain;background:#fff}
 img[data-money-pair]{display:block;width:100%;max-width:700px;height:auto;object-fit:contain;background:#fff}
 output[data-money-semantics]{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.assessment-usage-notice{display:block;color:#4a5368;font-size:.8rem;line-height:1.6;text-align:left;margin:1.5rem 0 0}
 nav[data-site-nav]{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:0 0 22px}
 nav[data-site-nav] a{color:#18594f;min-height:44px;display:inline-flex;align-items:center}
-nav[data-site-nav] a:first-child{font-weight:750;font-size:1.15rem}
+nav[data-site-nav] a.ap-wordmark{gap:1rem;font:600 1rem/1.1 'AP Inter',Arial,sans-serif;color:#14213d;text-decoration:none}nav[data-site-nav] .ap-wordmark svg{width:40px;height:40px;flex-shrink:0;color:#0891b2}
 nav[data-site-nav] a:focus-visible{outline:3px solid #995500;outline-offset:3px}
 @media(max-width:600px){fieldset[data-money-stage]{margin:8px;padding:16px}}
 `
@@ -73,6 +76,7 @@ export class ExclusiveMoneyDocument {
   #fault = false
 
   constructor() {
+    loadGameFonts()
     if (window.top !== window || !this.#doctype || this.#doctype.name !== 'html' || this.#doctype.publicId || this.#doctype.systemId)
       throw Error('Money Exchange 1 requires its dedicated top-level page.')
     this.#html.lang = 'en'
@@ -125,7 +129,7 @@ export class ExclusiveMoneyDocument {
     const made: Node[] = []
     const siteNav=document.createElement('nav');siteNav.setAttribute('data-site-nav','');siteNav.setAttribute('aria-label','Site navigation')
     for(const [label,href] of [['TraitGame','/'],['Home','/'],['Assessments','/practice'],['Full mock','/mock']]){
-      const link=document.createElement('a');link.href=href;link.textContent=label
+      const link=document.createElement('a');link.href=href;link.textContent=label;if(label==='TraitGame')decorateSiteBrand(link)
       link.addEventListener('click',event=>{if(!this.checkProtected(view.stage)){event.preventDefault();this.recover();view.onViolation();return}view.onNavigate?.(href,event)})
       siteNav.append(link)
     }
@@ -206,6 +210,8 @@ export class ExclusiveMoneyDocument {
         action.act()
       });made.push(button)
     }
+    const privacyLines = made.filter(node => node instanceof HTMLOutputElement && /Privacy/.test(node.textContent ?? ''))
+    for (const node of privacyLines) { (node as HTMLElement).classList.add('assessment-usage-notice'); made.splice(made.indexOf(node), 1); made.push(node) }
     const records: UiNode[]=[]
     const viewport=window.visualViewport
     if (viewport && viewport.width<innerWidth*0.8) {

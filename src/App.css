@@ -16,8 +16,8 @@ button.secondary:hover:not(:disabled) { background: transparent; border-color: t
 .site-header nav a { color:#0e7490; font-weight:600; }
 .game-card-action { display: inline-flex; align-items: center; gap: .45rem; min-height: 44px; padding: .65rem 1.4rem; border-radius: 999px; background: #0e7490; color: #fff; font-weight: 600; text-decoration: none; }
 .game-card-action:hover, .game-card-action:focus-visible { background: #155e75; color: #fff; }
-.site-header .ap-wordmark { align-items:center; color:#14213d; }
-.site-header .ap-wordmark svg { color:#0891b2; }
+.site-header .ap-wordmark { display:inline-flex; align-items:center; gap:1rem; color:#14213d; text-decoration:none; }
+.site-header .ap-wordmark svg { width:40px; height:40px; flex-shrink:0; color:#0891b2; }
 .site-header .ap-wordmark > span { font:600 1rem/1.1 'AP Inter',Arial,sans-serif; }
 .brand-mark { display: grid; place-items: center; border-radius: .5rem; background: #0891b2; color: white; width: 2.6rem; height: 2.6rem; font-size: 1.3rem; flex-shrink: 0; }
 .release-label, .metadata { color: #4a5368; font-size: .85rem; }
@@ -91,3 +91,12 @@ html[data-mock-retired="true"] .journey { visibility: hidden; }
 body:has(.stop-live:not([hidden])) .mock-return-bar { position: fixed; inset: 0 0 auto; z-index: 21; box-sizing: border-box; }
 body:has(.mock-return-bar) .stop-live:not([hidden]) .stop-reminder { top: 5rem; }
 .mock-game-action-boundary { display: contents; }
+
+/* Shared untimed navigation and the final, quiet privacy line. */
+.journey-top > :is(button,a) { order:0; }
+.journey-top > p { order:1; margin-left:auto; text-align:right; }
+.assessment-usage-notice { color:#4a5368; font-size:.8rem; line-height:1.6; margin:1.5rem 0 0; }
+.assessment-usage-notice a { color:inherit; }
+
+:host { font-family: 'AP Inter',Arial,sans-serif; }
+.journey-top { max-width:49rem; margin-inline:auto; }

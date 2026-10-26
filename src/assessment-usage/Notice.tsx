@@ -1,1 +1,1 @@
-export function AssessmentUsageNotice(){return <p className="note">We collect completion counts and limited result totals. Detailed answers stay in this browser. <a href="/privacy.html">Privacy</a>.</p>}
+export function AssessmentUsageNotice(){return <p className="assessment-usage-notice">We collect completion counts and limited result totals. Detailed answers stay in this browser. <a href="/privacy.html">Privacy</a>.</p>}

@@ -1,3 +1,4 @@
+import { loadGameFonts } from '../design/gameFonts'
 /** A deliberately tiny author-owned document. Closed mode is encapsulation;
  * topology/identity, not absence inferred from shadowRoot, is the admission rule. */
 const PROTECTED_CSS = `
@@ -45,6 +46,7 @@ export class ExclusiveArrowsDocument implements ArrowsDocumentBoundary {
   #uiCss: string
 
   constructor(uiCss: string, mockContext = false) {
+    loadGameFonts()
     this.#exitLabel = mockContext ? 'Return to mock' : 'Back to library'
     this.#exitText.data = this.#exitLabel
     if (window.top !== window) throw Error('Arrows needs a top-level page before setup or timed play.')

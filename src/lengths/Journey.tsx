@@ -750,7 +750,7 @@ export function LengthsJourney({ onLibrary }: { onLibrary: () => void }) {
   const orderedReportsAvailable = typeof navigator !== 'undefined' && !!navigator.locks
   return <Shell onLibrary={leave}>
     <div className="journey lengths-journey">
-      <div className="journey-top"><p>Lengths · Practice</p><button className="secondary" onClick={leave}>Back to library</button></div>
+      <div className="journey-top"><button className="secondary" onClick={leave}><span aria-hidden="true">← </span>Main menu</button><p>Lengths · Practice</p></div>
       {error && <p role="alert" className="feedback">{error}</p>}
       {storageError && <p role="alert">{storageError} Timed play requires verified local storage.</p>}
       {storageError && (deleteAllConfirm ? <div role="group" aria-label="Confirm Lengths data reset">

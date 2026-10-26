@@ -459,15 +459,14 @@ export function MoneyExchangeJourney({ runtime, boundary, onLibrary, mock, repor
   })}
   const control=screen==='instructions' || screen==='ready' || ['award','connecting','connected','partner_rules','return_explanation','transfer','transfer_busy','response_ready','final_allocation','fairness'].includes(screen)
   if(reportTarget&&!['report','help'].includes(screen))return <Shell onLibrary={returnToMock}><section className="journey panel"><h1>Saved Money Exchange 1 report</h1><p role={error?'alert':'status'}>{error||'Checking the exact retained result…'}</p><button onClick={()=>void returnToMock()}>Return to mock</button></section></Shell>
-  return <Shell onLibrary={returnToMock}><section className="panel money-journey" aria-labelledby="money-title">
-    <div className="money-header"><div><p className="eyebrow">Money Exchange 1 · Practice</p><h1 id="money-title" tabIndex={-1} ref={headingRef}>{stepTitle(screen)}</h1></div>
+  return <Shell onLibrary={returnToMock}><div className="journey-top"><button className="secondary" onClick={()=>void returnToMock()}><span aria-hidden="true">← </span>{mock||reportTarget?'Return to mock':'Main menu'}</button><p>Money Exchange 1 · Practice</p></div><section className="panel money-journey" aria-labelledby="money-title">
+    <div className="money-header"><div><h1 id="money-title" tabIndex={-1} ref={headingRef}>{stepTitle(screen)}</h1></div>
       {control && <div className="money-header-actions">{screen!=='instructions' && <button className="secondary" onClick={()=>void restart()}>Restart</button>}
         <button className="secondary" onClick={()=>void returnToMock()}>{mock||reportTarget?'Return to mock':'Close'}</button></div>}
       {screen==='test_complete' && <button className="secondary" onClick={()=>void returnToMock()}>{mock||reportTarget?'Return to mock':'Close'}</button>}</div>
     {!ready && <p role="status">Checking local storage…</p>}
     {error && <p role="alert" className="money-error">{error}</p>}
     {mock && returnFailed && !returnBusy && <button className="secondary" onClick={leaveMockUnconfirmed}>Leave with result unconfirmed</button>}
-    {(screen === 'guide' || screen === 'ready') && <AssessmentUsageNotice />}
     {screen==='guide' && <><QuickRules rules={['Choose how much of your simulated $10 to send.','The partner receives three times that amount and returns a scripted share.','Rate how fair the return feels. There is no correct amount or fairness rating.']} note="Untimed practice. All money and partners are simulated."/>
       <button onClick={()=>change('quiz')}>Continue</button><details className="start-options"><summary>Examples and saved results</summary><div className="money-actions"><button className="secondary" onClick={()=>change('example')}>See an example</button>{canSkip&&<button className="secondary" onClick={()=>void skipGuide()}>Skip instructions</button>}<button className="secondary" disabled={!ready} onClick={()=>void showHistory()}>Saved results</button></div></details></>}
     {screen==='example' && <><p>In this example, you send $5 from your $10. The partner receives $15 and returns $6.15. You have $10 − $5 + $6.15 = $11.15. The partner keeps $15 − $6.15 = $8.85. Practice returns can vary.</p><button onClick={()=>change('quiz')}>Next</button></>}
@@ -512,6 +511,7 @@ export function MoneyExchangeJourney({ runtime, boundary, onLibrary, mock, repor
         <button className="secondary" disabled={!history.length&&!hasUnresolvedActive} onClick={()=>void removeAll()}>Delete all Money Exchange 1 data</button><button className="secondary" onClick={()=>void close()}>Library</button></div></>}
     {screen==='review' && <><p>The previous exchange has not been confirmed as complete. It cannot resume midway.</p>
       <button disabled={busy||runtime.state.settling} onClick={()=>void checkOutcome()}>Check saved outcome</button><button className="secondary" onClick={()=>void showHistory()}>Local history</button><button className="secondary" onClick={()=>void close()}>Library</button></>}
+    {(screen === 'guide' || screen === 'ready') && <AssessmentUsageNotice />}
   </section></Shell>
 }
 function runtimeForm(id:string,forms:readonly {id:string;returnBps:number}[]) { const form=forms.find(item=>item.id===id);if(!form)throw Error('Saved form unavailable');return form }

@@ -302,7 +302,7 @@ export function StopJourney({ recorder, mode = 'baseline', specificationVersion 
   }
   return <section className="journey" ref={content}>
     <div className="journey-top">
-      {step !== 'handoff' && step !== 'touch_session' && <button className="secondary" data-mock-return-intent={mock && (step === 'guide' || step === 'new-guide') ? "" : undefined} onClick={back}>{step === 'guide' || step === 'new-guide' ? menuLabel : 'Back'}</button>}
+      {step !== 'handoff' && step !== 'touch_session' && <button className="secondary" data-mock-return-intent={mock && (step === 'guide' || step === 'new-guide') ? "" : undefined} onClick={back}><span aria-hidden="true">← </span>{step === 'guide' || step === 'new-guide' ? menuLabel : 'Back'}</button>}
       <p>Stop · Practice</p>
     </div>
     <div className="panel">
@@ -330,7 +330,6 @@ export function StopJourney({ recorder, mode = 'baseline', specificationVersion 
         setNewInput({ origin: 'fresh', code: observation.proof.code, visualProfile: setup.visualProfile, proof: observation.proof,
           receiptId: observation.receipt?.receiptId ?? null, tabNonce: observation.receipt?.tabNonce ?? null }); moveNewStep('readiness') }} />}
       {step==='new-guide'&&storageDisclosure()!==PERSISTENT_DISCLOSURE&&<p className="note" role="status">{storageDisclosure()}</p>}
-      {(step === 'guide' || step === 'new-guide') && <AssessmentUsageNotice />}
     {step === 'guide' && <><Guide onNext={() => setStep('rule')} onTouch={!mock && mode === 'baseline' ? () => setStep('touch_examples') : undefined} />
         <p className="note">{storageDisclosure()}</p>
         {evidence && <div className="actions"><button className="secondary" onClick={() => void skipIntroduction()}>Skip introduction</button>
@@ -376,6 +375,7 @@ export function StopJourney({ recorder, mode = 'baseline', specificationVersion 
         onGuide={onRestart} onLibrary={onLibrary} onReplay={onReplay} onTraining={onTraining} onRetestResult={onRetestResult} onRetestInvalid={onRetestInvalid}
         mockReady={mockReady} mockError={mockError} onMockContinue={mock ? () => void mock.continue().catch(cause => setMockError(cause instanceof Error ? cause.message : 'Continue could not be confirmed.')) : undefined} />}
       {step !== 'handoff' && step !== 'touch_session' && step !== 'guide' && step !== 'new-guide' && <div className="actions"><button className="secondary" data-mock-return-intent={mock ? "" : undefined} onClick={onLibrary}>{menuLabel}</button></div>}
+      {(step === 'guide' || step === 'new-guide') && <AssessmentUsageNotice />}
     </div>
   </section>
 }

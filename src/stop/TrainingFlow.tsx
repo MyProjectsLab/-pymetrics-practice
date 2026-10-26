@@ -273,7 +273,7 @@ export function TrainingFlow({ chain, restoredReservation, onChain, onRetest, on
     <p role="status">Your completed retest is retained in this tab while saving finishes. This chain cannot start another retest.</p>
     <button onClick={onLibrary}>Back to library</button>
   </section>
-  return <section ref={heading} className="journey"><div className="journey-top"><button className="secondary" onClick={() => { if (reservation) { stopExposure.release(reservation.recorder.sessionId); void stopLocalStore()?.release(reservation.recorder.sessionId, false) } onLibrary() }}>Back to library</button><p>Stop · Advanced training</p></div>
+  return <section ref={heading} className="journey"><div className="journey-top"><button className="secondary" onClick={() => { if (reservation) { stopExposure.release(reservation.recorder.sessionId); void stopLocalStore()?.release(reservation.recorder.sessionId, false) } onLibrary() }}><span aria-hidden="true">← </span>Main menu</button><p>Stop · Advanced training</p></div>
     {step === 'recommendation' && <div className="panel">
       <h1 tabIndex={-1}>Recommended Stop exercise</h1>
       <p><strong>Observed:</strong> {chain.recommendation.observed}</p>

@@ -993,7 +993,7 @@ export function ArrowsJourney({ onLibrary, exclusive, mock, reportTarget }: { on
   if(reportTarget&&step!=='report')return <Shell onLibrary={onLibrary}><section className="journey panel"><h1>Saved Arrows report</h1><p role={error||storageError?'alert':'status'}>{error||storageError||'Checking the exact retained result…'}</p><button onClick={onLibrary}>Return to mock</button></section></Shell>
   return <Shell onLibrary={mock?returnToMock:leave}>
     <div ref={journey} className="journey arrows-journey">
-      <div className="journey-top"><p>Arrows · Practice</p><button className="secondary" onClick={mock?returnToMock:leave}>{mock?'Return to mock':'Main menu'}</button></div>
+      <div className="journey-top"><button className="secondary" onClick={mock?returnToMock:leave}><span aria-hidden="true">← </span>{mock?'Return to mock':'Main menu'}</button><p>Arrows · Practice</p></div>
       {!preparationStarted.current&&!starting&&!startUncertain&&!uncertainStart.current&&isPreparationStep(step)&&(preparationBack.current.length>0||step==='examples'&&example>0)&&<button className="secondary" onClick={backPreparation}>Back</button>}
       {error && <p role="alert" className="feedback">{error}</p>}
       {mockError && step!=='report' && <p role="alert" className="feedback">{mockError} <button onClick={()=>leaveMockUnconfirmed()}>Leave with result unconfirmed</button></p>}
@@ -1004,7 +1004,6 @@ export function ArrowsJourney({ onLibrary, exclusive, mock, reportTarget }: { on
         <button onClick={() => void deleteAll()}>Delete all Arrows data</button>
         <button className="secondary" onClick={() => setDeleteAllConfirm(false)}>Cancel</button>
       </div> : <button className="secondary" onClick={() => setDeleteAllConfirm(true)}>Delete all Arrows data</button>)}
-      {step === 'guide' && <AssessmentUsageNotice />}
     {step === 'guide' && <section className="panel"><h1 ref={heading} tabIndex={-1}>Arrows</h1>
       <QuickRules rules={['Red / SIDES: follow the four side arrows.', 'Blue or black / MIDDLE: follow the middle arrow.', 'Choose Left or Right. Your first response within 1.5 seconds counts.']} note="Five sets of 27, with breaks between sets. Keep this tab open and focused during each set."/>
       <button onClick={()=>prepare('quiz')}>Continue</button>
@@ -1014,7 +1013,7 @@ export function ArrowsJourney({ onLibrary, exclusive, mock, reportTarget }: { on
           <p>This permanently deletes all local Arrows attempts, results, events and form history in this browser. It cannot be undone. Other games are unaffected.</p>
           <button onClick={() => void deleteAll()}>Delete all Arrows data</button>
           <button className="secondary" onClick={() => setDeleteAllConfirm(false)}>Cancel</button>
-        </div> : <button className="secondary" onClick={() => setDeleteAllConfirm(true)}>Delete all Arrows data</button>)}</section>}
+        </div> : <button className="secondary" onClick={() => setDeleteAllConfirm(true)}>Delete all Arrows data</button>)}<AssessmentUsageNotice /></section>}
       {step === 'examples' && <section className="panel"><h1 ref={heading} tabIndex={-1}>Worked example {example + 1} of 3</h1>
         <p><strong>{example === 0 ? 'Red · SIDES' : example === 1 ? 'Blue · MIDDLE' : 'Black · MIDDLE'}</strong>: {example === 0 ? 'follow all four side arrows' : 'follow the middle arrow'}.</p>
         <div className="arrows-example" style={{ color: example === 0 ? '#b11f2f' : example === 1 ? '#184dab' : '#171717' }} aria-label={example === 0 ? 'Four red sides point right, middle points left' : example === 1 ? 'Blue middle points left, sides point right' : 'Black middle points left, four horizontal marks'}>{(example === 2 ? ['—', '—', '←', '—', '—'] : ['→', '→', '←', '→', '→']).map((symbol, index) => <span key={index}>{symbol}</span>)}</div>

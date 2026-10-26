@@ -16,3 +16,6 @@
 .mouth-table th,.mouth-table td {padding:8px;text-align:left;border-bottom:1px solid #bbb}
 .mouth-run {max-width:40rem;margin:auto}
 .mouth-journey :focus-visible {outline:3px solid #005fcc;outline-offset:4px}
+
+/* Keep programmatically focused headings quiet; controls retain visible focus. */
+.mouth-journey h1:focus{outline:none}

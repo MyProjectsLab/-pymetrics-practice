@@ -1,4 +1,8 @@
-import css from './style.css?inline'
+import facesCss from './style.css?inline'
+import headerCss from '../design/site-header.css?inline'
+import { loadGameFonts } from '../design/gameFonts'
+import { decorateSiteBrand } from '../design/siteBrand'
+const css = `${headerCss}\n${facesCss}`
 import {invariant} from './model'
 import {Ownership,wipe} from './ownership'
 
@@ -44,6 +48,7 @@ export class OwnedStage {
  private mutate(run:()=>void){this.assert();this.observer.disconnect();try{run()}finally{this.capture()}}
  readonly ownership:Ownership
  constructor(ownership=new Ownership()){
+  loadGameFonts()
   this.ownership=ownership
   ownership.beforeErase=()=>{if(!this.intact())this.fault=true;this.observer.disconnect()}
   ownership.afterErase=()=>this.capture()
@@ -80,20 +85,23 @@ export class OwnedStage {
   this.epoch++;this.clearView()
   this.views.add(view);this.ownership.own(this.owner??this.ownership.generationKey,view)
   this.currentImage=null;this.currentContext=null;this.timerNode=null;this.statusNode=null
-  const frame=document.createElement('div');frame.className=view.question?'question':''
-  const header=document.createElement('header'),siteNav=document.createElement('nav');siteNav.setAttribute('aria-label','Site navigation')
+  const frame=document.createElement('div');frame.className=view.question?'question':'journey'
+  const header=document.createElement('header'),siteNav=document.createElement('nav');header.className='site-header';siteNav.setAttribute('aria-label','Site navigation')
   for(const [label,href] of [['TraitGame','/'],['Home','/'],['Assessments','/practice'],['Full mock','/mock']]){
-   const link=document.createElement('a');link.href=href;link.textContent=label;if(label==='TraitGame')link.className='brand'
-   this.on(link,'click',()=>this.onNavigate?.());siteNav.append(link)
+   const link=document.createElement('a');link.href=href;link.textContent=label;if(label==='TraitGame')decorateSiteBrand(link)
+   this.on(link,'click',()=>this.onNavigate?.());if(label==='TraitGame')header.append(link);else siteNav.append(link)
   }
   header.append(siteNav)
   if(this.mockReturn){const back=document.createElement('button');back.type='button';back.textContent='Return to mock';this.on(back,'click',this.mockReturn);header.append(back)}
   const heading=document.createElement('h1');heading.tabIndex=-1;heading.textContent=view.title
-  frame.append(header,heading)
-  for(const line of view.paragraphs??[]){const p=document.createElement('p');p.textContent=line;frame.append(p)}
-  if(view.notice){const note=document.createElement('p');note.className='notice';note.textContent=view.notice;frame.append(note)}
-  view.content?.(frame,n=>frame.append(n))
-  if(view.actions?.length){const nav=document.createElement('nav');nav.className='actions';for(const action of view.actions){const button=document.createElement('button');button.type='button';button.textContent=this.mockReturn&&['Close','Back to library','Back to mock'].includes(action.label)?'Return to mock':action.label;button.disabled=!!action.disabled;if(action.secondary)button.className='secondary';this.on(button,'click',action.run);nav.append(button)}frame.append(nav)}
+  const panel=view.question?frame:document.createElement('section');if(!view.question)panel.className='panel'
+  frame.append(header);panel.append(heading)
+  const privacy:HTMLElement[]=[]
+  for(const line of view.paragraphs??[]){const p=document.createElement('p');p.textContent=line;if(!view.question&&line.includes('Privacy')){p.className='assessment-usage-notice';const parts=line.split('Privacy');const link=document.createElement('a');link.href='/privacy.html';link.textContent='Privacy';p.replaceChildren(document.createTextNode(parts[0]),link,document.createTextNode(parts.slice(1).join('Privacy')));privacy.push(p)}else panel.append(p)}
+  if(view.notice){const note=document.createElement('p');note.className='notice';note.textContent=view.notice;panel.append(note)}
+  view.content?.(panel,n=>panel.append(n))
+  if(view.actions?.length){const nav=document.createElement('nav');nav.className='actions';for(const action of view.actions){const button=document.createElement('button');button.type='button';button.textContent=this.mockReturn&&['Close','Back to library','Back to mock'].includes(action.label)?'Return to mock':action.label;button.disabled=!!action.disabled;if(action.secondary)button.className='secondary';this.on(button,'click',action.run);if(!view.question&&action.label==='Main menu'){const top=document.createElement('div');top.className='journey-top';const arrow=document.createElement('span');arrow.setAttribute('aria-hidden','true');arrow.textContent='← ';button.prepend(arrow);const label=document.createElement('p');label.textContent='Faces · Practice';top.append(button,label);frame.append(top)}else nav.append(button)}panel.append(nav)}
+  if(!view.question){panel.append(...privacy);frame.append(panel)}
   this.register(frame);view.content=undefined
   this.mount.replaceChildren(frame)
   this.capture()

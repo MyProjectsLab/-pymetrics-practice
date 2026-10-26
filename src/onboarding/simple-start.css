@@ -2,3 +2,5 @@
 .simple-stop-guide .rule-grid{margin:1rem 0;gap:1rem}.simple-stop-guide .rule-grid svg{width:80px;height:80px}.simple-stop-guide .rule-grid p{margin:.5rem 0}.simple-stop-guide .rule-grid>div{padding:.5rem}
 
 .journey .actions > button:not(.secondary) ~ button:not(.secondary) { background: transparent; border-color: transparent; color: #14213d; text-decoration: underline; text-underline-offset: 4px; }
+
+.simple-stop-guide .rule-grid > div { text-align:center; }
