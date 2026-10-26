@@ -1,0 +1,3733 @@
+{
+  "version": "money_exchange_1_fixtures_v1_0",
+  "formsPayloadSha256": "cf4c07b085e883bce0ddcaea98fd4a5e4571ebf968a9ad1f440d81da40461cb0",
+  "sampleCents": [
+    0,
+    1,
+    5,
+    500,
+    999,
+    1000
+  ],
+  "cases": [
+    {
+      "formId": "ME1-1",
+      "returnBps": 4100,
+      "sentCents": 0,
+      "potCents": 0,
+      "returnedCents": 0,
+      "selfCents": 1000,
+      "partnerCents": 0,
+      "fairnessEligible": false
+    },
+    {
+      "formId": "ME1-1",
+      "returnBps": 4100,
+      "sentCents": 1,
+      "potCents": 3,
+      "returnedCents": 1,
+      "selfCents": 1000,
+      "partnerCents": 2,
+      "fairnessEligible": true
+    },
+    {
+      "formId": "ME1-1",
+      "returnBps": 4100,
+      "sentCents": 5,
+      "potCents": 15,
+      "returnedCents": 6,
+      "selfCents": 1001,
+      "partnerCents": 9,
+      "fairnessEligible": true
+    },
+    {
+      "formId": "ME1-1",
+      "returnBps": 4100,
+      "sentCents": 500,
+      "potCents": 1500,
+      "returnedCents": 615,
+      "selfCents": 1115,
+      "partnerCents": 885,
+      "fairnessEligible": true
+    },
+    {
+      "formId": "ME1-1",
+      "returnBps": 4100,
+      "sentCents": 999,
+      "potCents": 2997,
+      "returnedCents": 1229,
+      "selfCents": 1230,
+      "partnerCents": 1768,
+      "fairnessEligible": true
+    },
+    {
+      "formId": "ME1-1",
+      "returnBps": 4100,
+      "sentCents": 1000,
+      "potCents": 3000,
+      "returnedCents": 1230,
+      "selfCents": 1230,
+      "partnerCents": 1770,
+      "fairnessEligible": true
+    },
+    {
+      "formId": "ME1-2",
+      "returnBps": 2000,
+      "sentCents": 0,
+      "potCents": 0,
+      "returnedCents": 0,
+      "selfCents": 1000,
+      "partnerCents": 0,
+      "fairnessEligible": false
+    },
+    {
+      "formId": "ME1-2",
+      "returnBps": 2000,
+      "sentCents": 1,
+      "potCents": 3,
+      "returnedCents": 1,
+      "selfCents": 1000,
+      "partnerCents": 2,
+      "fairnessEligible": true
+    },
+    {
+      "formId": "ME1-2",
+      "returnBps": 2000,
+      "sentCents": 5,
+      "potCents": 15,
+      "returnedCents": 3,
+      "selfCents": 998,
+      "partnerCents": 12,
+      "fairnessEligible": true
+    },
+    {
+      "formId": "ME1-2",
+      "returnBps": 2000,
+      "sentCents": 500,
+      "potCents": 1500,
+      "returnedCents": 300,
+      "selfCents": 800,
+      "partnerCents": 1200,
+      "fairnessEligible": true
+    },
+    {
+      "formId": "ME1-2",
+      "returnBps": 2000,
+      "sentCents": 999,
+      "potCents": 2997,
+      "returnedCents": 599,
+      "selfCents": 600,
+      "partnerCents": 2398,
+      "fairnessEligible": true
+    },
+    {
+      "formId": "ME1-2",
+      "returnBps": 2000,
+      "sentCents": 1000,
+      "potCents": 3000,
+      "returnedCents": 600,
+      "selfCents": 600,
+      "partnerCents": 2400,
+      "fairnessEligible": true
+    },
+    {
+      "formId": "ME1-3",
+      "returnBps": 6500,
+      "sentCents": 0,
+      "potCents": 0,
+      "returnedCents": 0,
+      "selfCents": 1000,
+      "partnerCents": 0,
+      "fairnessEligible": false
+    },
+    {
+      "formId": "ME1-3",
+      "returnBps": 6500,
+      "sentCents": 1,
+      "potCents": 3,
+      "returnedCents": 2,
+      "selfCents": 1001,
+      "partnerCents": 1,
+      "fairnessEligible": true
+    },
+    {
+      "formId": "ME1-3",
+      "returnBps": 6500,
+      "sentCents": 5,
+      "potCents": 15,
+      "returnedCents": 10,
+      "selfCents": 1005,
+      "partnerCents": 5,
+      "fairnessEligible": true
+    },
+    {
+      "formId": "ME1-3",
+      "returnBps": 6500,
+      "sentCents": 500,
+      "potCents": 1500,
+      "returnedCents": 975,
+      "selfCents": 1475,
+      "partnerCents": 525,
+      "fairnessEligible": true
+    },
+    {
+      "formId": "ME1-3",
+      "returnBps": 6500,
+      "sentCents": 999,
+      "potCents": 2997,
+      "returnedCents": 1948,
+      "selfCents": 1949,
+      "partnerCents": 1049,
+      "fairnessEligible": true
+    },
+    {
+      "formId": "ME1-3",
+      "returnBps": 6500,
+      "sentCents": 1000,
+      "potCents": 3000,
+      "returnedCents": 1950,
+      "selfCents": 1950,
+      "partnerCents": 1050,
+      "fairnessEligible": true
+    },
+    {
+      "formId": "ME1-4",
+      "returnBps": 0,
+      "sentCents": 0,
+      "potCents": 0,
+      "returnedCents": 0,
+      "selfCents": 1000,
+      "partnerCents": 0,
+      "fairnessEligible": false
+    },
+    {
+      "formId": "ME1-4",
+      "returnBps": 0,
+      "sentCents": 1,
+      "potCents": 3,
+      "returnedCents": 0,
+      "selfCents": 999,
+      "partnerCents": 3,
+      "fairnessEligible": true
+    },
+    {
+      "formId": "ME1-4",
+      "returnBps": 0,
+      "sentCents": 5,
+      "potCents": 15,
+      "returnedCents": 0,
+      "selfCents": 995,
+      "partnerCents": 15,
+      "fairnessEligible": true
+    },
+    {
+      "formId": "ME1-4",
+      "returnBps": 0,
+      "sentCents": 500,
+      "potCents": 1500,
+      "returnedCents": 0,
+      "selfCents": 500,
+      "partnerCents": 1500,
+      "fairnessEligible": true
+    },
+    {
+      "formId": "ME1-4",
+      "returnBps": 0,
+      "sentCents": 999,
+      "potCents": 2997,
+      "returnedCents": 0,
+      "selfCents": 1,
+      "partnerCents": 2997,
+      "fairnessEligible": true
+    },
+    {
+      "formId": "ME1-4",
+      "returnBps": 0,
+      "sentCents": 1000,
+      "potCents": 3000,
+      "returnedCents": 0,
+      "selfCents": 0,
+      "partnerCents": 3000,
+      "fairnessEligible": true
+    },
+    {
+      "formId": "ME1-5",
+      "returnBps": 8000,
+      "sentCents": 0,
+      "potCents": 0,
+      "returnedCents": 0,
+      "selfCents": 1000,
+      "partnerCents": 0,
+      "fairnessEligible": false
+    },
+    {
+      "formId": "ME1-5",
+      "returnBps": 8000,
+      "sentCents": 1,
+      "potCents": 3,
+      "returnedCents": 2,
+      "selfCents": 1001,
+      "partnerCents": 1,
+      "fairnessEligible": true
+    },
+    {
+      "formId": "ME1-5",
+      "returnBps": 8000,
+      "sentCents": 5,
+      "potCents": 15,
+      "returnedCents": 12,
+      "selfCents": 1007,
+      "partnerCents": 3,
+      "fairnessEligible": true
+    },
+    {
+      "formId": "ME1-5",
+      "returnBps": 8000,
+      "sentCents": 500,
+      "potCents": 1500,
+      "returnedCents": 1200,
+      "selfCents": 1700,
+      "partnerCents": 300,
+      "fairnessEligible": true
+    },
+    {
+      "formId": "ME1-5",
+      "returnBps": 8000,
+      "sentCents": 999,
+      "potCents": 2997,
+      "returnedCents": 2398,
+      "selfCents": 2399,
+      "partnerCents": 599,
+      "fairnessEligible": true
+    },
+    {
+      "formId": "ME1-5",
+      "returnBps": 8000,
+      "sentCents": 1000,
+      "potCents": 3000,
+      "returnedCents": 2400,
+      "selfCents": 2400,
+      "partnerCents": 600,
+      "fairnessEligible": true
+    },
+    {
+      "formId": "ME1-6",
+      "returnBps": 3500,
+      "sentCents": 0,
+      "potCents": 0,
+      "returnedCents": 0,
+      "selfCents": 1000,
+      "partnerCents": 0,
+      "fairnessEligible": false
+    },
+    {
+      "formId": "ME1-6",
+      "returnBps": 3500,
+      "sentCents": 1,
+      "potCents": 3,
+      "returnedCents": 1,
+      "selfCents": 1000,
+      "partnerCents": 2,
+      "fairnessEligible": true
+    },
+    {
+      "formId": "ME1-6",
+      "returnBps": 3500,
+      "sentCents": 5,
+      "potCents": 15,
+      "returnedCents": 5,
+      "selfCents": 1000,
+      "partnerCents": 10,
+      "fairnessEligible": true
+    },
+    {
+      "formId": "ME1-6",
+      "returnBps": 3500,
+      "sentCents": 500,
+      "potCents": 1500,
+      "returnedCents": 525,
+      "selfCents": 1025,
+      "partnerCents": 975,
+      "fairnessEligible": true
+    },
+    {
+      "formId": "ME1-6",
+      "returnBps": 3500,
+      "sentCents": 999,
+      "potCents": 2997,
+      "returnedCents": 1049,
+      "selfCents": 1050,
+      "partnerCents": 1948,
+      "fairnessEligible": true
+    },
+    {
+      "formId": "ME1-6",
+      "returnBps": 3500,
+      "sentCents": 1000,
+      "potCents": 3000,
+      "returnedCents": 1050,
+      "selfCents": 1050,
+      "partnerCents": 1950,
+      "fairnessEligible": true
+    }
+  ],
+  "filmedExample": {
+    "formId": "ME1-1",
+    "rating": 10,
+    "sentCents": 500,
+    "potCents": 1500,
+    "returnedCents": 615,
+    "selfCents": 1115,
+    "partnerCents": 885,
+    "fairnessEligible": true
+  },
+  "gameplay": {
+    "screens": [
+      {
+        "id": "instructions",
+        "evidence": "game_still_0",
+        "controls": [
+          "start",
+          "close"
+        ],
+        "next": "ready",
+        "admitWhen": "current_view",
+        "publishNextWhen": "current_view",
+        "display": "instructions_only"
+      },
+      {
+        "id": "ready",
+        "evidence": "game_still_1",
+        "controls": [
+          "next",
+          "restart",
+          "close"
+        ],
+        "next": "award",
+        "admitWhen": "current_view",
+        "publishNextWhen": "current_view",
+        "display": "ready_prompt"
+      },
+      {
+        "id": "award",
+        "evidence": "film_1_3",
+        "controls": [
+          "next",
+          "restart",
+          "close"
+        ],
+        "next": "connecting",
+        "admitWhen": "current_view",
+        "publishNextWhen": "current_view",
+        "display": "one_centered_candidate_1000"
+      },
+      {
+        "id": "connecting",
+        "evidence": "film_4",
+        "controls": [
+          "restart",
+          "close"
+        ],
+        "disabled": [
+          "next"
+        ],
+        "next": "connected",
+        "admitWhen": "automatic_current_epoch",
+        "publishNextWhen": "connection_ready_and_current_epoch",
+        "display": "pair_1000_0"
+      },
+      {
+        "id": "connected",
+        "evidence": "film_5_7",
+        "controls": [
+          "next",
+          "restart",
+          "close"
+        ],
+        "next": "partner_rules",
+        "admitWhen": "current_view",
+        "publishNextWhen": "current_view",
+        "display": "pair_1000_0"
+      },
+      {
+        "id": "partner_rules",
+        "evidence": "film_8_14",
+        "controls": [
+          "next",
+          "restart",
+          "close"
+        ],
+        "next": "return_explanation",
+        "admitWhen": "current_view",
+        "publishNextWhen": "current_view",
+        "display": "pair_1000_0"
+      },
+      {
+        "id": "return_explanation",
+        "evidence": "film_15_22",
+        "controls": [
+          "next",
+          "restart",
+          "close"
+        ],
+        "next": "transfer",
+        "admitWhen": "owner_storage_ready_and_no_unresolved_attempt",
+        "publishNextWhen": "confirmed_atomic_arm",
+        "display": "pair_1000_0"
+      },
+      {
+        "id": "transfer",
+        "evidence": "film_23_25",
+        "controls": [
+          "next",
+          "restart",
+          "close"
+        ],
+        "next": "transfer_busy",
+        "admitWhen": "valid_0_1000_cents_and_no_pending_request",
+        "publishNextWhen": "confirmed_transfer",
+        "display": "amount_field_pair_1000_0"
+      },
+      {
+        "id": "transfer_busy",
+        "evidence": "film_26_29",
+        "controls": [
+          "restart",
+          "close"
+        ],
+        "disabled": [
+          "next"
+        ],
+        "next": "response_ready",
+        "admitWhen": "automatic_current_epoch",
+        "publishNextWhen": "confirmed_transfer_and_animation_ready",
+        "display": "moving_pair_no_return"
+      },
+      {
+        "id": "response_ready",
+        "evidence": "film_30_33",
+        "controls": [
+          "next",
+          "restart",
+          "close"
+        ],
+        "next": "final_allocation",
+        "admitWhen": "confirmed_transfer_and_current_epoch",
+        "publishNextWhen": "current_result_view_only",
+        "display": "tripled_pot_return_hidden"
+      },
+      {
+        "id": "final_allocation",
+        "evidence": "film_34_42",
+        "controls": [
+          "next",
+          "restart",
+          "close"
+        ],
+        "next": "fairness",
+        "admitWhen": "captured_visible_result_and_confirmed_return_event_for_positive_and_zero",
+        "publishNextWhen": "current_owner_and_view",
+        "display": "return_and_both_final_balances"
+      },
+      {
+        "id": "fairness",
+        "evidence": "film_43_53",
+        "controls": [
+          "next",
+          "restart",
+          "close"
+        ],
+        "next": "test_complete",
+        "admitWhen": "positive_selected_0_10_or_zero_na",
+        "publishNextWhen": "confirmed_atomic_terminal",
+        "display": "rating_without_balance_pair"
+      },
+      {
+        "id": "test_complete",
+        "evidence": "film_54",
+        "controls": [
+          "next",
+          "close"
+        ],
+        "disabled": [
+          "restart"
+        ],
+        "next": "report",
+        "admitWhen": "confirmed_completed_terminal_and_current_view",
+        "publishNextWhen": "ordered_current_report_view",
+        "display": "completion_without_balance_pair"
+      },
+      {
+        "id": "report",
+        "evidence": "game_still_2",
+        "controls": [
+          "try_again",
+          "arithmetic_help",
+          "ordinary_exit"
+        ],
+        "next": "arithmetic_help",
+        "admitWhen": "current_saved_report_view",
+        "publishNextWhen": "ordered_current_help_view",
+        "display": "amounts_rating_and_original_help"
+      },
+      {
+        "id": "arithmetic_help",
+        "evidence": "game_still_3",
+        "controls": [
+          "back",
+          "close"
+        ],
+        "next": "report",
+        "admitWhen": "same_saved_report_view",
+        "publishNextWhen": "ordered_current_report_view",
+        "display": "arithmetic_only"
+      }
+    ],
+    "positiveScreenPath": [
+      "instructions",
+      "ready",
+      "award",
+      "connecting",
+      "connected",
+      "partner_rules",
+      "return_explanation",
+      "transfer",
+      "transfer_busy",
+      "response_ready",
+      "final_allocation",
+      "fairness",
+      "test_complete",
+      "report"
+    ],
+    "zeroScreenPath": [
+      "instructions",
+      "ready",
+      "award",
+      "connecting",
+      "connected",
+      "partner_rules",
+      "return_explanation",
+      "transfer",
+      "transfer_busy",
+      "response_ready",
+      "final_allocation",
+      "fairness",
+      "test_complete",
+      "report"
+    ],
+    "progression": [
+      {
+        "from": "return_explanation",
+        "operation": "arm",
+        "to": "transfer",
+        "requires": [
+          "arm_committed",
+          "current_owner"
+        ]
+      },
+      {
+        "from": "transfer",
+        "operation": "transfer",
+        "to": "transfer_busy",
+        "requires": [
+          "valid_cents",
+          "transfer_committed",
+          "current_owner"
+        ]
+      },
+      {
+        "from": "response_ready",
+        "operation": "return",
+        "to": "final_allocation",
+        "requires": [
+          "return_hidden_until_next",
+          "current_view"
+        ]
+      },
+      {
+        "from": "final_allocation",
+        "operation": "return",
+        "to": "fairness",
+        "requires": [
+          "visible_capture",
+          "return_presented_committed",
+          "current_owner"
+        ],
+        "appliesTo": [
+          "positive",
+          "zero"
+        ]
+      },
+      {
+        "from": "fairness",
+        "operation": "terminal",
+        "to": "test_complete",
+        "requires": [
+          "rating_or_na_selected",
+          "atomic_terminal_committed",
+          "current_owner"
+        ],
+        "appliesTo": [
+          "positive",
+          "zero"
+        ]
+      },
+      {
+        "from": "test_complete",
+        "operation": "view",
+        "to": "report",
+        "requires": [
+          "current_complete_root",
+          "ordered_publication"
+        ]
+      }
+    ]
+  },
+  "authority": {
+    "dimensions": {
+      "operations": [
+        "none",
+        "arm",
+        "transfer",
+        "return",
+        "terminal",
+        "view",
+        "deletion"
+      ],
+      "delivery": [
+        "idle",
+        "checking",
+        "retryable",
+        "blocked"
+      ],
+      "durable": [
+        "absent_fenced",
+        "committed",
+        "unknown",
+        "deleted_or_replaced"
+      ],
+      "capability": [
+        "active",
+        "permanently_withdrawn"
+      ],
+      "navigation": [
+        "continue",
+        "restart",
+        "close",
+        "technical"
+      ],
+      "exposure": [
+        "not_revealed",
+        "possibly_revealed",
+        "captured_visible"
+      ]
+    },
+    "checkDeadlineMs": 2500,
+    "automaticRetryDelayMaxMs": 900,
+    "automaticRetryCount": 1,
+    "outcomeRows": [
+      {
+        "outcome": "no_arm_fenced",
+        "continueView": "return_explanation",
+        "restartView": "ready",
+        "closeView": "library",
+        "technicalView": "review",
+        "consumed": false
+      },
+      {
+        "outcome": "nonterminal_confirmed",
+        "continueView": "operation_target",
+        "restartView": "ready",
+        "closeView": "library",
+        "technicalView": "review",
+        "settleIncompleteBeforeExit": true
+      },
+      {
+        "outcome": "incomplete_confirmed",
+        "continueView": "review",
+        "restartView": "ready",
+        "closeView": "library",
+        "technicalView": "review",
+        "retainIncomplete": true
+      },
+      {
+        "outcome": "completed_confirmed",
+        "continueView": "test_complete",
+        "restartView": "ready",
+        "closeView": "library",
+        "technicalView": "review",
+        "retainCompleted": true
+      },
+      {
+        "outcome": "unknown",
+        "continueView": "checking",
+        "restartView": "checking",
+        "closeView": "library_unresolved",
+        "technicalView": "review_retryable",
+        "blockNewArm": true,
+        "retainedRestartTarget": "ready"
+      },
+      {
+        "outcome": "invalid_root",
+        "continueView": "blocked",
+        "restartView": "blocked",
+        "closeView": "library_unavailable",
+        "technicalView": "blocked",
+        "blockNewArm": true
+      },
+      {
+        "outcome": "deleted_or_replaced",
+        "continueView": "library",
+        "restartView": "library",
+        "closeView": "library",
+        "technicalView": "library",
+        "deletionOverridesIntent": true
+      }
+    ],
+    "routeCases": [
+      {
+        "outcome": "no_arm_fenced",
+        "intent": "continue",
+        "view": "return_explanation",
+        "retainedRestartTarget": null,
+        "retainCompleted": false,
+        "retainIncomplete": false,
+        "settleIncompleteBeforeExit": false,
+        "blockNewArm": false,
+        "deletionOverridesIntent": false
+      },
+      {
+        "outcome": "no_arm_fenced",
+        "intent": "restart",
+        "view": "ready",
+        "retainedRestartTarget": null,
+        "retainCompleted": false,
+        "retainIncomplete": false,
+        "settleIncompleteBeforeExit": false,
+        "blockNewArm": false,
+        "deletionOverridesIntent": false
+      },
+      {
+        "outcome": "no_arm_fenced",
+        "intent": "close",
+        "view": "library",
+        "retainedRestartTarget": null,
+        "retainCompleted": false,
+        "retainIncomplete": false,
+        "settleIncompleteBeforeExit": false,
+        "blockNewArm": false,
+        "deletionOverridesIntent": false
+      },
+      {
+        "outcome": "no_arm_fenced",
+        "intent": "technical",
+        "view": "review",
+        "retainedRestartTarget": null,
+        "retainCompleted": false,
+        "retainIncomplete": false,
+        "settleIncompleteBeforeExit": false,
+        "blockNewArm": false,
+        "deletionOverridesIntent": false
+      },
+      {
+        "outcome": "nonterminal_confirmed",
+        "intent": "continue",
+        "view": "operation_target",
+        "retainedRestartTarget": null,
+        "retainCompleted": false,
+        "retainIncomplete": false,
+        "settleIncompleteBeforeExit": false,
+        "blockNewArm": false,
+        "deletionOverridesIntent": false
+      },
+      {
+        "outcome": "nonterminal_confirmed",
+        "intent": "restart",
+        "view": "ready",
+        "retainedRestartTarget": null,
+        "retainCompleted": false,
+        "retainIncomplete": false,
+        "settleIncompleteBeforeExit": true,
+        "blockNewArm": false,
+        "deletionOverridesIntent": false
+      },
+      {
+        "outcome": "nonterminal_confirmed",
+        "intent": "close",
+        "view": "library",
+        "retainedRestartTarget": null,
+        "retainCompleted": false,
+        "retainIncomplete": false,
+        "settleIncompleteBeforeExit": true,
+        "blockNewArm": false,
+        "deletionOverridesIntent": false
+      },
+      {
+        "outcome": "nonterminal_confirmed",
+        "intent": "technical",
+        "view": "review",
+        "retainedRestartTarget": null,
+        "retainCompleted": false,
+        "retainIncomplete": false,
+        "settleIncompleteBeforeExit": true,
+        "blockNewArm": false,
+        "deletionOverridesIntent": false
+      },
+      {
+        "outcome": "incomplete_confirmed",
+        "intent": "continue",
+        "view": "review",
+        "retainedRestartTarget": null,
+        "retainCompleted": false,
+        "retainIncomplete": true,
+        "settleIncompleteBeforeExit": false,
+        "blockNewArm": false,
+        "deletionOverridesIntent": false
+      },
+      {
+        "outcome": "incomplete_confirmed",
+        "intent": "restart",
+        "view": "ready",
+        "retainedRestartTarget": null,
+        "retainCompleted": false,
+        "retainIncomplete": true,
+        "settleIncompleteBeforeExit": false,
+        "blockNewArm": false,
+        "deletionOverridesIntent": false
+      },
+      {
+        "outcome": "incomplete_confirmed",
+        "intent": "close",
+        "view": "library",
+        "retainedRestartTarget": null,
+        "retainCompleted": false,
+        "retainIncomplete": true,
+        "settleIncompleteBeforeExit": false,
+        "blockNewArm": false,
+        "deletionOverridesIntent": false
+      },
+      {
+        "outcome": "incomplete_confirmed",
+        "intent": "technical",
+        "view": "review",
+        "retainedRestartTarget": null,
+        "retainCompleted": false,
+        "retainIncomplete": true,
+        "settleIncompleteBeforeExit": false,
+        "blockNewArm": false,
+        "deletionOverridesIntent": false
+      },
+      {
+        "outcome": "completed_confirmed",
+        "intent": "continue",
+        "view": "test_complete",
+        "retainedRestartTarget": null,
+        "retainCompleted": true,
+        "retainIncomplete": false,
+        "settleIncompleteBeforeExit": false,
+        "blockNewArm": false,
+        "deletionOverridesIntent": false
+      },
+      {
+        "outcome": "completed_confirmed",
+        "intent": "restart",
+        "view": "ready",
+        "retainedRestartTarget": null,
+        "retainCompleted": true,
+        "retainIncomplete": false,
+        "settleIncompleteBeforeExit": false,
+        "blockNewArm": false,
+        "deletionOverridesIntent": false
+      },
+      {
+        "outcome": "completed_confirmed",
+        "intent": "close",
+        "view": "library",
+        "retainedRestartTarget": null,
+        "retainCompleted": true,
+        "retainIncomplete": false,
+        "settleIncompleteBeforeExit": false,
+        "blockNewArm": false,
+        "deletionOverridesIntent": false
+      },
+      {
+        "outcome": "completed_confirmed",
+        "intent": "technical",
+        "view": "review",
+        "retainedRestartTarget": null,
+        "retainCompleted": true,
+        "retainIncomplete": false,
+        "settleIncompleteBeforeExit": false,
+        "blockNewArm": false,
+        "deletionOverridesIntent": false
+      },
+      {
+        "outcome": "unknown",
+        "intent": "continue",
+        "view": "checking",
+        "retainedRestartTarget": null,
+        "retainCompleted": false,
+        "retainIncomplete": false,
+        "settleIncompleteBeforeExit": false,
+        "blockNewArm": true,
+        "deletionOverridesIntent": false
+      },
+      {
+        "outcome": "unknown",
+        "intent": "restart",
+        "view": "checking",
+        "retainedRestartTarget": "ready",
+        "retainCompleted": false,
+        "retainIncomplete": false,
+        "settleIncompleteBeforeExit": false,
+        "blockNewArm": true,
+        "deletionOverridesIntent": false
+      },
+      {
+        "outcome": "unknown",
+        "intent": "close",
+        "view": "library_unresolved",
+        "retainedRestartTarget": null,
+        "retainCompleted": false,
+        "retainIncomplete": false,
+        "settleIncompleteBeforeExit": false,
+        "blockNewArm": true,
+        "deletionOverridesIntent": false
+      },
+      {
+        "outcome": "unknown",
+        "intent": "technical",
+        "view": "review_retryable",
+        "retainedRestartTarget": null,
+        "retainCompleted": false,
+        "retainIncomplete": false,
+        "settleIncompleteBeforeExit": false,
+        "blockNewArm": true,
+        "deletionOverridesIntent": false
+      },
+      {
+        "outcome": "invalid_root",
+        "intent": "continue",
+        "view": "blocked",
+        "retainedRestartTarget": null,
+        "retainCompleted": false,
+        "retainIncomplete": false,
+        "settleIncompleteBeforeExit": false,
+        "blockNewArm": true,
+        "deletionOverridesIntent": false
+      },
+      {
+        "outcome": "invalid_root",
+        "intent": "restart",
+        "view": "blocked",
+        "retainedRestartTarget": null,
+        "retainCompleted": false,
+        "retainIncomplete": false,
+        "settleIncompleteBeforeExit": false,
+        "blockNewArm": true,
+        "deletionOverridesIntent": false
+      },
+      {
+        "outcome": "invalid_root",
+        "intent": "close",
+        "view": "library_unavailable",
+        "retainedRestartTarget": null,
+        "retainCompleted": false,
+        "retainIncomplete": false,
+        "settleIncompleteBeforeExit": false,
+        "blockNewArm": true,
+        "deletionOverridesIntent": false
+      },
+      {
+        "outcome": "invalid_root",
+        "intent": "technical",
+        "view": "blocked",
+        "retainedRestartTarget": null,
+        "retainCompleted": false,
+        "retainIncomplete": false,
+        "settleIncompleteBeforeExit": false,
+        "blockNewArm": true,
+        "deletionOverridesIntent": false
+      },
+      {
+        "outcome": "deleted_or_replaced",
+        "intent": "continue",
+        "view": "library",
+        "retainedRestartTarget": null,
+        "retainCompleted": false,
+        "retainIncomplete": false,
+        "settleIncompleteBeforeExit": false,
+        "blockNewArm": false,
+        "deletionOverridesIntent": true
+      },
+      {
+        "outcome": "deleted_or_replaced",
+        "intent": "restart",
+        "view": "library",
+        "retainedRestartTarget": null,
+        "retainCompleted": false,
+        "retainIncomplete": false,
+        "settleIncompleteBeforeExit": false,
+        "blockNewArm": false,
+        "deletionOverridesIntent": true
+      },
+      {
+        "outcome": "deleted_or_replaced",
+        "intent": "close",
+        "view": "library",
+        "retainedRestartTarget": null,
+        "retainCompleted": false,
+        "retainIncomplete": false,
+        "settleIncompleteBeforeExit": false,
+        "blockNewArm": false,
+        "deletionOverridesIntent": true
+      },
+      {
+        "outcome": "deleted_or_replaced",
+        "intent": "technical",
+        "view": "library",
+        "retainedRestartTarget": null,
+        "retainCompleted": false,
+        "retainIncomplete": false,
+        "settleIncompleteBeforeExit": false,
+        "blockNewArm": false,
+        "deletionOverridesIntent": true
+      }
+    ],
+    "newerViewCases": [
+      {
+        "oldIntent": "continue",
+        "laterExplicitIntent": "close",
+        "destination": "library",
+        "oldCallbackMayPublish": false,
+        "durableFactStillRecorded": true
+      },
+      {
+        "oldIntent": "restart",
+        "laterExplicitIntent": "close",
+        "destination": "library",
+        "oldCallbackMayPublish": false,
+        "durableFactStillRecorded": true
+      },
+      {
+        "oldIntent": "close",
+        "laterExplicitIntent": "close",
+        "destination": "library",
+        "oldCallbackMayPublish": false,
+        "durableFactStillRecorded": true
+      },
+      {
+        "oldIntent": "technical",
+        "laterExplicitIntent": "close",
+        "destination": "library",
+        "oldCallbackMayPublish": false,
+        "durableFactStillRecorded": true
+      }
+    ],
+    "operationFacts": {
+      "arm": {
+        "continueTarget": "transfer",
+        "fenceFirst": [],
+        "commitFirst": [
+          "form_armed",
+          "ended_incomplete"
+        ],
+        "consumedIfFenceFirst": false,
+        "exposure": "not_revealed"
+      },
+      "transfer": {
+        "continueTarget": "transfer_busy",
+        "fenceFirst": [
+          "form_armed",
+          "ended_incomplete"
+        ],
+        "commitFirst": [
+          "form_armed",
+          "transfer_committed",
+          "ended_incomplete"
+        ],
+        "consumedIfFenceFirst": true,
+        "exposure": "not_revealed"
+      },
+      "return": {
+        "continueTarget": "final_allocation",
+        "fenceFirst": [
+          "form_armed",
+          "transfer_committed",
+          "ended_incomplete"
+        ],
+        "commitFirst": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "ended_incomplete"
+        ],
+        "consumedIfFenceFirst": true,
+        "exposure": "captured_visible"
+      },
+      "terminal": {
+        "continueTarget": "test_complete",
+        "fenceFirst": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "ended_incomplete"
+        ],
+        "commitFirst": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "fairness_committed",
+          "completed"
+        ],
+        "consumedIfFenceFirst": true,
+        "exposure": "captured_visible"
+      }
+    },
+    "cancellationCases": [
+      {
+        "operation": "arm",
+        "intent": "restart",
+        "durableOrder": "fence_first",
+        "delivery": "immediate",
+        "branch": "not_applicable",
+        "expectedJournal": [],
+        "formConsumed": false,
+        "exposure": "not_revealed",
+        "terminal": "absent_fenced",
+        "route": "ready",
+        "newArmBeforeResolution": false,
+        "readbackRequired": false,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "arm",
+        "intent": "restart",
+        "durableOrder": "fence_first",
+        "delivery": "callback_held",
+        "branch": "not_applicable",
+        "expectedJournal": [],
+        "formConsumed": false,
+        "exposure": "not_revealed",
+        "terminal": "absent_fenced",
+        "route": "ready",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "arm",
+        "intent": "restart",
+        "durableOrder": "fence_first",
+        "delivery": "never_delivered_readback",
+        "branch": "not_applicable",
+        "expectedJournal": [],
+        "formConsumed": false,
+        "exposure": "not_revealed",
+        "terminal": "absent_fenced",
+        "route": "ready",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "arm",
+        "intent": "restart",
+        "durableOrder": "commit_first",
+        "delivery": "immediate",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "not_revealed",
+        "terminal": "ended_incomplete",
+        "route": "ready",
+        "newArmBeforeResolution": false,
+        "readbackRequired": false,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "arm",
+        "intent": "restart",
+        "durableOrder": "commit_first",
+        "delivery": "callback_held",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "not_revealed",
+        "terminal": "ended_incomplete",
+        "route": "ready",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "arm",
+        "intent": "restart",
+        "durableOrder": "commit_first",
+        "delivery": "never_delivered_readback",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "not_revealed",
+        "terminal": "ended_incomplete",
+        "route": "ready",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "arm",
+        "intent": "close",
+        "durableOrder": "fence_first",
+        "delivery": "immediate",
+        "branch": "not_applicable",
+        "expectedJournal": [],
+        "formConsumed": false,
+        "exposure": "not_revealed",
+        "terminal": "absent_fenced",
+        "route": "library",
+        "newArmBeforeResolution": false,
+        "readbackRequired": false,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "arm",
+        "intent": "close",
+        "durableOrder": "fence_first",
+        "delivery": "callback_held",
+        "branch": "not_applicable",
+        "expectedJournal": [],
+        "formConsumed": false,
+        "exposure": "not_revealed",
+        "terminal": "absent_fenced",
+        "route": "library",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "arm",
+        "intent": "close",
+        "durableOrder": "fence_first",
+        "delivery": "never_delivered_readback",
+        "branch": "not_applicable",
+        "expectedJournal": [],
+        "formConsumed": false,
+        "exposure": "not_revealed",
+        "terminal": "absent_fenced",
+        "route": "library",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "arm",
+        "intent": "close",
+        "durableOrder": "commit_first",
+        "delivery": "immediate",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "not_revealed",
+        "terminal": "ended_incomplete",
+        "route": "library",
+        "newArmBeforeResolution": false,
+        "readbackRequired": false,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "arm",
+        "intent": "close",
+        "durableOrder": "commit_first",
+        "delivery": "callback_held",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "not_revealed",
+        "terminal": "ended_incomplete",
+        "route": "library",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "arm",
+        "intent": "close",
+        "durableOrder": "commit_first",
+        "delivery": "never_delivered_readback",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "not_revealed",
+        "terminal": "ended_incomplete",
+        "route": "library",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "arm",
+        "intent": "technical",
+        "durableOrder": "fence_first",
+        "delivery": "immediate",
+        "branch": "not_applicable",
+        "expectedJournal": [],
+        "formConsumed": false,
+        "exposure": "not_revealed",
+        "terminal": "absent_fenced",
+        "route": "review",
+        "newArmBeforeResolution": false,
+        "readbackRequired": false,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "arm",
+        "intent": "technical",
+        "durableOrder": "fence_first",
+        "delivery": "callback_held",
+        "branch": "not_applicable",
+        "expectedJournal": [],
+        "formConsumed": false,
+        "exposure": "not_revealed",
+        "terminal": "absent_fenced",
+        "route": "review",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "arm",
+        "intent": "technical",
+        "durableOrder": "fence_first",
+        "delivery": "never_delivered_readback",
+        "branch": "not_applicable",
+        "expectedJournal": [],
+        "formConsumed": false,
+        "exposure": "not_revealed",
+        "terminal": "absent_fenced",
+        "route": "review",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "arm",
+        "intent": "technical",
+        "durableOrder": "commit_first",
+        "delivery": "immediate",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "not_revealed",
+        "terminal": "ended_incomplete",
+        "route": "review",
+        "newArmBeforeResolution": false,
+        "readbackRequired": false,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "arm",
+        "intent": "technical",
+        "durableOrder": "commit_first",
+        "delivery": "callback_held",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "not_revealed",
+        "terminal": "ended_incomplete",
+        "route": "review",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "arm",
+        "intent": "technical",
+        "durableOrder": "commit_first",
+        "delivery": "never_delivered_readback",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "not_revealed",
+        "terminal": "ended_incomplete",
+        "route": "review",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "transfer",
+        "intent": "restart",
+        "durableOrder": "fence_first",
+        "delivery": "immediate",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "not_revealed",
+        "terminal": "ended_incomplete",
+        "route": "ready",
+        "newArmBeforeResolution": false,
+        "readbackRequired": false,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "transfer",
+        "intent": "restart",
+        "durableOrder": "fence_first",
+        "delivery": "callback_held",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "not_revealed",
+        "terminal": "ended_incomplete",
+        "route": "ready",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "transfer",
+        "intent": "restart",
+        "durableOrder": "fence_first",
+        "delivery": "never_delivered_readback",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "not_revealed",
+        "terminal": "ended_incomplete",
+        "route": "ready",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "transfer",
+        "intent": "restart",
+        "durableOrder": "commit_first",
+        "delivery": "immediate",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "not_revealed",
+        "terminal": "ended_incomplete",
+        "route": "ready",
+        "newArmBeforeResolution": false,
+        "readbackRequired": false,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "transfer",
+        "intent": "restart",
+        "durableOrder": "commit_first",
+        "delivery": "callback_held",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "not_revealed",
+        "terminal": "ended_incomplete",
+        "route": "ready",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "transfer",
+        "intent": "restart",
+        "durableOrder": "commit_first",
+        "delivery": "never_delivered_readback",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "not_revealed",
+        "terminal": "ended_incomplete",
+        "route": "ready",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "transfer",
+        "intent": "close",
+        "durableOrder": "fence_first",
+        "delivery": "immediate",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "not_revealed",
+        "terminal": "ended_incomplete",
+        "route": "library",
+        "newArmBeforeResolution": false,
+        "readbackRequired": false,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "transfer",
+        "intent": "close",
+        "durableOrder": "fence_first",
+        "delivery": "callback_held",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "not_revealed",
+        "terminal": "ended_incomplete",
+        "route": "library",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "transfer",
+        "intent": "close",
+        "durableOrder": "fence_first",
+        "delivery": "never_delivered_readback",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "not_revealed",
+        "terminal": "ended_incomplete",
+        "route": "library",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "transfer",
+        "intent": "close",
+        "durableOrder": "commit_first",
+        "delivery": "immediate",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "not_revealed",
+        "terminal": "ended_incomplete",
+        "route": "library",
+        "newArmBeforeResolution": false,
+        "readbackRequired": false,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "transfer",
+        "intent": "close",
+        "durableOrder": "commit_first",
+        "delivery": "callback_held",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "not_revealed",
+        "terminal": "ended_incomplete",
+        "route": "library",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "transfer",
+        "intent": "close",
+        "durableOrder": "commit_first",
+        "delivery": "never_delivered_readback",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "not_revealed",
+        "terminal": "ended_incomplete",
+        "route": "library",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "transfer",
+        "intent": "technical",
+        "durableOrder": "fence_first",
+        "delivery": "immediate",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "not_revealed",
+        "terminal": "ended_incomplete",
+        "route": "review",
+        "newArmBeforeResolution": false,
+        "readbackRequired": false,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "transfer",
+        "intent": "technical",
+        "durableOrder": "fence_first",
+        "delivery": "callback_held",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "not_revealed",
+        "terminal": "ended_incomplete",
+        "route": "review",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "transfer",
+        "intent": "technical",
+        "durableOrder": "fence_first",
+        "delivery": "never_delivered_readback",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "not_revealed",
+        "terminal": "ended_incomplete",
+        "route": "review",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "transfer",
+        "intent": "technical",
+        "durableOrder": "commit_first",
+        "delivery": "immediate",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "not_revealed",
+        "terminal": "ended_incomplete",
+        "route": "review",
+        "newArmBeforeResolution": false,
+        "readbackRequired": false,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "transfer",
+        "intent": "technical",
+        "durableOrder": "commit_first",
+        "delivery": "callback_held",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "not_revealed",
+        "terminal": "ended_incomplete",
+        "route": "review",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "transfer",
+        "intent": "technical",
+        "durableOrder": "commit_first",
+        "delivery": "never_delivered_readback",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "not_revealed",
+        "terminal": "ended_incomplete",
+        "route": "review",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "return",
+        "intent": "restart",
+        "durableOrder": "fence_first",
+        "delivery": "immediate",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "ready",
+        "newArmBeforeResolution": false,
+        "readbackRequired": false,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "return",
+        "intent": "restart",
+        "durableOrder": "fence_first",
+        "delivery": "callback_held",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "ready",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "return",
+        "intent": "restart",
+        "durableOrder": "fence_first",
+        "delivery": "never_delivered_readback",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "ready",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "return",
+        "intent": "restart",
+        "durableOrder": "commit_first",
+        "delivery": "immediate",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "ready",
+        "newArmBeforeResolution": false,
+        "readbackRequired": false,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "return",
+        "intent": "restart",
+        "durableOrder": "commit_first",
+        "delivery": "callback_held",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "ready",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "return",
+        "intent": "restart",
+        "durableOrder": "commit_first",
+        "delivery": "never_delivered_readback",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "ready",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "return",
+        "intent": "close",
+        "durableOrder": "fence_first",
+        "delivery": "immediate",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "library",
+        "newArmBeforeResolution": false,
+        "readbackRequired": false,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "return",
+        "intent": "close",
+        "durableOrder": "fence_first",
+        "delivery": "callback_held",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "library",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "return",
+        "intent": "close",
+        "durableOrder": "fence_first",
+        "delivery": "never_delivered_readback",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "library",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "return",
+        "intent": "close",
+        "durableOrder": "commit_first",
+        "delivery": "immediate",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "library",
+        "newArmBeforeResolution": false,
+        "readbackRequired": false,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "return",
+        "intent": "close",
+        "durableOrder": "commit_first",
+        "delivery": "callback_held",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "library",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "return",
+        "intent": "close",
+        "durableOrder": "commit_first",
+        "delivery": "never_delivered_readback",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "library",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "return",
+        "intent": "technical",
+        "durableOrder": "fence_first",
+        "delivery": "immediate",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "review",
+        "newArmBeforeResolution": false,
+        "readbackRequired": false,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "return",
+        "intent": "technical",
+        "durableOrder": "fence_first",
+        "delivery": "callback_held",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "review",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "return",
+        "intent": "technical",
+        "durableOrder": "fence_first",
+        "delivery": "never_delivered_readback",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "review",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "return",
+        "intent": "technical",
+        "durableOrder": "commit_first",
+        "delivery": "immediate",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "review",
+        "newArmBeforeResolution": false,
+        "readbackRequired": false,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "return",
+        "intent": "technical",
+        "durableOrder": "commit_first",
+        "delivery": "callback_held",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "review",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "return",
+        "intent": "technical",
+        "durableOrder": "commit_first",
+        "delivery": "never_delivered_readback",
+        "branch": "not_applicable",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "review",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "restart",
+        "durableOrder": "fence_first",
+        "delivery": "immediate",
+        "branch": "positive",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "ready",
+        "newArmBeforeResolution": false,
+        "readbackRequired": false,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "restart",
+        "durableOrder": "fence_first",
+        "delivery": "immediate",
+        "branch": "zero",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "ready",
+        "newArmBeforeResolution": false,
+        "readbackRequired": false,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "restart",
+        "durableOrder": "fence_first",
+        "delivery": "callback_held",
+        "branch": "positive",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "ready",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "restart",
+        "durableOrder": "fence_first",
+        "delivery": "callback_held",
+        "branch": "zero",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "ready",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "restart",
+        "durableOrder": "fence_first",
+        "delivery": "never_delivered_readback",
+        "branch": "positive",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "ready",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "restart",
+        "durableOrder": "fence_first",
+        "delivery": "never_delivered_readback",
+        "branch": "zero",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "ready",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "restart",
+        "durableOrder": "commit_first",
+        "delivery": "immediate",
+        "branch": "positive",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "fairness_committed",
+          "completed"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "completed",
+        "route": "ready",
+        "newArmBeforeResolution": false,
+        "readbackRequired": false,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "restart",
+        "durableOrder": "commit_first",
+        "delivery": "immediate",
+        "branch": "zero",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "fairness_not_applicable",
+          "completed"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "completed",
+        "route": "ready",
+        "newArmBeforeResolution": false,
+        "readbackRequired": false,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "restart",
+        "durableOrder": "commit_first",
+        "delivery": "callback_held",
+        "branch": "positive",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "fairness_committed",
+          "completed"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "completed",
+        "route": "ready",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "restart",
+        "durableOrder": "commit_first",
+        "delivery": "callback_held",
+        "branch": "zero",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "fairness_not_applicable",
+          "completed"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "completed",
+        "route": "ready",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "restart",
+        "durableOrder": "commit_first",
+        "delivery": "never_delivered_readback",
+        "branch": "positive",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "fairness_committed",
+          "completed"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "completed",
+        "route": "ready",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "restart",
+        "durableOrder": "commit_first",
+        "delivery": "never_delivered_readback",
+        "branch": "zero",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "fairness_not_applicable",
+          "completed"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "completed",
+        "route": "ready",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "close",
+        "durableOrder": "fence_first",
+        "delivery": "immediate",
+        "branch": "positive",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "library",
+        "newArmBeforeResolution": false,
+        "readbackRequired": false,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "close",
+        "durableOrder": "fence_first",
+        "delivery": "immediate",
+        "branch": "zero",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "library",
+        "newArmBeforeResolution": false,
+        "readbackRequired": false,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "close",
+        "durableOrder": "fence_first",
+        "delivery": "callback_held",
+        "branch": "positive",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "library",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "close",
+        "durableOrder": "fence_first",
+        "delivery": "callback_held",
+        "branch": "zero",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "library",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "close",
+        "durableOrder": "fence_first",
+        "delivery": "never_delivered_readback",
+        "branch": "positive",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "library",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "close",
+        "durableOrder": "fence_first",
+        "delivery": "never_delivered_readback",
+        "branch": "zero",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "library",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "close",
+        "durableOrder": "commit_first",
+        "delivery": "immediate",
+        "branch": "positive",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "fairness_committed",
+          "completed"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "completed",
+        "route": "library",
+        "newArmBeforeResolution": false,
+        "readbackRequired": false,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "close",
+        "durableOrder": "commit_first",
+        "delivery": "immediate",
+        "branch": "zero",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "fairness_not_applicable",
+          "completed"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "completed",
+        "route": "library",
+        "newArmBeforeResolution": false,
+        "readbackRequired": false,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "close",
+        "durableOrder": "commit_first",
+        "delivery": "callback_held",
+        "branch": "positive",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "fairness_committed",
+          "completed"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "completed",
+        "route": "library",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "close",
+        "durableOrder": "commit_first",
+        "delivery": "callback_held",
+        "branch": "zero",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "fairness_not_applicable",
+          "completed"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "completed",
+        "route": "library",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "close",
+        "durableOrder": "commit_first",
+        "delivery": "never_delivered_readback",
+        "branch": "positive",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "fairness_committed",
+          "completed"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "completed",
+        "route": "library",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "close",
+        "durableOrder": "commit_first",
+        "delivery": "never_delivered_readback",
+        "branch": "zero",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "fairness_not_applicable",
+          "completed"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "completed",
+        "route": "library",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "technical",
+        "durableOrder": "fence_first",
+        "delivery": "immediate",
+        "branch": "positive",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "review",
+        "newArmBeforeResolution": false,
+        "readbackRequired": false,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "technical",
+        "durableOrder": "fence_first",
+        "delivery": "immediate",
+        "branch": "zero",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "review",
+        "newArmBeforeResolution": false,
+        "readbackRequired": false,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "technical",
+        "durableOrder": "fence_first",
+        "delivery": "callback_held",
+        "branch": "positive",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "review",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "technical",
+        "durableOrder": "fence_first",
+        "delivery": "callback_held",
+        "branch": "zero",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "review",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "technical",
+        "durableOrder": "fence_first",
+        "delivery": "never_delivered_readback",
+        "branch": "positive",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "review",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "technical",
+        "durableOrder": "fence_first",
+        "delivery": "never_delivered_readback",
+        "branch": "zero",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "ended_incomplete"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete",
+        "route": "review",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "technical",
+        "durableOrder": "commit_first",
+        "delivery": "immediate",
+        "branch": "positive",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "fairness_committed",
+          "completed"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "completed",
+        "route": "review",
+        "newArmBeforeResolution": false,
+        "readbackRequired": false,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "technical",
+        "durableOrder": "commit_first",
+        "delivery": "immediate",
+        "branch": "zero",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "fairness_not_applicable",
+          "completed"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "completed",
+        "route": "review",
+        "newArmBeforeResolution": false,
+        "readbackRequired": false,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "technical",
+        "durableOrder": "commit_first",
+        "delivery": "callback_held",
+        "branch": "positive",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "fairness_committed",
+          "completed"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "completed",
+        "route": "review",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "technical",
+        "durableOrder": "commit_first",
+        "delivery": "callback_held",
+        "branch": "zero",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "fairness_not_applicable",
+          "completed"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "completed",
+        "route": "review",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "technical",
+        "durableOrder": "commit_first",
+        "delivery": "never_delivered_readback",
+        "branch": "positive",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "fairness_committed",
+          "completed"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "completed",
+        "route": "review",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      },
+      {
+        "operation": "terminal",
+        "intent": "technical",
+        "durableOrder": "commit_first",
+        "delivery": "never_delivered_readback",
+        "branch": "zero",
+        "expectedJournal": [
+          "form_armed",
+          "transfer_committed",
+          "return_presented",
+          "fairness_not_applicable",
+          "completed"
+        ],
+        "formConsumed": true,
+        "exposure": "captured_visible",
+        "terminal": "completed",
+        "route": "review",
+        "newArmBeforeResolution": false,
+        "readbackRequired": true,
+        "oldCallbackMayRestorePlay": false
+      }
+    ],
+    "exposureOrder": [
+      "not_revealed",
+      "possibly_revealed",
+      "captured_visible"
+    ],
+    "exposureMerge": "max_for_same_attempt_and_installation_only",
+    "returnExposurePoints": [
+      {
+        "point": "before_reveal_request",
+        "event": false,
+        "exposure": "not_revealed",
+        "retryAfterWithdrawal": false
+      },
+      {
+        "point": "pixels_possible_capture_unconfirmed",
+        "event": false,
+        "exposure": "possibly_revealed",
+        "retryAfterWithdrawal": false
+      },
+      {
+        "point": "capture_confirmed_before_write_or_definitive_abort",
+        "event": false,
+        "exposure": "captured_visible",
+        "retryAfterWithdrawal": false
+      },
+      {
+        "point": "write_in_flight_fence_first",
+        "event": false,
+        "exposure": "captured_visible",
+        "retryAfterWithdrawal": false
+      },
+      {
+        "point": "write_in_flight_commit_first",
+        "event": true,
+        "exposure": "captured_visible",
+        "retryAfterWithdrawal": false
+      },
+      {
+        "point": "event_committed_delivery_held",
+        "event": true,
+        "exposure": "captured_visible",
+        "retryAfterWithdrawal": false
+      }
+    ],
+    "returnExposureCases": [
+      {
+        "point": "before_reveal_request",
+        "event": false,
+        "exposure": "not_revealed",
+        "retryAfterWithdrawal": false,
+        "intent": "restart",
+        "routeAfterSettlement": "ready",
+        "formConsumed": true,
+        "terminal": "ended_incomplete",
+        "journalIncludes": [
+          "ended_incomplete"
+        ],
+        "journalExcludes": [
+          "return_presented",
+          "fairness_committed",
+          "completed"
+        ]
+      },
+      {
+        "point": "before_reveal_request",
+        "event": false,
+        "exposure": "not_revealed",
+        "retryAfterWithdrawal": false,
+        "intent": "close",
+        "routeAfterSettlement": "library",
+        "formConsumed": true,
+        "terminal": "ended_incomplete",
+        "journalIncludes": [
+          "ended_incomplete"
+        ],
+        "journalExcludes": [
+          "return_presented",
+          "fairness_committed",
+          "completed"
+        ]
+      },
+      {
+        "point": "pixels_possible_capture_unconfirmed",
+        "event": false,
+        "exposure": "possibly_revealed",
+        "retryAfterWithdrawal": false,
+        "intent": "restart",
+        "routeAfterSettlement": "ready",
+        "formConsumed": true,
+        "terminal": "ended_incomplete",
+        "journalIncludes": [
+          "ended_incomplete"
+        ],
+        "journalExcludes": [
+          "return_presented",
+          "fairness_committed",
+          "completed"
+        ]
+      },
+      {
+        "point": "pixels_possible_capture_unconfirmed",
+        "event": false,
+        "exposure": "possibly_revealed",
+        "retryAfterWithdrawal": false,
+        "intent": "close",
+        "routeAfterSettlement": "library",
+        "formConsumed": true,
+        "terminal": "ended_incomplete",
+        "journalIncludes": [
+          "ended_incomplete"
+        ],
+        "journalExcludes": [
+          "return_presented",
+          "fairness_committed",
+          "completed"
+        ]
+      },
+      {
+        "point": "capture_confirmed_before_write_or_definitive_abort",
+        "event": false,
+        "exposure": "captured_visible",
+        "retryAfterWithdrawal": false,
+        "intent": "restart",
+        "routeAfterSettlement": "ready",
+        "formConsumed": true,
+        "terminal": "ended_incomplete",
+        "journalIncludes": [
+          "ended_incomplete"
+        ],
+        "journalExcludes": [
+          "return_presented",
+          "fairness_committed",
+          "completed"
+        ]
+      },
+      {
+        "point": "capture_confirmed_before_write_or_definitive_abort",
+        "event": false,
+        "exposure": "captured_visible",
+        "retryAfterWithdrawal": false,
+        "intent": "close",
+        "routeAfterSettlement": "library",
+        "formConsumed": true,
+        "terminal": "ended_incomplete",
+        "journalIncludes": [
+          "ended_incomplete"
+        ],
+        "journalExcludes": [
+          "return_presented",
+          "fairness_committed",
+          "completed"
+        ]
+      },
+      {
+        "point": "write_in_flight_fence_first",
+        "event": false,
+        "exposure": "captured_visible",
+        "retryAfterWithdrawal": false,
+        "intent": "restart",
+        "routeAfterSettlement": "ready",
+        "formConsumed": true,
+        "terminal": "ended_incomplete",
+        "journalIncludes": [
+          "ended_incomplete"
+        ],
+        "journalExcludes": [
+          "return_presented",
+          "fairness_committed",
+          "completed"
+        ]
+      },
+      {
+        "point": "write_in_flight_fence_first",
+        "event": false,
+        "exposure": "captured_visible",
+        "retryAfterWithdrawal": false,
+        "intent": "close",
+        "routeAfterSettlement": "library",
+        "formConsumed": true,
+        "terminal": "ended_incomplete",
+        "journalIncludes": [
+          "ended_incomplete"
+        ],
+        "journalExcludes": [
+          "return_presented",
+          "fairness_committed",
+          "completed"
+        ]
+      },
+      {
+        "point": "write_in_flight_commit_first",
+        "event": true,
+        "exposure": "captured_visible",
+        "retryAfterWithdrawal": false,
+        "intent": "restart",
+        "routeAfterSettlement": "ready",
+        "formConsumed": true,
+        "terminal": "ended_incomplete",
+        "journalIncludes": [
+          "return_presented",
+          "ended_incomplete"
+        ],
+        "journalExcludes": []
+      },
+      {
+        "point": "write_in_flight_commit_first",
+        "event": true,
+        "exposure": "captured_visible",
+        "retryAfterWithdrawal": false,
+        "intent": "close",
+        "routeAfterSettlement": "library",
+        "formConsumed": true,
+        "terminal": "ended_incomplete",
+        "journalIncludes": [
+          "return_presented",
+          "ended_incomplete"
+        ],
+        "journalExcludes": []
+      },
+      {
+        "point": "event_committed_delivery_held",
+        "event": true,
+        "exposure": "captured_visible",
+        "retryAfterWithdrawal": false,
+        "intent": "restart",
+        "routeAfterSettlement": "ready",
+        "formConsumed": true,
+        "terminal": "ended_incomplete",
+        "journalIncludes": [
+          "return_presented",
+          "ended_incomplete"
+        ],
+        "journalExcludes": []
+      },
+      {
+        "point": "event_committed_delivery_held",
+        "event": true,
+        "exposure": "captured_visible",
+        "retryAfterWithdrawal": false,
+        "intent": "close",
+        "routeAfterSettlement": "library",
+        "formConsumed": true,
+        "terminal": "ended_incomplete",
+        "journalIncludes": [
+          "return_presented",
+          "ended_incomplete"
+        ],
+        "journalExcludes": []
+      }
+    ],
+    "returnAbortCases": [
+      {
+        "point": "capture_failed",
+        "playActive": true,
+        "validPresentationContextRequired": true,
+        "returnWriteAdmissible": false,
+        "retryKind": "presentation_check_same_view",
+        "returnEvent": false,
+        "mayRetrySameRequest": false,
+        "fairnessAllowed": false,
+        "exposure": "possibly_revealed"
+      },
+      {
+        "point": "capture_succeeded_write_definitively_aborted",
+        "playActive": true,
+        "returnWriteAdmissible": true,
+        "retryKind": "exact_return_request",
+        "returnEvent": false,
+        "mayRetrySameRequest": true,
+        "fairnessAllowed": false,
+        "exposure": "captured_visible"
+      },
+      {
+        "point": "capture_succeeded_write_definitively_aborted_then_withdrawn",
+        "playActive": false,
+        "returnWriteAdmissible": false,
+        "retryKind": "none",
+        "returnEvent": false,
+        "mayRetrySameRequest": false,
+        "fairnessAllowed": false,
+        "exposure": "captured_visible",
+        "terminal": "ended_incomplete"
+      }
+    ],
+    "exposureRecoveryCases": [
+      {
+        "point": "captured_then_committed_held_readback",
+        "exposure": "captured_visible",
+        "durableReturnEvent": "confirmed_committed",
+        "retryScoredAfterWithdrawal": false
+      },
+      {
+        "point": "captured_then_fenced_absent_readback",
+        "exposure": "captured_visible",
+        "durableReturnEvent": "confirmed_absent",
+        "retryScoredAfterWithdrawal": false
+      },
+      {
+        "point": "captured_then_repeated_read_rejection",
+        "exposure": "captured_visible",
+        "durableReturnEvent": "unknown",
+        "retryScoredAfterWithdrawal": false,
+        "savedClaim": false
+      },
+      {
+        "point": "captured_then_late_callback",
+        "exposure": "captured_visible",
+        "durableReturnEvent": "actual_verified_fact_only",
+        "retryScoredAfterWithdrawal": false,
+        "oldViewMayPublish": false
+      }
+    ],
+    "terminationExposureCases": [
+      {
+        "point": "captured_metadata_persisted",
+        "reloadExposure": "captured_visible",
+        "consumedForm": true,
+        "scoredResume": false
+      },
+      {
+        "point": "captured_only_in_lost_document_memory",
+        "reloadExposure": "possibly_revealed",
+        "consumedForm": true,
+        "scoredResume": false,
+        "noFabricatedCapture": true
+      }
+    ],
+    "deletionCases": [
+      {
+        "subject": "arm",
+        "kind": "individual",
+        "order": "deletion_first",
+        "oldPublication": false,
+        "oldWriteResurrection": false,
+        "destinationByCurrentView": {
+          "library": "library",
+          "history": "history"
+        },
+        "counter": "retained",
+        "sameRequestReadback": true
+      },
+      {
+        "subject": "arm",
+        "kind": "individual",
+        "order": "subject_first",
+        "oldPublication": false,
+        "oldWriteResurrection": false,
+        "destinationByCurrentView": {
+          "library": "library",
+          "history": "history"
+        },
+        "counter": "retained",
+        "sameRequestReadback": true
+      },
+      {
+        "subject": "arm",
+        "kind": "all",
+        "order": "deletion_first",
+        "oldPublication": false,
+        "oldWriteResurrection": false,
+        "destinationByCurrentView": {
+          "library": "library",
+          "history": "history"
+        },
+        "counter": "new_installation",
+        "sameRequestReadback": true
+      },
+      {
+        "subject": "arm",
+        "kind": "all",
+        "order": "subject_first",
+        "oldPublication": false,
+        "oldWriteResurrection": false,
+        "destinationByCurrentView": {
+          "library": "library",
+          "history": "history"
+        },
+        "counter": "new_installation",
+        "sameRequestReadback": true
+      },
+      {
+        "subject": "transfer",
+        "kind": "individual",
+        "order": "deletion_first",
+        "oldPublication": false,
+        "oldWriteResurrection": false,
+        "destinationByCurrentView": {
+          "library": "library",
+          "history": "history"
+        },
+        "counter": "retained",
+        "sameRequestReadback": true
+      },
+      {
+        "subject": "transfer",
+        "kind": "individual",
+        "order": "subject_first",
+        "oldPublication": false,
+        "oldWriteResurrection": false,
+        "destinationByCurrentView": {
+          "library": "library",
+          "history": "history"
+        },
+        "counter": "retained",
+        "sameRequestReadback": true
+      },
+      {
+        "subject": "transfer",
+        "kind": "all",
+        "order": "deletion_first",
+        "oldPublication": false,
+        "oldWriteResurrection": false,
+        "destinationByCurrentView": {
+          "library": "library",
+          "history": "history"
+        },
+        "counter": "new_installation",
+        "sameRequestReadback": true
+      },
+      {
+        "subject": "transfer",
+        "kind": "all",
+        "order": "subject_first",
+        "oldPublication": false,
+        "oldWriteResurrection": false,
+        "destinationByCurrentView": {
+          "library": "library",
+          "history": "history"
+        },
+        "counter": "new_installation",
+        "sameRequestReadback": true
+      },
+      {
+        "subject": "return",
+        "kind": "individual",
+        "order": "deletion_first",
+        "oldPublication": false,
+        "oldWriteResurrection": false,
+        "destinationByCurrentView": {
+          "library": "library",
+          "history": "history"
+        },
+        "counter": "retained",
+        "sameRequestReadback": true
+      },
+      {
+        "subject": "return",
+        "kind": "individual",
+        "order": "subject_first",
+        "oldPublication": false,
+        "oldWriteResurrection": false,
+        "destinationByCurrentView": {
+          "library": "library",
+          "history": "history"
+        },
+        "counter": "retained",
+        "sameRequestReadback": true
+      },
+      {
+        "subject": "return",
+        "kind": "all",
+        "order": "deletion_first",
+        "oldPublication": false,
+        "oldWriteResurrection": false,
+        "destinationByCurrentView": {
+          "library": "library",
+          "history": "history"
+        },
+        "counter": "new_installation",
+        "sameRequestReadback": true
+      },
+      {
+        "subject": "return",
+        "kind": "all",
+        "order": "subject_first",
+        "oldPublication": false,
+        "oldWriteResurrection": false,
+        "destinationByCurrentView": {
+          "library": "library",
+          "history": "history"
+        },
+        "counter": "new_installation",
+        "sameRequestReadback": true
+      },
+      {
+        "subject": "terminal",
+        "kind": "individual",
+        "order": "deletion_first",
+        "oldPublication": false,
+        "oldWriteResurrection": false,
+        "destinationByCurrentView": {
+          "library": "library",
+          "history": "history"
+        },
+        "counter": "retained",
+        "sameRequestReadback": true
+      },
+      {
+        "subject": "terminal",
+        "kind": "individual",
+        "order": "subject_first",
+        "oldPublication": false,
+        "oldWriteResurrection": false,
+        "destinationByCurrentView": {
+          "library": "library",
+          "history": "history"
+        },
+        "counter": "retained",
+        "sameRequestReadback": true
+      },
+      {
+        "subject": "terminal",
+        "kind": "all",
+        "order": "deletion_first",
+        "oldPublication": false,
+        "oldWriteResurrection": false,
+        "destinationByCurrentView": {
+          "library": "library",
+          "history": "history"
+        },
+        "counter": "new_installation",
+        "sameRequestReadback": true
+      },
+      {
+        "subject": "terminal",
+        "kind": "all",
+        "order": "subject_first",
+        "oldPublication": false,
+        "oldWriteResurrection": false,
+        "destinationByCurrentView": {
+          "library": "library",
+          "history": "history"
+        },
+        "counter": "new_installation",
+        "sameRequestReadback": true
+      },
+      {
+        "subject": "report_view",
+        "kind": "individual",
+        "order": "deletion_first",
+        "oldPublication": false,
+        "oldWriteResurrection": false,
+        "destinationByCurrentView": {
+          "library": "library",
+          "history": "history"
+        },
+        "counter": "retained",
+        "sameRequestReadback": true
+      },
+      {
+        "subject": "report_view",
+        "kind": "individual",
+        "order": "subject_first",
+        "oldPublication": false,
+        "oldWriteResurrection": false,
+        "destinationByCurrentView": {
+          "library": "library",
+          "history": "history"
+        },
+        "counter": "retained",
+        "sameRequestReadback": true
+      },
+      {
+        "subject": "report_view",
+        "kind": "all",
+        "order": "deletion_first",
+        "oldPublication": false,
+        "oldWriteResurrection": false,
+        "destinationByCurrentView": {
+          "library": "library",
+          "history": "history"
+        },
+        "counter": "new_installation",
+        "sameRequestReadback": true
+      },
+      {
+        "subject": "report_view",
+        "kind": "all",
+        "order": "subject_first",
+        "oldPublication": false,
+        "oldWriteResurrection": false,
+        "destinationByCurrentView": {
+          "library": "library",
+          "history": "history"
+        },
+        "counter": "new_installation",
+        "sameRequestReadback": true
+      },
+      {
+        "subject": "help_view",
+        "kind": "individual",
+        "order": "deletion_first",
+        "oldPublication": false,
+        "oldWriteResurrection": false,
+        "destinationByCurrentView": {
+          "library": "library",
+          "history": "history"
+        },
+        "counter": "retained",
+        "sameRequestReadback": true
+      },
+      {
+        "subject": "help_view",
+        "kind": "individual",
+        "order": "subject_first",
+        "oldPublication": false,
+        "oldWriteResurrection": false,
+        "destinationByCurrentView": {
+          "library": "library",
+          "history": "history"
+        },
+        "counter": "retained",
+        "sameRequestReadback": true
+      },
+      {
+        "subject": "help_view",
+        "kind": "all",
+        "order": "deletion_first",
+        "oldPublication": false,
+        "oldWriteResurrection": false,
+        "destinationByCurrentView": {
+          "library": "library",
+          "history": "history"
+        },
+        "counter": "new_installation",
+        "sameRequestReadback": true
+      },
+      {
+        "subject": "help_view",
+        "kind": "all",
+        "order": "subject_first",
+        "oldPublication": false,
+        "oldWriteResurrection": false,
+        "destinationByCurrentView": {
+          "library": "library",
+          "history": "history"
+        },
+        "counter": "new_installation",
+        "sameRequestReadback": true
+      },
+      {
+        "subject": "history_view",
+        "kind": "individual",
+        "order": "deletion_first",
+        "oldPublication": false,
+        "oldWriteResurrection": false,
+        "destinationByCurrentView": {
+          "library": "library",
+          "history": "history"
+        },
+        "counter": "retained",
+        "sameRequestReadback": true
+      },
+      {
+        "subject": "history_view",
+        "kind": "individual",
+        "order": "subject_first",
+        "oldPublication": false,
+        "oldWriteResurrection": false,
+        "destinationByCurrentView": {
+          "library": "library",
+          "history": "history"
+        },
+        "counter": "retained",
+        "sameRequestReadback": true
+      },
+      {
+        "subject": "history_view",
+        "kind": "all",
+        "order": "deletion_first",
+        "oldPublication": false,
+        "oldWriteResurrection": false,
+        "destinationByCurrentView": {
+          "library": "library",
+          "history": "history"
+        },
+        "counter": "new_installation",
+        "sameRequestReadback": true
+      },
+      {
+        "subject": "history_view",
+        "kind": "all",
+        "order": "subject_first",
+        "oldPublication": false,
+        "oldWriteResurrection": false,
+        "destinationByCurrentView": {
+          "library": "library",
+          "history": "history"
+        },
+        "counter": "new_installation",
+        "sameRequestReadback": true
+      }
+    ],
+    "failureCases": [
+      {
+        "failure": "timeout",
+        "durableMeaning": "unknown",
+        "delivery": "retryable_after_bounded_checks",
+        "newArm": false
+      },
+      {
+        "failure": "final_read_rejection",
+        "durableMeaning": "unknown",
+        "delivery": "retryable_after_bounded_checks",
+        "newArm": false
+      },
+      {
+        "failure": "invalid_root",
+        "durableMeaning": "blocked",
+        "delivery": "check_again_only",
+        "newArm": false
+      },
+      {
+        "failure": "close_during_pending",
+        "durableMeaning": "unknown_until_settled",
+        "delivery": "document_owner_survives_unmount",
+        "newArm": false
+      },
+      {
+        "failure": "reload_during_pending",
+        "durableMeaning": "unknown_until_settled",
+        "delivery": "history_recovery_no_scored_resume",
+        "newArm": false
+      },
+      {
+        "failure": "late_callback_after_new_view",
+        "durableMeaning": "actual_committed_fact_only",
+        "delivery": "no_old_view_publication",
+        "newArm": false
+      }
+    ],
+    "deliveryRecoveryCases": [
+      {
+        "step": "initial_check_timeout",
+        "deadlineMs": 2500,
+        "fact": "unknown",
+        "scoredNext": false,
+        "sameRequest": true
+      },
+      {
+        "step": "one_automatic_retry",
+        "delayAtMostMs": 900,
+        "deadlineMs": 2500,
+        "fact": "unknown_until_verified",
+        "scoredNext": false,
+        "sameRequest": true
+      },
+      {
+        "step": "automatic_retry_failure",
+        "mode": "retryable",
+        "manualRetryEnabled": true,
+        "scoredNext": false,
+        "newArmAllowed": false
+      },
+      {
+        "step": "manual_retry",
+        "mode": "checking",
+        "sameRequest": true,
+        "scoredNext": false,
+        "duplicateRetryAllowed": false
+      },
+      {
+        "step": "manual_retry_failure",
+        "mode": "retryable",
+        "scoredNext": false,
+        "newArmAllowed": false
+      }
+    ],
+    "pendingControlProjection": {
+      "checking": {
+        "scoredNext": false,
+        "duplicateRequest": false,
+        "retry": false,
+        "close": true
+      },
+      "retryable": {
+        "scoredNext": false,
+        "duplicateRequest": false,
+        "retrySameId": true,
+        "close": true
+      },
+      "blocked": {
+        "scoredNext": false,
+        "duplicateRequest": false,
+        "checkAgain": true,
+        "close": true
+      },
+      "settledReview": {
+        "scoredNext": false,
+        "tryAgainAfterVerifiedTerminal": true,
+        "close": true
+      }
+    }
+  },
+  "positiveJournal": [
+    "form_armed",
+    "transfer_committed",
+    "return_presented",
+    "fairness_committed",
+    "completed"
+  ],
+  "zeroJournal": [
+    "form_armed",
+    "transfer_committed",
+    "return_presented",
+    "fairness_not_applicable",
+    "completed"
+  ],
+  "reportExample": {
+    "sentCents": 500,
+    "potCents": 1500,
+    "returnedCents": 615,
+    "selfCents": 1115,
+    "partnerCents": 885,
+    "rating": 10
+  },
+  "invalidTransferInputs": [
+    "",
+    "-1",
+    "10.01",
+    "1.001",
+    "NaN",
+    "Infinity"
+  ],
+  "payloadSha256": "2bde5f64a6a5c619ecf952d5b0d1e036c85b3dc23840107a85a980cedf2de8db"
+}

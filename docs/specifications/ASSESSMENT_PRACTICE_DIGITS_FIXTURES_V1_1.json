@@ -1,0 +1,377 @@
+{
+  "version": "digits_fixtures_v1_1",
+  "cases": [
+    {
+      "name": "three_wrong_with_correct_between",
+      "answers": [
+        "correct",
+        "wrong",
+        "correct",
+        "wrong",
+        "correct",
+        "wrong"
+      ],
+      "presentedLengths": [
+        4,
+        5,
+        4,
+        5,
+        4,
+        5
+      ],
+      "finalWrongCount": 3,
+      "maxCorrectLength": 4,
+      "ending": "three_mistakes"
+    },
+    {
+      "name": "three_immediate_wrong",
+      "answers": [
+        "wrong",
+        "wrong",
+        "wrong"
+      ],
+      "presentedLengths": [
+        4,
+        3,
+        2
+      ],
+      "finalWrongCount": 3,
+      "maxCorrectLength": null,
+      "ending": "three_mistakes"
+    },
+    {
+      "name": "forty_correct_safety_limit",
+      "answers": [
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct"
+      ],
+      "presentedLengths": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16
+      ],
+      "finalWrongCount": 0,
+      "maxCorrectLength": 16,
+      "ending": "practice_limit_reached"
+    },
+    {
+      "name": "third_wrong_on_fortieth",
+      "answers": [
+        "wrong",
+        "wrong",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "correct",
+        "wrong"
+      ],
+      "presentedLengths": [
+        4,
+        3,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16
+      ],
+      "finalWrongCount": 3,
+      "maxCorrectLength": 16,
+      "ending": "three_mistakes"
+    },
+    {
+      "name": "variable_denominators",
+      "answers": [
+        "wrong",
+        "wrong",
+        "correct",
+        "correct",
+        "wrong"
+      ],
+      "presentedLengths": [
+        4,
+        3,
+        2,
+        3,
+        4
+      ],
+      "finalWrongCount": 3,
+      "maxCorrectLength": 3,
+      "ending": "three_mistakes",
+      "byLength": [
+        {
+          "length": 2,
+          "exact": 1,
+          "of": 1
+        },
+        {
+          "length": 3,
+          "exact": 1,
+          "of": 2
+        },
+        {
+          "length": 4,
+          "exact": 0,
+          "of": 2
+        }
+      ],
+      "serialPositionOpportunities": [
+        5,
+        5,
+        4,
+        2
+      ]
+    }
+  ],
+  "closureCases": [
+    {
+      "name": "matching_draft_exact_deadline",
+      "target": "1234",
+      "draft": "1234",
+      "entryOpenedMs": 1000,
+      "entryWindowMs": 20000,
+      "submitAtMs": 21000,
+      "expectedExactCorrect": false,
+      "expectedWrongCount": 1,
+      "expectedNextLength": 3
+    },
+    {
+      "name": "matching_submit_before_deadline",
+      "target": "1234",
+      "draft": "1234",
+      "entryOpenedMs": 1000,
+      "entryWindowMs": 20000,
+      "submitAtMs": 20999.999,
+      "expectedExactCorrect": true,
+      "expectedWrongCount": 0,
+      "expectedNextLength": 5
+    },
+    {
+      "name": "skip_is_wrong",
+      "target": "1234",
+      "draft": "",
+      "entryOpenedMs": 1000,
+      "entryWindowMs": 20000,
+      "skipAtMs": 1500,
+      "expectedExactCorrect": false,
+      "expectedWrongCount": 1,
+      "expectedNextLength": 3
+    }
+  ],
+  "negativeCases": [
+    {
+      "name": "changed_generated_target",
+      "primitive": "mutate first recorded target digit after onset",
+      "expected": "reject journal and suppress valid score"
+    },
+    {
+      "name": "wrong_next_length",
+      "primitive": "change nonterminal trial_closed.nextLength from 5 to 4 after a correct length-4 trial",
+      "expected": "reject journal and suppress valid score"
+    },
+    {
+      "name": "wrong_count_reset",
+      "primitive": "set wrongCount to 0 after a correct trial following one wrong",
+      "expected": "reject journal and suppress valid score"
+    },
+    {
+      "name": "false_terminal_reason",
+      "primitive": "record practice_limit_reached after the third cumulative wrong",
+      "expected": "reject journal and suppress valid score"
+    },
+    {
+      "name": "duplicate_answer_commit",
+      "primitive": "append two answer_committed events for one trial",
+      "expected": "reject journal and suppress valid score"
+    }
+  ],
+  "authorityCases": [
+    {
+      "name": "delete_before_next_admission",
+      "order": [
+        "checkpoint_verified",
+        "delete_committed",
+        "next_requested"
+      ],
+      "expected": "no digit onset; retire draft and remove retry"
+    },
+    {
+      "name": "next_before_delete",
+      "order": [
+        "checkpoint_verified",
+        "next_admitted",
+        "first_digit_confirmed",
+        "delete_committed"
+      ],
+      "expected": "retain factual observed onset in local review, withdraw saved claim, prevent later writes"
+    },
+    {
+      "name": "deleted_during_checkpoint",
+      "order": [
+        "trial_closed",
+        "checkpoint_write_pending",
+        "delete_committed",
+        "old_callback_success"
+      ],
+      "expected": "no resurrection, no saved claim, no next target"
+    },
+    {
+      "name": "cancel_during_arm",
+      "order": [
+        "owner_pending",
+        "navigation_cancel",
+        "owner_callback_delivered"
+      ],
+      "expected": "no arm or onset; release owner"
+    },
+    {
+      "name": "reload_without_terminal",
+      "order": [
+        "checkpoint_verified",
+        "reload",
+        "history_reopen"
+      ],
+      "expected": "incomplete review, later exposure unknown, no resumed live play"
+    }
+  ]
+}

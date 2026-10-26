@@ -1,0 +1,147 @@
+{
+  "version": "lengths_fixtures_v1",
+  "formId": "LS1",
+  "cases": [
+    {
+      "id": "all_correct_200",
+      "primitive": "Each of 96 trials: first action is its longerSide at onset+200ms; all stage lateness 0.",
+      "expected": {
+        "status": "valid",
+        "correct": 96,
+        "wrong": 0,
+        "omitted": 0,
+        "byCategoryCorrect": {
+          "small": 32,
+          "medium": 32,
+          "large": 32
+        },
+        "byBlockCorrect": [
+          24,
+          24,
+          24,
+          24
+        ],
+        "selectedLeft": 48,
+        "selectedRight": 48,
+        "cleanTimes": 96,
+        "medianMs": 200,
+        "iqrMs": 0
+      }
+    },
+    {
+      "id": "first_wrong_second_omitted",
+      "primitive": "LS1 trial 1: first action is opposite longerSide at onset+200ms. Trial 2: no eligible action. All other trials correct at onset+200ms.",
+      "expected": {
+        "status": "valid",
+        "correct": 94,
+        "wrong": 1,
+        "omitted": 1,
+        "byCategoryCorrect": {
+          "small": 32,
+          "medium": 32,
+          "large": 30
+        },
+        "cleanTimes": 94,
+        "medianMs": 200,
+        "iqrMs": 0
+      }
+    },
+    {
+      "id": "early_correct",
+      "primitive": "LS1 trial 1 first correct action at onset+80ms; all other trials correct at onset+200ms.",
+      "expected": {
+        "status": "valid",
+        "correct": 96,
+        "cleanTimes": 95,
+        "medianMs": 200,
+        "iqrMs": 0
+      }
+    },
+    {
+      "id": "last_eligible",
+      "primitive": "LS1 trial 1 first correct action at onset+1399ms; all others correct at onset+200ms.",
+      "expected": {
+        "status": "valid",
+        "correct": 96,
+        "cleanTimes": 96,
+        "medianMs": 200,
+        "iqrMs": 0
+      }
+    },
+    {
+      "id": "deadline_boundary",
+      "primitive": "LS1 trial 1 first selected action at onset+1400ms before confirmed offset; all others correct at onset+200ms.",
+      "expected": {
+        "status": "valid",
+        "correct": 95,
+        "omitted": 1,
+        "boundaryExtras": 1,
+        "cleanTimes": 95,
+        "medianMs": 200,
+        "iqrMs": 0
+      }
+    },
+    {
+      "id": "quality_50",
+      "primitive": "All correct at onset+200ms; LS1 trial 1 has stimulus lateness 50ms.",
+      "expected": {
+        "status": "valid",
+        "correct": 96,
+        "cleanTimes": 96,
+        "medianMs": 200,
+        "iqrMs": 0
+      }
+    },
+    {
+      "id": "quality_51",
+      "primitive": "All correct at onset+200ms; LS1 trial 1 has stimulus lateness 51ms.",
+      "expected": {
+        "status": "valid",
+        "correct": 96,
+        "cleanTimes": 95,
+        "medianMs": 200,
+        "iqrMs": 0
+      }
+    },
+    {
+      "id": "quality_250",
+      "primitive": "All correct at onset+200ms; LS1 trial 1 has stimulus lateness 250ms.",
+      "expected": {
+        "status": "valid",
+        "correct": 96,
+        "cleanTimes": 95,
+        "medianMs": 200,
+        "iqrMs": 0
+      }
+    },
+    {
+      "id": "severe_251",
+      "primitive": "LS1 trial 1 stimulus confirms 251ms late; the run invalidates after recording its confirmed onset.",
+      "expected": {
+        "status": "invalid",
+        "aggregateMetrics": null,
+        "timingMetrics": null,
+        "presentedAtLeast": 1
+      }
+    },
+    {
+      "id": "five_times",
+      "primitive": "One valid cell has five clean correct RTs [100,200,300,400,500]ms.",
+      "expected": {
+        "medianMs": 300,
+        "iqr": "insufficient_variability"
+      }
+    },
+    {
+      "id": "eight_times",
+      "primitive": "One valid cell has eight clean correct RTs [100,200,300,400,500,600,700,800]ms.",
+      "expected": {
+        "medianMs": 450,
+        "q1Ms": 250,
+        "q3Ms": 650,
+        "iqrMs": 400
+      }
+    }
+  ],
+  "sha256": "84d38be93fa2a53674c1eb2ca0cfa2c40228a9f37a9892e7f12a84ee1794488d"
+}

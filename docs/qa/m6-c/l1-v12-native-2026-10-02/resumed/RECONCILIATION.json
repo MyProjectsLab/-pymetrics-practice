@@ -1,0 +1,199 @@
+{
+  "scope": "Bounded native tab-hide observations at unchanged f6b8ae0; not browser/support certification",
+  "control": {
+    "type": "visibilitychange",
+    "utc": "2026-10-03T02:19:17.863Z",
+    "epochMs": 1790993957863,
+    "timeOriginMs": 1790993942838.1,
+    "performanceNowMs": 15025.69999999553,
+    "eventTimeStampMs": 15025.60000000149,
+    "isTrusted": true,
+    "visibilityState": "hidden",
+    "hasFocus": false,
+    "href": "http://127.0.0.1:5592/"
+  },
+  "case1": {
+    "sessionId": "93ba0dae-e7ff-4df1-acaa-a4c883240e99",
+    "browserHidden": {
+      "type": "visibilitychange",
+      "utc": "2026-10-03T02:21:06.613Z",
+      "epochMs": 1790994066613,
+      "timeOriginMs": 1790993973385.3,
+      "performanceNowMs": 93232.79999999702,
+      "eventTimeStampMs": 93232.79999999702,
+      "isTrusted": true,
+      "visibilityState": "hidden",
+      "hasFocus": false,
+      "href": "http://127.0.0.1:5592/"
+    },
+    "journalInterruption": {
+      "schemaVersion": "stop_engine_event_v1",
+      "sessionId": "93ba0dae-e7ff-4df1-acaa-a4c883240e99",
+      "sequenceNumber": 31,
+      "timestampMs": 93232.89999999851,
+      "type": "warmup_interrupted",
+      "payload": {
+        "reason": "hidden",
+        "triggerSequenceNumber": 30
+      }
+    },
+    "freshWarmupCompletion": {
+      "schemaVersion": "stop_engine_event_v1",
+      "sessionId": "93ba0dae-e7ff-4df1-acaa-a4c883240e99",
+      "sequenceNumber": 94,
+      "timestampMs": 138764.70000000298,
+      "type": "batch_finished",
+      "payload": {
+        "phase": "warmup",
+        "trialCount": 8
+      }
+    },
+    "unexposedAtPause": true
+  },
+  "case2": {
+    "sessionId": "93ba0dae-e7ff-4df1-acaa-a4c883240e99",
+    "browserHidden": {
+      "type": "visibilitychange",
+      "utc": "2026-10-03T02:22:36.848Z",
+      "epochMs": 1790994156848,
+      "timeOriginMs": 1790993973385.3,
+      "performanceNowMs": 183468.79999999702,
+      "eventTimeStampMs": 183468.79999999702,
+      "isTrusted": true,
+      "visibilityState": "hidden",
+      "hasFocus": false,
+      "href": "http://127.0.0.1:5592/"
+    },
+    "acceptedScoredStart": {
+      "schemaVersion": "stop_engine_event_v1",
+      "sessionId": "93ba0dae-e7ff-4df1-acaa-a4c883240e99",
+      "sequenceNumber": 95,
+      "timestampMs": 197926.6000000015,
+      "type": "protection_started",
+      "payload": {
+        "responseKey": "Space",
+        "held": false
+      }
+    },
+    "laterViewportInvalidation": {
+      "schemaVersion": "stop_engine_event_v1",
+      "sessionId": "93ba0dae-e7ff-4df1-acaa-a4c883240e99",
+      "sequenceNumber": 645,
+      "timestampMs": 369167.6000000015,
+      "type": "session_invalidated",
+      "payload": {
+        "ruleId": "stop_validity_v1.viewport_below_768x600",
+        "triggerSequenceNumber": 644
+      }
+    },
+    "scoredScheduledBeforeViewportInvalidation": 78,
+    "validCompletionObserved": false
+  },
+  "case3": {
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "formId": "stop-baseline-01",
+    "acceptedScoredStart": {
+      "schemaVersion": "stop_engine_event_v1",
+      "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+      "sequenceNumber": 65,
+      "timestampMs": 472615.299999997,
+      "type": "protection_started",
+      "payload": {
+        "responseKey": "Space",
+        "held": false
+      }
+    },
+    "browserHidden": {
+      "type": "visibilitychange",
+      "utc": "2026-10-03T02:27:26.000Z",
+      "epochMs": 1790994446000,
+      "timeOriginMs": 1790993973385.3,
+      "performanceNowMs": 472626.299999997,
+      "eventTimeStampMs": 472626.299999997,
+      "isTrusted": true,
+      "visibilityState": "hidden",
+      "hasFocus": false,
+      "href": "http://127.0.0.1:5592/"
+    },
+    "invalidation": {
+      "schemaVersion": "stop_engine_event_v1",
+      "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+      "sequenceNumber": 68,
+      "timestampMs": 472626.799999997,
+      "type": "session_invalidated",
+      "payload": {
+        "ruleId": "stop_validity_v1.hidden",
+        "triggerSequenceNumber": 67
+      }
+    },
+    "scoredScheduled": 0,
+    "formConsumed": false
+  },
+  "case4": {
+    "sessionId": "99e75f87-e7b5-42aa-b64f-c3d417823533",
+    "formId": "stop-baseline-04",
+    "acceptedScoredStart": {
+      "schemaVersion": "stop_engine_event_v1",
+      "sessionId": "99e75f87-e7b5-42aa-b64f-c3d417823533",
+      "sequenceNumber": 65,
+      "timestampMs": 687708.6000000015,
+      "type": "protection_started",
+      "payload": {
+        "responseKey": "Space",
+        "held": false
+      }
+    },
+    "firstScoredOnset": {
+      "schemaVersion": "stop_engine_event_v1",
+      "sessionId": "99e75f87-e7b5-42aa-b64f-c3d417823533",
+      "sequenceNumber": 69,
+      "timestampMs": 688734.5,
+      "type": "stimulus_presented",
+      "payload": {
+        "trialIndex": 0,
+        "stimulus": "GO",
+        "confirmedOnsetMs": 688734.5,
+        "eligibleAtMs": 688733.5
+      }
+    },
+    "browserHidden": {
+      "type": "visibilitychange",
+      "utc": "2026-10-03T02:31:07.081Z",
+      "epochMs": 1790994667081,
+      "timeOriginMs": 1790993973385.3,
+      "performanceNowMs": 693711.3999999985,
+      "eventTimeStampMs": 693711.3999999985,
+      "isTrusted": true,
+      "visibilityState": "hidden",
+      "hasFocus": false,
+      "href": "http://127.0.0.1:5592/"
+    },
+    "invalidation": {
+      "schemaVersion": "stop_engine_event_v1",
+      "sessionId": "99e75f87-e7b5-42aa-b64f-c3d417823533",
+      "sequenceNumber": 87,
+      "timestampMs": 693711.8999999985,
+      "type": "session_invalidated",
+      "payload": {
+        "ruleId": "stop_validity_v1.hidden",
+        "triggerSequenceNumber": 86
+      }
+    },
+    "scoredScheduled": 3,
+    "exposure": {
+      "formId": "stop-baseline-04",
+      "exposedAtWall": "2026-10-03T02:31:02.105Z",
+      "visualProfile": "standard",
+      "deleted": false,
+      "sessionId": "99e75f87-e7b5-42aa-b64f-c3d417823533",
+      "certainty": "confirmed"
+    }
+  },
+  "limits": [
+    "Cases 1 and 2 share an attempt; separate boundary snapshots.",
+    "No completed valid native-hide recovery result; later viewport invalidation retained.",
+    "Native app bridge inputs, not human physical input/display calibration.",
+    "No lock/sleep/minimize/discard/freeze/bfcache or blur-duration qualification.",
+    "No Chrome or support-matrix certification."
+  ]
+}

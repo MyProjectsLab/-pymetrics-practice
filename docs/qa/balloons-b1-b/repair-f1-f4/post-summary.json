@@ -1,0 +1,1310 @@
+{
+  "independent-results": [
+    {
+      "name": "independent-complete-journeys",
+      "pass": true,
+      "spaceSource": "keyboard",
+      "BL": 39,
+      "RP": 39,
+      "banked": 455,
+      "lost": 470
+    },
+    {
+      "name": "healthy-delayed-history-read",
+      "pass": true,
+      "reportVisibleAfterHealthyReads": true,
+      "storageUnchanged": true,
+      "text": "BALLOONS \u00b7 LOCAL REPORT\n\nYour choices and outcomes\n\nSaved \u00b7 39 of 39 rounds complete \u00b7 Intact practice result.\n\nForm RP1 \u00b7 balloons-v1.0 \u00b7 balloons-scored-v1 \u00b7 balloons-scoring-v1\n\nStandalone practice. Advanced Training is not available in this build.\n\n0 cents collected. 0 cents lost from uncollected balloons.\n\nLost value was never deducted from money collected earlier. All money is simulated.\n\n39 collected and 0 burst out of 39 balloons.\n\nGroup\tRounds\tCollected\tBurst\tBanked cents\tLost cents\tAttempted pumps\tSuccessful pumps\tVoluntary\tZero-pump\tCap\nAll balloons\t39\t39\t0\t0\t0\t0\t0\t39\t39\t0\nType 1\t13\t13\t0\t0\t0\t0\t0\t13\t13\t0\nType 2\t13\t13\t0\t0\t0\t0\t0\t13\t13\t0\nType 3\t13\t13\t0\t0\t0\t0\t0\t13\t13\t0\nVoluntary collection points\n\nBursts are censored observations of intended attempts. Automatic cap collections are censored at 32 successful pumps. Neither supplies a voluntary stopping point.\n\nType 1\n\nMedian: 0 pumps (13 voluntary collections).\n\nEarly median 0 (4 voluntary); late median 0 (5 voluntary). Late minus early: 0 pumps.\n\nType 2\n\nMedian: 0 pumps (13 voluntary collections).\n\nEarly median 0 (5 voluntary); late median 0 (4 voluntary). Late minus early: 0 pumps.\n\nType 3\n\nMedian: 0 pumps (13 voluntary collections).\n\nEarly median 0 (4 voluntary); late median 0 (4 voluntary). Late minus early: 0 pumps.\n\nBy block\n\nEarly: rounds 1\u201313. Middle: 14\u201326. Late: 27\u201339.\n\nGroup\tRounds\tCollected\tBurst\tBanked cents\tLost cents\tAttempted pumps\tSuccessful pumps\tVoluntary\tZero-pump\tCap\nearly\t13\t13\t0\t0\t0\t0\t0\t13\t13\t0\nmiddle\t13\t13\t0\t0\t0\t0\t0\t13\t13\t0\nlate\t13\t13\t0\t0\t0\t0\t0\t13\t13\t0\nSession context\n\nInput sources recorded: mouse. Mixed sources do not invalidate this untimed task.\n\n0 interruption/recovery records. Decision latency is not reported; no latency is calculated across pauses or reloads.\n\nType text and stripe/dot/grid patterns. Round-start and outcome announcements. No growth animation used. Settings were fixed at readiness.\n\nRecorded browser context\nRound review\nRound\tType\tAttempts\tSuccesses\tOutcome\tBanked cents\tLost cents\n1\tType 2\t0\t0\tvoluntary collect\t0\t0\n2\tType 2\t0\t0\tvoluntary collect\t0\t0\n3\tType 3\t0\t0\tvoluntary collect\t0\t0\n4\tType 1\t0\t0\tvoluntary collect\t0\t0\n5\tType 1\t0\t0\tvoluntary collect\t0\t0\n6\tType 1\t0\t0\tvoluntary collect\t0\t0\n7\tType 2\t0\t0\tvoluntary collect\t0\t0\n8\tType 3\t0\t0\tvoluntary collect\t0\t0\n9\tType 2\t0\t0\tvoluntary collect\t0\t0\n10\tType 3\t0\t0\tvoluntary collect\t0\t0\n11\tType 1\t0\t0\tvoluntary collect\t0\t0\n12\tType 2\t0\t0\tvoluntary collect\t0\t0\n13\tType 3\t0\t0\tvoluntary collect\t0\t0\n14\tType 3\t0\t0\tvoluntary collect\t0\t0\n15\tType 1\t0\t0\tvoluntary collect\t0\t0\n16\tType 3\t0\t0\tvoluntary collect\t0\t0\n17\tType 2\t0\t0\tvoluntary collect\t0\t0\n18\tType 1\t0\t0\tvoluntary collect\t0\t0\n19\tType 3\t0\t0\tvoluntary collect\t0\t0\n20\tType 1\t0\t0\tvoluntary collect\t0\t0\n21\tType 2\t0\t0\tvoluntary collect\t0\t0\n22\tType 3\t0\t0\tvoluntary collect\t0\t0\n23\tType 1\t0\t0\tvoluntary collect\t0\t0\n24\tType 2\t0\t0\tvoluntary collect\t0\t0\n25\tType 3\t0\t0\tvoluntary collect\t0\t0\n26\tType 2\t0\t0\tvoluntary collect\t0\t0\n27\tType 1\t0\t0\tvoluntary collect\t0\t0\n28\tType 2\t0\t0\tvoluntary collect\t0\t0\n29\tType 2\t0\t0\tvoluntary collect\t0\t0\n30\tType 2\t0\t0\tvoluntary collect\t0\t0\n31\tType 3\t0\t0\tvoluntary collect\t0\t0\n32\tType 1\t0\t0\tvoluntary collect\t0\t0\n33\tType 1\t0\t0\tvoluntary collect\t0\t0\n34\tType 3\t0\t0\tvoluntary collect\t0\t0\n35\tType 3\t0\t0\tvoluntary collect\t0\t0\n36\tType 2\t0\t0\tvoluntary collect\t0\t0\n37\tType 1\t0\t0\tvoluntary collect\t0\t0\n38\tType 3\t0\t0\tvoluntary collect\t0\t0\n39\tType 1\t0\t0\tvoluntary collect\t0\t0\n\nThese are the choices and outcomes from this Assessment Practice sequence. A different sequence could produce a different amount. This result is not a personality score or a prediction of an employer's decision.\n\nThese fixed sequences are not calibrated equivalent forms. Total collected is one sampled outcome, not a skill or personality measure.\n\nPractise againBalloons history"
+    },
+    {
+      "name": "no-notifications-assignment-individual",
+      "pass": true,
+      "deletionFinishedWithoutOriginTabExit": true,
+      "locksAt2600ms": {
+        "held": [],
+        "pending": []
+      },
+      "savingTabText": "Balloons history\n\nSaved only in this browser. Deleting one result keeps its sequence exposure and chain tombstone, so it cannot become unseen again.\n\n0 retained attempts. 1 deletion tombstones.\n\nDelete all Balloons data clears results, chains and local sequence exposure. Earlier use can no longer be known; a future sequence may be one you have already seen.\n\nDelete all Balloons dataPractise againStart another baseline with an unseen BL form",
+      "originalInstallation": "b58ad7e7-3135-4f06-a840-c090248d4398",
+      "afterExitInstallation": "b58ad7e7-3135-4f06-a840-c090248d4398",
+      "lateDeliveryResurrected": false
+    },
+    {
+      "name": "no-notifications-assignment-installation",
+      "pass": true,
+      "deletionFinishedWithoutOriginTabExit": true,
+      "locksAt2600ms": {
+        "held": [],
+        "pending": []
+      },
+      "savingTabText": "Balloons durable integrity: installation replaced\n\nBalloons history\n\nSaved only in this browser. Deleting one result keeps its sequence exposure and chain tombstone, so it cannot become unseen again.\n\nChecking saved history\u2026\n\nPractise againStart another baseline with an unseen BL form",
+      "originalInstallation": "8924503a-8919-4252-8a96-2ab239969d0d",
+      "afterExitInstallation": "3101b691-ecfe-4a04-b2a8-d97a7d9c2aa6",
+      "lateDeliveryResurrected": false
+    },
+    {
+      "name": "no-notifications-arm-individual",
+      "pass": true,
+      "deletionFinishedWithoutOriginTabExit": true,
+      "locksAt2600ms": {
+        "held": [],
+        "pending": []
+      },
+      "savingTabText": "Balloons history\n\nSaved only in this browser. Deleting one result keeps its sequence exposure and chain tombstone, so it cannot become unseen again.\n\n0 retained attempts. 1 deletion tombstones.\n\nDelete all Balloons data clears results, chains and local sequence exposure. Earlier use can no longer be known; a future sequence may be one you have already seen.\n\nDelete all Balloons dataPractise againStart another baseline with an unseen BL form",
+      "originalInstallation": "5318f12a-4d0b-4ea3-97b5-f1cc6f9e5a78",
+      "afterExitInstallation": "5318f12a-4d0b-4ea3-97b5-f1cc6f9e5a78",
+      "lateDeliveryResurrected": false
+    },
+    {
+      "name": "no-notifications-arm-installation",
+      "pass": true,
+      "deletionFinishedWithoutOriginTabExit": true,
+      "locksAt2600ms": {
+        "held": [],
+        "pending": []
+      },
+      "savingTabText": "Balloons durable integrity: installation replaced\n\nBalloons history\n\nSaved only in this browser. Deleting one result keeps its sequence exposure and chain tombstone, so it cannot become unseen again.\n\nChecking saved history\u2026\n\nPractise againStart another baseline with an unseen BL form",
+      "originalInstallation": "03d1ae9b-96d2-4040-af29-892a0c12e579",
+      "afterExitInstallation": "55d53a65-8602-4c52-be94-2a7210369720",
+      "lateDeliveryResurrected": false
+    },
+    {
+      "name": "no-notifications-confirm-individual",
+      "pass": true,
+      "deletionFinishedWithoutOriginTabExit": true,
+      "locksAt2600ms": {
+        "held": [],
+        "pending": []
+      },
+      "savingTabText": "Balloons history\n\nSaved only in this browser. Deleting one result keeps its sequence exposure and chain tombstone, so it cannot become unseen again.\n\n0 retained attempts. 1 deletion tombstones.\n\nDelete all Balloons data clears results, chains and local sequence exposure. Earlier use can no longer be known; a future sequence may be one you have already seen.\n\nDelete all Balloons dataPractise againStart another baseline with an unseen BL form",
+      "originalInstallation": "52b6576f-400f-4329-b62b-e4c5efa8b22f",
+      "afterExitInstallation": "52b6576f-400f-4329-b62b-e4c5efa8b22f",
+      "lateDeliveryResurrected": false
+    },
+    {
+      "name": "no-notifications-confirm-installation",
+      "pass": true,
+      "deletionFinishedWithoutOriginTabExit": true,
+      "locksAt2600ms": {
+        "held": [],
+        "pending": []
+      },
+      "savingTabText": "Balloons durable integrity: installation replaced\n\nBalloons history\n\nSaved only in this browser. Deleting one result keeps its sequence exposure and chain tombstone, so it cannot become unseen again.\n\nChecking saved history\u2026\n\nPractise againStart another baseline with an unseen BL form",
+      "originalInstallation": "3265c190-2f3c-4b6a-b584-c133f2d5e639",
+      "afterExitInstallation": "7ec1078c-2aea-471f-8511-526dfbbebe5c",
+      "lateDeliveryResurrected": false
+    },
+    {
+      "name": "no-notifications-action-individual",
+      "pass": true,
+      "deletionFinishedWithoutOriginTabExit": true,
+      "locksAt2600ms": {
+        "held": [],
+        "pending": []
+      },
+      "savingTabText": "Balloons history\n\nSaved only in this browser. Deleting one result keeps its sequence exposure and chain tombstone, so it cannot become unseen again.\n\n0 retained attempts. 1 deletion tombstones.\n\nDelete all Balloons data clears results, chains and local sequence exposure. Earlier use can no longer be known; a future sequence may be one you have already seen.\n\nDelete all Balloons dataPractise againStart another baseline with an unseen BL form",
+      "originalInstallation": "eb2cdbe1-2367-4351-b475-020c288f35dc",
+      "afterExitInstallation": "eb2cdbe1-2367-4351-b475-020c288f35dc",
+      "lateDeliveryResurrected": false
+    },
+    {
+      "name": "no-notifications-action-installation",
+      "pass": true,
+      "deletionFinishedWithoutOriginTabExit": true,
+      "locksAt2600ms": {
+        "held": [],
+        "pending": []
+      },
+      "savingTabText": "Balloons durable integrity: installation replaced\n\nBalloons history\n\nSaved only in this browser. Deleting one result keeps its sequence exposure and chain tombstone, so it cannot become unseen again.\n\nChecking saved history\u2026\n\nPractise againStart another baseline with an unseen BL form",
+      "originalInstallation": "ee060bac-387b-43a3-800c-1dea15e422d6",
+      "afterExitInstallation": "2709c80e-d71b-4fd1-8754-e52f18e4f1ef",
+      "lateDeliveryResurrected": false
+    },
+    {
+      "name": "persistent-intent-failure-recovery",
+      "pass": true,
+      "warning": "Balloons practice\n\nForm BL1 \u00b7 Standalone practice\n\nUnsaved action or display. Controls are paused. This attempt is not eligible as a durable baseline. Only committed actions can be recovered. Independent injected put failure\n\nLast visible committed state: round 1, 0 successful pumps, 0 cents banked. Unconfirmed or unsaved work cannot establish a baseline.\n\nCheck and resume saved session\nRound 1. Type 1. Current 0 cents. Banked 0 cents.\nPause and open history",
+      "storedAfterFailure": {
+        "phase": "active",
+        "eligible": true,
+        "pending": null
+      },
+      "afterRecovery": {
+        "phase": "active",
+        "eligible": false,
+        "form": "BL1"
+      }
+    }
+  ],
+  "supplemental-results": [
+    {
+      "name": "failed-intent-and-cleanup-completes-as-baseline",
+      "pass": true,
+      "unsavedText": "Balloons practice\n\nForm BL1 \u00b7 Standalone practice\n\nUnsaved action or display. Controls are paused. This attempt is not eligible as a durable baseline. Only committed actions can be recovered. Independent injected put failure\n\nLast visible committed state: round 1, 0 successful pumps, 0 cents banked. Unconfirmed or unsaved work cannot establish a baseline.\n\nCheck and resume saved session\nRound 1. Type 1. Current 0 cents. Banked 0 cents.\nPause and open history",
+      "reportText": "BALLOONS \u00b7 LOCAL REPORT\n\nYour choices and outcomes\n\nSaved \u00b7 39 of 39 rounds complete \u00b7 Review only; not eligible as a baseline.\n\nForm BL1 \u00b7 balloons-v1.0 \u00b7 balloons-scored-v1 \u00b7 balloons-scoring-v1\n\nStandalone practice. Advanced Training is not available in this build.\n\n0 cents collected. 0 cents lost from uncollected balloons.\n\nLost value was never deducted from money collected earlier. All money is simulated.\n\n39 collected and 0 burst out of 39 balloons.\n\nGroup\tRounds\tCollected\tBurst\tBanked cents\tLost cents\tAttempted pumps\tSuccessful pumps\tVoluntary\tZero-pump\tCap\nAll balloons\t39\t39\t0\t0\t0\t0\t0\t39\t39\t0\nType 1\t13\t13\t0\t0\t0\t0\t0\t13\t13\t0\nType 2\t13\t13\t0\t0\t0\t0\t0\t13\t13\t0\nType 3\t13\t13\t0\t0\t0\t0\t0\t13\t13\t0\nVoluntary collection points\n\nBursts are censored observations of intended attempts. Automatic cap collections are censored at 32 successful pumps. Neither supplies a voluntary stopping point.\n\nType 1\n\nMedian: 0 pumps (13 voluntary collections).\n\nEarly median 0 (4 voluntary); late median 0 (5 voluntary). Late minus early: 0 pumps.\n\nType 2\n\nMedian: 0 pumps (13 voluntary collections).\n\nEarly median 0 (5 voluntary); late median 0 (4 voluntary). Late minus early: 0 pumps.\n\nType 3\n\nMedian: 0 pumps (13 voluntary collections).\n\nEarly median 0 (4 voluntary); late median 0 (4 voluntary). Late minus early: 0 pumps.\n\nBy block\n\nEarly: rounds 1\u201313. Middle: 14\u201326. Late: 27\u201339.\n\nGroup\tRounds\tCollected\tBurst\tBanked cents\tLost cents\tAttempted pumps\tSuccessful pumps\tVoluntary\tZero-pump\tCap\nearly\t13\t13\t0\t0\t0\t0\t0\t13\t13\t0\nmiddle\t13\t13\t0\t0\t0\t0\t0\t13\t13\t0\nlate\t13\t13\t0\t0\t0\t0\t0\t13\t13\t0\nSession context\n\nInput sources recorded: mouse. Mixed sources do not invalidate this untimed task.\n\n1 interruption/recovery records. Decision latency is not reported; no latency is calculated across pauses or reloads.\n\nType text and stripe/dot/grid patterns. Round-start and outcome announcements. No growth animation used. Settings were fixed at readiness.\n\nRecorded browser context\nRound review\nRound\tType\tAttempts\tSuccesses\tOutcome\tBanked cents\tLost cents\n1\tType 1\t0\t0\tvoluntary collect\t0\t0\n2\tType 2\t0\t0\tvoluntary collect\t0\t0\n3\tType 3\t0\t0\tvoluntary collect\t0\t0\n4\tType 2\t0\t0\tvoluntary collect\t0\t0\n5\tType 1\t0\t0\tvoluntary collect\t0\t0\n6\tType 3\t0\t0\tvoluntary collect\t0\t0\n7\tType 3\t0\t0\tvoluntary collect\t0\t0\n8\tType 2\t0\t0\tvoluntary collect\t0\t0\n9\tType 2\t0\t0\tvoluntary collect\t0\t0\n10\tType 1\t0\t0\tvoluntary collect\t0\t0\n11\tType 2\t0\t0\tvoluntary collect\t0\t0\n12\tType 3\t0\t0\tvoluntary collect\t0\t0\n13\tType 1\t0\t0\tvoluntary collect\t0\t0\n14\tType 2\t0\t0\tvoluntary collect\t0\t0\n15\tType 1\t0\t0\tvoluntary collect\t0\t0\n16\tType 3\t0\t0\tvoluntary collect\t0\t0\n17\tType 3\t0\t0\tvoluntary collect\t0\t0\n18\tType 3\t0\t0\tvoluntary collect\t0\t0\n19\tType 2\t0\t0\tvoluntary collect\t0\t0\n20\tType 2\t0\t0\tvoluntary collect\t0\t0\n21\tType 1\t0\t0\tvoluntary collect\t0\t0\n22\tType 1\t0\t0\tvoluntary collect\t0\t0\n23\tType 1\t0\t0\tvoluntary collect\t0\t0\n24\tType 2\t0\t0\tvoluntary collect\t0\t0\n25\tType 3\t0\t0\tvoluntary collect\t0\t0\n26\tType 3\t0\t0\tvoluntary collect\t0\t0\n27\tType 1\t0\t0\tvoluntary collect\t0\t0\n28\tType 1\t0\t0\tvoluntary collect\t0\t0\n29\tType 3\t0\t0\tvoluntary collect\t0\t0\n30\tType 2\t0\t0\tvoluntary collect\t0\t0\n31\tType 1\t0\t0\tvoluntary collect\t0\t0\n32\tType 3\t0\t0\tvoluntary collect\t0\t0\n33\tType 1\t0\t0\tvoluntary collect\t0\t0\n34\tType 2\t0\t0\tvoluntary collect\t0\t0\n35\tType 2\t0\t0\tvoluntary collect\t0\t0\n36\tType 1\t0\t0\tvoluntary collect\t0\t0\n37\tType 3\t0\t0\tvoluntary collect\t0\t0\n38\tType 3\t0\t0\tvoluntary collect\t0\t0\n39\tType 2\t0\t0\tvoluntary collect\t0\t0\n\nThese are the choices and outcomes from this Assessment Practice sequence. A different sequence could produce a different amount. This result is not a personality score or a prediction of an employer's decision.\n\nThese fixed sequences are not calibrated equivalent forms. Total collected is one sampled outcome, not a skill or personality measure.\n\nPractise againBalloons history",
+      "eligible": false
+    },
+    {
+      "name": "native-space-source-and-repeat",
+      "pass": true,
+      "sources": [
+        {
+          "input": "Space Collect",
+          "source": "keyboard"
+        },
+        {
+          "input": "Space Pump",
+          "source": "keyboard"
+        },
+        {
+          "input": "Enter Pump",
+          "source": "keyboard"
+        },
+        {
+          "input": "Space Pump",
+          "source": "keyboard"
+        }
+      ],
+      "heldFocusReleaseAddsNoAction": true
+    },
+    {
+      "name": "healthy-normal-report-polling",
+      "pass": true,
+      "normalPollReportRemovals": 0,
+      "reportVisible": true
+    }
+  ],
+  "repair-boundary-results": [
+    {
+      "name": "repair-absent-assignment-individual-delete-first",
+      "pass": true,
+      "elapsedMs": 1884,
+      "locks": {
+        "held": [],
+        "pending": []
+      },
+      "exposureBefore": "pending_exposure",
+      "deletionRoot": {
+        "version": "balloons-durable-v1",
+        "installationId": "af07160a-028a-4666-a284-0f97dd7319a2",
+        "revision": 2,
+        "generation": 2,
+        "owner": null,
+        "records": {},
+        "tombstones": {
+          "7bc9a850-bf91-43e4-9334-961abcb76304": {
+            "sessionId": "7bc9a850-bf91-43e4-9334-961abcb76304",
+            "chainId": "b87a9028-dc06-45aa-a912-1871ab1ef44d",
+            "formId": "BL1",
+            "exposure": "pending_exposure",
+            "deletedAtMs": 1791084365745
+          }
+        }
+      },
+      "lateDeliveryUnchanged": true,
+      "noScoredMountBeforeArmDelivery": true,
+      "visible": "Balloons practice\n\nPractice paused. Resume checks the saved journal and keeps the same sequence.\n\nPause and open history"
+    },
+    {
+      "name": "repair-absent-assignment-individual-delivery-first",
+      "pass": true,
+      "elapsedMs": 93,
+      "locks": {
+        "held": [
+          {
+            "clientId": "b212a2f2-e14e-47ea-9c0c-1bce960728e7",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:owner"
+          }
+        ],
+        "pending": []
+      },
+      "exposureBefore": "pending_exposure",
+      "deletionRoot": {
+        "version": "balloons-durable-v1",
+        "installationId": "f424999d-1bad-4199-b5ab-3a902f6651a4",
+        "revision": 4,
+        "generation": 2,
+        "owner": null,
+        "records": {},
+        "tombstones": {
+          "4b37d140-e167-447f-9d25-f37f0f8e9359": {
+            "sessionId": "4b37d140-e167-447f-9d25-f37f0f8e9359",
+            "chainId": "ba10bb1e-a221-4d58-a2c8-b6c8dc8265e6",
+            "formId": "BL1",
+            "exposure": "form_exposed",
+            "deletedAtMs": 1791084368060
+          }
+        }
+      },
+      "lateDeliveryUnchanged": true,
+      "noScoredMountBeforeArmDelivery": true,
+      "visible": "Balloons practice\n\nForm BL1 \u00b7 Standalone practice\n\nPractice paused. Resume checks the saved journal and keeps the same sequence.\n\nLast visible committed state: round 1, 0 successful pumps, 0 cents banked. Unconfirmed or unsaved work cannot establish a baseline.\n\nCheck and resume saved session\nRound 1. Type 1. Current 0 cents. Banked 0 cents.\nPause and open history"
+    },
+    {
+      "name": "repair-absent-assignment-installation-delete-first",
+      "pass": true,
+      "elapsedMs": 1856,
+      "locks": {
+        "held": [],
+        "pending": []
+      },
+      "exposureBefore": "pending_exposure",
+      "deletionRoot": {
+        "version": "balloons-durable-v1",
+        "installationId": "9fc3ee8e-71a8-4d22-ba3b-0aef547eae91",
+        "revision": 1,
+        "generation": 0,
+        "owner": null,
+        "records": {},
+        "tombstones": {}
+      },
+      "lateDeliveryUnchanged": true,
+      "noScoredMountBeforeArmDelivery": true,
+      "visible": "Balloons practice\n\nPractice paused. Resume checks the saved journal and keeps the same sequence.\n\nPause and open history"
+    },
+    {
+      "name": "repair-absent-assignment-installation-delivery-first",
+      "pass": true,
+      "elapsedMs": 94,
+      "locks": {
+        "held": [
+          {
+            "clientId": "6025ad05-e530-4bf7-905f-62e8de1d55c5",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:owner"
+          }
+        ],
+        "pending": []
+      },
+      "exposureBefore": "pending_exposure",
+      "deletionRoot": {
+        "version": "balloons-durable-v1",
+        "installationId": "538e0d94-437b-438e-8ba0-fdc4043ffdca",
+        "revision": 1,
+        "generation": 0,
+        "owner": null,
+        "records": {},
+        "tombstones": {}
+      },
+      "lateDeliveryUnchanged": true,
+      "noScoredMountBeforeArmDelivery": true,
+      "visible": "Balloons practice\n\nForm BL1 \u00b7 Standalone practice\n\nPractice paused. Resume checks the saved journal and keeps the same sequence.\n\nLast visible committed state: round 1, 0 successful pumps, 0 cents banked. Unconfirmed or unsaved work cannot establish a baseline.\n\nCheck and resume saved session\nRound 1. Type 1. Current 0 cents. Banked 0 cents.\nPause and open history"
+    },
+    {
+      "name": "repair-absent-arm-individual-delete-first",
+      "pass": true,
+      "elapsedMs": 1868,
+      "locks": {
+        "held": [],
+        "pending": []
+      },
+      "exposureBefore": "exposure_uncertain",
+      "deletionRoot": {
+        "version": "balloons-durable-v1",
+        "installationId": "b78cd8fc-2cd9-4085-9652-77521b667ac2",
+        "revision": 3,
+        "generation": 2,
+        "owner": null,
+        "records": {},
+        "tombstones": {
+          "f0401d01-037d-4a3f-9311-514d016b16ba": {
+            "sessionId": "f0401d01-037d-4a3f-9311-514d016b16ba",
+            "chainId": "41fe9879-58ed-43f0-aad0-cd92aaeeac04",
+            "formId": "BL1",
+            "exposure": "exposure_uncertain",
+            "deletedAtMs": 1791084378612
+          }
+        }
+      },
+      "lateDeliveryUnchanged": true,
+      "noScoredMountBeforeArmDelivery": true,
+      "visible": "Balloons practice\n\nForm BL1 \u00b7 Standalone practice\n\nUnsaved action or display. Controls are paused. This attempt is not eligible as a durable baseline. Only committed actions can be recovered. Local save delivery could not be confirmed. Check the saved session before continuing.\n\nLast visible committed state: round 1, 0 successful pumps, 0 cents banked. Unconfirmed or unsaved work cannot establish a baseline.\n\nCheck and resume saved session\nPause and open history"
+    },
+    {
+      "name": "repair-absent-arm-individual-delivery-first",
+      "pass": true,
+      "elapsedMs": 91,
+      "locks": {
+        "held": [
+          {
+            "clientId": "e39c5297-6f57-40c1-9f50-368f1d9805fe",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:owner"
+          }
+        ],
+        "pending": []
+      },
+      "exposureBefore": "exposure_uncertain",
+      "deletionRoot": {
+        "version": "balloons-durable-v1",
+        "installationId": "a11f7188-9f76-4871-8dd5-44a3f99ccb1d",
+        "revision": 4,
+        "generation": 2,
+        "owner": null,
+        "records": {},
+        "tombstones": {
+          "c257ce19-1b7a-46d0-a26b-2967d3dd39f8": {
+            "sessionId": "c257ce19-1b7a-46d0-a26b-2967d3dd39f8",
+            "chainId": "4fab3855-d8b9-4611-927e-4e95e7c17741",
+            "formId": "BL1",
+            "exposure": "form_exposed",
+            "deletedAtMs": 1791084380926
+          }
+        }
+      },
+      "lateDeliveryUnchanged": true,
+      "noScoredMountBeforeArmDelivery": true,
+      "visible": "Balloons practice\n\nForm BL1 \u00b7 Standalone practice\n\nPractice paused. Resume checks the saved journal and keeps the same sequence.\n\nLast visible committed state: round 1, 0 successful pumps, 0 cents banked. Unconfirmed or unsaved work cannot establish a baseline.\n\nCheck and resume saved session\nRound 1. Type 1. Current 0 cents. Banked 0 cents.\nPause and open history"
+    },
+    {
+      "name": "repair-absent-arm-installation-delete-first",
+      "pass": true,
+      "elapsedMs": 1853,
+      "locks": {
+        "held": [],
+        "pending": []
+      },
+      "exposureBefore": "exposure_uncertain",
+      "deletionRoot": {
+        "version": "balloons-durable-v1",
+        "installationId": "073a7866-d44e-41d2-bc46-3255a3352bb5",
+        "revision": 1,
+        "generation": 0,
+        "owner": null,
+        "records": {},
+        "tombstones": {}
+      },
+      "lateDeliveryUnchanged": true,
+      "noScoredMountBeforeArmDelivery": true,
+      "visible": "Balloons practice\n\nForm BL1 \u00b7 Standalone practice\n\nUnsaved action or display. Controls are paused. This attempt is not eligible as a durable baseline. Only committed actions can be recovered. Local save delivery could not be confirmed. Check the saved session before continuing.\n\nLast visible committed state: round 1, 0 successful pumps, 0 cents banked. Unconfirmed or unsaved work cannot establish a baseline.\n\nCheck and resume saved session\nPause and open history"
+    },
+    {
+      "name": "repair-absent-arm-installation-delivery-first",
+      "pass": true,
+      "elapsedMs": 93,
+      "locks": {
+        "held": [
+          {
+            "clientId": "00768532-ecbc-4608-bca7-a6e19e011359",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:owner"
+          }
+        ],
+        "pending": []
+      },
+      "exposureBefore": "exposure_uncertain",
+      "deletionRoot": {
+        "version": "balloons-durable-v1",
+        "installationId": "5e3972e7-18e4-42da-8ede-731a6e70eb48",
+        "revision": 1,
+        "generation": 0,
+        "owner": null,
+        "records": {},
+        "tombstones": {}
+      },
+      "lateDeliveryUnchanged": true,
+      "noScoredMountBeforeArmDelivery": true,
+      "visible": "Balloons practice\n\nForm BL1 \u00b7 Standalone practice\n\nPractice paused. Resume checks the saved journal and keeps the same sequence.\n\nLast visible committed state: round 1, 0 successful pumps, 0 cents banked. Unconfirmed or unsaved work cannot establish a baseline.\n\nCheck and resume saved session\nRound 1. Type 1. Current 0 cents. Banked 0 cents.\nPause and open history"
+    },
+    {
+      "name": "repair-absent-confirm-individual-delete-first",
+      "pass": true,
+      "elapsedMs": 1837,
+      "locks": {
+        "held": [],
+        "pending": []
+      },
+      "exposureBefore": "form_exposed",
+      "deletionRoot": {
+        "version": "balloons-durable-v1",
+        "installationId": "84615928-3a24-478c-b629-ac0a908b6f4f",
+        "revision": 4,
+        "generation": 2,
+        "owner": null,
+        "records": {},
+        "tombstones": {
+          "92c2ea93-bf75-439b-a4dd-fb0dabba32b0": {
+            "sessionId": "92c2ea93-bf75-439b-a4dd-fb0dabba32b0",
+            "chainId": "846c5362-d62c-43b2-afae-a4bc55684d4d",
+            "formId": "BL1",
+            "exposure": "form_exposed",
+            "deletedAtMs": 1791084391479
+          }
+        }
+      },
+      "lateDeliveryUnchanged": true,
+      "noScoredMountBeforeArmDelivery": null,
+      "visible": "Balloons practice\n\nForm BL1 \u00b7 Standalone practice\n\nUnsaved action or display. Controls are paused. This attempt is not eligible as a durable baseline. Only committed actions can be recovered. Local save delivery could not be confirmed. Check the saved session before continuing.\n\nLast visible committed state: round 1, 0 successful pumps, 0 cents banked. Unconfirmed or unsaved work cannot establish a baseline.\n\nCheck and resume saved session\nPause and open history"
+    },
+    {
+      "name": "repair-absent-confirm-individual-delivery-first",
+      "pass": true,
+      "elapsedMs": 94,
+      "locks": {
+        "held": [
+          {
+            "clientId": "1ebbe1b5-b3e8-46bb-aea8-7b2e47e72a26",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:owner"
+          }
+        ],
+        "pending": []
+      },
+      "exposureBefore": "form_exposed",
+      "deletionRoot": {
+        "version": "balloons-durable-v1",
+        "installationId": "5c73496d-108e-4e61-8633-20dc096a3ced",
+        "revision": 4,
+        "generation": 2,
+        "owner": null,
+        "records": {},
+        "tombstones": {
+          "d4821d6a-8670-4e76-8382-307cccab18ae": {
+            "sessionId": "d4821d6a-8670-4e76-8382-307cccab18ae",
+            "chainId": "cb8c7050-0927-4826-8120-2729cb0ec434",
+            "formId": "BL1",
+            "exposure": "form_exposed",
+            "deletedAtMs": 1791084393877
+          }
+        }
+      },
+      "lateDeliveryUnchanged": true,
+      "noScoredMountBeforeArmDelivery": null,
+      "visible": "Balloons practice\n\nForm BL1 \u00b7 Standalone practice\n\nPractice paused. Resume checks the saved journal and keeps the same sequence.\n\nLast visible committed state: round 1, 0 successful pumps, 0 cents banked. Unconfirmed or unsaved work cannot establish a baseline.\n\nCheck and resume saved session\nRound 1. Type 1. Current 0 cents. Banked 0 cents.\nPause and open history"
+    },
+    {
+      "name": "repair-absent-confirm-installation-delete-first",
+      "pass": true,
+      "elapsedMs": 1842,
+      "locks": {
+        "held": [],
+        "pending": []
+      },
+      "exposureBefore": "form_exposed",
+      "deletionRoot": {
+        "version": "balloons-durable-v1",
+        "installationId": "1c3cf5c8-67db-4efa-ab83-c5744c26ac50",
+        "revision": 1,
+        "generation": 0,
+        "owner": null,
+        "records": {},
+        "tombstones": {}
+      },
+      "lateDeliveryUnchanged": true,
+      "noScoredMountBeforeArmDelivery": null,
+      "visible": "Balloons practice\n\nForm BL1 \u00b7 Standalone practice\n\nUnsaved action or display. Controls are paused. This attempt is not eligible as a durable baseline. Only committed actions can be recovered. Local save delivery could not be confirmed. Check the saved session before continuing.\n\nLast visible committed state: round 1, 0 successful pumps, 0 cents banked. Unconfirmed or unsaved work cannot establish a baseline.\n\nCheck and resume saved session\nPause and open history"
+    },
+    {
+      "name": "repair-absent-confirm-installation-delivery-first",
+      "pass": true,
+      "elapsedMs": 93,
+      "locks": {
+        "held": [
+          {
+            "clientId": "3102d008-11ed-4a91-8d17-596eb0477ea7",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:owner"
+          }
+        ],
+        "pending": []
+      },
+      "exposureBefore": "form_exposed",
+      "deletionRoot": {
+        "version": "balloons-durable-v1",
+        "installationId": "dc58f556-103f-4e90-80ee-40013c41a0ee",
+        "revision": 1,
+        "generation": 0,
+        "owner": null,
+        "records": {},
+        "tombstones": {}
+      },
+      "lateDeliveryUnchanged": true,
+      "noScoredMountBeforeArmDelivery": null,
+      "visible": "Balloons practice\n\nForm BL1 \u00b7 Standalone practice\n\nPractice paused. Resume checks the saved journal and keeps the same sequence.\n\nLast visible committed state: round 1, 0 successful pumps, 0 cents banked. Unconfirmed or unsaved work cannot establish a baseline.\n\nCheck and resume saved session\nRound 1. Type 1. Current 0 cents. Banked 0 cents.\nPause and open history"
+    },
+    {
+      "name": "repair-absent-action-individual-delete-first",
+      "pass": true,
+      "elapsedMs": 1874,
+      "locks": {
+        "held": [],
+        "pending": []
+      },
+      "exposureBefore": "form_exposed",
+      "deletionRoot": {
+        "version": "balloons-durable-v1",
+        "installationId": "f490cda0-d74f-4444-8a62-c00dcf1b3246",
+        "revision": 6,
+        "generation": 2,
+        "owner": null,
+        "records": {},
+        "tombstones": {
+          "f5cd1dba-5ab4-4036-930c-7b8299c19492": {
+            "sessionId": "f5cd1dba-5ab4-4036-930c-7b8299c19492",
+            "chainId": "62634700-9c1b-41b3-a3de-67c9820d202b",
+            "formId": "BL1",
+            "exposure": "form_exposed",
+            "deletedAtMs": 1791084404512
+          }
+        }
+      },
+      "lateDeliveryUnchanged": true,
+      "noScoredMountBeforeArmDelivery": null,
+      "visible": "Balloons practice\n\nForm BL1 \u00b7 Standalone practice\n\nUnsaved action or display. Controls are paused. This attempt is not eligible as a durable baseline. Only committed actions can be recovered. Local save delivery could not be confirmed. Check the saved session before continuing.\n\nLast visible committed state: round 1, 0 successful pumps, 0 cents banked. Unconfirmed or unsaved work cannot establish a baseline.\n\nCheck and resume saved session\nRound 1. Type 1. Current 0 cents. Banked 0 cents.\nPause and open history"
+    },
+    {
+      "name": "repair-absent-action-individual-delivery-first",
+      "pass": true,
+      "elapsedMs": 94,
+      "locks": {
+        "held": [
+          {
+            "clientId": "b71992a6-fddd-4356-a100-6b66ba39030c",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:owner"
+          }
+        ],
+        "pending": []
+      },
+      "exposureBefore": "form_exposed",
+      "deletionRoot": {
+        "version": "balloons-durable-v1",
+        "installationId": "898e3ebf-81a9-45a6-8719-fabd107ff494",
+        "revision": 6,
+        "generation": 2,
+        "owner": null,
+        "records": {},
+        "tombstones": {
+          "a852c21e-3e54-45fc-ba70-e66d0eed746a": {
+            "sessionId": "a852c21e-3e54-45fc-ba70-e66d0eed746a",
+            "chainId": "45310358-2af0-448c-9b2c-c8f2fd4288a4",
+            "formId": "BL1",
+            "exposure": "form_exposed",
+            "deletedAtMs": 1791084406977
+          }
+        }
+      },
+      "lateDeliveryUnchanged": true,
+      "noScoredMountBeforeArmDelivery": null,
+      "visible": "Balloons practice\n\nForm BL1 \u00b7 Standalone practice\n\nPractice paused. Resume checks the saved journal and keeps the same sequence.\n\nLast visible committed state: round 1, 0 successful pumps, 0 cents banked. Unconfirmed or unsaved work cannot establish a baseline.\n\nCheck and resume saved session\nBalloon burst. 0 cents banked; 0 cents lost on this balloon. Banked total 0 cents.\nPause and open history"
+    },
+    {
+      "name": "repair-absent-action-installation-delete-first",
+      "pass": true,
+      "elapsedMs": 1860,
+      "locks": {
+        "held": [],
+        "pending": []
+      },
+      "exposureBefore": "form_exposed",
+      "deletionRoot": {
+        "version": "balloons-durable-v1",
+        "installationId": "ac131271-0d23-4b73-8022-9def9dff0c4b",
+        "revision": 1,
+        "generation": 0,
+        "owner": null,
+        "records": {},
+        "tombstones": {}
+      },
+      "lateDeliveryUnchanged": true,
+      "noScoredMountBeforeArmDelivery": null,
+      "visible": "Balloons practice\n\nForm BL1 \u00b7 Standalone practice\n\nUnsaved action or display. Controls are paused. This attempt is not eligible as a durable baseline. Only committed actions can be recovered. Local save delivery could not be confirmed. Check the saved session before continuing.\n\nLast visible committed state: round 1, 0 successful pumps, 0 cents banked. Unconfirmed or unsaved work cannot establish a baseline.\n\nCheck and resume saved session\nRound 1. Type 1. Current 0 cents. Banked 0 cents.\nPause and open history"
+    },
+    {
+      "name": "repair-absent-action-installation-delivery-first",
+      "pass": true,
+      "elapsedMs": 93,
+      "locks": {
+        "held": [
+          {
+            "clientId": "b4547031-6002-48d2-8c39-41999ff8330b",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:owner"
+          }
+        ],
+        "pending": []
+      },
+      "exposureBefore": "form_exposed",
+      "deletionRoot": {
+        "version": "balloons-durable-v1",
+        "installationId": "771898ff-0b7b-41cf-8c9f-44454bb6a870",
+        "revision": 1,
+        "generation": 0,
+        "owner": null,
+        "records": {},
+        "tombstones": {}
+      },
+      "lateDeliveryUnchanged": true,
+      "noScoredMountBeforeArmDelivery": null,
+      "visible": "Balloons practice\n\nForm BL1 \u00b7 Standalone practice\n\nPractice paused. Resume checks the saved journal and keeps the same sequence.\n\nLast visible committed state: round 1, 0 successful pumps, 0 cents banked. Unconfirmed or unsaved work cannot establish a baseline.\n\nCheck and resume saved session\nBalloon burst. 0 cents banked; 0 cents lost on this balloon. Banked total 0 cents.\nPause and open history"
+    },
+    {
+      "name": "repair-delayed-assignment-individual-delete-first",
+      "pass": true,
+      "elapsedMs": 1860,
+      "locks": {
+        "held": [],
+        "pending": []
+      },
+      "exposureBefore": "pending_exposure",
+      "deletionRoot": {
+        "version": "balloons-durable-v1",
+        "installationId": "b7938dbf-62dd-42e9-af50-ec9667ca4275",
+        "revision": 2,
+        "generation": 2,
+        "owner": null,
+        "records": {},
+        "tombstones": {
+          "9de562bf-65f8-466a-af06-91c418d2cd1b": {
+            "sessionId": "9de562bf-65f8-466a-af06-91c418d2cd1b",
+            "chainId": "3df6a24b-e74e-4fab-b8c4-124137ec51d4",
+            "formId": "BL1",
+            "exposure": "pending_exposure",
+            "deletedAtMs": 1791084417829
+          }
+        }
+      },
+      "lateDeliveryUnchanged": true,
+      "noScoredMountBeforeArmDelivery": true,
+      "visible": "Balloons practice\n\nPractice paused. Resume checks the saved journal and keeps the same sequence.\n\nPause and open history"
+    },
+    {
+      "name": "repair-delayed-assignment-individual-delivery-first",
+      "pass": true,
+      "elapsedMs": 94,
+      "locks": {
+        "held": [
+          {
+            "clientId": "c4226dac-c743-4e4f-9bc5-528729493e55",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:owner"
+          }
+        ],
+        "pending": []
+      },
+      "exposureBefore": "pending_exposure",
+      "deletionRoot": {
+        "version": "balloons-durable-v1",
+        "installationId": "4628d904-6ae1-4fc9-aeb1-799a7f21614c",
+        "revision": 4,
+        "generation": 2,
+        "owner": null,
+        "records": {},
+        "tombstones": {
+          "78687fa1-4768-4ae4-a3bd-527467cab9f5": {
+            "sessionId": "78687fa1-4768-4ae4-a3bd-527467cab9f5",
+            "chainId": "d000e705-a149-4560-a6e6-fe2c483a772f",
+            "formId": "BL1",
+            "exposure": "form_exposed",
+            "deletedAtMs": 1791084420226
+          }
+        }
+      },
+      "lateDeliveryUnchanged": true,
+      "noScoredMountBeforeArmDelivery": true,
+      "visible": "Balloons practice\n\nLocal history changed in another tab. Open history to check what remains.\n\nRound 1. Type 1. Current 0 cents. Banked 0 cents.\nPause and open history"
+    },
+    {
+      "name": "repair-delayed-assignment-installation-delete-first",
+      "pass": true,
+      "elapsedMs": 1850,
+      "locks": {
+        "held": [],
+        "pending": []
+      },
+      "exposureBefore": "pending_exposure",
+      "deletionRoot": {
+        "version": "balloons-durable-v1",
+        "installationId": "7d5d9548-1e65-4ec7-869d-8f8e7a7819b4",
+        "revision": 1,
+        "generation": 0,
+        "owner": null,
+        "records": {},
+        "tombstones": {}
+      },
+      "lateDeliveryUnchanged": true,
+      "noScoredMountBeforeArmDelivery": true,
+      "visible": "Balloons practice\n\nPractice paused. Resume checks the saved journal and keeps the same sequence.\n\nPause and open history"
+    },
+    {
+      "name": "repair-delayed-assignment-installation-delivery-first",
+      "pass": true,
+      "elapsedMs": 94,
+      "locks": {
+        "held": [
+          {
+            "clientId": "ef2f0ee5-1f45-4506-b73c-5314b168a5bf",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:owner"
+          }
+        ],
+        "pending": []
+      },
+      "exposureBefore": "pending_exposure",
+      "deletionRoot": {
+        "version": "balloons-durable-v1",
+        "installationId": "35a38d62-9e06-4ba2-9b0d-707831f4d9d6",
+        "revision": 1,
+        "generation": 0,
+        "owner": null,
+        "records": {},
+        "tombstones": {}
+      },
+      "lateDeliveryUnchanged": true,
+      "noScoredMountBeforeArmDelivery": true,
+      "visible": "Balloons practice\n\nLocal history changed in another tab. Open history to check what remains.\n\nRound 1. Type 1. Current 0 cents. Banked 0 cents.\nPause and open history"
+    },
+    {
+      "name": "repair-delayed-arm-individual-delete-first",
+      "pass": true,
+      "elapsedMs": 1865,
+      "locks": {
+        "held": [],
+        "pending": []
+      },
+      "exposureBefore": "exposure_uncertain",
+      "deletionRoot": {
+        "version": "balloons-durable-v1",
+        "installationId": "f69f9abd-bda1-40e7-ad60-fab098fabbb6",
+        "revision": 3,
+        "generation": 2,
+        "owner": null,
+        "records": {},
+        "tombstones": {
+          "7439eac6-54a1-428f-ae06-cdfea65f6273": {
+            "sessionId": "7439eac6-54a1-428f-ae06-cdfea65f6273",
+            "chainId": "42629de0-247a-476a-9871-2264a620647f",
+            "formId": "BL1",
+            "exposure": "exposure_uncertain",
+            "deletedAtMs": 1791084430865
+          }
+        }
+      },
+      "lateDeliveryUnchanged": true,
+      "noScoredMountBeforeArmDelivery": true,
+      "visible": "Balloons practice\n\nLocal history changed in another tab. Open history to check what remains.\n\nPause and open history"
+    },
+    {
+      "name": "repair-delayed-arm-individual-delivery-first",
+      "pass": true,
+      "elapsedMs": 95,
+      "locks": {
+        "held": [
+          {
+            "clientId": "9e726746-a39d-4b69-b201-5788a9767f93",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:owner"
+          }
+        ],
+        "pending": []
+      },
+      "exposureBefore": "exposure_uncertain",
+      "deletionRoot": {
+        "version": "balloons-durable-v1",
+        "installationId": "2ae15eb8-37d6-4d8d-b5b4-9355aef362a5",
+        "revision": 4,
+        "generation": 2,
+        "owner": null,
+        "records": {},
+        "tombstones": {
+          "0886e21b-a28a-4cea-b1bd-fb4dfb2f9ab6": {
+            "sessionId": "0886e21b-a28a-4cea-b1bd-fb4dfb2f9ab6",
+            "chainId": "a49a6822-7c8e-4ac0-adaf-6440951ca2f9",
+            "formId": "BL1",
+            "exposure": "form_exposed",
+            "deletedAtMs": 1791084433260
+          }
+        }
+      },
+      "lateDeliveryUnchanged": true,
+      "noScoredMountBeforeArmDelivery": true,
+      "visible": "Balloons practice\n\nLocal history changed in another tab. Open history to check what remains.\n\nRound 1. Type 1. Current 0 cents. Banked 0 cents.\nPause and open history"
+    },
+    {
+      "name": "repair-delayed-arm-installation-delete-first",
+      "pass": true,
+      "elapsedMs": 1845,
+      "locks": {
+        "held": [],
+        "pending": []
+      },
+      "exposureBefore": "exposure_uncertain",
+      "deletionRoot": {
+        "version": "balloons-durable-v1",
+        "installationId": "2f7e0eff-5972-450e-94d4-1d73a5d1852d",
+        "revision": 1,
+        "generation": 0,
+        "owner": null,
+        "records": {},
+        "tombstones": {}
+      },
+      "lateDeliveryUnchanged": true,
+      "noScoredMountBeforeArmDelivery": true,
+      "visible": "Balloons practice\n\nLocal history changed in another tab. Open history to check what remains.\n\nPause and open history"
+    },
+    {
+      "name": "repair-delayed-arm-installation-delivery-first",
+      "pass": true,
+      "elapsedMs": 94,
+      "locks": {
+        "held": [
+          {
+            "clientId": "6ee39c66-e581-455d-a1db-dd93a670e44e",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:owner"
+          }
+        ],
+        "pending": []
+      },
+      "exposureBefore": "exposure_uncertain",
+      "deletionRoot": {
+        "version": "balloons-durable-v1",
+        "installationId": "819d8f14-b4fb-4e7d-9373-87627d135495",
+        "revision": 1,
+        "generation": 0,
+        "owner": null,
+        "records": {},
+        "tombstones": {}
+      },
+      "lateDeliveryUnchanged": true,
+      "noScoredMountBeforeArmDelivery": true,
+      "visible": "Balloons practice\n\nLocal history changed in another tab. Open history to check what remains.\n\nRound 1. Type 1. Current 0 cents. Banked 0 cents.\nPause and open history"
+    },
+    {
+      "name": "repair-delayed-confirm-individual-delete-first",
+      "pass": true,
+      "elapsedMs": 1817,
+      "locks": {
+        "held": [],
+        "pending": []
+      },
+      "exposureBefore": "form_exposed",
+      "deletionRoot": {
+        "version": "balloons-durable-v1",
+        "installationId": "136abc0b-a178-4605-93f8-2e4f8261a9d1",
+        "revision": 4,
+        "generation": 2,
+        "owner": null,
+        "records": {},
+        "tombstones": {
+          "e65d731d-05f0-4cd8-9d59-03174f44dc6b": {
+            "sessionId": "e65d731d-05f0-4cd8-9d59-03174f44dc6b",
+            "chainId": "c08b0ba5-bf2f-47f1-bcf1-b095b6037a87",
+            "formId": "BL1",
+            "exposure": "form_exposed",
+            "deletedAtMs": 1791084443981
+          }
+        }
+      },
+      "lateDeliveryUnchanged": true,
+      "noScoredMountBeforeArmDelivery": null,
+      "visible": "Balloons practice\n\nLocal history changed in another tab. Open history to check what remains.\n\nPause and open history"
+    },
+    {
+      "name": "repair-delayed-confirm-individual-delivery-first",
+      "pass": true,
+      "elapsedMs": 94,
+      "locks": {
+        "held": [
+          {
+            "clientId": "422e13e4-4310-45c7-a570-a3a198238ed0",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:owner"
+          }
+        ],
+        "pending": []
+      },
+      "exposureBefore": "form_exposed",
+      "deletionRoot": {
+        "version": "balloons-durable-v1",
+        "installationId": "5188dacf-3f5a-4151-bb68-a19f5806b699",
+        "revision": 4,
+        "generation": 2,
+        "owner": null,
+        "records": {},
+        "tombstones": {
+          "cd7658bc-460d-4ee1-9cb2-ccca29fa2046": {
+            "sessionId": "cd7658bc-460d-4ee1-9cb2-ccca29fa2046",
+            "chainId": "c823980b-513a-4376-acd6-de06a4219ca3",
+            "formId": "BL1",
+            "exposure": "form_exposed",
+            "deletedAtMs": 1791084446376
+          }
+        }
+      },
+      "lateDeliveryUnchanged": true,
+      "noScoredMountBeforeArmDelivery": null,
+      "visible": "Balloons practice\n\nLocal history changed in another tab. Open history to check what remains.\n\nRound 1. Type 1. Current 0 cents. Banked 0 cents.\nPause and open history"
+    },
+    {
+      "name": "repair-delayed-confirm-installation-delete-first",
+      "pass": true,
+      "elapsedMs": 1807,
+      "locks": {
+        "held": [],
+        "pending": []
+      },
+      "exposureBefore": "form_exposed",
+      "deletionRoot": {
+        "version": "balloons-durable-v1",
+        "installationId": "a4107851-e033-4912-ad63-9445b40d4cf5",
+        "revision": 1,
+        "generation": 0,
+        "owner": null,
+        "records": {},
+        "tombstones": {}
+      },
+      "lateDeliveryUnchanged": true,
+      "noScoredMountBeforeArmDelivery": null,
+      "visible": "Balloons practice\n\nLocal history changed in another tab. Open history to check what remains.\n\nPause and open history"
+    },
+    {
+      "name": "repair-delayed-confirm-installation-delivery-first",
+      "pass": true,
+      "elapsedMs": 94,
+      "locks": {
+        "held": [
+          {
+            "clientId": "2ee03451-0ff4-41d9-8fa8-1f926fff4788",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:owner"
+          }
+        ],
+        "pending": []
+      },
+      "exposureBefore": "form_exposed",
+      "deletionRoot": {
+        "version": "balloons-durable-v1",
+        "installationId": "93a3b104-dfa4-40b3-8df8-7b9d2ef979cc",
+        "revision": 1,
+        "generation": 0,
+        "owner": null,
+        "records": {},
+        "tombstones": {}
+      },
+      "lateDeliveryUnchanged": true,
+      "noScoredMountBeforeArmDelivery": null,
+      "visible": "Balloons practice\n\nLocal history changed in another tab. Open history to check what remains.\n\nRound 1. Type 1. Current 0 cents. Banked 0 cents.\nPause and open history"
+    },
+    {
+      "name": "repair-delayed-action-individual-delete-first",
+      "pass": true,
+      "elapsedMs": 1857,
+      "locks": {
+        "held": [],
+        "pending": []
+      },
+      "exposureBefore": "form_exposed",
+      "deletionRoot": {
+        "version": "balloons-durable-v1",
+        "installationId": "1c99f91d-620b-4fa4-be48-a5e7401b835f",
+        "revision": 6,
+        "generation": 2,
+        "owner": null,
+        "records": {},
+        "tombstones": {
+          "b9bd5e53-b406-4c37-804e-a298918a2ecc": {
+            "sessionId": "b9bd5e53-b406-4c37-804e-a298918a2ecc",
+            "chainId": "52787456-f618-46e3-a964-638099cac419",
+            "formId": "BL1",
+            "exposure": "form_exposed",
+            "deletedAtMs": 1791084457179
+          }
+        }
+      },
+      "lateDeliveryUnchanged": true,
+      "noScoredMountBeforeArmDelivery": null,
+      "visible": "Balloons practice\n\nLocal history changed in another tab. Open history to check what remains.\n\nRound 1. Type 1. Current 0 cents. Banked 0 cents.\nPause and open history"
+    },
+    {
+      "name": "repair-delayed-action-individual-delivery-first",
+      "pass": true,
+      "elapsedMs": 95,
+      "locks": {
+        "held": [
+          {
+            "clientId": "f18b04a5-ab50-45a3-8cd4-7bdc0105fe64",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:owner"
+          }
+        ],
+        "pending": []
+      },
+      "exposureBefore": "form_exposed",
+      "deletionRoot": {
+        "version": "balloons-durable-v1",
+        "installationId": "06b00aa0-57a9-45da-b774-9194a904ebe4",
+        "revision": 6,
+        "generation": 2,
+        "owner": null,
+        "records": {},
+        "tombstones": {
+          "d475581c-055a-45a1-8f9f-939641b6f506": {
+            "sessionId": "d475581c-055a-45a1-8f9f-939641b6f506",
+            "chainId": "1c70171d-fc81-491f-a337-13bba9b6a7b3",
+            "formId": "BL1",
+            "exposure": "form_exposed",
+            "deletedAtMs": 1791084459644
+          }
+        }
+      },
+      "lateDeliveryUnchanged": true,
+      "noScoredMountBeforeArmDelivery": null,
+      "visible": "Balloons practice\n\nLocal history changed in another tab. Open history to check what remains.\n\nBalloon burst. 0 cents banked; 0 cents lost on this balloon. Banked total 0 cents.\nPause and open history"
+    },
+    {
+      "name": "repair-delayed-action-installation-delete-first",
+      "pass": true,
+      "elapsedMs": 1884,
+      "locks": {
+        "held": [],
+        "pending": []
+      },
+      "exposureBefore": "form_exposed",
+      "deletionRoot": {
+        "version": "balloons-durable-v1",
+        "installationId": "720943be-5e84-47b0-9e55-69d352a7949f",
+        "revision": 1,
+        "generation": 0,
+        "owner": null,
+        "records": {},
+        "tombstones": {}
+      },
+      "lateDeliveryUnchanged": true,
+      "noScoredMountBeforeArmDelivery": null,
+      "visible": "Balloons practice\n\nLocal history changed in another tab. Open history to check what remains.\n\nRound 1. Type 1. Current 0 cents. Banked 0 cents.\nPause and open history"
+    },
+    {
+      "name": "repair-delayed-action-installation-delivery-first",
+      "pass": true,
+      "elapsedMs": 94,
+      "locks": {
+        "held": [
+          {
+            "clientId": "ed18f39c-5977-4958-9664-9fec97dd6123",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:owner"
+          }
+        ],
+        "pending": []
+      },
+      "exposureBefore": "form_exposed",
+      "deletionRoot": {
+        "version": "balloons-durable-v1",
+        "installationId": "2e26235c-2a18-4b7e-818a-fcf9c61d0d5a",
+        "revision": 1,
+        "generation": 0,
+        "owner": null,
+        "records": {},
+        "tombstones": {}
+      },
+      "lateDeliveryUnchanged": true,
+      "noScoredMountBeforeArmDelivery": null,
+      "visible": "Balloons practice\n\nLocal history changed in another tab. Open history to check what remains.\n\nBalloon burst. 0 cents banked; 0 cents lost on this balloon. Banked total 0 cents.\nPause and open history"
+    },
+    {
+      "name": "repair-slow-report-absent-individual",
+      "pass": true,
+      "staleReportHidden": true,
+      "durableUnchangedAfterLateRead": true,
+      "visible": "Balloons history\n\nSaved only in this browser. Deleting one result keeps its sequence exposure and chain tombstone, so it cannot become unseen again.\n\n1 retained attempts. 1 deletion tombstones.\n\nBL1 \u00b7 Standalone practice\n\nSaved \u00b7 39/39 rounds \u00b7 valid standalone baseline\n\nOpen saved reportDelete this result\n\nDelete all Balloons data clears results, chains and local sequence exposure. Earlier use can no longer be known; a future sequence may be one you have already seen.\n\nDelete all Balloons dataPractise againStart another baseline with an unseen BL form"
+    },
+    {
+      "name": "repair-slow-report-absent-installation",
+      "pass": true,
+      "staleReportHidden": true,
+      "durableUnchangedAfterLateRead": true,
+      "visible": "Balloons durable integrity: installation replaced\n\nBalloons history\n\nSaved only in this browser. Deleting one result keeps its sequence exposure and chain tombstone, so it cannot become unseen again.\n\nChecking saved history\u2026\n\nPractise againStart another baseline with an unseen BL form"
+    },
+    {
+      "name": "repair-slow-report-delayed-individual",
+      "pass": true,
+      "staleReportHidden": true,
+      "durableUnchangedAfterLateRead": true,
+      "visible": "Balloons history\n\nSaved only in this browser. Deleting one result keeps its sequence exposure and chain tombstone, so it cannot become unseen again.\n\n1 retained attempts. 1 deletion tombstones.\n\nBL1 \u00b7 Standalone practice\n\nSaved \u00b7 39/39 rounds \u00b7 valid standalone baseline\n\nOpen saved reportDelete this result\n\nDelete all Balloons data clears results, chains and local sequence exposure. Earlier use can no longer be known; a future sequence may be one you have already seen.\n\nDelete all Balloons dataPractise againStart another baseline with an unseen BL form"
+    },
+    {
+      "name": "repair-slow-report-delayed-installation",
+      "pass": true,
+      "staleReportHidden": true,
+      "durableUnchangedAfterLateRead": true,
+      "visible": "Balloons durable integrity: installation replaced\n\nBalloons history\n\nSaved only in this browser. Deleting one result keeps its sequence exposure and chain tombstone, so it cannot become unseen again.\n\nChecking saved history\u2026\n\nPractise againStart another baseline with an unseen BL form"
+    },
+    {
+      "name": "repair-native-input-positive-controls",
+      "pass": true,
+      "observations": [
+        {
+          "input": "native Space",
+          "source": "keyboard"
+        },
+        {
+          "input": "native Enter",
+          "source": "keyboard"
+        },
+        {
+          "input": "mouse",
+          "source": "mouse"
+        },
+        {
+          "input": "emulated touch",
+          "source": "touch_or_pen"
+        },
+        {
+          "input": "unclassified click",
+          "source": "unknown_or_assistive"
+        }
+      ],
+      "focusChangeReleaseSuppressed": true
+    }
+  ],
+  "repair-control-results": [
+    {
+      "name": "repair-committed-recovery-action_pending",
+      "pass": true,
+      "visibleBefore": "Balloons practice\n\nForm BL1 \u00b7 Standalone practice\n\nUnsaved action or display. Controls are paused. This attempt is not eligible as a durable baseline. Only committed actions can be recovered. Independent injected put failure\n\nLast visible committed state: round 2, 1 successful pumps, 0 cents banked. Unconfirmed or unsaved work cannot establish a baseline.\n\nCheck and resume saved session\nRound 2. Type 2. Current 0 cents. Banked 0 cents.\nPause and open history",
+      "visibleAfter": "Balloons practice\n\nForm BL1 \u00b7 Standalone practice \u00b7 Review only; not eligible as a baseline\n\nRound 2 of 39\n\nType 2\nDots\n\nCurrent: 5 cents\n\nPreviously banked: 0 cents\n\nPumpCollect\nRound 2. Type 2. Current 5 cents. Banked 0 cents.\nPause and open history",
+      "committedCoreUnchanged": true,
+      "confirmedRounds": [
+        1,
+        2
+      ],
+      "eligible": false
+    },
+    {
+      "name": "repair-committed-recovery-action",
+      "pass": true,
+      "visibleBefore": "Balloons practice\n\nForm BL1 \u00b7 Standalone practice\n\nUnsaved action or display. Controls are paused. This attempt is not eligible as a durable baseline. Only committed actions can be recovered. Independent injected put failure\n\nLast visible committed state: round 2, 1 successful pumps, 0 cents banked. Unconfirmed or unsaved work cannot establish a baseline.\n\nCheck and resume saved session\nRound 2. Type 2. Current 0 cents. Banked 0 cents.\nPause and open history",
+      "visibleAfter": "Balloons practice\n\nForm BL1 \u00b7 Standalone practice \u00b7 Review only; not eligible as a baseline\n\nRound 2 of 39\n\nType 2\nDots\n\nCurrent: 5 cents\n\nPreviously banked: 0 cents\n\nPumpCollect\nRound 2. Type 2. Current 5 cents. Banked 0 cents.\nPause and open history",
+      "committedCoreUnchanged": true,
+      "confirmedRounds": [
+        1,
+        2
+      ],
+      "eligible": false
+    },
+    {
+      "name": "repair-committed-recovery-clean-pause",
+      "pass": true,
+      "visibleBefore": "Balloons history\n\nSaved only in this browser. Deleting one result keeps its sequence exposure and chain tombstone, so it cannot become unseen again.\n\n1 retained attempts. 0 deletion tombstones.\n\nBL1 \u00b7 Standalone practice\n\n1/39 resolved \u00b7 Sequence exposed \u00b7 active\n\nResume saved sessionDelete this result\n\nDelete all Balloons data clears results, chains and local sequence exposure. Earlier use can no longer be known; a future sequence may be one you have already seen.\n\nDelete all Balloons dataPractise againStart another baseline with an unseen BL form",
+      "visibleAfter": "Balloons practice\n\nForm BL1 \u00b7 Standalone practice\n\nRound 2 of 39\n\nType 2\nDots\n\nCurrent: 5 cents\n\nPreviously banked: 0 cents\n\nPumpCollect\nRound 2. Type 2. Current 5 cents. Banked 0 cents.\nPause and open history",
+      "committedCoreUnchanged": true,
+      "confirmedRounds": [
+        1,
+        2
+      ],
+      "eligible": true
+    },
+    {
+      "name": "repair-slow-report-restored-and-fast-stable",
+      "pass": true,
+      "selectedReportRestored": true,
+      "healthySlowSuppressionObserved": true,
+      "fastReadRemovals": 0,
+      "durableBytesUnchanged": true,
+      "selectedText": "BALLOONS \u00b7 LOCAL REPORT\n\nYour choices and outcomes\n\nSaved \u00b7 39 of 39 rounds complete \u00b7 Intact practice result.\n\nForm RP1 \u00b7 balloons-v1.0 \u00b7 balloons-scored-v1 \u00b7 balloons-scoring-v1\n\nStandalone practice. Advanced Training is not available in this build.\n\n0 cents collected. 0 cents lost from uncollected balloons.\n\nLost value was never deducted from money collected earlier. All money is simulated.\n\n39 collected and 0 burst out of 39 balloons.\n\nGroup\tRounds\tCollected\tBurst\tBanked cents\tLost cents\tAttempted pumps\tSuccessful pumps\tVoluntary\tZero-pump\tCap\nAll balloons\t39\t39\t0\t0\t0\t0\t0\t39\t39\t0\nType 1\t13\t13\t0\t0\t0\t0\t0\t13\t13\t0\nType 2\t13\t13\t0\t0\t0\t0\t0\t13\t13\t0\nType 3\t13\t13\t0\t0\t0\t0\t0\t13\t13\t0\nVoluntary collection points\n\nBursts are censored observations of intended attempts. Automatic cap collections are censored at 32 successful pumps. Neither supplies a voluntary stopping point.\n\nType 1\n\nMedian: 0 pumps (13 voluntary collections).\n\nEarly median 0 (4 voluntary); late median 0 (5 voluntary). Late minus early: 0 pumps.\n\nType 2\n\nMedian: 0 pumps (13 voluntary collections).\n\nEarly median 0 (5 voluntary); late median 0 (4 voluntary). Late minus early: 0 pumps.\n\nType 3\n\nMedian: 0 pumps (13 voluntary collections).\n\nEarly median 0 (4 voluntary); late median 0 (4 voluntary). Late minus early: 0 pumps.\n\nBy block\n\nEarly: rounds 1\u201313. Middle: 14\u201326. Late: 27\u201339.\n\nGroup\tRounds\tCollected\tBurst\tBanked cents\tLost cents\tAttempted pumps\tSuccessful pumps\tVoluntary\tZero-pump\tCap\nearly\t13\t13\t0\t0\t0\t0\t0\t13\t13\t0\nmiddle\t13\t13\t0\t0\t0\t0\t0\t13\t13\t0\nlate\t13\t13\t0\t0\t0\t0\t0\t13\t13\t0\nSession context\n\nInput sources recorded: mouse. Mixed sources do not invalidate this untimed task.\n\n0 interruption/recovery records. Decision latency is not reported; no latency is calculated across pauses or reloads.\n\nType text and stripe/dot/grid patterns. Round-start and outcome announcements. No growth animation used. Settings were fixed at readiness.\n\nRecorded browser context\nRound review\nRound\tType\tAttempts\tSuccesses\tOutcome\tBanked cents\tLost cents\n1\tType 2\t0\t0\tvoluntary collect\t0\t0\n2\tType 2\t0\t0\tvoluntary collect\t0\t0\n3\tType 3\t0\t0\tvoluntary collect\t0\t0\n4\tType 1\t0\t0\tvoluntary collect\t0\t0\n5\tType 1\t0\t0\tvoluntary collect\t0\t0\n6\tType 1\t0\t0\tvoluntary collect\t0\t0\n7\tType 2\t0\t0\tvoluntary collect\t0\t0\n8\tType 3\t0\t0\tvoluntary collect\t0\t0\n9\tType 2\t0\t0\tvoluntary collect\t0\t0\n10\tType 3\t0\t0\tvoluntary collect\t0\t0\n11\tType 1\t0\t0\tvoluntary collect\t0\t0\n12\tType 2\t0\t0\tvoluntary collect\t0\t0\n13\tType 3\t0\t0\tvoluntary collect\t0\t0\n14\tType 3\t0\t0\tvoluntary collect\t0\t0\n15\tType 1\t0\t0\tvoluntary collect\t0\t0\n16\tType 3\t0\t0\tvoluntary collect\t0\t0\n17\tType 2\t0\t0\tvoluntary collect\t0\t0\n18\tType 1\t0\t0\tvoluntary collect\t0\t0\n19\tType 3\t0\t0\tvoluntary collect\t0\t0\n20\tType 1\t0\t0\tvoluntary collect\t0\t0\n21\tType 2\t0\t0\tvoluntary collect\t0\t0\n22\tType 3\t0\t0\tvoluntary collect\t0\t0\n23\tType 1\t0\t0\tvoluntary collect\t0\t0\n24\tType 2\t0\t0\tvoluntary collect\t0\t0\n25\tType 3\t0\t0\tvoluntary collect\t0\t0\n26\tType 2\t0\t0\tvoluntary collect\t0\t0\n27\tType 1\t0\t0\tvoluntary collect\t0\t0\n28\tType 2\t0\t0\tvoluntary collect\t0\t0\n29\tType 2\t0\t0\tvoluntary collect\t0\t0\n30\tType 2\t0\t0\tvoluntary collect\t0\t0\n31\tType 3\t0\t0\tvoluntary collect\t0\t0\n32\tType 1\t0\t0\tvoluntary collect\t0\t0\n33\tType 1\t0\t0\tvoluntary collect\t0\t0\n34\tType 3\t0\t0\tvoluntary collect\t0\t0\n35\tType 3\t0\t0\tvoluntary collect\t0\t0\n36\tType 2\t0\t0\tvoluntary collect\t0\t0\n37\tType 1\t0\t0\tvoluntary collect\t0\t0\n38\tType 3\t0\t0\tvoluntary collect\t0\t0\n39\tType 1\t0\t0\tvoluntary collect\t0\t0\n\nThese are the choices and outcomes from this Assessment Practice sequence. A different sequence could produce a different amount. This result is not a personality score or a prediction of an employer's decision.\n\nThese fixed sequences are not calibrated equivalent forms. Total collected is one sampled outcome, not a skill or personality measure.\n\nPractise againBalloons history"
+    }
+  ],
+  "reconciliation-results": [
+    {
+      "label": "committed developer record",
+      "form": "BL1",
+      "rounds": 39,
+      "coreEvents": 305,
+      "durableEvents": 608,
+      "actions": 264,
+      "totals": [
+        39,
+        27,
+        12,
+        810,
+        125,
+        199,
+        187,
+        27,
+        0,
+        0
+      ],
+      "exposure": "form_exposed",
+      "confirmed": 39,
+      "visibleTablesMatch": false
+    },
+    {
+      "label": "fresh independent BL journey",
+      "form": "BL1",
+      "rounds": 39,
+      "coreEvents": 303,
+      "durableEvents": 603,
+      "actions": 262,
+      "totals": [
+        39,
+        26,
+        13,
+        455,
+        470,
+        198,
+        185,
+        26,
+        6,
+        0
+      ],
+      "exposure": "form_exposed",
+      "confirmed": 39,
+      "visibleTablesMatch": true
+    },
+    {
+      "label": "independent final root BL1",
+      "form": "BL1",
+      "rounds": 39,
+      "coreEvents": 303,
+      "durableEvents": 605,
+      "actions": 262,
+      "totals": [
+        39,
+        26,
+        13,
+        455,
+        470,
+        198,
+        185,
+        26,
+        6,
+        0
+      ],
+      "exposure": "form_exposed",
+      "confirmed": 39,
+      "visibleTablesMatch": false
+    },
+    {
+      "label": "independent final root RP1",
+      "form": "RP1",
+      "rounds": 39,
+      "coreEvents": 118,
+      "durableEvents": 234,
+      "actions": 77,
+      "totals": [
+        39,
+        39,
+        0,
+        0,
+        0,
+        0,
+        0,
+        39,
+        39,
+        0
+      ],
+      "exposure": "form_exposed",
+      "confirmed": 39,
+      "visibleTablesMatch": false
+    }
+  ],
+  "totals": {
+    "browserCases": 55,
+    "allPassed": true,
+    "maximumDeletionMs": 1884,
+    "tests": 812,
+    "testFiles": 44
+  }
+}

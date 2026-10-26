@@ -1,0 +1,69 @@
+[
+  {
+    "case": "abort",
+    "results": 17,
+    "lock": null
+  },
+  {
+    "case": "lost-write",
+    "results": 18,
+    "lock": "686e7af8-2b6d-4313-b77f-b804846d20e1"
+  },
+  {
+    "case": "keyboard-focus-blur",
+    "afterCollect": "BODY",
+    "afterNext": "BODY",
+    "phaseAfterBlur": "active",
+    "patternCount": 0,
+    "liveRegions": [
+      "1 of 18 rounds saved. Current exercise state saved."
+    ]
+  },
+  {
+    "case": "two-tabs",
+    "pumps": 2,
+    "owner": null,
+    "events": [
+      {
+        "kind": "pump",
+        "source": "mouse",
+        "time": {
+          "wallTimeMs": 1791139298504,
+          "monotonicMs": 361.09999999403954,
+          "clockEpochId": "c26a1fc8-d192-4aa2-95de-c2ab714d6982"
+        },
+        "actionId": 2,
+        "expectedRevision": 1,
+        "expectedRound": 1
+      },
+      {
+        "kind": "pump",
+        "source": "mouse",
+        "time": {
+          "wallTimeMs": 1791139300505,
+          "monotonicMs": 2665.5,
+          "clockEpochId": "3d0366d8-c400-4035-8d8c-5d854c9913f0"
+        },
+        "actionId": 3,
+        "expectedRevision": 2,
+        "expectedRound": 1
+      }
+    ]
+  },
+  {
+    "case": "late-delete",
+    "records": 0,
+    "trainingRetained": true,
+    "eligibleVisible": false
+  },
+  {
+    "case": "late-replace",
+    "records": 0,
+    "trainingRetained": true,
+    "eligibleVisible": false
+  },
+  {
+    "case": "held-periodic-read",
+    "eligibleStillVisible": true
+  }
+]

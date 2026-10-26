@@ -1,0 +1,2002 @@
+{
+  "browser": "145.0.7632.6",
+  "cases": [
+    {
+      "failure": "failed",
+      "action": "drill",
+      "order": "retry-before-delete",
+      "before": {
+        "status": "failed",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 2
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 6
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "DeletedChainError",
+      "activeAfterReload": 0,
+      "drillRows": 1,
+      "retainedAttemptIds": [
+        "unsaved-other-attempt"
+      ],
+      "deletedDraftAbsent": false,
+      "durableHash": "e6950cc10a5015e38530ecfa2d1442b3165c2f3f6bd0a80b4f1cd22d70754b22",
+      "reloadHash": "e6950cc10a5015e38530ecfa2d1442b3165c2f3f6bd0a80b4f1cd22d70754b22",
+      "unrelatedPreserved": true,
+      "pass": true
+    },
+    {
+      "failure": "failed",
+      "action": "drill",
+      "order": "retry-after-delete",
+      "before": {
+        "status": "failed",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 2
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 4
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "DeletedChainError",
+      "activeAfterReload": 0,
+      "drillRows": 1,
+      "retainedAttemptIds": [
+        "unsaved-other-attempt"
+      ],
+      "deletedDraftAbsent": false,
+      "durableHash": "2c2fade5d6ea6c8a5685c863cfd68d3e2d608666719f039e6b3724fb9b2533af",
+      "reloadHash": "2c2fade5d6ea6c8a5685c863cfd68d3e2d608666719f039e6b3724fb9b2533af",
+      "unrelatedPreserved": true,
+      "pass": true
+    },
+    {
+      "failure": "failed",
+      "action": "retest",
+      "order": "retry-before-delete",
+      "before": {
+        "status": "failed",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 2
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 6
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "DeletedChainError",
+      "activeAfterReload": 0,
+      "drillRows": 2,
+      "retainedAttemptIds": [
+        "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+        "unsaved-other-attempt"
+      ],
+      "deletedDraftAbsent": true,
+      "durableHash": "24b0fbcb040a07e78807372a8304fb97245771cfa0f5019650d7f8a0be3fdfef",
+      "reloadHash": "24b0fbcb040a07e78807372a8304fb97245771cfa0f5019650d7f8a0be3fdfef",
+      "unrelatedPreserved": true,
+      "pass": true
+    },
+    {
+      "failure": "failed",
+      "action": "retest",
+      "order": "retry-after-delete",
+      "before": {
+        "status": "failed",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 2
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 4
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "DeletedChainError",
+      "activeAfterReload": 0,
+      "drillRows": 2,
+      "retainedAttemptIds": [
+        "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+        "unsaved-other-attempt"
+      ],
+      "deletedDraftAbsent": true,
+      "durableHash": "cab1370d6c10b0c1c5e1fa8e947bbce0aefcf499d880f7ab01440089f03c55c0",
+      "reloadHash": "cab1370d6c10b0c1c5e1fa8e947bbce0aefcf499d880f7ab01440089f03c55c0",
+      "unrelatedPreserved": true,
+      "pass": true
+    },
+    {
+      "failure": "failed",
+      "action": "completed-retest",
+      "order": "retry-before-delete",
+      "before": {
+        "status": "failed",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 2
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 5
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "DeletedChainError",
+      "activeAfterReload": 0,
+      "drillRows": 2,
+      "retainedAttemptIds": [
+        "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+        "unsaved-other-attempt"
+      ],
+      "deletedDraftAbsent": true,
+      "durableHash": "c476870d7cde9d712e82cdb5285b51e4b38478cf08865693e94d19bf8cf1a43d",
+      "reloadHash": "c476870d7cde9d712e82cdb5285b51e4b38478cf08865693e94d19bf8cf1a43d",
+      "unrelatedPreserved": true,
+      "pass": true
+    },
+    {
+      "failure": "failed",
+      "action": "completed-retest",
+      "order": "retry-after-delete",
+      "before": {
+        "status": "failed",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 2
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 4
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "DeletedChainError",
+      "activeAfterReload": 0,
+      "drillRows": 2,
+      "retainedAttemptIds": [
+        "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+        "unsaved-other-attempt"
+      ],
+      "deletedDraftAbsent": true,
+      "durableHash": "ad07709425ff564ad8dfe4f7a096c82de359c2589de4683126fcbeebad350a20",
+      "reloadHash": "ad07709425ff564ad8dfe4f7a096c82de359c2589de4683126fcbeebad350a20",
+      "unrelatedPreserved": true,
+      "pass": true
+    },
+    {
+      "failure": "failed",
+      "action": "baseline",
+      "order": "retry-before-delete",
+      "before": {
+        "status": "failed",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 2
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 6
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "DeletedChainError",
+      "activeAfterReload": 0,
+      "drillRows": 2,
+      "retainedAttemptIds": [
+        "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+        "unsaved-other-attempt"
+      ],
+      "deletedDraftAbsent": false,
+      "durableHash": "04ace4556617e0770ba443b71fe4a31bdd54460923a17735726f47344c39dbd1",
+      "reloadHash": "04ace4556617e0770ba443b71fe4a31bdd54460923a17735726f47344c39dbd1",
+      "unrelatedPreserved": true,
+      "pass": true
+    },
+    {
+      "failure": "failed",
+      "action": "baseline",
+      "order": "retry-after-delete",
+      "before": {
+        "status": "failed",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 2
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 4
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "DeletedChainError",
+      "activeAfterReload": 0,
+      "drillRows": 2,
+      "retainedAttemptIds": [
+        "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+        "unsaved-other-attempt"
+      ],
+      "deletedDraftAbsent": false,
+      "durableHash": "96aed3a14f08d4fbd1684251ad64013da78e7b8d1f83e6a10f9fc932c56db544",
+      "reloadHash": "96aed3a14f08d4fbd1684251ad64013da78e7b8d1f83e6a10f9fc932c56db544",
+      "unrelatedPreserved": true,
+      "pass": true
+    },
+    {
+      "failure": "failed",
+      "action": "all",
+      "order": "retry-before-delete",
+      "before": {
+        "status": "failed",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 2
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 6
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "Error",
+      "activeAfterReload": 0,
+      "drillRows": 0,
+      "retainedAttemptIds": [],
+      "deletedDraftAbsent": true,
+      "durableHash": "84e511609143dfa0cb52c4f278757713951ea1478343e8cbab6b49ddd807db97",
+      "reloadHash": "2d0a69f214dbeffffffd18882fefd5ae08a86ca494ffa00b685e80e136ec5894",
+      "unrelatedPreserved": false,
+      "pass": true
+    },
+    {
+      "failure": "failed",
+      "action": "all",
+      "order": "retry-after-delete",
+      "before": {
+        "status": "failed",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 2
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 4
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "Error",
+      "activeAfterReload": 0,
+      "drillRows": 0,
+      "retainedAttemptIds": [],
+      "deletedDraftAbsent": true,
+      "durableHash": "cec1d7b90b72647c6d412198680e1631864cabb79482f4c19f89b0451154b1c3",
+      "reloadHash": "14ea6dcd26a6e47114aa4d699837f859eb89419bc4c4e8b8fc5953503e41ffd6",
+      "unrelatedPreserved": false,
+      "pass": true
+    },
+    {
+      "failure": "failed",
+      "action": "unrelated",
+      "order": "retry-before-delete",
+      "before": {
+        "status": "failed",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 2
+      },
+      "memoryAfterDelete": {
+        "id": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+        "attempts": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "status": "saved",
+        "calls": 6
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "accepted",
+      "activeAfterReload": 1,
+      "drillRows": 2,
+      "retainedAttemptIds": [],
+      "deletedDraftAbsent": false,
+      "durableHash": "abf9f7a5f22dffcc83297e0122c20147639a6cd62c90dfc86491a877644843ae",
+      "reloadHash": "abf9f7a5f22dffcc83297e0122c20147639a6cd62c90dfc86491a877644843ae",
+      "unrelatedPreserved": false,
+      "pass": true
+    },
+    {
+      "failure": "failed",
+      "action": "unrelated",
+      "order": "retry-after-delete",
+      "before": {
+        "status": "failed",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 2
+      },
+      "memoryAfterDelete": {
+        "id": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+        "attempts": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "status": "failed",
+        "calls": 4
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "accepted",
+      "activeAfterReload": 1,
+      "drillRows": 2,
+      "retainedAttemptIds": [],
+      "deletedDraftAbsent": false,
+      "durableHash": "abf9f7a5f22dffcc83297e0122c20147639a6cd62c90dfc86491a877644843ae",
+      "reloadHash": "abf9f7a5f22dffcc83297e0122c20147639a6cd62c90dfc86491a877644843ae",
+      "unrelatedPreserved": false,
+      "pass": true
+    },
+    {
+      "failure": "pending",
+      "action": "drill",
+      "order": "retry-before-delete",
+      "before": {
+        "status": "pending",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 1
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 2
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "DeletedChainError",
+      "activeAfterReload": 0,
+      "drillRows": 1,
+      "retainedAttemptIds": [
+        "unsaved-other-attempt"
+      ],
+      "deletedDraftAbsent": false,
+      "durableHash": "61c20d1141dfa88dc91eb1dad25503368e88ef76191b40c0ba0e20ba7af01297",
+      "reloadHash": "61c20d1141dfa88dc91eb1dad25503368e88ef76191b40c0ba0e20ba7af01297",
+      "unrelatedPreserved": true,
+      "pass": true
+    },
+    {
+      "failure": "pending",
+      "action": "drill",
+      "order": "retry-after-delete",
+      "before": {
+        "status": "pending",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 1
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 1
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "DeletedChainError",
+      "activeAfterReload": 0,
+      "drillRows": 1,
+      "retainedAttemptIds": [
+        "unsaved-other-attempt"
+      ],
+      "deletedDraftAbsent": false,
+      "durableHash": "2f10a3dc69915410401bbd2aba9c2044f1862e3d2b623451cc2abcee2c907a04",
+      "reloadHash": "2f10a3dc69915410401bbd2aba9c2044f1862e3d2b623451cc2abcee2c907a04",
+      "unrelatedPreserved": true,
+      "pass": true
+    },
+    {
+      "failure": "pending",
+      "action": "retest",
+      "order": "retry-before-delete",
+      "before": {
+        "status": "pending",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 1
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 2
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "DeletedChainError",
+      "activeAfterReload": 0,
+      "drillRows": 2,
+      "retainedAttemptIds": [
+        "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+        "unsaved-other-attempt"
+      ],
+      "deletedDraftAbsent": true,
+      "durableHash": "e9cfb0118c029bbf2a8cc3fc1d0503c7d1a47e7c4ccaa24cdd770e9bd9cabdb8",
+      "reloadHash": "e9cfb0118c029bbf2a8cc3fc1d0503c7d1a47e7c4ccaa24cdd770e9bd9cabdb8",
+      "unrelatedPreserved": true,
+      "pass": true
+    },
+    {
+      "failure": "pending",
+      "action": "retest",
+      "order": "retry-after-delete",
+      "before": {
+        "status": "pending",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 1
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 1
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "DeletedChainError",
+      "activeAfterReload": 0,
+      "drillRows": 2,
+      "retainedAttemptIds": [
+        "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+        "unsaved-other-attempt"
+      ],
+      "deletedDraftAbsent": true,
+      "durableHash": "b19d25cf1bf21c1605be4e77448913e65a5c8de4adaad9a7546aa1731cd1b7b2",
+      "reloadHash": "b19d25cf1bf21c1605be4e77448913e65a5c8de4adaad9a7546aa1731cd1b7b2",
+      "unrelatedPreserved": true,
+      "pass": true
+    },
+    {
+      "failure": "pending",
+      "action": "completed-retest",
+      "order": "retry-before-delete",
+      "before": {
+        "status": "pending",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 1
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 1
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "DeletedChainError",
+      "activeAfterReload": 0,
+      "drillRows": 2,
+      "retainedAttemptIds": [
+        "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+        "unsaved-other-attempt"
+      ],
+      "deletedDraftAbsent": true,
+      "durableHash": "7f9a67bffe975ccf344320a0d5670ce961817039ff0c16d9d72f29162f1a1337",
+      "reloadHash": "7f9a67bffe975ccf344320a0d5670ce961817039ff0c16d9d72f29162f1a1337",
+      "unrelatedPreserved": true,
+      "pass": true
+    },
+    {
+      "failure": "pending",
+      "action": "completed-retest",
+      "order": "retry-after-delete",
+      "before": {
+        "status": "pending",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 1
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 1
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "DeletedChainError",
+      "activeAfterReload": 0,
+      "drillRows": 2,
+      "retainedAttemptIds": [
+        "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+        "unsaved-other-attempt"
+      ],
+      "deletedDraftAbsent": true,
+      "durableHash": "23b3b9034d80b8405b339d7ed50c7559019037daa67209f33d1b50d7b11e3ff3",
+      "reloadHash": "23b3b9034d80b8405b339d7ed50c7559019037daa67209f33d1b50d7b11e3ff3",
+      "unrelatedPreserved": true,
+      "pass": true
+    },
+    {
+      "failure": "pending",
+      "action": "baseline",
+      "order": "retry-before-delete",
+      "before": {
+        "status": "pending",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 1
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 2
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "DeletedChainError",
+      "activeAfterReload": 0,
+      "drillRows": 2,
+      "retainedAttemptIds": [
+        "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+        "unsaved-other-attempt"
+      ],
+      "deletedDraftAbsent": false,
+      "durableHash": "ca19f592740ef386ab80d3d2ced6ceb5a5fbc1efdfa107130d7a3199202c5a16",
+      "reloadHash": "ca19f592740ef386ab80d3d2ced6ceb5a5fbc1efdfa107130d7a3199202c5a16",
+      "unrelatedPreserved": true,
+      "pass": true
+    },
+    {
+      "failure": "pending",
+      "action": "baseline",
+      "order": "retry-after-delete",
+      "before": {
+        "status": "pending",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 1
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 1
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "DeletedChainError",
+      "activeAfterReload": 0,
+      "drillRows": 2,
+      "retainedAttemptIds": [
+        "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+        "unsaved-other-attempt"
+      ],
+      "deletedDraftAbsent": false,
+      "durableHash": "84ddded92cf4e53d12da75d49558794b9be43bb7865e0fbbc084b9f92573d799",
+      "reloadHash": "84ddded92cf4e53d12da75d49558794b9be43bb7865e0fbbc084b9f92573d799",
+      "unrelatedPreserved": true,
+      "pass": true
+    },
+    {
+      "failure": "pending",
+      "action": "all",
+      "order": "retry-before-delete",
+      "before": {
+        "status": "pending",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 1
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 2
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "Error",
+      "activeAfterReload": 0,
+      "drillRows": 0,
+      "retainedAttemptIds": [],
+      "deletedDraftAbsent": true,
+      "durableHash": "8bedb70be1ff7b86a4d4d0867e6982633dbbc49591c4b3fa28d844ff49f2f8d4",
+      "reloadHash": "c28d445dc1b40f9bbb0f4c8a35948c7a71504b2271aa76b4fae3c80c7de707ae",
+      "unrelatedPreserved": false,
+      "pass": true
+    },
+    {
+      "failure": "pending",
+      "action": "all",
+      "order": "retry-after-delete",
+      "before": {
+        "status": "pending",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 1
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 1
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "Error",
+      "activeAfterReload": 0,
+      "drillRows": 0,
+      "retainedAttemptIds": [],
+      "deletedDraftAbsent": true,
+      "durableHash": "a063e6a7536018cc8ed4ab1a9a67ca2451c6cf63086e2ce55e6e85ba484170e1",
+      "reloadHash": "bf4d77fecb778047d9d935c0b18b8d3f89925e342de58168ab2427046044ab3e",
+      "unrelatedPreserved": false,
+      "pass": true
+    },
+    {
+      "failure": "pending",
+      "action": "unrelated",
+      "order": "retry-before-delete",
+      "before": {
+        "status": "pending",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 1
+      },
+      "memoryAfterDelete": {
+        "id": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+        "attempts": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "status": "saved",
+        "calls": 2
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "accepted",
+      "activeAfterReload": 1,
+      "drillRows": 2,
+      "retainedAttemptIds": [],
+      "deletedDraftAbsent": false,
+      "durableHash": "abf9f7a5f22dffcc83297e0122c20147639a6cd62c90dfc86491a877644843ae",
+      "reloadHash": "abf9f7a5f22dffcc83297e0122c20147639a6cd62c90dfc86491a877644843ae",
+      "unrelatedPreserved": false,
+      "pass": true
+    },
+    {
+      "failure": "pending",
+      "action": "unrelated",
+      "order": "retry-after-delete",
+      "before": {
+        "status": "pending",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 1
+      },
+      "memoryAfterDelete": {
+        "id": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+        "attempts": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "status": "pending",
+        "calls": 1
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "accepted",
+      "activeAfterReload": 1,
+      "drillRows": 2,
+      "retainedAttemptIds": [],
+      "deletedDraftAbsent": false,
+      "durableHash": "abf9f7a5f22dffcc83297e0122c20147639a6cd62c90dfc86491a877644843ae",
+      "reloadHash": "abf9f7a5f22dffcc83297e0122c20147639a6cd62c90dfc86491a877644843ae",
+      "unrelatedPreserved": false,
+      "pass": true
+    },
+    {
+      "failure": "pending-reject",
+      "action": "drill",
+      "order": "retry-before-delete",
+      "before": {
+        "status": "pending",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 1
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 3
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "DeletedChainError",
+      "activeAfterReload": 0,
+      "drillRows": 1,
+      "retainedAttemptIds": [
+        "unsaved-other-attempt"
+      ],
+      "deletedDraftAbsent": false,
+      "durableHash": "85f4f7f59735280fabf94390d5b84588d43b9173c2bf7efd6cdcc44749251771",
+      "reloadHash": "85f4f7f59735280fabf94390d5b84588d43b9173c2bf7efd6cdcc44749251771",
+      "unrelatedPreserved": true,
+      "pass": true
+    },
+    {
+      "failure": "pending-reject",
+      "action": "drill",
+      "order": "retry-after-delete",
+      "before": {
+        "status": "pending",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 1
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 1
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "DeletedChainError",
+      "activeAfterReload": 0,
+      "drillRows": 1,
+      "retainedAttemptIds": [
+        "unsaved-other-attempt"
+      ],
+      "deletedDraftAbsent": false,
+      "durableHash": "4abb0f256922896fdcc3899276a03ef5f45c2fec58f2624150ac783c2fd88439",
+      "reloadHash": "4abb0f256922896fdcc3899276a03ef5f45c2fec58f2624150ac783c2fd88439",
+      "unrelatedPreserved": true,
+      "pass": true
+    },
+    {
+      "failure": "pending-reject",
+      "action": "retest",
+      "order": "retry-before-delete",
+      "before": {
+        "status": "pending",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 1
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 3
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "DeletedChainError",
+      "activeAfterReload": 0,
+      "drillRows": 2,
+      "retainedAttemptIds": [
+        "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+        "unsaved-other-attempt"
+      ],
+      "deletedDraftAbsent": true,
+      "durableHash": "02995be56c7c3a287b16d5f1bd62aa7569f8e457db0e5ff74c46486c5e1b6373",
+      "reloadHash": "02995be56c7c3a287b16d5f1bd62aa7569f8e457db0e5ff74c46486c5e1b6373",
+      "unrelatedPreserved": true,
+      "pass": true
+    },
+    {
+      "failure": "pending-reject",
+      "action": "retest",
+      "order": "retry-after-delete",
+      "before": {
+        "status": "pending",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 1
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 1
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "DeletedChainError",
+      "activeAfterReload": 0,
+      "drillRows": 2,
+      "retainedAttemptIds": [
+        "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+        "unsaved-other-attempt"
+      ],
+      "deletedDraftAbsent": true,
+      "durableHash": "2ff16d8635e898f1ffd17f233f6ada6cd520a9be69d308f92e69a7d37600474e",
+      "reloadHash": "2ff16d8635e898f1ffd17f233f6ada6cd520a9be69d308f92e69a7d37600474e",
+      "unrelatedPreserved": true,
+      "pass": true
+    },
+    {
+      "failure": "pending-reject",
+      "action": "completed-retest",
+      "order": "retry-before-delete",
+      "before": {
+        "status": "pending",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 1
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 2
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "DeletedChainError",
+      "activeAfterReload": 0,
+      "drillRows": 2,
+      "retainedAttemptIds": [
+        "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+        "unsaved-other-attempt"
+      ],
+      "deletedDraftAbsent": true,
+      "durableHash": "1a038b7529489b63e728510e5d4551a9dc5b00096fed17cc69fc4c9e5b1583bb",
+      "reloadHash": "1a038b7529489b63e728510e5d4551a9dc5b00096fed17cc69fc4c9e5b1583bb",
+      "unrelatedPreserved": true,
+      "pass": true
+    },
+    {
+      "failure": "pending-reject",
+      "action": "completed-retest",
+      "order": "retry-after-delete",
+      "before": {
+        "status": "pending",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 1
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 1
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "DeletedChainError",
+      "activeAfterReload": 0,
+      "drillRows": 2,
+      "retainedAttemptIds": [
+        "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+        "unsaved-other-attempt"
+      ],
+      "deletedDraftAbsent": true,
+      "durableHash": "8eedc0ff31f0f7612d87fa809cb3631ba2d29eda973862f7c69344ccd13214c2",
+      "reloadHash": "8eedc0ff31f0f7612d87fa809cb3631ba2d29eda973862f7c69344ccd13214c2",
+      "unrelatedPreserved": true,
+      "pass": true
+    },
+    {
+      "failure": "pending-reject",
+      "action": "baseline",
+      "order": "retry-before-delete",
+      "before": {
+        "status": "pending",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 1
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 3
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "DeletedChainError",
+      "activeAfterReload": 0,
+      "drillRows": 2,
+      "retainedAttemptIds": [
+        "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+        "unsaved-other-attempt"
+      ],
+      "deletedDraftAbsent": false,
+      "durableHash": "76c1d89c9e1ad65ef31d380b46fd7730660317800b50f0b432f4d31d5b7bf7cd",
+      "reloadHash": "76c1d89c9e1ad65ef31d380b46fd7730660317800b50f0b432f4d31d5b7bf7cd",
+      "unrelatedPreserved": true,
+      "pass": true
+    },
+    {
+      "failure": "pending-reject",
+      "action": "baseline",
+      "order": "retry-after-delete",
+      "before": {
+        "status": "pending",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 1
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 1
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "DeletedChainError",
+      "activeAfterReload": 0,
+      "drillRows": 2,
+      "retainedAttemptIds": [
+        "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+        "unsaved-other-attempt"
+      ],
+      "deletedDraftAbsent": false,
+      "durableHash": "1fab887944820ac525749d1211cf6a86099ec161e2af0edd6f517cd6f8fdfc3c",
+      "reloadHash": "1fab887944820ac525749d1211cf6a86099ec161e2af0edd6f517cd6f8fdfc3c",
+      "unrelatedPreserved": true,
+      "pass": true
+    },
+    {
+      "failure": "pending-reject",
+      "action": "all",
+      "order": "retry-before-delete",
+      "before": {
+        "status": "pending",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 1
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 3
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "Error",
+      "activeAfterReload": 0,
+      "drillRows": 0,
+      "retainedAttemptIds": [],
+      "deletedDraftAbsent": true,
+      "durableHash": "249f6a848ca16500b0476b195473dc2de02ab60004616cb41c7e4c74b45088d6",
+      "reloadHash": "d198d1d2263bc754a5998004ae0ac7fedf50946ecac0303b5a0c2e403da3bb98",
+      "unrelatedPreserved": false,
+      "pass": true
+    },
+    {
+      "failure": "pending-reject",
+      "action": "all",
+      "order": "retry-after-delete",
+      "before": {
+        "status": "pending",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 1
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 1
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "Error",
+      "activeAfterReload": 0,
+      "drillRows": 0,
+      "retainedAttemptIds": [],
+      "deletedDraftAbsent": true,
+      "durableHash": "95616c06c47a2ea33f5f3bff09c0255ad8640417fe7678e0401c826b81fa1098",
+      "reloadHash": "fe3fa1476c2b89d8b4cd6c0413870d3dd89e5d2ba001450f5bf5ebc549593584",
+      "unrelatedPreserved": false,
+      "pass": true
+    },
+    {
+      "failure": "pending-reject",
+      "action": "unrelated",
+      "order": "retry-before-delete",
+      "before": {
+        "status": "pending",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 1
+      },
+      "memoryAfterDelete": {
+        "id": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+        "attempts": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "status": "saved",
+        "calls": 3
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "accepted",
+      "activeAfterReload": 1,
+      "drillRows": 2,
+      "retainedAttemptIds": [],
+      "deletedDraftAbsent": false,
+      "durableHash": "abf9f7a5f22dffcc83297e0122c20147639a6cd62c90dfc86491a877644843ae",
+      "reloadHash": "abf9f7a5f22dffcc83297e0122c20147639a6cd62c90dfc86491a877644843ae",
+      "unrelatedPreserved": false,
+      "pass": true
+    },
+    {
+      "failure": "pending-reject",
+      "action": "unrelated",
+      "order": "retry-after-delete",
+      "before": {
+        "status": "pending",
+        "memory": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "calls": 1
+      },
+      "memoryAfterDelete": {
+        "id": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+        "attempts": [
+          "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+          "unsaved-other-attempt"
+        ],
+        "status": "pending",
+        "calls": 1
+      },
+      "writes": [
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+          "status": "drill_complete",
+          "attempts": [
+            "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "accepted",
+      "activeAfterReload": 1,
+      "drillRows": 2,
+      "retainedAttemptIds": [],
+      "deletedDraftAbsent": false,
+      "durableHash": "abf9f7a5f22dffcc83297e0122c20147639a6cd62c90dfc86491a877644843ae",
+      "reloadHash": "abf9f7a5f22dffcc83297e0122c20147639a6cd62c90dfc86491a877644843ae",
+      "unrelatedPreserved": false,
+      "pass": true
+    }
+  ],
+  "errors": []
+}

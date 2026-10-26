@@ -1,0 +1,11 @@
+The following is a diff from the previous accessibility tree for Window: "Assessment Practice" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+~					130 button Zoom: 400%
+~					77 tab (selected, settable, boolean) Assessment Practice - Part of group 🧪 Stop M6-C - Memory usage - 143 MB, Value: on
++		229 container Zoom: 250%
++			230 container
++				231 container
++					232 container Zoom: 400%
++					233 button Make Text Smaller
++					234 button Make Text Larger
++					235 button Reset
+The focused UI element is 236 container

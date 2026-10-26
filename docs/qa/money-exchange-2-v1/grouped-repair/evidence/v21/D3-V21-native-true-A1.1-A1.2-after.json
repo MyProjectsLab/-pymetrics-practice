@@ -1,0 +1,723 @@
+{
+  "version": "money_exchange_2_storage_v2_0",
+  "activity": {},
+  "installationId": "53cc6a32-8962-43ff-ae8f-c32a35532ec1",
+  "generation": 1,
+  "revision": 29,
+  "lease": {
+    "ownerId": "native-owner",
+    "epoch": 2,
+    "live": true
+  },
+  "route": {
+    "stage": "active",
+    "epoch": 29,
+    "ownerId": "native-owner"
+  },
+  "ticketSerial": 2,
+  "currentTicketId": "T1.2",
+  "tickets": {
+    "T1.1": {
+      "id": "T1.1",
+      "generation": 1,
+      "ownerId": "native-owner",
+      "leaseEpoch": 2,
+      "state": "consumed",
+      "attemptId": "A1.1"
+    },
+    "T1.2": {
+      "id": "T1.2",
+      "generation": 1,
+      "ownerId": "native-owner",
+      "leaseEpoch": 2,
+      "state": "consumed",
+      "attemptId": "A1.2"
+    }
+  },
+  "activeAttemptId": "A1.2",
+  "formCounter": 2,
+  "exposureHistory": [
+    {
+      "attemptId": "A1.1",
+      "formId": "ME2-1",
+      "formDigest": "1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea"
+    },
+    {
+      "attemptId": "A1.2",
+      "formId": "ME2-2",
+      "formDigest": "f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830"
+    }
+  ],
+  "attempts": {
+    "A1.2": {
+      "id": "A1.2",
+      "ordinal": 2,
+      "createdAt": 158.5,
+      "context": {},
+      "events": [
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 1,
+          "requestId": "native/28",
+          "at": 158.5,
+          "kind": "attempt_armed"
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 2,
+          "requestId": "native/28",
+          "at": 158.5,
+          "kind": "round_intent",
+          "round": 1
+        }
+      ],
+      "revision": 1,
+      "generation": 1,
+      "ownerId": "native-owner",
+      "leaseEpoch": 2,
+      "originTicketId": "T1.2",
+      "formId": "ME2-2",
+      "formDigest": "f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830",
+      "status": "Armed",
+      "playCapability": true,
+      "stage": "award_1",
+      "rounds": [
+        {
+          "id": "A1.2/R1",
+          "partner": "Partner C",
+          "bonusRecipient": "candidate",
+          "armed": true,
+          "decision": null,
+          "exposure": "unshown",
+          "receiptIdentity": null,
+          "fairness": null,
+          "terminal": false
+        },
+        {
+          "id": "A1.2/R2",
+          "partner": "Partner D",
+          "bonusRecipient": "partner",
+          "armed": false,
+          "decision": null,
+          "exposure": "unshown",
+          "receiptIdentity": null,
+          "fairness": null,
+          "terminal": false
+        }
+      ],
+      "reportSnapshot": null
+    }
+  },
+  "tombstones": {
+    "A1.1": true
+  },
+  "outcomes": {
+    "native/27": {
+      "payloadHash": "{\"kind\":\"ready\",\"requestId\":\"native/27\",\"installationId\":\"53cc6a32-8962-43ff-ae8f-c32a35532ec1\",\"generation\":1,\"ownerId\":\"native-owner\",\"leaseEpoch\":2,\"routeEpoch\":27}",
+      "command": {
+        "kind": "ready",
+        "requestId": "native/27",
+        "installationId": "53cc6a32-8962-43ff-ae8f-c32a35532ec1",
+        "generation": 1,
+        "ownerId": "native-owner",
+        "leaseEpoch": 2,
+        "routeEpoch": 27
+      },
+      "result": {
+        "ticketId": "T1.2",
+        "stage": "ready"
+      },
+      "route": {
+        "stage": "ready",
+        "epoch": 28,
+        "ownerId": "native-owner"
+      },
+      "revision": 27
+    },
+    "native/28": {
+      "payloadHash": "{\"kind\":\"arm\",\"requestId\":\"native/28\",\"installationId\":\"53cc6a32-8962-43ff-ae8f-c32a35532ec1\",\"generation\":1,\"ownerId\":\"native-owner\",\"leaseEpoch\":2,\"routeEpoch\":28,\"ticketId\":\"T1.2\",\"at\":158.5}",
+      "command": {
+        "kind": "arm",
+        "requestId": "native/28",
+        "installationId": "53cc6a32-8962-43ff-ae8f-c32a35532ec1",
+        "generation": 1,
+        "ownerId": "native-owner",
+        "leaseEpoch": 2,
+        "routeEpoch": 28,
+        "ticketId": "T1.2",
+        "at": 158.5
+      },
+      "result": {
+        "ticketId": "T1.2",
+        "attemptId": "A1.2",
+        "stage": "award_1"
+      },
+      "route": {
+        "stage": "active",
+        "epoch": 29,
+        "ownerId": "native-owner"
+      },
+      "revision": 28
+    },
+    "native/29": {
+      "payloadHash": "{\"kind\":\"deleteAttempt\",\"requestId\":\"native/29\",\"installationId\":\"53cc6a32-8962-43ff-ae8f-c32a35532ec1\",\"generation\":1,\"attemptId\":\"A1.1\"}",
+      "command": {
+        "kind": "deleteAttempt",
+        "requestId": "native/29",
+        "installationId": "53cc6a32-8962-43ff-ae8f-c32a35532ec1",
+        "generation": 1,
+        "attemptId": "A1.1"
+      },
+      "result": {
+        "deleted": "A1.1"
+      },
+      "route": {
+        "stage": "active",
+        "epoch": 29,
+        "ownerId": "native-owner"
+      },
+      "revision": 29
+    }
+  },
+  "navigation": null,
+  "proofs": {
+    "A1.2": {
+      "commands": [
+        {
+          "kind": "arm",
+          "requestId": "native/28",
+          "installationId": "53cc6a32-8962-43ff-ae8f-c32a35532ec1",
+          "generation": 1,
+          "ownerId": "native-owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 28,
+          "ticketId": "T1.2",
+          "at": 158.5
+        }
+      ]
+    }
+  },
+  "retired": {
+    "native/1": {
+      "requestId": "native/1",
+      "deletionId": "native/29",
+      "attemptId": null,
+      "generation": 1
+    },
+    "native/2": {
+      "requestId": "native/2",
+      "deletionId": "native/29",
+      "attemptId": null,
+      "generation": 1
+    },
+    "native/3": {
+      "requestId": "native/3",
+      "deletionId": "native/29",
+      "attemptId": null,
+      "generation": 1
+    },
+    "native/4": {
+      "requestId": "native/4",
+      "deletionId": "native/29",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/5": {
+      "requestId": "native/5",
+      "deletionId": "native/29",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/6": {
+      "requestId": "native/6",
+      "deletionId": "native/29",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/7": {
+      "requestId": "native/7",
+      "deletionId": "native/29",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/8": {
+      "requestId": "native/8",
+      "deletionId": "native/29",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/9": {
+      "requestId": "native/9",
+      "deletionId": "native/29",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/10": {
+      "requestId": "native/10",
+      "deletionId": "native/29",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/11": {
+      "requestId": "native/11",
+      "deletionId": "native/29",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/12": {
+      "requestId": "native/12",
+      "deletionId": "native/29",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/13": {
+      "requestId": "native/13",
+      "deletionId": "native/29",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/14": {
+      "requestId": "native/14",
+      "deletionId": "native/29",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/15": {
+      "requestId": "native/15",
+      "deletionId": "native/29",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/16": {
+      "requestId": "native/16",
+      "deletionId": "native/29",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/17": {
+      "requestId": "native/17",
+      "deletionId": "native/29",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/18": {
+      "requestId": "native/18",
+      "deletionId": "native/29",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/19": {
+      "requestId": "native/19",
+      "deletionId": "native/29",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/20": {
+      "requestId": "native/20",
+      "deletionId": "native/29",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/21": {
+      "requestId": "native/21",
+      "deletionId": "native/29",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/22": {
+      "requestId": "native/22",
+      "deletionId": "native/29",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/23": {
+      "requestId": "native/23",
+      "deletionId": "native/29",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/24": {
+      "requestId": "native/24",
+      "deletionId": "native/29",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/25": {
+      "requestId": "native/25",
+      "deletionId": "native/29",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/26": {
+      "requestId": "native/26",
+      "deletionId": "native/29",
+      "attemptId": null,
+      "generation": 1
+    }
+  },
+  "resetReceipt": null,
+  "checkpoint": {
+    "version": "storage_v2_0",
+    "revision": 29,
+    "state": {
+      "version": "money_exchange_2_storage_v2_0",
+      "activity": {},
+      "installationId": "53cc6a32-8962-43ff-ae8f-c32a35532ec1",
+      "generation": 1,
+      "revision": 29,
+      "lease": {
+        "ownerId": "native-owner",
+        "epoch": 2,
+        "live": true
+      },
+      "route": {
+        "stage": "active",
+        "epoch": 29,
+        "ownerId": "native-owner"
+      },
+      "ticketSerial": 2,
+      "currentTicketId": "T1.2",
+      "tickets": {
+        "T1.1": {
+          "id": "T1.1",
+          "generation": 1,
+          "ownerId": "native-owner",
+          "leaseEpoch": 2,
+          "state": "consumed",
+          "attemptId": "A1.1"
+        },
+        "T1.2": {
+          "id": "T1.2",
+          "generation": 1,
+          "ownerId": "native-owner",
+          "leaseEpoch": 2,
+          "state": "consumed",
+          "attemptId": "A1.2"
+        }
+      },
+      "activeAttemptId": "A1.2",
+      "formCounter": 2,
+      "exposureHistory": [
+        {
+          "attemptId": "A1.1",
+          "formId": "ME2-1",
+          "formDigest": "1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea"
+        },
+        {
+          "attemptId": "A1.2",
+          "formId": "ME2-2",
+          "formDigest": "f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830"
+        }
+      ],
+      "attempts": {
+        "A1.2": {
+          "id": "A1.2",
+          "ordinal": 2,
+          "createdAt": 158.5,
+          "context": {},
+          "events": [
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 1,
+              "requestId": "native/28",
+              "at": 158.5,
+              "kind": "attempt_armed"
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 2,
+              "requestId": "native/28",
+              "at": 158.5,
+              "kind": "round_intent",
+              "round": 1
+            }
+          ],
+          "revision": 1,
+          "generation": 1,
+          "ownerId": "native-owner",
+          "leaseEpoch": 2,
+          "originTicketId": "T1.2",
+          "formId": "ME2-2",
+          "formDigest": "f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830",
+          "status": "Armed",
+          "playCapability": true,
+          "stage": "award_1",
+          "rounds": [
+            {
+              "id": "A1.2/R1",
+              "partner": "Partner C",
+              "bonusRecipient": "candidate",
+              "armed": true,
+              "decision": null,
+              "exposure": "unshown",
+              "receiptIdentity": null,
+              "fairness": null,
+              "terminal": false
+            },
+            {
+              "id": "A1.2/R2",
+              "partner": "Partner D",
+              "bonusRecipient": "partner",
+              "armed": false,
+              "decision": null,
+              "exposure": "unshown",
+              "receiptIdentity": null,
+              "fairness": null,
+              "terminal": false
+            }
+          ],
+          "reportSnapshot": null
+        }
+      },
+      "tombstones": {
+        "A1.1": true
+      },
+      "outcomes": {
+        "native/27": {
+          "payloadHash": "{\"kind\":\"ready\",\"requestId\":\"native/27\",\"installationId\":\"53cc6a32-8962-43ff-ae8f-c32a35532ec1\",\"generation\":1,\"ownerId\":\"native-owner\",\"leaseEpoch\":2,\"routeEpoch\":27}",
+          "command": {
+            "kind": "ready",
+            "requestId": "native/27",
+            "installationId": "53cc6a32-8962-43ff-ae8f-c32a35532ec1",
+            "generation": 1,
+            "ownerId": "native-owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 27
+          },
+          "result": {
+            "ticketId": "T1.2",
+            "stage": "ready"
+          },
+          "route": {
+            "stage": "ready",
+            "epoch": 28,
+            "ownerId": "native-owner"
+          },
+          "revision": 27
+        },
+        "native/28": {
+          "payloadHash": "{\"kind\":\"arm\",\"requestId\":\"native/28\",\"installationId\":\"53cc6a32-8962-43ff-ae8f-c32a35532ec1\",\"generation\":1,\"ownerId\":\"native-owner\",\"leaseEpoch\":2,\"routeEpoch\":28,\"ticketId\":\"T1.2\",\"at\":158.5}",
+          "command": {
+            "kind": "arm",
+            "requestId": "native/28",
+            "installationId": "53cc6a32-8962-43ff-ae8f-c32a35532ec1",
+            "generation": 1,
+            "ownerId": "native-owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 28,
+            "ticketId": "T1.2",
+            "at": 158.5
+          },
+          "result": {
+            "ticketId": "T1.2",
+            "attemptId": "A1.2",
+            "stage": "award_1"
+          },
+          "route": {
+            "stage": "active",
+            "epoch": 29,
+            "ownerId": "native-owner"
+          },
+          "revision": 28
+        },
+        "native/29": {
+          "payloadHash": "{\"kind\":\"deleteAttempt\",\"requestId\":\"native/29\",\"installationId\":\"53cc6a32-8962-43ff-ae8f-c32a35532ec1\",\"generation\":1,\"attemptId\":\"A1.1\"}",
+          "command": {
+            "kind": "deleteAttempt",
+            "requestId": "native/29",
+            "installationId": "53cc6a32-8962-43ff-ae8f-c32a35532ec1",
+            "generation": 1,
+            "attemptId": "A1.1"
+          },
+          "result": {
+            "deleted": "A1.1"
+          },
+          "route": {
+            "stage": "active",
+            "epoch": 29,
+            "ownerId": "native-owner"
+          },
+          "revision": 29
+        }
+      },
+      "navigation": null,
+      "proofs": {
+        "A1.2": {
+          "commands": [
+            {
+              "kind": "arm",
+              "requestId": "native/28",
+              "installationId": "53cc6a32-8962-43ff-ae8f-c32a35532ec1",
+              "generation": 1,
+              "ownerId": "native-owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 28,
+              "ticketId": "T1.2",
+              "at": 158.5
+            }
+          ]
+        }
+      },
+      "retired": {
+        "native/1": {
+          "requestId": "native/1",
+          "deletionId": "native/29",
+          "attemptId": null,
+          "generation": 1
+        },
+        "native/2": {
+          "requestId": "native/2",
+          "deletionId": "native/29",
+          "attemptId": null,
+          "generation": 1
+        },
+        "native/3": {
+          "requestId": "native/3",
+          "deletionId": "native/29",
+          "attemptId": null,
+          "generation": 1
+        },
+        "native/4": {
+          "requestId": "native/4",
+          "deletionId": "native/29",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/5": {
+          "requestId": "native/5",
+          "deletionId": "native/29",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/6": {
+          "requestId": "native/6",
+          "deletionId": "native/29",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/7": {
+          "requestId": "native/7",
+          "deletionId": "native/29",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/8": {
+          "requestId": "native/8",
+          "deletionId": "native/29",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/9": {
+          "requestId": "native/9",
+          "deletionId": "native/29",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/10": {
+          "requestId": "native/10",
+          "deletionId": "native/29",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/11": {
+          "requestId": "native/11",
+          "deletionId": "native/29",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/12": {
+          "requestId": "native/12",
+          "deletionId": "native/29",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/13": {
+          "requestId": "native/13",
+          "deletionId": "native/29",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/14": {
+          "requestId": "native/14",
+          "deletionId": "native/29",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/15": {
+          "requestId": "native/15",
+          "deletionId": "native/29",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/16": {
+          "requestId": "native/16",
+          "deletionId": "native/29",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/17": {
+          "requestId": "native/17",
+          "deletionId": "native/29",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/18": {
+          "requestId": "native/18",
+          "deletionId": "native/29",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/19": {
+          "requestId": "native/19",
+          "deletionId": "native/29",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/20": {
+          "requestId": "native/20",
+          "deletionId": "native/29",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/21": {
+          "requestId": "native/21",
+          "deletionId": "native/29",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/22": {
+          "requestId": "native/22",
+          "deletionId": "native/29",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/23": {
+          "requestId": "native/23",
+          "deletionId": "native/29",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/24": {
+          "requestId": "native/24",
+          "deletionId": "native/29",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/25": {
+          "requestId": "native/25",
+          "deletionId": "native/29",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/26": {
+          "requestId": "native/26",
+          "deletionId": "native/29",
+          "attemptId": null,
+          "generation": 1
+        }
+      },
+      "resetReceipt": null
+    }
+  },
+  "tail": []
+}

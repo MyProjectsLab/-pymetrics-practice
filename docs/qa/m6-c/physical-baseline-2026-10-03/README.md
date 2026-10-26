@@ -1,0 +1,7 @@
+# Physical-keyboard baseline evidence packet
+
+[RESULT.md](RESULT.md) states the bounded finding. [IDENTITY.json](IDENTITY.json) records the source, browser, OS, input attestation and display setting. [VISIBLE-SCREENS.md](VISIBLE-SCREENS.md) retains native Chrome accessibility observations. [RECONCILIATION.json](RECONCILIATION.json) and [reconcile.py](reconcile.py) provide the independent counts and checks. [EVIDENCE-SHA256.json](EVIDENCE-SHA256.json) records artifact digests.
+
+The four `*.raw.json.gz` files are unedited browser downloads stored as deterministic gzip without changing their decompressed bytes: `before`, `interrupted` after the tester's setup refresh, `complete` after the valid baseline, and `reloaded` after native `Cmd+R` and report reopening. The hash manifest records both compressed and original JSON hashes. The individual `baseline-record.json` and `baseline-journal.json` are extracted JSON values from the complete export. The browser observer captures key and lifecycle events without event injection, default prevention, clock or viewport overrides. It stores observations under a separate QA localStorage key. The exporter reads Stop IndexedDB in a readonly transaction. Their source files are retained in this folder.
+
+The observer writes periodic localStorage snapshots and has uncalibrated overhead. Browser `isTrusted` cannot identify the physical keyboard; hardware use is a human self-attestation. No physical input-latency or display-scanout claim follows from event or journal timestamps.

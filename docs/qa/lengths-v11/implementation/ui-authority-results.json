@@ -1,0 +1,11 @@
+[
+  {
+    "name": "production UI one-cycle withdrawal with held readonly delivery, deletion without notifications and stale positive callback",
+    "status": "PASS",
+    "detail": {
+      "hiddenAfterOneCycle": true,
+      "staleDidNotRestore": true,
+      "seed": "injected replay-valid all-omitted synthetic terminal, not a physical run"
+    }
+  }
+]

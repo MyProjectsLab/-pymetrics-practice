@@ -1,0 +1,12 @@
+# Keypresses headless F1–F4 repair
+
+The independent audit of `2c8fec902191bb6a396f4804f8393108883c5767` [failed on four headless findings](/private/tmp/assessment-keypress-audit-fqdMYs/audit/AUDIT.md). Its five rejection/semantic assertions were run against the unmodified target before repair: **5/5 failed as reported**. The repair follows the [V1.0.1 schema and admission addendum](../../specifications/ASSESSMENT_PRACTICE_KEYPRESSES_SCHEMA_ADDENDUM_V1_0_1.md), while the original V1.0 packet remains byte-identical at SHA-256 `47ededa969ed46c56c21abf976ff54c65d4f8d4b975257db712723d85c4b4749`.
+
+- **F1:** Runtime command kind, field set, field types, invalidation reason and command timestamp order are checked before transition. Unknown commands and missing repeat evidence cannot pass replay.
+- **F2:** The armed state now records specification, scoring, event-schema, input-profile and presentation-plan versions. Missing or changed identities fail replay rather than being stamped with current report versions.
+- **F3:** Headless arming rejects modifier, function and navigation codes; safe selected-key codes match the proposed input-check family.
+- **F4:** A factual 40-press achievement remains recorded if a later event invalidates the attempt. Validity is a separate report field; invalid attempts do not become valid results.
+
+The auditor's exact five assertions were copied to a separate temporary repair probe and run against transpiled current product sources: **5/5 pass**. Focused Vitest: **8/8 pass**. `npm run check` passed: **1,107 tests across 54 files**, lint with two inherited warnings, all **14 Stop forms**, all **five Stop drill manifests**, TypeScript and production builds. `npm run balloons:check` passed for the frozen Balloons scored forms and seven drill inventories. `git diff --check` passed before commit. This is developer evidence; the changed SHA needs a fresh independent audit. Browser UI, persistence/history, real input and device qualification remain outside this headless repair.
+
+The independent audit of repair SHA `148063c24221e48592d47d633ac14a944d472089` **failed** on adjacent malformed binding admission. A decoded array `["Space"]` matched the allowed-code regex through string coercion and could produce a valid report. The V1.0.1 addendum's string-code requirement was not enforced. The follow-up rejects non-string selected bindings before matching the allowlist, with an explicit regression case; this does not alter V1.0.1 or task mechanics. It needs another exact-SHA audit.

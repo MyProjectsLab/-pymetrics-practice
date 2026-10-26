@@ -1,0 +1,292 @@
+[
+  {
+    "name": "before-chrome-library-320",
+    "layout": {
+      "body": 320,
+      "focused": "<body>\n    <div id=\"root\"><a class=\"skip-link\" href=\"#main-content\">Skip to content</a><header class=\"site-header\"><button class=\"brand\" aria-label=\"Assessment Practice \u2014 game library\"><span class=\"brand-mark\" aria-hidden=\"true\">ap</span> Assessment Practice</button><span class=\"release-label\">Private preview</span></header><main id=\"main-content\" tabindex=\"-1\"><section class=\"library-intro\"><p class=\"eyebrow\">Your practice library</p><h1 tabindex=\"-1\">Learn the task.<br>Practise with clarity.</h1><p class=\"lead\">Learn the rules and controls of original Assessment Practice exercises.</p></section><section aria-labelledby=\"library-heading\"><h2 id=\"library-heading\">Explore the games</h2><div class=\"game-grid\"><article class=\"game-card\"><div class=\"card-symbols\" aria-hidden=\"true\"><span>\u2502</span><span>\u2014</span></div><p class=\"eyebrow\">Practice and descriptive report available</p><h3>Stop</h3><p>Respond to GO. Withhold on NO-GO. Review your accuracy, response timing, and consistency on this Assessment Practice task.</p><p class=\"metadata\">About 4 minutes \u00b7 Physical keyboard recommended</p><button>Open Stop <span aria-hidden=\"true\">\u2192</span></button></article></div></section><section class=\"panel\" aria-label=\"Optional Stop analytics\"><h2>Optional Stop analytics</h2><p>Development candidate \u2014 proposed notice for founder and privacy review. Collection is disabled in the default build.</p><p>May we collect optional Stop usage analytics to understand which preparation steps are used and identify broad technical problems? We collect only guide, device-check, session, report, training, drill and retest events, broad technical outcomes, a random identifier for this page session, and the time the server receives each event. We do not collect answers, scores, response times, keys, accommodation choices, drill identities, local-history identifiers, names, contact details or employer information. Your task records stay in this browser. We use no analytics cookies or cross-site identifiers. Live analytics rows become eligible for deletion after 55 days and are purged hourly; verified backup and export expiry must keep total retention within 90 days of collection. You can decline or withdraw without losing any Stop feature. Your choice starts off on each page load.</p><p>Withdraw to stop new analytics requests, discard unsent events and forget this page\u2019s analytics identifier. A request already received cannot be recalled. Previously received rows remain subject to the retention policy; withdrawal and deleting local history do not delete those rows. After this page\u2019s identifier is forgotten, we cannot use it to locate earlier rows. You can change your choice from the library. Closing or refreshing this page also turns consent off.</p><p role=\"status\">Analytics consent is off.</p><button disabled=\"\">Allow optional analytics</button><button class=\"secondary\">Decline analytics</button></section><button class=\"secondary\">Stop history</button><p class=\"note\">Results and sequence-use records are saved in this browser. Clearing site data or browser eviction can remove them. These records cannot establish which sequences you started before that happened or in other browsers.</p></main><footer class=\"site-footer\">Original preparation exercises. Follow the instructions in your invitation.</footer></div>\n  \n\n</body>",
+      "height": 800,
+      "scrollWidth": 320,
+      "width": 320
+    }
+  },
+  {
+    "name": "before-chrome-guide-320",
+    "layout": {
+      "body": 320,
+      "focused": "<h1 tabindex=\"-1\">Learn the Stop task</h1>",
+      "height": 800,
+      "scrollWidth": 320,
+      "width": 320
+    }
+  },
+  {
+    "name": "before-chrome-rule-320",
+    "layout": {
+      "body": 320,
+      "focused": "<h1 tabindex=\"-1\">One rule, two actions</h1>",
+      "height": 800,
+      "scrollWidth": 320,
+      "width": 320
+    }
+  },
+  {
+    "name": "before-chrome-example-320",
+    "layout": {
+      "body": 320,
+      "focused": "<h1 tabindex=\"-1\">Try the rule</h1>",
+      "height": 800,
+      "scrollWidth": 320,
+      "width": 320
+    }
+  },
+  {
+    "name": "before-chrome-comprehension-320",
+    "layout": {
+      "body": 320,
+      "focused": "<h1 tabindex=\"-1\">Check your understanding</h1>",
+      "height": 800,
+      "scrollWidth": 320,
+      "width": 320
+    }
+  },
+  {
+    "name": "before-chrome-preflight-320",
+    "layout": {
+      "body": 320,
+      "focused": "<h1 tabindex=\"-1\">Check your setup</h1>",
+      "height": 800,
+      "scrollWidth": 320,
+      "width": 320
+    }
+  },
+  {
+    "name": "before-chrome-readiness",
+    "layout": {
+      "body": 1280,
+      "focused": "<h1 tabindex=\"-1\">Ready to begin?</h1>",
+      "height": 800,
+      "scrollWidth": 1280,
+      "width": 1280
+    }
+  },
+  {
+    "name": "before-chrome-live",
+    "layout": {
+      "body": 1280,
+      "focused": "<div class=\"stop-live\" data-game-focus=\"true\" tabindex=\"-1\" aria-label=\"Timed Stop task\"><p class=\"stop-reminder\">GO: press Space \u00b7 NO-GO: do nothing</p><div class=\"stop-presentation\" aria-hidden=\"true\" data-presentation=\"fixation\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 128 128\" aria-hidden=\"true\">\n  <path d=\"M64 44v40M44 64h40\" fill=\"none\" stroke=\"#172033\" stroke-width=\"8\" stroke-linecap=\"square\"></path>\n</svg>\n</div></div>",
+      "height": 800,
+      "scrollWidth": 1280,
+      "width": 1280
+    }
+  },
+  {
+    "name": "before-chrome-complete",
+    "layout": {
+      "body": 1280,
+      "focused": "<h1 tabindex=\"-1\">Stop complete</h1>",
+      "height": 800,
+      "scrollWidth": 1280,
+      "width": 1280
+    }
+  },
+  {
+    "name": "before-chrome-report-320",
+    "layout": {
+      "body": 320,
+      "focused": "<h1 id=\"stop-report-heading\" tabindex=\"-1\">Your Stop practice result</h1>",
+      "height": 800,
+      "scrollWidth": 320,
+      "width": 320
+    }
+  },
+  {
+    "name": "before-chrome-history-320",
+    "layout": {
+      "body": 333,
+      "focused": "<body>\n    <div id=\"root\"><a class=\"skip-link\" href=\"#main-content\">Skip to content</a><header class=\"site-header\"><button class=\"brand\" aria-label=\"Assessment Practice \u2014 game library\"><span class=\"brand-mark\" aria-hidden=\"true\">ap</span> Assessment Practice</button><span class=\"release-label\">Private preview</span></header><main id=\"main-content\" tabindex=\"-1\"><section class=\"journey\"><div class=\"panel\"><h1 tabindex=\"-1\">Stop history</h1><p>Results are stored in this browser. Clearing site data or browser eviction can remove them. Earlier visits after cleared data cannot be reconstructed.</p><div class=\"actions\"><button>Practise Stop</button><button class=\"secondary\">Back to library</button><button class=\"secondary\">Delete all Assessment Practice data</button></div><h2>Results and attempts</h2><article class=\"panel\"><h3>10/2/2026, 1:10:50 AM \u00b7 baseline \u00b7 valid</h3><p>Form stop-baseline-03 \u00b7 Standard \u00b7 Space \u00b7 physical keyboard \u00b7 standard timing \u00b7 No active training chain</p><p>Overall accuracy 25% \u00b7 GO hit rate 0% \u00b7 NO-GO correct-withhold rate 100% \u00b7 Median correct-GO response time unavailable.</p><button>Open original report</button><button class=\"secondary\">Delete this result</button></article><h2>Progress by compatible profile</h2><section><h3>Standard \u00b7 Space \u00b7 physical keyboard \u00b7 standard timing \u00b7 Space \u00b7 1.1 \u00b7 stop_scoring_v1</h3><svg role=\"img\" aria-label=\"Overall accuracy across 1 compatible Stop session in this profile\" viewBox=\"0 0 300 100\" width=\"300\" height=\"100\"><line x1=\"10\" y1=\"90\" x2=\"290\" y2=\"90\" stroke=\"currentColor\" opacity=\"0.5\"></line><polyline points=\"150,70\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"></polyline><circle cx=\"150\" cy=\"70\" r=\"3\" fill=\"currentColor\"></circle></svg><ol><li>10/2/2026: overall 25%, GO 0%, NO-GO 100%.</li></ol></section><h2>Baseline and retest comparisons</h2></div></section></main><footer class=\"site-footer\">Original preparation exercises. Follow the instructions in your invitation.</footer></div>\n  \n\n</body>",
+      "height": 800,
+      "scrollWidth": 333,
+      "width": 320
+    }
+  },
+  {
+    "name": "before-chrome-history-populated-320",
+    "layout": {
+      "body": 333,
+      "focused": "<body>\n    <div id=\"root\"><a class=\"skip-link\" href=\"#main-content\">Skip to content</a><header class=\"site-header\"><button class=\"brand\" aria-label=\"Assessment Practice \u2014 game library\"><span class=\"brand-mark\" aria-hidden=\"true\">ap</span> Assessment Practice</button><span class=\"release-label\">Private preview</span></header><main id=\"main-content\" tabindex=\"-1\"><section class=\"journey\"><div class=\"panel\"><h1 tabindex=\"-1\">Stop history</h1><p>Results are stored in this browser. Clearing site data or browser eviction can remove them. Earlier visits after cleared data cannot be reconstructed.</p><div class=\"actions\"><button>Practise Stop</button><button class=\"secondary\">Back to library</button><button class=\"secondary\">Delete all Assessment Practice data</button></div><h2>Results and attempts</h2><article class=\"panel\"><h3>10/2/2026, 1:10:50 AM \u00b7 baseline \u00b7 valid</h3><p>Form stop-baseline-03 \u00b7 Standard \u00b7 Space \u00b7 physical keyboard \u00b7 standard timing \u00b7 No active training chain</p><p>Overall accuracy 25% \u00b7 GO hit rate 0% \u00b7 NO-GO correct-withhold rate 100% \u00b7 Median correct-GO response time unavailable.</p><button>Open original report</button><button class=\"secondary\">Delete this result</button></article><h2>Progress by compatible profile</h2><section><h3>Standard \u00b7 Space \u00b7 physical keyboard \u00b7 standard timing \u00b7 Space \u00b7 1.1 \u00b7 stop_scoring_v1</h3><svg role=\"img\" aria-label=\"Overall accuracy across 1 compatible Stop session in this profile\" viewBox=\"0 0 300 100\" width=\"300\" height=\"100\"><line x1=\"10\" y1=\"90\" x2=\"290\" y2=\"90\" stroke=\"currentColor\" opacity=\"0.5\"></line><polyline points=\"150,70\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"></polyline><circle cx=\"150\" cy=\"70\" r=\"3\" fill=\"currentColor\"></circle></svg><ol><li>10/2/2026: overall 25%, GO 0%, NO-GO 100%.</li></ol></section><h2>Baseline and retest comparisons</h2></div></section></main><footer class=\"site-footer\">Original preparation exercises. Follow the instructions in your invitation.</footer></div>\n  \n\n</body>",
+      "height": 800,
+      "scrollWidth": 333,
+      "width": 320
+    }
+  },
+  {
+    "name": "before-chrome-delete-focus",
+    "layout": {
+      "body": 320,
+      "focused": "<body>\n    <div id=\"root\"><a class=\"skip-link\" href=\"#main-content\">Skip to content</a><header class=\"site-header\"><button class=\"brand\" aria-label=\"Assessment Practice \u2014 game library\"><span class=\"brand-mark\" aria-hidden=\"true\">ap</span> Assessment Practice</button><span class=\"release-label\">Private preview</span></header><main id=\"main-content\" tabindex=\"-1\"><section class=\"panel\" role=\"alertdialog\" aria-modal=\"true\" aria-labelledby=\"delete-heading\"><h1 id=\"delete-heading\">Delete this Stop result?</h1><p>This removes the result and its event record from your history. A minimal form-exposure marker will remain so this browser does not describe a sequence you already started as unseen. To remove that marker too, use Delete all Assessment Practice data.</p><div class=\"actions\"><button>Delete this result</button><button class=\"secondary\">Keep this result</button></div></section></main><footer class=\"site-footer\">Original preparation exercises. Follow the instructions in your invitation.</footer></div>\n  \n\n</body>",
+      "height": 800,
+      "scrollWidth": 320,
+      "width": 320
+    }
+  },
+  {
+    "name": "before-chrome-history-cancel-focus",
+    "layout": {
+      "body": 333,
+      "focused": "<body>\n    <div id=\"root\"><a class=\"skip-link\" href=\"#main-content\">Skip to content</a><header class=\"site-header\"><button class=\"brand\" aria-label=\"Assessment Practice \u2014 game library\"><span class=\"brand-mark\" aria-hidden=\"true\">ap</span> Assessment Practice</button><span class=\"release-label\">Private preview</span></header><main id=\"main-content\" tabindex=\"-1\"><section class=\"journey\"><div class=\"panel\"><h1 tabindex=\"-1\">Stop history</h1><p>Results are stored in this browser. Clearing site data or browser eviction can remove them. Earlier visits after cleared data cannot be reconstructed.</p><div class=\"actions\"><button>Practise Stop</button><button class=\"secondary\">Back to library</button><button class=\"secondary\">Delete all Assessment Practice data</button></div><h2>Results and attempts</h2><article class=\"panel\"><h3>10/2/2026, 1:10:50 AM \u00b7 baseline \u00b7 valid</h3><p>Form stop-baseline-03 \u00b7 Standard \u00b7 Space \u00b7 physical keyboard \u00b7 standard timing \u00b7 No active training chain</p><p>Overall accuracy 25% \u00b7 GO hit rate 0% \u00b7 NO-GO correct-withhold rate 100% \u00b7 Median correct-GO response time unavailable.</p><button>Open original report</button><button class=\"secondary\">Delete this result</button></article><h2>Progress by compatible profile</h2><section><h3>Standard \u00b7 Space \u00b7 physical keyboard \u00b7 standard timing \u00b7 Space \u00b7 1.1 \u00b7 stop_scoring_v1</h3><svg role=\"img\" aria-label=\"Overall accuracy across 1 compatible Stop session in this profile\" viewBox=\"0 0 300 100\" width=\"300\" height=\"100\"><line x1=\"10\" y1=\"90\" x2=\"290\" y2=\"90\" stroke=\"currentColor\" opacity=\"0.5\"></line><polyline points=\"150,70\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"></polyline><circle cx=\"150\" cy=\"70\" r=\"3\" fill=\"currentColor\"></circle></svg><ol><li>10/2/2026: overall 25%, GO 0%, NO-GO 100%.</li></ol></section><h2>Baseline and retest comparisons</h2></div></section></main><footer class=\"site-footer\">Original preparation exercises. Follow the instructions in your invitation.</footer></div>\n  \n\n</body>",
+      "height": 800,
+      "scrollWidth": 333,
+      "width": 320
+    }
+  },
+  {
+    "name": "after-chrome-history-320",
+    "layout": {
+      "body": 320,
+      "focused": "<h1 tabindex=\"-1\">Stop history</h1>",
+      "height": 800,
+      "scrollWidth": 320,
+      "width": 320
+    }
+  },
+  {
+    "name": "after-chrome-delete-focus",
+    "layout": {
+      "body": 320,
+      "focused": "<h1 id=\"delete-heading\" tabindex=\"-1\">Delete this Stop result?</h1>",
+      "height": 800,
+      "scrollWidth": 320,
+      "width": 320
+    }
+  },
+  {
+    "name": "after-chrome-cancel-focus",
+    "layout": {
+      "body": 320,
+      "focused": "<h1 tabindex=\"-1\">Stop history</h1>",
+      "height": 800,
+      "scrollWidth": 320,
+      "width": 320
+    }
+  },
+  {
+    "name": "preliminary-zoom-shortcut-no-effect",
+    "layout": {
+      "body": 1200,
+      "focused": "<h1 tabindex=\"-1\">Stop history</h1>",
+      "height": 727,
+      "scrollWidth": 1200,
+      "width": 1200
+    }
+  },
+  {
+    "name": "after-chrome-history-real-zoom200",
+    "layout": {
+      "body": 600,
+      "focused": "<main id=\"main-content\" tabindex=\"-1\"><section class=\"journey\"><div class=\"panel\"><h1 tabindex=\"-1\">Stop history</h1><p>Results are stored in this browser. Clearing site data or browser eviction can remove them. Earlier visits after cleared data cannot be reconstructed.</p><div class=\"actions\"><button>Practise Stop</button><button class=\"secondary\">Back to library</button><button class=\"secondary\">Delete all Assessment Practice data</button></div><h2>Results and attempts</h2><article class=\"panel\"><h3>10/2/2026, 1:10:50 AM \u00b7 baseline \u00b7 valid</h3><p>Form stop-baseline-03 \u00b7 Standard \u00b7 Space \u00b7 physical keyboard \u00b7 standard timing \u00b7 No active training chain</p><p>Overall accuracy 25% \u00b7 GO hit rate 0% \u00b7 NO-GO correct-withhold rate 100% \u00b7 Median correct-GO response time unavailable.</p><button>Open original report</button><button class=\"secondary\">Delete this result</button></article><h2>Progress by compatible profile</h2><section><h3>Standard \u00b7 Space \u00b7 physical keyboard \u00b7 standard timing \u00b7 Space \u00b7 1.1 \u00b7 stop_scoring_v1</h3><svg class=\"stop-progress\" role=\"img\" aria-label=\"Overall accuracy across 1 compatible Stop session in this profile\" viewBox=\"0 0 300 100\" width=\"300\" height=\"100\"><line x1=\"10\" y1=\"90\" x2=\"290\" y2=\"90\" stroke=\"currentColor\" opacity=\"0.5\"></line><polyline points=\"150,70\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"></polyline><circle cx=\"150\" cy=\"70\" r=\"3\" fill=\"currentColor\"></circle></svg><ol><li>10/2/2026: overall 25%, GO 0%, NO-GO 100%.</li></ol></section><h2>Baseline and retest comparisons</h2></div></section></main>",
+      "height": 363,
+      "scrollWidth": 600,
+      "width": 600
+    }
+  },
+  {
+    "name": "after-chrome-report-zoom200",
+    "layout": {
+      "body": 600,
+      "focused": "<h1 id=\"stop-report-heading\" tabindex=\"-1\">Your Stop practice result</h1>",
+      "height": 363,
+      "scrollWidth": 600,
+      "width": 600
+    }
+  },
+  {
+    "name": "after-chrome-report-zoom400",
+    "layout": {
+      "body": 300,
+      "focused": "<main id=\"main-content\" tabindex=\"-1\"><section class=\"journey\"><article aria-labelledby=\"stop-report-heading\" data-report-version=\"stop_report_v1\"><h1 id=\"stop-report-heading\" tabindex=\"-1\">Your Stop practice result</h1><p>Valid \u00b7 Standard color-plus-marker form \u00b7 Form stop-baseline-03</p><p>This report describes what happened on this Assessment Practice sequence. It is not an employer score or a personality assessment.</p><p>Scoring version: stop_scoring_v1. Response key: Space. Physical keyboard self-confirmed; standard timing.</p><h2>Your responses</h2><p>You responded to 0 of 60 GO symbols (0%). You missed 60.</p><p>You withheld your response to 20 of 20 NO-GO symbols (100%). You made 0 false alarms.</p><p>Overall, 20 of 80 trials were correct (25%).</p><h2>Your response timing</h2><p>There were no eligible correct GO responses for a response-time summary.</p><p>Response-time results exclude anticipatory responses and trials with timing anomalies.</p><h2>What happened over the task</h2><p>From Block 1 to Block 4, overall accuracy changed by 0 percentage points, GO hit rate by 0 points, and false-alarm rate by 0 points.</p><p>There was not enough clean data for a reliable block comparison.</p><div class=\"table-scroll\" role=\"region\" aria-label=\"Block results\" tabindex=\"0\"><table><caption>Four hidden 20-trial blocks</caption><thead><tr><th scope=\"col\">Block</th><th scope=\"col\">GO correct</th><th scope=\"col\">NO-GO correct</th><th scope=\"col\">Median GO response time</th><th scope=\"col\">Data note</th></tr></thead><tbody><tr><th scope=\"row\">1</th><td>0 of 15</td><td>5 of 5</td><td>Unavailable</td><td>Too few eligible GO responses for a timing comparison</td></tr><tr><th scope=\"row\">2</th><td>0 of 15</td><td>5 of 5</td><td>Unavailable</td><td>Too few eligible GO responses for a timing comparison</td></tr><tr><th scope=\"row\">3</th><td>0 of 15</td><td>5 of 5</td><td>Unavailable</td><td>Too few eligible GO responses for a timing comparison</td></tr><tr><th scope=\"row\">4</th><td>0 of 15</td><td>5 of 5</td><td>Unavailable</td><td>Too few eligible GO responses for a timing comparison</td></tr></tbody></table></div><h2>After errors</h2><p>There were not enough qualifying trials to describe your response speed after errors.</p><h2>After GO runs</h2><p>Your false-alarm rate was 0% when NO-GO followed at least three GO symbols and 0% on other qualifying NO-GO trials (similar). This describes your responses in this sequence. It does not mean a NO-GO symbol becomes more likely after a run of GO symbols.</p><h2>Data quality</h2><p>This session met the completion, focus, input, and timing rules for a valid result.</p><p>This result is saved in this browser until you delete it, clear site data, or the browser evicts it.</p><h2>What this result means</h2><p>It shows your accuracy, response timing, and consistency on one Assessment Practice Stop sequence. It cannot establish a stable attention or impulse-control trait, reproduce a proprietary assessment score, predict employer fit, or tell you whether you will be selected. Device, sequence, familiarity, fatigue, and ordinary variation can affect results.</p><div class=\"actions\"><button>Practise another sequence</button><button class=\"secondary\">Back to library</button></div></article></section></main>",
+      "height": 181,
+      "scrollWidth": 300,
+      "width": 300
+    }
+  },
+  {
+    "name": "after-chrome-shape-A-readiness",
+    "layout": {
+      "body": 1200,
+      "focused": "<h1 tabindex=\"-1\">Ready to begin?</h1>",
+      "height": 727,
+      "scrollWidth": 1200,
+      "width": 1200
+    }
+  },
+  {
+    "name": "preliminary-background-tab-created",
+    "layout": {
+      "body": 1200,
+      "focused": "<main id=\"main-content\" tabindex=\"-1\"><section class=\"journey\"><div class=\"journey-top\"><p>Stop \u00b7 Private preview</p></div><div class=\"panel\"><div><div class=\"stop-live\" data-game-focus=\"true\" tabindex=\"-1\" aria-label=\"Timed Stop task\" hidden=\"\"><p class=\"stop-reminder\">GO: press A \u00b7 NO-GO: do nothing</p><div class=\"stop-presentation\" aria-hidden=\"true\"></div></div><h1 tabindex=\"-1\">Warm-up complete</h1><p>The scored task starts next. The rule and timing stay the same.</p><button>Start scored task</button></div></div></section></main>",
+      "height": 727,
+      "scrollWidth": 1200,
+      "width": 1200
+    }
+  },
+  {
+    "name": "unresolved-native-tab-switch-warmup-break",
+    "layout": {
+      "body": 1200,
+      "focused": "<main id=\"main-content\" tabindex=\"-1\"><section class=\"journey\"><div class=\"journey-top\"><p>Stop \u00b7 Private preview</p></div><div class=\"panel\"><div><div class=\"stop-live\" data-game-focus=\"true\" tabindex=\"-1\" aria-label=\"Timed Stop task\" hidden=\"\"><p class=\"stop-reminder\">GO: press A \u00b7 NO-GO: do nothing</p><div class=\"stop-presentation\" aria-hidden=\"true\"></div></div><h1 tabindex=\"-1\">Warm-up complete</h1><p>The scored task starts next. The rule and timing stay the same.</p><button>Start scored task</button></div></div></section></main>",
+      "height": 727,
+      "scrollWidth": 1200,
+      "width": 1200
+    }
+  },
+  {
+    "name": "unresolved-native-tab-switch-scored",
+    "layout": {
+      "body": 1200,
+      "focused": "<div class=\"stop-live\" data-game-focus=\"true\" tabindex=\"-1\" aria-label=\"Timed Stop task\"><p class=\"stop-reminder\">GO: press A \u00b7 NO-GO: do nothing</p><div class=\"stop-presentation\" aria-hidden=\"true\" data-presentation=\"fixation\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 128 128\" aria-hidden=\"true\">\n  <path d=\"M64 44v40M44 64h40\" fill=\"none\" stroke=\"#172033\" stroke-width=\"8\" stroke-linecap=\"square\"></path>\n</svg>\n</div></div>",
+      "height": 727,
+      "scrollWidth": 1200,
+      "width": 1200
+    }
+  },
+  {
+    "name": "seeded-history-desktop",
+    "layout": {
+      "body": 1200,
+      "focused": "<h1 tabindex=\"-1\">Stop history</h1>",
+      "height": 727,
+      "scrollWidth": 1200,
+      "width": 1200
+    }
+  },
+  {
+    "name": "seeded-history-desktop-repeat",
+    "layout": {
+      "body": 1200,
+      "focused": "<h1 tabindex=\"-1\">Stop history</h1>",
+      "height": 727,
+      "scrollWidth": 1200,
+      "width": 1200
+    }
+  },
+  {
+    "name": "seeded-drill-review-desktop",
+    "layout": {
+      "body": 1200,
+      "focused": "<h1 tabindex=\"-1\">Stop drill attempt</h1>",
+      "height": 727,
+      "scrollWidth": 1200,
+      "width": 1200
+    }
+  },
+  {
+    "name": "seeded-history-viewport-retry",
+    "layout": {
+      "body": 1200,
+      "focused": "<h1 tabindex=\"-1\">Stop history</h1>",
+      "height": 727,
+      "scrollWidth": 1200,
+      "width": 1200
+    }
+  }
+]

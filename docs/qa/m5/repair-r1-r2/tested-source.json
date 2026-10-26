@@ -1,0 +1,21 @@
+{
+  "productionSourceSHA256": {
+    "src/App.tsx": "cd7cd46e85bdae3612ca0e1296c57e56bbf3626df6c9815d525a974ffa9b3e1d",
+    "src/stop/History.tsx": "3719e6453530db09a79ae5c5e647b56e281aea5175cb0e279e5a15b072f39bda",
+    "src/stop/run.ts": "d7004f0de2a341639c8c92dc2b12a4561459d31970b52f15eb2872c94fd4fdc2",
+    "src/stop/storage.ts": "dd3d80aeb750d30dc4ed29b74296ade90080597589555e271d5e2452c6aa6bdd",
+    "src/stop/training.ts": "c18d7e8938fe02ca1d0a181859446ffd1668dfeedf172e9bcd9467c5cfa4701b",
+    "src/stop/protected-integrity.ts": "8fdca4f932b984155a8e10772980834d2e152d0610acf5149378a419dfd766f6"
+  },
+  "buildSHA256": {
+    "dist/index.html": "afc5d274038de0b0c484d5d27b24a3b4b7737252177784e0d7d192c5267d304d",
+    "dist/.gitkeep": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "dist/stop/stimuli/shape-go.svg": "cea3367ec0283e30c31dc286b63a499e67afd11c58b85a2bba312efcf57c2c88",
+    "dist/stop/stimuli/standard-no-go.svg": "917803ade8ffd0085ba1e73aa5383276d747d65719ef15e382ab252fefb447a8",
+    "dist/stop/stimuli/fixation.svg": "e41efe142e04727e3de4dd6c069be72ab7a9194bcd1347271bb72aa31c30f5b9",
+    "dist/stop/stimuli/shape-no-go.svg": "1ccf88cee894d94ce4116079c46948baed103091258ff11266ad0474296a9ef1",
+    "dist/stop/stimuli/standard-go.svg": "f7d8b57a4e72787f836da45d2b83b8140678ac01cd48e950b2832c813dc985f5",
+    "dist/assets/index-CRyXorHF.css": "36d0bc151a21f708edb49202860970e81e62c010d3f31472f5419b8b7a248161",
+    "dist/assets/index-Db-wZVCJ.js": "c4b1d8930051c5c0ac95ee00273e4054d622c24def48dd37c99bb3a15e663549"
+  }
+}

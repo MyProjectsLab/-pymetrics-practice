@@ -1,0 +1,203 @@
+[
+  {
+    "id": "red-aligned-left",
+    "width": 352,
+    "height": 112,
+    "color": "red",
+    "condition": "aligned",
+    "direction": "left",
+    "cue": "SIDES",
+    "symbols": [
+      "left",
+      "left",
+      "left",
+      "left",
+      "left"
+    ],
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"352\" height=\"112\" viewBox=\"0 0 352 112\"><path d=\"M0 0H352V112H0Z\" fill=\"#ffffff\"/><path d=\"M151 12H141V20H151V28H141\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M156 12H166M161 12V28M156 28H166\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M171 28V12H176L181 16V24L176 28Z\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M196 12H186V28H196M186 20H194\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M211 12H201V20H211V28H201\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M48 72H16M30 58L16 72L30 86\" fill=\"none\" stroke=\"#b11f2f\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M120 72H88M102 58L88 72L102 86\" fill=\"none\" stroke=\"#b11f2f\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M192 72H160M174 58L160 72L174 86\" fill=\"none\" stroke=\"#b11f2f\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M264 72H232M246 58L232 72L246 86\" fill=\"none\" stroke=\"#b11f2f\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M336 72H304M318 58L304 72L318 86\" fill=\"none\" stroke=\"#b11f2f\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/></svg>",
+    "sha256": "d5edcad7c24d81e5cc9d9acb052feb51bfa0cc4192de10bc95cba1bb4e38ddf5"
+  },
+  {
+    "id": "red-aligned-right",
+    "width": 352,
+    "height": 112,
+    "color": "red",
+    "condition": "aligned",
+    "direction": "right",
+    "cue": "SIDES",
+    "symbols": [
+      "right",
+      "right",
+      "right",
+      "right",
+      "right"
+    ],
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"352\" height=\"112\" viewBox=\"0 0 352 112\"><path d=\"M0 0H352V112H0Z\" fill=\"#ffffff\"/><path d=\"M151 12H141V20H151V28H141\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M156 12H166M161 12V28M156 28H166\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M171 28V12H176L181 16V24L176 28Z\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M196 12H186V28H196M186 20H194\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M211 12H201V20H211V28H201\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M16 72H48M34 58L48 72L34 86\" fill=\"none\" stroke=\"#b11f2f\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M88 72H120M106 58L120 72L106 86\" fill=\"none\" stroke=\"#b11f2f\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M160 72H192M178 58L192 72L178 86\" fill=\"none\" stroke=\"#b11f2f\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M232 72H264M250 58L264 72L250 86\" fill=\"none\" stroke=\"#b11f2f\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M304 72H336M322 58L336 72L322 86\" fill=\"none\" stroke=\"#b11f2f\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/></svg>",
+    "sha256": "a7f06ce507d7c13c1a67ebeb2d6549592741ce767262f0d078e8d4c1ad1a6cef"
+  },
+  {
+    "id": "red-opposed-left",
+    "width": 352,
+    "height": 112,
+    "color": "red",
+    "condition": "opposed",
+    "direction": "left",
+    "cue": "SIDES",
+    "symbols": [
+      "left",
+      "left",
+      "right",
+      "left",
+      "left"
+    ],
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"352\" height=\"112\" viewBox=\"0 0 352 112\"><path d=\"M0 0H352V112H0Z\" fill=\"#ffffff\"/><path d=\"M151 12H141V20H151V28H141\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M156 12H166M161 12V28M156 28H166\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M171 28V12H176L181 16V24L176 28Z\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M196 12H186V28H196M186 20H194\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M211 12H201V20H211V28H201\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M48 72H16M30 58L16 72L30 86\" fill=\"none\" stroke=\"#b11f2f\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M120 72H88M102 58L88 72L102 86\" fill=\"none\" stroke=\"#b11f2f\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M160 72H192M178 58L192 72L178 86\" fill=\"none\" stroke=\"#b11f2f\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M264 72H232M246 58L232 72L246 86\" fill=\"none\" stroke=\"#b11f2f\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M336 72H304M318 58L304 72L318 86\" fill=\"none\" stroke=\"#b11f2f\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/></svg>",
+    "sha256": "3f1cd70135bc73622cf6f8a590c2be492d7d6248302a1affb700be60bee8479f"
+  },
+  {
+    "id": "red-opposed-right",
+    "width": 352,
+    "height": 112,
+    "color": "red",
+    "condition": "opposed",
+    "direction": "right",
+    "cue": "SIDES",
+    "symbols": [
+      "right",
+      "right",
+      "left",
+      "right",
+      "right"
+    ],
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"352\" height=\"112\" viewBox=\"0 0 352 112\"><path d=\"M0 0H352V112H0Z\" fill=\"#ffffff\"/><path d=\"M151 12H141V20H151V28H141\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M156 12H166M161 12V28M156 28H166\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M171 28V12H176L181 16V24L176 28Z\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M196 12H186V28H196M186 20H194\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M211 12H201V20H211V28H201\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M16 72H48M34 58L48 72L34 86\" fill=\"none\" stroke=\"#b11f2f\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M88 72H120M106 58L120 72L106 86\" fill=\"none\" stroke=\"#b11f2f\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M192 72H160M174 58L160 72L174 86\" fill=\"none\" stroke=\"#b11f2f\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M232 72H264M250 58L264 72L250 86\" fill=\"none\" stroke=\"#b11f2f\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M304 72H336M322 58L336 72L322 86\" fill=\"none\" stroke=\"#b11f2f\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/></svg>",
+    "sha256": "4401043a33bad66f1447d695aaf8e696e7eeb3593ae4856601c0fc6e04dc9b7d"
+  },
+  {
+    "id": "blue-aligned-left",
+    "width": 352,
+    "height": 112,
+    "color": "blue",
+    "condition": "aligned",
+    "direction": "left",
+    "cue": "MIDDLE",
+    "symbols": [
+      "left",
+      "left",
+      "left",
+      "left",
+      "left"
+    ],
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"352\" height=\"112\" viewBox=\"0 0 352 112\"><path d=\"M0 0H352V112H0Z\" fill=\"#ffffff\"/><path d=\"M133.5 28V12L138.5 19L143.5 12V28\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M148.5 12H158.5M153.5 12V28M148.5 28H158.5\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M163.5 28V12H168.5L173.5 16V24L168.5 28Z\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M178.5 28V12H183.5L188.5 16V24L183.5 28Z\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M193.5 12V28H203.5\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M218.5 12H208.5V28H218.5M208.5 20H216.5\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M48 72H16M30 58L16 72L30 86\" fill=\"none\" stroke=\"#184dab\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M120 72H88M102 58L88 72L102 86\" fill=\"none\" stroke=\"#184dab\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M192 72H160M174 58L160 72L174 86\" fill=\"none\" stroke=\"#184dab\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M264 72H232M246 58L232 72L246 86\" fill=\"none\" stroke=\"#184dab\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M336 72H304M318 58L304 72L318 86\" fill=\"none\" stroke=\"#184dab\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/></svg>",
+    "sha256": "29f077c166db198f4b7281bd92666afe6788c967fb7dd937780201c03f153e85"
+  },
+  {
+    "id": "blue-aligned-right",
+    "width": 352,
+    "height": 112,
+    "color": "blue",
+    "condition": "aligned",
+    "direction": "right",
+    "cue": "MIDDLE",
+    "symbols": [
+      "right",
+      "right",
+      "right",
+      "right",
+      "right"
+    ],
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"352\" height=\"112\" viewBox=\"0 0 352 112\"><path d=\"M0 0H352V112H0Z\" fill=\"#ffffff\"/><path d=\"M133.5 28V12L138.5 19L143.5 12V28\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M148.5 12H158.5M153.5 12V28M148.5 28H158.5\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M163.5 28V12H168.5L173.5 16V24L168.5 28Z\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M178.5 28V12H183.5L188.5 16V24L183.5 28Z\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M193.5 12V28H203.5\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M218.5 12H208.5V28H218.5M208.5 20H216.5\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M16 72H48M34 58L48 72L34 86\" fill=\"none\" stroke=\"#184dab\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M88 72H120M106 58L120 72L106 86\" fill=\"none\" stroke=\"#184dab\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M160 72H192M178 58L192 72L178 86\" fill=\"none\" stroke=\"#184dab\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M232 72H264M250 58L264 72L250 86\" fill=\"none\" stroke=\"#184dab\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M304 72H336M322 58L336 72L322 86\" fill=\"none\" stroke=\"#184dab\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/></svg>",
+    "sha256": "a0deedb526d1f9379e8c05d032dacd067d8b196640f2eaabe07e8d72e7e0e702"
+  },
+  {
+    "id": "blue-opposed-left",
+    "width": 352,
+    "height": 112,
+    "color": "blue",
+    "condition": "opposed",
+    "direction": "left",
+    "cue": "MIDDLE",
+    "symbols": [
+      "right",
+      "right",
+      "left",
+      "right",
+      "right"
+    ],
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"352\" height=\"112\" viewBox=\"0 0 352 112\"><path d=\"M0 0H352V112H0Z\" fill=\"#ffffff\"/><path d=\"M133.5 28V12L138.5 19L143.5 12V28\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M148.5 12H158.5M153.5 12V28M148.5 28H158.5\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M163.5 28V12H168.5L173.5 16V24L168.5 28Z\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M178.5 28V12H183.5L188.5 16V24L183.5 28Z\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M193.5 12V28H203.5\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M218.5 12H208.5V28H218.5M208.5 20H216.5\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M16 72H48M34 58L48 72L34 86\" fill=\"none\" stroke=\"#184dab\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M88 72H120M106 58L120 72L106 86\" fill=\"none\" stroke=\"#184dab\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M192 72H160M174 58L160 72L174 86\" fill=\"none\" stroke=\"#184dab\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M232 72H264M250 58L264 72L250 86\" fill=\"none\" stroke=\"#184dab\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M304 72H336M322 58L336 72L322 86\" fill=\"none\" stroke=\"#184dab\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/></svg>",
+    "sha256": "c85f13df730e6f58a63351f9860d2cd30b3ff8537908d417777e723ae42c624c"
+  },
+  {
+    "id": "blue-opposed-right",
+    "width": 352,
+    "height": 112,
+    "color": "blue",
+    "condition": "opposed",
+    "direction": "right",
+    "cue": "MIDDLE",
+    "symbols": [
+      "left",
+      "left",
+      "right",
+      "left",
+      "left"
+    ],
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"352\" height=\"112\" viewBox=\"0 0 352 112\"><path d=\"M0 0H352V112H0Z\" fill=\"#ffffff\"/><path d=\"M133.5 28V12L138.5 19L143.5 12V28\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M148.5 12H158.5M153.5 12V28M148.5 28H158.5\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M163.5 28V12H168.5L173.5 16V24L168.5 28Z\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M178.5 28V12H183.5L188.5 16V24L183.5 28Z\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M193.5 12V28H203.5\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M218.5 12H208.5V28H218.5M208.5 20H216.5\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M48 72H16M30 58L16 72L30 86\" fill=\"none\" stroke=\"#184dab\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M120 72H88M102 58L88 72L102 86\" fill=\"none\" stroke=\"#184dab\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M160 72H192M178 58L192 72L178 86\" fill=\"none\" stroke=\"#184dab\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M264 72H232M246 58L232 72L246 86\" fill=\"none\" stroke=\"#184dab\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M336 72H304M318 58L304 72L318 86\" fill=\"none\" stroke=\"#184dab\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/></svg>",
+    "sha256": "3db3096bf69289bb22be930bd0d5944bc1ef1eeafee2996f4bd57718daf21472"
+  },
+  {
+    "id": "black-neutral-left",
+    "width": 352,
+    "height": 112,
+    "color": "black",
+    "condition": "neutral",
+    "direction": "left",
+    "cue": "MIDDLE",
+    "symbols": [
+      "bar",
+      "bar",
+      "left",
+      "bar",
+      "bar"
+    ],
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"352\" height=\"112\" viewBox=\"0 0 352 112\"><path d=\"M0 0H352V112H0Z\" fill=\"#ffffff\"/><path d=\"M133.5 28V12L138.5 19L143.5 12V28\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M148.5 12H158.5M153.5 12V28M148.5 28H158.5\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M163.5 28V12H168.5L173.5 16V24L168.5 28Z\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M178.5 28V12H183.5L188.5 16V24L183.5 28Z\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M193.5 12V28H203.5\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M218.5 12H208.5V28H218.5M208.5 20H216.5\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M16 72H48\" fill=\"none\" stroke=\"#171717\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M88 72H120\" fill=\"none\" stroke=\"#171717\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M192 72H160M174 58L160 72L174 86\" fill=\"none\" stroke=\"#171717\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M232 72H264\" fill=\"none\" stroke=\"#171717\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M304 72H336\" fill=\"none\" stroke=\"#171717\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/></svg>",
+    "sha256": "1022495e0f2bf36a5bbaf2d65e0e7e43ada723b97f10517294db64dfd98baa93"
+  },
+  {
+    "id": "black-neutral-right",
+    "width": 352,
+    "height": 112,
+    "color": "black",
+    "condition": "neutral",
+    "direction": "right",
+    "cue": "MIDDLE",
+    "symbols": [
+      "bar",
+      "bar",
+      "right",
+      "bar",
+      "bar"
+    ],
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"352\" height=\"112\" viewBox=\"0 0 352 112\"><path d=\"M0 0H352V112H0Z\" fill=\"#ffffff\"/><path d=\"M133.5 28V12L138.5 19L143.5 12V28\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M148.5 12H158.5M153.5 12V28M148.5 28H158.5\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M163.5 28V12H168.5L173.5 16V24L168.5 28Z\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M178.5 28V12H183.5L188.5 16V24L183.5 28Z\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M193.5 12V28H203.5\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M218.5 12H208.5V28H218.5M208.5 20H216.5\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M16 72H48\" fill=\"none\" stroke=\"#171717\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M88 72H120\" fill=\"none\" stroke=\"#171717\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M160 72H192M178 58L192 72L178 86\" fill=\"none\" stroke=\"#171717\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M232 72H264\" fill=\"none\" stroke=\"#171717\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/><path d=\"M304 72H336\" fill=\"none\" stroke=\"#171717\" stroke-width=\"4\" stroke-linecap=\"butt\" stroke-linejoin=\"miter\" stroke-miterlimit=\"4\"/></svg>",
+    "sha256": "64d125ebc3ea090b957aa0363b88717bcc462d127694f4705c8aef30e0cc0805"
+  },
+  {
+    "id": "left",
+    "width": 96,
+    "height": 40,
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"96\" height=\"40\" viewBox=\"0 0 96 40\"><path d=\"M0 0H96V40H0Z\" fill=\"#ffffff\"/><path d=\"M20.5 8V24H30.5\" fill=\"none\" stroke=\"#18594f\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M35.5 18H45.5V15L42.5 13H38.5L35.5 16V21L38.5 24H45.5\" fill=\"none\" stroke=\"#18594f\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M53.5 24V11L56.5 8H60.5M50.5 14H58.5\" fill=\"none\" stroke=\"#18594f\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M69.5 9V21L72.5 24H75.5M65.5 14H74.5\" fill=\"none\" stroke=\"#18594f\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+    "sha256": "af1ab35c5a668f5ddcd61ac0d7fc1e367410d5f130915433692ed1b4eb685d2e"
+  },
+  {
+    "id": "right",
+    "width": 96,
+    "height": 40,
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"96\" height=\"40\" viewBox=\"0 0 96 40\"><path d=\"M0 0H96V40H0Z\" fill=\"#ffffff\"/><path d=\"M13 24V8H20L23 11V14L20 16H13M18 16L23 24\" fill=\"none\" stroke=\"#18594f\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M33 14V24M33 8V9\" fill=\"none\" stroke=\"#18594f\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M53 14H46L43 17V21L46 24H53M53 14V28L50 31H43\" fill=\"none\" stroke=\"#18594f\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M58 8V24M58 17L61 14H65L68 17V24\" fill=\"none\" stroke=\"#18594f\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M77 9V21L80 24H83M73 14H82\" fill=\"none\" stroke=\"#18594f\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+    "sha256": "34b90980a21c37e1c7cdf57e1a1c845e3aefa7bc3cdd2c297df87f5230742c83"
+  },
+  {
+    "id": "fixation",
+    "width": 352,
+    "height": 112,
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"352\" height=\"112\" viewBox=\"0 0 352 112\"><path d=\"M0 0H352V112H0Z\" fill=\"#ffffff\"/><path d=\"M164 56H188M176 44V68\" fill=\"none\" stroke=\"#172d30\" stroke-width=\"3\"/></svg>",
+    "sha256": "6f7f36348ecad6c13cb6fe0ddb0cffbd84cf19e7ad41d72004cfa5fbbb3cbb20"
+  }
+]

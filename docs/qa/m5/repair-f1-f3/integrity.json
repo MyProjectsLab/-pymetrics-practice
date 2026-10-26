@@ -1,0 +1,44 @@
+{
+  "parent": "499deb4ee02fb8ec9cd8c90e2ae95673dd0e10c6",
+  "source": {
+    "src/App.tsx": "9fb8df13b66cad405777c5fd31484256739a79fcc5b827723ec21c3323ab8621",
+    "src/stop/History.tsx": "e936e39885125f198a5b498c55f92f538276cd96ffcb82a7fff6105f969fbb1f",
+    "src/stop/TrainingFlow.tsx": "b95e3d6b65729c993ce0011ccb1a7bff049f13c0bf02a47f69f641cbe7b0a84c",
+    "src/stop/run.test.ts": "bb2a5c10fd3e46a979b9876860f8d9a8d41a6c3a5655f7a8c4bd1450cf81aaae",
+    "src/stop/run.ts": "298fdfbdeaebda2fabc48f2eb529878066f15a0fcf57304b0783bf720db12193",
+    "src/stop/storage.ts": "ab029817cef3e30db55ec39850f62d79edd631922a1ae65f5e11e7a1a5427beb",
+    "src/stop/training.test.ts": "ae549818166abd20507e35acdb4935dd9ff7c57be78017310ac46e3afe2e4fd4",
+    "src/stop/training.ts": "0a41f9244ec270ef3ba9eb77319bd0286c4a4682949ef07ac173eb8ba5cc267d"
+  },
+  "build": {
+    "dist/index.html": "5be6dff59b9e7ae52965b6671639420288b41950d1aea0c0906292bacef5e848",
+    "dist/.gitkeep": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "dist/stop/stimuli/shape-go.svg": "cea3367ec0283e30c31dc286b63a499e67afd11c58b85a2bba312efcf57c2c88",
+    "dist/stop/stimuli/standard-no-go.svg": "917803ade8ffd0085ba1e73aa5383276d747d65719ef15e382ab252fefb447a8",
+    "dist/stop/stimuli/fixation.svg": "e41efe142e04727e3de4dd6c069be72ab7a9194bcd1347271bb72aa31c30f5b9",
+    "dist/stop/stimuli/shape-no-go.svg": "1ccf88cee894d94ce4116079c46948baed103091258ff11266ad0474296a9ef1",
+    "dist/stop/stimuli/standard-go.svg": "f7d8b57a4e72787f836da45d2b83b8140678ac01cd48e950b2832c813dc985f5",
+    "dist/assets/index-CRyXorHF.css": "36d0bc151a21f708edb49202860970e81e62c010d3f31472f5419b8b7a248161",
+    "dist/assets/index-BS6_U6a1.js": "d286473d0baf729382b658846a8da32b6d28fb9e851492d9ae9416fe4a863586"
+  },
+  "frozen": {
+    "docs/specifications/ASSESSMENT_PRACTICE_STOP_SPECIFICATION_V1_1.md": {
+      "sha256": "d6389db51b3767764d7e4d71c8a6c84a3719581225165fd42d86c76a4ab2c843",
+      "references": {
+        "HEAD": "d6389db51b3767764d7e4d71c8a6c84a3719581225165fd42d86c76a4ab2c843",
+        "HEAD^": "d6389db51b3767764d7e4d71c8a6c84a3719581225165fd42d86c76a4ab2c843",
+        "36a5ef718602ff2c49fa60aaafc59a67d57eedd0": "d6389db51b3767764d7e4d71c8a6c84a3719581225165fd42d86c76a4ab2c843"
+      }
+    },
+    "docs/specifications/ASSESSMENT_PRACTICE_MASTER_STRATEGY.md": {
+      "sha256": "c046fd1776c179799422893985229743bd495ed8d23c9388046f4424162c46f3",
+      "references": {
+        "HEAD": "c046fd1776c179799422893985229743bd495ed8d23c9388046f4424162c46f3",
+        "HEAD^": "c046fd1776c179799422893985229743bd495ed8d23c9388046f4424162c46f3",
+        "36a5ef718602ff2c49fa60aaafc59a67d57eedd0": "c046fd1776c179799422893985229743bd495ed8d23c9388046f4424162c46f3"
+      }
+    }
+  },
+  "fixtureFile": "/private/tmp/stop-m5-r1-r2-fixtures.json",
+  "fixtureSha256": "38b12cab28f74d7fe1546e6a7346dbf2fcbff8b68582d84a44f41b1691b239bb"
+}

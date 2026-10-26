@@ -1,0 +1,93 @@
+[
+  {
+    "name": "fresh-baseline-drill-retest",
+    "pass": true,
+    "baselineRounds": 39,
+    "drillRounds": 18,
+    "retestRounds": 39,
+    "form": "RT1",
+    "sameSessionResume": true,
+    "byteIdenticalReload": true
+  },
+  {
+    "name": "full-RT2",
+    "pass": true,
+    "form": "RT2",
+    "fullRounds": 39,
+    "earlierUncertainRetained": 1
+  },
+  {
+    "name": "full-RT3",
+    "pass": true,
+    "form": "RT3",
+    "fullRounds": 39,
+    "earlierUncertainRetained": 2
+  },
+  {
+    "name": "exhaustion",
+    "pass": true,
+    "noRepeat": true,
+    "noChainCompletion": true
+  },
+  {
+    "name": "onset-owner-race",
+    "pass": true,
+    "consumedBeforeOtherOwner": true,
+    "sameForm": "RT1"
+  },
+  {
+    "name": "prearm-exit",
+    "pass": true,
+    "releasedUnseen": true
+  },
+  {
+    "name": "prearm-expiry",
+    "pass": true,
+    "noMount": true
+  },
+  {
+    "name": "postarm-expiry",
+    "pass": true,
+    "oldExposure": "form_exposed",
+    "retry": "RT2"
+  },
+  {
+    "name": "postarm-hide",
+    "pass": true,
+    "oldExposure": "exposure_uncertain",
+    "retry": "RT2"
+  },
+  {
+    "name": "confirm-abort",
+    "pass": true,
+    "preservedExposure": "form_exposed",
+    "committedActions": 0
+  },
+  {
+    "name": "action-abort",
+    "pass": true,
+    "preservedExposure": "form_exposed",
+    "committedActions": 0
+  },
+  {
+    "name": "ownership",
+    "pass": true,
+    "exclusiveOwner": true,
+    "singleReservation": true
+  },
+  {
+    "name": "baseline-delete",
+    "pass": true,
+    "withdrawn": true
+  },
+  {
+    "name": "late-reserve-delete-all",
+    "pass": true,
+    "oldCallbacksFenced": true
+  },
+  {
+    "name": "late-arm-delete",
+    "pass": true,
+    "lateArmFenced": true
+  }
+]

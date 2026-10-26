@@ -1,0 +1,164 @@
+{
+  "browser": "145.0.7632.6",
+  "errors": [],
+  "checks": {
+    "inventory": [
+      {
+        "family": "baseline",
+        "exposed": false,
+        "reviewable": 1,
+        "retainedSame": true,
+        "available": 4,
+        "released": true,
+        "markerBefore": null,
+        "deleted": true,
+        "reused": true,
+        "reusedMarkerPreserved": true
+      },
+      {
+        "family": "baseline",
+        "exposed": true,
+        "reviewable": 1,
+        "retainedSame": true,
+        "available": 3,
+        "released": true,
+        "markerBefore": "confirmed",
+        "deleted": true,
+        "reused": false,
+        "reusedMarkerPreserved": true
+      },
+      {
+        "family": "replay",
+        "exposed": false,
+        "reviewable": 1,
+        "retainedSame": true,
+        "available": 6,
+        "released": true,
+        "markerBefore": null,
+        "deleted": true,
+        "reused": true,
+        "reusedMarkerPreserved": true
+      },
+      {
+        "family": "replay",
+        "exposed": true,
+        "reviewable": 1,
+        "retainedSame": true,
+        "available": 5,
+        "released": true,
+        "markerBefore": "confirmed",
+        "deleted": true,
+        "reused": false,
+        "reusedMarkerPreserved": true
+      },
+      {
+        "family": "retest",
+        "exposed": false,
+        "reviewable": 1,
+        "retainedSame": true,
+        "available": 4,
+        "released": true,
+        "markerBefore": null,
+        "deleted": true,
+        "reused": true,
+        "reusedMarkerPreserved": true
+      },
+      {
+        "family": "retest",
+        "exposed": true,
+        "reviewable": 1,
+        "retainedSame": true,
+        "available": 3,
+        "released": true,
+        "markerBefore": "confirmed",
+        "deleted": true,
+        "reused": false,
+        "reusedMarkerPreserved": true
+      }
+    ],
+    "unexposedDeletion": true,
+    "reloadMutations": [
+      {
+        "mutation": "intact",
+        "valid": 1,
+        "chain": true,
+        "unchanged": true
+      },
+      {
+        "mutation": "visual",
+        "valid": 0,
+        "chain": false,
+        "unchanged": true
+      },
+      {
+        "mutation": "binding",
+        "valid": 0,
+        "chain": false,
+        "unchanged": true
+      },
+      {
+        "mutation": "keyboard",
+        "valid": 0,
+        "chain": false,
+        "unchanged": true
+      },
+      {
+        "mutation": "exposure identity",
+        "valid": 0,
+        "chain": false,
+        "unchanged": true
+      },
+      {
+        "mutation": "exposure profile",
+        "valid": 0,
+        "chain": false,
+        "unchanged": true
+      },
+      {
+        "mutation": "drill validity",
+        "valid": 1,
+        "chain": false,
+        "unchanged": true
+      },
+      {
+        "mutation": "severe tail",
+        "valid": 1,
+        "chain": false,
+        "unchanged": true
+      },
+      {
+        "mutation": "final fixation",
+        "valid": 1,
+        "chain": false,
+        "unchanged": true
+      }
+    ],
+    "preOnsetRetestChainReload": true,
+    "bindingSeries": [
+      "Overall accuracy across 1 compatible Stop session in this profile",
+      "Overall accuracy across 1 compatible Stop session in this profile"
+    ],
+    "actualDrillStarts": {
+      "count": 2,
+      "distinct": true,
+      "introCount": 0
+    },
+    "chainFailureReload": {
+      "status": "failed",
+      "memory": 1,
+      "disclosure": "Your task data were recorded in this tab but could not be saved in this browser. Keep this tab open to review the result or continue the current training chain.",
+      "saved": 0,
+      "restoredStatus": "assigned",
+      "restoredAttempts": 0
+    },
+    "chainRetryReload": {
+      "status": "failed",
+      "memory": 1,
+      "disclosure": "Your task data were recorded in this tab but could not be saved in this browser. Keep this tab open to review the result or continue the current training chain.",
+      "saved": 0,
+      "restoredStatus": "drill_complete",
+      "restoredAttempts": 1
+    }
+  },
+  "pass": true
+}

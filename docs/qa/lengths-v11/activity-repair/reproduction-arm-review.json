@@ -1,0 +1,1381 @@
+{
+  "before": {
+    "version": "lengths_mouth_storage_v1",
+    "installationId": "6a21089e-a404-4ced-81d3-73e31562cfbd",
+    "revision": 1,
+    "counters": {
+      "standard": 1,
+      "visual_accommodation": 0
+    },
+    "attempts": {
+      "armedreview": {
+        "requestId": "armedreview",
+        "sessionId": "armedreview",
+        "clockDomainId": "armedreview",
+        "profile": {
+          "kind": "keyboard",
+          "variant": "standard",
+          "deviceClass": "audit",
+          "leftCode": "ArrowLeft",
+          "rightCode": "ArrowRight",
+          "alternative": false,
+          "contrast": "dark_on_light",
+          "magnification": "none",
+          "reducedMotion": false
+        },
+        "variant": "standard",
+        "route": "standalone",
+        "ordinal": 1,
+        "createdAtWallMs": 1791495437425,
+        "armDisplayContext": {
+          "layoutWidthCssPx": 1280,
+          "layoutHeightCssPx": 900,
+          "visualWidthCssPx": 1280,
+          "visualHeightCssPx": 900,
+          "taskHostWidthCssPx": 400,
+          "devicePixelRatio": 1,
+          "browserFamily": "chromium",
+          "visibility": "visible",
+          "focused": true
+        },
+        "state": {
+          "specificationVersion": "lengths_mouth_spec_v1_1",
+          "eventVersion": "lengths_mouth_event_v1",
+          "scoringVersion": "lengths_mouth_scoring_v1",
+          "timingVersion": "lengths_mouth_timing_v1",
+          "inputVersion": "lengths_mouth_input_v1",
+          "validity": "headless_unconfirmed",
+          "form": {
+            "id": "LM1",
+            "seed": 507969793,
+            "richSide": "short",
+            "trials": [
+              {
+                "index": 1,
+                "block": 1,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 2,
+                "block": 1,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 3,
+                "block": 1,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 4,
+                "block": 1,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 5,
+                "block": 1,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 6,
+                "block": 1,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 7,
+                "block": 1,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 8,
+                "block": 1,
+                "mouth": "short",
+                "rewardEligible": true
+              },
+              {
+                "index": 9,
+                "block": 1,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 10,
+                "block": 1,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 11,
+                "block": 1,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 12,
+                "block": 1,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 13,
+                "block": 1,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 14,
+                "block": 1,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 15,
+                "block": 1,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 16,
+                "block": 1,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 17,
+                "block": 1,
+                "mouth": "short",
+                "rewardEligible": true
+              },
+              {
+                "index": 18,
+                "block": 1,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 19,
+                "block": 1,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 20,
+                "block": 1,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 21,
+                "block": 1,
+                "mouth": "short",
+                "rewardEligible": true
+              },
+              {
+                "index": 22,
+                "block": 1,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 23,
+                "block": 1,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 24,
+                "block": 1,
+                "mouth": "short",
+                "rewardEligible": true
+              },
+              {
+                "index": 25,
+                "block": 1,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 26,
+                "block": 1,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 27,
+                "block": 1,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 28,
+                "block": 1,
+                "mouth": "long",
+                "rewardEligible": true
+              },
+              {
+                "index": 29,
+                "block": 1,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 30,
+                "block": 1,
+                "mouth": "long",
+                "rewardEligible": true
+              },
+              {
+                "index": 31,
+                "block": 2,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 32,
+                "block": 2,
+                "mouth": "short",
+                "rewardEligible": true
+              },
+              {
+                "index": 33,
+                "block": 2,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 34,
+                "block": 2,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 35,
+                "block": 2,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 36,
+                "block": 2,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 37,
+                "block": 2,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 38,
+                "block": 2,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 39,
+                "block": 2,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 40,
+                "block": 2,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 41,
+                "block": 2,
+                "mouth": "long",
+                "rewardEligible": true
+              },
+              {
+                "index": 42,
+                "block": 2,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 43,
+                "block": 2,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 44,
+                "block": 2,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 45,
+                "block": 2,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 46,
+                "block": 2,
+                "mouth": "short",
+                "rewardEligible": true
+              },
+              {
+                "index": 47,
+                "block": 2,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 48,
+                "block": 2,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 49,
+                "block": 2,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 50,
+                "block": 2,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 51,
+                "block": 2,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 52,
+                "block": 2,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 53,
+                "block": 2,
+                "mouth": "short",
+                "rewardEligible": true
+              },
+              {
+                "index": 54,
+                "block": 2,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 55,
+                "block": 2,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 56,
+                "block": 2,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 57,
+                "block": 2,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 58,
+                "block": 2,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 59,
+                "block": 2,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 60,
+                "block": 2,
+                "mouth": "short",
+                "rewardEligible": true
+              },
+              {
+                "index": 61,
+                "block": 3,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 62,
+                "block": 3,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 63,
+                "block": 3,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 64,
+                "block": 3,
+                "mouth": "long",
+                "rewardEligible": true
+              },
+              {
+                "index": 65,
+                "block": 3,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 66,
+                "block": 3,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 67,
+                "block": 3,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 68,
+                "block": 3,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 69,
+                "block": 3,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 70,
+                "block": 3,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 71,
+                "block": 3,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 72,
+                "block": 3,
+                "mouth": "short",
+                "rewardEligible": true
+              },
+              {
+                "index": 73,
+                "block": 3,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 74,
+                "block": 3,
+                "mouth": "short",
+                "rewardEligible": true
+              },
+              {
+                "index": 75,
+                "block": 3,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 76,
+                "block": 3,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 77,
+                "block": 3,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 78,
+                "block": 3,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 79,
+                "block": 3,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 80,
+                "block": 3,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 81,
+                "block": 3,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 82,
+                "block": 3,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 83,
+                "block": 3,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 84,
+                "block": 3,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 85,
+                "block": 3,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 86,
+                "block": 3,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 87,
+                "block": 3,
+                "mouth": "short",
+                "rewardEligible": true
+              },
+              {
+                "index": 88,
+                "block": 3,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 89,
+                "block": 3,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 90,
+                "block": 3,
+                "mouth": "short",
+                "rewardEligible": true
+              }
+            ]
+          },
+          "identity": {
+            "installationId": "6a21089e-a404-4ced-81d3-73e31562cfbd",
+            "sessionId": "armedreview",
+            "clockDomainId": "armedreview",
+            "route": "standalone"
+          },
+          "profile": {
+            "kind": "keyboard",
+            "variant": "standard",
+            "deviceClass": "audit",
+            "leftCode": "ArrowLeft",
+            "rightCode": "ArrowRight",
+            "alternative": false,
+            "contrast": "dark_on_light",
+            "magnification": "none",
+            "reducedMotion": false
+          },
+          "armedAtMs": 0,
+          "phase": "armed",
+          "trialIndex": 1,
+          "startMs": null,
+          "fixationDueMs": null,
+          "fixationMs": null,
+          "stimulusDueMs": null,
+          "onsetMs": null,
+          "removalMs": null,
+          "resolutionDueMs": null,
+          "resolutionMs": null,
+          "feedbackMs": null,
+          "firstResponse": null,
+          "timingNoted": false,
+          "bankedCents": 0,
+          "heldCodes": [],
+          "activePointer": null,
+          "invalidReason": null,
+          "commands": [],
+          "events": [
+            {
+              "schemaVersion": "lengths_mouth_event_v1",
+              "installationId": "6a21089e-a404-4ced-81d3-73e31562cfbd",
+              "sessionId": "armedreview",
+              "formId": "LM1",
+              "variant": "standard",
+              "clockDomainId": "armedreview",
+              "sequenceNumber": 1,
+              "trialIndex": 1,
+              "block": 1,
+              "atMs": 0,
+              "type": "prepared",
+              "detail": {},
+              "validity": "headless_unconfirmed"
+            },
+            {
+              "schemaVersion": "lengths_mouth_event_v1",
+              "installationId": "6a21089e-a404-4ced-81d3-73e31562cfbd",
+              "sessionId": "armedreview",
+              "formId": "LM1",
+              "variant": "standard",
+              "clockDomainId": "armedreview",
+              "sequenceNumber": 2,
+              "trialIndex": 1,
+              "block": 1,
+              "atMs": 0,
+              "type": "form_assigned",
+              "detail": {
+                "formId": "LM1",
+                "variant": "standard"
+              },
+              "validity": "headless_unconfirmed"
+            },
+            {
+              "schemaVersion": "lengths_mouth_event_v1",
+              "installationId": "6a21089e-a404-4ced-81d3-73e31562cfbd",
+              "sessionId": "armedreview",
+              "formId": "LM1",
+              "variant": "standard",
+              "clockDomainId": "armedreview",
+              "sequenceNumber": 3,
+              "trialIndex": 1,
+              "block": 1,
+              "atMs": 0,
+              "type": "armed",
+              "detail": {
+                "profile": "{\"kind\":\"keyboard\",\"variant\":\"standard\",\"deviceClass\":\"audit\",\"leftCode\":\"ArrowLeft\",\"rightCode\":\"ArrowRight\",\"alternative\":false,\"contrast\":\"dark_on_light\",\"magnification\":\"none\",\"reducedMotion\":false}",
+                "route": "\"standalone\""
+              },
+              "validity": "headless_unconfirmed"
+            }
+          ]
+        }
+      }
+    },
+    "tombstones": {},
+    "activity": {}
+  },
+  "after": {
+    "version": "lengths_mouth_storage_v1",
+    "installationId": "6a21089e-a404-4ced-81d3-73e31562cfbd",
+    "revision": 1,
+    "counters": {
+      "standard": 1,
+      "visual_accommodation": 0
+    },
+    "attempts": {
+      "armedreview": {
+        "requestId": "armedreview",
+        "sessionId": "armedreview",
+        "clockDomainId": "armedreview",
+        "profile": {
+          "kind": "keyboard",
+          "variant": "standard",
+          "deviceClass": "audit",
+          "leftCode": "ArrowLeft",
+          "rightCode": "ArrowRight",
+          "alternative": false,
+          "contrast": "dark_on_light",
+          "magnification": "none",
+          "reducedMotion": false
+        },
+        "variant": "standard",
+        "route": "standalone",
+        "ordinal": 1,
+        "createdAtWallMs": 1791495437425,
+        "armDisplayContext": {
+          "layoutWidthCssPx": 1280,
+          "layoutHeightCssPx": 900,
+          "visualWidthCssPx": 1280,
+          "visualHeightCssPx": 900,
+          "taskHostWidthCssPx": 400,
+          "devicePixelRatio": 1,
+          "browserFamily": "chromium",
+          "visibility": "visible",
+          "focused": true
+        },
+        "state": {
+          "specificationVersion": "lengths_mouth_spec_v1_1",
+          "eventVersion": "lengths_mouth_event_v1",
+          "scoringVersion": "lengths_mouth_scoring_v1",
+          "timingVersion": "lengths_mouth_timing_v1",
+          "inputVersion": "lengths_mouth_input_v1",
+          "validity": "headless_unconfirmed",
+          "form": {
+            "id": "LM1",
+            "seed": 507969793,
+            "richSide": "short",
+            "trials": [
+              {
+                "index": 1,
+                "block": 1,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 2,
+                "block": 1,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 3,
+                "block": 1,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 4,
+                "block": 1,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 5,
+                "block": 1,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 6,
+                "block": 1,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 7,
+                "block": 1,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 8,
+                "block": 1,
+                "mouth": "short",
+                "rewardEligible": true
+              },
+              {
+                "index": 9,
+                "block": 1,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 10,
+                "block": 1,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 11,
+                "block": 1,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 12,
+                "block": 1,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 13,
+                "block": 1,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 14,
+                "block": 1,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 15,
+                "block": 1,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 16,
+                "block": 1,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 17,
+                "block": 1,
+                "mouth": "short",
+                "rewardEligible": true
+              },
+              {
+                "index": 18,
+                "block": 1,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 19,
+                "block": 1,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 20,
+                "block": 1,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 21,
+                "block": 1,
+                "mouth": "short",
+                "rewardEligible": true
+              },
+              {
+                "index": 22,
+                "block": 1,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 23,
+                "block": 1,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 24,
+                "block": 1,
+                "mouth": "short",
+                "rewardEligible": true
+              },
+              {
+                "index": 25,
+                "block": 1,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 26,
+                "block": 1,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 27,
+                "block": 1,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 28,
+                "block": 1,
+                "mouth": "long",
+                "rewardEligible": true
+              },
+              {
+                "index": 29,
+                "block": 1,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 30,
+                "block": 1,
+                "mouth": "long",
+                "rewardEligible": true
+              },
+              {
+                "index": 31,
+                "block": 2,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 32,
+                "block": 2,
+                "mouth": "short",
+                "rewardEligible": true
+              },
+              {
+                "index": 33,
+                "block": 2,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 34,
+                "block": 2,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 35,
+                "block": 2,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 36,
+                "block": 2,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 37,
+                "block": 2,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 38,
+                "block": 2,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 39,
+                "block": 2,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 40,
+                "block": 2,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 41,
+                "block": 2,
+                "mouth": "long",
+                "rewardEligible": true
+              },
+              {
+                "index": 42,
+                "block": 2,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 43,
+                "block": 2,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 44,
+                "block": 2,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 45,
+                "block": 2,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 46,
+                "block": 2,
+                "mouth": "short",
+                "rewardEligible": true
+              },
+              {
+                "index": 47,
+                "block": 2,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 48,
+                "block": 2,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 49,
+                "block": 2,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 50,
+                "block": 2,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 51,
+                "block": 2,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 52,
+                "block": 2,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 53,
+                "block": 2,
+                "mouth": "short",
+                "rewardEligible": true
+              },
+              {
+                "index": 54,
+                "block": 2,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 55,
+                "block": 2,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 56,
+                "block": 2,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 57,
+                "block": 2,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 58,
+                "block": 2,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 59,
+                "block": 2,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 60,
+                "block": 2,
+                "mouth": "short",
+                "rewardEligible": true
+              },
+              {
+                "index": 61,
+                "block": 3,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 62,
+                "block": 3,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 63,
+                "block": 3,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 64,
+                "block": 3,
+                "mouth": "long",
+                "rewardEligible": true
+              },
+              {
+                "index": 65,
+                "block": 3,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 66,
+                "block": 3,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 67,
+                "block": 3,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 68,
+                "block": 3,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 69,
+                "block": 3,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 70,
+                "block": 3,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 71,
+                "block": 3,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 72,
+                "block": 3,
+                "mouth": "short",
+                "rewardEligible": true
+              },
+              {
+                "index": 73,
+                "block": 3,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 74,
+                "block": 3,
+                "mouth": "short",
+                "rewardEligible": true
+              },
+              {
+                "index": 75,
+                "block": 3,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 76,
+                "block": 3,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 77,
+                "block": 3,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 78,
+                "block": 3,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 79,
+                "block": 3,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 80,
+                "block": 3,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 81,
+                "block": 3,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 82,
+                "block": 3,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 83,
+                "block": 3,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 84,
+                "block": 3,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 85,
+                "block": 3,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 86,
+                "block": 3,
+                "mouth": "short",
+                "rewardEligible": false
+              },
+              {
+                "index": 87,
+                "block": 3,
+                "mouth": "short",
+                "rewardEligible": true
+              },
+              {
+                "index": 88,
+                "block": 3,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 89,
+                "block": 3,
+                "mouth": "long",
+                "rewardEligible": false
+              },
+              {
+                "index": 90,
+                "block": 3,
+                "mouth": "short",
+                "rewardEligible": true
+              }
+            ]
+          },
+          "identity": {
+            "installationId": "6a21089e-a404-4ced-81d3-73e31562cfbd",
+            "sessionId": "armedreview",
+            "clockDomainId": "armedreview",
+            "route": "standalone"
+          },
+          "profile": {
+            "kind": "keyboard",
+            "variant": "standard",
+            "deviceClass": "audit",
+            "leftCode": "ArrowLeft",
+            "rightCode": "ArrowRight",
+            "alternative": false,
+            "contrast": "dark_on_light",
+            "magnification": "none",
+            "reducedMotion": false
+          },
+          "armedAtMs": 0,
+          "phase": "armed",
+          "trialIndex": 1,
+          "startMs": null,
+          "fixationDueMs": null,
+          "fixationMs": null,
+          "stimulusDueMs": null,
+          "onsetMs": null,
+          "removalMs": null,
+          "resolutionDueMs": null,
+          "resolutionMs": null,
+          "feedbackMs": null,
+          "firstResponse": null,
+          "timingNoted": false,
+          "bankedCents": 0,
+          "heldCodes": [],
+          "activePointer": null,
+          "invalidReason": null,
+          "commands": [],
+          "events": [
+            {
+              "schemaVersion": "lengths_mouth_event_v1",
+              "installationId": "6a21089e-a404-4ced-81d3-73e31562cfbd",
+              "sessionId": "armedreview",
+              "formId": "LM1",
+              "variant": "standard",
+              "clockDomainId": "armedreview",
+              "sequenceNumber": 1,
+              "trialIndex": 1,
+              "block": 1,
+              "atMs": 0,
+              "type": "prepared",
+              "detail": {},
+              "validity": "headless_unconfirmed"
+            },
+            {
+              "schemaVersion": "lengths_mouth_event_v1",
+              "installationId": "6a21089e-a404-4ced-81d3-73e31562cfbd",
+              "sessionId": "armedreview",
+              "formId": "LM1",
+              "variant": "standard",
+              "clockDomainId": "armedreview",
+              "sequenceNumber": 2,
+              "trialIndex": 1,
+              "block": 1,
+              "atMs": 0,
+              "type": "form_assigned",
+              "detail": {
+                "formId": "LM1",
+                "variant": "standard"
+              },
+              "validity": "headless_unconfirmed"
+            },
+            {
+              "schemaVersion": "lengths_mouth_event_v1",
+              "installationId": "6a21089e-a404-4ced-81d3-73e31562cfbd",
+              "sessionId": "armedreview",
+              "formId": "LM1",
+              "variant": "standard",
+              "clockDomainId": "armedreview",
+              "sequenceNumber": 3,
+              "trialIndex": 1,
+              "block": 1,
+              "atMs": 0,
+              "type": "armed",
+              "detail": {
+                "profile": "{\"kind\":\"keyboard\",\"variant\":\"standard\",\"deviceClass\":\"audit\",\"leftCode\":\"ArrowLeft\",\"rightCode\":\"ArrowRight\",\"alternative\":false,\"contrast\":\"dark_on_light\",\"magnification\":\"none\",\"reducedMotion\":false}",
+                "route": "\"standalone\""
+              },
+              "validity": "headless_unconfirmed"
+            }
+          ]
+        }
+      }
+    },
+    "tombstones": {},
+    "activity": {}
+  },
+  "report": "Incomplete, review-only, later exposure unknown · Saved in this browser\n\n0 presented · 0 closed · 0 unresolved presented · 90 unpresented of 90.\n\nLM1 · Standard mouth · lengths_mouth_spec_v1_1 · lengths_mouth_forms_v1_1 · lengths_mouth_scoring_v1\n\nKeyboard: ArrowLeft / ArrowRight · dark on light · Magnification: none\n\nchromium browser observed · Layout 1280 × 900 CSS pixels · Visual viewport 1280 × 900 · Reduced motion declaration: no.\n\n0 observed rewards · $0.00 simulated banked.\n\nReview the recorded prefix. Aggregate accuracy and response-time interpretation are unavailable.",
+  "activityMissing": true,
+  "attemptBytesUnchanged": true
+}

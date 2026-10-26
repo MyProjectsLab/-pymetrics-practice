@@ -1,0 +1,115 @@
+{
+  "browser": "145.0.7632.6",
+  "viewport": "1200x800",
+  "errors": [],
+  "baseline": "Synthetic valid-summary fixture; UI, keyboard, engine, DOM canvas, and browser timers are production adapters.",
+  "seedRouteHit": true,
+  "liveExitFocus": "Back to library",
+  "afterLiveExit": {
+    "status": "assigned",
+    "attempts": [
+      {
+        "id": "77126ddd-b7b4-4f5c-a2eb-e483adda592b",
+        "valid": false,
+        "completedBlocks": 0,
+        "frozen": true,
+        "eventCount": 22,
+        "presentations": 2,
+        "invalidations": 1,
+        "completions": 0
+      }
+    ],
+    "retestAttempts": 0,
+    "exposure": []
+  },
+  "afterInvalidResume": {
+    "status": "assigned",
+    "attempts": [
+      {
+        "id": "77126ddd-b7b4-4f5c-a2eb-e483adda592b",
+        "valid": false,
+        "completedBlocks": 0,
+        "frozen": true,
+        "eventCount": 22,
+        "presentations": 2,
+        "invalidations": 1,
+        "completions": 0
+      }
+    ],
+    "retestAttempts": 0,
+    "exposure": []
+  },
+  "beforeCompletedExit": {
+    "status": "drilling",
+    "attempts": [
+      {
+        "id": "77126ddd-b7b4-4f5c-a2eb-e483adda592b",
+        "valid": false,
+        "completedBlocks": 0,
+        "frozen": true,
+        "eventCount": 22,
+        "presentations": 2,
+        "invalidations": 1,
+        "completions": 0
+      }
+    ],
+    "retestAttempts": 0,
+    "exposure": []
+  },
+  "afterCompletedExit": {
+    "status": "drill_complete",
+    "attempts": [
+      {
+        "id": "77126ddd-b7b4-4f5c-a2eb-e483adda592b",
+        "valid": false,
+        "completedBlocks": 0,
+        "frozen": true,
+        "eventCount": 22,
+        "presentations": 2,
+        "invalidations": 1,
+        "completions": 0
+      },
+      {
+        "id": "dab299a8-6b7e-4c61-b0d2-020261eb9322",
+        "valid": true,
+        "completedBlocks": 3,
+        "frozen": true,
+        "eventCount": 524,
+        "presentations": 72,
+        "invalidations": 0,
+        "completions": 1
+      }
+    ],
+    "retestAttempts": 0,
+    "exposure": []
+  },
+  "afterValidResume": {
+    "status": "drill_complete",
+    "attempts": [
+      {
+        "id": "77126ddd-b7b4-4f5c-a2eb-e483adda592b",
+        "valid": false,
+        "completedBlocks": 0,
+        "frozen": true,
+        "eventCount": 22,
+        "presentations": 2,
+        "invalidations": 1,
+        "completions": 0
+      },
+      {
+        "id": "dab299a8-6b7e-4c61-b0d2-020261eb9322",
+        "valid": true,
+        "completedBlocks": 3,
+        "frozen": true,
+        "eventCount": 524,
+        "presentations": 72,
+        "invalidations": 0,
+        "completions": 1
+      }
+    ],
+    "retestAttempts": 0,
+    "exposure": []
+  },
+  "retestAction": 1,
+  "pass": true
+}

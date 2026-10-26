@@ -1,0 +1,45 @@
+{
+  "compiledEntry": "dist-analytics/collector.js",
+  "results": [
+    {
+      "case": "default-disabled",
+      "status": 503,
+      "emptyBody": true
+    },
+    {
+      "case": "valid request",
+      "status": 204,
+      "emptyBody": true
+    },
+    {
+      "case": "malformed JSON",
+      "status": 400,
+      "emptyBody": true
+    },
+    {
+      "case": "prohibited field",
+      "status": 400,
+      "emptyBody": true
+    },
+    {
+      "case": "prepare failure",
+      "status": 503,
+      "emptyBody": true
+    },
+    {
+      "case": "bind failure",
+      "status": 503,
+      "emptyBody": true
+    },
+    {
+      "case": "execution failure",
+      "status": 503,
+      "emptyBody": true
+    },
+    {
+      "case": "missing table",
+      "status": 503,
+      "emptyBody": true
+    }
+  ]
+}

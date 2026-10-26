@@ -1,0 +1,269 @@
+{
+  "cases": [
+    {
+      "mode": "baseline",
+      "name": "control",
+      "accepted": true,
+      "chain": true,
+      "memory": true,
+      "reports": 1,
+      "comparisons": 0,
+      "preserved": true,
+      "derivedInvalidationAbsent": true
+    },
+    {
+      "mode": "baseline",
+      "name": "hidden-warmup",
+      "accepted": false,
+      "chain": false,
+      "memory": false,
+      "reports": 0,
+      "comparisons": 0,
+      "preserved": true,
+      "derivedInvalidationAbsent": true
+    },
+    {
+      "mode": "baseline",
+      "name": "freeze-tail",
+      "accepted": false,
+      "chain": false,
+      "memory": false,
+      "reports": 0,
+      "comparisons": 0,
+      "preserved": true,
+      "derivedInvalidationAbsent": true
+    },
+    {
+      "mode": "baseline",
+      "name": "settings-initial",
+      "accepted": false,
+      "chain": false,
+      "memory": false,
+      "reports": 0,
+      "comparisons": 0,
+      "preserved": true,
+      "derivedInvalidationAbsent": true
+    },
+    {
+      "mode": "baseline",
+      "name": "viewport-initial",
+      "accepted": false,
+      "chain": false,
+      "memory": false,
+      "reports": 0,
+      "comparisons": 0,
+      "preserved": true,
+      "derivedInvalidationAbsent": true
+    },
+    {
+      "mode": "baseline",
+      "name": "blur-1000",
+      "accepted": true,
+      "chain": true,
+      "memory": true,
+      "reports": 1,
+      "comparisons": 0,
+      "preserved": true,
+      "derivedInvalidationAbsent": true
+    },
+    {
+      "mode": "baseline",
+      "name": "blur-1001",
+      "accepted": false,
+      "chain": false,
+      "memory": false,
+      "reports": 0,
+      "comparisons": 0,
+      "preserved": true,
+      "derivedInvalidationAbsent": true
+    },
+    {
+      "mode": "baseline",
+      "name": "initial-fixation-2",
+      "accepted": true,
+      "chain": true,
+      "memory": true,
+      "reports": 1,
+      "comparisons": 0,
+      "preserved": true,
+      "derivedInvalidationAbsent": true
+    },
+    {
+      "mode": "baseline",
+      "name": "initial-fixation-3",
+      "accepted": false,
+      "chain": false,
+      "memory": false,
+      "reports": 0,
+      "comparisons": 0,
+      "preserved": true,
+      "derivedInvalidationAbsent": true
+    },
+    {
+      "mode": "baseline",
+      "name": "initial-wrong-4",
+      "accepted": true,
+      "chain": true,
+      "memory": true,
+      "reports": 1,
+      "comparisons": 0,
+      "preserved": true,
+      "derivedInvalidationAbsent": true
+    },
+    {
+      "mode": "baseline",
+      "name": "initial-wrong-5",
+      "accepted": false,
+      "chain": false,
+      "memory": false,
+      "reports": 0,
+      "comparisons": 0,
+      "preserved": true,
+      "derivedInvalidationAbsent": true
+    },
+    {
+      "mode": "baseline",
+      "name": "warmup-second-severe",
+      "accepted": false,
+      "chain": false,
+      "memory": false,
+      "reports": 0,
+      "comparisons": 0,
+      "preserved": true,
+      "derivedInvalidationAbsent": true
+    },
+    {
+      "mode": "retest",
+      "name": "control",
+      "accepted": true,
+      "chain": true,
+      "memory": true,
+      "reports": 2,
+      "comparisons": 1,
+      "preserved": true,
+      "derivedInvalidationAbsent": true
+    },
+    {
+      "mode": "retest",
+      "name": "hidden-warmup",
+      "accepted": false,
+      "chain": false,
+      "memory": false,
+      "reports": 1,
+      "comparisons": 0,
+      "preserved": true,
+      "derivedInvalidationAbsent": true
+    },
+    {
+      "mode": "retest",
+      "name": "freeze-tail",
+      "accepted": false,
+      "chain": false,
+      "memory": false,
+      "reports": 1,
+      "comparisons": 0,
+      "preserved": true,
+      "derivedInvalidationAbsent": true
+    },
+    {
+      "mode": "retest",
+      "name": "settings-initial",
+      "accepted": false,
+      "chain": false,
+      "memory": false,
+      "reports": 1,
+      "comparisons": 0,
+      "preserved": true,
+      "derivedInvalidationAbsent": true
+    },
+    {
+      "mode": "retest",
+      "name": "viewport-initial",
+      "accepted": false,
+      "chain": false,
+      "memory": false,
+      "reports": 1,
+      "comparisons": 0,
+      "preserved": true,
+      "derivedInvalidationAbsent": true
+    },
+    {
+      "mode": "retest",
+      "name": "blur-1000",
+      "accepted": true,
+      "chain": true,
+      "memory": true,
+      "reports": 2,
+      "comparisons": 1,
+      "preserved": true,
+      "derivedInvalidationAbsent": true
+    },
+    {
+      "mode": "retest",
+      "name": "blur-1001",
+      "accepted": false,
+      "chain": false,
+      "memory": false,
+      "reports": 1,
+      "comparisons": 0,
+      "preserved": true,
+      "derivedInvalidationAbsent": true
+    },
+    {
+      "mode": "retest",
+      "name": "initial-fixation-2",
+      "accepted": true,
+      "chain": true,
+      "memory": true,
+      "reports": 2,
+      "comparisons": 1,
+      "preserved": true,
+      "derivedInvalidationAbsent": true
+    },
+    {
+      "mode": "retest",
+      "name": "initial-fixation-3",
+      "accepted": false,
+      "chain": false,
+      "memory": false,
+      "reports": 1,
+      "comparisons": 0,
+      "preserved": true,
+      "derivedInvalidationAbsent": true
+    },
+    {
+      "mode": "retest",
+      "name": "initial-wrong-4",
+      "accepted": true,
+      "chain": true,
+      "memory": true,
+      "reports": 2,
+      "comparisons": 1,
+      "preserved": true,
+      "derivedInvalidationAbsent": true
+    },
+    {
+      "mode": "retest",
+      "name": "initial-wrong-5",
+      "accepted": false,
+      "chain": false,
+      "memory": false,
+      "reports": 1,
+      "comparisons": 0,
+      "preserved": true,
+      "derivedInvalidationAbsent": true
+    },
+    {
+      "mode": "retest",
+      "name": "warmup-second-severe",
+      "accepted": false,
+      "chain": false,
+      "memory": false,
+      "reports": 1,
+      "comparisons": 0,
+      "preserved": true,
+      "derivedInvalidationAbsent": true
+    }
+  ],
+  "errors": []
+}

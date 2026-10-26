@@ -1,0 +1,328 @@
+[
+  {
+    "name": "D11-migration-retained",
+    "pass": true,
+    "detail": {
+      "oldWriter": "VersionError",
+      "survivorBytes": true
+    }
+  },
+  {
+    "name": "D11-migration-deleted",
+    "pass": true,
+    "detail": {
+      "oldWriter": "VersionError",
+      "survivorBytes": true
+    }
+  },
+  {
+    "name": "D11-failed-migration-then-concurrent-retry",
+    "pass": true,
+    "detail": {
+      "blocked": true,
+      "oldBytesPreserved": true,
+      "concurrent": true
+    }
+  },
+  {
+    "name": "D11-lost-migration-callback",
+    "pass": true,
+    "detail": {
+      "held": true,
+      "rejected": true,
+      "committedSchema": "money_exchange_2_storage_v2_0"
+    }
+  },
+  {
+    "name": "D11-blocked-version-upgrade",
+    "pass": true,
+    "detail": {
+      "blocked": true
+    }
+  },
+  {
+    "name": "D11-armed-migration",
+    "pass": true,
+    "detail": {
+      "settled": true
+    }
+  },
+  {
+    "name": "D12-corrupt-boolean-false",
+    "pass": true,
+    "detail": {
+      "blocked": true
+    }
+  },
+  {
+    "name": "D12-corrupt-number-0",
+    "pass": true,
+    "detail": {
+      "blocked": true
+    }
+  },
+  {
+    "name": "D12-corrupt-string-",
+    "pass": true,
+    "detail": {
+      "blocked": true
+    }
+  },
+  {
+    "name": "D12-corrupt-object-null",
+    "pass": true,
+    "detail": {
+      "blocked": true
+    }
+  },
+  {
+    "name": "D12-corrupt-future-[object Object]",
+    "pass": true,
+    "detail": {
+      "blocked": true
+    }
+  },
+  {
+    "name": "D1-D6-D13-native-deletion-atomicity",
+    "pass": true,
+    "detail": {
+      "failedAtomic": true,
+      "exactReadback": true,
+      "resetFence": true,
+      "databaseCount": 1
+    }
+  },
+  {
+    "name": "D5-native-choice-true",
+    "pass": true,
+    "detail": {
+      "writeFirst": true,
+      "readback": "retired/deleted"
+    }
+  },
+  {
+    "name": "D5-native-choice-false",
+    "pass": true,
+    "detail": {
+      "writeFirst": false,
+      "readback": "retired/deleted"
+    }
+  },
+  {
+    "name": "D5-native-receipt-true",
+    "pass": true,
+    "detail": {
+      "writeFirst": true,
+      "readback": "retired/deleted"
+    }
+  },
+  {
+    "name": "D5-native-receipt-false",
+    "pass": true,
+    "detail": {
+      "writeFirst": false,
+      "readback": "retired/deleted"
+    }
+  },
+  {
+    "name": "D5-native-fairness-true",
+    "pass": true,
+    "detail": {
+      "writeFirst": true,
+      "readback": "retired/deleted"
+    }
+  },
+  {
+    "name": "D5-native-fairness-false",
+    "pass": true,
+    "detail": {
+      "writeFirst": false,
+      "readback": "retired/deleted"
+    }
+  },
+  {
+    "name": "D5-native-terminal-true",
+    "pass": true,
+    "detail": {
+      "writeFirst": true,
+      "readback": "retired/deleted"
+    }
+  },
+  {
+    "name": "D5-native-terminal-false",
+    "pass": true,
+    "detail": {
+      "writeFirst": false,
+      "readback": "retired/deleted"
+    }
+  },
+  {
+    "name": "D5-native-report-true",
+    "pass": true,
+    "detail": {
+      "writeFirst": true,
+      "readback": "retired/deleted"
+    }
+  },
+  {
+    "name": "D5-native-report-false",
+    "pass": true,
+    "detail": {
+      "writeFirst": false,
+      "readback": "retired/deleted"
+    }
+  },
+  {
+    "name": "D5-native-historyReport-true",
+    "pass": true,
+    "detail": {
+      "writeFirst": true,
+      "readback": "retired/deleted"
+    }
+  },
+  {
+    "name": "D5-native-historyReport-false",
+    "pass": true,
+    "detail": {
+      "writeFirst": false,
+      "readback": "retired/deleted"
+    }
+  },
+  {
+    "name": "D4-D6-native-lost-deletion-completion",
+    "pass": true,
+    "detail": {
+      "unknown": true,
+      "confirmedAfterRead": true,
+      "retiredExactAndConflict": true
+    }
+  },
+  {
+    "name": "D13-native-reset-order-true",
+    "pass": true,
+    "detail": {
+      "resetFirst": true,
+      "late": "fenced/unavailable"
+    }
+  },
+  {
+    "name": "D13-native-reset-order-false",
+    "pass": true,
+    "detail": {
+      "resetFirst": false,
+      "late": "confirmed"
+    }
+  },
+  {
+    "name": "D2-native-incomplete-choice",
+    "pass": true,
+    "detail": {
+      "boundary": "choice",
+      "erased": true
+    }
+  },
+  {
+    "name": "D2-native-incomplete-receipt",
+    "pass": true,
+    "detail": {
+      "boundary": "receipt",
+      "erased": true
+    }
+  },
+  {
+    "name": "D2-native-incomplete-rating",
+    "pass": true,
+    "detail": {
+      "boundary": "rating",
+      "erased": true
+    }
+  },
+  {
+    "name": "D3-native-A1.1-A1.2",
+    "pass": true,
+    "detail": {
+      "survivorBytes": true,
+      "order": [
+        "A1.1",
+        "A1.2"
+      ]
+    }
+  },
+  {
+    "name": "D3-native-A1.2-A1.1",
+    "pass": true,
+    "detail": {
+      "survivorBytes": true,
+      "order": [
+        "A1.2",
+        "A1.1"
+      ]
+    }
+  },
+  {
+    "name": "D7-native-survivor-lost-choice",
+    "pass": true,
+    "detail": {
+      "boundary": "choice",
+      "held": true,
+      "survivorBytes": true
+    }
+  },
+  {
+    "name": "D7-native-survivor-lost-terminal",
+    "pass": true,
+    "detail": {
+      "boundary": "terminal",
+      "held": true,
+      "survivorBytes": true
+    }
+  },
+  {
+    "name": "D10-native-projected-navigation-equality",
+    "pass": true,
+    "detail": {
+      "projection": true,
+      "nonmutating": true
+    }
+  },
+  {
+    "name": "D12-native-malformed-proof",
+    "pass": true,
+    "detail": {
+      "blocked": true,
+      "unchanged": true
+    }
+  },
+  {
+    "name": "D12-native-malformed-checkpoint-field",
+    "pass": true,
+    "detail": {
+      "blocked": true,
+      "unchanged": true
+    }
+  },
+  {
+    "name": "D12-native-malformed-tombstone",
+    "pass": true,
+    "detail": {
+      "blocked": true,
+      "unchanged": true
+    }
+  },
+  {
+    "name": "D12-native-malformed-route",
+    "pass": true,
+    "detail": {
+      "blocked": true,
+      "unchanged": true
+    }
+  },
+  {
+    "name": "D13-native-lost-reset-completion",
+    "pass": true,
+    "detail": {
+      "unknown": true,
+      "exactReadback": true
+    }
+  }
+]

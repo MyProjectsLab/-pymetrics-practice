@@ -1,0 +1,58 @@
+{
+  "checkedAtUtc": "2026-10-03T03:16:07.399485+00:00",
+  "qaBase": "8f3c9736e8c34fedbc8c188fd0bfc310365820f1",
+  "productSha": "f6b8ae05ab024e603ebe3fc8e1a42f71dd4b14b1",
+  "productPathsVerifiedAgainstProductCommit": 119,
+  "productPathsAllMatch": true,
+  "builtAssets": {
+    "dist/assets/index-D8pj7mZZ.js": "883608dd9dd37db873b013259c93995870ef2995959ebe46e4e560aad5ef3acd",
+    "dist/assets/index-BFu-PDJW.css": "632bae8949a5d7ad0be3116fac1bbea5bb4e797dc9eedb8a92f480e2cd98b7c9"
+  },
+  "restoredPreviewIndexSha256": "cc294dfd86ea30ff845f452f0bc7d6e0ef2dbc2ed285d3ae2bcef03b185246c5",
+  "removedPreviewFiles": [
+    "index.html.recovery-original",
+    "viewport-recorder.js",
+    "recovery-export.html"
+  ],
+  "previewListenerCheck": {
+    "command": "lsof -nP -iTCP:5592 -sTCP:LISTEN",
+    "exitCode": 1,
+    "stdout": "",
+    "stderr": "",
+    "portNotListening": true
+  },
+  "nativeCleanupObservation": "Dedicated QA Chrome window closed through native Cmd+Shift+W; native accessibility state returned to the previous window. Preview terminal stopped with Ctrl+C (exit 130). These are operator/tool observations from this run.",
+  "observerInstallerCheck": "Parsed without execution; reconstructed injected index matches the captured probe hash. No observer reinstalled for this check.",
+  "rawDownloads": [
+    {
+      "source": "/Users/renzo/Downloads/stop-v12-recovery-before.json",
+      "preservedFile": "before.raw.json",
+      "bytes": 392018,
+      "sha256": "b776e2baa4f422cef717c099d0b255d264246e1bdfd3caf9af629538dc4f21f3",
+      "byteIdentical": true
+    },
+    {
+      "source": "/Users/renzo/Downloads/stop-v12-recovery-pause.json",
+      "preservedFile": "pause.raw.json",
+      "bytes": 737519,
+      "sha256": "23ef5c08a54311931a2e5049617390089c546e78b11907b48df0f496d590a733",
+      "byteIdentical": true
+    },
+    {
+      "source": "/Users/renzo/Downloads/stop-v12-recovery-saved.json",
+      "preservedFile": "saved.raw.json",
+      "bytes": 1182834,
+      "sha256": "2be822b73247555ad3205c95f5d2a88b5c7983b39cf91ca75360de369a321f32",
+      "byteIdentical": true
+    },
+    {
+      "source": "/Users/renzo/Downloads/stop-v12-recovery-reloaded.json",
+      "preservedFile": "reloaded.raw.json",
+      "bytes": 1219237,
+      "sha256": "6767cb5ec1e837a3e48eb237c1ff931ae7fb60dd8a0bffacae5870e758407bba",
+      "byteIdentical": true
+    }
+  ],
+  "preserved": "Test-origin browser storage and original Downloads files retained.",
+  "scope": "QA evidence and tracker only; no product/specification change, analytics activation, push, deployment or release."
+}

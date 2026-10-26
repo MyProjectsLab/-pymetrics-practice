@@ -1,0 +1,2524 @@
+{
+  "status": "founder-approved Balloons V1.0 fixed manifests for development; release qualification open",
+  "schema": "balloons-fixed-manifests-v1",
+  "drawAlgorithm": "SHA-256 counter rejection sampler and Fisher-Yates, defined in frozen V1.0 specification",
+  "scored": [
+    {
+      "id": "BL1",
+      "family": "baseline",
+      "candidateSeed": 1,
+      "rounds": [
+        {
+          "round": 1,
+          "profile": "A",
+          "threshold": 1
+        },
+        {
+          "round": 2,
+          "profile": "B",
+          "threshold": 17
+        },
+        {
+          "round": 3,
+          "profile": "C",
+          "threshold": 16
+        },
+        {
+          "round": 4,
+          "profile": "B",
+          "threshold": 23
+        },
+        {
+          "round": 5,
+          "profile": "A",
+          "threshold": 4
+        },
+        {
+          "round": 6,
+          "profile": "C",
+          "threshold": 48
+        },
+        {
+          "round": 7,
+          "profile": "C",
+          "threshold": 2
+        },
+        {
+          "round": 8,
+          "profile": "B",
+          "threshold": 3
+        },
+        {
+          "round": 9,
+          "profile": "B",
+          "threshold": 7
+        },
+        {
+          "round": 10,
+          "profile": "A",
+          "threshold": 8
+        },
+        {
+          "round": 11,
+          "profile": "B",
+          "threshold": 4
+        },
+        {
+          "round": 12,
+          "profile": "C",
+          "threshold": 46
+        },
+        {
+          "round": 13,
+          "profile": "A",
+          "threshold": 12
+        },
+        {
+          "round": 14,
+          "profile": "B",
+          "threshold": 18
+        },
+        {
+          "round": 15,
+          "profile": "A",
+          "threshold": 7
+        },
+        {
+          "round": 16,
+          "profile": "C",
+          "threshold": 34
+        },
+        {
+          "round": 17,
+          "profile": "C",
+          "threshold": 30
+        },
+        {
+          "round": 18,
+          "profile": "C",
+          "threshold": 3
+        },
+        {
+          "round": 19,
+          "profile": "B",
+          "threshold": 18
+        },
+        {
+          "round": 20,
+          "profile": "B",
+          "threshold": 3
+        },
+        {
+          "round": 21,
+          "profile": "A",
+          "threshold": 9
+        },
+        {
+          "round": 22,
+          "profile": "A",
+          "threshold": 5
+        },
+        {
+          "round": 23,
+          "profile": "A",
+          "threshold": 7
+        },
+        {
+          "round": 24,
+          "profile": "B",
+          "threshold": 23
+        },
+        {
+          "round": 25,
+          "profile": "C",
+          "threshold": 19
+        },
+        {
+          "round": 26,
+          "profile": "C",
+          "threshold": 38
+        },
+        {
+          "round": 27,
+          "profile": "A",
+          "threshold": 9
+        },
+        {
+          "round": 28,
+          "profile": "A",
+          "threshold": 3
+        },
+        {
+          "round": 29,
+          "profile": "C",
+          "threshold": 9
+        },
+        {
+          "round": 30,
+          "profile": "B",
+          "threshold": 17
+        },
+        {
+          "round": 31,
+          "profile": "A",
+          "threshold": 7
+        },
+        {
+          "round": 32,
+          "profile": "C",
+          "threshold": 19
+        },
+        {
+          "round": 33,
+          "profile": "A",
+          "threshold": 2
+        },
+        {
+          "round": 34,
+          "profile": "B",
+          "threshold": 9
+        },
+        {
+          "round": 35,
+          "profile": "B",
+          "threshold": 24
+        },
+        {
+          "round": 36,
+          "profile": "A",
+          "threshold": 2
+        },
+        {
+          "round": 37,
+          "profile": "C",
+          "threshold": 9
+        },
+        {
+          "round": 38,
+          "profile": "C",
+          "threshold": 31
+        },
+        {
+          "round": 39,
+          "profile": "B",
+          "threshold": 5
+        }
+      ],
+      "playableSignatureSha256": "ca4e1945fcf7a2584501df24fc2ca3446ab12cb3c99f3a42b1b0d4524b1e28bc",
+      "sha256": "9e5744f3c65cdd60256787da63ab13628cb90eac9b926a792b01da01e949b97e"
+    },
+    {
+      "id": "BL2",
+      "family": "baseline",
+      "candidateSeed": 3,
+      "rounds": [
+        {
+          "round": 1,
+          "profile": "C",
+          "threshold": 2
+        },
+        {
+          "round": 2,
+          "profile": "B",
+          "threshold": 8
+        },
+        {
+          "round": 3,
+          "profile": "B",
+          "threshold": 4
+        },
+        {
+          "round": 4,
+          "profile": "A",
+          "threshold": 3
+        },
+        {
+          "round": 5,
+          "profile": "B",
+          "threshold": 24
+        },
+        {
+          "round": 6,
+          "profile": "A",
+          "threshold": 4
+        },
+        {
+          "round": 7,
+          "profile": "A",
+          "threshold": 4
+        },
+        {
+          "round": 8,
+          "profile": "C",
+          "threshold": 46
+        },
+        {
+          "round": 9,
+          "profile": "A",
+          "threshold": 12
+        },
+        {
+          "round": 10,
+          "profile": "C",
+          "threshold": 24
+        },
+        {
+          "round": 11,
+          "profile": "B",
+          "threshold": 4
+        },
+        {
+          "round": 12,
+          "profile": "A",
+          "threshold": 12
+        },
+        {
+          "round": 13,
+          "profile": "C",
+          "threshold": 23
+        },
+        {
+          "round": 14,
+          "profile": "B",
+          "threshold": 22
+        },
+        {
+          "round": 15,
+          "profile": "C",
+          "threshold": 29
+        },
+        {
+          "round": 16,
+          "profile": "B",
+          "threshold": 21
+        },
+        {
+          "round": 17,
+          "profile": "A",
+          "threshold": 7
+        },
+        {
+          "round": 18,
+          "profile": "C",
+          "threshold": 1
+        },
+        {
+          "round": 19,
+          "profile": "B",
+          "threshold": 20
+        },
+        {
+          "round": 20,
+          "profile": "C",
+          "threshold": 6
+        },
+        {
+          "round": 21,
+          "profile": "A",
+          "threshold": 9
+        },
+        {
+          "round": 22,
+          "profile": "A",
+          "threshold": 6
+        },
+        {
+          "round": 23,
+          "profile": "A",
+          "threshold": 9
+        },
+        {
+          "round": 24,
+          "profile": "B",
+          "threshold": 1
+        },
+        {
+          "round": 25,
+          "profile": "C",
+          "threshold": 36
+        },
+        {
+          "round": 26,
+          "profile": "B",
+          "threshold": 8
+        },
+        {
+          "round": 27,
+          "profile": "A",
+          "threshold": 8
+        },
+        {
+          "round": 28,
+          "profile": "B",
+          "threshold": 14
+        },
+        {
+          "round": 29,
+          "profile": "A",
+          "threshold": 10
+        },
+        {
+          "round": 30,
+          "profile": "A",
+          "threshold": 6
+        },
+        {
+          "round": 31,
+          "profile": "C",
+          "threshold": 2
+        },
+        {
+          "round": 32,
+          "profile": "C",
+          "threshold": 26
+        },
+        {
+          "round": 33,
+          "profile": "C",
+          "threshold": 8
+        },
+        {
+          "round": 34,
+          "profile": "B",
+          "threshold": 5
+        },
+        {
+          "round": 35,
+          "profile": "B",
+          "threshold": 21
+        },
+        {
+          "round": 36,
+          "profile": "A",
+          "threshold": 2
+        },
+        {
+          "round": 37,
+          "profile": "C",
+          "threshold": 34
+        },
+        {
+          "round": 38,
+          "profile": "C",
+          "threshold": 13
+        },
+        {
+          "round": 39,
+          "profile": "B",
+          "threshold": 7
+        }
+      ],
+      "playableSignatureSha256": "d3d07cf617d26640adb65d0e450ee7901d5ab8337a30be7edc0e216cd34f566d",
+      "sha256": "ec91d8c3944b92f607bb74954e24e3d3a69576e7857cf78be56796640493881d"
+    },
+    {
+      "id": "BL3",
+      "family": "baseline",
+      "candidateSeed": 15,
+      "rounds": [
+        {
+          "round": 1,
+          "profile": "A",
+          "threshold": 9
+        },
+        {
+          "round": 2,
+          "profile": "B",
+          "threshold": 17
+        },
+        {
+          "round": 3,
+          "profile": "B",
+          "threshold": 20
+        },
+        {
+          "round": 4,
+          "profile": "B",
+          "threshold": 6
+        },
+        {
+          "round": 5,
+          "profile": "C",
+          "threshold": 36
+        },
+        {
+          "round": 6,
+          "profile": "A",
+          "threshold": 12
+        },
+        {
+          "round": 7,
+          "profile": "A",
+          "threshold": 5
+        },
+        {
+          "round": 8,
+          "profile": "A",
+          "threshold": 1
+        },
+        {
+          "round": 9,
+          "profile": "C",
+          "threshold": 20
+        },
+        {
+          "round": 10,
+          "profile": "C",
+          "threshold": 24
+        },
+        {
+          "round": 11,
+          "profile": "A",
+          "threshold": 9
+        },
+        {
+          "round": 12,
+          "profile": "C",
+          "threshold": 22
+        },
+        {
+          "round": 13,
+          "profile": "B",
+          "threshold": 9
+        },
+        {
+          "round": 14,
+          "profile": "C",
+          "threshold": 39
+        },
+        {
+          "round": 15,
+          "profile": "B",
+          "threshold": 10
+        },
+        {
+          "round": 16,
+          "profile": "A",
+          "threshold": 6
+        },
+        {
+          "round": 17,
+          "profile": "C",
+          "threshold": 25
+        },
+        {
+          "round": 18,
+          "profile": "B",
+          "threshold": 17
+        },
+        {
+          "round": 19,
+          "profile": "B",
+          "threshold": 6
+        },
+        {
+          "round": 20,
+          "profile": "A",
+          "threshold": 5
+        },
+        {
+          "round": 21,
+          "profile": "B",
+          "threshold": 13
+        },
+        {
+          "round": 22,
+          "profile": "A",
+          "threshold": 4
+        },
+        {
+          "round": 23,
+          "profile": "A",
+          "threshold": 5
+        },
+        {
+          "round": 24,
+          "profile": "C",
+          "threshold": 17
+        },
+        {
+          "round": 25,
+          "profile": "C",
+          "threshold": 40
+        },
+        {
+          "round": 26,
+          "profile": "B",
+          "threshold": 17
+        },
+        {
+          "round": 27,
+          "profile": "B",
+          "threshold": 15
+        },
+        {
+          "round": 28,
+          "profile": "C",
+          "threshold": 5
+        },
+        {
+          "round": 29,
+          "profile": "C",
+          "threshold": 39
+        },
+        {
+          "round": 30,
+          "profile": "B",
+          "threshold": 23
+        },
+        {
+          "round": 31,
+          "profile": "C",
+          "threshold": 24
+        },
+        {
+          "round": 32,
+          "profile": "C",
+          "threshold": 39
+        },
+        {
+          "round": 33,
+          "profile": "A",
+          "threshold": 11
+        },
+        {
+          "round": 34,
+          "profile": "A",
+          "threshold": 6
+        },
+        {
+          "round": 35,
+          "profile": "A",
+          "threshold": 7
+        },
+        {
+          "round": 36,
+          "profile": "B",
+          "threshold": 5
+        },
+        {
+          "round": 37,
+          "profile": "B",
+          "threshold": 4
+        },
+        {
+          "round": 38,
+          "profile": "A",
+          "threshold": 12
+        },
+        {
+          "round": 39,
+          "profile": "C",
+          "threshold": 18
+        }
+      ],
+      "playableSignatureSha256": "8fb7b3525e6a7b90843853f334efc9222dc0844928ead3fc092f76b0d5ee2b0b",
+      "sha256": "9f1c356991a1dd4493698c32a0150c9cc21d1674629347de72fb8febd8071239"
+    },
+    {
+      "id": "RP1",
+      "family": "replay",
+      "candidateSeed": 16,
+      "rounds": [
+        {
+          "round": 1,
+          "profile": "B",
+          "threshold": 11
+        },
+        {
+          "round": 2,
+          "profile": "B",
+          "threshold": 4
+        },
+        {
+          "round": 3,
+          "profile": "C",
+          "threshold": 42
+        },
+        {
+          "round": 4,
+          "profile": "A",
+          "threshold": 9
+        },
+        {
+          "round": 5,
+          "profile": "A",
+          "threshold": 6
+        },
+        {
+          "round": 6,
+          "profile": "A",
+          "threshold": 10
+        },
+        {
+          "round": 7,
+          "profile": "B",
+          "threshold": 16
+        },
+        {
+          "round": 8,
+          "profile": "C",
+          "threshold": 5
+        },
+        {
+          "round": 9,
+          "profile": "B",
+          "threshold": 4
+        },
+        {
+          "round": 10,
+          "profile": "C",
+          "threshold": 26
+        },
+        {
+          "round": 11,
+          "profile": "A",
+          "threshold": 2
+        },
+        {
+          "round": 12,
+          "profile": "B",
+          "threshold": 2
+        },
+        {
+          "round": 13,
+          "profile": "C",
+          "threshold": 19
+        },
+        {
+          "round": 14,
+          "profile": "C",
+          "threshold": 26
+        },
+        {
+          "round": 15,
+          "profile": "A",
+          "threshold": 9
+        },
+        {
+          "round": 16,
+          "profile": "C",
+          "threshold": 41
+        },
+        {
+          "round": 17,
+          "profile": "B",
+          "threshold": 23
+        },
+        {
+          "round": 18,
+          "profile": "A",
+          "threshold": 1
+        },
+        {
+          "round": 19,
+          "profile": "C",
+          "threshold": 14
+        },
+        {
+          "round": 20,
+          "profile": "A",
+          "threshold": 3
+        },
+        {
+          "round": 21,
+          "profile": "B",
+          "threshold": 13
+        },
+        {
+          "round": 22,
+          "profile": "C",
+          "threshold": 19
+        },
+        {
+          "round": 23,
+          "profile": "A",
+          "threshold": 6
+        },
+        {
+          "round": 24,
+          "profile": "B",
+          "threshold": 18
+        },
+        {
+          "round": 25,
+          "profile": "C",
+          "threshold": 45
+        },
+        {
+          "round": 26,
+          "profile": "B",
+          "threshold": 19
+        },
+        {
+          "round": 27,
+          "profile": "A",
+          "threshold": 8
+        },
+        {
+          "round": 28,
+          "profile": "B",
+          "threshold": 9
+        },
+        {
+          "round": 29,
+          "profile": "B",
+          "threshold": 17
+        },
+        {
+          "round": 30,
+          "profile": "B",
+          "threshold": 22
+        },
+        {
+          "round": 31,
+          "profile": "C",
+          "threshold": 3
+        },
+        {
+          "round": 32,
+          "profile": "A",
+          "threshold": 2
+        },
+        {
+          "round": 33,
+          "profile": "A",
+          "threshold": 12
+        },
+        {
+          "round": 34,
+          "profile": "C",
+          "threshold": 3
+        },
+        {
+          "round": 35,
+          "profile": "C",
+          "threshold": 9
+        },
+        {
+          "round": 36,
+          "profile": "B",
+          "threshold": 18
+        },
+        {
+          "round": 37,
+          "profile": "A",
+          "threshold": 7
+        },
+        {
+          "round": 38,
+          "profile": "C",
+          "threshold": 25
+        },
+        {
+          "round": 39,
+          "profile": "A",
+          "threshold": 4
+        }
+      ],
+      "playableSignatureSha256": "a6b07725e6d292448f9a735cfcfaaae5a616da76e8ac4a38eef043c2a6fe69f8",
+      "sha256": "4425f093e748a4036184b72f3f9b17a68776a03ccc38ac5b05eef5fc49537621"
+    },
+    {
+      "id": "RP2",
+      "family": "replay",
+      "candidateSeed": 20,
+      "rounds": [
+        {
+          "round": 1,
+          "profile": "C",
+          "threshold": 43
+        },
+        {
+          "round": 2,
+          "profile": "C",
+          "threshold": 5
+        },
+        {
+          "round": 3,
+          "profile": "C",
+          "threshold": 38
+        },
+        {
+          "round": 4,
+          "profile": "A",
+          "threshold": 4
+        },
+        {
+          "round": 5,
+          "profile": "A",
+          "threshold": 8
+        },
+        {
+          "round": 6,
+          "profile": "C",
+          "threshold": 31
+        },
+        {
+          "round": 7,
+          "profile": "B",
+          "threshold": 22
+        },
+        {
+          "round": 8,
+          "profile": "A",
+          "threshold": 2
+        },
+        {
+          "round": 9,
+          "profile": "C",
+          "threshold": 8
+        },
+        {
+          "round": 10,
+          "profile": "B",
+          "threshold": 12
+        },
+        {
+          "round": 11,
+          "profile": "A",
+          "threshold": 7
+        },
+        {
+          "round": 12,
+          "profile": "B",
+          "threshold": 13
+        },
+        {
+          "round": 13,
+          "profile": "B",
+          "threshold": 5
+        },
+        {
+          "round": 14,
+          "profile": "C",
+          "threshold": 33
+        },
+        {
+          "round": 15,
+          "profile": "A",
+          "threshold": 8
+        },
+        {
+          "round": 16,
+          "profile": "B",
+          "threshold": 2
+        },
+        {
+          "round": 17,
+          "profile": "A",
+          "threshold": 12
+        },
+        {
+          "round": 18,
+          "profile": "A",
+          "threshold": 12
+        },
+        {
+          "round": 19,
+          "profile": "B",
+          "threshold": 7
+        },
+        {
+          "round": 20,
+          "profile": "C",
+          "threshold": 8
+        },
+        {
+          "round": 21,
+          "profile": "A",
+          "threshold": 4
+        },
+        {
+          "round": 22,
+          "profile": "B",
+          "threshold": 11
+        },
+        {
+          "round": 23,
+          "profile": "C",
+          "threshold": 43
+        },
+        {
+          "round": 24,
+          "profile": "C",
+          "threshold": 43
+        },
+        {
+          "round": 25,
+          "profile": "A",
+          "threshold": 12
+        },
+        {
+          "round": 26,
+          "profile": "B",
+          "threshold": 12
+        },
+        {
+          "round": 27,
+          "profile": "A",
+          "threshold": 1
+        },
+        {
+          "round": 28,
+          "profile": "A",
+          "threshold": 6
+        },
+        {
+          "round": 29,
+          "profile": "B",
+          "threshold": 12
+        },
+        {
+          "round": 30,
+          "profile": "C",
+          "threshold": 29
+        },
+        {
+          "round": 31,
+          "profile": "C",
+          "threshold": 37
+        },
+        {
+          "round": 32,
+          "profile": "B",
+          "threshold": 16
+        },
+        {
+          "round": 33,
+          "profile": "A",
+          "threshold": 8
+        },
+        {
+          "round": 34,
+          "profile": "B",
+          "threshold": 4
+        },
+        {
+          "round": 35,
+          "profile": "B",
+          "threshold": 18
+        },
+        {
+          "round": 36,
+          "profile": "C",
+          "threshold": 11
+        },
+        {
+          "round": 37,
+          "profile": "C",
+          "threshold": 16
+        },
+        {
+          "round": 38,
+          "profile": "B",
+          "threshold": 14
+        },
+        {
+          "round": 39,
+          "profile": "A",
+          "threshold": 3
+        }
+      ],
+      "playableSignatureSha256": "3a1252bd503460ca50f658251fb705d4ed0884d9264b349a3bfabaca3c186660",
+      "sha256": "a4b1ac4393e3f836362cc6e1cb2afb45fd89e5b2736b92f2460c67d5a350a5ce"
+    },
+    {
+      "id": "RP3",
+      "family": "replay",
+      "candidateSeed": 23,
+      "rounds": [
+        {
+          "round": 1,
+          "profile": "A",
+          "threshold": 6
+        },
+        {
+          "round": 2,
+          "profile": "B",
+          "threshold": 6
+        },
+        {
+          "round": 3,
+          "profile": "C",
+          "threshold": 36
+        },
+        {
+          "round": 4,
+          "profile": "C",
+          "threshold": 43
+        },
+        {
+          "round": 5,
+          "profile": "A",
+          "threshold": 3
+        },
+        {
+          "round": 6,
+          "profile": "A",
+          "threshold": 3
+        },
+        {
+          "round": 7,
+          "profile": "B",
+          "threshold": 5
+        },
+        {
+          "round": 8,
+          "profile": "C",
+          "threshold": 2
+        },
+        {
+          "round": 9,
+          "profile": "C",
+          "threshold": 23
+        },
+        {
+          "round": 10,
+          "profile": "A",
+          "threshold": 3
+        },
+        {
+          "round": 11,
+          "profile": "C",
+          "threshold": 47
+        },
+        {
+          "round": 12,
+          "profile": "B",
+          "threshold": 2
+        },
+        {
+          "round": 13,
+          "profile": "B",
+          "threshold": 15
+        },
+        {
+          "round": 14,
+          "profile": "C",
+          "threshold": 12
+        },
+        {
+          "round": 15,
+          "profile": "B",
+          "threshold": 14
+        },
+        {
+          "round": 16,
+          "profile": "A",
+          "threshold": 2
+        },
+        {
+          "round": 17,
+          "profile": "A",
+          "threshold": 10
+        },
+        {
+          "round": 18,
+          "profile": "B",
+          "threshold": 18
+        },
+        {
+          "round": 19,
+          "profile": "A",
+          "threshold": 12
+        },
+        {
+          "round": 20,
+          "profile": "A",
+          "threshold": 3
+        },
+        {
+          "round": 21,
+          "profile": "C",
+          "threshold": 38
+        },
+        {
+          "round": 22,
+          "profile": "B",
+          "threshold": 2
+        },
+        {
+          "round": 23,
+          "profile": "C",
+          "threshold": 3
+        },
+        {
+          "round": 24,
+          "profile": "A",
+          "threshold": 6
+        },
+        {
+          "round": 25,
+          "profile": "B",
+          "threshold": 15
+        },
+        {
+          "round": 26,
+          "profile": "C",
+          "threshold": 9
+        },
+        {
+          "round": 27,
+          "profile": "C",
+          "threshold": 10
+        },
+        {
+          "round": 28,
+          "profile": "C",
+          "threshold": 17
+        },
+        {
+          "round": 29,
+          "profile": "B",
+          "threshold": 6
+        },
+        {
+          "round": 30,
+          "profile": "B",
+          "threshold": 14
+        },
+        {
+          "round": 31,
+          "profile": "C",
+          "threshold": 45
+        },
+        {
+          "round": 32,
+          "profile": "A",
+          "threshold": 7
+        },
+        {
+          "round": 33,
+          "profile": "A",
+          "threshold": 9
+        },
+        {
+          "round": 34,
+          "profile": "B",
+          "threshold": 14
+        },
+        {
+          "round": 35,
+          "profile": "A",
+          "threshold": 3
+        },
+        {
+          "round": 36,
+          "profile": "A",
+          "threshold": 2
+        },
+        {
+          "round": 37,
+          "profile": "C",
+          "threshold": 43
+        },
+        {
+          "round": 38,
+          "profile": "B",
+          "threshold": 22
+        },
+        {
+          "round": 39,
+          "profile": "B",
+          "threshold": 10
+        }
+      ],
+      "playableSignatureSha256": "db7dd6dc57ab612dc4443361a47b6825585c4ececb410fac3ccb3f473120939c",
+      "sha256": "107a47a641ad7f131b1ea20a63c218d863d8ce0cc4776f9d07884852a1d96ec3"
+    },
+    {
+      "id": "RT1",
+      "family": "retest",
+      "candidateSeed": 24,
+      "rounds": [
+        {
+          "round": 1,
+          "profile": "A",
+          "threshold": 1
+        },
+        {
+          "round": 2,
+          "profile": "B",
+          "threshold": 6
+        },
+        {
+          "round": 3,
+          "profile": "A",
+          "threshold": 2
+        },
+        {
+          "round": 4,
+          "profile": "B",
+          "threshold": 16
+        },
+        {
+          "round": 5,
+          "profile": "C",
+          "threshold": 47
+        },
+        {
+          "round": 6,
+          "profile": "C",
+          "threshold": 16
+        },
+        {
+          "round": 7,
+          "profile": "B",
+          "threshold": 8
+        },
+        {
+          "round": 8,
+          "profile": "A",
+          "threshold": 8
+        },
+        {
+          "round": 9,
+          "profile": "C",
+          "threshold": 26
+        },
+        {
+          "round": 10,
+          "profile": "B",
+          "threshold": 15
+        },
+        {
+          "round": 11,
+          "profile": "A",
+          "threshold": 3
+        },
+        {
+          "round": 12,
+          "profile": "C",
+          "threshold": 7
+        },
+        {
+          "round": 13,
+          "profile": "A",
+          "threshold": 10
+        },
+        {
+          "round": 14,
+          "profile": "B",
+          "threshold": 6
+        },
+        {
+          "round": 15,
+          "profile": "C",
+          "threshold": 24
+        },
+        {
+          "round": 16,
+          "profile": "A",
+          "threshold": 1
+        },
+        {
+          "round": 17,
+          "profile": "B",
+          "threshold": 24
+        },
+        {
+          "round": 18,
+          "profile": "A",
+          "threshold": 8
+        },
+        {
+          "round": 19,
+          "profile": "B",
+          "threshold": 7
+        },
+        {
+          "round": 20,
+          "profile": "C",
+          "threshold": 25
+        },
+        {
+          "round": 21,
+          "profile": "B",
+          "threshold": 1
+        },
+        {
+          "round": 22,
+          "profile": "C",
+          "threshold": 1
+        },
+        {
+          "round": 23,
+          "profile": "A",
+          "threshold": 5
+        },
+        {
+          "round": 24,
+          "profile": "A",
+          "threshold": 5
+        },
+        {
+          "round": 25,
+          "profile": "C",
+          "threshold": 18
+        },
+        {
+          "round": 26,
+          "profile": "B",
+          "threshold": 20
+        },
+        {
+          "round": 27,
+          "profile": "C",
+          "threshold": 3
+        },
+        {
+          "round": 28,
+          "profile": "B",
+          "threshold": 8
+        },
+        {
+          "round": 29,
+          "profile": "A",
+          "threshold": 1
+        },
+        {
+          "round": 30,
+          "profile": "B",
+          "threshold": 6
+        },
+        {
+          "round": 31,
+          "profile": "C",
+          "threshold": 10
+        },
+        {
+          "round": 32,
+          "profile": "A",
+          "threshold": 7
+        },
+        {
+          "round": 33,
+          "profile": "A",
+          "threshold": 11
+        },
+        {
+          "round": 34,
+          "profile": "C",
+          "threshold": 32
+        },
+        {
+          "round": 35,
+          "profile": "A",
+          "threshold": 4
+        },
+        {
+          "round": 36,
+          "profile": "B",
+          "threshold": 11
+        },
+        {
+          "round": 37,
+          "profile": "C",
+          "threshold": 40
+        },
+        {
+          "round": 38,
+          "profile": "B",
+          "threshold": 5
+        },
+        {
+          "round": 39,
+          "profile": "C",
+          "threshold": 18
+        }
+      ],
+      "playableSignatureSha256": "b601620637a40a0a8abf78e6cf77567d33411ab091a9f451dd272f16b612f09f",
+      "sha256": "009ca6aa68806d997f12f23f2a1015ae7942d7fa4dcf233c8bb942af961eba39"
+    },
+    {
+      "id": "RT2",
+      "family": "retest",
+      "candidateSeed": 33,
+      "rounds": [
+        {
+          "round": 1,
+          "profile": "A",
+          "threshold": 7
+        },
+        {
+          "round": 2,
+          "profile": "A",
+          "threshold": 4
+        },
+        {
+          "round": 3,
+          "profile": "C",
+          "threshold": 4
+        },
+        {
+          "round": 4,
+          "profile": "B",
+          "threshold": 18
+        },
+        {
+          "round": 5,
+          "profile": "B",
+          "threshold": 14
+        },
+        {
+          "round": 6,
+          "profile": "C",
+          "threshold": 23
+        },
+        {
+          "round": 7,
+          "profile": "C",
+          "threshold": 22
+        },
+        {
+          "round": 8,
+          "profile": "A",
+          "threshold": 12
+        },
+        {
+          "round": 9,
+          "profile": "A",
+          "threshold": 4
+        },
+        {
+          "round": 10,
+          "profile": "B",
+          "threshold": 1
+        },
+        {
+          "round": 11,
+          "profile": "B",
+          "threshold": 5
+        },
+        {
+          "round": 12,
+          "profile": "A",
+          "threshold": 5
+        },
+        {
+          "round": 13,
+          "profile": "C",
+          "threshold": 23
+        },
+        {
+          "round": 14,
+          "profile": "C",
+          "threshold": 13
+        },
+        {
+          "round": 15,
+          "profile": "A",
+          "threshold": 4
+        },
+        {
+          "round": 16,
+          "profile": "C",
+          "threshold": 19
+        },
+        {
+          "round": 17,
+          "profile": "C",
+          "threshold": 3
+        },
+        {
+          "round": 18,
+          "profile": "B",
+          "threshold": 7
+        },
+        {
+          "round": 19,
+          "profile": "A",
+          "threshold": 7
+        },
+        {
+          "round": 20,
+          "profile": "B",
+          "threshold": 10
+        },
+        {
+          "round": 21,
+          "profile": "A",
+          "threshold": 3
+        },
+        {
+          "round": 22,
+          "profile": "B",
+          "threshold": 23
+        },
+        {
+          "round": 23,
+          "profile": "C",
+          "threshold": 17
+        },
+        {
+          "round": 24,
+          "profile": "B",
+          "threshold": 7
+        },
+        {
+          "round": 25,
+          "profile": "A",
+          "threshold": 10
+        },
+        {
+          "round": 26,
+          "profile": "B",
+          "threshold": 17
+        },
+        {
+          "round": 27,
+          "profile": "A",
+          "threshold": 6
+        },
+        {
+          "round": 28,
+          "profile": "B",
+          "threshold": 12
+        },
+        {
+          "round": 29,
+          "profile": "B",
+          "threshold": 3
+        },
+        {
+          "round": 30,
+          "profile": "C",
+          "threshold": 41
+        },
+        {
+          "round": 31,
+          "profile": "B",
+          "threshold": 17
+        },
+        {
+          "round": 32,
+          "profile": "C",
+          "threshold": 41
+        },
+        {
+          "round": 33,
+          "profile": "C",
+          "threshold": 40
+        },
+        {
+          "round": 34,
+          "profile": "B",
+          "threshold": 5
+        },
+        {
+          "round": 35,
+          "profile": "C",
+          "threshold": 3
+        },
+        {
+          "round": 36,
+          "profile": "C",
+          "threshold": 37
+        },
+        {
+          "round": 37,
+          "profile": "A",
+          "threshold": 6
+        },
+        {
+          "round": 38,
+          "profile": "A",
+          "threshold": 12
+        },
+        {
+          "round": 39,
+          "profile": "A",
+          "threshold": 11
+        }
+      ],
+      "playableSignatureSha256": "d7e9c7b94a9c0ecd86940ec97a4b311ba2b7a792fc92d0a4550bef378196c306",
+      "sha256": "e1d93ad34f6f52cb0b57a436e04803b446a9ee0eaffbd9e6e1c5722a112d23e1"
+    },
+    {
+      "id": "RT3",
+      "family": "retest",
+      "candidateSeed": 34,
+      "rounds": [
+        {
+          "round": 1,
+          "profile": "A",
+          "threshold": 8
+        },
+        {
+          "round": 2,
+          "profile": "B",
+          "threshold": 20
+        },
+        {
+          "round": 3,
+          "profile": "B",
+          "threshold": 15
+        },
+        {
+          "round": 4,
+          "profile": "C",
+          "threshold": 41
+        },
+        {
+          "round": 5,
+          "profile": "C",
+          "threshold": 41
+        },
+        {
+          "round": 6,
+          "profile": "A",
+          "threshold": 9
+        },
+        {
+          "round": 7,
+          "profile": "B",
+          "threshold": 8
+        },
+        {
+          "round": 8,
+          "profile": "A",
+          "threshold": 1
+        },
+        {
+          "round": 9,
+          "profile": "C",
+          "threshold": 1
+        },
+        {
+          "round": 10,
+          "profile": "C",
+          "threshold": 28
+        },
+        {
+          "round": 11,
+          "profile": "B",
+          "threshold": 4
+        },
+        {
+          "round": 12,
+          "profile": "B",
+          "threshold": 20
+        },
+        {
+          "round": 13,
+          "profile": "A",
+          "threshold": 5
+        },
+        {
+          "round": 14,
+          "profile": "B",
+          "threshold": 8
+        },
+        {
+          "round": 15,
+          "profile": "B",
+          "threshold": 2
+        },
+        {
+          "round": 16,
+          "profile": "C",
+          "threshold": 46
+        },
+        {
+          "round": 17,
+          "profile": "A",
+          "threshold": 12
+        },
+        {
+          "round": 18,
+          "profile": "C",
+          "threshold": 13
+        },
+        {
+          "round": 19,
+          "profile": "A",
+          "threshold": 2
+        },
+        {
+          "round": 20,
+          "profile": "C",
+          "threshold": 3
+        },
+        {
+          "round": 21,
+          "profile": "C",
+          "threshold": 31
+        },
+        {
+          "round": 22,
+          "profile": "C",
+          "threshold": 15
+        },
+        {
+          "round": 23,
+          "profile": "A",
+          "threshold": 12
+        },
+        {
+          "round": 24,
+          "profile": "A",
+          "threshold": 6
+        },
+        {
+          "round": 25,
+          "profile": "B",
+          "threshold": 24
+        },
+        {
+          "round": 26,
+          "profile": "B",
+          "threshold": 12
+        },
+        {
+          "round": 27,
+          "profile": "C",
+          "threshold": 28
+        },
+        {
+          "round": 28,
+          "profile": "A",
+          "threshold": 2
+        },
+        {
+          "round": 29,
+          "profile": "A",
+          "threshold": 12
+        },
+        {
+          "round": 30,
+          "profile": "C",
+          "threshold": 4
+        },
+        {
+          "round": 31,
+          "profile": "B",
+          "threshold": 15
+        },
+        {
+          "round": 32,
+          "profile": "C",
+          "threshold": 25
+        },
+        {
+          "round": 33,
+          "profile": "A",
+          "threshold": 6
+        },
+        {
+          "round": 34,
+          "profile": "A",
+          "threshold": 10
+        },
+        {
+          "round": 35,
+          "profile": "B",
+          "threshold": 12
+        },
+        {
+          "round": 36,
+          "profile": "B",
+          "threshold": 20
+        },
+        {
+          "round": 37,
+          "profile": "C",
+          "threshold": 24
+        },
+        {
+          "round": 38,
+          "profile": "A",
+          "threshold": 2
+        },
+        {
+          "round": 39,
+          "profile": "B",
+          "threshold": 5
+        }
+      ],
+      "playableSignatureSha256": "6ba34309f8b5cdef6900fa2b33d1a2988712fc78a65a8df0a8e6f279af0531e3",
+      "sha256": "49a78684cd10a770079c1a10ec980815f7f5eb12fb2a12aa54f53394390e5b38"
+    }
+  ],
+  "drills": [
+    {
+      "id": "D-outcome",
+      "candidateSeed": 22,
+      "rounds": [
+        {
+          "round": 1,
+          "profile": "C",
+          "threshold": 26
+        },
+        {
+          "round": 2,
+          "profile": "A",
+          "threshold": 10
+        },
+        {
+          "round": 3,
+          "profile": "B",
+          "threshold": 14
+        },
+        {
+          "round": 4,
+          "profile": "B",
+          "threshold": 23
+        },
+        {
+          "round": 5,
+          "profile": "C",
+          "threshold": 16
+        },
+        {
+          "round": 6,
+          "profile": "A",
+          "threshold": 2
+        },
+        {
+          "round": 7,
+          "profile": "A",
+          "threshold": 9
+        },
+        {
+          "round": 8,
+          "profile": "B",
+          "threshold": 2
+        },
+        {
+          "round": 9,
+          "profile": "C",
+          "threshold": 43
+        },
+        {
+          "round": 10,
+          "profile": "A",
+          "threshold": 4
+        },
+        {
+          "round": 11,
+          "profile": "C",
+          "threshold": 4
+        },
+        {
+          "round": 12,
+          "profile": "B",
+          "threshold": 23
+        },
+        {
+          "round": 13,
+          "profile": "A",
+          "threshold": 4
+        },
+        {
+          "round": 14,
+          "profile": "B",
+          "threshold": 12
+        },
+        {
+          "round": 15,
+          "profile": "C",
+          "threshold": 26
+        },
+        {
+          "round": 16,
+          "profile": "B",
+          "threshold": 11
+        },
+        {
+          "round": 17,
+          "profile": "C",
+          "threshold": 27
+        },
+        {
+          "round": 18,
+          "profile": "A",
+          "threshold": 12
+        }
+      ],
+      "sha256": "89925bd177a61aa943b7a8d90d36ee5a1771f44fa27d781dc2e42ef880e6c564"
+    },
+    {
+      "id": "D-information",
+      "candidateSeed": 7,
+      "rounds": [
+        {
+          "round": 1,
+          "profile": "C",
+          "threshold": 17
+        },
+        {
+          "round": 2,
+          "profile": "B",
+          "threshold": 22
+        },
+        {
+          "round": 3,
+          "profile": "B",
+          "threshold": 4
+        },
+        {
+          "round": 4,
+          "profile": "A",
+          "threshold": 1
+        },
+        {
+          "round": 5,
+          "profile": "A",
+          "threshold": 12
+        },
+        {
+          "round": 6,
+          "profile": "C",
+          "threshold": 37
+        },
+        {
+          "round": 7,
+          "profile": "B",
+          "threshold": 4
+        },
+        {
+          "round": 8,
+          "profile": "B",
+          "threshold": 16
+        },
+        {
+          "round": 9,
+          "profile": "C",
+          "threshold": 40
+        },
+        {
+          "round": 10,
+          "profile": "A",
+          "threshold": 2
+        },
+        {
+          "round": 11,
+          "profile": "A",
+          "threshold": 12
+        },
+        {
+          "round": 12,
+          "profile": "C",
+          "threshold": 7
+        },
+        {
+          "round": 13,
+          "profile": "B",
+          "threshold": 20
+        },
+        {
+          "round": 14,
+          "profile": "C",
+          "threshold": 33
+        },
+        {
+          "round": 15,
+          "profile": "A",
+          "threshold": 12
+        },
+        {
+          "round": 16,
+          "profile": "B",
+          "threshold": 4
+        },
+        {
+          "round": 17,
+          "profile": "C",
+          "threshold": 3
+        },
+        {
+          "round": 18,
+          "profile": "A",
+          "threshold": 2
+        }
+      ],
+      "sha256": "6a4d6942171d3922d3784df24b9203e0ae9896c3c9fb5fd09ca079ddc24ca875"
+    },
+    {
+      "id": "D-updating",
+      "candidateSeed": 5,
+      "rounds": [
+        {
+          "round": 1,
+          "profile": "A",
+          "threshold": 10
+        },
+        {
+          "round": 2,
+          "profile": "B",
+          "threshold": 2
+        },
+        {
+          "round": 3,
+          "profile": "C",
+          "threshold": 42
+        },
+        {
+          "round": 4,
+          "profile": "C",
+          "threshold": 34
+        },
+        {
+          "round": 5,
+          "profile": "B",
+          "threshold": 10
+        },
+        {
+          "round": 6,
+          "profile": "A",
+          "threshold": 6
+        },
+        {
+          "round": 7,
+          "profile": "C",
+          "threshold": 32
+        },
+        {
+          "round": 8,
+          "profile": "B",
+          "threshold": 3
+        },
+        {
+          "round": 9,
+          "profile": "B",
+          "threshold": 23
+        },
+        {
+          "round": 10,
+          "profile": "A",
+          "threshold": 4
+        },
+        {
+          "round": 11,
+          "profile": "A",
+          "threshold": 2
+        },
+        {
+          "round": 12,
+          "profile": "C",
+          "threshold": 12
+        },
+        {
+          "round": 13,
+          "profile": "A",
+          "threshold": 4
+        },
+        {
+          "round": 14,
+          "profile": "C",
+          "threshold": 2
+        },
+        {
+          "round": 15,
+          "profile": "B",
+          "threshold": 18
+        },
+        {
+          "round": 16,
+          "profile": "A",
+          "threshold": 6
+        },
+        {
+          "round": 17,
+          "profile": "B",
+          "threshold": 13
+        },
+        {
+          "round": 18,
+          "profile": "C",
+          "threshold": 35
+        }
+      ],
+      "sha256": "0772f8be9d7dd20cf373e778a2bbc0223ea35781a5ce5ec39d71b4a2a1263ee7"
+    },
+    {
+      "id": "D-consistency-A",
+      "candidateSeed": 0,
+      "rounds": [
+        {
+          "round": 1,
+          "profile": "A",
+          "threshold": 5
+        },
+        {
+          "round": 2,
+          "profile": "A",
+          "threshold": 3
+        },
+        {
+          "round": 3,
+          "profile": "A",
+          "threshold": 7
+        },
+        {
+          "round": 4,
+          "profile": "A",
+          "threshold": 3
+        },
+        {
+          "round": 5,
+          "profile": "A",
+          "threshold": 7
+        },
+        {
+          "round": 6,
+          "profile": "A",
+          "threshold": 11
+        },
+        {
+          "round": 7,
+          "profile": "A",
+          "threshold": 8
+        },
+        {
+          "round": 8,
+          "profile": "A",
+          "threshold": 9
+        },
+        {
+          "round": 9,
+          "profile": "A",
+          "threshold": 8
+        },
+        {
+          "round": 10,
+          "profile": "A",
+          "threshold": 3
+        },
+        {
+          "round": 11,
+          "profile": "A",
+          "threshold": 1
+        },
+        {
+          "round": 12,
+          "profile": "A",
+          "threshold": 10
+        },
+        {
+          "round": 13,
+          "profile": "A",
+          "threshold": 7
+        },
+        {
+          "round": 14,
+          "profile": "A",
+          "threshold": 12
+        },
+        {
+          "round": 15,
+          "profile": "A",
+          "threshold": 2
+        },
+        {
+          "round": 16,
+          "profile": "A",
+          "threshold": 2
+        },
+        {
+          "round": 17,
+          "profile": "A",
+          "threshold": 3
+        },
+        {
+          "round": 18,
+          "profile": "A",
+          "threshold": 6
+        }
+      ],
+      "sha256": "0488906b7aa1b8338b2def71a5d8f2be36527a526b0440fd36c1eb7048195513"
+    },
+    {
+      "id": "D-consistency-B",
+      "candidateSeed": 0,
+      "rounds": [
+        {
+          "round": 1,
+          "profile": "B",
+          "threshold": 11
+        },
+        {
+          "round": 2,
+          "profile": "B",
+          "threshold": 16
+        },
+        {
+          "round": 3,
+          "profile": "B",
+          "threshold": 6
+        },
+        {
+          "round": 4,
+          "profile": "B",
+          "threshold": 6
+        },
+        {
+          "round": 5,
+          "profile": "B",
+          "threshold": 19
+        },
+        {
+          "round": 6,
+          "profile": "B",
+          "threshold": 21
+        },
+        {
+          "round": 7,
+          "profile": "B",
+          "threshold": 9
+        },
+        {
+          "round": 8,
+          "profile": "B",
+          "threshold": 1
+        },
+        {
+          "round": 9,
+          "profile": "B",
+          "threshold": 3
+        },
+        {
+          "round": 10,
+          "profile": "B",
+          "threshold": 9
+        },
+        {
+          "round": 11,
+          "profile": "B",
+          "threshold": 13
+        },
+        {
+          "round": 12,
+          "profile": "B",
+          "threshold": 6
+        },
+        {
+          "round": 13,
+          "profile": "B",
+          "threshold": 14
+        },
+        {
+          "round": 14,
+          "profile": "B",
+          "threshold": 5
+        },
+        {
+          "round": 15,
+          "profile": "B",
+          "threshold": 16
+        },
+        {
+          "round": 16,
+          "profile": "B",
+          "threshold": 8
+        },
+        {
+          "round": 17,
+          "profile": "B",
+          "threshold": 4
+        },
+        {
+          "round": 18,
+          "profile": "B",
+          "threshold": 19
+        }
+      ],
+      "sha256": "4c97b353b7503f204099cd02d36505de732c6d6a9cebd69d02818118a1f4caf2"
+    },
+    {
+      "id": "D-consistency-C",
+      "candidateSeed": 0,
+      "rounds": [
+        {
+          "round": 1,
+          "profile": "C",
+          "threshold": 26
+        },
+        {
+          "round": 2,
+          "profile": "C",
+          "threshold": 31
+        },
+        {
+          "round": 3,
+          "profile": "C",
+          "threshold": 45
+        },
+        {
+          "round": 4,
+          "profile": "C",
+          "threshold": 29
+        },
+        {
+          "round": 5,
+          "profile": "C",
+          "threshold": 8
+        },
+        {
+          "round": 6,
+          "profile": "C",
+          "threshold": 37
+        },
+        {
+          "round": 7,
+          "profile": "C",
+          "threshold": 31
+        },
+        {
+          "round": 8,
+          "profile": "C",
+          "threshold": 16
+        },
+        {
+          "round": 9,
+          "profile": "C",
+          "threshold": 24
+        },
+        {
+          "round": 10,
+          "profile": "C",
+          "threshold": 15
+        },
+        {
+          "round": 11,
+          "profile": "C",
+          "threshold": 24
+        },
+        {
+          "round": 12,
+          "profile": "C",
+          "threshold": 40
+        },
+        {
+          "round": 13,
+          "profile": "C",
+          "threshold": 19
+        },
+        {
+          "round": 14,
+          "profile": "C",
+          "threshold": 23
+        },
+        {
+          "round": 15,
+          "profile": "C",
+          "threshold": 11
+        },
+        {
+          "round": 16,
+          "profile": "C",
+          "threshold": 44
+        },
+        {
+          "round": 17,
+          "profile": "C",
+          "threshold": 9
+        },
+        {
+          "round": 18,
+          "profile": "C",
+          "threshold": 24
+        }
+      ],
+      "sha256": "8fa1d8e5070193759df88eb018abf5aaad176991345aefa46896d1381e95fdd1"
+    },
+    {
+      "id": "D-maintenance",
+      "candidateSeed": 1,
+      "rounds": [
+        {
+          "round": 1,
+          "profile": "A",
+          "threshold": 11
+        },
+        {
+          "round": 2,
+          "profile": "C",
+          "threshold": 44
+        },
+        {
+          "round": 3,
+          "profile": "B",
+          "threshold": 19
+        },
+        {
+          "round": 4,
+          "profile": "C",
+          "threshold": 2
+        },
+        {
+          "round": 5,
+          "profile": "B",
+          "threshold": 1
+        },
+        {
+          "round": 6,
+          "profile": "A",
+          "threshold": 11
+        },
+        {
+          "round": 7,
+          "profile": "B",
+          "threshold": 11
+        },
+        {
+          "round": 8,
+          "profile": "B",
+          "threshold": 17
+        },
+        {
+          "round": 9,
+          "profile": "C",
+          "threshold": 46
+        },
+        {
+          "round": 10,
+          "profile": "A",
+          "threshold": 3
+        },
+        {
+          "round": 11,
+          "profile": "A",
+          "threshold": 3
+        },
+        {
+          "round": 12,
+          "profile": "C",
+          "threshold": 4
+        },
+        {
+          "round": 13,
+          "profile": "A",
+          "threshold": 7
+        },
+        {
+          "round": 14,
+          "profile": "C",
+          "threshold": 32
+        },
+        {
+          "round": 15,
+          "profile": "A",
+          "threshold": 6
+        },
+        {
+          "round": 16,
+          "profile": "B",
+          "threshold": 24
+        },
+        {
+          "round": 17,
+          "profile": "B",
+          "threshold": 7
+        },
+        {
+          "round": 18,
+          "profile": "C",
+          "threshold": 28
+        }
+      ],
+      "sha256": "8869b5c978c0b3fe88c0e00559ac17650eebd59c35bcfd485e8568b50d8634ab"
+    }
+  ]
+}

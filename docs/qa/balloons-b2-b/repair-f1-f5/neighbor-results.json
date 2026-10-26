@@ -1,0 +1,104 @@
+{
+  "version": "145.0.7632.6",
+  "results": [
+    {
+      "case": "lifecycle-demo"
+    },
+    {
+      "case": "lifecycle-ready"
+    },
+    {
+      "case": "lifecycle-resolved"
+    },
+    {
+      "case": "lifecycle-feedback"
+    },
+    {
+      "case": "lifecycle-completed"
+    },
+    {
+      "case": "announcements",
+      "verbose": false,
+      "before": "Round 1. Type 1. Current 0 cents. Banked 0 cents.",
+      "after": "Round 1. Type 1. Current 0 cents. Banked 0 cents."
+    },
+    {
+      "case": "announcements",
+      "verbose": true,
+      "before": "Round 1. Type 1. Current 0 cents. Banked 0 cents.",
+      "after": "Round 1. Type 1. Current 5 cents. Banked 0 cents."
+    },
+    {
+      "case": "held-space-blur-fresh-press"
+    },
+    {
+      "case": "interrupted-pending-transition",
+      "action": "start",
+      "phase": "paused",
+      "round": 1
+    },
+    {
+      "case": "interrupted-pending-transition",
+      "action": "demo_next",
+      "phase": "paused",
+      "round": 1
+    },
+    {
+      "case": "interrupted-pending-transition",
+      "action": "collect",
+      "phase": "paused",
+      "round": 1
+    },
+    {
+      "case": "interrupted-pending-transition",
+      "action": "next",
+      "phase": "paused",
+      "round": 2
+    },
+    {
+      "case": "interrupted-pending-transition",
+      "action": "final",
+      "phase": "completed",
+      "round": 18
+    },
+    {
+      "case": "injected-owner-loss-pending-callback"
+    },
+    {
+      "case": "action-abort-pauses"
+    },
+    {
+      "case": "deletion-race",
+      "boundary": "assignment",
+      "operation": "delete"
+    },
+    {
+      "case": "deletion-race",
+      "boundary": "assignment",
+      "operation": "replace"
+    },
+    {
+      "case": "deletion-race",
+      "boundary": "final",
+      "operation": "delete"
+    },
+    {
+      "case": "deletion-race",
+      "boundary": "final",
+      "operation": "replace"
+    },
+    {
+      "case": "deletion-race",
+      "boundary": "post-verify",
+      "operation": "delete"
+    },
+    {
+      "case": "deletion-race",
+      "boundary": "post-verify",
+      "operation": "replace"
+    },
+    {
+      "case": "lost-final-callback-lock"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+
+ RUN  v4.1.11 /private/tmp/balloons-b1a-audit-gH5XJE
+
+ ❯ repro.test.ts (6 tests | 5 failed) 9ms
+   × F1: report must refuse a round resolved before its Pump action 3ms
+   × F1: report must refuse one action ID reused for every accepted action 1ms
+   × F2: report must refuse 15 burst cents reclassified as banked 1ms
+   × F3: report must refuse visible types that disagree with recorded mapping 1ms
+   × F4: report must refuse manifest bytes that no longer match the verified hash 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  repro.test.ts > F1: report must refuse a round resolved before its Pump action
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ repro.test.ts:29:21
+     27|  ;[s.events[1],s.events[2]]=[s.events[2],s.events[1]]
+     28|  s.events.forEach((e:any,i:number)=>e.sequenceNumber=i+1)
+     29|  expect(refused(s)).toBe(true)
+       |                     ^
+     30| })
+     31| test('F1: report must refuse one action ID reused for every accepted a…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+ FAIL  repro.test.ts > F1: report must refuse one action ID reused for every accepted action
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ repro.test.ts:35:21
+     33|  s.events.forEach((e:any)=>{if(e.actionId!==null)e.actionId=1})
+     34|  s.nextActionId=2
+     35|  expect(refused(s)).toBe(true)
+       |                     ^
+     36| })
+     37| test('F2: report must refuse 15 burst cents reclassified as banked',()…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  repro.test.ts > F2: report must refuse 15 burst cents reclassified as banked
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ repro.test.ts:43:21
+     41|  r.bankedCents=15;r.lostCents=0;s.bankedCents+=15;s.lostCents-=15
+     42|  for(const e of s.events)if(e.round>=5&&e.type==='round_resolved'){e.p…
+     43|  expect(refused(s)).toBe(true)
+       |                     ^
+     44| })
+     45| test('F3: report must refuse visible types that disagree with recorded…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  repro.test.ts > F3: report must refuse visible types that disagree with recorded mapping
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ repro.test.ts:48:21
+     46|  const s:any=structuredClone(original)
+     47|  s.results.forEach((r:any)=>{if(r.visibleType==='Type 1')r.visibleType…
+     48|  expect(refused(s)).toBe(true)
+       |                     ^
+     49| })
+     50| test('F4: report must refuse manifest bytes that no longer match the v…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+ FAIL  repro.test.ts > F4: report must refuse manifest bytes that no longer match the verified hash
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ repro.test.ts:53:21
+     51|  const s:any=structuredClone(original)
+     52|  s.manifest.rounds[0].threshold=2
+     53|  expect(refused(s)).toBe(true)
+       |                     ^
+     54| })
+     55|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  5 failed | 1 passed (6)
+   Start at  16:51:42
+   Duration  106ms (transform 27ms, setup 0ms, import 39ms, tests 9ms, environment 0ms)

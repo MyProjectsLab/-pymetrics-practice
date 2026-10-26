@@ -1,0 +1,74 @@
+[
+  {
+    "name": "ready-Close-exit",
+    "pass": true
+  },
+  {
+    "name": "ready-Close-arm",
+    "pass": true
+  },
+  {
+    "name": "ready-Restart-exit",
+    "pass": true
+  },
+  {
+    "name": "ready-Restart-arm",
+    "pass": true
+  },
+  {
+    "name": "opening-close-close",
+    "pass": true
+  },
+  {
+    "name": "opening-close-opening",
+    "pass": true
+  },
+  {
+    "name": "pending-restart-close-close",
+    "pass": true
+  },
+  {
+    "name": "pending-restart-close-restart",
+    "pass": true
+  },
+  {
+    "name": "terminal-close-withdrawal",
+    "pass": true
+  },
+  {
+    "name": "terminal-close-terminal",
+    "pass": true
+  },
+  {
+    "name": "pagehide-after-result-intent",
+    "pass": true
+  },
+  {
+    "name": "second-tab-owner-and-reload-recovery",
+    "pass": true
+  },
+  {
+    "name": "corrupt-false",
+    "pass": true
+  },
+  {
+    "name": "corrupt-0",
+    "pass": true
+  },
+  {
+    "name": "corrupt-",
+    "pass": true
+  },
+  {
+    "name": "corrupt-null",
+    "pass": true
+  },
+  {
+    "name": "capped-failed-writes-and-manual-retry",
+    "pass": true
+  },
+  {
+    "name": "missing-root-explicit-recovery",
+    "pass": true
+  }
+]

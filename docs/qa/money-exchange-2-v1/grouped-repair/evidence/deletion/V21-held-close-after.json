@@ -1,0 +1,584 @@
+{
+  "version": "money_exchange_2_storage_v2_0",
+  "activity": {},
+  "installationId": "c840d6b4-ead8-4176-8de5-3bd83f5a5c24",
+  "generation": 1,
+  "revision": 10,
+  "lease": {
+    "ownerId": "709a84f4-7dd7-4256-a501-162f2af49ce0",
+    "epoch": 2,
+    "live": true
+  },
+  "route": {
+    "stage": "history",
+    "epoch": 11,
+    "ownerId": "709a84f4-7dd7-4256-a501-162f2af49ce0"
+  },
+  "ticketSerial": 2,
+  "currentTicketId": null,
+  "tickets": {
+    "T1.1": {
+      "id": "T1.1",
+      "generation": 1,
+      "ownerId": "709a84f4-7dd7-4256-a501-162f2af49ce0",
+      "leaseEpoch": 2,
+      "state": "consumed",
+      "attemptId": "A1.1"
+    },
+    "T1.2": {
+      "id": "T1.2",
+      "generation": 1,
+      "ownerId": "709a84f4-7dd7-4256-a501-162f2af49ce0",
+      "leaseEpoch": 2,
+      "state": "canceled",
+      "attemptId": "A1.2"
+    }
+  },
+  "activeAttemptId": null,
+  "formCounter": 2,
+  "exposureHistory": [
+    {
+      "attemptId": "A1.1",
+      "formId": "ME2-1",
+      "formDigest": "1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea"
+    },
+    {
+      "attemptId": "A1.2",
+      "formId": "ME2-2",
+      "formDigest": "f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830"
+    }
+  ],
+  "attempts": {
+    "A1.1": {
+      "id": "A1.1",
+      "ordinal": 1,
+      "createdAt": 191.69999999925494,
+      "context": {
+        "input": "pointer activation",
+        "reducedMotion": false,
+        "highContrast": false,
+        "device": "desktop-class",
+        "spec": "money_exchange_2_spec_v1_0",
+        "scoring": "money_exchange_2_scoring_v1_0"
+      },
+      "events": [
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 1,
+          "requestId": "709a84f4-7dd7-4256-a501-162f2af49ce0/6dc43931-a628-4962-a29d-6bf7da1b8b6f/4",
+          "at": 191.69999999925494,
+          "kind": "attempt_armed"
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 2,
+          "requestId": "709a84f4-7dd7-4256-a501-162f2af49ce0/6dc43931-a628-4962-a29d-6bf7da1b8b6f/4",
+          "at": 191.69999999925494,
+          "kind": "round_intent",
+          "round": 1
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 3,
+          "requestId": "709a84f4-7dd7-4256-a501-162f2af49ce0/6dc43931-a628-4962-a29d-6bf7da1b8b6f/5",
+          "at": 225.69999999925494,
+          "kind": "ended_incomplete",
+          "data": {
+            "reason": "candidate-exit"
+          }
+        }
+      ],
+      "revision": 1,
+      "generation": 1,
+      "ownerId": "709a84f4-7dd7-4256-a501-162f2af49ce0",
+      "leaseEpoch": 2,
+      "originTicketId": "T1.1",
+      "formId": "ME2-1",
+      "formDigest": "1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea",
+      "status": "Incomplete",
+      "playCapability": false,
+      "stage": "award_1",
+      "rounds": [
+        {
+          "id": "A1.1/R1",
+          "partner": "Partner A",
+          "bonusRecipient": "candidate",
+          "armed": true,
+          "decision": null,
+          "exposure": "unshown",
+          "receiptIdentity": null,
+          "fairness": null,
+          "terminal": false
+        },
+        {
+          "id": "A1.1/R2",
+          "partner": "Partner B",
+          "bonusRecipient": "candidate",
+          "armed": false,
+          "decision": null,
+          "exposure": "unshown",
+          "receiptIdentity": null,
+          "fairness": null,
+          "terminal": false
+        }
+      ],
+      "reportSnapshot": null,
+      "endedReason": "candidate-exit"
+    }
+  },
+  "tombstones": {
+    "A1.2": true
+  },
+  "outcomes": {
+    "709a84f4-7dd7-4256-a501-162f2af49ce0/6dc43931-a628-4962-a29d-6bf7da1b8b6f/4": {
+      "payloadHash": "{\"kind\":\"arm\",\"requestId\":\"709a84f4-7dd7-4256-a501-162f2af49ce0/6dc43931-a628-4962-a29d-6bf7da1b8b6f/4\",\"installationId\":\"c840d6b4-ead8-4176-8de5-3bd83f5a5c24\",\"generation\":1,\"ownerId\":\"709a84f4-7dd7-4256-a501-162f2af49ce0\",\"leaseEpoch\":2,\"at\":191.69999999925494,\"routeEpoch\":4,\"ticketId\":\"T1.1\",\"input\":\"pointer activation\",\"stage\":\"ready\",\"context\":{\"input\":\"pointer activation\",\"reducedMotion\":false,\"highContrast\":false,\"device\":\"desktop-class\",\"spec\":\"money_exchange_2_spec_v1_0\",\"scoring\":\"money_exchange_2_scoring_v1_0\"}}",
+      "command": {
+        "kind": "arm",
+        "requestId": "709a84f4-7dd7-4256-a501-162f2af49ce0/6dc43931-a628-4962-a29d-6bf7da1b8b6f/4",
+        "installationId": "c840d6b4-ead8-4176-8de5-3bd83f5a5c24",
+        "generation": 1,
+        "ownerId": "709a84f4-7dd7-4256-a501-162f2af49ce0",
+        "leaseEpoch": 2,
+        "at": 191.69999999925494,
+        "routeEpoch": 4,
+        "ticketId": "T1.1",
+        "input": "pointer activation",
+        "stage": "ready",
+        "context": {
+          "input": "pointer activation",
+          "reducedMotion": false,
+          "highContrast": false,
+          "device": "desktop-class",
+          "spec": "money_exchange_2_spec_v1_0",
+          "scoring": "money_exchange_2_scoring_v1_0"
+        }
+      },
+      "result": {
+        "ticketId": "T1.1",
+        "attemptId": "A1.1",
+        "stage": "award_1"
+      },
+      "route": {
+        "stage": "active",
+        "epoch": 5,
+        "ownerId": "709a84f4-7dd7-4256-a501-162f2af49ce0"
+      },
+      "revision": 4
+    },
+    "held-close/95765c00-dc6f-46f5-bbf8-7f01a3b9966c": {
+      "payloadHash": "{\"kind\":\"deleteAttempt\",\"requestId\":\"held-close/95765c00-dc6f-46f5-bbf8-7f01a3b9966c\",\"installationId\":\"c840d6b4-ead8-4176-8de5-3bd83f5a5c24\",\"generation\":1,\"attemptId\":\"A1.2\"}",
+      "command": {
+        "kind": "deleteAttempt",
+        "requestId": "held-close/95765c00-dc6f-46f5-bbf8-7f01a3b9966c",
+        "installationId": "c840d6b4-ead8-4176-8de5-3bd83f5a5c24",
+        "generation": 1,
+        "attemptId": "A1.2"
+      },
+      "result": {
+        "deleted": "A1.2"
+      },
+      "route": {
+        "stage": "library",
+        "epoch": 10,
+        "ownerId": "709a84f4-7dd7-4256-a501-162f2af49ce0"
+      },
+      "revision": 9
+    },
+    "held-close/f88f414b-2f09-4174-be34-40b8e2df59f6": {
+      "payloadHash": "{\"kind\":\"history\",\"requestId\":\"held-close/f88f414b-2f09-4174-be34-40b8e2df59f6\",\"installationId\":\"c840d6b4-ead8-4176-8de5-3bd83f5a5c24\",\"generation\":1,\"ownerId\":\"709a84f4-7dd7-4256-a501-162f2af49ce0\",\"leaseEpoch\":2,\"routeEpoch\":10,\"at\":1965.800000000745}",
+      "command": {
+        "kind": "history",
+        "requestId": "held-close/f88f414b-2f09-4174-be34-40b8e2df59f6",
+        "installationId": "c840d6b4-ead8-4176-8de5-3bd83f5a5c24",
+        "generation": 1,
+        "ownerId": "709a84f4-7dd7-4256-a501-162f2af49ce0",
+        "leaseEpoch": 2,
+        "routeEpoch": 10,
+        "at": 1965.800000000745
+      },
+      "result": {
+        "stage": "history"
+      },
+      "route": {
+        "stage": "history",
+        "epoch": 11,
+        "ownerId": "709a84f4-7dd7-4256-a501-162f2af49ce0"
+      },
+      "revision": 10
+    }
+  },
+  "navigation": null,
+  "proofs": {
+    "A1.1": {
+      "commands": [
+        {
+          "kind": "arm",
+          "requestId": "709a84f4-7dd7-4256-a501-162f2af49ce0/6dc43931-a628-4962-a29d-6bf7da1b8b6f/4",
+          "installationId": "c840d6b4-ead8-4176-8de5-3bd83f5a5c24",
+          "generation": 1,
+          "ownerId": "709a84f4-7dd7-4256-a501-162f2af49ce0",
+          "leaseEpoch": 2,
+          "at": 191.69999999925494,
+          "routeEpoch": 4,
+          "ticketId": "T1.1",
+          "input": "pointer activation",
+          "stage": "ready",
+          "context": {
+            "input": "pointer activation",
+            "reducedMotion": false,
+            "highContrast": false,
+            "device": "desktop-class",
+            "spec": "money_exchange_2_spec_v1_0",
+            "scoring": "money_exchange_2_scoring_v1_0"
+          }
+        },
+        {
+          "kind": "exit",
+          "requestId": "709a84f4-7dd7-4256-a501-162f2af49ce0/6dc43931-a628-4962-a29d-6bf7da1b8b6f/5",
+          "installationId": "c840d6b4-ead8-4176-8de5-3bd83f5a5c24",
+          "generation": 1,
+          "ownerId": "709a84f4-7dd7-4256-a501-162f2af49ce0",
+          "leaseEpoch": 2,
+          "at": 225.69999999925494,
+          "routeEpoch": 5,
+          "ticketId": "T1.1",
+          "destination": "Close"
+        }
+      ]
+    }
+  },
+  "retired": {
+    "709a84f4-7dd7-4256-a501-162f2af49ce0/6dc43931-a628-4962-a29d-6bf7da1b8b6f/1": {
+      "requestId": "709a84f4-7dd7-4256-a501-162f2af49ce0/6dc43931-a628-4962-a29d-6bf7da1b8b6f/1",
+      "deletionId": "held-close/95765c00-dc6f-46f5-bbf8-7f01a3b9966c",
+      "attemptId": null,
+      "generation": 1
+    },
+    "709a84f4-7dd7-4256-a501-162f2af49ce0/6dc43931-a628-4962-a29d-6bf7da1b8b6f/2": {
+      "requestId": "709a84f4-7dd7-4256-a501-162f2af49ce0/6dc43931-a628-4962-a29d-6bf7da1b8b6f/2",
+      "deletionId": "held-close/95765c00-dc6f-46f5-bbf8-7f01a3b9966c",
+      "attemptId": null,
+      "generation": 1
+    },
+    "709a84f4-7dd7-4256-a501-162f2af49ce0/6dc43931-a628-4962-a29d-6bf7da1b8b6f/3": {
+      "requestId": "709a84f4-7dd7-4256-a501-162f2af49ce0/6dc43931-a628-4962-a29d-6bf7da1b8b6f/3",
+      "deletionId": "held-close/95765c00-dc6f-46f5-bbf8-7f01a3b9966c",
+      "attemptId": null,
+      "generation": 1
+    },
+    "709a84f4-7dd7-4256-a501-162f2af49ce0/6dc43931-a628-4962-a29d-6bf7da1b8b6f/5": {
+      "requestId": "709a84f4-7dd7-4256-a501-162f2af49ce0/6dc43931-a628-4962-a29d-6bf7da1b8b6f/5",
+      "deletionId": "held-close/95765c00-dc6f-46f5-bbf8-7f01a3b9966c",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "held-close/3cab77b2-bcfb-4927-8cb4-d2f7d6adda1d": {
+      "requestId": "held-close/3cab77b2-bcfb-4927-8cb4-d2f7d6adda1d",
+      "deletionId": "held-close/95765c00-dc6f-46f5-bbf8-7f01a3b9966c",
+      "attemptId": null,
+      "generation": 1
+    },
+    "held-close/0e17f2d4-3d52-4639-8327-b8cbd0efdaad": {
+      "requestId": "held-close/0e17f2d4-3d52-4639-8327-b8cbd0efdaad",
+      "deletionId": "held-close/95765c00-dc6f-46f5-bbf8-7f01a3b9966c",
+      "attemptId": null,
+      "generation": 1
+    },
+    "held-close/63620200-3fda-4850-8648-e6ffa1f69cae": {
+      "requestId": "held-close/63620200-3fda-4850-8648-e6ffa1f69cae",
+      "deletionId": "held-close/95765c00-dc6f-46f5-bbf8-7f01a3b9966c",
+      "attemptId": "A1.2",
+      "generation": 1
+    }
+  },
+  "resetReceipt": null,
+  "checkpoint": {
+    "version": "storage_v2_0",
+    "revision": 9,
+    "state": {
+      "version": "money_exchange_2_storage_v2_0",
+      "activity": {},
+      "installationId": "c840d6b4-ead8-4176-8de5-3bd83f5a5c24",
+      "generation": 1,
+      "revision": 9,
+      "lease": {
+        "ownerId": "709a84f4-7dd7-4256-a501-162f2af49ce0",
+        "epoch": 2,
+        "live": true
+      },
+      "route": {
+        "stage": "library",
+        "epoch": 10,
+        "ownerId": "709a84f4-7dd7-4256-a501-162f2af49ce0"
+      },
+      "ticketSerial": 2,
+      "currentTicketId": null,
+      "tickets": {
+        "T1.1": {
+          "id": "T1.1",
+          "generation": 1,
+          "ownerId": "709a84f4-7dd7-4256-a501-162f2af49ce0",
+          "leaseEpoch": 2,
+          "state": "consumed",
+          "attemptId": "A1.1"
+        },
+        "T1.2": {
+          "id": "T1.2",
+          "generation": 1,
+          "ownerId": "709a84f4-7dd7-4256-a501-162f2af49ce0",
+          "leaseEpoch": 2,
+          "state": "canceled",
+          "attemptId": "A1.2"
+        }
+      },
+      "activeAttemptId": null,
+      "formCounter": 2,
+      "exposureHistory": [
+        {
+          "attemptId": "A1.1",
+          "formId": "ME2-1",
+          "formDigest": "1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea"
+        },
+        {
+          "attemptId": "A1.2",
+          "formId": "ME2-2",
+          "formDigest": "f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830"
+        }
+      ],
+      "attempts": {
+        "A1.1": {
+          "id": "A1.1",
+          "ordinal": 1,
+          "createdAt": 191.69999999925494,
+          "context": {
+            "input": "pointer activation",
+            "reducedMotion": false,
+            "highContrast": false,
+            "device": "desktop-class",
+            "spec": "money_exchange_2_spec_v1_0",
+            "scoring": "money_exchange_2_scoring_v1_0"
+          },
+          "events": [
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 1,
+              "requestId": "709a84f4-7dd7-4256-a501-162f2af49ce0/6dc43931-a628-4962-a29d-6bf7da1b8b6f/4",
+              "at": 191.69999999925494,
+              "kind": "attempt_armed"
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 2,
+              "requestId": "709a84f4-7dd7-4256-a501-162f2af49ce0/6dc43931-a628-4962-a29d-6bf7da1b8b6f/4",
+              "at": 191.69999999925494,
+              "kind": "round_intent",
+              "round": 1
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 3,
+              "requestId": "709a84f4-7dd7-4256-a501-162f2af49ce0/6dc43931-a628-4962-a29d-6bf7da1b8b6f/5",
+              "at": 225.69999999925494,
+              "kind": "ended_incomplete",
+              "data": {
+                "reason": "candidate-exit"
+              }
+            }
+          ],
+          "revision": 1,
+          "generation": 1,
+          "ownerId": "709a84f4-7dd7-4256-a501-162f2af49ce0",
+          "leaseEpoch": 2,
+          "originTicketId": "T1.1",
+          "formId": "ME2-1",
+          "formDigest": "1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea",
+          "status": "Incomplete",
+          "playCapability": false,
+          "stage": "award_1",
+          "rounds": [
+            {
+              "id": "A1.1/R1",
+              "partner": "Partner A",
+              "bonusRecipient": "candidate",
+              "armed": true,
+              "decision": null,
+              "exposure": "unshown",
+              "receiptIdentity": null,
+              "fairness": null,
+              "terminal": false
+            },
+            {
+              "id": "A1.1/R2",
+              "partner": "Partner B",
+              "bonusRecipient": "candidate",
+              "armed": false,
+              "decision": null,
+              "exposure": "unshown",
+              "receiptIdentity": null,
+              "fairness": null,
+              "terminal": false
+            }
+          ],
+          "reportSnapshot": null,
+          "endedReason": "candidate-exit"
+        }
+      },
+      "tombstones": {
+        "A1.2": true
+      },
+      "outcomes": {
+        "709a84f4-7dd7-4256-a501-162f2af49ce0/6dc43931-a628-4962-a29d-6bf7da1b8b6f/4": {
+          "payloadHash": "{\"kind\":\"arm\",\"requestId\":\"709a84f4-7dd7-4256-a501-162f2af49ce0/6dc43931-a628-4962-a29d-6bf7da1b8b6f/4\",\"installationId\":\"c840d6b4-ead8-4176-8de5-3bd83f5a5c24\",\"generation\":1,\"ownerId\":\"709a84f4-7dd7-4256-a501-162f2af49ce0\",\"leaseEpoch\":2,\"at\":191.69999999925494,\"routeEpoch\":4,\"ticketId\":\"T1.1\",\"input\":\"pointer activation\",\"stage\":\"ready\",\"context\":{\"input\":\"pointer activation\",\"reducedMotion\":false,\"highContrast\":false,\"device\":\"desktop-class\",\"spec\":\"money_exchange_2_spec_v1_0\",\"scoring\":\"money_exchange_2_scoring_v1_0\"}}",
+          "command": {
+            "kind": "arm",
+            "requestId": "709a84f4-7dd7-4256-a501-162f2af49ce0/6dc43931-a628-4962-a29d-6bf7da1b8b6f/4",
+            "installationId": "c840d6b4-ead8-4176-8de5-3bd83f5a5c24",
+            "generation": 1,
+            "ownerId": "709a84f4-7dd7-4256-a501-162f2af49ce0",
+            "leaseEpoch": 2,
+            "at": 191.69999999925494,
+            "routeEpoch": 4,
+            "ticketId": "T1.1",
+            "input": "pointer activation",
+            "stage": "ready",
+            "context": {
+              "input": "pointer activation",
+              "reducedMotion": false,
+              "highContrast": false,
+              "device": "desktop-class",
+              "spec": "money_exchange_2_spec_v1_0",
+              "scoring": "money_exchange_2_scoring_v1_0"
+            }
+          },
+          "result": {
+            "ticketId": "T1.1",
+            "attemptId": "A1.1",
+            "stage": "award_1"
+          },
+          "route": {
+            "stage": "active",
+            "epoch": 5,
+            "ownerId": "709a84f4-7dd7-4256-a501-162f2af49ce0"
+          },
+          "revision": 4
+        },
+        "held-close/95765c00-dc6f-46f5-bbf8-7f01a3b9966c": {
+          "payloadHash": "{\"kind\":\"deleteAttempt\",\"requestId\":\"held-close/95765c00-dc6f-46f5-bbf8-7f01a3b9966c\",\"installationId\":\"c840d6b4-ead8-4176-8de5-3bd83f5a5c24\",\"generation\":1,\"attemptId\":\"A1.2\"}",
+          "command": {
+            "kind": "deleteAttempt",
+            "requestId": "held-close/95765c00-dc6f-46f5-bbf8-7f01a3b9966c",
+            "installationId": "c840d6b4-ead8-4176-8de5-3bd83f5a5c24",
+            "generation": 1,
+            "attemptId": "A1.2"
+          },
+          "result": {
+            "deleted": "A1.2"
+          },
+          "route": {
+            "stage": "library",
+            "epoch": 10,
+            "ownerId": "709a84f4-7dd7-4256-a501-162f2af49ce0"
+          },
+          "revision": 9
+        }
+      },
+      "navigation": null,
+      "proofs": {
+        "A1.1": {
+          "commands": [
+            {
+              "kind": "arm",
+              "requestId": "709a84f4-7dd7-4256-a501-162f2af49ce0/6dc43931-a628-4962-a29d-6bf7da1b8b6f/4",
+              "installationId": "c840d6b4-ead8-4176-8de5-3bd83f5a5c24",
+              "generation": 1,
+              "ownerId": "709a84f4-7dd7-4256-a501-162f2af49ce0",
+              "leaseEpoch": 2,
+              "at": 191.69999999925494,
+              "routeEpoch": 4,
+              "ticketId": "T1.1",
+              "input": "pointer activation",
+              "stage": "ready",
+              "context": {
+                "input": "pointer activation",
+                "reducedMotion": false,
+                "highContrast": false,
+                "device": "desktop-class",
+                "spec": "money_exchange_2_spec_v1_0",
+                "scoring": "money_exchange_2_scoring_v1_0"
+              }
+            },
+            {
+              "kind": "exit",
+              "requestId": "709a84f4-7dd7-4256-a501-162f2af49ce0/6dc43931-a628-4962-a29d-6bf7da1b8b6f/5",
+              "installationId": "c840d6b4-ead8-4176-8de5-3bd83f5a5c24",
+              "generation": 1,
+              "ownerId": "709a84f4-7dd7-4256-a501-162f2af49ce0",
+              "leaseEpoch": 2,
+              "at": 225.69999999925494,
+              "routeEpoch": 5,
+              "ticketId": "T1.1",
+              "destination": "Close"
+            }
+          ]
+        }
+      },
+      "retired": {
+        "709a84f4-7dd7-4256-a501-162f2af49ce0/6dc43931-a628-4962-a29d-6bf7da1b8b6f/1": {
+          "requestId": "709a84f4-7dd7-4256-a501-162f2af49ce0/6dc43931-a628-4962-a29d-6bf7da1b8b6f/1",
+          "deletionId": "held-close/95765c00-dc6f-46f5-bbf8-7f01a3b9966c",
+          "attemptId": null,
+          "generation": 1
+        },
+        "709a84f4-7dd7-4256-a501-162f2af49ce0/6dc43931-a628-4962-a29d-6bf7da1b8b6f/2": {
+          "requestId": "709a84f4-7dd7-4256-a501-162f2af49ce0/6dc43931-a628-4962-a29d-6bf7da1b8b6f/2",
+          "deletionId": "held-close/95765c00-dc6f-46f5-bbf8-7f01a3b9966c",
+          "attemptId": null,
+          "generation": 1
+        },
+        "709a84f4-7dd7-4256-a501-162f2af49ce0/6dc43931-a628-4962-a29d-6bf7da1b8b6f/3": {
+          "requestId": "709a84f4-7dd7-4256-a501-162f2af49ce0/6dc43931-a628-4962-a29d-6bf7da1b8b6f/3",
+          "deletionId": "held-close/95765c00-dc6f-46f5-bbf8-7f01a3b9966c",
+          "attemptId": null,
+          "generation": 1
+        },
+        "709a84f4-7dd7-4256-a501-162f2af49ce0/6dc43931-a628-4962-a29d-6bf7da1b8b6f/5": {
+          "requestId": "709a84f4-7dd7-4256-a501-162f2af49ce0/6dc43931-a628-4962-a29d-6bf7da1b8b6f/5",
+          "deletionId": "held-close/95765c00-dc6f-46f5-bbf8-7f01a3b9966c",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "held-close/3cab77b2-bcfb-4927-8cb4-d2f7d6adda1d": {
+          "requestId": "held-close/3cab77b2-bcfb-4927-8cb4-d2f7d6adda1d",
+          "deletionId": "held-close/95765c00-dc6f-46f5-bbf8-7f01a3b9966c",
+          "attemptId": null,
+          "generation": 1
+        },
+        "held-close/0e17f2d4-3d52-4639-8327-b8cbd0efdaad": {
+          "requestId": "held-close/0e17f2d4-3d52-4639-8327-b8cbd0efdaad",
+          "deletionId": "held-close/95765c00-dc6f-46f5-bbf8-7f01a3b9966c",
+          "attemptId": null,
+          "generation": 1
+        },
+        "held-close/63620200-3fda-4850-8648-e6ffa1f69cae": {
+          "requestId": "held-close/63620200-3fda-4850-8648-e6ffa1f69cae",
+          "deletionId": "held-close/95765c00-dc6f-46f5-bbf8-7f01a3b9966c",
+          "attemptId": "A1.2",
+          "generation": 1
+        }
+      },
+      "resetReceipt": null
+    }
+  },
+  "tail": [
+    {
+      "kind": "history",
+      "requestId": "held-close/f88f414b-2f09-4174-be34-40b8e2df59f6",
+      "installationId": "c840d6b4-ead8-4176-8de5-3bd83f5a5c24",
+      "generation": 1,
+      "ownerId": "709a84f4-7dd7-4256-a501-162f2af49ce0",
+      "leaseEpoch": 2,
+      "routeEpoch": 10,
+      "at": 1965.800000000745
+    }
+  ]
+}

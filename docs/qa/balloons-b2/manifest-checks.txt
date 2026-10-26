@@ -1,0 +1,12 @@
+
+> assessment-practice@0.0.0 balloons:check
+> node scripts/check-balloons-manifests.mjs && node scripts/check-balloons-drills.mjs
+
+Balloons: frozen file SHA, first-nine regeneration (seeds 0..34), hashes, 39/13 and block/order/quartile/band constraints, all 36 signatures, cap and fixed-k review values passed.
+D-outcome: first accepted seed 22, all 18 rows, blocks/order/support/quarters/bands and SHA-256 PASS
+D-information: first accepted seed 7, all 18 rows, blocks/order/support/quarters/bands and SHA-256 PASS
+D-updating: first accepted seed 5, all 18 rows, blocks/order/support/quarters/bands and SHA-256 PASS
+D-consistency-A: first accepted seed 0, all 18 rows, blocks/order/support/quarters/bands and SHA-256 PASS
+D-consistency-B: first accepted seed 0, all 18 rows, blocks/order/support/quarters/bands and SHA-256 PASS
+D-consistency-C: first accepted seed 0, all 18 rows, blocks/order/support/quarters/bands and SHA-256 PASS
+D-maintenance: first accepted seed 1, all 18 rows, blocks/order/support/quarters/bands and SHA-256 PASS

@@ -1,0 +1,404 @@
+{
+  "status": "Literal author expectations; independent reconstruction required. No execution or PASS asserted.",
+  "key": [
+    "Determination",
+    "Hope",
+    "Pain",
+    "Puzzlement",
+    "Hope",
+    "Determination",
+    "Puzzlement",
+    "Pain",
+    "Surprise",
+    "Fear",
+    "Anger",
+    "Surprise",
+    "Fear",
+    "Anger"
+  ],
+  "indices": "zero-based in inputs; user-visible numbers add1",
+  "mixedStandard": {
+    "formId": "faces-bank-practice-v2",
+    "scoringVersion": "faces-descriptive-v3",
+    "modeId": "standard-v1",
+    "choices": [
+      "Determination",
+      "Sadness",
+      "Pain",
+      "Surprise",
+      "Hope",
+      "Determination",
+      "Puzzlement",
+      "Disgust",
+      "Surprise",
+      "Surprise",
+      "Anger",
+      "Surprise",
+      "Fear",
+      "Determination"
+    ],
+    "elapsedUs": [
+      1000000,
+      2000000,
+      30000000,
+      4000000,
+      29999999,
+      31000000,
+      5000000,
+      6000000,
+      1000000,
+      7000000,
+      2000000,
+      7000001,
+      6999999,
+      3000000
+    ],
+    "expected": {
+      "matches": 9,
+      "timelyMatches": 6,
+      "late": 4,
+      "wrongItems": [
+        1,
+        3,
+        7,
+        9,
+        13
+      ],
+      "lateMatchedItems": [
+        2,
+        5,
+        11
+      ],
+      "context": {
+        "total": 8,
+        "eligibleTotal": 8,
+        "excludedTotal": 0,
+        "matches": 5,
+        "timelyMatches": 3,
+        "lateCount": 2,
+        "timelyCount": 6,
+        "timelyLatencySumUs": 47999999,
+        "lateCountForMean": 2,
+        "lateLatencySumUs": 61000000
+      },
+      "photo": {
+        "total": 6,
+        "eligibleTotal": 6,
+        "excludedTotal": 0,
+        "matches": 4,
+        "timelyMatches": 3,
+        "lateCount": 2,
+        "timelyCount": 4,
+        "timelyLatencySumUs": 12999999,
+        "lateCountForMean": 2,
+        "lateLatencySumUs": 14000001
+      },
+      "excludedItems": [],
+      "confusionPairs": [
+        {
+          "category": "context",
+          "intended": "Hope",
+          "selected": "Sadness",
+          "count": 1
+        },
+        {
+          "category": "context",
+          "intended": "Pain",
+          "selected": "Disgust",
+          "count": 1
+        },
+        {
+          "category": "context",
+          "intended": "Puzzlement",
+          "selected": "Surprise",
+          "count": 1
+        },
+        {
+          "category": "photo",
+          "intended": "Anger",
+          "selected": "Determination",
+          "count": 1
+        },
+        {
+          "category": "photo",
+          "intended": "Fear",
+          "selected": "Surprise",
+          "count": 1
+        }
+      ]
+    }
+  },
+  "oldSameInputs": {
+    "formId": "faces-bank-discussion-v1",
+    "formHash": "cb12f328b155b79019e10ce38ab2c4b59ed806df3ae64f5f4ea3eeded26c9ff6",
+    "scoringVersion": "faces-descriptive-v2",
+    "modeId": "standard-v1",
+    "choices": [
+      "Determination",
+      "Sadness",
+      "Pain",
+      "Surprise",
+      "Hope",
+      "Determination",
+      "Puzzlement",
+      "Disgust",
+      "Surprise",
+      "Surprise",
+      "Anger",
+      "Surprise",
+      "Fear",
+      "Determination"
+    ],
+    "elapsedUs": [
+      1000000,
+      2000000,
+      30000000,
+      4000000,
+      29999999,
+      31000000,
+      5000000,
+      6000000,
+      1000000,
+      7000000,
+      2000000,
+      7000001,
+      6999999,
+      3000000
+    ],
+    "expected": {
+      "matches": 8,
+      "timelyMatches": 5,
+      "late": 4,
+      "contextMatches": 4,
+      "contextTimelyMatches": 2,
+      "photoMatches": 4,
+      "photoTimelyMatches": 3,
+      "excludedItems": [
+        1,
+        6
+      ],
+      "denominators": [
+        6,
+        6
+      ],
+      "pairCountTotal": 4,
+      "timing": "identical to mixedStandard"
+    }
+  },
+  "allMatchedTimely": {
+    "modeId": "standard-v1",
+    "choices": [
+      "Determination",
+      "Hope",
+      "Pain",
+      "Puzzlement",
+      "Hope",
+      "Determination",
+      "Puzzlement",
+      "Pain",
+      "Surprise",
+      "Fear",
+      "Anger",
+      "Surprise",
+      "Fear",
+      "Anger"
+    ],
+    "elapsedUs": [
+      1000000,
+      1000000,
+      1000000,
+      1000000,
+      1000000,
+      1000000,
+      1000000,
+      1000000,
+      1000000,
+      1000000,
+      1000000,
+      1000000,
+      1000000,
+      1000000
+    ],
+    "expected": {
+      "matches": 14,
+      "timelyMatches": 14,
+      "late": 0,
+      "contextMatches": 8,
+      "photoMatches": 6,
+      "contextTimelySumUs": 8000000,
+      "contextTimelyCount": 8,
+      "photoTimelySumUs": 6000000,
+      "photoTimelyCount": 6,
+      "lateSumsAndCounts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "confusionPairs": []
+    }
+  },
+  "allMatchedAtLimit": {
+    "modeId": "standard-v1",
+    "choices": [
+      "Determination",
+      "Hope",
+      "Pain",
+      "Puzzlement",
+      "Hope",
+      "Determination",
+      "Puzzlement",
+      "Pain",
+      "Surprise",
+      "Fear",
+      "Anger",
+      "Surprise",
+      "Fear",
+      "Anger"
+    ],
+    "elapsedUs": [
+      30000000,
+      30000000,
+      30000000,
+      30000000,
+      30000000,
+      30000000,
+      30000000,
+      30000000,
+      7000000,
+      7000000,
+      7000000,
+      7000000,
+      7000000,
+      7000000
+    ],
+    "expected": {
+      "matches": 14,
+      "timelyMatches": 0,
+      "late": 14,
+      "contextLateSumUs": 240000000,
+      "contextLateCount": 8,
+      "photoLateSumUs": 42000000,
+      "photoLateCount": 6,
+      "timelySumsAndCounts": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "confusionPairs": []
+    }
+  },
+  "allWrongTimely": {
+    "modeId": "standard-v1",
+    "choices": [
+      "Happiness",
+      "Happiness",
+      "Happiness",
+      "Happiness",
+      "Happiness",
+      "Happiness",
+      "Happiness",
+      "Happiness",
+      "Happiness",
+      "Happiness",
+      "Happiness",
+      "Happiness",
+      "Happiness",
+      "Happiness"
+    ],
+    "elapsedUs": [
+      1000000,
+      1000000,
+      1000000,
+      1000000,
+      1000000,
+      1000000,
+      1000000,
+      1000000,
+      1000000,
+      1000000,
+      1000000,
+      1000000,
+      1000000,
+      1000000
+    ],
+    "expected": {
+      "matches": 0,
+      "timelyMatches": 0,
+      "late": 0,
+      "wrong": 14,
+      "contextTimelySumUs": 8000000,
+      "photoTimelySumUs": 6000000,
+      "pairGroups": 7,
+      "eachPairCount": 2
+    }
+  },
+  "mixedExtended": {
+    "modeId": "extended-v1",
+    "choices": [
+      "Determination",
+      "Sadness",
+      "Pain",
+      "Surprise",
+      "Hope",
+      "Determination",
+      "Puzzlement",
+      "Disgust",
+      "Surprise",
+      "Surprise",
+      "Anger",
+      "Surprise",
+      "Fear",
+      "Determination"
+    ],
+    "elapsedUs": [
+      1000000,
+      2000000,
+      30000000,
+      4000000,
+      29999999,
+      31000000,
+      5000000,
+      6000000,
+      1000000,
+      7000000,
+      2000000,
+      7000001,
+      6999999,
+      3000000
+    ],
+    "expected": {
+      "matches": 9,
+      "timelyMatches": 9,
+      "late": 0,
+      "contextMatches": 5,
+      "photoMatches": 4,
+      "contextTimelySumUs": 108999999,
+      "contextTimelyCount": 8,
+      "photoTimelySumUs": 27000000,
+      "photoTimelyCount": 6,
+      "lateSumsAndCounts": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "incomplete": {
+    "responses": 13,
+    "terminal": "exit",
+    "expectedStatus": "incomplete",
+    "expectedReport": null
+  },
+  "arithmeticWorking": [
+    "Context timely:1,000,000+2,000,000+4,000,000+29,999,999+5,000,000+6,000,000=47,999,999us; /6=7,999,999.833333us ->8.00s.",
+    "Context late:30,000,000+31,000,000=61,000,000us; /2=30,500,000us ->30.50s.",
+    "Photo timely:1,000,000+2,000,000+6,999,999+3,000,000=12,999,999us; /4=3,249,999.75us ->3.25s.",
+    "Photo late:7,000,000+7,000,001=14,000,001us; /2=7,000,000.5us ->7.00s.",
+    "New matches5+4=9; timely3+3=6; incorrect14-9=5; late2+2=4; late matches9-6=3.",
+    "Old excludes indices1(wrong) and6(matched timely):context5-1=4, timely3-1=2; total4+4=8/12; timely2+3=5/12.",
+    "Extended makes all mixed times timely:context47,999,999+61,000,000=108,999,999us /8 ->13.62s; photo12,999,999+14,000,001=27,000,000us /6 ->4.50s."
+  ]
+}

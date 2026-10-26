@@ -1,0 +1,59 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Stop L1 local evidence export</title>
+<h1>Stop L1 local evidence export</h1>
+<p>Disposable loopback test origin only. Nothing is sent over the network.</p>
+<button id="download" disabled>Download raw browser events and Stop records</button>
+<div id="out">Loading</div>
+<script>
+  (async () => {
+    const downloadButton = document.getElementById('download')
+    const output = document.getElementById('out')
+    const browserEvents = JSON.parse(localStorage.getItem('stop-l1-browser-events-v1') || '[]')
+    const db = await new Promise((resolve, reject) => {
+      const request = indexedDB.open('assessment-practice-stop', 1)
+      request.onsuccess = () => resolve(request.result)
+      request.onerror = () => reject(request.error)
+    })
+    const request = db.transaction('installation', 'readonly').objectStore('installation').get('stop')
+    request.onsuccess = () => {
+      const state = request.result || {}
+      const raw = { schema: 'stop_l1_local_export_v1', browserEvents, installation: state }
+      downloadButton.disabled = false
+      downloadButton.onclick = () => {
+        const url = URL.createObjectURL(new Blob([JSON.stringify(raw, null, 2)], { type: 'application/json' }))
+        const link = document.createElement('a')
+        link.href = url
+        link.download = 'stop-v12-native-' + (new URLSearchParams(location.search).get('case') || 'capture') + '.json'
+        link.click()
+        setTimeout(() => URL.revokeObjectURL(url), 1000)
+      }
+      function line(text) {
+        const item = document.createElement('p')
+        item.textContent = text
+        output.append(item)
+      }
+      output.replaceChildren()
+      line('BROWSER EVENTS ' + browserEvents.length)
+      for (const event of browserEvents.slice(-20)) line('BROWSER ' + JSON.stringify(event))
+      const results = Object.values(state.results || {})
+      line('SAVED RESULTS ' + results.length)
+      for (const result of results) line('RESULT ' + JSON.stringify({ sessionId: result.sessionId, validity: result.validity, formId: result.form?.id, events: result.events?.length }))
+      for (const draft of Object.values(state.drafts || {})) {
+        line('DRAFT ' + JSON.stringify({
+          sessionId: draft.sessionId,
+          invalidRule: draft.invalidRule,
+          events: draft.events?.length,
+          warmupScheduled: draft.events?.filter(event => event.type === 'trial_scheduled' && event.payload?.trial?.phase === 'warmup').length,
+          scoredScheduled: draft.events?.filter(event => event.type === 'trial_scheduled' && event.payload?.trial?.phase === 'scored').length,
+        }))
+        for (const event of draft.events || []) {
+          if (['visibility_changed', 'focus_changed', 'page_lifecycle_changed', 'session_invalidated'].includes(event.type)) {
+            line('DRAFT JOURNAL ' + JSON.stringify({ type: event.type, timestampMs: event.timestampMs, payload: event.payload, sequenceNumber: event.sequenceNumber }))
+          }
+        }
+      }
+      db.close()
+    }
+  })()
+</script>

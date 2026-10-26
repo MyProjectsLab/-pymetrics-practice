@@ -1,0 +1,336 @@
+{
+  "browser": "145.0.7632.6",
+  "errors": [],
+  "checks": {
+    "preOnset": [
+      {
+        "family": "baseline",
+        "onsets": 0,
+        "reviewable": 1,
+        "available": 4,
+        "retainedUnchanged": true,
+        "claimGone": true,
+        "marker": null,
+        "laterMarkerPreserved": true,
+        "deleted": true
+      },
+      {
+        "family": "baseline",
+        "onsets": 1,
+        "reviewable": 1,
+        "available": 3,
+        "retainedUnchanged": true,
+        "claimGone": true,
+        "marker": {
+          "formId": "stop-baseline-01",
+          "exposedAtWall": "2026-10-01T02:41:15.234Z",
+          "visualProfile": "standard",
+          "deleted": false,
+          "sessionId": "5e52f863-ac3c-4c58-9aa0-1596dba53ac6",
+          "certainty": "confirmed"
+        },
+        "laterMarkerPreserved": true,
+        "deleted": true
+      },
+      {
+        "family": "replay",
+        "onsets": 0,
+        "reviewable": 1,
+        "available": 6,
+        "retainedUnchanged": true,
+        "claimGone": true,
+        "marker": null,
+        "laterMarkerPreserved": true,
+        "deleted": true
+      },
+      {
+        "family": "replay",
+        "onsets": 1,
+        "reviewable": 1,
+        "available": 5,
+        "retainedUnchanged": true,
+        "claimGone": true,
+        "marker": {
+          "formId": "stop-replay-01",
+          "exposedAtWall": "2026-10-01T02:41:15.383Z",
+          "visualProfile": "standard",
+          "deleted": false,
+          "sessionId": "9a92c135-766c-42ff-aef9-e4ee6534c1dd",
+          "certainty": "confirmed"
+        },
+        "laterMarkerPreserved": true,
+        "deleted": true
+      },
+      {
+        "family": "retest",
+        "onsets": 0,
+        "reviewable": 1,
+        "available": 4,
+        "retainedUnchanged": true,
+        "claimGone": true,
+        "marker": null,
+        "laterMarkerPreserved": true,
+        "deleted": true
+      },
+      {
+        "family": "retest",
+        "onsets": 1,
+        "reviewable": 1,
+        "available": 3,
+        "retainedUnchanged": true,
+        "claimGone": true,
+        "marker": {
+          "formId": "stop-retest-01",
+          "exposedAtWall": "2026-10-01T02:41:15.825Z",
+          "visualProfile": "standard",
+          "deleted": false,
+          "sessionId": "c159485f-c3dc-4151-8ee6-8c3b943233e1",
+          "certainty": "confirmed"
+        },
+        "laterMarkerPreserved": true,
+        "deleted": true
+      }
+    ],
+    "resultMutations": [
+      {
+        "name": "control",
+        "valid": 1,
+        "chain": true,
+        "preserved": true,
+        "noAcceptedResponses": true
+      },
+      {
+        "name": "binding",
+        "valid": 0,
+        "chain": false,
+        "preserved": true,
+        "noAcceptedResponses": true
+      },
+      {
+        "name": "visual",
+        "valid": 0,
+        "chain": false,
+        "preserved": true,
+        "noAcceptedResponses": true
+      },
+      {
+        "name": "keyboard",
+        "valid": 0,
+        "chain": false,
+        "preserved": true,
+        "noAcceptedResponses": true
+      },
+      {
+        "name": "exposureForm",
+        "valid": 0,
+        "chain": false,
+        "preserved": true,
+        "noAcceptedResponses": true
+      },
+      {
+        "name": "exposureProfile",
+        "valid": 0,
+        "chain": false,
+        "preserved": true,
+        "noAcceptedResponses": true
+      },
+      {
+        "name": "exposureSession",
+        "valid": 0,
+        "chain": false,
+        "preserved": true,
+        "noAcceptedResponses": true
+      },
+      {
+        "name": "protection",
+        "valid": 0,
+        "chain": false,
+        "preserved": true,
+        "noAcceptedResponses": true
+      },
+      {
+        "name": "deviceTiming",
+        "valid": 0,
+        "chain": false,
+        "preserved": true,
+        "noAcceptedResponses": true
+      },
+      {
+        "name": "missingPresentation",
+        "valid": 0,
+        "chain": false,
+        "preserved": true,
+        "noAcceptedResponses": true
+      },
+      {
+        "name": "summary",
+        "valid": 0,
+        "chain": false,
+        "preserved": true,
+        "noAcceptedResponses": true
+      },
+      {
+        "name": "scorer",
+        "valid": 0,
+        "chain": false,
+        "preserved": true,
+        "noAcceptedResponses": true
+      }
+    ],
+    "drillMutations": [
+      {
+        "name": "control",
+        "accepted": true,
+        "sourcePreserved": true
+      },
+      {
+        "name": "timingNote",
+        "accepted": true,
+        "sourcePreserved": true
+      },
+      {
+        "name": "extraNote",
+        "accepted": true,
+        "sourcePreserved": true
+      },
+      {
+        "name": "completionInvalid",
+        "accepted": false,
+        "sourcePreserved": true
+      },
+      {
+        "name": "severeTail",
+        "accepted": false,
+        "sourcePreserved": true
+      },
+      {
+        "name": "missingFinalFixation",
+        "accepted": false,
+        "sourcePreserved": true
+      },
+      {
+        "name": "shortFinalFixation",
+        "accepted": false,
+        "sourcePreserved": true
+      },
+      {
+        "name": "missingOffset",
+        "accepted": false,
+        "sourcePreserved": true
+      },
+      {
+        "name": "hidden",
+        "accepted": false,
+        "sourcePreserved": true
+      },
+      {
+        "name": "falseNote",
+        "accepted": false,
+        "sourcePreserved": true
+      }
+    ],
+    "profiles": {
+      "groups": [
+        "Overall accuracy across 2 compatible Stop sessions in this profile",
+        "Overall accuracy across 1 compatible Stop session in this profile"
+      ]
+    },
+    "starts": {
+      "count": 2,
+      "attemptIds": [
+        "80c2d00e-ff08-4a89-a1c4-88ea71f5bf9f",
+        "e8e28ed3-be54-4a5c-9213-957098315b53"
+      ],
+      "zeroAtIntro": true,
+      "noReloadFabrication": true
+    },
+    "autoRetry": [
+      {
+        "status": "drilling",
+        "attempts": 0
+      },
+      {
+        "status": "drilling",
+        "attempts": 0
+      }
+    ],
+    "failureRetry": {
+      "failedText": "Skip to content\nap\nAssessment Practice\nPrivate preview\n\nYour task data were recorded in this tab but could not be saved in this browser. Keep this tab open to review the result or continue the current training chain.\n\nThe current training changes are temporary. Reloading restores only the last successfully saved state.\n\nTry saving training again\n\nYOUR PRACTICE LIBRARY\n\nLearn the task.\nPractise with clarity.\n\nLearn the rules and controls of original Assessment Practice exercises.\n\nExplore the games\n│\n—\n\nPRACTICE AND DESCRIPTIVE REPORT AVAILABLE\n\nStop\n\nRespond to GO. Withhold on NO-GO. Review your accuracy, response timing, and consistency on this Assessment Practice task.\n\nAbout 4 minutes · Physical keyboard recommended\n\nOpen Stop →\nResume Stop trainingStop history\n\nYour task data were recorded in this tab but could not be saved in this browser. Keep this tab open to review the result or continue the current training chain.\n\nOriginal preparation exercises. Follow the instructions in your invitation.",
+      "retained": {
+        "status": "failed",
+        "attempts": 1
+      },
+      "durableAttemptCount": 0,
+      "retryCalls": [
+        {
+          "status": "drill_complete",
+          "attempts": 1
+        },
+        {
+          "status": "drill_complete",
+          "attempts": 1,
+          "event": "drill_completed"
+        }
+      ],
+      "restoredAttempts": 1
+    },
+    "deletionRetry": {
+      "chainsAfterDelete": 0,
+      "retiredAttempts": 0,
+      "chainsAfterRetry": 0,
+      "visibleDrill": 0,
+      "memoryCleared": true
+    },
+    "crossTab": {
+      "claims": [
+        {
+          "sessionId": "tab-a",
+          "formId": "stop-baseline-01",
+          "family": "baseline",
+          "expiresAtMs": null,
+          "chainId": null,
+          "armed": false,
+          "ownerTabId": "e8ac722c-5c61-49d3-96ef-9a45ab8db5d7"
+        },
+        {
+          "sessionId": "tab-b",
+          "formId": "stop-baseline-02",
+          "family": "baseline",
+          "expiresAtMs": null,
+          "chainId": null,
+          "armed": false,
+          "ownerTabId": "46152ad7-84f9-4c66-b6f6-06350a6d8e2f"
+        }
+      ],
+      "abandoned": {
+        "sessionId": "tab-b",
+        "formId": "stop-baseline-02",
+        "family": "baseline",
+        "expiresAtMs": null,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "46152ad7-84f9-4c66-b6f6-06350a6d8e2f"
+      },
+      "futureForm": "stop-baseline-03"
+    },
+    "uncertain": {
+      "marker": {
+        "formId": "stop-baseline-01",
+        "exposedAtWall": "2026-10-01T02:41:21.103Z",
+        "visualProfile": "standard",
+        "deleted": false,
+        "sessionId": "tab-a",
+        "certainty": "uncertain"
+      },
+      "claim": {
+        "sessionId": "tab-a",
+        "formId": "stop-baseline-01",
+        "family": "baseline",
+        "expiresAtMs": null,
+        "chainId": null,
+        "armed": true,
+        "ownerTabId": "e8ac722c-5c61-49d3-96ef-9a45ab8db5d7"
+      }
+    }
+  }
+}

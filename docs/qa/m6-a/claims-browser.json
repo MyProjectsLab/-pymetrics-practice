@@ -1,0 +1,53 @@
+{
+  "browser": "145.0.7632.6",
+  "cases": [
+    {
+      "family": "baseline",
+      "first": {
+        "sessionId": "abandoned",
+        "formId": "stop-baseline-01",
+        "family": "baseline",
+        "expiresAtMs": 2000001800000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "a95632f0-6916-4f7a-b1b9-5fba2c73c62f",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "second": {
+        "sessionId": "replacement",
+        "formId": "stop-baseline-01",
+        "family": "baseline",
+        "expiresAtMs": 2000003600000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "5cc30e01-d955-4eef-980f-92791a651d0f",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "reclaimed": true
+    },
+    {
+      "family": "replay",
+      "first": {
+        "sessionId": "abandoned",
+        "formId": "stop-replay-01",
+        "family": "replay",
+        "expiresAtMs": 2000001800000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "c765f1e0-1430-4009-affc-359c6d7fbafa",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "second": {
+        "sessionId": "replacement",
+        "formId": "stop-replay-01",
+        "family": "replay",
+        "expiresAtMs": 2000003600000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "e2ece4b7-5214-4a87-9dbf-63908b003e06",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "reclaimed": true
+    }
+  ]
+}

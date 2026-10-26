@@ -1,0 +1,154 @@
+{
+  "cases": [
+    {
+      "kind": "baseline",
+      "fault": "failed",
+      "notifications": true,
+      "journals": [
+        {
+          "id": "e442a739-7998-474c-aab2-2dc13d3a0fd4",
+          "events": 5,
+          "hash": "5e73c60baa9f591a211fd85d732c1a7bb6bb4e0b9ecd6b7e4ecc5e261e034a5d"
+        },
+        {
+          "id": "36a0474c-b421-4c6f-848a-b3db78f29bd9",
+          "events": 5,
+          "hash": "77d336e1b62253d2c5b3ed28fb7953168e8826f60ef025ad02e216c132e140a9"
+        }
+      ],
+      "pendingVisible": true,
+      "failedVisible": true,
+      "unsavedReviewable": 2,
+      "reloadBeforeSaveAbsent": true,
+      "retryReloadPreserved": true,
+      "intentionallyDeleted": null
+    },
+    {
+      "kind": "drill",
+      "fault": "pending",
+      "notifications": true,
+      "journals": [
+        {
+          "id": "ab8de5b8-8638-4669-a33b-ed140a085ba6",
+          "events": 5,
+          "hash": "e93ca902eb8608812f71ea3c49ad0730be90e96339107286cdc5ffd961baac81"
+        },
+        {
+          "id": "3ae9d3da-1ad7-4ec7-8525-a97c14c5f11c",
+          "events": 5,
+          "hash": "6fee78e24e5b689054d02db352f8ae3f7959862334edd37174e807125c441966"
+        }
+      ],
+      "pendingVisible": true,
+      "failedVisible": true,
+      "unsavedReviewable": 2,
+      "reloadBeforeSaveAbsent": true,
+      "retryReloadPreserved": true,
+      "intentionallyDeleted": null
+    },
+    {
+      "kind": "baseline",
+      "fault": "late-reject",
+      "notifications": true,
+      "journals": [
+        {
+          "id": "fcb31958-2669-400f-ad02-5585bb2d2ff7",
+          "events": 5,
+          "hash": "c53953b8080fe6a824c31f597ec67186aa68a21e4eccdcbc0b4b894e9f7f0419"
+        },
+        {
+          "id": "3a29cdc3-27f0-45ee-9c1b-bf1e61983dcc",
+          "events": 5,
+          "hash": "e1a1a9c846be814325788b02082ee0509855d850b699f3e55cec3f95f5b1bdb4"
+        }
+      ],
+      "pendingVisible": true,
+      "failedVisible": true,
+      "unsavedReviewable": 2,
+      "reloadBeforeSaveAbsent": true,
+      "retryReloadPreserved": true,
+      "intentionallyDeleted": null
+    },
+    {
+      "kind": "drill",
+      "fault": "failed",
+      "notifications": false,
+      "journals": [
+        {
+          "id": "1477064d-be02-4c56-9f3b-874924f5b6ee",
+          "events": 5,
+          "hash": "4c020307f32c08105e089b33eb23d08088cd6cdec61a8203ea152f9889285306"
+        },
+        {
+          "id": "2e3cebc2-692d-4a71-ba2e-30c33b8198fa",
+          "events": 5,
+          "hash": "6da7f00ca483979a766c362602d1e4296c35155572a73000df33b96a222b6e90"
+        }
+      ],
+      "pendingVisible": true,
+      "failedVisible": true,
+      "unsavedReviewable": 2,
+      "reloadBeforeSaveAbsent": true,
+      "retryReloadPreserved": true,
+      "intentionallyDeleted": null
+    },
+    {
+      "kind": "baseline",
+      "fault": "pending",
+      "notifications": false,
+      "journals": [
+        {
+          "id": "32058c60-3765-4417-ab05-6be026612f77",
+          "events": 5,
+          "hash": "9a1497ff351fbcc514d2d237c9332c4af8845d52de14522e115743cc6445ea31"
+        },
+        {
+          "id": "e832484c-c19f-4dd9-ab01-5635762117a3",
+          "events": 5,
+          "hash": "c0abd265e1cf2d54e7a8600522331c4f2634a489fecce0702bc7f3bb276d0472"
+        }
+      ],
+      "pendingVisible": true,
+      "failedVisible": true,
+      "unsavedReviewable": 2,
+      "reloadBeforeSaveAbsent": true,
+      "retryReloadPreserved": true,
+      "intentionallyDeleted": null
+    },
+    {
+      "kind": "unrelated",
+      "fault": "failed",
+      "notifications": true,
+      "unrelatedQueuePreserved": true
+    },
+    {
+      "kind": "buffered",
+      "fault": "failed",
+      "notifications": true,
+      "journals": [
+        {
+          "id": "3ef56e45-ca03-475d-b17d-dd1bb277b43d",
+          "events": 5,
+          "hash": "7fd6374b99c50c0d0f16ba990cbc6c23b86ff2464291f57012d360d8d3156cfb"
+        },
+        {
+          "id": "464843d6-b141-4f11-9d33-575ae23472c4",
+          "events": 5,
+          "hash": "bb0f41fa33237d008e45365d77eb68e59bc8882e7fdc1b8e1fdbd7d32daf9af3"
+        }
+      ],
+      "pendingVisible": true,
+      "failedVisible": true,
+      "unsavedReviewable": 2,
+      "reloadBeforeSaveAbsent": true,
+      "retryReloadPreserved": true,
+      "intentionallyDeleted": "464843d6-b141-4f11-9d33-575ae23472c4"
+    }
+  ],
+  "errors": [],
+  "savedJournalDisclosure": {
+    "visible": "Skip to content\nap\nAssessment Practice\nPrivate preview\n\nYour task data were recorded in this tab but could not be saved in this browser. Keep this tab open to review the result or continue the current training chain.\n\nThe current training changes are temporary. Reloading restores only the last successfully saved state.\n\nTry saving training again\nStop drill attempt\n\nValid drill · detection · 3 completed blocks.\n\n522 original events are retained. Its training chain was retired after a history deletion and cannot be used for routing or comparison.\n\nReview event journal\n1. protection_started at 0 ms\n2. fixation_started at 0 ms\n3. trial_scheduled at 1000 ms\n4. fixation_ended at 1000 ms\n5. stimulus_presented at 1000 ms\n6. stimulus_removed at 1200 ms\n7. trial_timed_out at 2200 ms\n8. trial_resolved at 2200 ms\n9. fixation_started at 2200 ms\n10. trial_scheduled at 3200 ms\n11. fixation_ended at 3200 ms\n12. stimulus_presented at 3200 ms\n13. stimulus_removed at 3400 ms\n14. trial_timed_out at 4400 ms\n15. trial_resolved at 4400 ms\n16. fixation_started at 4400 ms\n17. trial_scheduled at 5400 ms\n18. fixation_ended at 5400 ms\n19. stimulus_presented at 5400 ms\n20. stimulus_removed at 5600 ms\n21. trial_timed_out at 6600 ms\n22. trial_resolved at 6600 ms\n23. fixation_started at 6600 ms\n24. trial_scheduled at 7600 ms\n25. fixation_ended at 7600 ms\n26. stimulus_presented at 7600 ms\n27. stimulus_removed at 7800 ms\n28. trial_timed_out at 8800 ms\n29. trial_resolved at 8800 ms\n30. fixation_started at 8800 ms\n31. trial_scheduled at 9800 ms\n32. fixation_ended at 9800 ms\n33. stimulus_presented at 9800 ms\n34. stimulus_removed at 10000 ms\n35. trial_timed_out at 11000 ms\n36. trial_resolved at 11000 ms\n37. fixation_started at 11000 ms\n38. trial_scheduled at 12000 ms\n39. fixation_ended at 12000 ms\n40. stimulus_presented at 12000 ms\n41. stimulus_removed at 12200 ms\n42. trial_timed_out at 13200 ms\n43. trial_resolved at 13200 ms\n44. fixation_started at 13200 ms\n45. trial_scheduled at 14200 ms\n46. fixation_ended at 14200 ms\n47. stimulus_presented at 14200 ms\n48. stimulus_removed at 14400 ms\n49. trial_timed_out at 15400 ms\n50. trial_resolved at 15400 ms\n51. fixation_started at 15400 ms\n52. trial_scheduled at 16400 ms\n53. fixation_ended at 16400 ms\n54. stimulus_presented at 16400 ms\n55. stimulus_removed at 16600 ms\n56. trial_timed_out at 17600 ms\n57. trial_resolved at 17600 ms\n58. fixation_started at 17600 ms\n59. trial_scheduled at 18600 ms\n60. fixation_ended at 18600 ms\n61. stimulus_presented at 18600 ms\n62. stimulus_removed at 18800 ms\n63. trial_timed_out at 19800 ms\n64. trial_resolved at 19800 ms\n65. fixation_started at 19800 ms\n66. trial_scheduled at 20800 ms\n67. fixation_ended at 20800 ms\n68. stimulus_presented at 20800 ms\n69. stimulus_removed at 21000 ms\n70. trial_timed_out at 22000 ms\n71. trial_resolved at 22000 ms\n72. fixation_started at 22000 ms\n73. trial_scheduled at 23000 ms\n74. fixation_ended at 23000 ms\n75. stimulus_presented at 23000 ms\n76. stimulus_removed at 23200 ms\n77. trial_timed_out at 24200 ms\n78. trial_resolved at 24200 ms\n79. fixation_started at 24200 ms\n80. trial_scheduled at 25200 ms\n81. fixation_ended at 25200 ms\n82. stimulus_presented at 25200 ms\n83. stimulus_removed at 25400 ms\n84. trial_timed_out at 26400 ms\n85. trial_resolved at 26400 ms\n86. fixation_started at 26400 ms\n87. trial_scheduled at 27400 ms\n88. fixation_ended at 27400 ms\n89. stimulus_presented at 27400 ms\n90. stimulus_removed at 27600 ms\n91. trial_timed_out at 28600 ms\n92. trial_resolved at 28600 ms\n93. fixation_started at 28600 ms\n94. trial_scheduled at 29600 ms\n95. fixation_ended at 29600 ms\n96. stimulus_presented at 29600 ms\n97. stimulus_removed at 29800 ms\n98. trial_timed_out at 30800 ms\n99. trial_resolved at 30800 ms\n100. fixation_started at 30800 ms\n101. trial_scheduled at 31800 ms\n102. fixation_ended at 31800 ms\n103. stimulus_presented at 31800 ms\n104. stimulus_removed at 32000 ms\n105. trial_timed_out at 33000 ms\n106. trial_resolved at 33000 ms\n107. fixation_started at 33000 ms\n108. trial_scheduled at 34000 ms\n109. fixation_ended at 34000 ms\n110. stimulus_presented at 34000 ms\n111. stimulus_removed at 34200 ms\n112. trial_timed_out at 35200 ms\n113. trial_resolved at 35200 ms\n114. fixation_started at 35200 ms\n115. trial_scheduled at 36200 ms\n116. fixation_ended at 36200 ms\n117. stimulus_presented at 36200 ms\n118. stimulus_removed at 36400 ms\n119. trial_timed_out at 37400 ms\n120. trial_resolved at 37400 ms\n121. fixation_started at 37400 ms\n122. trial_scheduled at 38400 ms\n123. fixation_ended at 38400 ms\n124. stimulus_presented at 38400 ms\n125. stimulus_removed at 38600 ms\n126. trial_timed_out at 39600 ms\n127. trial_resolved at 39600 ms\n128. fixation_started at 39600 ms\n129. trial_scheduled at 40600 ms\n130. fixation_ended at 40600 ms\n131. stimulus_presented at 40600 ms\n132. stimulus_removed at 40800 ms\n133. trial_timed_out at 41800 ms\n134. trial_resolved at 41800 ms\n135. fixation_started at 41800 ms\n136. trial_scheduled at 42800 ms\n137. fixation_ended at 42800 ms\n138. stimulus_presented at 42800 ms\n139. stimulus_removed at 43000 ms\n140. trial_timed_out at 44000 ms\n141. trial_resolved at 44000 ms\n142. fixation_started at 44000 ms\n143. trial_scheduled at 45000 ms\n144. fixation_ended at 45000 ms\n145. stimulus_presented at 45000 ms\n146. stimulus_removed at 45200 ms\n147. trial_timed_out at 46200 ms\n148. trial_resolved at 46200 ms\n149. fixation_started at 46200 ms\n150. trial_scheduled at 47200 ms\n151. fixation_ended at 47200 ms\n152. stimulus_presented at 47200 ms\n153. stimulus_removed at 47400 ms\n154. trial_timed_out at 48400 ms\n155. trial_resolved at 48400 ms\n156. fixation_started at 48400 ms\n157. trial_scheduled at 49400 ms\n158. fixation_ended at 49400 ms\n159. stimulus_presented at 49400 ms\n160. stimulus_removed at 49600 ms\n161. trial_timed_out at 50600 ms\n162. trial_resolved at 50600 ms\n163. fixation_started at 50600 ms\n164. trial_scheduled at 51600 ms\n165. fixation_ended at 51600 ms\n166. stimulus_presented at 51600 ms\n167. stimulus_removed at 51800 ms\n168. trial_timed_out at 52800 ms\n169. trial_resolved at 52800 ms\n170. fixation_started at 52800 ms\n171. fixation_ended at 53800 ms\n172. integrity_checked at 53800 ms\n173. batch_finished at 53800 ms\n174. integrity_checked at 53800 ms\n175. fixation_started at 53800 ms\n176. trial_scheduled at 54800 ms\n177. fixation_ended at 54800 ms\n178. stimulus_presented at 54800 ms\n179. stimulus_removed at 55000 ms\n180. trial_timed_out at 55900 ms\n181. trial_resolved at 55900 ms\n182. fixation_started at 55900 ms\n183. trial_scheduled at 56900 ms\n184. fixation_ended at 56900 ms\n185. stimulus_presented at 56900 ms\n186. stimulus_removed at 57100 ms\n187. trial_timed_out at 58000 ms\n188. trial_resolved at 58000 ms\n189. fixation_started at 58000 ms\n190. trial_scheduled at 59000 ms\n191. fixation_ended at 59000 ms\n192. stimulus_presented at 59000 ms\n193. stimulus_removed at 59200 ms\n194. trial_timed_out at 60100 ms\n195. trial_resolved at 60100 ms\n196. fixation_started at 60100 ms\n197. trial_scheduled at 61100 ms\n198. fixation_ended at 61100 ms\n199. stimulus_presented at 61100 ms\n200. stimulus_removed at 61300 ms\n201. trial_timed_out at 62200 ms\n202. trial_resolved at 62200 ms\n203. fixation_started at 62200 ms\n204. trial_scheduled at 63200 ms\n205. fixation_ended at 63200 ms\n206. stimulus_presented at 63200 ms\n207. stimulus_removed at 63400 ms\n208. trial_timed_out at 64300 ms\n209. trial_resolved at 64300 ms\n210. fixation_started at 64300 ms\n211. trial_scheduled at 65300 ms\n212. fixation_ended at 65300 ms\n213. stimulus_presented at 65300 ms\n214. stimulus_removed at 65500 ms\n215. trial_timed_out at 66400 ms\n216. trial_resolved at 66400 ms\n217. fixation_started at 66400 ms\n218. trial_scheduled at 67400 ms\n219. fixation_ended at 67400 ms\n220. stimulus_presented at 67400 ms\n221. stimulus_removed at 67600 ms\n222. trial_timed_out at 68500 ms\n223. trial_resolved at 68500 ms\n224. fixation_started at 68500 ms\n225. trial_scheduled at 69500 ms\n226. fixation_ended at 69500 ms\n227. stimulus_presented at 69500 ms\n228. stimulus_removed at 69700 ms\n229. trial_timed_out at 70600 ms\n230. trial_resolved at 70600 ms\n231. fixation_started at 70600 ms\n232. trial_scheduled at 71600 ms\n233. fixation_ended at 71600 ms\n234. stimulus_presented at 71600 ms\n235. stimulus_removed at 71800 ms\n236. trial_timed_out at 72700 ms\n237. trial_resolved at 72700 ms\n238. fixation_started at 72700 ms\n239. trial_scheduled at 73700 ms\n240. fixation_ended at 73700 ms\n241. stimulus_presented at 73700 ms\n242. stimulus_removed at 73900 ms\n243. trial_timed_out at 74800 ms\n244. trial_resolved at 74800 ms\n245. fixation_started at 74800 ms\n246. trial_scheduled at 75800 ms\n247. fixation_ended at 75800 ms\n248. stimulus_presented at 75800 ms\n249. stimulus_removed at 76000 ms\n250. trial_timed_out at 76900 ms\n251. trial_resolved at 76900 ms\n252. fixation_started at 76900 ms\n253. trial_scheduled at 77900 ms\n254. fixation_ended at 77900 ms\n255. stimulus_presented at 77900 ms\n256. stimulus_removed at 78100 ms\n257. trial_timed_out at 79000 ms\n258. trial_resolved at 79000 ms\n259. fixation_started at 79000 ms\n260. trial_scheduled at 80000 ms\n261. fixation_ended at 80000 ms\n262. stimulus_presented at 80000 ms\n263. stimulus_removed at 80200 ms\n264. trial_timed_out at 81100 ms\n265. trial_resolved at 81100 ms\n266. fixation_started at 81100 ms\n267. trial_scheduled at 82100 ms\n268. fixation_ended at 82100 ms\n269. stimulus_presented at 82100 ms\n270. stimulus_removed at 82300 ms\n271. trial_timed_out at 83200 ms\n272. trial_resolved at 83200 ms\n273. fixation_started at 83200 ms\n274. trial_scheduled at 84200 ms\n275. fixation_ended at 84200 ms\n276. stimulus_presented at 84200 ms\n277. stimulus_removed at 84400 ms\n278. trial_timed_out at 85300 ms\n279. trial_resolved at 85300 ms\n280. fixation_started at 85300 ms\n281. trial_scheduled at 86300 ms\n282. fixation_ended at 86300 ms\n283. stimulus_presented at 86300 ms\n284. stimulus_removed at 86500 ms\n285. trial_timed_out at 87400 ms\n286. trial_resolved at 87400 ms\n287. fixation_started at 87400 ms\n288. trial_scheduled at 88400 ms\n289. fixation_ended at 88400 ms\n290. stimulus_presented at 88400 ms\n291. stimulus_removed at 88600 ms\n292. trial_timed_out at 89500 ms\n293. trial_resolved at 89500 ms\n294. fixation_started at 89500 ms\n295. trial_scheduled at 90500 ms\n296. fixation_ended at 90500 ms\n297. stimulus_presented at 90500 ms\n298. stimulus_removed at 90700 ms\n299. trial_timed_out at 91600 ms\n300. trial_resolved at 91600 ms\n301. fixation_started at 91600 ms\n302. trial_scheduled at 92600 ms\n303. fixation_ended at 92600 ms\n304. stimulus_presented at 92600 ms\n305. stimulus_removed at 92800 ms\n306. trial_timed_out at 93700 ms\n307. trial_resolved at 93700 ms\n308. fixation_started at 93700 ms\n309. trial_scheduled at 94700 ms\n310. fixation_ended at 94700 ms\n311. stimulus_presented at 94700 ms\n312. stimulus_removed at 94900 ms\n313. trial_timed_out at 95800 ms\n314. trial_resolved at 95800 ms\n315. fixation_started at 95800 ms\n316. trial_scheduled at 96800 ms\n317. fixation_ended at 96800 ms\n318. stimulus_presented at 96800 ms\n319. stimulus_removed at 97000 ms\n320. trial_timed_out at 97900 ms\n321. trial_resolved at 97900 ms\n322. fixation_started at 97900 ms\n323. trial_scheduled at 98900 ms\n324. fixation_ended at 98900 ms\n325. stimulus_presented at 98900 ms\n326. stimulus_removed at 99100 ms\n327. trial_timed_out at 100000 ms\n328. trial_resolved at 100000 ms\n329. fixation_started at 100000 ms\n330. trial_scheduled at 101000 ms\n331. fixation_ended at 101000 ms\n332. stimulus_presented at 101000 ms\n333. stimulus_removed at 101200 ms\n334. trial_timed_out at 102100 ms\n335. trial_resolved at 102100 ms\n336. fixation_started at 102100 ms\n337. trial_scheduled at 103100 ms\n338. fixation_ended at 103100 ms\n339. stimulus_presented at 103100 ms\n340. stimulus_removed at 103300 ms\n341. trial_timed_out at 104200 ms\n342. trial_resolved at 104200 ms\n343. fixation_started at 104200 ms\n344. fixation_ended at 105200 ms\n345. integrity_checked at 105200 ms\n346. batch_finished at 105200 ms\n347. integrity_checked at 105200 ms\n348. fixation_started at 105200 ms\n349. trial_scheduled at 106200 ms\n350. fixation_ended at 106200 ms\n351. stimulus_presented at 106200 ms\n352. stimulus_removed at 106400 ms\n353. trial_timed_out at 107200 ms\n354. trial_resolved at 107200 ms\n355. fixation_started at 107200 ms\n356. trial_scheduled at 108200 ms\n357. fixation_ended at 108200 ms\n358. stimulus_presented at 108200 ms\n359. stimulus_removed at 108400 ms\n360. trial_timed_out at 109200 ms\n361. trial_resolved at 109200 ms\n362. fixation_started at 109200 ms\n363. trial_scheduled at 110200 ms\n364. fixation_ended at 110200 ms\n365. stimulus_presented at 110200 ms\n366. stimulus_removed at 110400 ms\n367. trial_timed_out at 111200 ms\n368. trial_resolved at 111200 ms\n369. fixation_started at 111200 ms\n370. trial_scheduled at 112200 ms\n371. fixation_ended at 112200 ms\n372. stimulus_presented at 112200 ms\n373. stimulus_removed at 112400 ms\n374. trial_timed_out at 113200 ms\n375. trial_resolved at 113200 ms\n376. fixation_started at 113200 ms\n377. trial_scheduled at 114200 ms\n378. fixation_ended at 114200 ms\n379. stimulus_presented at 114200 ms\n380. stimulus_removed at 114400 ms\n381. trial_timed_out at 115200 ms\n382. trial_resolved at 115200 ms\n383. fixation_started at 115200 ms\n384. trial_scheduled at 116200 ms\n385. fixation_ended at 116200 ms\n386. stimulus_presented at 116200 ms\n387. stimulus_removed at 116400 ms\n388. trial_timed_out at 117200 ms\n389. trial_resolved at 117200 ms\n390. fixation_started at 117200 ms\n391. trial_scheduled at 118200 ms\n392. fixation_ended at 118200 ms\n393. stimulus_presented at 118200 ms\n394. stimulus_removed at 118400 ms\n395. trial_timed_out at 119200 ms\n396. trial_resolved at 119200 ms\n397. fixation_started at 119200 ms\n398. trial_scheduled at 120200 ms\n399. fixation_ended at 120200 ms\n400. stimulus_presented at 120200 ms\n401. stimulus_removed at 120400 ms\n402. trial_timed_out at 121200 ms\n403. trial_resolved at 121200 ms\n404. fixation_started at 121200 ms\n405. trial_scheduled at 122200 ms\n406. fixation_ended at 122200 ms\n407. stimulus_presented at 122200 ms\n408. stimulus_removed at 122400 ms\n409. trial_timed_out at 123200 ms\n410. trial_resolved at 123200 ms\n411. fixation_started at 123200 ms\n412. trial_scheduled at 124200 ms\n413. fixation_ended at 124200 ms\n414. stimulus_presented at 124200 ms\n415. stimulus_removed at 124400 ms\n416. trial_timed_out at 125200 ms\n417. trial_resolved at 125200 ms\n418. fixation_started at 125200 ms\n419. trial_scheduled at 126200 ms\n420. fixation_ended at 126200 ms\n421. stimulus_presented at 126200 ms\n422. stimulus_removed at 126400 ms\n423. trial_timed_out at 127200 ms\n424. trial_resolved at 127200 ms\n425. fixation_started at 127200 ms\n426. trial_scheduled at 128200 ms\n427. fixation_ended at 128200 ms\n428. stimulus_presented at 128200 ms\n429. stimulus_removed at 128400 ms\n430. trial_timed_out at 129200 ms\n431. trial_resolved at 129200 ms\n432. fixation_started at 129200 ms\n433. trial_scheduled at 130200 ms\n434. fixation_ended at 130200 ms\n435. stimulus_presented at 130200 ms\n436. stimulus_removed at 130400 ms\n437. trial_timed_out at 131200 ms\n438. trial_resolved at 131200 ms\n439. fixation_started at 131200 ms\n440. trial_scheduled at 132200 ms\n441. fixation_ended at 132200 ms\n442. stimulus_presented at 132200 ms\n443. stimulus_removed at 132400 ms\n444. trial_timed_out at 133200 ms\n445. trial_resolved at 133200 ms\n446. fixation_started at 133200 ms\n447. trial_scheduled at 134200 ms\n448. fixation_ended at 134200 ms\n449. stimulus_presented at 134200 ms\n450. stimulus_removed at 134400 ms\n451. trial_timed_out at 135200 ms\n452. trial_resolved at 135200 ms\n453. fixation_started at 135200 ms\n454. trial_scheduled at 136200 ms\n455. fixation_ended at 136200 ms\n456. stimulus_presented at 136200 ms\n457. stimulus_removed at 136400 ms\n458. trial_timed_out at 137200 ms\n459. trial_resolved at 137200 ms\n460. fixation_started at 137200 ms\n461. trial_scheduled at 138200 ms\n462. fixation_ended at 138200 ms\n463. stimulus_presented at 138200 ms\n464. stimulus_removed at 138400 ms\n465. trial_timed_out at 139200 ms\n466. trial_resolved at 139200 ms\n467. fixation_started at 139200 ms\n468. trial_scheduled at 140200 ms\n469. fixation_ended at 140200 ms\n470. stimulus_presented at 140200 ms\n471. stimulus_removed at 140400 ms\n472. trial_timed_out at 141200 ms\n473. trial_resolved at 141200 ms\n474. fixation_started at 141200 ms\n475. trial_scheduled at 142200 ms\n476. fixation_ended at 142200 ms\n477. stimulus_presented at 142200 ms\n478. stimulus_removed at 142400 ms\n479. trial_timed_out at 143200 ms\n480. trial_resolved at 143200 ms\n481. fixation_started at 143200 ms\n482. trial_scheduled at 144200 ms\n483. fixation_ended at 144200 ms\n484. stimulus_presented at 144200 ms\n485. stimulus_removed at 144400 ms\n486. trial_timed_out at 145200 ms\n487. trial_resolved at 145200 ms\n488. fixation_started at 145200 ms\n489. trial_scheduled at 146200 ms\n490. fixation_ended at 146200 ms\n491. stimulus_presented at 146200 ms\n492. stimulus_removed at 146400 ms\n493. trial_timed_out at 147200 ms\n494. trial_resolved at 147200 ms\n495. fixation_started at 147200 ms\n496. trial_scheduled at 148200 ms\n497. fixation_ended at 148200 ms\n498. stimulus_presented at 148200 ms\n499. stimulus_removed at 148400 ms\n500. trial_timed_out at 149200 ms\n501. trial_resolved at 149200 ms\n502. fixation_started at 149200 ms\n503. trial_scheduled at 150200 ms\n504. fixation_ended at 150200 ms\n505. stimulus_presented at 150200 ms\n506. stimulus_removed at 150400 ms\n507. trial_timed_out at 151200 ms\n508. trial_resolved at 151200 ms\n509. fixation_started at 151200 ms\n510. trial_scheduled at 152200 ms\n511. fixation_ended at 152200 ms\n512. stimulus_presented at 152200 ms\n513. stimulus_removed at 152400 ms\n514. trial_timed_out at 153200 ms\n515. trial_resolved at 153200 ms\n516. fixation_started at 153200 ms\n517. fixation_ended at 154200 ms\n518. integrity_checked at 154200 ms\n519. batch_finished at 154200 ms\n520. integrity_checked at 154200 ms\n521. session_completed at 154200 ms\n522. protection_ended at 154200 ms\nBack to history\nOriginal preparation exercises. Follow the instructions in your invitation.",
+    "savedInOtherTab": true,
+    "savedJournalId": "9c9aafa3-e235-47f7-9e6d-18e5eedd918e"
+  }
+}

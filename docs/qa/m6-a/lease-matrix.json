@@ -1,0 +1,1529 @@
+{
+  "browser": "145.0.7632.6",
+  "cases": [
+    {
+      "family": "baseline",
+      "kind": "before",
+      "first": {
+        "sessionId": "old",
+        "formId": "stop-baseline-01",
+        "family": "baseline",
+        "expiresAtMs": 2000001800000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "71fdf03a-a2f6-465a-82f3-de4c2eed82ad",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "second": {
+        "sessionId": "new",
+        "formId": "stop-baseline-02",
+        "family": "baseline",
+        "expiresAtMs": 2000003599999,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "e3063eb1-bad0-471e-9205-9a919ca12681",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "state": {
+        "schemaVersion": "stop_local_v1",
+        "installationId": "bd19a40f-a120-4e39-8830-7b7a246420ae",
+        "results": {},
+        "drafts": {},
+        "chains": {},
+        "retiredChains": {},
+        "activeChainId": null,
+        "exposures": {},
+        "reservations": {
+          "old": {
+            "sessionId": "old",
+            "formId": "stop-baseline-01",
+            "family": "baseline",
+            "expiresAtMs": 2000001800000,
+            "chainId": null,
+            "armed": false,
+            "ownerTabId": "71fdf03a-a2f6-465a-82f3-de4c2eed82ad",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          },
+          "new": {
+            "sessionId": "new",
+            "formId": "stop-baseline-02",
+            "family": "baseline",
+            "expiresAtMs": 2000003599999,
+            "chainId": null,
+            "armed": false,
+            "ownerTabId": "e3063eb1-bad0-471e-9205-9a919ca12681",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          }
+        },
+        "deletedSessions": {},
+        "attemptChains": {}
+      }
+    },
+    {
+      "family": "baseline",
+      "kind": "exact",
+      "first": {
+        "sessionId": "old",
+        "formId": "stop-baseline-01",
+        "family": "baseline",
+        "expiresAtMs": 2000001800000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "b0f9f4b8-76b1-44ba-8d3b-0a0290c29bb2",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "second": {
+        "sessionId": "new",
+        "formId": "stop-baseline-01",
+        "family": "baseline",
+        "expiresAtMs": 2000003600000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "3637de50-6127-4350-86a0-8bd30ebe294b",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "stale": "FormClaimExpiredError",
+      "state": {
+        "schemaVersion": "stop_local_v1",
+        "installationId": "7e37dea2-db7e-47c6-8757-f00e6fde4983",
+        "results": {},
+        "drafts": {},
+        "chains": {},
+        "retiredChains": {},
+        "activeChainId": null,
+        "exposures": {},
+        "reservations": {
+          "new": {
+            "sessionId": "new",
+            "formId": "stop-baseline-01",
+            "family": "baseline",
+            "expiresAtMs": 2000003600000,
+            "chainId": null,
+            "armed": false,
+            "ownerTabId": "3637de50-6127-4350-86a0-8bd30ebe294b",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          }
+        },
+        "deletedSessions": {},
+        "attemptChains": {}
+      }
+    },
+    {
+      "family": "baseline",
+      "kind": "after",
+      "first": {
+        "sessionId": "old",
+        "formId": "stop-baseline-01",
+        "family": "baseline",
+        "expiresAtMs": 2000001800000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "f443090b-57fc-4bc8-8f2a-26016cacc201",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "second": {
+        "sessionId": "new",
+        "formId": "stop-baseline-01",
+        "family": "baseline",
+        "expiresAtMs": 2000003600001,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "e5a2d25c-eb1b-4519-8b72-a4c7bfa4d5fa",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "stale": "FormClaimExpiredError",
+      "state": {
+        "schemaVersion": "stop_local_v1",
+        "installationId": "5cf75fc8-d984-4bb0-b7f1-746ddeedd24b",
+        "results": {},
+        "drafts": {},
+        "chains": {},
+        "retiredChains": {},
+        "activeChainId": null,
+        "exposures": {},
+        "reservations": {
+          "new": {
+            "sessionId": "new",
+            "formId": "stop-baseline-01",
+            "family": "baseline",
+            "expiresAtMs": 2000003600001,
+            "chainId": null,
+            "armed": false,
+            "ownerTabId": "e5a2d25c-eb1b-4519-8b72-a4c7bfa4d5fa",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          }
+        },
+        "deletedSessions": {},
+        "attemptChains": {}
+      }
+    },
+    {
+      "family": "baseline",
+      "kind": "armed",
+      "first": {
+        "sessionId": "old",
+        "formId": "stop-baseline-01",
+        "family": "baseline",
+        "expiresAtMs": 2000001800000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "782f1611-fab3-40ee-9d06-34acf3636526",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "second": {
+        "sessionId": "new",
+        "formId": "stop-baseline-02",
+        "family": "baseline",
+        "expiresAtMs": 2000003600000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "21116f8a-7d5b-49dd-b4c2-f6b0f7bff4fe",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "state": {
+        "schemaVersion": "stop_local_v1",
+        "installationId": "d2cb1150-0d9c-4c3f-b8d9-e6b16836856c",
+        "results": {},
+        "drafts": {},
+        "chains": {},
+        "retiredChains": {},
+        "activeChainId": null,
+        "exposures": {
+          "stop-baseline-01": {
+            "formId": "stop-baseline-01",
+            "exposedAtWall": "2026-10-02T02:09:32.237Z",
+            "visualProfile": "standard",
+            "deleted": false,
+            "sessionId": "old",
+            "certainty": "uncertain"
+          }
+        },
+        "reservations": {
+          "old": {
+            "sessionId": "old",
+            "formId": "stop-baseline-01",
+            "family": "baseline",
+            "expiresAtMs": 2000001800000,
+            "chainId": null,
+            "armed": true,
+            "ownerTabId": "782f1611-fab3-40ee-9d06-34acf3636526",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          },
+          "new": {
+            "sessionId": "new",
+            "formId": "stop-baseline-02",
+            "family": "baseline",
+            "expiresAtMs": 2000003600000,
+            "chainId": null,
+            "armed": false,
+            "ownerTabId": "21116f8a-7d5b-49dd-b4c2-f6b0f7bff4fe",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          }
+        },
+        "deletedSessions": {},
+        "attemptChains": {}
+      }
+    },
+    {
+      "family": "baseline",
+      "kind": "confirmed",
+      "first": {
+        "sessionId": "old",
+        "formId": "stop-baseline-01",
+        "family": "baseline",
+        "expiresAtMs": 2000001800000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "f5c1a4cc-b3c4-46eb-86d3-74f9240c8baf",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "second": {
+        "sessionId": "new",
+        "formId": "stop-baseline-02",
+        "family": "baseline",
+        "expiresAtMs": 2000003600000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "18c26e26-dfbd-4e8c-9dbe-30e184057938",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "state": {
+        "schemaVersion": "stop_local_v1",
+        "installationId": "a069d958-de77-4def-aced-6d1ef9f13160",
+        "results": {},
+        "drafts": {},
+        "chains": {},
+        "retiredChains": {},
+        "activeChainId": null,
+        "exposures": {
+          "stop-baseline-01": {
+            "formId": "stop-baseline-01",
+            "exposedAtWall": "2026-10-02T02:09:32.460Z",
+            "visualProfile": "standard",
+            "deleted": false,
+            "sessionId": "old",
+            "certainty": "confirmed"
+          }
+        },
+        "reservations": {
+          "new": {
+            "sessionId": "new",
+            "formId": "stop-baseline-02",
+            "family": "baseline",
+            "expiresAtMs": 2000003600000,
+            "chainId": null,
+            "armed": false,
+            "ownerTabId": "18c26e26-dfbd-4e8c-9dbe-30e184057938",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          }
+        },
+        "deletedSessions": {},
+        "attemptChains": {}
+      }
+    },
+    {
+      "family": "baseline",
+      "kind": "uncertain-marker",
+      "first": {
+        "sessionId": "old",
+        "formId": "stop-baseline-01",
+        "family": "baseline",
+        "expiresAtMs": 2000001800000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "7dd49df1-e589-4bce-8a3f-4545163b8062",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "second": {
+        "sessionId": "new",
+        "formId": "stop-baseline-02",
+        "family": "baseline",
+        "expiresAtMs": 2000003600000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "1e1ef9a4-9709-4918-ae78-376173511be8",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "state": {
+        "schemaVersion": "stop_local_v1",
+        "installationId": "56c6b3aa-c230-4cf6-a854-57903f14efa3",
+        "results": {},
+        "drafts": {},
+        "chains": {},
+        "retiredChains": {},
+        "activeChainId": null,
+        "exposures": {
+          "stop-baseline-01": {
+            "formId": "stop-baseline-01",
+            "sessionId": "old",
+            "certainty": "uncertain",
+            "visualProfile": "standard",
+            "deleted": false,
+            "exposedAtWall": "2026-10-02T02:09:32.672Z"
+          }
+        },
+        "reservations": {
+          "old": {
+            "sessionId": "old",
+            "formId": "stop-baseline-01",
+            "family": "baseline",
+            "expiresAtMs": 2000001800000,
+            "chainId": null,
+            "armed": false,
+            "ownerTabId": "7dd49df1-e589-4bce-8a3f-4545163b8062",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          },
+          "new": {
+            "sessionId": "new",
+            "formId": "stop-baseline-02",
+            "family": "baseline",
+            "expiresAtMs": 2000003600000,
+            "chainId": null,
+            "armed": false,
+            "ownerTabId": "1e1ef9a4-9709-4918-ae78-376173511be8",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          }
+        },
+        "deletedSessions": {},
+        "attemptChains": {}
+      }
+    },
+    {
+      "family": "baseline",
+      "kind": "confirmed-marker",
+      "first": {
+        "sessionId": "old",
+        "formId": "stop-baseline-01",
+        "family": "baseline",
+        "expiresAtMs": 2000001800000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "9d4fe3ee-58f7-4d97-8c3c-caf3e22b1083",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "second": {
+        "sessionId": "new",
+        "formId": "stop-baseline-02",
+        "family": "baseline",
+        "expiresAtMs": 2000003600000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "d618a58e-1392-4854-90bf-361e5660b5d7",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "state": {
+        "schemaVersion": "stop_local_v1",
+        "installationId": "9f0ec029-b3d6-434e-8cec-a9fab29c3a98",
+        "results": {},
+        "drafts": {},
+        "chains": {},
+        "retiredChains": {},
+        "activeChainId": null,
+        "exposures": {
+          "stop-baseline-01": {
+            "formId": "stop-baseline-01",
+            "sessionId": "old",
+            "certainty": "confirmed",
+            "visualProfile": "standard",
+            "deleted": false,
+            "exposedAtWall": "2026-10-02T02:09:32.886Z"
+          }
+        },
+        "reservations": {
+          "old": {
+            "sessionId": "old",
+            "formId": "stop-baseline-01",
+            "family": "baseline",
+            "expiresAtMs": 2000001800000,
+            "chainId": null,
+            "armed": false,
+            "ownerTabId": "9d4fe3ee-58f7-4d97-8c3c-caf3e22b1083",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          },
+          "new": {
+            "sessionId": "new",
+            "formId": "stop-baseline-02",
+            "family": "baseline",
+            "expiresAtMs": 2000003600000,
+            "chainId": null,
+            "armed": false,
+            "ownerTabId": "d618a58e-1392-4854-90bf-361e5660b5d7",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          }
+        },
+        "deletedSessions": {},
+        "attemptChains": {}
+      }
+    },
+    {
+      "family": "baseline",
+      "kind": "armed-no-marker",
+      "first": {
+        "sessionId": "old",
+        "formId": "stop-baseline-01",
+        "family": "baseline",
+        "expiresAtMs": 2000001800000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "f143aed6-465a-49f0-96f0-66548a4c4ad6",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "second": {
+        "sessionId": "new",
+        "formId": "stop-baseline-02",
+        "family": "baseline",
+        "expiresAtMs": 2000003600000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "7152df6e-3440-47d9-a766-acd17e3e16b4",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "state": {
+        "schemaVersion": "stop_local_v1",
+        "installationId": "d8916ea9-73d7-4e03-830e-42d0b487178e",
+        "results": {},
+        "drafts": {},
+        "chains": {},
+        "retiredChains": {},
+        "activeChainId": null,
+        "exposures": {},
+        "reservations": {
+          "old": {
+            "sessionId": "old",
+            "formId": "stop-baseline-01",
+            "family": "baseline",
+            "expiresAtMs": 2000001800000,
+            "chainId": null,
+            "armed": true,
+            "ownerTabId": "f143aed6-465a-49f0-96f0-66548a4c4ad6",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          },
+          "new": {
+            "sessionId": "new",
+            "formId": "stop-baseline-02",
+            "family": "baseline",
+            "expiresAtMs": 2000003600000,
+            "chainId": null,
+            "armed": false,
+            "ownerTabId": "7152df6e-3440-47d9-a766-acd17e3e16b4",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          }
+        },
+        "deletedSessions": {},
+        "attemptChains": {}
+      }
+    },
+    {
+      "family": "baseline",
+      "kind": "unknown-armed",
+      "first": {
+        "sessionId": "old",
+        "formId": "stop-baseline-01",
+        "family": "baseline",
+        "expiresAtMs": 2000001800000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "58b8f528-bc77-4677-b616-cd7d7cec1c05",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "second": {
+        "sessionId": "new",
+        "formId": "stop-baseline-02",
+        "family": "baseline",
+        "expiresAtMs": 2000003600000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "816e9881-1bec-4e9d-9b68-c3438c3ed504",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "state": {
+        "schemaVersion": "stop_local_v1",
+        "installationId": "80712029-7e7d-4321-832b-f9c10e331f3d",
+        "results": {},
+        "drafts": {},
+        "chains": {},
+        "retiredChains": {},
+        "activeChainId": null,
+        "exposures": {},
+        "reservations": {
+          "old": {
+            "sessionId": "old",
+            "formId": "stop-baseline-01",
+            "family": "baseline",
+            "expiresAtMs": 2000001800000,
+            "chainId": null,
+            "ownerTabId": "58b8f528-bc77-4677-b616-cd7d7cec1c05",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          },
+          "new": {
+            "sessionId": "new",
+            "formId": "stop-baseline-02",
+            "family": "baseline",
+            "expiresAtMs": 2000003600000,
+            "chainId": null,
+            "armed": false,
+            "ownerTabId": "816e9881-1bec-4e9d-9b68-c3438c3ed504",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          }
+        },
+        "deletedSessions": {},
+        "attemptChains": {}
+      }
+    },
+    {
+      "family": "baseline",
+      "kind": "legacy",
+      "first": {
+        "sessionId": "old",
+        "formId": "stop-baseline-01",
+        "family": "baseline",
+        "expiresAtMs": 2000001800000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "ec86faf9-2d3f-4ab3-a2ae-108f620bc8aa",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "second": {
+        "sessionId": "new",
+        "formId": "stop-baseline-02",
+        "family": "baseline",
+        "expiresAtMs": 2000003600000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "bd78b08b-f9d8-407e-9767-27c7a65fe973",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "state": {
+        "schemaVersion": "stop_local_v1",
+        "installationId": "ea58985b-c39a-49f0-983e-32c6862171e9",
+        "results": {},
+        "drafts": {},
+        "chains": {},
+        "retiredChains": {},
+        "activeChainId": null,
+        "exposures": {},
+        "reservations": {
+          "legacy-reclaimed": {
+            "sessionId": "legacy-reclaimed",
+            "formId": "stop-baseline-01",
+            "family": "baseline",
+            "expiresAtMs": 2000005400000,
+            "chainId": null,
+            "armed": false,
+            "ownerTabId": "bd78b08b-f9d8-407e-9767-27c7a65fe973",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          }
+        },
+        "deletedSessions": {},
+        "attemptChains": {}
+      }
+    },
+    {
+      "family": "baseline",
+      "kind": "race",
+      "first": {
+        "sessionId": "old",
+        "formId": "stop-baseline-01",
+        "family": "baseline",
+        "expiresAtMs": 2000001800000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "7dbef54e-b802-4e02-bfa7-9269c94c7cad",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "second": {
+        "sessionId": "new",
+        "formId": "stop-baseline-02",
+        "family": "baseline",
+        "expiresAtMs": 2000003600000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "df6078ad-5688-4e11-9a8a-cdf8d62d8fc0",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "stale": "armed",
+      "state": {
+        "schemaVersion": "stop_local_v1",
+        "installationId": "faf40783-7d28-4ed5-9056-40cad1905b93",
+        "results": {},
+        "drafts": {},
+        "chains": {},
+        "retiredChains": {},
+        "activeChainId": null,
+        "exposures": {
+          "stop-baseline-01": {
+            "formId": "stop-baseline-01",
+            "exposedAtWall": "2026-10-02T02:09:33.742Z",
+            "visualProfile": "standard",
+            "deleted": false,
+            "sessionId": "old",
+            "certainty": "uncertain"
+          }
+        },
+        "reservations": {
+          "old": {
+            "sessionId": "old",
+            "formId": "stop-baseline-01",
+            "family": "baseline",
+            "expiresAtMs": 2000001800000,
+            "chainId": null,
+            "armed": true,
+            "ownerTabId": "7dbef54e-b802-4e02-bfa7-9269c94c7cad",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          },
+          "new": {
+            "sessionId": "new",
+            "formId": "stop-baseline-02",
+            "family": "baseline",
+            "expiresAtMs": 2000003600000,
+            "chainId": null,
+            "armed": false,
+            "ownerTabId": "df6078ad-5688-4e11-9a8a-cdf8d62d8fc0",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          }
+        },
+        "deletedSessions": {},
+        "attemptChains": {}
+      }
+    },
+    {
+      "family": "baseline",
+      "kind": "arm-first",
+      "first": {
+        "sessionId": "old",
+        "formId": "stop-baseline-01",
+        "family": "baseline",
+        "expiresAtMs": 2000001800000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "1e20d39a-4ea2-4bc7-987a-e6998d3c57df",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "second": {
+        "sessionId": "new",
+        "formId": "stop-baseline-02",
+        "family": "baseline",
+        "expiresAtMs": 2000003600000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "f4f54f78-a1f9-401b-a632-a90757e02905",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "state": {
+        "schemaVersion": "stop_local_v1",
+        "installationId": "6dcc2577-9ad3-4eaa-9b2d-5d8cd619fa31",
+        "results": {},
+        "drafts": {},
+        "chains": {},
+        "retiredChains": {},
+        "activeChainId": null,
+        "exposures": {
+          "stop-baseline-01": {
+            "formId": "stop-baseline-01",
+            "exposedAtWall": "2026-10-02T02:09:33.954Z",
+            "visualProfile": "standard",
+            "deleted": false,
+            "sessionId": "old",
+            "certainty": "uncertain"
+          }
+        },
+        "reservations": {
+          "old": {
+            "sessionId": "old",
+            "formId": "stop-baseline-01",
+            "family": "baseline",
+            "expiresAtMs": 2000001800000,
+            "chainId": null,
+            "armed": true,
+            "ownerTabId": "1e20d39a-4ea2-4bc7-987a-e6998d3c57df",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          },
+          "new": {
+            "sessionId": "new",
+            "formId": "stop-baseline-02",
+            "family": "baseline",
+            "expiresAtMs": 2000003600000,
+            "chainId": null,
+            "armed": false,
+            "ownerTabId": "f4f54f78-a1f9-401b-a632-a90757e02905",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          }
+        },
+        "deletedSessions": {},
+        "attemptChains": {}
+      }
+    },
+    {
+      "family": "baseline",
+      "kind": "reclaim-first",
+      "first": {
+        "sessionId": "old",
+        "formId": "stop-baseline-01",
+        "family": "baseline",
+        "expiresAtMs": 2000001800000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "a6467596-688c-4e42-b568-eaa795d1f29e",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "second": {
+        "sessionId": "new",
+        "formId": "stop-baseline-01",
+        "family": "baseline",
+        "expiresAtMs": 2000003600000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "ec80cd8f-f51d-4995-89a0-19bc54c11a0e",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "stale": "FormClaimExpiredError",
+      "state": {
+        "schemaVersion": "stop_local_v1",
+        "installationId": "19597c3b-e656-4421-92da-0ebb097d258d",
+        "results": {},
+        "drafts": {},
+        "chains": {},
+        "retiredChains": {},
+        "activeChainId": null,
+        "exposures": {},
+        "reservations": {
+          "new": {
+            "sessionId": "new",
+            "formId": "stop-baseline-01",
+            "family": "baseline",
+            "expiresAtMs": 2000003600000,
+            "chainId": null,
+            "armed": false,
+            "ownerTabId": "ec80cd8f-f51d-4995-89a0-19bc54c11a0e",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          }
+        },
+        "deletedSessions": {},
+        "attemptChains": {}
+      }
+    },
+    {
+      "family": "replay",
+      "kind": "before",
+      "first": {
+        "sessionId": "old",
+        "formId": "stop-replay-01",
+        "family": "replay",
+        "expiresAtMs": 2000001800000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "23af9ccc-a651-4183-92f9-cc8cb76a1fdf",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "second": {
+        "sessionId": "new",
+        "formId": "stop-replay-02",
+        "family": "replay",
+        "expiresAtMs": 2000003599999,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "9468b8ff-98e5-4b0c-889e-afcc5b2bd34a",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "state": {
+        "schemaVersion": "stop_local_v1",
+        "installationId": "039bae13-d57a-40e3-9be5-522152e20247",
+        "results": {},
+        "drafts": {},
+        "chains": {},
+        "retiredChains": {},
+        "activeChainId": null,
+        "exposures": {},
+        "reservations": {
+          "old": {
+            "sessionId": "old",
+            "formId": "stop-replay-01",
+            "family": "replay",
+            "expiresAtMs": 2000001800000,
+            "chainId": null,
+            "armed": false,
+            "ownerTabId": "23af9ccc-a651-4183-92f9-cc8cb76a1fdf",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          },
+          "new": {
+            "sessionId": "new",
+            "formId": "stop-replay-02",
+            "family": "replay",
+            "expiresAtMs": 2000003599999,
+            "chainId": null,
+            "armed": false,
+            "ownerTabId": "9468b8ff-98e5-4b0c-889e-afcc5b2bd34a",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          }
+        },
+        "deletedSessions": {},
+        "attemptChains": {}
+      }
+    },
+    {
+      "family": "replay",
+      "kind": "exact",
+      "first": {
+        "sessionId": "old",
+        "formId": "stop-replay-01",
+        "family": "replay",
+        "expiresAtMs": 2000001800000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "d3f07812-80de-48ff-92a7-1524fa394939",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "second": {
+        "sessionId": "new",
+        "formId": "stop-replay-01",
+        "family": "replay",
+        "expiresAtMs": 2000003600000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "6b28a998-21d7-4528-ae07-d529e06f803c",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "stale": "FormClaimExpiredError",
+      "state": {
+        "schemaVersion": "stop_local_v1",
+        "installationId": "67ecb0ed-096e-4ac1-a8c5-9df4197504cb",
+        "results": {},
+        "drafts": {},
+        "chains": {},
+        "retiredChains": {},
+        "activeChainId": null,
+        "exposures": {},
+        "reservations": {
+          "new": {
+            "sessionId": "new",
+            "formId": "stop-replay-01",
+            "family": "replay",
+            "expiresAtMs": 2000003600000,
+            "chainId": null,
+            "armed": false,
+            "ownerTabId": "6b28a998-21d7-4528-ae07-d529e06f803c",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          }
+        },
+        "deletedSessions": {},
+        "attemptChains": {}
+      }
+    },
+    {
+      "family": "replay",
+      "kind": "after",
+      "first": {
+        "sessionId": "old",
+        "formId": "stop-replay-01",
+        "family": "replay",
+        "expiresAtMs": 2000001800000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "c77cf623-a46f-4328-ae92-f2fd5d70f346",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "second": {
+        "sessionId": "new",
+        "formId": "stop-replay-01",
+        "family": "replay",
+        "expiresAtMs": 2000003600001,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "1b6419ac-d3f3-4da6-89b0-5156fd1903d9",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "stale": "FormClaimExpiredError",
+      "state": {
+        "schemaVersion": "stop_local_v1",
+        "installationId": "0a9a8499-9168-4c23-80a6-42404c3c26ed",
+        "results": {},
+        "drafts": {},
+        "chains": {},
+        "retiredChains": {},
+        "activeChainId": null,
+        "exposures": {},
+        "reservations": {
+          "new": {
+            "sessionId": "new",
+            "formId": "stop-replay-01",
+            "family": "replay",
+            "expiresAtMs": 2000003600001,
+            "chainId": null,
+            "armed": false,
+            "ownerTabId": "1b6419ac-d3f3-4da6-89b0-5156fd1903d9",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          }
+        },
+        "deletedSessions": {},
+        "attemptChains": {}
+      }
+    },
+    {
+      "family": "replay",
+      "kind": "armed",
+      "first": {
+        "sessionId": "old",
+        "formId": "stop-replay-01",
+        "family": "replay",
+        "expiresAtMs": 2000001800000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "a124d2fd-210d-41b0-b8a7-6a48643cf352",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "second": {
+        "sessionId": "new",
+        "formId": "stop-replay-02",
+        "family": "replay",
+        "expiresAtMs": 2000003600000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "3ab4ead1-31a9-4b23-99a6-f1d5bfc1b2eb",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "state": {
+        "schemaVersion": "stop_local_v1",
+        "installationId": "d93dcba4-3e91-4911-bc8e-0e60c3a5454b",
+        "results": {},
+        "drafts": {},
+        "chains": {},
+        "retiredChains": {},
+        "activeChainId": null,
+        "exposures": {
+          "stop-replay-01": {
+            "formId": "stop-replay-01",
+            "exposedAtWall": "2026-10-02T02:09:35.026Z",
+            "visualProfile": "standard",
+            "deleted": false,
+            "sessionId": "old",
+            "certainty": "uncertain"
+          }
+        },
+        "reservations": {
+          "old": {
+            "sessionId": "old",
+            "formId": "stop-replay-01",
+            "family": "replay",
+            "expiresAtMs": 2000001800000,
+            "chainId": null,
+            "armed": true,
+            "ownerTabId": "a124d2fd-210d-41b0-b8a7-6a48643cf352",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          },
+          "new": {
+            "sessionId": "new",
+            "formId": "stop-replay-02",
+            "family": "replay",
+            "expiresAtMs": 2000003600000,
+            "chainId": null,
+            "armed": false,
+            "ownerTabId": "3ab4ead1-31a9-4b23-99a6-f1d5bfc1b2eb",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          }
+        },
+        "deletedSessions": {},
+        "attemptChains": {}
+      }
+    },
+    {
+      "family": "replay",
+      "kind": "confirmed",
+      "first": {
+        "sessionId": "old",
+        "formId": "stop-replay-01",
+        "family": "replay",
+        "expiresAtMs": 2000001800000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "ad85b768-dc3b-47c7-b684-e3001ef2324e",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "second": {
+        "sessionId": "new",
+        "formId": "stop-replay-02",
+        "family": "replay",
+        "expiresAtMs": 2000003600000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "118aedf1-8a90-4a45-bb12-e40dd9653f07",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "state": {
+        "schemaVersion": "stop_local_v1",
+        "installationId": "78b32415-fbcb-474b-9ba8-3324823bcd8a",
+        "results": {},
+        "drafts": {},
+        "chains": {},
+        "retiredChains": {},
+        "activeChainId": null,
+        "exposures": {
+          "stop-replay-01": {
+            "formId": "stop-replay-01",
+            "exposedAtWall": "2026-10-02T02:09:35.245Z",
+            "visualProfile": "standard",
+            "deleted": false,
+            "sessionId": "old",
+            "certainty": "confirmed"
+          }
+        },
+        "reservations": {
+          "new": {
+            "sessionId": "new",
+            "formId": "stop-replay-02",
+            "family": "replay",
+            "expiresAtMs": 2000003600000,
+            "chainId": null,
+            "armed": false,
+            "ownerTabId": "118aedf1-8a90-4a45-bb12-e40dd9653f07",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          }
+        },
+        "deletedSessions": {},
+        "attemptChains": {}
+      }
+    },
+    {
+      "family": "replay",
+      "kind": "uncertain-marker",
+      "first": {
+        "sessionId": "old",
+        "formId": "stop-replay-01",
+        "family": "replay",
+        "expiresAtMs": 2000001800000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "3c20eafe-d178-48ed-a547-15b9675a547a",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "second": {
+        "sessionId": "new",
+        "formId": "stop-replay-02",
+        "family": "replay",
+        "expiresAtMs": 2000003600000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "83bbc113-9e79-424e-af47-db2ea69914d6",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "state": {
+        "schemaVersion": "stop_local_v1",
+        "installationId": "261c72c9-5c1b-4e08-a4ce-f56b5441afbb",
+        "results": {},
+        "drafts": {},
+        "chains": {},
+        "retiredChains": {},
+        "activeChainId": null,
+        "exposures": {
+          "stop-replay-01": {
+            "formId": "stop-replay-01",
+            "sessionId": "old",
+            "certainty": "uncertain",
+            "visualProfile": "standard",
+            "deleted": false,
+            "exposedAtWall": "2026-10-02T02:09:35.462Z"
+          }
+        },
+        "reservations": {
+          "old": {
+            "sessionId": "old",
+            "formId": "stop-replay-01",
+            "family": "replay",
+            "expiresAtMs": 2000001800000,
+            "chainId": null,
+            "armed": false,
+            "ownerTabId": "3c20eafe-d178-48ed-a547-15b9675a547a",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          },
+          "new": {
+            "sessionId": "new",
+            "formId": "stop-replay-02",
+            "family": "replay",
+            "expiresAtMs": 2000003600000,
+            "chainId": null,
+            "armed": false,
+            "ownerTabId": "83bbc113-9e79-424e-af47-db2ea69914d6",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          }
+        },
+        "deletedSessions": {},
+        "attemptChains": {}
+      }
+    },
+    {
+      "family": "replay",
+      "kind": "confirmed-marker",
+      "first": {
+        "sessionId": "old",
+        "formId": "stop-replay-01",
+        "family": "replay",
+        "expiresAtMs": 2000001800000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "ba629593-45c7-4f78-b6db-7b4e6816409a",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "second": {
+        "sessionId": "new",
+        "formId": "stop-replay-02",
+        "family": "replay",
+        "expiresAtMs": 2000003600000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "0a13ba4b-85a6-4667-ae5d-64a58bfe6eac",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "state": {
+        "schemaVersion": "stop_local_v1",
+        "installationId": "479834f8-f928-4602-bd65-2eb426416b2d",
+        "results": {},
+        "drafts": {},
+        "chains": {},
+        "retiredChains": {},
+        "activeChainId": null,
+        "exposures": {
+          "stop-replay-01": {
+            "formId": "stop-replay-01",
+            "sessionId": "old",
+            "certainty": "confirmed",
+            "visualProfile": "standard",
+            "deleted": false,
+            "exposedAtWall": "2026-10-02T02:09:35.676Z"
+          }
+        },
+        "reservations": {
+          "old": {
+            "sessionId": "old",
+            "formId": "stop-replay-01",
+            "family": "replay",
+            "expiresAtMs": 2000001800000,
+            "chainId": null,
+            "armed": false,
+            "ownerTabId": "ba629593-45c7-4f78-b6db-7b4e6816409a",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          },
+          "new": {
+            "sessionId": "new",
+            "formId": "stop-replay-02",
+            "family": "replay",
+            "expiresAtMs": 2000003600000,
+            "chainId": null,
+            "armed": false,
+            "ownerTabId": "0a13ba4b-85a6-4667-ae5d-64a58bfe6eac",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          }
+        },
+        "deletedSessions": {},
+        "attemptChains": {}
+      }
+    },
+    {
+      "family": "replay",
+      "kind": "armed-no-marker",
+      "first": {
+        "sessionId": "old",
+        "formId": "stop-replay-01",
+        "family": "replay",
+        "expiresAtMs": 2000001800000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "17049110-755e-433e-9d10-4e39ff5863db",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "second": {
+        "sessionId": "new",
+        "formId": "stop-replay-02",
+        "family": "replay",
+        "expiresAtMs": 2000003600000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "e7d1479c-874b-422a-8968-5a049ec85c72",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "state": {
+        "schemaVersion": "stop_local_v1",
+        "installationId": "c7f89f10-1fbf-45bf-8d27-5c8c73671117",
+        "results": {},
+        "drafts": {},
+        "chains": {},
+        "retiredChains": {},
+        "activeChainId": null,
+        "exposures": {},
+        "reservations": {
+          "old": {
+            "sessionId": "old",
+            "formId": "stop-replay-01",
+            "family": "replay",
+            "expiresAtMs": 2000001800000,
+            "chainId": null,
+            "armed": true,
+            "ownerTabId": "17049110-755e-433e-9d10-4e39ff5863db",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          },
+          "new": {
+            "sessionId": "new",
+            "formId": "stop-replay-02",
+            "family": "replay",
+            "expiresAtMs": 2000003600000,
+            "chainId": null,
+            "armed": false,
+            "ownerTabId": "e7d1479c-874b-422a-8968-5a049ec85c72",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          }
+        },
+        "deletedSessions": {},
+        "attemptChains": {}
+      }
+    },
+    {
+      "family": "replay",
+      "kind": "unknown-armed",
+      "first": {
+        "sessionId": "old",
+        "formId": "stop-replay-01",
+        "family": "replay",
+        "expiresAtMs": 2000001800000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "e9a1c4da-6618-4f46-8ded-b700c2c25214",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "second": {
+        "sessionId": "new",
+        "formId": "stop-replay-02",
+        "family": "replay",
+        "expiresAtMs": 2000003600000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "375e7477-2ecf-4db0-8931-8e2643ba9ada",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "state": {
+        "schemaVersion": "stop_local_v1",
+        "installationId": "cf23db5e-eb1a-47c1-b1dd-99f4fb0b1294",
+        "results": {},
+        "drafts": {},
+        "chains": {},
+        "retiredChains": {},
+        "activeChainId": null,
+        "exposures": {},
+        "reservations": {
+          "old": {
+            "sessionId": "old",
+            "formId": "stop-replay-01",
+            "family": "replay",
+            "expiresAtMs": 2000001800000,
+            "chainId": null,
+            "ownerTabId": "e9a1c4da-6618-4f46-8ded-b700c2c25214",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          },
+          "new": {
+            "sessionId": "new",
+            "formId": "stop-replay-02",
+            "family": "replay",
+            "expiresAtMs": 2000003600000,
+            "chainId": null,
+            "armed": false,
+            "ownerTabId": "375e7477-2ecf-4db0-8931-8e2643ba9ada",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          }
+        },
+        "deletedSessions": {},
+        "attemptChains": {}
+      }
+    },
+    {
+      "family": "replay",
+      "kind": "legacy",
+      "first": {
+        "sessionId": "old",
+        "formId": "stop-replay-01",
+        "family": "replay",
+        "expiresAtMs": 2000001800000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "1ad35cf7-839c-43c2-a9d1-2b97cc148d71",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "second": {
+        "sessionId": "new",
+        "formId": "stop-replay-02",
+        "family": "replay",
+        "expiresAtMs": 2000003600000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "c26aeb06-da53-4fef-98bd-300c1f942622",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "state": {
+        "schemaVersion": "stop_local_v1",
+        "installationId": "36f07f28-944f-4bc4-b650-7c445d9c5183",
+        "results": {},
+        "drafts": {},
+        "chains": {},
+        "retiredChains": {},
+        "activeChainId": null,
+        "exposures": {},
+        "reservations": {
+          "legacy-reclaimed": {
+            "sessionId": "legacy-reclaimed",
+            "formId": "stop-baseline-01",
+            "family": "baseline",
+            "expiresAtMs": 2000005400000,
+            "chainId": null,
+            "armed": false,
+            "ownerTabId": "c26aeb06-da53-4fef-98bd-300c1f942622",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          }
+        },
+        "deletedSessions": {},
+        "attemptChains": {}
+      }
+    },
+    {
+      "family": "replay",
+      "kind": "race",
+      "first": {
+        "sessionId": "old",
+        "formId": "stop-replay-01",
+        "family": "replay",
+        "expiresAtMs": 2000001800000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "942bcc10-2240-4249-bcb3-9cf1e2ac8915",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "second": {
+        "sessionId": "new",
+        "formId": "stop-replay-02",
+        "family": "replay",
+        "expiresAtMs": 2000003600000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "6b1b4480-9b9c-4d71-a482-e78656df5c57",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "stale": "armed",
+      "state": {
+        "schemaVersion": "stop_local_v1",
+        "installationId": "d16ef618-62bb-41f9-b268-da64c1f76f78",
+        "results": {},
+        "drafts": {},
+        "chains": {},
+        "retiredChains": {},
+        "activeChainId": null,
+        "exposures": {
+          "stop-replay-01": {
+            "formId": "stop-replay-01",
+            "exposedAtWall": "2026-10-02T02:09:36.536Z",
+            "visualProfile": "standard",
+            "deleted": false,
+            "sessionId": "old",
+            "certainty": "uncertain"
+          }
+        },
+        "reservations": {
+          "old": {
+            "sessionId": "old",
+            "formId": "stop-replay-01",
+            "family": "replay",
+            "expiresAtMs": 2000001800000,
+            "chainId": null,
+            "armed": true,
+            "ownerTabId": "942bcc10-2240-4249-bcb3-9cf1e2ac8915",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          },
+          "new": {
+            "sessionId": "new",
+            "formId": "stop-replay-02",
+            "family": "replay",
+            "expiresAtMs": 2000003600000,
+            "chainId": null,
+            "armed": false,
+            "ownerTabId": "6b1b4480-9b9c-4d71-a482-e78656df5c57",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          }
+        },
+        "deletedSessions": {},
+        "attemptChains": {}
+      }
+    },
+    {
+      "family": "replay",
+      "kind": "arm-first",
+      "first": {
+        "sessionId": "old",
+        "formId": "stop-replay-01",
+        "family": "replay",
+        "expiresAtMs": 2000001800000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "4698f6f3-d1ec-4875-b24a-cfdc90a82435",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "second": {
+        "sessionId": "new",
+        "formId": "stop-replay-02",
+        "family": "replay",
+        "expiresAtMs": 2000003600000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "c8980fd3-45d6-4b7b-9491-5cbe19d8d475",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "state": {
+        "schemaVersion": "stop_local_v1",
+        "installationId": "dcfb1f6e-4ec5-4124-a24c-0f9a041bcc07",
+        "results": {},
+        "drafts": {},
+        "chains": {},
+        "retiredChains": {},
+        "activeChainId": null,
+        "exposures": {
+          "stop-replay-01": {
+            "formId": "stop-replay-01",
+            "exposedAtWall": "2026-10-02T02:09:36.751Z",
+            "visualProfile": "standard",
+            "deleted": false,
+            "sessionId": "old",
+            "certainty": "uncertain"
+          }
+        },
+        "reservations": {
+          "old": {
+            "sessionId": "old",
+            "formId": "stop-replay-01",
+            "family": "replay",
+            "expiresAtMs": 2000001800000,
+            "chainId": null,
+            "armed": true,
+            "ownerTabId": "4698f6f3-d1ec-4875-b24a-cfdc90a82435",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          },
+          "new": {
+            "sessionId": "new",
+            "formId": "stop-replay-02",
+            "family": "replay",
+            "expiresAtMs": 2000003600000,
+            "chainId": null,
+            "armed": false,
+            "ownerTabId": "c8980fd3-45d6-4b7b-9491-5cbe19d8d475",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          }
+        },
+        "deletedSessions": {},
+        "attemptChains": {}
+      }
+    },
+    {
+      "family": "replay",
+      "kind": "reclaim-first",
+      "first": {
+        "sessionId": "old",
+        "formId": "stop-replay-01",
+        "family": "replay",
+        "expiresAtMs": 2000001800000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "37f5e5e1-3dc9-4c2f-a7c3-2a86d6c8fcbd",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "second": {
+        "sessionId": "new",
+        "formId": "stop-replay-01",
+        "family": "replay",
+        "expiresAtMs": 2000003600000,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "0dde4233-a577-4894-936d-6cb83f835d6a",
+        "leaseVersion": "stop_unarmed_lease_v1"
+      },
+      "stale": "FormClaimExpiredError",
+      "state": {
+        "schemaVersion": "stop_local_v1",
+        "installationId": "90ec6592-1ec1-431c-9970-458473701bf9",
+        "results": {},
+        "drafts": {},
+        "chains": {},
+        "retiredChains": {},
+        "activeChainId": null,
+        "exposures": {},
+        "reservations": {
+          "new": {
+            "sessionId": "new",
+            "formId": "stop-replay-01",
+            "family": "replay",
+            "expiresAtMs": 2000003600000,
+            "chainId": null,
+            "armed": false,
+            "ownerTabId": "0dde4233-a577-4894-936d-6cb83f835d6a",
+            "leaseVersion": "stop_unarmed_lease_v1"
+          }
+        },
+        "deletedSessions": {},
+        "attemptChains": {}
+      }
+    }
+  ],
+  "errors": [],
+  "pass": true
+}

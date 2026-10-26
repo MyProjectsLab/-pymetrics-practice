@@ -1,0 +1,11 @@
+F1 committed-undelivered arm blur invalidation and fresh rotation PASS
+F1 timeout-only same request then blur after timeout preserves observation PASS
+F1 uncommitted owner admission blur leaves no scored journal PASS
+F2 undeclared trusted paste labels live and reopened report without changing journal FAIL
+F2 undeclared trusted paste then entry blur labels unresolved Invalid PASS
+F3 one next_first factual review without durable authority PASS
+F3 one delete_first factual review without durable authority PASS
+F3 all next_first factual review without durable authority PASS
+F3 all delete_first factual review without durable authority PASS
+F2 declared assistance remains distinct from actual use PASS
+F1 native active transaction canceled before put, absent read then old callback cannot commit PASS

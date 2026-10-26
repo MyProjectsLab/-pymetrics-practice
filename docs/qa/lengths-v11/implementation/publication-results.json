@@ -1,0 +1,21 @@
+[
+  {
+    "name": "ordered report deletion-first and publication-first, held cancellation and stale positive read",
+    "status": "PASS",
+    "detail": {
+      "publicationFirst": true,
+      "deletionFirstBlocked": true,
+      "canceledLockReleased": true,
+      "staleFenced": true
+    }
+  },
+  {
+    "name": "report-view activity survives checkpoint extension in real IndexedDB",
+    "status": "PASS",
+    "detail": {
+      "firstClosed": 30,
+      "secondClosed": 60,
+      "oldActivityRevisionPreserved": true
+    }
+  }
+]

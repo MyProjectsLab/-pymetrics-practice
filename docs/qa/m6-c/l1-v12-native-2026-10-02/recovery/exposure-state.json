@@ -1,0 +1,106 @@
+{
+  "before": {
+    "installationId": "2c598f85-4729-4e92-9e08-ef4c0a4a41f2",
+    "exposures": {
+      "stop-baseline-03": {
+        "formId": "stop-baseline-03",
+        "exposedAtWall": "2026-10-03T02:22:52.317Z",
+        "visualProfile": "standard",
+        "deleted": false,
+        "sessionId": "93ba0dae-e7ff-4df1-acaa-a4c883240e99",
+        "certainty": "confirmed"
+      },
+      "stop-baseline-04": {
+        "formId": "stop-baseline-04",
+        "exposedAtWall": "2026-10-03T02:31:02.105Z",
+        "visualProfile": "standard",
+        "deleted": false,
+        "sessionId": "99e75f87-e7b5-42aa-b64f-c3d417823533",
+        "certainty": "confirmed"
+      }
+    },
+    "reservations": {}
+  },
+  "pause": {
+    "installationId": "2c598f85-4729-4e92-9e08-ef4c0a4a41f2",
+    "exposures": {
+      "stop-baseline-03": {
+        "formId": "stop-baseline-03",
+        "exposedAtWall": "2026-10-03T02:22:52.317Z",
+        "visualProfile": "standard",
+        "deleted": false,
+        "sessionId": "93ba0dae-e7ff-4df1-acaa-a4c883240e99",
+        "certainty": "confirmed"
+      },
+      "stop-baseline-04": {
+        "formId": "stop-baseline-04",
+        "exposedAtWall": "2026-10-03T02:31:02.105Z",
+        "visualProfile": "standard",
+        "deleted": false,
+        "sessionId": "99e75f87-e7b5-42aa-b64f-c3d417823533",
+        "certainty": "confirmed"
+      }
+    },
+    "reservations": {}
+  },
+  "saved": {
+    "installationId": "2c598f85-4729-4e92-9e08-ef4c0a4a41f2",
+    "exposures": {
+      "stop-baseline-03": {
+        "formId": "stop-baseline-03",
+        "exposedAtWall": "2026-10-03T02:22:52.317Z",
+        "visualProfile": "standard",
+        "deleted": false,
+        "sessionId": "93ba0dae-e7ff-4df1-acaa-a4c883240e99",
+        "certainty": "confirmed"
+      },
+      "stop-baseline-04": {
+        "formId": "stop-baseline-04",
+        "exposedAtWall": "2026-10-03T02:31:02.105Z",
+        "visualProfile": "standard",
+        "deleted": false,
+        "sessionId": "99e75f87-e7b5-42aa-b64f-c3d417823533",
+        "certainty": "confirmed"
+      },
+      "stop-baseline-01": {
+        "formId": "stop-baseline-01",
+        "exposedAtWall": "2026-10-03T03:00:17.136Z",
+        "visualProfile": "standard",
+        "deleted": false,
+        "sessionId": "8a567c70-e988-46f6-b2e8-1ef2acb943d5",
+        "certainty": "confirmed"
+      }
+    },
+    "reservations": {}
+  },
+  "reloaded": {
+    "installationId": "2c598f85-4729-4e92-9e08-ef4c0a4a41f2",
+    "exposures": {
+      "stop-baseline-03": {
+        "formId": "stop-baseline-03",
+        "exposedAtWall": "2026-10-03T02:22:52.317Z",
+        "visualProfile": "standard",
+        "deleted": false,
+        "sessionId": "93ba0dae-e7ff-4df1-acaa-a4c883240e99",
+        "certainty": "confirmed"
+      },
+      "stop-baseline-04": {
+        "formId": "stop-baseline-04",
+        "exposedAtWall": "2026-10-03T02:31:02.105Z",
+        "visualProfile": "standard",
+        "deleted": false,
+        "sessionId": "99e75f87-e7b5-42aa-b64f-c3d417823533",
+        "certainty": "confirmed"
+      },
+      "stop-baseline-01": {
+        "formId": "stop-baseline-01",
+        "exposedAtWall": "2026-10-03T03:00:17.136Z",
+        "visualProfile": "standard",
+        "deleted": false,
+        "sessionId": "8a567c70-e988-46f6-b2e8-1ef2acb943d5",
+        "certainty": "confirmed"
+      }
+    },
+    "reservations": {}
+  }
+}

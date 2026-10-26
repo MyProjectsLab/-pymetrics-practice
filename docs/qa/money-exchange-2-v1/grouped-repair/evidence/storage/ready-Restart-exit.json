@@ -1,0 +1,223 @@
+{
+  "version": "money_exchange_2_storage_v2_0",
+  "activity": {},
+  "installationId": "ebb31064-e1f1-42bd-b4f8-127d492d28d8",
+  "generation": 1,
+  "revision": 4,
+  "lease": {
+    "ownerId": "a20bacfb-a1bf-473a-b05f-47348edef0ec",
+    "epoch": 2,
+    "live": true
+  },
+  "route": {
+    "stage": "ready",
+    "epoch": 5,
+    "ownerId": "a20bacfb-a1bf-473a-b05f-47348edef0ec"
+  },
+  "ticketSerial": 2,
+  "currentTicketId": "T1.2",
+  "tickets": {
+    "T1.1": {
+      "id": "T1.1",
+      "generation": 1,
+      "ownerId": "a20bacfb-a1bf-473a-b05f-47348edef0ec",
+      "leaseEpoch": 2,
+      "state": "canceled",
+      "attemptId": null
+    },
+    "T1.2": {
+      "id": "T1.2",
+      "generation": 1,
+      "ownerId": "a20bacfb-a1bf-473a-b05f-47348edef0ec",
+      "leaseEpoch": 2,
+      "state": "open",
+      "attemptId": null
+    }
+  },
+  "activeAttemptId": null,
+  "formCounter": 0,
+  "exposureHistory": [],
+  "attempts": {},
+  "tombstones": {},
+  "outcomes": {
+    "a20bacfb-a1bf-473a-b05f-47348edef0ec/8c093976-cb4e-4ebe-9f16-9c3bfd57f32f/1": {
+      "payloadHash": "{\"kind\":\"claimLease\",\"requestId\":\"a20bacfb-a1bf-473a-b05f-47348edef0ec/8c093976-cb4e-4ebe-9f16-9c3bfd57f32f/1\",\"installationId\":\"ebb31064-e1f1-42bd-b4f8-127d492d28d8\",\"generation\":1,\"ownerId\":\"a20bacfb-a1bf-473a-b05f-47348edef0ec\",\"leaseEpoch\":0,\"at\":16.799999998882413,\"routeEpoch\":1}",
+      "command": {
+        "kind": "claimLease",
+        "requestId": "a20bacfb-a1bf-473a-b05f-47348edef0ec/8c093976-cb4e-4ebe-9f16-9c3bfd57f32f/1",
+        "installationId": "ebb31064-e1f1-42bd-b4f8-127d492d28d8",
+        "generation": 1,
+        "ownerId": "a20bacfb-a1bf-473a-b05f-47348edef0ec",
+        "leaseEpoch": 0,
+        "at": 16.799999998882413,
+        "routeEpoch": 1
+      },
+      "result": {
+        "leaseEpoch": 2
+      },
+      "route": {
+        "stage": "library",
+        "epoch": 2,
+        "ownerId": "a20bacfb-a1bf-473a-b05f-47348edef0ec"
+      },
+      "revision": 1
+    },
+    "a20bacfb-a1bf-473a-b05f-47348edef0ec/8c093976-cb4e-4ebe-9f16-9c3bfd57f32f/2": {
+      "payloadHash": "{\"kind\":\"enter\",\"requestId\":\"a20bacfb-a1bf-473a-b05f-47348edef0ec/8c093976-cb4e-4ebe-9f16-9c3bfd57f32f/2\",\"installationId\":\"ebb31064-e1f1-42bd-b4f8-127d492d28d8\",\"generation\":1,\"ownerId\":\"a20bacfb-a1bf-473a-b05f-47348edef0ec\",\"leaseEpoch\":2,\"routeEpoch\":2}",
+      "command": {
+        "kind": "enter",
+        "requestId": "a20bacfb-a1bf-473a-b05f-47348edef0ec/8c093976-cb4e-4ebe-9f16-9c3bfd57f32f/2",
+        "installationId": "ebb31064-e1f1-42bd-b4f8-127d492d28d8",
+        "generation": 1,
+        "ownerId": "a20bacfb-a1bf-473a-b05f-47348edef0ec",
+        "leaseEpoch": 2,
+        "routeEpoch": 2
+      },
+      "result": {
+        "stage": "instructions"
+      },
+      "route": {
+        "stage": "instructions",
+        "epoch": 3,
+        "ownerId": "a20bacfb-a1bf-473a-b05f-47348edef0ec"
+      },
+      "revision": 2
+    },
+    "a20bacfb-a1bf-473a-b05f-47348edef0ec/8c093976-cb4e-4ebe-9f16-9c3bfd57f32f/3": {
+      "payloadHash": "{\"kind\":\"ready\",\"requestId\":\"a20bacfb-a1bf-473a-b05f-47348edef0ec/8c093976-cb4e-4ebe-9f16-9c3bfd57f32f/3\",\"installationId\":\"ebb31064-e1f1-42bd-b4f8-127d492d28d8\",\"generation\":1,\"ownerId\":\"a20bacfb-a1bf-473a-b05f-47348edef0ec\",\"leaseEpoch\":2,\"routeEpoch\":3}",
+      "command": {
+        "kind": "ready",
+        "requestId": "a20bacfb-a1bf-473a-b05f-47348edef0ec/8c093976-cb4e-4ebe-9f16-9c3bfd57f32f/3",
+        "installationId": "ebb31064-e1f1-42bd-b4f8-127d492d28d8",
+        "generation": 1,
+        "ownerId": "a20bacfb-a1bf-473a-b05f-47348edef0ec",
+        "leaseEpoch": 2,
+        "routeEpoch": 3
+      },
+      "result": {
+        "ticketId": "T1.1",
+        "stage": "ready"
+      },
+      "route": {
+        "stage": "ready",
+        "epoch": 4,
+        "ownerId": "a20bacfb-a1bf-473a-b05f-47348edef0ec"
+      },
+      "revision": 3
+    },
+    "a20bacfb-a1bf-473a-b05f-47348edef0ec/8c093976-cb4e-4ebe-9f16-9c3bfd57f32f/5": {
+      "payloadHash": "{\"kind\":\"exit\",\"requestId\":\"a20bacfb-a1bf-473a-b05f-47348edef0ec/8c093976-cb4e-4ebe-9f16-9c3bfd57f32f/5\",\"installationId\":\"ebb31064-e1f1-42bd-b4f8-127d492d28d8\",\"generation\":1,\"ownerId\":\"a20bacfb-a1bf-473a-b05f-47348edef0ec\",\"leaseEpoch\":2,\"routeEpoch\":4,\"ticketId\":\"T1.1\",\"destination\":\"Restart\"}",
+      "command": {
+        "kind": "exit",
+        "requestId": "a20bacfb-a1bf-473a-b05f-47348edef0ec/8c093976-cb4e-4ebe-9f16-9c3bfd57f32f/5",
+        "installationId": "ebb31064-e1f1-42bd-b4f8-127d492d28d8",
+        "generation": 1,
+        "ownerId": "a20bacfb-a1bf-473a-b05f-47348edef0ec",
+        "leaseEpoch": 2,
+        "routeEpoch": 4,
+        "ticketId": "T1.1",
+        "destination": "Restart"
+      },
+      "result": {
+        "destination": "Restart",
+        "attemptId": null,
+        "successorTicketId": "T1.2"
+      },
+      "route": {
+        "stage": "ready",
+        "epoch": 5,
+        "ownerId": "a20bacfb-a1bf-473a-b05f-47348edef0ec"
+      },
+      "revision": 4
+    }
+  },
+  "navigation": {
+    "destination": "Restart",
+    "requestId": "a20bacfb-a1bf-473a-b05f-47348edef0ec/8c093976-cb4e-4ebe-9f16-9c3bfd57f32f/5"
+  },
+  "proofs": {},
+  "retired": {},
+  "resetReceipt": null,
+  "checkpoint": {
+    "version": "storage_v2_0",
+    "revision": 0,
+    "state": {
+      "version": "money_exchange_2_storage_v2_0",
+      "activity": {},
+      "installationId": "ebb31064-e1f1-42bd-b4f8-127d492d28d8",
+      "generation": 1,
+      "revision": 0,
+      "lease": {
+        "ownerId": null,
+        "epoch": 1,
+        "live": false
+      },
+      "route": {
+        "stage": "library",
+        "epoch": 1,
+        "ownerId": null
+      },
+      "ticketSerial": 0,
+      "currentTicketId": null,
+      "tickets": {},
+      "activeAttemptId": null,
+      "formCounter": 0,
+      "exposureHistory": [],
+      "attempts": {},
+      "tombstones": {},
+      "outcomes": {},
+      "navigation": null,
+      "proofs": {},
+      "retired": {},
+      "resetReceipt": null
+    }
+  },
+  "tail": [
+    {
+      "kind": "claimLease",
+      "requestId": "a20bacfb-a1bf-473a-b05f-47348edef0ec/8c093976-cb4e-4ebe-9f16-9c3bfd57f32f/1",
+      "installationId": "ebb31064-e1f1-42bd-b4f8-127d492d28d8",
+      "generation": 1,
+      "ownerId": "a20bacfb-a1bf-473a-b05f-47348edef0ec",
+      "leaseEpoch": 0,
+      "at": 16.799999998882413,
+      "routeEpoch": 1
+    },
+    {
+      "kind": "enter",
+      "requestId": "a20bacfb-a1bf-473a-b05f-47348edef0ec/8c093976-cb4e-4ebe-9f16-9c3bfd57f32f/2",
+      "installationId": "ebb31064-e1f1-42bd-b4f8-127d492d28d8",
+      "generation": 1,
+      "ownerId": "a20bacfb-a1bf-473a-b05f-47348edef0ec",
+      "leaseEpoch": 2,
+      "at": 25.5,
+      "routeEpoch": 2,
+      "input": "pointer activation",
+      "stage": "library"
+    },
+    {
+      "kind": "ready",
+      "requestId": "a20bacfb-a1bf-473a-b05f-47348edef0ec/8c093976-cb4e-4ebe-9f16-9c3bfd57f32f/3",
+      "installationId": "ebb31064-e1f1-42bd-b4f8-127d492d28d8",
+      "generation": 1,
+      "ownerId": "a20bacfb-a1bf-473a-b05f-47348edef0ec",
+      "leaseEpoch": 2,
+      "at": 164,
+      "routeEpoch": 3,
+      "input": "pointer activation",
+      "stage": "instructions"
+    },
+    {
+      "kind": "exit",
+      "requestId": "a20bacfb-a1bf-473a-b05f-47348edef0ec/8c093976-cb4e-4ebe-9f16-9c3bfd57f32f/5",
+      "installationId": "ebb31064-e1f1-42bd-b4f8-127d492d28d8",
+      "generation": 1,
+      "ownerId": "a20bacfb-a1bf-473a-b05f-47348edef0ec",
+      "leaseEpoch": 2,
+      "at": 234.7999999988824,
+      "routeEpoch": 4,
+      "ticketId": "T1.1",
+      "destination": "Restart"
+    }
+  ]
+}

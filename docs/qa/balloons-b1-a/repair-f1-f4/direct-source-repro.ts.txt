@@ -1,0 +1,54 @@
+import { test, expect } from './checkout/node_modules/vitest/dist/index.js'
+import { loadScoredManifests } from '/Users/renzo/Documents/Assessment Practice/App/src/balloons/manifests'
+import { startScoredSession, transition } from '/Users/renzo/Documents/Assessment Practice/App/src/balloons/core'
+import { basicReport } from '/Users/renzo/Documents/Assessment Practice/App/src/balloons/report'
+import type { CoreState, CoreAction } from '/Users/renzo/Documents/Assessment Practice/App/src/balloons/contracts'
+const forms = await loadScoredManifests()
+let original = startScoredSession(forms.get('BL1')!, {
+ installationId:'repro-installation',sessionId:'repro-session',chainId:'repro-chain',stage:'baseline',
+ mapping:{'Type 1':'A','Type 2':'B','Type 3':'C'},exposureGeneration:0,ownershipGeneration:0,
+},{wallTimeMs:0,monotonicMs:0,clockEpochId:'repro'})
+function action(kind:CoreAction['kind']) {
+ const t = transition(original,{kind,actionId:original.nextActionId,expectedRound:original.round,expectedRevision:original.revision,source:'keyboard',time:{wallTimeMs:original.revision+1,monotonicMs:original.revision+1,clockEpochId:'repro'}})
+ if (!t.accepted) throw new Error('unexpected rejection')
+ original=t.state
+}
+while(original.status!=='completed') {
+ while(original.status==='active' && original.current.attemptedPumps<6) action('pump')
+ if(original.status==='active')action('collect')
+ if(original.status==='resolved')action('next')
+}
+function refused(s:CoreState) { try{return basicReport(s).status!=='headless_complete'}catch{return true} }
+test('control: genuine complete BL1 at k=6 is 810 banked and 125 lost',()=>{
+ expect(basicReport(original)).toMatchObject({status:'headless_complete',total:{bankedCents:810,lostCents:125}})
+})
+test('F1: report must refuse a round resolved before its Pump action',()=>{
+ const s:any=structuredClone(original)
+ ;[s.events[1],s.events[2]]=[s.events[2],s.events[1]]
+ s.events.forEach((e:any,i:number)=>e.sequenceNumber=i+1)
+ expect(refused(s)).toBe(true)
+})
+test('F1: report must refuse one action ID reused for every accepted action',()=>{
+ const s:any=structuredClone(original)
+ s.events.forEach((e:any)=>{if(e.actionId!==null)e.actionId=1})
+ s.nextActionId=2
+ expect(refused(s)).toBe(true)
+})
+test('F2: report must refuse 15 burst cents reclassified as banked',()=>{
+ const s:any=structuredClone(original)
+ const r=s.results.find((r:any)=>r.outcome==='burst'&&r.lostCents>0)
+ expect(r.round).toBe(5);expect(r.lostCents).toBe(15)
+ r.bankedCents=15;r.lostCents=0;s.bankedCents+=15;s.lostCents-=15
+ for(const e of s.events)if(e.round>=5&&e.type==='round_resolved'){e.post.bankedCents+=15;e.post.lostCents-=15}
+ expect(refused(s)).toBe(true)
+})
+test('F3: report must refuse visible types that disagree with recorded mapping',()=>{
+ const s:any=structuredClone(original)
+ s.results.forEach((r:any)=>{if(r.visibleType==='Type 1')r.visibleType='Type 2';else if(r.visibleType==='Type 2')r.visibleType='Type 1'})
+ expect(refused(s)).toBe(true)
+})
+test('F4: report must refuse manifest bytes that no longer match the verified hash',()=>{
+ const s:any=structuredClone(original)
+ s.manifest.rounds[0].threshold=2
+ expect(refused(s)).toBe(true)
+})

@@ -1,0 +1,29 @@
+{
+  "root": {
+    "schema": "faces-root-v2",
+    "installationId": "c0180000-1111-4111-8111-000000000001",
+    "generation": 0,
+    "revision": 1,
+    "nextSequence": 1,
+    "route": null,
+    "attempts": [],
+    "requestFences": [],
+    "attemptFences": [],
+    "exposure": [],
+    "guideCompletion": {
+      "guideVersion": "faces-guide-v1",
+      "checkVersion": "faces-check-v1"
+    },
+    "lastGuideReceipt": {
+      "requestId": "c0180000-1111-4111-8111-000000000002",
+      "guideVersion": "faces-guide-v1",
+      "checkVersion": "faces-check-v1"
+    },
+    "deletionReceipts": [],
+    "lastReset": null
+  },
+  "legacyClosedSchemaPass": true,
+  "semanticAssessment": "model.ts validateRoot lines144-181: no attempts, fences, reset or route; unique management request; completion/receipt pairs agree. All predicates hold. No model/native suite executed.",
+  "proposedV3ExactPairPass": false,
+  "reachabilityLimit": "Synthetic model/schema-admissible root, not a claim that the shipped controller emits v1 guide values or that founder history contains them."
+}

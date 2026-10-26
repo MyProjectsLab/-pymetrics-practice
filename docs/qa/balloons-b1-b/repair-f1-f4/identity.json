@@ -1,0 +1,178 @@
+{
+  "parent": "e192e7ab6aef5f529b6511ca03cb9a20ab36abcd",
+  "identitySelfExcluded": true,
+  "files": [
+    {
+      "path": "IMPLEMENTATION_TRACKER.md",
+      "sha256": "758204e448f0495072e8487745cb3ebfb2c62abd57e73db98e67c6c43c87f108"
+    },
+    {
+      "path": "dist/.gitkeep",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "dist/THIRD_PARTY_NOTICES.txt",
+      "sha256": "5b72ce738b7a0173d085930608433159e89d82cf1587c4567d9e974e057a8eb6"
+    },
+    {
+      "path": "dist/assets/index-BQM05cRl.js",
+      "sha256": "f1e7967c9e652adb88a6c23320f2ffc238f00c6046f6c74fb6eaa0e58d83d408"
+    },
+    {
+      "path": "dist/assets/index-BpG9Hx1r.css",
+      "sha256": "3ddab6fe0eee824ad081cab9919dd2a12791b4b99c95be56a3d223317e3e6f55"
+    },
+    {
+      "path": "dist/index.html",
+      "sha256": "02456b5f8b1451911f9428f1d505e519992eb7c88979ccb01e167e3c09163d0d"
+    },
+    {
+      "path": "dist/stop/stimuli/fixation.svg",
+      "sha256": "e41efe142e04727e3de4dd6c069be72ab7a9194bcd1347271bb72aa31c30f5b9"
+    },
+    {
+      "path": "dist/stop/stimuli/shape-go.svg",
+      "sha256": "cea3367ec0283e30c31dc286b63a499e67afd11c58b85a2bba312efcf57c2c88"
+    },
+    {
+      "path": "dist/stop/stimuli/shape-no-go.svg",
+      "sha256": "1ccf88cee894d94ce4116079c46948baed103091258ff11266ad0474296a9ef1"
+    },
+    {
+      "path": "dist/stop/stimuli/standard-go.svg",
+      "sha256": "f7d8b57a4e72787f836da45d2b83b8140678ac01cd48e950b2832c813dc985f5"
+    },
+    {
+      "path": "dist/stop/stimuli/standard-no-go.svg",
+      "sha256": "917803ade8ffd0085ba1e73aa5383276d747d65719ef15e382ab252fefb447a8"
+    },
+    {
+      "path": "docs/qa/balloons-b1-b/VERIFICATION.md",
+      "sha256": "a21448875eb254ad35747b95b0a5ec886b43ddcdf5844d4079e0ce9928f8690a"
+    },
+    {
+      "path": "docs/qa/balloons-b1-b/repair-f1-f4/AUDIT-e192e7ab.md",
+      "sha256": "9ca20a2f77c6d26154bf165c3d820e127c2949d30e8590d9d71f2294110f6ec6"
+    },
+    {
+      "path": "docs/qa/balloons-b1-b/repair-f1-f4/VERIFICATION.md",
+      "sha256": "01852d637ceb6727944cfa2ba6dba2045d96d434ece6a3b2a74927ea85f6c8a1"
+    },
+    {
+      "path": "docs/qa/balloons-b1-b/repair-f1-f4/changed-files.txt",
+      "sha256": "27ead78ea1d666357b77f64236c36a809f5da523af05c5b74724057b09639e7e"
+    },
+    {
+      "path": "docs/qa/balloons-b1-b/repair-f1-f4/checks.txt",
+      "sha256": "e46bdb91cf34a6dfeb64a12c1145581bc31376e5e49e588414c9a6ff697e8bc4"
+    },
+    {
+      "path": "docs/qa/balloons-b1-b/repair-f1-f4/independent-browser.mjs",
+      "sha256": "c71ef138f5e8035a7da845a5fd43925ce19abd456c077e1ac38cacc7fe3c0f16"
+    },
+    {
+      "path": "docs/qa/balloons-b1-b/repair-f1-f4/post-evidence.tar.gz",
+      "sha256": "955ef39d688b0e94fb40e079008d48448b41faf24252983a7cb9bc877071fc99"
+    },
+    {
+      "path": "docs/qa/balloons-b1-b/repair-f1-f4/post-summary.json",
+      "sha256": "b097b4c91ee16ca6e33dac250966d82d6b20a165934805fea08dcf1145cec7ea"
+    },
+    {
+      "path": "docs/qa/balloons-b1-b/repair-f1-f4/pre-evidence.tar.gz",
+      "sha256": "4255564bfbeb4c359998c0197840619c47a1f091ba991a7b61e7dc32a551a497"
+    },
+    {
+      "path": "docs/qa/balloons-b1-b/repair-f1-f4/pre-summary.json",
+      "sha256": "0b1d9c8e45883366eb9e11cc7dd6ddd39901d9648738401e66ca3ddad8297c98"
+    },
+    {
+      "path": "docs/qa/balloons-b1-b/repair-f1-f4/preserved-boundaries.json",
+      "sha256": "0b4942107161685f236154182061126e97d4a57249d869507f59978b60f935e4"
+    },
+    {
+      "path": "docs/qa/balloons-b1-b/repair-f1-f4/reconcile.py",
+      "sha256": "e0fd2a0f06b83b7d736b73f0309f12d667f0978458da3ce8239e2d20de51e9d8"
+    },
+    {
+      "path": "docs/qa/balloons-b1-b/repair-f1-f4/repair-boundaries.mjs",
+      "sha256": "86cb52852669bf1a1cb74500ee3359a5d4baf815eeaf65aa60de46f12507fea1"
+    },
+    {
+      "path": "docs/qa/balloons-b1-b/repair-f1-f4/repair-controls.mjs",
+      "sha256": "a483e662c121c7ce4252e0eac56d2c64b103475b5d0e8043ff308795174545d0"
+    },
+    {
+      "path": "docs/qa/balloons-b1-b/repair-f1-f4/supplemental-browser.mjs",
+      "sha256": "21c3375e87718dfbc8a67d58dc2e3ace45cdcc1f7fc11e08d4cad0053e4a90cc"
+    },
+    {
+      "path": "docs/specifications/ASSESSMENT_PRACTICE_BALLOONS_FIXED_MANIFESTS_V1_0.json",
+      "sha256": "9b110c4a9ca7ad2d8c6e0cbe3afdc79803edeaa98a7095ebeb5fc69d3341b7e0"
+    },
+    {
+      "path": "docs/specifications/ASSESSMENT_PRACTICE_BALLOONS_FORM_REVIEW_V1_0.md",
+      "sha256": "c6b551c256e18c3bbc1a69f1ad082e52f571c504a8fc0275ada2ef2023aea66b"
+    },
+    {
+      "path": "docs/specifications/ASSESSMENT_PRACTICE_BALLOONS_ROUTER_FIXTURES_V1_0.json",
+      "sha256": "fbd1727798831af0e761dd38edffb40fc27610622a2bede3b221e2806b136d30"
+    },
+    {
+      "path": "docs/specifications/ASSESSMENT_PRACTICE_BALLOONS_ROUTER_FIXTURE_REVIEW_V1_0.md",
+      "sha256": "ce4d777870a7c60c84ece8e989af30896942e7caad73c99a9c0a79c2a6b607be"
+    },
+    {
+      "path": "docs/specifications/ASSESSMENT_PRACTICE_BALLOONS_SPECIFICATION_V1_0.md",
+      "sha256": "58ada52a7b25f2328f6ccd86026a55f6f2faa3dedcdbc7a9fdcd9680d06ce324"
+    },
+    {
+      "path": "docs/specifications/ASSESSMENT_PRACTICE_MASTER_STRATEGY.md",
+      "sha256": "c046fd1776c179799422893985229743bd495ed8d23c9388046f4424162c46f3"
+    },
+    {
+      "path": "docs/specifications/ASSESSMENT_PRACTICE_STOP_EXPERIENCE_ADDENDUM_V1_2.md",
+      "sha256": "a3e5f9f23c55f1ddfb6bdd33f0a689fe510bd471d197d305d7e324c687a92f9c"
+    },
+    {
+      "path": "docs/specifications/ASSESSMENT_PRACTICE_STOP_SPECIFICATION_V1_1.md",
+      "sha256": "d6389db51b3767764d7e4d71c8a6c84a3719581225165fd42d86c76a4ab2c843"
+    },
+    {
+      "path": "src/balloons/Journey.tsx",
+      "sha256": "66007630ad195993ac3ae90aea43d6294c62f65c0458030c01864a1a810ebae7"
+    },
+    {
+      "path": "src/balloons/controller.test.ts",
+      "sha256": "71aba19e80cf9c609fce3cf618d9c76eee0b9c35ee01b332c587462ad0a2499d"
+    },
+    {
+      "path": "src/balloons/controller.ts",
+      "sha256": "e6e4dc94a9a4dd99e2fbdf84d30e701af5f80f4c1f06300732cf5517dd411033"
+    },
+    {
+      "path": "src/balloons/durable.test.ts",
+      "sha256": "05364674147952f5e8d594a91eefd2bb6d18f6d37b72878c0c7ad3f392c73c08"
+    },
+    {
+      "path": "src/balloons/durable.ts",
+      "sha256": "ab42df13d128939ac822196b7e19a2a32bdc7072562fe24d667880f0e8794605"
+    },
+    {
+      "path": "src/balloons/history-recovery.test.tsx",
+      "sha256": "9466992a530e4cf835e31a3e56bb1cc12417a66595414ff799feec88d171fe33"
+    },
+    {
+      "path": "src/balloons/input.test.ts",
+      "sha256": "29a6b0cc57b11ea71665dce36808583b8ca7b99a3df17e6e2504fe7a54edfa26"
+    },
+    {
+      "path": "src/balloons/input.ts",
+      "sha256": "1b023f651bc14c50505ea07b897c9b26c3bcdf6a2010e95fe7004e5fb2ce6f55"
+    },
+    {
+      "path": "src/balloons/storage.ts",
+      "sha256": "29f3d307701115195837dea647ff095cfbb7202b196e8a139cc1b6e2c1a22a00"
+    }
+  ]
+}

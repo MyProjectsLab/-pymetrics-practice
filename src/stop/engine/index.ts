@@ -1,0 +1,6 @@
+export { createStopEngine } from './engine'
+export type { StopEngine } from './engine'
+export { ENGINE_EVENT_VERSION, VALIDITY_RULE_VERSION } from './contracts'
+export type { EngineEvent, EngineOptions, EngineState, FrameAdapter, FrameRequest, Scheduler, TrialResult } from './contracts'
+export { RULE } from './rules'
+export { inspectTrialEvents } from './integrity'

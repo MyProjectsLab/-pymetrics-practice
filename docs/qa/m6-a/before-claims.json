@@ -1,0 +1,49 @@
+{
+  "browser": "145.0.7632.6",
+  "cases": [
+    {
+      "family": "baseline",
+      "first": {
+        "sessionId": "abandoned",
+        "formId": "stop-baseline-01",
+        "family": "baseline",
+        "expiresAtMs": null,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "97fa99f7-01d9-4d50-bd2c-5f1d8d3c5a9c"
+      },
+      "second": {
+        "sessionId": "replacement",
+        "formId": "stop-baseline-02",
+        "family": "baseline",
+        "expiresAtMs": null,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "2f8948e4-7111-4dfc-874f-e7aea442352d"
+      },
+      "reclaimed": false
+    },
+    {
+      "family": "replay",
+      "first": {
+        "sessionId": "abandoned",
+        "formId": "stop-replay-01",
+        "family": "replay",
+        "expiresAtMs": null,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "a0db4523-ee64-4f88-b382-9b1792b64286"
+      },
+      "second": {
+        "sessionId": "replacement",
+        "formId": "stop-replay-02",
+        "family": "replay",
+        "expiresAtMs": null,
+        "chainId": null,
+        "armed": false,
+        "ownerTabId": "0ebc0c6d-6921-4991-80cd-c342249d26ec"
+      },
+      "reclaimed": false
+    }
+  ]
+}

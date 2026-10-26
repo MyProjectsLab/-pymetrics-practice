@@ -1,0 +1,3452 @@
+[
+  {
+    "name": "full valid event-derived 57/3/17/3; same-tab recovery",
+    "summary": {
+      "scoringVersion": "stop_scoring_v1",
+      "counts": {
+        "hits": 57,
+        "misses": 3,
+        "withholds": 17,
+        "falseAlarms": 3
+      },
+      "rates": {
+        "hit": 0.95,
+        "miss": 0.05,
+        "withhold": 0.85,
+        "falseAlarm": 0.15,
+        "overall": 0.925
+      },
+      "timing": {
+        "count": 57,
+        "q1": 350,
+        "median": 350,
+        "q3": 350,
+        "iqr": 0
+      },
+      "blocks": [
+        {
+          "number": 1,
+          "counts": {
+            "hits": 14,
+            "misses": 1,
+            "withholds": 4,
+            "falseAlarms": 1
+          },
+          "timing": {
+            "count": 14,
+            "q1": 350,
+            "median": 350,
+            "q3": 350,
+            "iqr": 0
+          },
+          "eligibleOutcomes": 20,
+          "accuracy": 0.9,
+          "hitRate": 0.9333333333333333,
+          "withholdRate": 0.8,
+          "falseAlarmRate": 0.2
+        },
+        {
+          "number": 2,
+          "counts": {
+            "hits": 14,
+            "misses": 1,
+            "withholds": 4,
+            "falseAlarms": 1
+          },
+          "timing": {
+            "count": 14,
+            "q1": 350,
+            "median": 350,
+            "q3": 350,
+            "iqr": 0
+          },
+          "eligibleOutcomes": 20,
+          "accuracy": 0.9,
+          "hitRate": 0.9333333333333333,
+          "withholdRate": 0.8,
+          "falseAlarmRate": 0.2
+        },
+        {
+          "number": 3,
+          "counts": {
+            "hits": 14,
+            "misses": 1,
+            "withholds": 4,
+            "falseAlarms": 1
+          },
+          "timing": {
+            "count": 14,
+            "q1": 350,
+            "median": 350,
+            "q3": 350,
+            "iqr": 0
+          },
+          "eligibleOutcomes": 20,
+          "accuracy": 0.9,
+          "hitRate": 0.9333333333333333,
+          "withholdRate": 0.8,
+          "falseAlarmRate": 0.2
+        },
+        {
+          "number": 4,
+          "counts": {
+            "hits": 15,
+            "misses": 0,
+            "withholds": 5,
+            "falseAlarms": 0
+          },
+          "timing": {
+            "count": 15,
+            "q1": 350,
+            "median": 350,
+            "q3": 350,
+            "iqr": 0
+          },
+          "eligibleOutcomes": 20,
+          "accuracy": 1,
+          "hitRate": 1,
+          "withholdRate": 1,
+          "falseAlarmRate": 0
+        }
+      ],
+      "halves": [
+        {
+          "hits": 28,
+          "misses": 2,
+          "withholds": 8,
+          "falseAlarms": 2
+        },
+        {
+          "hits": 29,
+          "misses": 1,
+          "withholds": 9,
+          "falseAlarms": 1
+        }
+      ],
+      "speedAccuracy": "From the first to the final block, false-alarm rate decreased by 20 percentage points.",
+      "postError": {
+        "selected": 5,
+        "comparison": 45,
+        "postAccuracy": 0.9375,
+        "comparisonAccuracy": 0.921875,
+        "differencePoints": 1.5625,
+        "deltaMs": 0,
+        "narrative": "similar response speed after errors."
+      },
+      "sequence": {
+        "longRunCount": 9,
+        "otherCount": 11,
+        "longRunFalseAlarms": 1,
+        "otherFalseAlarms": 2,
+        "narrative": "Your false-alarm rate was 11% when NO-GO followed at least three GO symbols and 18% on other qualifying NO-GO trials (similar). This describes your responses in this sequence. It does not mean a NO-GO symbol becomes more likely after a run of GO symbols."
+      },
+      "anticipatoryCount": 0
+    },
+    "eventCount": 762
+  },
+  {
+    "name": "fault-injected same-tab recovery presentationIdentity",
+    "acceptedByVerifier": false,
+    "summaryMatches": true,
+    "scoreError": null,
+    "recovered": false,
+    "screen": "invalid"
+  },
+  {
+    "name": "fault-injected same-tab recovery allPresentationsMissing",
+    "acceptedByVerifier": false,
+    "summaryMatches": true,
+    "scoreError": null,
+    "recovered": false,
+    "screen": "invalid"
+  },
+  {
+    "name": "fault-injected same-tab recovery responseTimingMismatch",
+    "acceptedByVerifier": false,
+    "summaryMatches": true,
+    "scoreError": null,
+    "recovered": false,
+    "screen": "invalid"
+  },
+  {
+    "name": "fault-injected same-tab recovery formSeedChanged",
+    "acceptedByVerifier": false,
+    "summaryMatches": true,
+    "scoreError": null,
+    "recovered": false,
+    "screen": "invalid"
+  },
+  {
+    "name": "fault-injected same-tab recovery invalidEventPresent",
+    "acceptedByVerifier": false,
+    "summaryMatches": true,
+    "scoreError": null,
+    "recovered": false,
+    "screen": "invalid"
+  },
+  {
+    "name": "inclusive quartiles and half-away rounding",
+    "timing": {
+      "count": 4,
+      "q1": 100.75,
+      "median": 102.5,
+      "q3": 104.25,
+      "iqr": 3.5
+    }
+  },
+  {
+    "name": "response boundary 99",
+    "validity": "valid",
+    "counts": {
+      "hits": 60,
+      "misses": 0,
+      "withholds": 20,
+      "falseAlarms": 0
+    },
+    "timing": {
+      "count": 59,
+      "q1": 400,
+      "median": 400,
+      "q3": 400,
+      "iqr": 0
+    },
+    "anticipatory": 1
+  },
+  {
+    "name": "response boundary 100",
+    "validity": "valid",
+    "counts": {
+      "hits": 60,
+      "misses": 0,
+      "withholds": 20,
+      "falseAlarms": 0
+    },
+    "timing": {
+      "count": 60,
+      "q1": 400,
+      "median": 400,
+      "q3": 400,
+      "iqr": 0
+    },
+    "anticipatory": 0
+  },
+  {
+    "name": "response boundary 1000",
+    "validity": "valid",
+    "counts": {
+      "hits": 60,
+      "misses": 0,
+      "withholds": 20,
+      "falseAlarms": 0
+    },
+    "timing": {
+      "count": 60,
+      "q1": 400,
+      "median": 400,
+      "q3": 400,
+      "iqr": 0
+    },
+    "anticipatory": 0
+  },
+  {
+    "name": "response boundary 1001",
+    "validity": "valid",
+    "counts": {
+      "hits": 59,
+      "misses": 1,
+      "withholds": 20,
+      "falseAlarms": 0
+    },
+    "timing": {
+      "count": 59,
+      "q1": 400,
+      "median": 400,
+      "q3": 400,
+      "iqr": 0
+    },
+    "anticipatory": 0
+  },
+  {
+    "name": "Block 1 timing sufficiency 0",
+    "narrative": "There was not enough clean data for a reliable block comparison.",
+    "timing": {
+      "count": 0,
+      "q1": null,
+      "median": null,
+      "q3": null,
+      "iqr": null
+    }
+  },
+  {
+    "name": "Block 1 timing sufficiency 1",
+    "narrative": "There was not enough clean data for a reliable block comparison.",
+    "timing": {
+      "count": 1,
+      "q1": 400,
+      "median": 400,
+      "q3": 400,
+      "iqr": 0
+    }
+  },
+  {
+    "name": "Block 1 timing sufficiency 9",
+    "narrative": "There was not enough clean data for a reliable block comparison.",
+    "timing": {
+      "count": 9,
+      "q1": 400,
+      "median": 400,
+      "q3": 400,
+      "iqr": 0
+    }
+  },
+  {
+    "name": "Block 1 timing sufficiency 10",
+    "narrative": "From the first to the final block, GO hit rate increased by 33 percentage points.",
+    "timing": {
+      "count": 10,
+      "q1": 400,
+      "median": 400,
+      "q3": 400,
+      "iqr": 0
+    }
+  },
+  {
+    "name": "Block 1 timing sufficiency 11",
+    "narrative": "From the first to the final block, GO hit rate increased by 27 percentage points.",
+    "timing": {
+      "count": 11,
+      "q1": 400,
+      "median": 400,
+      "q3": 400,
+      "iqr": 0
+    }
+  },
+  {
+    "name": "Block 1 timing sufficiency 12",
+    "narrative": "From the first to the final block, GO hit rate increased by 20 percentage points.",
+    "timing": {
+      "count": 12,
+      "q1": 400,
+      "median": 400,
+      "q3": 400,
+      "iqr": 0
+    }
+  },
+  {
+    "name": "one anomaly excludes timing only",
+    "validity": "valid_with_note",
+    "timing": {
+      "count": 59,
+      "q1": 400,
+      "median": 400,
+      "q3": 400,
+      "iqr": 0
+    }
+  },
+  {
+    "name": "both improve; false-alarm priority",
+    "first": {
+      "number": 1,
+      "counts": {
+        "hits": 12,
+        "misses": 3,
+        "withholds": 4,
+        "falseAlarms": 1
+      },
+      "timing": {
+        "count": 12,
+        "q1": 400,
+        "median": 400,
+        "q3": 400,
+        "iqr": 0
+      },
+      "eligibleOutcomes": 20,
+      "accuracy": 0.8,
+      "hitRate": 0.8,
+      "withholdRate": 0.8,
+      "falseAlarmRate": 0.2
+    },
+    "last": {
+      "number": 4,
+      "counts": {
+        "hits": 15,
+        "misses": 0,
+        "withholds": 5,
+        "falseAlarms": 0
+      },
+      "timing": {
+        "count": 15,
+        "q1": 400,
+        "median": 400,
+        "q3": 400,
+        "iqr": 0
+      },
+      "eligibleOutcomes": 20,
+      "accuracy": 1,
+      "hitRate": 1,
+      "withholdRate": 1,
+      "falseAlarmRate": 0
+    },
+    "actual": "From the first to the final block, false-alarm rate decreased by 20 percentage points."
+  },
+  {
+    "name": "NO-GO improvement outranks similar-accuracy timing",
+    "first": {
+      "number": 1,
+      "counts": {
+        "hits": 15,
+        "misses": 0,
+        "withholds": 4,
+        "falseAlarms": 1
+      },
+      "timing": {
+        "count": 15,
+        "q1": 400,
+        "median": 400,
+        "q3": 400,
+        "iqr": 0
+      },
+      "eligibleOutcomes": 20,
+      "accuracy": 0.95,
+      "hitRate": 1,
+      "withholdRate": 0.8,
+      "falseAlarmRate": 0.2
+    },
+    "last": {
+      "number": 4,
+      "counts": {
+        "hits": 15,
+        "misses": 0,
+        "withholds": 5,
+        "falseAlarms": 0
+      },
+      "timing": {
+        "count": 15,
+        "q1": 400,
+        "median": 400,
+        "q3": 400,
+        "iqr": 0
+      },
+      "eligibleOutcomes": 20,
+      "accuracy": 1,
+      "hitRate": 1,
+      "withholdRate": 1,
+      "falseAlarmRate": 0
+    },
+    "actual": "From the first to the final block, false-alarm rate decreased by 20 percentage points."
+  },
+  {
+    "name": "hit-rate worsening at similar speed",
+    "first": {
+      "number": 1,
+      "counts": {
+        "hits": 15,
+        "misses": 0,
+        "withholds": 5,
+        "falseAlarms": 0
+      },
+      "timing": {
+        "count": 15,
+        "q1": 400,
+        "median": 400,
+        "q3": 400,
+        "iqr": 0
+      },
+      "eligibleOutcomes": 20,
+      "accuracy": 1,
+      "hitRate": 1,
+      "withholdRate": 1,
+      "falseAlarmRate": 0
+    },
+    "last": {
+      "number": 4,
+      "counts": {
+        "hits": 13,
+        "misses": 2,
+        "withholds": 5,
+        "falseAlarms": 0
+      },
+      "timing": {
+        "count": 13,
+        "q1": 400,
+        "median": 400,
+        "q3": 400,
+        "iqr": 0
+      },
+      "eligibleOutcomes": 20,
+      "accuracy": 0.9,
+      "hitRate": 0.8666666666666667,
+      "withholdRate": 1,
+      "falseAlarmRate": 0
+    },
+    "actual": "From the first to the final block, GO hit rate decreased by 13 percentage points."
+  },
+  {
+    "name": "five-to-under-ten override",
+    "first": {
+      "number": 1,
+      "counts": {
+        "hits": 14,
+        "misses": 1,
+        "withholds": 5,
+        "falseAlarms": 0
+      },
+      "timing": {
+        "count": 14,
+        "q1": 400,
+        "median": 400,
+        "q3": 400,
+        "iqr": 0
+      },
+      "eligibleOutcomes": 20,
+      "accuracy": 0.95,
+      "hitRate": 0.9333333333333333,
+      "withholdRate": 1,
+      "falseAlarmRate": 0
+    },
+    "last": {
+      "number": 4,
+      "counts": {
+        "hits": 15,
+        "misses": 0,
+        "withholds": 5,
+        "falseAlarms": 0
+      },
+      "timing": {
+        "count": 15,
+        "q1": 325,
+        "median": 325,
+        "q3": 325,
+        "iqr": 0
+      },
+      "eligibleOutcomes": 20,
+      "accuracy": 1,
+      "hitRate": 1,
+      "withholdRate": 1,
+      "falseAlarmRate": 0
+    },
+    "actual": "From the first to the final block, GO hit rate changed by 7 percentage points, NO-GO correct-withhold rate by 0 points, and median correct-GO response time by -75 ms."
+  },
+  {
+    "name": "opposing category changes",
+    "first": {
+      "number": 1,
+      "counts": {
+        "hits": 14,
+        "misses": 1,
+        "withholds": 5,
+        "falseAlarms": 0
+      },
+      "timing": {
+        "count": 14,
+        "q1": 400,
+        "median": 400,
+        "q3": 400,
+        "iqr": 0
+      },
+      "eligibleOutcomes": 20,
+      "accuracy": 0.95,
+      "hitRate": 0.9333333333333333,
+      "withholdRate": 1,
+      "falseAlarmRate": 0
+    },
+    "last": {
+      "number": 4,
+      "counts": {
+        "hits": 15,
+        "misses": 0,
+        "withholds": 4,
+        "falseAlarms": 1
+      },
+      "timing": {
+        "count": 15,
+        "q1": 325,
+        "median": 325,
+        "q3": 325,
+        "iqr": 0
+      },
+      "eligibleOutcomes": 20,
+      "accuracy": 0.95,
+      "hitRate": 1,
+      "withholdRate": 0.8,
+      "falseAlarmRate": 0.2
+    },
+    "actual": "From the first to the final block, GO hit rate changed by 7 percentage points, NO-GO correct-withhold rate by -20 points, and median correct-GO response time by -75 ms."
+  },
+  {
+    "name": "exposure before first onset",
+    "draft": {
+      "schemaVersion": "stop_development_draft_v1",
+      "sessionId": "audit-23",
+      "status": "invalid",
+      "warmupId": "stop_warmup_v1",
+      "setup": {
+        "binding": {
+          "code": "Space",
+          "label": "Space"
+        },
+        "visualProfile": "standard",
+        "physicalKeyboard": true
+      },
+      "form": {
+        "id": "stop-baseline-01",
+        "family": "baseline",
+        "schemaVersion": "stop_form_manifest_v1",
+        "formVersion": "1",
+        "specificationVersion": "1.1",
+        "generatorVersion": "stop_standard_generator_v1",
+        "seedId": "ap-stop-v1.1-baseline-01-candidate-00001",
+        "blockCount": 4,
+        "blockSize": 20,
+        "sequence": [
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "NO_GO",
+          "GO",
+          "GO",
+          "GO",
+          "NO_GO",
+          "GO",
+          "NO_GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "NO_GO",
+          "NO_GO",
+          "NO_GO",
+          "GO",
+          "GO",
+          "NO_GO",
+          "GO",
+          "NO_GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "NO_GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "NO_GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "NO_GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "NO_GO",
+          "GO",
+          "NO_GO",
+          "NO_GO",
+          "GO",
+          "NO_GO",
+          "NO_GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "NO_GO",
+          "GO",
+          "GO",
+          "GO",
+          "NO_GO",
+          "GO",
+          "NO_GO",
+          "NO_GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO"
+        ],
+        "checksum": "sha256:12fbd0af98e8c3d455195660c95c920864f9227d8915ffbfd97baf307e1f1e02"
+      },
+      "realizedSequence": [],
+      "mode": "baseline",
+      "timingProfile": "standard",
+      "specificationVersion": "1.1",
+      "monotonicOriginMs": 0,
+      "storageMode": "temporary_memory",
+      "scoringVersion": null,
+      "summarySnapshot": null,
+      "startedAtWall": "2026-09-29T11:19:00.375Z",
+      "retainedAtWall": "2026-09-29T11:19:00.378Z",
+      "clock": "performance.now",
+      "environment": {
+        "userAgent": "Independent deterministic fixture",
+        "width": 1200,
+        "height": 800
+      },
+      "engineQuality": "invalid",
+      "invalidRule": "stop_validity_v1.lifecycle",
+      "events": [
+        {
+          "schemaVersion": "stop_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 1,
+          "timestampMs": 0,
+          "type": "guide_opened",
+          "payload": {
+            "source": "library"
+          }
+        },
+        {
+          "schemaVersion": "stop_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 2,
+          "timestampMs": 0,
+          "type": "readiness_confirmed",
+          "payload": {
+            "focused": true,
+            "visible": true
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 3,
+          "timestampMs": 0,
+          "type": "protection_started",
+          "payload": {
+            "responseKey": "Space",
+            "held": false
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 4,
+          "timestampMs": 0,
+          "type": "fixation_started",
+          "payload": {
+            "kind": "initial",
+            "expectedAtMs": 0,
+            "trialIndex": null
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 5,
+          "timestampMs": 1000,
+          "type": "trial_scheduled",
+          "payload": {
+            "trial": {
+              "phase": "warmup",
+              "index": 0,
+              "stimulus": "GO"
+            },
+            "eligibleAtMs": 1000
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 6,
+          "timestampMs": 1000,
+          "type": "fixation_ended",
+          "payload": {
+            "kind": "initial",
+            "expectedAtMs": 1000,
+            "trialIndex": null
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 7,
+          "timestampMs": 1000,
+          "type": "stimulus_presented",
+          "payload": {
+            "trialIndex": 0,
+            "stimulus": "GO",
+            "confirmedOnsetMs": 1000,
+            "eligibleAtMs": 1000
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 8,
+          "timestampMs": 1200,
+          "type": "stimulus_removed",
+          "payload": {
+            "trialIndex": 0,
+            "confirmedOffsetMs": 1200,
+            "visibleDurationMs": 200
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 9,
+          "timestampMs": 1350,
+          "type": "input_received",
+          "payload": {
+            "key": "Space",
+            "repeated": false,
+            "held": false,
+            "focused": true,
+            "trialIndex": 0
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 10,
+          "timestampMs": 1350,
+          "type": "response_accepted",
+          "payload": {
+            "trialIndex": 0,
+            "responseTimeMs": 350,
+            "anticipatory": false,
+            "inputSequenceNumber": 9
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 11,
+          "timestampMs": 1350,
+          "type": "trial_resolved",
+          "payload": {
+            "trialIndex": 0,
+            "outcome": {
+              "stimulus": "GO",
+              "kind": "hit",
+              "responseTimeMs": 350
+            },
+            "source": "response",
+            "resolvedAtMs": 1350,
+            "triggerSequenceNumber": 10
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 12,
+          "timestampMs": 1350,
+          "type": "fixation_started",
+          "payload": {
+            "kind": "post_resolution",
+            "expectedAtMs": 1350,
+            "trialIndex": 0
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 13,
+          "timestampMs": 1350,
+          "type": "key_released",
+          "payload": {
+            "key": "Space"
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 14,
+          "timestampMs": 2550,
+          "type": "trial_scheduled",
+          "payload": {
+            "trial": {
+              "phase": "warmup",
+              "index": 1,
+              "stimulus": "GO"
+            },
+            "eligibleAtMs": 2550
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 15,
+          "timestampMs": 2550,
+          "type": "fixation_ended",
+          "payload": {
+            "kind": "post_resolution",
+            "expectedAtMs": 2550,
+            "trialIndex": 0
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 16,
+          "timestampMs": 2550,
+          "type": "stimulus_presented",
+          "payload": {
+            "trialIndex": 1,
+            "stimulus": "GO",
+            "confirmedOnsetMs": 2550,
+            "eligibleAtMs": 2550
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 17,
+          "timestampMs": 2750,
+          "type": "stimulus_removed",
+          "payload": {
+            "trialIndex": 1,
+            "confirmedOffsetMs": 2750,
+            "visibleDurationMs": 200
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 18,
+          "timestampMs": 2900,
+          "type": "input_received",
+          "payload": {
+            "key": "Space",
+            "repeated": false,
+            "held": false,
+            "focused": true,
+            "trialIndex": 1
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 19,
+          "timestampMs": 2900,
+          "type": "response_accepted",
+          "payload": {
+            "trialIndex": 1,
+            "responseTimeMs": 350,
+            "anticipatory": false,
+            "inputSequenceNumber": 18
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 20,
+          "timestampMs": 2900,
+          "type": "trial_resolved",
+          "payload": {
+            "trialIndex": 1,
+            "outcome": {
+              "stimulus": "GO",
+              "kind": "hit",
+              "responseTimeMs": 350
+            },
+            "source": "response",
+            "resolvedAtMs": 2900,
+            "triggerSequenceNumber": 19
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 21,
+          "timestampMs": 2900,
+          "type": "fixation_started",
+          "payload": {
+            "kind": "post_resolution",
+            "expectedAtMs": 2900,
+            "trialIndex": 1
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 22,
+          "timestampMs": 2900,
+          "type": "key_released",
+          "payload": {
+            "key": "Space"
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 23,
+          "timestampMs": 4100,
+          "type": "trial_scheduled",
+          "payload": {
+            "trial": {
+              "phase": "warmup",
+              "index": 2,
+              "stimulus": "NO_GO"
+            },
+            "eligibleAtMs": 4100
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 24,
+          "timestampMs": 4100,
+          "type": "fixation_ended",
+          "payload": {
+            "kind": "post_resolution",
+            "expectedAtMs": 4100,
+            "trialIndex": 1
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 25,
+          "timestampMs": 4100,
+          "type": "stimulus_presented",
+          "payload": {
+            "trialIndex": 2,
+            "stimulus": "NO_GO",
+            "confirmedOnsetMs": 4100,
+            "eligibleAtMs": 4100
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 26,
+          "timestampMs": 4300,
+          "type": "stimulus_removed",
+          "payload": {
+            "trialIndex": 2,
+            "confirmedOffsetMs": 4300,
+            "visibleDurationMs": 200
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 27,
+          "timestampMs": 5100.001,
+          "type": "trial_timed_out",
+          "payload": {
+            "trialIndex": 2,
+            "deadlineMs": 5100,
+            "latenessMs": 0.0010000000002037268
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 28,
+          "timestampMs": 5100.001,
+          "type": "trial_resolved",
+          "payload": {
+            "trialIndex": 2,
+            "outcome": {
+              "stimulus": "NO_GO",
+              "kind": "correct_withhold",
+              "responseTimeMs": null
+            },
+            "source": "timeout",
+            "resolvedAtMs": 5100,
+            "triggerSequenceNumber": 27
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 29,
+          "timestampMs": 5100.001,
+          "type": "fixation_started",
+          "payload": {
+            "kind": "post_resolution",
+            "expectedAtMs": 5100,
+            "trialIndex": 2
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 30,
+          "timestampMs": 6300,
+          "type": "trial_scheduled",
+          "payload": {
+            "trial": {
+              "phase": "warmup",
+              "index": 3,
+              "stimulus": "GO"
+            },
+            "eligibleAtMs": 6300
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 31,
+          "timestampMs": 6300,
+          "type": "fixation_ended",
+          "payload": {
+            "kind": "post_resolution",
+            "expectedAtMs": 6300,
+            "trialIndex": 2
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 32,
+          "timestampMs": 6300,
+          "type": "stimulus_presented",
+          "payload": {
+            "trialIndex": 3,
+            "stimulus": "GO",
+            "confirmedOnsetMs": 6300,
+            "eligibleAtMs": 6300
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 33,
+          "timestampMs": 6500,
+          "type": "stimulus_removed",
+          "payload": {
+            "trialIndex": 3,
+            "confirmedOffsetMs": 6500,
+            "visibleDurationMs": 200
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 34,
+          "timestampMs": 6650,
+          "type": "input_received",
+          "payload": {
+            "key": "Space",
+            "repeated": false,
+            "held": false,
+            "focused": true,
+            "trialIndex": 3
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 35,
+          "timestampMs": 6650,
+          "type": "response_accepted",
+          "payload": {
+            "trialIndex": 3,
+            "responseTimeMs": 350,
+            "anticipatory": false,
+            "inputSequenceNumber": 34
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 36,
+          "timestampMs": 6650,
+          "type": "trial_resolved",
+          "payload": {
+            "trialIndex": 3,
+            "outcome": {
+              "stimulus": "GO",
+              "kind": "hit",
+              "responseTimeMs": 350
+            },
+            "source": "response",
+            "resolvedAtMs": 6650,
+            "triggerSequenceNumber": 35
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 37,
+          "timestampMs": 6650,
+          "type": "fixation_started",
+          "payload": {
+            "kind": "post_resolution",
+            "expectedAtMs": 6650,
+            "trialIndex": 3
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 38,
+          "timestampMs": 6650,
+          "type": "key_released",
+          "payload": {
+            "key": "Space"
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 39,
+          "timestampMs": 7850,
+          "type": "trial_scheduled",
+          "payload": {
+            "trial": {
+              "phase": "warmup",
+              "index": 4,
+              "stimulus": "GO"
+            },
+            "eligibleAtMs": 7850
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 40,
+          "timestampMs": 7850,
+          "type": "fixation_ended",
+          "payload": {
+            "kind": "post_resolution",
+            "expectedAtMs": 7850,
+            "trialIndex": 3
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 41,
+          "timestampMs": 7850,
+          "type": "stimulus_presented",
+          "payload": {
+            "trialIndex": 4,
+            "stimulus": "GO",
+            "confirmedOnsetMs": 7850,
+            "eligibleAtMs": 7850
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 42,
+          "timestampMs": 8050,
+          "type": "stimulus_removed",
+          "payload": {
+            "trialIndex": 4,
+            "confirmedOffsetMs": 8050,
+            "visibleDurationMs": 200
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 43,
+          "timestampMs": 8200,
+          "type": "input_received",
+          "payload": {
+            "key": "Space",
+            "repeated": false,
+            "held": false,
+            "focused": true,
+            "trialIndex": 4
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 44,
+          "timestampMs": 8200,
+          "type": "response_accepted",
+          "payload": {
+            "trialIndex": 4,
+            "responseTimeMs": 350,
+            "anticipatory": false,
+            "inputSequenceNumber": 43
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 45,
+          "timestampMs": 8200,
+          "type": "trial_resolved",
+          "payload": {
+            "trialIndex": 4,
+            "outcome": {
+              "stimulus": "GO",
+              "kind": "hit",
+              "responseTimeMs": 350
+            },
+            "source": "response",
+            "resolvedAtMs": 8200,
+            "triggerSequenceNumber": 44
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 46,
+          "timestampMs": 8200,
+          "type": "fixation_started",
+          "payload": {
+            "kind": "post_resolution",
+            "expectedAtMs": 8200,
+            "trialIndex": 4
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 47,
+          "timestampMs": 8200,
+          "type": "key_released",
+          "payload": {
+            "key": "Space"
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 48,
+          "timestampMs": 9400,
+          "type": "trial_scheduled",
+          "payload": {
+            "trial": {
+              "phase": "warmup",
+              "index": 5,
+              "stimulus": "GO"
+            },
+            "eligibleAtMs": 9400
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 49,
+          "timestampMs": 9400,
+          "type": "fixation_ended",
+          "payload": {
+            "kind": "post_resolution",
+            "expectedAtMs": 9400,
+            "trialIndex": 4
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 50,
+          "timestampMs": 9400,
+          "type": "stimulus_presented",
+          "payload": {
+            "trialIndex": 5,
+            "stimulus": "GO",
+            "confirmedOnsetMs": 9400,
+            "eligibleAtMs": 9400
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 51,
+          "timestampMs": 9600,
+          "type": "stimulus_removed",
+          "payload": {
+            "trialIndex": 5,
+            "confirmedOffsetMs": 9600,
+            "visibleDurationMs": 200
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 52,
+          "timestampMs": 9750,
+          "type": "input_received",
+          "payload": {
+            "key": "Space",
+            "repeated": false,
+            "held": false,
+            "focused": true,
+            "trialIndex": 5
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 53,
+          "timestampMs": 9750,
+          "type": "response_accepted",
+          "payload": {
+            "trialIndex": 5,
+            "responseTimeMs": 350,
+            "anticipatory": false,
+            "inputSequenceNumber": 52
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 54,
+          "timestampMs": 9750,
+          "type": "trial_resolved",
+          "payload": {
+            "trialIndex": 5,
+            "outcome": {
+              "stimulus": "GO",
+              "kind": "hit",
+              "responseTimeMs": 350
+            },
+            "source": "response",
+            "resolvedAtMs": 9750,
+            "triggerSequenceNumber": 53
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 55,
+          "timestampMs": 9750,
+          "type": "fixation_started",
+          "payload": {
+            "kind": "post_resolution",
+            "expectedAtMs": 9750,
+            "trialIndex": 5
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 56,
+          "timestampMs": 9750,
+          "type": "key_released",
+          "payload": {
+            "key": "Space"
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 57,
+          "timestampMs": 10950,
+          "type": "trial_scheduled",
+          "payload": {
+            "trial": {
+              "phase": "warmup",
+              "index": 6,
+              "stimulus": "NO_GO"
+            },
+            "eligibleAtMs": 10950
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 58,
+          "timestampMs": 10950,
+          "type": "fixation_ended",
+          "payload": {
+            "kind": "post_resolution",
+            "expectedAtMs": 10950,
+            "trialIndex": 5
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 59,
+          "timestampMs": 10950,
+          "type": "stimulus_presented",
+          "payload": {
+            "trialIndex": 6,
+            "stimulus": "NO_GO",
+            "confirmedOnsetMs": 10950,
+            "eligibleAtMs": 10950
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 60,
+          "timestampMs": 11150,
+          "type": "stimulus_removed",
+          "payload": {
+            "trialIndex": 6,
+            "confirmedOffsetMs": 11150,
+            "visibleDurationMs": 200
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 61,
+          "timestampMs": 11950.001,
+          "type": "trial_timed_out",
+          "payload": {
+            "trialIndex": 6,
+            "deadlineMs": 11950,
+            "latenessMs": 0.0010000000002037268
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 62,
+          "timestampMs": 11950.001,
+          "type": "trial_resolved",
+          "payload": {
+            "trialIndex": 6,
+            "outcome": {
+              "stimulus": "NO_GO",
+              "kind": "correct_withhold",
+              "responseTimeMs": null
+            },
+            "source": "timeout",
+            "resolvedAtMs": 11950,
+            "triggerSequenceNumber": 61
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 63,
+          "timestampMs": 11950.001,
+          "type": "fixation_started",
+          "payload": {
+            "kind": "post_resolution",
+            "expectedAtMs": 11950,
+            "trialIndex": 6
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 64,
+          "timestampMs": 13150,
+          "type": "trial_scheduled",
+          "payload": {
+            "trial": {
+              "phase": "warmup",
+              "index": 7,
+              "stimulus": "GO"
+            },
+            "eligibleAtMs": 13150
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 65,
+          "timestampMs": 13150,
+          "type": "fixation_ended",
+          "payload": {
+            "kind": "post_resolution",
+            "expectedAtMs": 13150,
+            "trialIndex": 6
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 66,
+          "timestampMs": 13150,
+          "type": "stimulus_presented",
+          "payload": {
+            "trialIndex": 7,
+            "stimulus": "GO",
+            "confirmedOnsetMs": 13150,
+            "eligibleAtMs": 13150
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 67,
+          "timestampMs": 13350,
+          "type": "stimulus_removed",
+          "payload": {
+            "trialIndex": 7,
+            "confirmedOffsetMs": 13350,
+            "visibleDurationMs": 200
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 68,
+          "timestampMs": 13500,
+          "type": "input_received",
+          "payload": {
+            "key": "Space",
+            "repeated": false,
+            "held": false,
+            "focused": true,
+            "trialIndex": 7
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 69,
+          "timestampMs": 13500,
+          "type": "response_accepted",
+          "payload": {
+            "trialIndex": 7,
+            "responseTimeMs": 350,
+            "anticipatory": false,
+            "inputSequenceNumber": 68
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 70,
+          "timestampMs": 13500,
+          "type": "trial_resolved",
+          "payload": {
+            "trialIndex": 7,
+            "outcome": {
+              "stimulus": "GO",
+              "kind": "hit",
+              "responseTimeMs": 350
+            },
+            "source": "response",
+            "resolvedAtMs": 13500,
+            "triggerSequenceNumber": 69
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 71,
+          "timestampMs": 13500,
+          "type": "fixation_started",
+          "payload": {
+            "kind": "post_resolution",
+            "expectedAtMs": 13500,
+            "trialIndex": 7
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 72,
+          "timestampMs": 13500,
+          "type": "key_released",
+          "payload": {
+            "key": "Space"
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 73,
+          "timestampMs": 14700,
+          "type": "fixation_ended",
+          "payload": {
+            "kind": "post_resolution",
+            "expectedAtMs": 14700,
+            "trialIndex": 7
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 74,
+          "timestampMs": 14700,
+          "type": "integrity_checked",
+          "payload": {
+            "valid": true,
+            "detail": "Required batch events reconcile"
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 75,
+          "timestampMs": 14700,
+          "type": "batch_finished",
+          "payload": {
+            "phase": "warmup",
+            "trialCount": 8
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 76,
+          "timestampMs": 20000,
+          "type": "fixation_started",
+          "payload": {
+            "kind": "initial",
+            "expectedAtMs": 20000,
+            "trialIndex": null
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 77,
+          "timestampMs": 20999,
+          "type": "page_lifecycle_changed",
+          "payload": {
+            "state": "pagehide"
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-23",
+          "sequenceNumber": 78,
+          "timestampMs": 20999,
+          "type": "session_invalidated",
+          "payload": {
+            "ruleId": "stop_validity_v1.lifecycle",
+            "triggerSequenceNumber": 77
+          }
+        }
+      ]
+    },
+    "exposure": []
+  },
+  {
+    "name": "exposure after first onset",
+    "draft": {
+      "schemaVersion": "stop_development_draft_v1",
+      "sessionId": "audit-24",
+      "status": "invalid",
+      "warmupId": "stop_warmup_v1",
+      "setup": {
+        "binding": {
+          "code": "Space",
+          "label": "Space"
+        },
+        "visualProfile": "standard",
+        "physicalKeyboard": true
+      },
+      "form": {
+        "id": "stop-baseline-01",
+        "family": "baseline",
+        "schemaVersion": "stop_form_manifest_v1",
+        "formVersion": "1",
+        "specificationVersion": "1.1",
+        "generatorVersion": "stop_standard_generator_v1",
+        "seedId": "ap-stop-v1.1-baseline-01-candidate-00001",
+        "blockCount": 4,
+        "blockSize": 20,
+        "sequence": [
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "NO_GO",
+          "GO",
+          "GO",
+          "GO",
+          "NO_GO",
+          "GO",
+          "NO_GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "NO_GO",
+          "NO_GO",
+          "NO_GO",
+          "GO",
+          "GO",
+          "NO_GO",
+          "GO",
+          "NO_GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "NO_GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "NO_GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "NO_GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "NO_GO",
+          "GO",
+          "NO_GO",
+          "NO_GO",
+          "GO",
+          "NO_GO",
+          "NO_GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "NO_GO",
+          "GO",
+          "GO",
+          "GO",
+          "NO_GO",
+          "GO",
+          "NO_GO",
+          "NO_GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO",
+          "GO"
+        ],
+        "checksum": "sha256:12fbd0af98e8c3d455195660c95c920864f9227d8915ffbfd97baf307e1f1e02"
+      },
+      "realizedSequence": [
+        "GO"
+      ],
+      "mode": "baseline",
+      "timingProfile": "standard",
+      "specificationVersion": "1.1",
+      "monotonicOriginMs": 0,
+      "storageMode": "temporary_memory",
+      "scoringVersion": null,
+      "summarySnapshot": null,
+      "startedAtWall": "2026-09-29T11:19:00.378Z",
+      "retainedAtWall": "2026-09-29T11:19:00.380Z",
+      "clock": "performance.now",
+      "environment": {
+        "userAgent": "Independent deterministic fixture",
+        "width": 1200,
+        "height": 800
+      },
+      "engineQuality": "invalid",
+      "invalidRule": "stop_validity_v1.lifecycle",
+      "events": [
+        {
+          "schemaVersion": "stop_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 1,
+          "timestampMs": 0,
+          "type": "guide_opened",
+          "payload": {
+            "source": "library"
+          }
+        },
+        {
+          "schemaVersion": "stop_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 2,
+          "timestampMs": 0,
+          "type": "readiness_confirmed",
+          "payload": {
+            "focused": true,
+            "visible": true
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 3,
+          "timestampMs": 0,
+          "type": "protection_started",
+          "payload": {
+            "responseKey": "Space",
+            "held": false
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 4,
+          "timestampMs": 0,
+          "type": "fixation_started",
+          "payload": {
+            "kind": "initial",
+            "expectedAtMs": 0,
+            "trialIndex": null
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 5,
+          "timestampMs": 1000,
+          "type": "trial_scheduled",
+          "payload": {
+            "trial": {
+              "phase": "warmup",
+              "index": 0,
+              "stimulus": "GO"
+            },
+            "eligibleAtMs": 1000
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 6,
+          "timestampMs": 1000,
+          "type": "fixation_ended",
+          "payload": {
+            "kind": "initial",
+            "expectedAtMs": 1000,
+            "trialIndex": null
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 7,
+          "timestampMs": 1000,
+          "type": "stimulus_presented",
+          "payload": {
+            "trialIndex": 0,
+            "stimulus": "GO",
+            "confirmedOnsetMs": 1000,
+            "eligibleAtMs": 1000
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 8,
+          "timestampMs": 1200,
+          "type": "stimulus_removed",
+          "payload": {
+            "trialIndex": 0,
+            "confirmedOffsetMs": 1200,
+            "visibleDurationMs": 200
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 9,
+          "timestampMs": 1350,
+          "type": "input_received",
+          "payload": {
+            "key": "Space",
+            "repeated": false,
+            "held": false,
+            "focused": true,
+            "trialIndex": 0
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 10,
+          "timestampMs": 1350,
+          "type": "response_accepted",
+          "payload": {
+            "trialIndex": 0,
+            "responseTimeMs": 350,
+            "anticipatory": false,
+            "inputSequenceNumber": 9
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 11,
+          "timestampMs": 1350,
+          "type": "trial_resolved",
+          "payload": {
+            "trialIndex": 0,
+            "outcome": {
+              "stimulus": "GO",
+              "kind": "hit",
+              "responseTimeMs": 350
+            },
+            "source": "response",
+            "resolvedAtMs": 1350,
+            "triggerSequenceNumber": 10
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 12,
+          "timestampMs": 1350,
+          "type": "fixation_started",
+          "payload": {
+            "kind": "post_resolution",
+            "expectedAtMs": 1350,
+            "trialIndex": 0
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 13,
+          "timestampMs": 1350,
+          "type": "key_released",
+          "payload": {
+            "key": "Space"
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 14,
+          "timestampMs": 2550,
+          "type": "trial_scheduled",
+          "payload": {
+            "trial": {
+              "phase": "warmup",
+              "index": 1,
+              "stimulus": "GO"
+            },
+            "eligibleAtMs": 2550
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 15,
+          "timestampMs": 2550,
+          "type": "fixation_ended",
+          "payload": {
+            "kind": "post_resolution",
+            "expectedAtMs": 2550,
+            "trialIndex": 0
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 16,
+          "timestampMs": 2550,
+          "type": "stimulus_presented",
+          "payload": {
+            "trialIndex": 1,
+            "stimulus": "GO",
+            "confirmedOnsetMs": 2550,
+            "eligibleAtMs": 2550
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 17,
+          "timestampMs": 2750,
+          "type": "stimulus_removed",
+          "payload": {
+            "trialIndex": 1,
+            "confirmedOffsetMs": 2750,
+            "visibleDurationMs": 200
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 18,
+          "timestampMs": 2900,
+          "type": "input_received",
+          "payload": {
+            "key": "Space",
+            "repeated": false,
+            "held": false,
+            "focused": true,
+            "trialIndex": 1
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 19,
+          "timestampMs": 2900,
+          "type": "response_accepted",
+          "payload": {
+            "trialIndex": 1,
+            "responseTimeMs": 350,
+            "anticipatory": false,
+            "inputSequenceNumber": 18
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 20,
+          "timestampMs": 2900,
+          "type": "trial_resolved",
+          "payload": {
+            "trialIndex": 1,
+            "outcome": {
+              "stimulus": "GO",
+              "kind": "hit",
+              "responseTimeMs": 350
+            },
+            "source": "response",
+            "resolvedAtMs": 2900,
+            "triggerSequenceNumber": 19
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 21,
+          "timestampMs": 2900,
+          "type": "fixation_started",
+          "payload": {
+            "kind": "post_resolution",
+            "expectedAtMs": 2900,
+            "trialIndex": 1
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 22,
+          "timestampMs": 2900,
+          "type": "key_released",
+          "payload": {
+            "key": "Space"
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 23,
+          "timestampMs": 4100,
+          "type": "trial_scheduled",
+          "payload": {
+            "trial": {
+              "phase": "warmup",
+              "index": 2,
+              "stimulus": "NO_GO"
+            },
+            "eligibleAtMs": 4100
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 24,
+          "timestampMs": 4100,
+          "type": "fixation_ended",
+          "payload": {
+            "kind": "post_resolution",
+            "expectedAtMs": 4100,
+            "trialIndex": 1
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 25,
+          "timestampMs": 4100,
+          "type": "stimulus_presented",
+          "payload": {
+            "trialIndex": 2,
+            "stimulus": "NO_GO",
+            "confirmedOnsetMs": 4100,
+            "eligibleAtMs": 4100
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 26,
+          "timestampMs": 4300,
+          "type": "stimulus_removed",
+          "payload": {
+            "trialIndex": 2,
+            "confirmedOffsetMs": 4300,
+            "visibleDurationMs": 200
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 27,
+          "timestampMs": 5100.001,
+          "type": "trial_timed_out",
+          "payload": {
+            "trialIndex": 2,
+            "deadlineMs": 5100,
+            "latenessMs": 0.0010000000002037268
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 28,
+          "timestampMs": 5100.001,
+          "type": "trial_resolved",
+          "payload": {
+            "trialIndex": 2,
+            "outcome": {
+              "stimulus": "NO_GO",
+              "kind": "correct_withhold",
+              "responseTimeMs": null
+            },
+            "source": "timeout",
+            "resolvedAtMs": 5100,
+            "triggerSequenceNumber": 27
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 29,
+          "timestampMs": 5100.001,
+          "type": "fixation_started",
+          "payload": {
+            "kind": "post_resolution",
+            "expectedAtMs": 5100,
+            "trialIndex": 2
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 30,
+          "timestampMs": 6300,
+          "type": "trial_scheduled",
+          "payload": {
+            "trial": {
+              "phase": "warmup",
+              "index": 3,
+              "stimulus": "GO"
+            },
+            "eligibleAtMs": 6300
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 31,
+          "timestampMs": 6300,
+          "type": "fixation_ended",
+          "payload": {
+            "kind": "post_resolution",
+            "expectedAtMs": 6300,
+            "trialIndex": 2
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 32,
+          "timestampMs": 6300,
+          "type": "stimulus_presented",
+          "payload": {
+            "trialIndex": 3,
+            "stimulus": "GO",
+            "confirmedOnsetMs": 6300,
+            "eligibleAtMs": 6300
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 33,
+          "timestampMs": 6500,
+          "type": "stimulus_removed",
+          "payload": {
+            "trialIndex": 3,
+            "confirmedOffsetMs": 6500,
+            "visibleDurationMs": 200
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 34,
+          "timestampMs": 6650,
+          "type": "input_received",
+          "payload": {
+            "key": "Space",
+            "repeated": false,
+            "held": false,
+            "focused": true,
+            "trialIndex": 3
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 35,
+          "timestampMs": 6650,
+          "type": "response_accepted",
+          "payload": {
+            "trialIndex": 3,
+            "responseTimeMs": 350,
+            "anticipatory": false,
+            "inputSequenceNumber": 34
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 36,
+          "timestampMs": 6650,
+          "type": "trial_resolved",
+          "payload": {
+            "trialIndex": 3,
+            "outcome": {
+              "stimulus": "GO",
+              "kind": "hit",
+              "responseTimeMs": 350
+            },
+            "source": "response",
+            "resolvedAtMs": 6650,
+            "triggerSequenceNumber": 35
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 37,
+          "timestampMs": 6650,
+          "type": "fixation_started",
+          "payload": {
+            "kind": "post_resolution",
+            "expectedAtMs": 6650,
+            "trialIndex": 3
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 38,
+          "timestampMs": 6650,
+          "type": "key_released",
+          "payload": {
+            "key": "Space"
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 39,
+          "timestampMs": 7850,
+          "type": "trial_scheduled",
+          "payload": {
+            "trial": {
+              "phase": "warmup",
+              "index": 4,
+              "stimulus": "GO"
+            },
+            "eligibleAtMs": 7850
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 40,
+          "timestampMs": 7850,
+          "type": "fixation_ended",
+          "payload": {
+            "kind": "post_resolution",
+            "expectedAtMs": 7850,
+            "trialIndex": 3
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 41,
+          "timestampMs": 7850,
+          "type": "stimulus_presented",
+          "payload": {
+            "trialIndex": 4,
+            "stimulus": "GO",
+            "confirmedOnsetMs": 7850,
+            "eligibleAtMs": 7850
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 42,
+          "timestampMs": 8050,
+          "type": "stimulus_removed",
+          "payload": {
+            "trialIndex": 4,
+            "confirmedOffsetMs": 8050,
+            "visibleDurationMs": 200
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 43,
+          "timestampMs": 8200,
+          "type": "input_received",
+          "payload": {
+            "key": "Space",
+            "repeated": false,
+            "held": false,
+            "focused": true,
+            "trialIndex": 4
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 44,
+          "timestampMs": 8200,
+          "type": "response_accepted",
+          "payload": {
+            "trialIndex": 4,
+            "responseTimeMs": 350,
+            "anticipatory": false,
+            "inputSequenceNumber": 43
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 45,
+          "timestampMs": 8200,
+          "type": "trial_resolved",
+          "payload": {
+            "trialIndex": 4,
+            "outcome": {
+              "stimulus": "GO",
+              "kind": "hit",
+              "responseTimeMs": 350
+            },
+            "source": "response",
+            "resolvedAtMs": 8200,
+            "triggerSequenceNumber": 44
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 46,
+          "timestampMs": 8200,
+          "type": "fixation_started",
+          "payload": {
+            "kind": "post_resolution",
+            "expectedAtMs": 8200,
+            "trialIndex": 4
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 47,
+          "timestampMs": 8200,
+          "type": "key_released",
+          "payload": {
+            "key": "Space"
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 48,
+          "timestampMs": 9400,
+          "type": "trial_scheduled",
+          "payload": {
+            "trial": {
+              "phase": "warmup",
+              "index": 5,
+              "stimulus": "GO"
+            },
+            "eligibleAtMs": 9400
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 49,
+          "timestampMs": 9400,
+          "type": "fixation_ended",
+          "payload": {
+            "kind": "post_resolution",
+            "expectedAtMs": 9400,
+            "trialIndex": 4
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 50,
+          "timestampMs": 9400,
+          "type": "stimulus_presented",
+          "payload": {
+            "trialIndex": 5,
+            "stimulus": "GO",
+            "confirmedOnsetMs": 9400,
+            "eligibleAtMs": 9400
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 51,
+          "timestampMs": 9600,
+          "type": "stimulus_removed",
+          "payload": {
+            "trialIndex": 5,
+            "confirmedOffsetMs": 9600,
+            "visibleDurationMs": 200
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 52,
+          "timestampMs": 9750,
+          "type": "input_received",
+          "payload": {
+            "key": "Space",
+            "repeated": false,
+            "held": false,
+            "focused": true,
+            "trialIndex": 5
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 53,
+          "timestampMs": 9750,
+          "type": "response_accepted",
+          "payload": {
+            "trialIndex": 5,
+            "responseTimeMs": 350,
+            "anticipatory": false,
+            "inputSequenceNumber": 52
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 54,
+          "timestampMs": 9750,
+          "type": "trial_resolved",
+          "payload": {
+            "trialIndex": 5,
+            "outcome": {
+              "stimulus": "GO",
+              "kind": "hit",
+              "responseTimeMs": 350
+            },
+            "source": "response",
+            "resolvedAtMs": 9750,
+            "triggerSequenceNumber": 53
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 55,
+          "timestampMs": 9750,
+          "type": "fixation_started",
+          "payload": {
+            "kind": "post_resolution",
+            "expectedAtMs": 9750,
+            "trialIndex": 5
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 56,
+          "timestampMs": 9750,
+          "type": "key_released",
+          "payload": {
+            "key": "Space"
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 57,
+          "timestampMs": 10950,
+          "type": "trial_scheduled",
+          "payload": {
+            "trial": {
+              "phase": "warmup",
+              "index": 6,
+              "stimulus": "NO_GO"
+            },
+            "eligibleAtMs": 10950
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 58,
+          "timestampMs": 10950,
+          "type": "fixation_ended",
+          "payload": {
+            "kind": "post_resolution",
+            "expectedAtMs": 10950,
+            "trialIndex": 5
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 59,
+          "timestampMs": 10950,
+          "type": "stimulus_presented",
+          "payload": {
+            "trialIndex": 6,
+            "stimulus": "NO_GO",
+            "confirmedOnsetMs": 10950,
+            "eligibleAtMs": 10950
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 60,
+          "timestampMs": 11150,
+          "type": "stimulus_removed",
+          "payload": {
+            "trialIndex": 6,
+            "confirmedOffsetMs": 11150,
+            "visibleDurationMs": 200
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 61,
+          "timestampMs": 11950.001,
+          "type": "trial_timed_out",
+          "payload": {
+            "trialIndex": 6,
+            "deadlineMs": 11950,
+            "latenessMs": 0.0010000000002037268
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 62,
+          "timestampMs": 11950.001,
+          "type": "trial_resolved",
+          "payload": {
+            "trialIndex": 6,
+            "outcome": {
+              "stimulus": "NO_GO",
+              "kind": "correct_withhold",
+              "responseTimeMs": null
+            },
+            "source": "timeout",
+            "resolvedAtMs": 11950,
+            "triggerSequenceNumber": 61
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 63,
+          "timestampMs": 11950.001,
+          "type": "fixation_started",
+          "payload": {
+            "kind": "post_resolution",
+            "expectedAtMs": 11950,
+            "trialIndex": 6
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 64,
+          "timestampMs": 13150,
+          "type": "trial_scheduled",
+          "payload": {
+            "trial": {
+              "phase": "warmup",
+              "index": 7,
+              "stimulus": "GO"
+            },
+            "eligibleAtMs": 13150
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 65,
+          "timestampMs": 13150,
+          "type": "fixation_ended",
+          "payload": {
+            "kind": "post_resolution",
+            "expectedAtMs": 13150,
+            "trialIndex": 6
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 66,
+          "timestampMs": 13150,
+          "type": "stimulus_presented",
+          "payload": {
+            "trialIndex": 7,
+            "stimulus": "GO",
+            "confirmedOnsetMs": 13150,
+            "eligibleAtMs": 13150
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 67,
+          "timestampMs": 13350,
+          "type": "stimulus_removed",
+          "payload": {
+            "trialIndex": 7,
+            "confirmedOffsetMs": 13350,
+            "visibleDurationMs": 200
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 68,
+          "timestampMs": 13500,
+          "type": "input_received",
+          "payload": {
+            "key": "Space",
+            "repeated": false,
+            "held": false,
+            "focused": true,
+            "trialIndex": 7
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 69,
+          "timestampMs": 13500,
+          "type": "response_accepted",
+          "payload": {
+            "trialIndex": 7,
+            "responseTimeMs": 350,
+            "anticipatory": false,
+            "inputSequenceNumber": 68
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 70,
+          "timestampMs": 13500,
+          "type": "trial_resolved",
+          "payload": {
+            "trialIndex": 7,
+            "outcome": {
+              "stimulus": "GO",
+              "kind": "hit",
+              "responseTimeMs": 350
+            },
+            "source": "response",
+            "resolvedAtMs": 13500,
+            "triggerSequenceNumber": 69
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 71,
+          "timestampMs": 13500,
+          "type": "fixation_started",
+          "payload": {
+            "kind": "post_resolution",
+            "expectedAtMs": 13500,
+            "trialIndex": 7
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 72,
+          "timestampMs": 13500,
+          "type": "key_released",
+          "payload": {
+            "key": "Space"
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 73,
+          "timestampMs": 14700,
+          "type": "fixation_ended",
+          "payload": {
+            "kind": "post_resolution",
+            "expectedAtMs": 14700,
+            "trialIndex": 7
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 74,
+          "timestampMs": 14700,
+          "type": "integrity_checked",
+          "payload": {
+            "valid": true,
+            "detail": "Required batch events reconcile"
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 75,
+          "timestampMs": 14700,
+          "type": "batch_finished",
+          "payload": {
+            "phase": "warmup",
+            "trialCount": 8
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 76,
+          "timestampMs": 20000,
+          "type": "fixation_started",
+          "payload": {
+            "kind": "initial",
+            "expectedAtMs": 20000,
+            "trialIndex": null
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 77,
+          "timestampMs": 21000,
+          "type": "trial_scheduled",
+          "payload": {
+            "trial": {
+              "phase": "scored",
+              "index": 0,
+              "stimulus": "GO"
+            },
+            "eligibleAtMs": 21000
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 78,
+          "timestampMs": 21000,
+          "type": "fixation_ended",
+          "payload": {
+            "kind": "initial",
+            "expectedAtMs": 21000,
+            "trialIndex": null
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 79,
+          "timestampMs": 21000,
+          "type": "stimulus_presented",
+          "payload": {
+            "trialIndex": 0,
+            "stimulus": "GO",
+            "confirmedOnsetMs": 21000,
+            "eligibleAtMs": 21000
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 80,
+          "timestampMs": 21000,
+          "type": "page_lifecycle_changed",
+          "payload": {
+            "state": "pagehide"
+          }
+        },
+        {
+          "schemaVersion": "stop_engine_event_v1",
+          "sessionId": "audit-24",
+          "sequenceNumber": 81,
+          "timestampMs": 21000,
+          "type": "session_invalidated",
+          "payload": {
+            "ruleId": "stop_validity_v1.lifecycle",
+            "triggerSequenceNumber": 80
+          }
+        }
+      ]
+    },
+    "exposure": [
+      {
+        "formId": "stop-baseline-01",
+        "sessionId": "audit-24",
+        "exposedAtMs": 21000
+      }
+    ]
+  },
+  {
+    "name": "completion/invalidation race",
+    "screen": "invalid",
+    "result": null
+  },
+  {
+    "name": "independent overlap oracle 1,3,21",
+    "expected": {
+      "selected": 3,
+      "comparison": 51,
+      "postAccuracy": 0.875,
+      "comparisonAccuracy": 0.9722222222222222
+    },
+    "postPositions": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      23,
+      24,
+      25
+    ],
+    "actual": {
+      "selected": 3,
+      "comparison": 51,
+      "postAccuracy": 0.875,
+      "comparisonAccuracy": 0.9722222222222222,
+      "differencePoints": -9.722222222222221,
+      "deltaMs": null,
+      "narrative": "There were not enough qualifying trials to describe your response speed after errors."
+    }
+  },
+  {
+    "name": "independent overlap oracle 1,3,21,41,61",
+    "expected": {
+      "selected": 5,
+      "comparison": 43,
+      "postAccuracy": 0.9285714285714286,
+      "comparisonAccuracy": 0.9393939393939394
+    },
+    "postPositions": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      23,
+      24,
+      25,
+      43,
+      44,
+      45,
+      63,
+      64,
+      65
+    ],
+    "actual": {
+      "selected": 5,
+      "comparison": 43,
+      "postAccuracy": 0.9285714285714286,
+      "comparisonAccuracy": 0.9393939393939394,
+      "differencePoints": -1.0822510822510845,
+      "deltaMs": -20,
+      "narrative": "similar response speed after errors."
+    }
+  },
+  {
+    "name": "independent overlap oracle 1,3,21,41",
+    "expected": {
+      "selected": 4,
+      "comparison": 47,
+      "postAccuracy": 0.9090909090909091,
+      "comparisonAccuracy": 0.9565217391304348
+    },
+    "postPositions": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      23,
+      24,
+      25,
+      43,
+      44,
+      45
+    ],
+    "actual": {
+      "selected": 4,
+      "comparison": 47,
+      "postAccuracy": 0.9090909090909091,
+      "comparisonAccuracy": 0.9565217391304348,
+      "differencePoints": -4.7430830039525755,
+      "deltaMs": -30,
+      "narrative": "similar response speed after errors."
+    }
+  },
+  {
+    "name": "independent overlap oracle 1,2,3,21,22,23,41,42,43,61,62,63",
+    "expected": {
+      "selected": 4,
+      "comparison": 39,
+      "postAccuracy": 0.6,
+      "comparisonAccuracy": 0.9333333333333333
+    },
+    "postPositions": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      23,
+      24,
+      25,
+      26,
+      27,
+      43,
+      44,
+      45,
+      46,
+      47,
+      63,
+      64,
+      65,
+      66,
+      67
+    ],
+    "actual": {
+      "selected": 4,
+      "comparison": 39,
+      "postAccuracy": 0.6,
+      "comparisonAccuracy": 0.9333333333333333,
+      "differencePoints": -33.333333333333336,
+      "deltaMs": 10,
+      "narrative": "Accuracy on trials within three positions after an error was 33 percentage points lower than on other trials (12 of 20 versus 56 of 60)."
+    }
+  },
+  {
+    "name": "post-error comparison denominator 11",
+    "errors": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      11,
+      13,
+      18,
+      22,
+      26,
+      30,
+      33,
+      36,
+      38,
+      39,
+      40,
+      47,
+      48,
+      59,
+      63,
+      64,
+      67,
+      77
+    ],
+    "actual": {
+      "selected": 14,
+      "comparison": 11,
+      "postAccuracy": 0.7115384615384616,
+      "comparisonAccuracy": 0.6428571428571429,
+      "differencePoints": 6.868131868131866,
+      "deltaMs": null,
+      "narrative": "There were not enough qualifying trials to describe your response speed after errors."
+    }
+  },
+  {
+    "name": "post-error comparison denominator 12",
+    "errors": [
+      4,
+      5,
+      7,
+      13,
+      15,
+      18,
+      22,
+      25,
+      27,
+      29,
+      30,
+      33,
+      37,
+      40,
+      44,
+      45,
+      47,
+      48,
+      49,
+      52,
+      54,
+      67,
+      71,
+      73,
+      74,
+      76,
+      77
+    ],
+    "actual": {
+      "selected": 19,
+      "comparison": 12,
+      "postAccuracy": 0.6551724137931034,
+      "comparisonAccuracy": 0.6818181818181818,
+      "differencePoints": -2.6645768025078342,
+      "deltaMs": 0,
+      "narrative": "similar response speed after errors."
+    }
+  },
+  {
+    "name": "post-error timing boundary -50",
+    "actual": {
+      "selected": 4,
+      "comparison": 47,
+      "postAccuracy": 0.9090909090909091,
+      "comparisonAccuracy": 0.9565217391304348,
+      "differencePoints": -4.7430830039525755,
+      "deltaMs": -50,
+      "narrative": "On qualifying correct GO trials after an error, your median response time was 50 ms faster than on comparison trials. This is a task-level pattern from this session."
+    }
+  },
+  {
+    "name": "post-error timing boundary -49",
+    "actual": {
+      "selected": 4,
+      "comparison": 47,
+      "postAccuracy": 0.9090909090909091,
+      "comparisonAccuracy": 0.9565217391304348,
+      "differencePoints": -4.7430830039525755,
+      "deltaMs": -49,
+      "narrative": "similar response speed after errors."
+    }
+  },
+  {
+    "name": "post-error timing boundary 49",
+    "actual": {
+      "selected": 4,
+      "comparison": 47,
+      "postAccuracy": 0.9090909090909091,
+      "comparisonAccuracy": 0.9565217391304348,
+      "differencePoints": -4.7430830039525755,
+      "deltaMs": 49,
+      "narrative": "similar response speed after errors."
+    }
+  },
+  {
+    "name": "post-error timing boundary 50",
+    "actual": {
+      "selected": 4,
+      "comparison": 47,
+      "postAccuracy": 0.9090909090909091,
+      "comparisonAccuracy": 0.9565217391304348,
+      "differencePoints": -4.7430830039525755,
+      "deltaMs": 50,
+      "narrative": "On qualifying correct GO trials after an error, your median response time was 50 ms slower than on comparison trials. This is a task-level pattern from this session."
+    }
+  },
+  {
+    "name": "sequence context denominator 3/17",
+    "actual": {
+      "longRunCount": 3,
+      "otherCount": 17,
+      "longRunFalseAlarms": 0,
+      "otherFalseAlarms": 0,
+      "narrative": "There were not enough NO-GO trials in both sequence contexts to make this comparison."
+    }
+  },
+  {
+    "name": "sequence context denominator 4/16",
+    "actual": {
+      "longRunCount": 4,
+      "otherCount": 16,
+      "longRunFalseAlarms": 0,
+      "otherFalseAlarms": 0,
+      "narrative": "Your false-alarm rate was 0% when NO-GO followed at least three GO symbols and 0% on other qualifying NO-GO trials (similar). This describes your responses in this sequence. It does not mean a NO-GO symbol becomes more likely after a run of GO symbols."
+    }
+  },
+  {
+    "name": "sequence context denominator 13/7",
+    "actual": {
+      "longRunCount": 13,
+      "otherCount": 7,
+      "longRunFalseAlarms": 0,
+      "otherFalseAlarms": 0,
+      "narrative": "There were not enough NO-GO trials in both sequence contexts to make this comparison."
+    }
+  },
+  {
+    "name": "sequence context denominator 12/8",
+    "actual": {
+      "longRunCount": 12,
+      "otherCount": 8,
+      "longRunFalseAlarms": 0,
+      "otherFalseAlarms": 0,
+      "narrative": "Your false-alarm rate was 0% when NO-GO followed at least three GO symbols and 0% on other qualifying NO-GO trials (similar). This describes your responses in this sequence. It does not mean a NO-GO symbol becomes more likely after a run of GO symbols."
+    }
+  },
+  {
+    "name": "five extra inputs candidate note",
+    "validity": "valid",
+    "notes": [
+      {
+        "schemaVersion": "stop_engine_event_v1",
+        "sessionId": "audit-36",
+        "sequenceNumber": 100,
+        "timestampMs": 21400,
+        "type": "quality_note",
+        "payload": {
+          "ruleId": "stop_validity_v1.five_extra_inputs",
+          "triggerSequenceNumber": 99
+        }
+      }
+    ],
+    "renderedHtml": "<article aria-labelledby=\"stop-report-heading\" data-report-version=\"stop_report_v1\"><h1 id=\"stop-report-heading\" tabindex=\"-1\">Your Stop practice result</h1><p>Valid · Standard color-plus-marker form · Form stop-baseline-01</p><p>This report describes what happened on this Assessment Practice sequence. It is not an employer score or a personality assessment.</p><p>Scoring version: stop_scoring_v1. Response key: Space. Physical keyboard self-confirmed; standard timing.</p><h2>Your responses</h2><p>You responded to 60 of 60 GO symbols (100%). You missed 0.</p><p>You withheld your response to 20 of 20 NO-GO symbols (100%). You made 0 false alarms.</p><p>Overall, 80 of 80 trials were correct (100%).</p><h2>Your response timing</h2><p>Your median response time on correct GO trials was 400 ms. The middle half of those responses spanned 0 ms. Based on 60 eligible responses.</p><p>Response-time results exclude anticipatory responses and trials with timing anomalies.</p><h2>What happened over the task</h2><p>From Block 1 to Block 4, overall accuracy changed by 0 percentage points, GO hit rate by 0 points, and false-alarm rate by 0 points.</p><p>Median correct-GO response time changed by 0 ms.</p><p>Response-time IQR changed by 0 ms.</p><p>speed and accuracy were broadly stable across the first and final blocks.</p><div class=\"table-scroll\" role=\"region\" aria-label=\"Block results\" tabindex=\"0\"><table><caption>Four hidden 20-trial blocks</caption><thead><tr><th scope=\"col\">Block</th><th scope=\"col\">GO correct</th><th scope=\"col\">NO-GO correct</th><th scope=\"col\">Median GO response time</th><th scope=\"col\">Data note</th></tr></thead><tbody><tr><th scope=\"row\">1</th><td>15 of 15</td><td>5 of 5</td><td>400 ms</td><td>Eligible for block comparison</td></tr><tr><th scope=\"row\">2</th><td>15 of 15</td><td>5 of 5</td><td>400 ms</td><td>Eligible for block comparison</td></tr><tr><th scope=\"row\">3</th><td>15 of 15</td><td>5 of 5</td><td>400 ms</td><td>Eligible for block comparison</td></tr><tr><th scope=\"row\">4</th><td>15 of 15</td><td>5 of 5</td><td>400 ms</td><td>Eligible for block comparison</td></tr></tbody></table></div><h2>After errors</h2><p>There were not enough qualifying trials to describe your response speed after errors.</p><h2>After GO runs</h2><p>Your false-alarm rate was 0% when NO-GO followed at least three GO symbols and 0% on other qualifying NO-GO trials (similar). This describes your responses in this sequence. It does not mean a NO-GO symbol becomes more likely after a run of GO symbols.</p><h2>Data quality</h2><p>This session met the completion, focus, input, and timing rules for a valid result.</p><p>Five or more extra response-key presses were recorded after trials had resolved. They did not change the recorded trial outcomes.</p><p>Results and form-use records are kept only in this tab. Refreshing, closing the tab, or leaving the site clears them.</p><h2>What this result means</h2><p>It shows your accuracy, response timing, and consistency on one Assessment Practice Stop sequence. It cannot establish a stable attention or impulse-control trait, reproduce a proprietary assessment score, predict employer fit, or tell you whether you will be selected. Device, sequence, familiarity, fatigue, and ordinary variation can affect results.</p><div class=\"actions\"><button>Practise another sequence</button><button class=\"secondary\">Back to library</button></div></article>",
+    "hasExtraInputNote": true
+  },
+  {
+    "name": "timing narrative threshold -75",
+    "actual": "faster with similar accuracy."
+  },
+  {
+    "name": "timing narrative threshold -74",
+    "actual": "faster with similar accuracy."
+  },
+  {
+    "name": "timing narrative threshold -50",
+    "actual": "faster with similar accuracy."
+  },
+  {
+    "name": "timing narrative threshold -49.5",
+    "actual": "faster with similar accuracy."
+  },
+  {
+    "name": "timing narrative threshold -49.49",
+    "actual": "speed and accuracy were broadly stable across the first and final blocks."
+  },
+  {
+    "name": "timing narrative threshold -49",
+    "actual": "speed and accuracy were broadly stable across the first and final blocks."
+  },
+  {
+    "name": "timing narrative threshold 0",
+    "actual": "speed and accuracy were broadly stable across the first and final blocks."
+  },
+  {
+    "name": "timing narrative threshold 49",
+    "actual": "speed and accuracy were broadly stable across the first and final blocks."
+  },
+  {
+    "name": "timing narrative threshold 49.49",
+    "actual": "speed and accuracy were broadly stable across the first and final blocks."
+  },
+  {
+    "name": "timing narrative threshold 49.5",
+    "actual": "slower with similar accuracy."
+  },
+  {
+    "name": "timing narrative threshold 50",
+    "actual": "slower with similar accuracy."
+  },
+  {
+    "name": "timing narrative threshold 74",
+    "actual": "slower with similar accuracy."
+  },
+  {
+    "name": "timing narrative threshold 75",
+    "actual": "slower with similar accuracy."
+  },
+  {
+    "name": "approved inclusive quartile fixture 100,1000",
+    "actual": {
+      "count": 2,
+      "q1": 325,
+      "median": 550,
+      "q3": 775,
+      "iqr": 450
+    }
+  },
+  {
+    "name": "approved inclusive quartile fixture 100,101,104,105",
+    "actual": {
+      "count": 4,
+      "q1": 100.75,
+      "median": 102.5,
+      "q3": 104.25,
+      "iqr": 3.5
+    }
+  },
+  {
+    "name": "approved inclusive quartile fixture 100,200,300,400,1000",
+    "actual": {
+      "count": 5,
+      "q1": 200,
+      "median": 300,
+      "q3": 400,
+      "iqr": 200
+    }
+  },
+  {
+    "name": "approved inclusive quartile fixture 100,150,220,330,470,1000",
+    "actual": {
+      "count": 6,
+      "q1": 167.5,
+      "median": 275,
+      "q3": 435,
+      "iqr": 267.5
+    }
+  },
+  {
+    "name": "approved inclusive quartile fixture 300,300,300,300",
+    "actual": {
+      "count": 4,
+      "q1": 300,
+      "median": 300,
+      "q3": 300,
+      "iqr": 0
+    }
+  },
+  {
+    "name": "approved inclusive quartile fixture 438",
+    "actual": {
+      "count": 1,
+      "q1": 438,
+      "median": 438,
+      "q3": 438,
+      "iqr": 0
+    }
+  },
+  {
+    "name": "approved inclusive quartile fixture ",
+    "actual": {
+      "count": 0,
+      "q1": null,
+      "median": null,
+      "q3": null,
+      "iqr": null
+    }
+  },
+  {
+    "name": "unrounded rate boundary -4.999",
+    "actual": "speed and accuracy were broadly stable across the first and final blocks."
+  },
+  {
+    "name": "unrounded rate boundary -5",
+    "actual": "From the first to the final block, GO hit rate changed by -5 percentage points, NO-GO correct-withhold rate by -5 points, and median correct-GO response time by 0 ms."
+  },
+  {
+    "name": "unrounded rate boundary -9.999",
+    "actual": "From the first to the final block, GO hit rate changed by -10 percentage points, NO-GO correct-withhold rate by -10 points, and median correct-GO response time by 0 ms."
+  },
+  {
+    "name": "unrounded rate boundary -10",
+    "actual": "From the first to the final block, GO hit rate decreased by 10 percentage points."
+  },
+  {
+    "name": "unrounded rate boundary 4.999",
+    "actual": "speed and accuracy were broadly stable across the first and final blocks."
+  },
+  {
+    "name": "unrounded rate boundary 5",
+    "actual": "From the first to the final block, GO hit rate changed by 5 percentage points, NO-GO correct-withhold rate by 5 points, and median correct-GO response time by 0 ms."
+  },
+  {
+    "name": "unrounded rate boundary 9.999",
+    "actual": "From the first to the final block, GO hit rate changed by 10 percentage points, NO-GO correct-withhold rate by 10 points, and median correct-GO response time by 0 ms."
+  },
+  {
+    "name": "unrounded rate boundary 10",
+    "actual": "From the first to the final block, GO hit rate increased by 10 percentage points."
+  },
+  {
+    "name": "exact ten-point post-error accuracy suppression",
+    "errors": [
+      74,
+      8,
+      79,
+      9,
+      68,
+      46,
+      70,
+      75,
+      15,
+      45
+    ],
+    "actual": {
+      "selected": 6,
+      "comparison": 40,
+      "postAccuracy": 0.8,
+      "comparisonAccuracy": 0.9,
+      "differencePoints": -9.999999999999998,
+      "deltaMs": 50,
+      "narrative": "Accuracy on trials within three positions after an error was 10 percentage points lower than on other trials (16 of 20 versus 54 of 60)."
+    }
+  },
+  {
+    "name": "replay exhaustion retains all retests",
+    "markers": [
+      {
+        "formId": "stop-replay-01",
+        "sessionId": "replay0",
+        "exposedAtMs": 0
+      },
+      {
+        "formId": "stop-replay-02",
+        "sessionId": "replay1",
+        "exposedAtMs": 1
+      },
+      {
+        "formId": "stop-replay-03",
+        "sessionId": "replay2",
+        "exposedAtMs": 2
+      },
+      {
+        "formId": "stop-replay-04",
+        "sessionId": "replay3",
+        "exposedAtMs": 3
+      },
+      {
+        "formId": "stop-replay-05",
+        "sessionId": "replay4",
+        "exposedAtMs": 4
+      },
+      {
+        "formId": "stop-replay-06",
+        "sessionId": "replay5",
+        "exposedAtMs": 5
+      }
+    ]
+  }
+]

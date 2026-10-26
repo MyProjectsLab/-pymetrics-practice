@@ -1,0 +1,101 @@
+{
+  "version": "lengths_mouth_fixtures_v1_1",
+  "formId": "LM1",
+  "cases": [
+    {
+      "id": "all_correct",
+      "actions": "For each trial, select its manifest mouth 300 ms after confirmed onset; all stages have zero lateness.",
+      "expected": { "status": "Valid", "correct": 90, "wrong": 0, "omitted": 0, "shortCorrect": 45, "longCorrect": 45, "rewardCount": 16, "bankedCents": 800 }
+    },
+    {
+      "id": "all_wrong",
+      "actions": "For each trial, select the opposite of its manifest mouth 300 ms after confirmed onset.",
+      "expected": { "status": "Valid", "correct": 0, "wrong": 90, "omitted": 0, "rewardCount": 0, "bankedCents": 0 }
+    },
+    {
+      "id": "all_omitted",
+      "actions": "No selected response before any of the 90 onset+1300 ms deadlines.",
+      "expected": { "status": "Valid", "correct": 0, "wrong": 0, "omitted": 90, "rewardCount": 0, "bankedCents": 0 }
+    },
+    {
+      "id": "miss_one_reward",
+      "actions": "Answer every trial correctly at onset+300 ms except eligible trial 8, answered incorrectly.",
+      "expected": { "status": "Valid", "correct": 89, "wrong": 1, "omitted": 0, "rewardCount": 15, "bankedCents": 750 }
+    },
+    {
+      "id": "wrong_unrewarded_trial",
+      "actions": "Answer every trial correctly at onset+300 ms except ineligible trial 1, answered incorrectly.",
+      "expected": { "status": "Valid", "correct": 89, "wrong": 1, "omitted": 0, "rewardCount": 16, "bankedCents": 800 }
+    },
+    {
+      "id": "response_deadline",
+      "actions": "Trial 1 selected correct at onset+1299 ms; trial 2 selected correct at onset+1300 ms; all others correct at onset+300 ms.",
+      "expected": { "status": "Valid", "correct": 89, "wrong": 0, "omitted": 1, "boundaryExtraTrial": 2 }
+    },
+    {
+      "id": "timing_quality",
+      "actions": "Four otherwise correct trials have one affected stage lateness of 50, 51, 250 and 251 ms respectively; all other timing is clean.",
+      "expected": { "50ms": "clean", "51ms": "note_exclude_rt", "250ms": "note_exclude_rt", "251ms": "invalid" }
+    },
+    {
+      "id": "time_samples",
+      "actions": "Use one otherwise clean cell of five correct reaction times [100,200,300,400,500] ms and another of eight [100,200,300,400,500,600,700,800] ms.",
+      "expected": { "fiveMedianMs": 300, "fiveIqr": null, "eightMedianMs": 450, "eightQ1Ms": 250, "eightQ3Ms": 650, "eightIqrMs": 400 }
+    },
+    {
+      "id": "early_response_event_order",
+      "observations": ["face_presented@0", "response@100", "face_removed@180", "trial_resolved@180", "feedback_presented@180", "feedback_offset@680", "trial_closed@680"],
+      "expected": { "responseAccepted": true, "resolutionDueMs": 180, "responseBeforeRemoval": true }
+    },
+    {
+      "id": "at_and_after_removal",
+      "observations": ["face_presented@0", "face_removed@180", "response@180", "trial_resolved@180", "feedback_presented@180", "feedback_offset@680", "trial_closed@680"],
+      "expected": { "responseAccepted": true, "resolutionDueMs": 180, "afterRemovalResponseAtMs": 300, "afterRemovalResolutionDueMs": 300 }
+    },
+    {
+      "id": "missing_removal_after_early_response",
+      "observations": ["face_presented@0", "response@100", "face_removal_due@180", "watchdog_check@2180", "invalidated@2180", "late_face_removed@2190"],
+      "expected": { "status": "Invalid", "rewardCount": 0, "lateRemovalAdmitted": false, "trialClosed": false }
+    },
+    {
+      "id": "feedback_confirmation_boundaries",
+      "observations": ["trial_resolved@300", "feedback_due@300", "feedback_presented@351", "feedback_offset_due@851", "feedback_offset@851"],
+      "expected": { "feedbackOnsetLatenessMs": 51, "quality": "note_exclude_rt", "rewardOnlyIfEligibleAndCorrect": true, "missingOnsetWatchdogAtMs": 2300, "missingOffsetWatchdogAtMs": 2851 }
+    },
+    {
+      "id": "omission_late_callback",
+      "observations": ["face_presented@0", "face_removed@180", "deadline_due@1300", "omission@1310", "trial_resolved@1310", "selected_boundary_extra@1311"],
+      "expected": { "omissionCount": 1, "resolutionDueMs": 1300, "resolutionLatenessMs": 10, "responseCount": 0 }
+    },
+    {
+      "id": "checkpoint_hide_boundary",
+      "observations": ["trial_30_feedback_offset@1000", "checkpoint_prefix_copied@1001", "hide@1002", "checkpoint_confirmation@1200"],
+      "expected": { "status": "CheckpointGate", "invalidated": false, "automaticContinuation": false, "continueRequiresCurrentAuthority": true }
+    },
+    {
+      "id": "checkpoint_owner_loss",
+      "observations": ["trial_30_feedback_offset@1000", "checkpoint_prefix_copied@1001", "owner_lost@1002", "checkpoint_confirmation@1200"],
+      "expected": { "status": "CheckpointGate", "invalidated": false, "freshOwnerRequired": true, "lateContinuationAdmitted": false }
+    },
+    {
+      "id": "final_feedback_completion",
+      "observations": ["trial_90_feedback_offset@1000", "trial_closed@1000", "session_completed@1001", "terminal_prefix_copied@1001", "hide@1002"],
+      "expected": { "terminalStatus": "Valid", "hideInvalidates": false, "savedRequiresDurableReadback": true }
+    },
+    {
+      "id": "zero_response_and_nine_values",
+      "actions": "A Valid all-omitted run; separately one clean-time cell of nine correct values [100,200,300,400,500,600,700,800,900] ms.",
+      "expected": { "responded": 0, "responseTendency": "No response-side distribution", "nineMedianMs": 500, "nineQ1Ms": 250, "nineQ3Ms": 750, "nineIqrMs": 500 }
+    },
+    {
+      "id": "category_set_denominators",
+      "actions": "LM1 trial 8 short and reward-eligible is wrong; all other trials correct at onset+300 ms.",
+      "expected": { "overall": "89/90 (98.9%)", "short": "44/45 (97.8%)", "long": "45/45 (100.0%)", "set1": "29/30 (96.7%)", "set2": "30/30 (100.0%)", "set3": "30/30 (100.0%)" }
+    },
+    {
+      "id": "authority_race_orders",
+      "actions": "Without notifications, hold positive Start, Continue or report readback; peer delete or replace before the visible action, and repeat with visible action confirmed before peer mutation; cancel one readback and release its late callback.",
+      "expected": { "deletionFirstNewOnset": false, "deletionFirstSavedPublication": false, "visibleFirstFactualOnsetRetained": true, "visibleFirstLaterSavedWithdrawn": true, "canceledLateCallbackPublishes": false }
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+Window: "About Version", App: Google Chrome.
+0 standard window About Version - Google Chrome, URL: chrome://version/, Secondary Actions: Raise
+	1 container About Version - Google Chrome, URL: chrome://version/
+		2 container
+			3 toolbar
+				4 button Back
+				5 button (disabled) Forward
+				6 button Reload
+				7 container
+					8 pop up button Chrome
+					9 text field (settable) Address and search bar, Value: chrome://version, Placeholder: Ask Google or type a URL
+					10 button Bookmark this tab
+				11 container
+					12 pop up button Open Claude
+					13 pop up button Extensions
+				14 checkbox New download available
+				15 button renzo
+				16 pop up button Chrome
+			17 toolbar Bookmarks
+				18 toolbar Saved Tab Groups
+					19 saved tab group button  🧪 Stop M6-C group - Closed
+					20 saved tab group button  🧪 Stop M3 QA group - Closed
+					21 saved tab group button  🔎 New entrant diligence group - Closed
+					22 saved tab group button  Claude group - Closed
+					23 saved tab group button  Claude group - Closed
+					24 saved tab group button  Claude group - Closed
+					25 saved tab group button  ✅Claude group - Closed
+					26 button Tab groups
+				27 splitter Separator
+				28 bookmark button La Repubblica.it - News in tempo reale - Le notizie e i video di politica, cronaca, economia, sport
+				29 bookmark button Prime Video: Search
+				30 bookmark button Netflix
+				31 bookmark button Select Profile | Disney+
+				32 bookmark button LexZilla — Legal Made Simple
+			33 container
+				34 scroll area
+					35 HTML content About Version, URL: chrome://version/
+						36 container
+							37 image Chrome logo
+							38 text Google LLC
+							39 text Copyright 2026 Google LLC. All rights reserved.
+							40 container
+								41 container Google Chrome:
+									42 text Google Chrome :
+								43 container 154.0.8037.95 (Official Build) (arm64) Copy version string
+									44 container
+										45 text 154.0.8037.95  ( Official Build )  (arm64)
+									46 button Copy version string
+							47 container
+								48 container Revision:
+									49 text Revision :
+								50 container 05d469856e75794131cc2e5d9b2f6b6f10a70388-refs/branch-heads/8037@{#1592}
+									51 text 05d469856e75794131cc2e5d9b2f6b6f10a70388-refs/branch-heads/8037@{#1592}
+							52 container
+								53 container OS:
+									54 text OS :
+								55 container macOS Version 26.6.2 (Build 25G83)
+									56 container
+										57 text macOS Version 26.6.2 (Build 25G83)
+							58 container
+								59 container JavaScript:
+									60 text JavaScript :
+								61 container V8 15.4.80.19
+									62 text V8 15.4.80.19
+							63 container
+								64 container User Agent:
+									65 text User Agent :
+								66 container Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36
+									67 text Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36
+							68 container
+								69 container Command Line:
+									70 text Command Line :
+								71 container /Applications/Google Chrome.app/Contents/MacOS/Google Chrome --flag-switches-begin --flag-switches-end
+									72 text /Applications/Google Chrome.app/Contents/MacOS/Google Chrome --flag-switches-begin --flag-switches-end
+							73 container
+								74 container Executable Path:
+									75 text Executable Path :
+								76 container /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+									77 text /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+							78 container
+								79 container Profile Path:
+									80 text Profile Path :
+								81 container /Users/renzo/Library/Application Support/Google/Chrome/Default
+									82 text /Users/renzo/Library/Application Support/Google/Chrome/Default
+							83 container
+								84 container Linker:
+									85 text Linker :
+								86 container lld
+									87 text lld
+							88 container
+								89 container Variations Source:
+									90 text Variations Source :
+								91 container variations server
+									92 text variations server
+							93 container
+								94 container Command-line Variations:
+									95 text Command-line Variations :
+								96 container eyJkaXNhYmxlLWZlYXR1cmVzIjoiQW5ub3RhdGVkUGFnZUNvbnRlbnRXaXRo...
+									97 text eyJkaXNhYmxlLWZlYXR1cmVzIjoiQW5ub3RhdGVkUGFnZUNvbnRlbnRXaXRo...
+								98 container Copy variations string
+									99 button Copy variations string
+							100 container
+								101 container Active Variations:
+									102 text Active Variations :
+								103 container 6c9bc01b-377be55a 832e9e2-ca7d8d80 fa220cc1-ca7d8d80 76e51e2c-377be55a f7adf49b-ca7d8d80 5d6e19f0-ca7d8d80 5d43ba47-ca7d8d80 202be78-1f8c5973 49d61dc2-ca7d8d80 2ad3343-4f8e71c4 bf7e54f4-ca7d8d80 1c4d4494-ca7d8d80 73551ca1-ca7d8d80 d6737162-ca7d8d80 e35cc1a-ca7d8d80 e5a1483c-ca7d8d80 6a68c9a6-ca7d8d80 c1531af3-ca7d8d80 4ce9e3a9-6e522a5b 9a26d980-ca7d8d80 d609f093-377be55a da968c94-ca7d8d80 7f4cbd4d-377be55a 99fb13df-ca7d8d80 cdc6dc11-ca7d8d80 92b406bd-4de29222 3095aa95-3f4a17df c2bfaa56-377be55a 4bf7b406-377 (showing 0-100 of 187 items)
+									104 text 6c9bc01b-377be55a 832e9e2-ca7d8d80 fa220cc1-ca7d8d80 76e51e2c-377be55a f7adf49b-ca7d8d80 5d6e19f0-ca7d8d80 5d43ba47-ca7d8d80 202be78-1f8c5973 49d61dc2-ca7d8d80 2ad3343-4f8e71c4 bf7e54f4-ca7d8d80 1c4d4494-ca7d8d80 73551ca1-ca7d8d80 d6737162-ca7d8d80 e35cc1a-ca7d8d80 e5a1483c-ca7d8d80 6a68c9a6-ca7d8d80 c1531af3-ca7d8d80 4ce9e3a9-6e522a5b 9a26d980-ca7d8d80 d609f093-377be55a da968c94-ca7d8d80 7f4cbd4d-377be55a 99fb13df-ca7d8d80 cdc6dc11-ca7d8d80 92b406bd-4de29222 3095aa95-3f4a17df c2bfaa56-377be55a 4bf7b406-377be55a 5033fb03-33c3eba5 e4d43646-ca7d8d80 997c398c-f9a43703 a34be965-a1d7c11b ba27f42b-377be55a ff1e0777-6b128be5 5e40cc59-9fdeeb23 58cdc9f0-73dea6c1 4f473a06-377be55a 153d998a-ca7d8d80 f314f5b9-bc521987 238649f0-a2378a4e 8095bf60-ca7d8d80 352f87df-377be55a c9c3bf92-377be55a b1b6eab0-ca7d8d80 4e5d86a8-7cfa6c5b 216faa60-377be55a 66ac3cfc-93b963 4cde0e9a-93b963 7242b8f5-33c3eba5 537bb749-33c3eba5 a582a1b8-5ad3f43d 6a64ab7e-377be55a bd6dd170-ca7d8d80 68f499c8-377be55a 6d423f36-ca7d8d80 a218ad40-7937fad3 ed3f5f6e-ca7d8d80 9d5ecd8d-feaa56f4 3299018c-ca7d8d80 557709c5-377be55a 310c8bf2-722cbc7b 6e4912ad-540c53e0 ed102d29-57235641 d09c2d9-f54bd3e4 e6020cbf-377be55a 635e5df5-ca7d8d80 432d9464-d9659f4c 334b1a1c-ca7d8d80 2bdb6f15-f6b7b819 f181271f-ca7d8d80 7ffa5386-40b00f09 78049c75-7bc9a52b bb1c4d8a-ca7d8d80 46294e3b-9d1d6eb1 9f03bb1b-377be55a 1eb4d00c-377be55a c6072f65-f9a43703 210f81c-ca7d8d80 4d4e8d94-18c614a 6bac6c05-c44077d 58393276-3492f1ab 66657049-17464aed c0e01b2-377be55a fca39b9a-e986cf53 126950a-ca7d8d80 5199db31-ca7d8d80 260bef7d-ca7d8d80 73d480d9-ca7d8d80 861960c3-377be55a 70640dfa-50481e6e b252442a-ca7d8d80 9f8a0fd2-ca7d8d80 3ac9fcb9-ca7d8d80 a015f6e1-ca7d8d80 b706019d-377be55a 23a3e365-377be55a d09b7b7d-ca7d8d80 a3652538-6e522a5b 4fa4e3b8-377be55a
+								105 container Copy variations string
+									106 button Copy variations string
+			107 pop up button Tab search
+			108 container
+				109 tab group
+					110 tab (settable, boolean) Assessment Practice - Memory usage - 136 MB, Value: off
+						111 button Close
+					112 tab (selected, settable, boolean) About Version, Value: on
+						113 button Close
+			114 button New Tab
+			115 button Open Gemini in Chrome
+	116 close button
+	117 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	118 minimize button
+119 menu bar
+	120 Chrome
+	121 File
+	122 Edit
+	123 View
+	124 History
+	125 Bookmarks
+	126 Profiles
+	127 Tab
+	128 Window
+	129 Help
+
+The focused UI element is 35 HTML content About Version, URL: chrome://version/

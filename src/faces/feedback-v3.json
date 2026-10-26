@@ -1,0 +1,237 @@
+{
+  "feedbackVersion": "faces-feedback-v3",
+  "inspection": "Author visually inspected all14 actual runtime portraits individually with view_image and read all8 complete runtime context strings on2026-10-18. Observations concern visible features; emotion labels are intended practice interpretations. No human-review agreement added.",
+  "practiceConventions": {
+    "Anger": "A contrasting Anger example can centre on conflict, resentment or an angry response to obstruction.",
+    "Determination": "A contrasting Determination example can centre on continuing a goal-directed effort after a setback.",
+    "Disgust": "A contrasting Disgust example can centre on something repellent, such as an unpleasant smell or taste.",
+    "Fear": "A contrasting Fear example can centre on an anticipated threat or danger.",
+    "Happiness": "A contrasting Happiness example can centre on enjoyment or a positive outcome already experienced.",
+    "Hope": "A contrasting Hope example can centre on wanting a positive outcome that remains uncertain.",
+    "Pain": "A contrasting Pain example can centre on an explicitly described bodily hurt.",
+    "Sadness": "A contrasting Sadness example can centre on loss, rejection or disappointment.",
+    "Surprise": "A contrasting Surprise example can centre on an initial reaction to something unexpected.",
+    "Puzzlement": "A contrasting Puzzlement example can centre on trying to resolve something that does not make sense."
+  },
+  "selectionRule": {
+    "matched": "Show why, visible and nextTime; optionally nearestAlternative comparison under Compare with LABEL.",
+    "incorrectWithOverride": "Show selectedComparisons[selected] under Why SELECTED is different here.",
+    "incorrectContextFallback": "Concatenate practiceConventions[selected], one space, item.why, one space, \"The story is the stronger reason for this practice answer; the face alone does not settle every alternative.\"",
+    "incorrectPhotoFallback": "Concatenate practiceConventions[selected], one space, \"No such situation is supplied here. \", item.why, one space, \"The picture cannot rule out every alternative, so this marks the practice answer rather than proving an emotion.\"",
+    "prohibited": "Do not infer why the user chose a label, invent hidden events or facial differences, display the nearest alternative as the selected answer, or use a fallback for a correct choice."
+  },
+  "items": [
+    {
+      "item": 0,
+      "number": 1,
+      "assetId": "F-P04",
+      "assetSha256": "b3ad867fd331da2cfbf808effd54dec1b4306310d81567a91f2064aecdab48d0",
+      "contextSha256": "05d1a5f89f99ea05d9b2bb93c79402def92477a12506ec9be5e7f1f649d1377b",
+      "practiceAnswer": "Determination",
+      "why": "Ari keeps working after two failed checks, puts the tools in order and starts another careful test. That continuing, purposeful effort makes Determination the practice answer.",
+      "visible": "The brows draw together above a steady gaze, and the mouth is closed and set. Those features can fit concentration, but cannot distinguish determination from puzzlement on their own.",
+      "nearestAlternative": "Puzzlement",
+      "selectedComparisons": {
+        "Puzzlement": "Puzzlement would put the emphasis on not understanding what is wrong. Ari may be uncertain, but the story specifically shows an organised decision to try again. The furrowed brows fit either reading; the continued effort decides this item."
+      },
+      "nextTime": "Look for what the person does after a setback: continuing deliberately is the key clue here."
+    },
+    {
+      "item": 1,
+      "number": 2,
+      "assetId": "R3-A",
+      "assetSha256": "fa54ea90ee399aa8598e7b72bf2f0788db84464d3798682dd3a218552c661d10",
+      "contextSha256": "d362e5de4c6ccb2af6a39b00fc0dae7bc7ea99baa3014e8b652909832c312ec1",
+      "practiceAnswer": "Hope",
+      "why": "Nadia wants a workshop place, no decision has been announced, and she imagines attending while keeping the week free. She is anticipating a desired outcome that is still uncertain, so Hope is the practice answer.",
+      "visible": "Her eyes look upward and to the side; her lips are slightly parted, with no broad smile. This is a quiet expression that can also look reflective or sad. These features do not settle Hope versus Sadness; the story supplies the stronger distinction.",
+      "nearestAlternative": "Sadness",
+      "selectedComparisons": {
+        "Sadness": "Sadness is incorrect for this practice item because the story has not described a rejection or loss. Nadia is picturing a wanted future possibility. A contrasting sadness example could describe her learning that she was not accepted, and an illustrator might pair that with a lowered gaze or downturned mouth. Those would be possible example cues, not features that every sad person must show. This portrait can still look sad to you; use the story to choose the practice answer.",
+        "Happiness": "Happiness could fit a story where Nadia has already received the place and is enjoying the news. Here she is still waiting and imagining a wanted outcome, which makes Hope the practice answer. A smile is not required for hope or happiness, and this quiet portrait cannot settle the distinction alone.",
+        "Surprise": "Surprise could fit an unexpected acceptance message. This story says no decisions have been announced: Nadia is imagining a desired possibility. Her upward gaze and parted lips do not show what she has learned; the story supplies the reason for Hope."
+      },
+      "nextTime": "Ask whether a wanted outcome is still possible or whether the story describes a loss that has already happened."
+    },
+    {
+      "item": 2,
+      "number": 3,
+      "assetId": "R-B",
+      "assetSha256": "c6fed6512a9e6e2dd1663b2d88b76e9a3c4da1167dee08f4f12d12799534cb26",
+      "contextSha256": "d45de8d48cd0d50057bc5bb1fc43059e83b3d16bb2dc9ea694eb8f792625a4e3",
+      "practiceAnswer": "Pain",
+      "why": "Sam catches a finger against the doorway and continues to feel a sharp sensation while holding it still. The explicit physical hurt makes Pain the practice answer.",
+      "visible": "The eyelids are nearly squeezed shut, the brows pull tightly together and the mouth is unevenly tightened and slightly open. That contraction fits the intended Pain example, though a contracted expression can also accompany disgust.",
+      "nearestAlternative": "Disgust",
+      "selectedComparisons": {
+        "Disgust": "Disgust would fit an example centred on something repellent, such as an unpleasant smell or taste. Here the story describes an injured finger and continuing physical hurt. The squeezed eyes and tightened mouth overlap, so the injury is the deciding clue."
+      },
+      "nextTime": "When the story names bodily hurt, use that evidence instead of relying on a grimace alone."
+    },
+    {
+      "item": 3,
+      "number": 4,
+      "assetId": "F-P06",
+      "assetSha256": "96c490d012c6a05225080b07a9ed95484bbe0c6b6cd710861e8e8eda206def62",
+      "contextSha256": "eb226bf93d7a2ce832e687c5b6095e2576c02cd379c821124b2bdc22c049b919",
+      "practiceAnswer": "Puzzlement",
+      "why": "Rae is comparing a ticket with two signs that give conflicting information and checks them again. The unresolved effort to work out which information to trust makes Puzzlement the practice answer.",
+      "visible": "The eyebrows sit unevenly and draw together, the head is slightly angled and the lips are closed. This supports the intended questioning look, but does not reveal what the person is thinking.",
+      "nearestAlternative": "Surprise",
+      "selectedComparisons": {
+        "Surprise": "Surprise could describe the initial reaction to seeing an unexpected destination. This story continues beyond that moment: Rae compares conflicting information again. The picture has drawn, uneven brows and a closed mouth; a contrasting Surprise example in this bank uses lifted brows, wide eyes and an open mouth. The story is the stronger distinction."
+      },
+      "nextTime": "Distinguish a first unexpected reaction from continued checking to resolve confusion."
+    },
+    {
+      "item": 4,
+      "number": 5,
+      "assetId": "F-P07",
+      "assetSha256": "dd17d944ab4192b432c07cebaa24585463f531d454c0a09e55a5ffd28918b8f3",
+      "contextSha256": "4be7c0cef721aa66b6dc3688d68efac7d46fa528b939ff86fb9439cd4ebe510e",
+      "practiceAnswer": "Hope",
+      "why": "Noor wants the garden to keep its site. An invitation to discuss a longer lease makes that outcome possible, but no decision has been made. That desired, uncertain possibility makes Hope the practice answer.",
+      "visible": "The gaze is directed upward, the inner brows are raised and the mouth is slightly open. The expression can fit anticipation or surprise; the picture alone does not establish Hope.",
+      "nearestAlternative": "Surprise",
+      "selectedComparisons": {
+        "Surprise": "Surprise could fit receiving an unexpected message. The story instead emphasises a possible good outcome that Noor still awaits. The raised brows and parted mouth overlap with surprise, so use the invitation and the unresolved decision to identify Hope."
+      },
+      "nextTime": "A promising opportunity is different from a positive outcome that has already been secured."
+    },
+    {
+      "item": 5,
+      "number": 6,
+      "assetId": "F-P08",
+      "assetSha256": "cc6ecd790af064e450900b958d9f0a5058ba0efd47cb773054cc8aacee60e880",
+      "contextSha256": "93ff47fe1b2355fbce05b3fa1c1bd6615ec5a7599ed459e9c2d6c33a4f4cceb9",
+      "practiceAnswer": "Determination",
+      "why": "Morgan slows the tempo, marks the difficult notes and tries again after repeated failures. Adjusting the approach and persisting makes Determination the practice answer.",
+      "visible": "The brows are lowered and drawn together, the eyes look directly ahead and the lips are held together. This concentrated expression can also be read as anger or frustration.",
+      "nearestAlternative": "Anger",
+      "selectedComparisons": {
+        "Anger": "Anger would fit a contrasting story focused on resentment, conflict or an angry reaction to the failure. Morgan instead changes the practice method and immediately continues. The set mouth and lowered brows do not settle the difference; the purposeful action does."
+      },
+      "nextTime": "Focus on whether the story shows continued effort, rather than treating a tense face as anger."
+    },
+    {
+      "item": 6,
+      "number": 7,
+      "assetId": "R3-C",
+      "assetSha256": "1dac8505dafe73a30ffa4b7d93f80d0c107d05f6ee41791598275f6e011662e2",
+      "contextSha256": "4980034b41ed5b12a13ec7c01096bf2849c80bff0985d1f796c038079d83acc5",
+      "practiceAnswer": "Puzzlement",
+      "why": "Eli has spent several minutes comparing conflicting departure times, checks the dates and stations again, and still cannot decide which time to use. Continuing uncertainty makes Puzzlement the practice answer.",
+      "visible": "The head tilts, the brows are uneven and tightly drawn together, the eyes narrow somewhat and the lips stay closed. The intended questioning look is compatible with puzzlement, but the portrait has also been read as surprise.",
+      "nearestAlternative": "Surprise",
+      "selectedComparisons": {
+        "Surprise": "Surprise could fit the first discovery that the timetables disagree. This item explicitly describes several minutes of checking and an unresolved question. A contrasting Surprise example in this bank has more open eyes and mouth; those differences are illustrative rather than rules. The continuing uncertainty is why Puzzlement is the practice answer here."
+      },
+      "nextTime": "Use time words such as “for several minutes” and “still cannot work out” to distinguish ongoing uncertainty from an initial reaction."
+    },
+    {
+      "item": 7,
+      "number": 8,
+      "assetId": "F-P10",
+      "assetSha256": "ecd02868b16f53160e87413e184c9eb03bc3a317afbd4348c40aae6232b98e82",
+      "contextSha256": "df4f33b7bcf31201bb89407025d57362ec36b6bf1e703f965b377361c2298bb1",
+      "practiceAnswer": "Pain",
+      "why": "A sudden calf cramp makes Casey stop and hold the leg while waiting for the muscle to loosen. The physical discomfort makes Pain the practice answer.",
+      "visible": "The eyelids are nearly closed, the brows draw together and the closed mouth pulls unevenly to one side. This contracted expression fits the intended Pain example but can also resemble disgust.",
+      "nearestAlternative": "Disgust",
+      "selectedComparisons": {
+        "Disgust": "Disgust would fit a story about something repellent. Here the cramp and the act of holding the leg give a direct physical explanation. The grimace is shared visual evidence, so it cannot decide Pain versus Disgust without the story."
+      },
+      "nextTime": "Use the physical event named in the story to interpret an otherwise ambiguous grimace."
+    },
+    {
+      "item": 8,
+      "number": 9,
+      "assetId": "F-P03",
+      "assetSha256": "faaaf389971d52def00ac67aadb6c7d6db89d7b7a5e1b357989d89932e4b792a",
+      "contextSha256": null,
+      "practiceAnswer": "Surprise",
+      "why": "Surprise is the practice answer for this open expression: the brows are lifted, the eyes wide and the mouth rounded and open. With no story, this is the intended reading of the picture rather than a confirmed internal emotion.",
+      "visible": "Both eyebrows are raised, both eyes are wide open and the lips surround a rounded opening. There is less of the inward brow pull and sideways mouth tension visible in the Fear examples in this bank.",
+      "nearestAlternative": "Fear",
+      "selectedComparisons": {
+        "Fear": "Fear can also involve wide eyes and an open mouth. In the Fear examples in this bank, the inner brows pull upward and together and the parted mouth looks more tense across its width. This picture emphasises a more evenly open reaction. These are comparisons among our pictures; there is no story establishing a threat."
+      },
+      "nextTime": "Compare the whole brow-and-mouth pattern rather than using wide eyes alone."
+    },
+    {
+      "item": 9,
+      "number": 10,
+      "assetId": "R-D",
+      "assetSha256": "bab7eb8efba3b3e3c895324f3424f4ce09a957ee2e95f9474929cd8a23e579d2",
+      "contextSha256": null,
+      "practiceAnswer": "Fear",
+      "why": "Fear is the practice answer because this picture combines wide eyes with visibly drawn inner brows and a tense, parted mouth. No story identifies a cause, and Surprise remains a possible reading.",
+      "visible": "The inner brows lift and draw together, with a crease between them. The eyes are wide, and the lips part across a mouth whose corners pull down and outward.",
+      "nearestAlternative": "Surprise",
+      "selectedComparisons": {
+        "Surprise": "Surprise shares the wide eyes and parted mouth. The intended distinction here is the pulled inner brow and tension across the mouth, compared with the more rounded, open Surprise examples in this bank. The still image does not establish a threat or prove the person is afraid."
+      },
+      "nextTime": "Check tension around the brows and mouth as well as how far the eyes open."
+    },
+    {
+      "item": 10,
+      "number": 11,
+      "assetId": "R-E",
+      "assetSha256": "cc41b2505ad093762ce355a277ab5841ba31cdba754e2584e693c5347f7105d7",
+      "contextSha256": null,
+      "practiceAnswer": "Anger",
+      "why": "Anger is the practice answer for the combination of lowered, inward-drawn brows, a direct gaze and a firmly closed mouth. The picture has no story, so it cannot establish a cause or rule out other tense expressions.",
+      "visible": "The brows angle downward toward the centre, a crease appears between them, the eyes look directly ahead and the lips are pressed together.",
+      "nearestAlternative": "Puzzlement",
+      "selectedComparisons": {
+        "Puzzlement": "Puzzlement can share furrowed brows and concentration. The Puzzlement examples in this bank add uneven brow positions or a head tilt, while this image presents a more direct, compressed expression. These differences explain the intended answer but do not make puzzlement impossible."
+      },
+      "nextTime": "Compare the brows, head angle and mouth together; a furrow alone is not enough."
+    },
+    {
+      "item": 11,
+      "number": 12,
+      "assetId": "F-P12",
+      "assetSha256": "26a765098c6512dddf459b6554f01e53dd7783d3a981f3a0d8fb1883aaa8ff30",
+      "contextSha256": null,
+      "practiceAnswer": "Surprise",
+      "why": "Surprise is the practice answer for the raised brows, wide eyes and open mouth. No written event is provided, so the answer describes the intended reading of this expression.",
+      "visible": "The eyebrows are lifted, the eyes are visibly wide behind the glasses, and the mouth is open in a rounded shape. The brows are not drawn tightly together like those in the Fear examples.",
+      "nearestAlternative": "Fear",
+      "selectedComparisons": {
+        "Fear": "Fear can also look wide-eyed and open-mouthed. Here the picture emphasises openness, with less inward brow contraction than the Fear examples in this bank. We cannot infer whether anything threatening happened; no story supplies that information."
+      },
+      "nextTime": "Look past accessories such as glasses and compare the visible brow, eye and mouth shapes."
+    },
+    {
+      "item": 12,
+      "number": 13,
+      "assetId": "F-P13",
+      "assetSha256": "4d02fcb8c467d16a9fa4f469236084c1a4943c339eec71380dd379f6ef945bde",
+      "contextSha256": null,
+      "practiceAnswer": "Fear",
+      "why": "Fear is the practice answer for the wide eyes combined with inner brows pulled upward and together and a tense, parted mouth. Without a story this remains a practice interpretation, not certainty about a person.",
+      "visible": "The inner brows rise and pull together, the eyes open wide, and the lips part across a relatively stretched opening with some teeth visible.",
+      "nearestAlternative": "Surprise",
+      "selectedComparisons": {
+        "Surprise": "Surprise can share the open eyes and mouth. This picture adds a strong inward-and-upward pull at the inner brows and more tension across the lips than the rounded-mouth Surprise examples. Those are the intended visual distinctions; they do not prove a threat or exclude surprise."
+      },
+      "nextTime": "Compare the direction of the brow pull and the mouth shape, not just the open eyes."
+    },
+    {
+      "item": 13,
+      "number": 14,
+      "assetId": "F-P14",
+      "assetSha256": "5cfe9431962696dce1744667eea793ea445894d84a854c89389942907449c3d9",
+      "contextSha256": null,
+      "practiceAnswer": "Anger",
+      "why": "Anger is the practice answer for the strongly lowered brows, narrowed direct gaze and firmly compressed mouth. There is no story to establish what caused the expression.",
+      "visible": "The brows pull down and inward, the eyes narrow beneath them, and the mouth is tightly closed with the corners turned down.",
+      "nearestAlternative": "Determination",
+      "selectedComparisons": {
+        "Determination": "Determination can also have a set mouth and lowered brows. In the Determination items in this bank, a story establishes persistence toward a goal. This photo-only item supplies no such goal; its stronger brow and mouth compression is the intended Anger cue. Determination cannot be ruled out from the picture alone."
+      },
+      "nextTime": "Recognise shared tension cues and avoid inventing a goal when no story is given."
+    }
+  ]
+}

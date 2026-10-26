@@ -1,0 +1,159 @@
+{
+  "formId": "faces-bank-practice-v2",
+  "formHash": "75ff16a9eaf4f0cff8eda2e80f66b4d886c9fcc5f7eae364b3859ab4cb584e16",
+  "bankHash": "7a7e835a3b1c5277eca45b19d82f2ba917305b886727b104a2ac7a94e95f4854",
+  "labels": [
+    "Anger",
+    "Determination",
+    "Disgust",
+    "Fear",
+    "Happiness",
+    "Hope",
+    "Pain",
+    "Sadness",
+    "Surprise",
+    "Puzzlement"
+  ],
+  "items": [
+    {
+      "item": 0,
+      "kind": "context",
+      "assetId": "F-P04",
+      "assetSha256": "b3ad867fd331da2cfbf808effd54dec1b4306310d81567a91f2064aecdab48d0",
+      "context": "Ari has been repairing an old radio. Twice it has gone silent just before the final check. Ari studies the wiring again, puts the tools back in order, and begins another careful test.",
+      "contextSha256": "05d1a5f89f99ea05d9b2bb93c79402def92477a12506ec9be5e7f1f649d1377b",
+      "intended": "Determination",
+      "matchEligible": true
+    },
+    {
+      "item": 1,
+      "kind": "context",
+      "assetId": "R3-A",
+      "assetSha256": "fa54ea90ee399aa8598e7b72bf2f0788db84464d3798682dd3a218552c661d10",
+      "context": "Nadia has applied for a workshop she has wanted to attend for years. Places are limited, and no decisions have been announced. While waiting for next week's email, she pictures herself taking part and keeps the week free.",
+      "contextSha256": "d362e5de4c6ccb2af6a39b00fc0dae7bc7ea99baa3014e8b652909832c312ec1",
+      "intended": "Hope",
+      "matchEligible": true
+    },
+    {
+      "item": 2,
+      "kind": "context",
+      "assetId": "R-B",
+      "assetSha256": "c6fed6512a9e6e2dd1663b2d88b76e9a3c4da1167dee08f4f12d12799534cb26",
+      "context": "Sam is carrying a box through a doorway when its edge catches a finger against the frame. Sam quickly sets the box down and holds the finger still while the sharp sensation continues.",
+      "contextSha256": "d45de8d48cd0d50057bc5bb1fc43059e83b3d16bb2dc9ea694eb8f792625a4e3",
+      "intended": "Pain",
+      "matchEligible": true
+    },
+    {
+      "item": 3,
+      "kind": "context",
+      "assetId": "F-P06",
+      "assetSha256": "96c490d012c6a05225080b07a9ed95484bbe0c6b6cd710861e8e8eda206def62",
+      "context": "Rae follows the platform number printed on a rail ticket. The display above that platform lists a different destination, but another sign points back to the same place. Rae compares the ticket and the two signs once more.",
+      "contextSha256": "eb226bf93d7a2ce832e687c5b6095e2576c02cd379c821124b2bdc22c049b919",
+      "intended": "Puzzlement",
+      "matchEligible": true
+    },
+    {
+      "item": 4,
+      "kind": "context",
+      "assetId": "F-P07",
+      "assetSha256": "dd17d944ab4192b432c07cebaa24585463f531d454c0a09e55a5ffd28918b8f3",
+      "context": "Noor is waiting to hear whether a community garden can keep its site. A message says the owner has agreed to discuss a longer lease and asks the group to bring its plans. No decision has been made yet. Noor reads the invitation again.",
+      "contextSha256": "4be7c0cef721aa66b6dc3688d68efac7d46fa528b939ff86fb9439cd4ebe510e",
+      "intended": "Hope",
+      "matchEligible": true
+    },
+    {
+      "item": 5,
+      "kind": "context",
+      "assetId": "F-P08",
+      "assetSha256": "cc6ecd790af064e450900b958d9f0a5058ba0efd47cb773054cc8aacee60e880",
+      "context": "Morgan is learning a difficult passage on a musical instrument. The same transition has failed several times. Morgan slows the tempo, marks the troublesome notes and immediately tries the passage again.",
+      "contextSha256": "93ff47fe1b2355fbce05b3fa1c1bd6615ec5a7599ed459e9c2d6c33a4f4cceb9",
+      "intended": "Determination",
+      "matchEligible": true
+    },
+    {
+      "item": 6,
+      "kind": "context",
+      "assetId": "R3-C",
+      "assetSha256": "1dac8505dafe73a30ffa4b7d93f80d0c107d05f6ee41791598275f6e011662e2",
+      "context": "For several minutes, Eli has been comparing two copies of the same timetable. They show different departure times for the same train. Eli checks the dates and station names again, but still cannot work out which time to use.",
+      "contextSha256": "4980034b41ed5b12a13ec7c01096bf2849c80bff0985d1f796c038079d83acc5",
+      "intended": "Puzzlement",
+      "matchEligible": true
+    },
+    {
+      "item": 7,
+      "kind": "context",
+      "assetId": "F-P10",
+      "assetSha256": "ecd02868b16f53160e87413e184c9eb03bc3a317afbd4348c40aae6232b98e82",
+      "context": "Casey has been sitting with one leg folded for a long time. On standing, a sudden calf cramp makes Casey stop and hold the leg while waiting for the muscle to loosen.",
+      "contextSha256": "df4f33b7bcf31201bb89407025d57362ec36b6bf1e703f965b377361c2298bb1",
+      "intended": "Pain",
+      "matchEligible": true
+    },
+    {
+      "item": 8,
+      "kind": "photo",
+      "assetId": "F-P03",
+      "assetSha256": "faaaf389971d52def00ac67aadb6c7d6db89d7b7a5e1b357989d89932e4b792a",
+      "context": null,
+      "contextSha256": null,
+      "intended": "Surprise",
+      "matchEligible": true
+    },
+    {
+      "item": 9,
+      "kind": "photo",
+      "assetId": "R-D",
+      "assetSha256": "bab7eb8efba3b3e3c895324f3424f4ce09a957ee2e95f9474929cd8a23e579d2",
+      "context": null,
+      "contextSha256": null,
+      "intended": "Fear",
+      "matchEligible": true
+    },
+    {
+      "item": 10,
+      "kind": "photo",
+      "assetId": "R-E",
+      "assetSha256": "cc41b2505ad093762ce355a277ab5841ba31cdba754e2584e693c5347f7105d7",
+      "context": null,
+      "contextSha256": null,
+      "intended": "Anger",
+      "matchEligible": true
+    },
+    {
+      "item": 11,
+      "kind": "photo",
+      "assetId": "F-P12",
+      "assetSha256": "26a765098c6512dddf459b6554f01e53dd7783d3a981f3a0d8fb1883aaa8ff30",
+      "context": null,
+      "contextSha256": null,
+      "intended": "Surprise",
+      "matchEligible": true
+    },
+    {
+      "item": 12,
+      "kind": "photo",
+      "assetId": "F-P13",
+      "assetSha256": "4d02fcb8c467d16a9fa4f469236084c1a4943c339eec71380dd379f6ef945bde",
+      "context": null,
+      "contextSha256": null,
+      "intended": "Fear",
+      "matchEligible": true
+    },
+    {
+      "item": 13,
+      "kind": "photo",
+      "assetId": "F-P14",
+      "assetSha256": "5cfe9431962696dce1744667eea793ea445894d84a854c89389942907449c3d9",
+      "context": null,
+      "contextSha256": null,
+      "intended": "Anger",
+      "matchEligible": true
+    }
+  ]
+}

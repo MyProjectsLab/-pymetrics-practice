@@ -1,0 +1,20 @@
+{
+  "cases": [
+    {
+      "name": "delete a retest attempt linked only in failed queue",
+      "active": null,
+      "status": "saved",
+      "retired": true,
+      "retainedDrillEvents": 522
+    },
+    {
+      "name": "delete from retired chain, replay, and legacy contradictory reload",
+      "rejected": true,
+      "active": null,
+      "retainedAttempts": 0,
+      "admitted": null,
+      "legacyAdmitted": false
+    }
+  ],
+  "errors": []
+}

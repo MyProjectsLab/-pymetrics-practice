@@ -1,0 +1,3693 @@
+{
+  "version": "money_exchange_2_fixtures_v1_0",
+  "formsPayloadSha256": "9ea8efe29279dca4d7e8ecb735724328e8d2479612c4b20be838432bcdac6cc6",
+  "arithmeticCases": [
+    {
+      "formId": "ME2-1",
+      "policyId": "zero-take-max",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner A",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 0,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 1000,
+          "partnerFinalCents": 500,
+          "fairness": 0
+        },
+        {
+          "round": 2,
+          "partner": "Partner B",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": -500,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 1500,
+          "partnerFinalCents": 0,
+          "fairness": 10
+        }
+      ]
+    },
+    {
+      "formId": "ME2-1",
+      "policyId": "filmed-give-two",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner A",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 200,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 800,
+          "partnerFinalCents": 700,
+          "fairness": 8
+        },
+        {
+          "round": 2,
+          "partner": "Partner B",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 200,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 800,
+          "partnerFinalCents": 700,
+          "fairness": 8
+        }
+      ]
+    },
+    {
+      "formId": "ME2-1",
+      "policyId": "give-max",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner A",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 500,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 500,
+          "partnerFinalCents": 1000,
+          "fairness": 10
+        },
+        {
+          "round": 2,
+          "partner": "Partner B",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 500,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 500,
+          "partnerFinalCents": 1000,
+          "fairness": 0
+        }
+      ]
+    },
+    {
+      "formId": "ME2-1",
+      "policyId": "both-zero",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner A",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 0,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 1000,
+          "partnerFinalCents": 500,
+          "fairness": 0
+        },
+        {
+          "round": 2,
+          "partner": "Partner B",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 0,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 1000,
+          "partnerFinalCents": 500,
+          "fairness": 0
+        }
+      ]
+    },
+    {
+      "formId": "ME2-1",
+      "policyId": "give-max-take-one-fifty",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner A",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 500,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 500,
+          "partnerFinalCents": 1000,
+          "fairness": 2
+        },
+        {
+          "round": 2,
+          "partner": "Partner B",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": -150,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 1150,
+          "partnerFinalCents": 350,
+          "fairness": 6
+        }
+      ]
+    },
+    {
+      "formId": "ME2-1",
+      "policyId": "give-two-zero",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner A",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 200,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 800,
+          "partnerFinalCents": 700,
+          "fairness": 8
+        },
+        {
+          "round": 2,
+          "partner": "Partner B",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 0,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 1000,
+          "partnerFinalCents": 500,
+          "fairness": 1
+        }
+      ]
+    },
+    {
+      "formId": "ME2-1",
+      "policyId": "half-dollar-low",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner A",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 50,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 950,
+          "partnerFinalCents": 550,
+          "fairness": 1
+        },
+        {
+          "round": 2,
+          "partner": "Partner B",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 50,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 950,
+          "partnerFinalCents": 550,
+          "fairness": 9
+        }
+      ]
+    },
+    {
+      "formId": "ME2-1",
+      "policyId": "half-dollar-high",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner A",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 450,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 550,
+          "partnerFinalCents": 950,
+          "fairness": 9
+        },
+        {
+          "round": 2,
+          "partner": "Partner B",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": -50,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 1050,
+          "partnerFinalCents": 450,
+          "fairness": 1
+        }
+      ]
+    },
+    {
+      "formId": "ME2-2",
+      "policyId": "zero-take-max",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner C",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 0,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 1000,
+          "partnerFinalCents": 500,
+          "fairness": 0
+        },
+        {
+          "round": 2,
+          "partner": "Partner D",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": -150,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 350,
+          "partnerFinalCents": 1150,
+          "fairness": 10
+        }
+      ]
+    },
+    {
+      "formId": "ME2-2",
+      "policyId": "filmed-give-two",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner C",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 200,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 800,
+          "partnerFinalCents": 700,
+          "fairness": 8
+        },
+        {
+          "round": 2,
+          "partner": "Partner D",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": -150,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 350,
+          "partnerFinalCents": 1150,
+          "fairness": 8
+        }
+      ]
+    },
+    {
+      "formId": "ME2-2",
+      "policyId": "give-max",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner C",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 500,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 500,
+          "partnerFinalCents": 1000,
+          "fairness": 10
+        },
+        {
+          "round": 2,
+          "partner": "Partner D",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": -150,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 350,
+          "partnerFinalCents": 1150,
+          "fairness": 0
+        }
+      ]
+    },
+    {
+      "formId": "ME2-2",
+      "policyId": "both-zero",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner C",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 0,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 1000,
+          "partnerFinalCents": 500,
+          "fairness": 0
+        },
+        {
+          "round": 2,
+          "partner": "Partner D",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": -150,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 350,
+          "partnerFinalCents": 1150,
+          "fairness": 0
+        }
+      ]
+    },
+    {
+      "formId": "ME2-2",
+      "policyId": "give-max-take-one-fifty",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner C",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 500,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 500,
+          "partnerFinalCents": 1000,
+          "fairness": 2
+        },
+        {
+          "round": 2,
+          "partner": "Partner D",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": -150,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 350,
+          "partnerFinalCents": 1150,
+          "fairness": 6
+        }
+      ]
+    },
+    {
+      "formId": "ME2-2",
+      "policyId": "give-two-zero",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner C",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 200,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 800,
+          "partnerFinalCents": 700,
+          "fairness": 8
+        },
+        {
+          "round": 2,
+          "partner": "Partner D",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": -150,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 350,
+          "partnerFinalCents": 1150,
+          "fairness": 1
+        }
+      ]
+    },
+    {
+      "formId": "ME2-2",
+      "policyId": "half-dollar-low",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner C",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 50,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 950,
+          "partnerFinalCents": 550,
+          "fairness": 1
+        },
+        {
+          "round": 2,
+          "partner": "Partner D",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": -150,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 350,
+          "partnerFinalCents": 1150,
+          "fairness": 9
+        }
+      ]
+    },
+    {
+      "formId": "ME2-2",
+      "policyId": "half-dollar-high",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner C",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 450,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 550,
+          "partnerFinalCents": 950,
+          "fairness": 9
+        },
+        {
+          "round": 2,
+          "partner": "Partner D",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": -150,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 350,
+          "partnerFinalCents": 1150,
+          "fairness": 1
+        }
+      ]
+    },
+    {
+      "formId": "ME2-3",
+      "policyId": "zero-take-max",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner E",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": 200,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 700,
+          "partnerFinalCents": 800,
+          "fairness": 0
+        },
+        {
+          "round": 2,
+          "partner": "Partner F",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": -500,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 1500,
+          "partnerFinalCents": 0,
+          "fairness": 10
+        }
+      ]
+    },
+    {
+      "formId": "ME2-3",
+      "policyId": "filmed-give-two",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner E",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": 200,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 700,
+          "partnerFinalCents": 800,
+          "fairness": 8
+        },
+        {
+          "round": 2,
+          "partner": "Partner F",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 200,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 800,
+          "partnerFinalCents": 700,
+          "fairness": 8
+        }
+      ]
+    },
+    {
+      "formId": "ME2-3",
+      "policyId": "give-max",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner E",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": 200,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 700,
+          "partnerFinalCents": 800,
+          "fairness": 10
+        },
+        {
+          "round": 2,
+          "partner": "Partner F",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 500,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 500,
+          "partnerFinalCents": 1000,
+          "fairness": 0
+        }
+      ]
+    },
+    {
+      "formId": "ME2-3",
+      "policyId": "both-zero",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner E",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": 200,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 700,
+          "partnerFinalCents": 800,
+          "fairness": 0
+        },
+        {
+          "round": 2,
+          "partner": "Partner F",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 0,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 1000,
+          "partnerFinalCents": 500,
+          "fairness": 0
+        }
+      ]
+    },
+    {
+      "formId": "ME2-3",
+      "policyId": "give-max-take-one-fifty",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner E",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": 200,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 700,
+          "partnerFinalCents": 800,
+          "fairness": 2
+        },
+        {
+          "round": 2,
+          "partner": "Partner F",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": -150,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 1150,
+          "partnerFinalCents": 350,
+          "fairness": 6
+        }
+      ]
+    },
+    {
+      "formId": "ME2-3",
+      "policyId": "give-two-zero",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner E",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": 200,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 700,
+          "partnerFinalCents": 800,
+          "fairness": 8
+        },
+        {
+          "round": 2,
+          "partner": "Partner F",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 0,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 1000,
+          "partnerFinalCents": 500,
+          "fairness": 1
+        }
+      ]
+    },
+    {
+      "formId": "ME2-3",
+      "policyId": "half-dollar-low",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner E",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": 200,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 700,
+          "partnerFinalCents": 800,
+          "fairness": 1
+        },
+        {
+          "round": 2,
+          "partner": "Partner F",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 50,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 950,
+          "partnerFinalCents": 550,
+          "fairness": 9
+        }
+      ]
+    },
+    {
+      "formId": "ME2-3",
+      "policyId": "half-dollar-high",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner E",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": 200,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 700,
+          "partnerFinalCents": 800,
+          "fairness": 9
+        },
+        {
+          "round": 2,
+          "partner": "Partner F",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": -50,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 1050,
+          "partnerFinalCents": 450,
+          "fairness": 1
+        }
+      ]
+    },
+    {
+      "formId": "ME2-4",
+      "policyId": "zero-take-max",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner G",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": 100,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 600,
+          "partnerFinalCents": 900,
+          "fairness": 0
+        },
+        {
+          "round": 2,
+          "partner": "Partner H",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": -50,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 450,
+          "partnerFinalCents": 1050,
+          "fairness": 10
+        }
+      ]
+    },
+    {
+      "formId": "ME2-4",
+      "policyId": "filmed-give-two",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner G",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": 100,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 600,
+          "partnerFinalCents": 900,
+          "fairness": 8
+        },
+        {
+          "round": 2,
+          "partner": "Partner H",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": -50,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 450,
+          "partnerFinalCents": 1050,
+          "fairness": 8
+        }
+      ]
+    },
+    {
+      "formId": "ME2-4",
+      "policyId": "give-max",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner G",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": 100,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 600,
+          "partnerFinalCents": 900,
+          "fairness": 10
+        },
+        {
+          "round": 2,
+          "partner": "Partner H",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": -50,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 450,
+          "partnerFinalCents": 1050,
+          "fairness": 0
+        }
+      ]
+    },
+    {
+      "formId": "ME2-4",
+      "policyId": "both-zero",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner G",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": 100,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 600,
+          "partnerFinalCents": 900,
+          "fairness": 0
+        },
+        {
+          "round": 2,
+          "partner": "Partner H",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": -50,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 450,
+          "partnerFinalCents": 1050,
+          "fairness": 0
+        }
+      ]
+    },
+    {
+      "formId": "ME2-4",
+      "policyId": "give-max-take-one-fifty",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner G",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": 100,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 600,
+          "partnerFinalCents": 900,
+          "fairness": 2
+        },
+        {
+          "round": 2,
+          "partner": "Partner H",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": -50,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 450,
+          "partnerFinalCents": 1050,
+          "fairness": 6
+        }
+      ]
+    },
+    {
+      "formId": "ME2-4",
+      "policyId": "give-two-zero",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner G",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": 100,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 600,
+          "partnerFinalCents": 900,
+          "fairness": 8
+        },
+        {
+          "round": 2,
+          "partner": "Partner H",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": -50,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 450,
+          "partnerFinalCents": 1050,
+          "fairness": 1
+        }
+      ]
+    },
+    {
+      "formId": "ME2-4",
+      "policyId": "half-dollar-low",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner G",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": 100,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 600,
+          "partnerFinalCents": 900,
+          "fairness": 1
+        },
+        {
+          "round": 2,
+          "partner": "Partner H",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": -50,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 450,
+          "partnerFinalCents": 1050,
+          "fairness": 9
+        }
+      ]
+    },
+    {
+      "formId": "ME2-4",
+      "policyId": "half-dollar-high",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner G",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": 100,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 600,
+          "partnerFinalCents": 900,
+          "fairness": 9
+        },
+        {
+          "round": 2,
+          "partner": "Partner H",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": -50,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 450,
+          "partnerFinalCents": 1050,
+          "fairness": 1
+        }
+      ]
+    },
+    {
+      "formId": "ME2-5",
+      "policyId": "zero-take-max",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner I",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 0,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 1000,
+          "partnerFinalCents": 500,
+          "fairness": 0
+        },
+        {
+          "round": 2,
+          "partner": "Partner J",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": 300,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 800,
+          "partnerFinalCents": 700,
+          "fairness": 10
+        }
+      ]
+    },
+    {
+      "formId": "ME2-5",
+      "policyId": "filmed-give-two",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner I",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 200,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 800,
+          "partnerFinalCents": 700,
+          "fairness": 8
+        },
+        {
+          "round": 2,
+          "partner": "Partner J",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": 300,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 800,
+          "partnerFinalCents": 700,
+          "fairness": 8
+        }
+      ]
+    },
+    {
+      "formId": "ME2-5",
+      "policyId": "give-max",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner I",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 500,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 500,
+          "partnerFinalCents": 1000,
+          "fairness": 10
+        },
+        {
+          "round": 2,
+          "partner": "Partner J",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": 300,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 800,
+          "partnerFinalCents": 700,
+          "fairness": 0
+        }
+      ]
+    },
+    {
+      "formId": "ME2-5",
+      "policyId": "both-zero",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner I",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 0,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 1000,
+          "partnerFinalCents": 500,
+          "fairness": 0
+        },
+        {
+          "round": 2,
+          "partner": "Partner J",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": 300,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 800,
+          "partnerFinalCents": 700,
+          "fairness": 0
+        }
+      ]
+    },
+    {
+      "formId": "ME2-5",
+      "policyId": "give-max-take-one-fifty",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner I",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 500,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 500,
+          "partnerFinalCents": 1000,
+          "fairness": 2
+        },
+        {
+          "round": 2,
+          "partner": "Partner J",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": 300,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 800,
+          "partnerFinalCents": 700,
+          "fairness": 6
+        }
+      ]
+    },
+    {
+      "formId": "ME2-5",
+      "policyId": "give-two-zero",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner I",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 200,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 800,
+          "partnerFinalCents": 700,
+          "fairness": 8
+        },
+        {
+          "round": 2,
+          "partner": "Partner J",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": 300,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 800,
+          "partnerFinalCents": 700,
+          "fairness": 1
+        }
+      ]
+    },
+    {
+      "formId": "ME2-5",
+      "policyId": "half-dollar-low",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner I",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 50,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 950,
+          "partnerFinalCents": 550,
+          "fairness": 1
+        },
+        {
+          "round": 2,
+          "partner": "Partner J",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": 300,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 800,
+          "partnerFinalCents": 700,
+          "fairness": 9
+        }
+      ]
+    },
+    {
+      "formId": "ME2-5",
+      "policyId": "half-dollar-high",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner I",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 450,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 550,
+          "partnerFinalCents": 950,
+          "fairness": 9
+        },
+        {
+          "round": 2,
+          "partner": "Partner J",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": 300,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 800,
+          "partnerFinalCents": 700,
+          "fairness": 1
+        }
+      ]
+    },
+    {
+      "formId": "ME2-6",
+      "policyId": "zero-take-max",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner K",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": 0,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 500,
+          "partnerFinalCents": 1000,
+          "fairness": 0
+        },
+        {
+          "round": 2,
+          "partner": "Partner L",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": -500,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 1500,
+          "partnerFinalCents": 0,
+          "fairness": 10
+        }
+      ]
+    },
+    {
+      "formId": "ME2-6",
+      "policyId": "filmed-give-two",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner K",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": 0,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 500,
+          "partnerFinalCents": 1000,
+          "fairness": 8
+        },
+        {
+          "round": 2,
+          "partner": "Partner L",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 200,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 800,
+          "partnerFinalCents": 700,
+          "fairness": 8
+        }
+      ]
+    },
+    {
+      "formId": "ME2-6",
+      "policyId": "give-max",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner K",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": 0,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 500,
+          "partnerFinalCents": 1000,
+          "fairness": 10
+        },
+        {
+          "round": 2,
+          "partner": "Partner L",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 500,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 500,
+          "partnerFinalCents": 1000,
+          "fairness": 0
+        }
+      ]
+    },
+    {
+      "formId": "ME2-6",
+      "policyId": "both-zero",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner K",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": 0,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 500,
+          "partnerFinalCents": 1000,
+          "fairness": 0
+        },
+        {
+          "round": 2,
+          "partner": "Partner L",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 0,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 1000,
+          "partnerFinalCents": 500,
+          "fairness": 0
+        }
+      ]
+    },
+    {
+      "formId": "ME2-6",
+      "policyId": "give-max-take-one-fifty",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner K",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": 0,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 500,
+          "partnerFinalCents": 1000,
+          "fairness": 2
+        },
+        {
+          "round": 2,
+          "partner": "Partner L",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": -150,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 1150,
+          "partnerFinalCents": 350,
+          "fairness": 6
+        }
+      ]
+    },
+    {
+      "formId": "ME2-6",
+      "policyId": "give-two-zero",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner K",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": 0,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 500,
+          "partnerFinalCents": 1000,
+          "fairness": 8
+        },
+        {
+          "round": 2,
+          "partner": "Partner L",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 0,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 1000,
+          "partnerFinalCents": 500,
+          "fairness": 1
+        }
+      ]
+    },
+    {
+      "formId": "ME2-6",
+      "policyId": "half-dollar-low",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner K",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": 0,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 500,
+          "partnerFinalCents": 1000,
+          "fairness": 1
+        },
+        {
+          "round": 2,
+          "partner": "Partner L",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": 50,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 950,
+          "partnerFinalCents": 550,
+          "fairness": 9
+        }
+      ]
+    },
+    {
+      "formId": "ME2-6",
+      "policyId": "half-dollar-high",
+      "rounds": [
+        {
+          "round": 1,
+          "partner": "Partner K",
+          "bonusRecipient": "partner",
+          "actor": "partner",
+          "signedGiveCents": 0,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 500,
+          "partnerFinalCents": 1000,
+          "fairness": 9
+        },
+        {
+          "round": 2,
+          "partner": "Partner L",
+          "bonusRecipient": "candidate",
+          "actor": "candidate",
+          "signedGiveCents": -50,
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "bonusCents": 500,
+          "candidateFinalCents": 1050,
+          "partnerFinalCents": 450,
+          "fairness": 1
+        }
+      ]
+    }
+  ],
+  "screenGraph": [
+    {
+      "from": "instructions",
+      "action": "Next",
+      "to": "ready",
+      "guard": "none"
+    },
+    {
+      "from": "ready",
+      "action": "Next",
+      "to": "award_1",
+      "guard": "arm-confirmed"
+    },
+    {
+      "from": "award_1",
+      "action": "Next",
+      "to": "connecting_1",
+      "guard": "same-owner"
+    },
+    {
+      "from": "connecting_1",
+      "action": "local-complete",
+      "to": "connected_1",
+      "guard": "same-view-owner"
+    },
+    {
+      "from": "connected_1",
+      "action": "Next",
+      "to": "partner_rules_1",
+      "guard": "same-owner"
+    },
+    {
+      "from": "partner_rules_1",
+      "action": "Next",
+      "to": "bonus_1",
+      "guard": "same-owner"
+    },
+    {
+      "from": "bonus_1",
+      "action": "Next",
+      "to": "choice_1|partner_choice_1",
+      "guard": "form-recipient"
+    },
+    {
+      "from": "choice_1",
+      "action": "Confirm",
+      "to": "result_1",
+      "guard": "decision-and-possible-exposure-confirmed"
+    },
+    {
+      "from": "partner_choice_1",
+      "action": "Next",
+      "to": "result_1",
+      "guard": "fixed-decision-and-possible-exposure-confirmed"
+    },
+    {
+      "from": "result_1",
+      "action": "Next",
+      "to": "fairness_1",
+      "guard": "exact-render-receipt-confirmed"
+    },
+    {
+      "from": "fairness_1",
+      "action": "Next",
+      "to": "new_partner",
+      "guard": "rating-and-round1-terminal-confirmed"
+    },
+    {
+      "from": "new_partner",
+      "action": "Next",
+      "to": "award_2",
+      "guard": "round2-arm-confirmed"
+    },
+    {
+      "from": "award_2",
+      "action": "Next",
+      "to": "connecting_2",
+      "guard": "same-owner"
+    },
+    {
+      "from": "connecting_2",
+      "action": "local-complete",
+      "to": "connected_2",
+      "guard": "same-view-owner"
+    },
+    {
+      "from": "connected_2",
+      "action": "Next",
+      "to": "partner_rules_2",
+      "guard": "same-owner"
+    },
+    {
+      "from": "partner_rules_2",
+      "action": "Next",
+      "to": "bonus_2",
+      "guard": "same-owner"
+    },
+    {
+      "from": "bonus_2",
+      "action": "Next",
+      "to": "choice_2|partner_choice_2",
+      "guard": "form-recipient"
+    },
+    {
+      "from": "choice_2",
+      "action": "Confirm",
+      "to": "result_2",
+      "guard": "decision-and-possible-exposure-confirmed"
+    },
+    {
+      "from": "partner_choice_2",
+      "action": "Next",
+      "to": "result_2",
+      "guard": "fixed-decision-and-possible-exposure-confirmed"
+    },
+    {
+      "from": "result_2",
+      "action": "Next",
+      "to": "fairness_2",
+      "guard": "exact-render-receipt-confirmed"
+    },
+    {
+      "from": "fairness_2",
+      "action": "Next",
+      "to": "test_complete",
+      "guard": "rating-round2-terminal-completed-report-confirmed"
+    },
+    {
+      "from": "test_complete",
+      "action": "Next",
+      "to": "report_1",
+      "guard": "current-saved-report"
+    },
+    {
+      "from": "report_1",
+      "action": "arrow-or-dot",
+      "to": "report_2",
+      "guard": "current-root-view-epoch"
+    },
+    {
+      "from": "report_2",
+      "action": "arrow-or-dot",
+      "to": "report_1",
+      "guard": "current-root-view-epoch"
+    },
+    {
+      "from": "report_1|report_2",
+      "action": "Tips",
+      "to": "tips",
+      "guard": "current-root-view-epoch"
+    },
+    {
+      "from": "tips",
+      "action": "Back Report",
+      "to": "report_1|report_2",
+      "guard": "same-report-and-page-epoch"
+    },
+    {
+      "from": "report_1|report_2",
+      "action": "Try Again",
+      "to": "ready",
+      "guard": "old-settled-new-prearm"
+    }
+  ],
+  "globalControlRules": [
+    {
+      "from": [
+        "ready"
+      ],
+      "when": "no arm request admitted",
+      "action": "Restart",
+      "to": "fresh Ready",
+      "expectedDurable": {
+        "attemptCountDelta": 0,
+        "journalUnchanged": true
+      },
+      "expectedView": "fresh Ready"
+    },
+    {
+      "from": [
+        "award_1",
+        "connecting_1",
+        "connected_1",
+        "partner_rules_1",
+        "bonus_1",
+        "choice_1",
+        "partner_choice_1",
+        "result_1",
+        "fairness_1",
+        "new_partner",
+        "award_2",
+        "connecting_2",
+        "connected_2",
+        "partner_rules_2",
+        "bonus_2",
+        "choice_2",
+        "partner_choice_2",
+        "result_2"
+      ],
+      "action": "Restart",
+      "to": "fresh Ready after exact settlement",
+      "expectedDurable": {
+        "oldPlayCapability": false,
+        "oldStatus": "Incomplete after confirmed settlement",
+        "newArmAllowed": "only after settlement readback"
+      },
+      "expectedView": "fresh Ready; late old operation cannot advance"
+    },
+    {
+      "from": [
+        "instructions",
+        "ready"
+      ],
+      "when": "no arm request admitted",
+      "action": "Close",
+      "to": "library",
+      "expectedDurable": {
+        "attemptCountDelta": 0,
+        "journalUnchanged": true
+      },
+      "expectedView": "library"
+    },
+    {
+      "from": [
+        "award_1",
+        "connecting_1",
+        "connected_1",
+        "partner_rules_1",
+        "bonus_1",
+        "choice_1",
+        "partner_choice_1",
+        "result_1",
+        "fairness_1",
+        "new_partner",
+        "award_2",
+        "connecting_2",
+        "connected_2",
+        "partner_rules_2",
+        "bonus_2",
+        "choice_2",
+        "partner_choice_2",
+        "result_2"
+      ],
+      "action": "Close",
+      "to": "library after exact settlement",
+      "expectedDurable": {
+        "oldPlayCapability": false,
+        "oldStatus": "Incomplete after confirmed settlement",
+        "newArmAllowed": "only after settlement readback"
+      },
+      "expectedView": "library; late old operation cannot reopen or publish"
+    },
+    {
+      "from": [
+        "test_complete",
+        "report_1",
+        "report_2",
+        "tips"
+      ],
+      "action": "Close",
+      "to": "library",
+      "expectedDurable": {
+        "oldStatus": "Completed",
+        "reportSnapshotPages": 2,
+        "journalUnchanged": true
+      },
+      "expectedView": "library; late report/tip read cannot reopen"
+    },
+    {
+      "from": [
+        "report_1",
+        "report_2"
+      ],
+      "action": "same-page dot",
+      "to": "same report page",
+      "expectedDurable": {
+        "journalUnchanged": true,
+        "reportActivity": "idempotent"
+      },
+      "expectedView": "same page; no new history entry"
+    },
+    {
+      "from": [
+        "report_1",
+        "report_2"
+      ],
+      "action": "Tips",
+      "to": "tips",
+      "expectedDurable": {
+        "journalUnchanged": true
+      },
+      "expectedView": "same saved report identity"
+    },
+    {
+      "from": [
+        "history"
+      ],
+      "action": "open Incomplete",
+      "to": "incomplete review",
+      "expectedDurable": {
+        "reportSnapshot": null,
+        "journalUnchanged": true
+      },
+      "expectedView": "confirmed round facts only; no invented second report page"
+    },
+    {
+      "from": [
+        "ready"
+      ],
+      "when": "arm admitted but callback undelivered",
+      "action": "Restart or Close",
+      "to": "requested destination after exact settlement",
+      "expectedDurable": {
+        "armRequestCount": 1,
+        "oldPlayCapability": false,
+        "oldStatus": "Incomplete if arm committed, absent if rejected",
+        "newArmAllowed": "only after same-request readback and settlement"
+      },
+      "expectedView": "no award from old arm; Restart to fresh Ready or Close to library"
+    },
+    {
+      "from": [
+        "fairness_2"
+      ],
+      "when": "terminal root transaction commits before withdrawal; callback delivery irrelevant",
+      "action": "Restart or Close",
+      "to": "requested destination after exact readback",
+      "expectedDurable": {
+        "oldPlayCapability": false,
+        "oldStatus": "Completed",
+        "round2Fairness": "submitted rating",
+        "round2Terminal": true,
+        "reportSnapshotPages": 2,
+        "completedCount": 1
+      },
+      "expectedView": "Restart fresh Ready without new arm; Close library; old Test Complete/report cannot steal view"
+    },
+    {
+      "from": [
+        "fairness_2"
+      ],
+      "when": "withdrawal root transaction commits before terminal transaction",
+      "action": "Restart or Close",
+      "to": "requested destination after exact readback",
+      "expectedDurable": {
+        "oldPlayCapability": false,
+        "oldStatus": "Incomplete",
+        "round2Fairness": null,
+        "round2Terminal": false,
+        "reportSnapshot": null,
+        "completedCount": 0
+      },
+      "expectedView": "Restart fresh Ready without new arm; Close library; no old Test Complete/report"
+    },
+    {
+      "from": [
+        "fairness_2"
+      ],
+      "when": "terminal/withdrawal delivery or readback held; root order unknown",
+      "action": "Restart or Close",
+      "to": "pending requested destination",
+      "expectedDurable": {
+        "statusKnowledge": "unknown to view",
+        "newArmAllowed": false,
+        "partialCompletedSnapshotAllowed": false
+      },
+      "expectedView": "checking/Retry; no saved-status claim, Test Complete, report or new scored arm"
+    }
+  ],
+  "disabledControls": [
+    {
+      "at": [
+        "connecting_1",
+        "connecting_2"
+      ],
+      "action": "Next",
+      "expectedDurable": {
+        "journalUnchanged": true
+      },
+      "expectedView": "same connecting stage; Next disabled until current local-complete"
+    },
+    {
+      "at": [
+        "test_complete"
+      ],
+      "action": "Restart",
+      "expectedDurable": {
+        "journalUnchanged": true
+      },
+      "expectedView": "control absent"
+    },
+    {
+      "at": [
+        "fairness_1",
+        "fairness_2"
+      ],
+      "action": "Next without selected rating",
+      "expectedDurable": {
+        "journalUnchanged": true
+      },
+      "expectedView": "same fairness stage"
+    },
+    {
+      "at": [
+        "result_1",
+        "result_2"
+      ],
+      "action": "Next before confirmed exact render receipt",
+      "expectedDurable": {
+        "journalUnchanged": true
+      },
+      "expectedView": "checking or interrupted review; no fairness stage"
+    }
+  ],
+  "raceCases": [
+    {
+      "id": "R01",
+      "start": "ready; root has no attempt",
+      "order": [
+        "Next arm held",
+        "Next again"
+      ],
+      "expectedDurable": {
+        "attempts": 1,
+        "committedArmAtMostOnce": true
+      },
+      "expectedView": "checking until same-request readback; no award before commit"
+    },
+    {
+      "id": "R02",
+      "start": "ready; root has no attempt",
+      "order": [
+        "Delete all commit",
+        "old arm callback"
+      ],
+      "expectedDurable": {
+        "oldGenerationWrites": 0,
+        "oldAttemptPresent": false
+      },
+      "expectedView": "library/current new generation"
+    },
+    {
+      "id": "R03",
+      "start": "ready; root has no attempt",
+      "order": [
+        "arm commit",
+        "Delete all commit"
+      ],
+      "expectedDurable": {
+        "oldAttemptPresent": false,
+        "oldGenerationWritesAfterDelete": 0
+      },
+      "expectedView": "library/current new generation"
+    },
+    {
+      "id": "R04",
+      "start": "choice_1; arm confirmed",
+      "order": [
+        "preview Give $1.50",
+        "preview Give $2",
+        "Confirm twice"
+      ],
+      "expectedDurable": {
+        "round1SignedGiveCents": 200,
+        "round1DecisionCount": 1,
+        "round1Exposure": "possibly_revealed"
+      },
+      "expectedView": "result_1 only after decision readback"
+    },
+    {
+      "id": "R05",
+      "start": "choice_2; arm confirmed",
+      "order": [
+        "preview Take $1.50",
+        "preview Give $2",
+        "Confirm"
+      ],
+      "expectedDurable": {
+        "round2SignedGiveCents": 200,
+        "round2DecisionCount": 1,
+        "round2Exposure": "possibly_revealed"
+      },
+      "expectedView": "result_2 shows Give $2, no Take claim"
+    },
+    {
+      "id": "R06",
+      "start": "choice_1; arm confirmed",
+      "order": [
+        "Confirm Give $0 commit",
+        "result glyphs transparent",
+        "receipt callback"
+      ],
+      "expectedDurable": {
+        "round1SignedGiveCents": 0,
+        "round1Exposure": "possibly_revealed",
+        "round1ReceiptCount": 0
+      },
+      "expectedView": "interrupted review; no fairness advancement"
+    },
+    {
+      "id": "R07",
+      "start": "result_1; decision/intent committed",
+      "order": [
+        "valid result paint",
+        "receipt write held",
+        "pagehide",
+        "settlement read also held"
+      ],
+      "expectedDurable": {
+        "round1ExposureAtLeast": "possibly_revealed",
+        "statusKnowledge": "unknown while settlement read held",
+        "round1DecisionCount": 1,
+        "newArmAllowed": false
+      },
+      "expectedView": "Uncertain checking/retry label; no durable Uncertain claim, resumed scoring or unfamiliar replay"
+    },
+    {
+      "id": "R08",
+      "start": "result_1; decision/intent committed",
+      "order": [
+        "receipt commit",
+        "Restart request",
+        "settlement commit",
+        "late receipt callback"
+      ],
+      "expectedDurable": {
+        "round1Exposure": "render_receipt",
+        "oldPlayCapability": false,
+        "oldStatus": "Incomplete"
+      },
+      "expectedView": "fresh Ready after settlement; old callback cannot advance"
+    },
+    {
+      "id": "R09",
+      "start": "fairness_1; result receipt confirmed",
+      "order": [
+        "select 8",
+        "select 0",
+        "Next"
+      ],
+      "expectedDurable": {
+        "round1Fairness": 0,
+        "round1Terminal": true
+      },
+      "expectedView": "new_partner after commit"
+    },
+    {
+      "id": "R10",
+      "start": "fairness_1; rating not committed",
+      "order": [
+        "select 8",
+        "Close"
+      ],
+      "expectedDurable": {
+        "round1Fairness": null,
+        "status": "Incomplete after confirmed settlement"
+      },
+      "expectedView": "library after exact settlement; no saved 8 claim"
+    },
+    {
+      "id": "R11",
+      "start": "new_partner; round1 terminal",
+      "order": [
+        "round2 arm held",
+        "Restart",
+        "late arm callback"
+      ],
+      "expectedDurable": {
+        "round1Terminal": true,
+        "round2AtMostOneArm": true,
+        "oldPlayCapability": false
+      },
+      "expectedView": "fresh Ready after settlement, no stale award_2"
+    },
+    {
+      "id": "R12",
+      "start": "result_2; decision/intent committed",
+      "order": [
+        "Delete all commit",
+        "late receipt/fairness callbacks"
+      ],
+      "expectedDurable": {
+        "oldAttemptPresent": false,
+        "oldGenerationWritesAfterDelete": 0
+      },
+      "expectedView": "library/current generation; no old result/report"
+    },
+    {
+      "id": "R13",
+      "start": "fairness_2; round1 terminal and round2 receipt; rating 8 selected",
+      "order": [
+        "Next commit",
+        "callback lost",
+        "same-request readback"
+      ],
+      "expectedDurable": {
+        "status": "Completed",
+        "completedCount": 1,
+        "reportPages": 2,
+        "round2Fairness": 8
+      },
+      "expectedView": "test_complete only after readback; then report_1"
+    },
+    {
+      "id": "R14",
+      "start": "history; saved Completed",
+      "order": [
+        "old report read held",
+        "Delete all commit",
+        "old read resolves"
+      ],
+      "expectedDurable": {
+        "oldAttemptPresent": false,
+        "oldReportActivityCountAfterDelete": 0
+      },
+      "expectedView": "no stale report page"
+    },
+    {
+      "id": "R15",
+      "start": "report_1; saved Completed",
+      "order": [
+        "page-1 read held",
+        "select report_2",
+        "page-1 read resolves"
+      ],
+      "expectedDurable": {
+        "reportPages": 2,
+        "journalUnchanged": true
+      },
+      "expectedView": "report_2 remains selected"
+    },
+    {
+      "id": "R16",
+      "start": "result_2; decision/intent committed",
+      "order": [
+        "receipt commit",
+        "Close wins before terminal",
+        "settlement commit"
+      ],
+      "expectedDurable": {
+        "round2Exposure": "render_receipt",
+        "status": "Incomplete",
+        "reportSnapshot": null
+      },
+      "expectedView": "library; incomplete review not two-page Completed report"
+    },
+    {
+      "id": "G-connecting_1-restart",
+      "start": "connecting_1; pending local completion or scored write",
+      "order": [
+        "Restart request",
+        "late old callback",
+        "exact settlement readback"
+      ],
+      "expectedDurable": {
+        "oldPlayCapability": false,
+        "oldStatus": "Incomplete",
+        "newArmAllowed": "after settlement readback only"
+      },
+      "expectedView": "fresh Ready; no old-stage publication"
+    },
+    {
+      "id": "G-connecting_1-close",
+      "start": "connecting_1; pending local completion or scored write",
+      "order": [
+        "Close request",
+        "late old callback",
+        "exact settlement readback"
+      ],
+      "expectedDurable": {
+        "oldPlayCapability": false,
+        "oldStatus": "Incomplete",
+        "newArmAllowed": "after settlement readback only"
+      },
+      "expectedView": "library; no old-stage publication"
+    },
+    {
+      "id": "G-result_1-restart",
+      "start": "result_1; pending local completion or scored write",
+      "order": [
+        "Restart request",
+        "late old callback",
+        "exact settlement readback"
+      ],
+      "expectedDurable": {
+        "oldPlayCapability": false,
+        "oldStatus": "Incomplete",
+        "newArmAllowed": "after settlement readback only"
+      },
+      "expectedView": "fresh Ready; no old-stage publication"
+    },
+    {
+      "id": "G-result_1-close",
+      "start": "result_1; pending local completion or scored write",
+      "order": [
+        "Close request",
+        "late old callback",
+        "exact settlement readback"
+      ],
+      "expectedDurable": {
+        "oldPlayCapability": false,
+        "oldStatus": "Incomplete",
+        "newArmAllowed": "after settlement readback only"
+      },
+      "expectedView": "library; no old-stage publication"
+    },
+    {
+      "id": "G-fairness_1-restart",
+      "start": "fairness_1; pending local completion or scored write",
+      "order": [
+        "Restart request",
+        "late old callback",
+        "exact settlement readback"
+      ],
+      "expectedDurable": {
+        "oldPlayCapability": false,
+        "oldStatus": "Incomplete",
+        "newArmAllowed": "after settlement readback only"
+      },
+      "expectedView": "fresh Ready; no old-stage publication"
+    },
+    {
+      "id": "G-fairness_1-close",
+      "start": "fairness_1; pending local completion or scored write",
+      "order": [
+        "Close request",
+        "late old callback",
+        "exact settlement readback"
+      ],
+      "expectedDurable": {
+        "oldPlayCapability": false,
+        "oldStatus": "Incomplete",
+        "newArmAllowed": "after settlement readback only"
+      },
+      "expectedView": "library; no old-stage publication"
+    },
+    {
+      "id": "G-connecting_2-restart",
+      "start": "connecting_2; pending local completion or scored write",
+      "order": [
+        "Restart request",
+        "late old callback",
+        "exact settlement readback"
+      ],
+      "expectedDurable": {
+        "oldPlayCapability": false,
+        "oldStatus": "Incomplete",
+        "newArmAllowed": "after settlement readback only"
+      },
+      "expectedView": "fresh Ready; no old-stage publication"
+    },
+    {
+      "id": "G-connecting_2-close",
+      "start": "connecting_2; pending local completion or scored write",
+      "order": [
+        "Close request",
+        "late old callback",
+        "exact settlement readback"
+      ],
+      "expectedDurable": {
+        "oldPlayCapability": false,
+        "oldStatus": "Incomplete",
+        "newArmAllowed": "after settlement readback only"
+      },
+      "expectedView": "library; no old-stage publication"
+    },
+    {
+      "id": "G-result_2-restart",
+      "start": "result_2; pending local completion or scored write",
+      "order": [
+        "Restart request",
+        "late old callback",
+        "exact settlement readback"
+      ],
+      "expectedDurable": {
+        "oldPlayCapability": false,
+        "oldStatus": "Incomplete",
+        "newArmAllowed": "after settlement readback only"
+      },
+      "expectedView": "fresh Ready; no old-stage publication"
+    },
+    {
+      "id": "G-result_2-close",
+      "start": "result_2; pending local completion or scored write",
+      "order": [
+        "Close request",
+        "late old callback",
+        "exact settlement readback"
+      ],
+      "expectedDurable": {
+        "oldPlayCapability": false,
+        "oldStatus": "Incomplete",
+        "newArmAllowed": "after settlement readback only"
+      },
+      "expectedView": "library; no old-stage publication"
+    },
+    {
+      "id": "G-fairness_2-close-terminal-first",
+      "start": "fairness_2; rating 8 selected, terminal request admitted; filmed Give $2 path",
+      "initialDurable": {
+        "formId": "ME2-1",
+        "round1": {
+          "signedGiveCents": 200,
+          "candidateFinalCents": 800,
+          "partnerFinalCents": 700,
+          "fairness": 8,
+          "terminal": true
+        },
+        "round2": {
+          "signedGiveCents": 200,
+          "candidateFinalCents": 800,
+          "partnerFinalCents": 700,
+          "exposure": "render_receipt",
+          "fairness": null,
+          "terminal": false
+        },
+        "status": "Armed",
+        "reportSnapshot": null
+      },
+      "order": [
+        "terminal atomic commit",
+        "terminal callback lost",
+        "Close withdrawal commit",
+        "same-request terminal and withdrawal readback",
+        "late terminal callback"
+      ],
+      "expectedDurable": {
+        "status": "Completed",
+        "round2Fairness": 8,
+        "round2Terminal": true,
+        "reportSnapshotPages": 2,
+        "reportPagesSameAttemptAndGeneration": true,
+        "reportRoundFinals": [
+          [
+            800,
+            700
+          ],
+          [
+            800,
+            700
+          ]
+        ],
+        "reportRoundFairness": [
+          8,
+          8
+        ],
+        "completedCount": 1,
+        "oldPlayCapability": false
+      },
+      "expectedView": "library; Completed history/report remain byte-identical; no old Test Complete publication"
+    },
+    {
+      "id": "G-fairness_2-close-withdrawal-first",
+      "start": "fairness_2; rating 8 selected, terminal request admitted; filmed Give $2 path",
+      "initialDurable": {
+        "formId": "ME2-1",
+        "round1": {
+          "signedGiveCents": 200,
+          "candidateFinalCents": 800,
+          "partnerFinalCents": 700,
+          "fairness": 8,
+          "terminal": true
+        },
+        "round2": {
+          "signedGiveCents": 200,
+          "candidateFinalCents": 800,
+          "partnerFinalCents": 700,
+          "exposure": "render_receipt",
+          "fairness": null,
+          "terminal": false
+        },
+        "status": "Armed",
+        "reportSnapshot": null
+      },
+      "order": [
+        "Close withdrawal commit",
+        "terminal request rejected by capability/revision guard",
+        "late terminal callback",
+        "same-request withdrawal readback"
+      ],
+      "expectedDurable": {
+        "status": "Incomplete",
+        "round1Terminal": true,
+        "round2SignedGiveCents": 200,
+        "round2Exposure": "render_receipt",
+        "round2Fairness": null,
+        "round2Terminal": false,
+        "reportSnapshot": null,
+        "completedCount": 0,
+        "oldPlayCapability": false
+      },
+      "expectedView": "library; Incomplete review only; no saved 8 or two-page report"
+    },
+    {
+      "id": "G-fairness_2-close-unknown",
+      "start": "fairness_2; rating 8 selected, terminal request admitted; filmed Give $2 path",
+      "initialDurable": {
+        "formId": "ME2-1",
+        "round1": {
+          "signedGiveCents": 200,
+          "candidateFinalCents": 800,
+          "partnerFinalCents": 700,
+          "fairness": 8,
+          "terminal": true
+        },
+        "round2": {
+          "signedGiveCents": 200,
+          "candidateFinalCents": 800,
+          "partnerFinalCents": 700,
+          "exposure": "render_receipt",
+          "fairness": null,
+          "terminal": false
+        },
+        "status": "Armed",
+        "reportSnapshot": null
+      },
+      "order": [
+        "terminal or withdrawal transaction possibly commits",
+        "Close requested",
+        "callbacks lost",
+        "settlement read held"
+      ],
+      "expectedDurable": {
+        "statusKnowledge": "unknown to view",
+        "possibleExactStates": [
+          {
+            "status": "Armed",
+            "round2Fairness": null,
+            "round2Terminal": false,
+            "reportSnapshot": null,
+            "oldPlayCapability": true
+          },
+          {
+            "status": "Completed",
+            "round2Fairness": 8,
+            "round2Terminal": true,
+            "reportSnapshotPages": 2
+          },
+          {
+            "status": "Incomplete",
+            "round2Fairness": null,
+            "round2Terminal": false,
+            "reportSnapshot": null,
+            "oldPlayCapability": false
+          }
+        ],
+        "partialCompletedSnapshotAllowed": false,
+        "newArmAllowed": false
+      },
+      "expectedView": "library pending with checking/Retry; no saved-status claim, Test Complete, report or new scored arm until readback"
+    },
+    {
+      "id": "G-fairness_2-restart-terminal-first",
+      "start": "fairness_2; rating 8 selected, terminal request admitted; filmed Give $2 path",
+      "initialDurable": {
+        "formId": "ME2-1",
+        "round1": {
+          "signedGiveCents": 200,
+          "candidateFinalCents": 800,
+          "partnerFinalCents": 700,
+          "fairness": 8,
+          "terminal": true
+        },
+        "round2": {
+          "signedGiveCents": 200,
+          "candidateFinalCents": 800,
+          "partnerFinalCents": 700,
+          "exposure": "render_receipt",
+          "fairness": null,
+          "terminal": false
+        },
+        "status": "Armed",
+        "reportSnapshot": null
+      },
+      "order": [
+        "terminal atomic commit",
+        "terminal callback lost",
+        "Restart withdrawal commit",
+        "same-request terminal and withdrawal readback",
+        "late terminal callback"
+      ],
+      "expectedDurable": {
+        "status": "Completed",
+        "round2Fairness": 8,
+        "round2Terminal": true,
+        "reportSnapshotPages": 2,
+        "reportPagesSameAttemptAndGeneration": true,
+        "reportRoundFinals": [
+          [
+            800,
+            700
+          ],
+          [
+            800,
+            700
+          ]
+        ],
+        "reportRoundFairness": [
+          8,
+          8
+        ],
+        "completedCount": 1,
+        "oldPlayCapability": false
+      },
+      "expectedView": "fresh Ready with no new arm; Completed history/report remain byte-identical; no old Test Complete publication"
+    },
+    {
+      "id": "G-fairness_2-restart-withdrawal-first",
+      "start": "fairness_2; rating 8 selected, terminal request admitted; filmed Give $2 path",
+      "initialDurable": {
+        "formId": "ME2-1",
+        "round1": {
+          "signedGiveCents": 200,
+          "candidateFinalCents": 800,
+          "partnerFinalCents": 700,
+          "fairness": 8,
+          "terminal": true
+        },
+        "round2": {
+          "signedGiveCents": 200,
+          "candidateFinalCents": 800,
+          "partnerFinalCents": 700,
+          "exposure": "render_receipt",
+          "fairness": null,
+          "terminal": false
+        },
+        "status": "Armed",
+        "reportSnapshot": null
+      },
+      "order": [
+        "Restart withdrawal commit",
+        "terminal request rejected by capability/revision guard",
+        "late terminal callback",
+        "same-request withdrawal readback"
+      ],
+      "expectedDurable": {
+        "status": "Incomplete",
+        "round1Terminal": true,
+        "round2SignedGiveCents": 200,
+        "round2Exposure": "render_receipt",
+        "round2Fairness": null,
+        "round2Terminal": false,
+        "reportSnapshot": null,
+        "completedCount": 0,
+        "oldPlayCapability": false
+      },
+      "expectedView": "fresh Ready with no new arm; Incomplete review only; no saved 8 or two-page report"
+    },
+    {
+      "id": "G-fairness_2-restart-unknown",
+      "start": "fairness_2; rating 8 selected, terminal request admitted; filmed Give $2 path",
+      "initialDurable": {
+        "formId": "ME2-1",
+        "round1": {
+          "signedGiveCents": 200,
+          "candidateFinalCents": 800,
+          "partnerFinalCents": 700,
+          "fairness": 8,
+          "terminal": true
+        },
+        "round2": {
+          "signedGiveCents": 200,
+          "candidateFinalCents": 800,
+          "partnerFinalCents": 700,
+          "exposure": "render_receipt",
+          "fairness": null,
+          "terminal": false
+        },
+        "status": "Armed",
+        "reportSnapshot": null
+      },
+      "order": [
+        "terminal or withdrawal transaction possibly commits",
+        "Restart requested",
+        "callbacks lost",
+        "settlement read held"
+      ],
+      "expectedDurable": {
+        "statusKnowledge": "unknown to view",
+        "possibleExactStates": [
+          {
+            "status": "Armed",
+            "round2Fairness": null,
+            "round2Terminal": false,
+            "reportSnapshot": null,
+            "oldPlayCapability": true
+          },
+          {
+            "status": "Completed",
+            "round2Fairness": 8,
+            "round2Terminal": true,
+            "reportSnapshotPages": 2
+          },
+          {
+            "status": "Incomplete",
+            "round2Fairness": null,
+            "round2Terminal": false,
+            "reportSnapshot": null,
+            "oldPlayCapability": false
+          }
+        ],
+        "partialCompletedSnapshotAllowed": false,
+        "newArmAllowed": false
+      },
+      "expectedView": "fresh Ready with no new arm pending with checking/Retry; no saved-status claim, Test Complete, report or new scored arm until readback"
+    },
+    {
+      "id": "G-report-close",
+      "start": "report_2; saved Completed and tips open held",
+      "order": [
+        "Close request",
+        "late tips callback"
+      ],
+      "expectedDurable": {
+        "status": "Completed",
+        "journalUnchanged": true
+      },
+      "expectedView": "library; no old report or tips publication"
+    },
+    {
+      "id": "G-incomplete-open",
+      "start": "history; saved round 1 Incomplete",
+      "order": [
+        "open review",
+        "Delete all commit",
+        "late review callback"
+      ],
+      "expectedDurable": {
+        "oldAttemptPresent": false
+      },
+      "expectedView": "library/current generation; no two-page Completed report"
+    },
+    {
+      "id": "G-terminal-delete-first",
+      "start": "fairness_2; terminal request admitted",
+      "order": [
+        "Delete all generation replacement",
+        "old terminal and withdrawal callbacks"
+      ],
+      "expectedDurable": {
+        "oldAttemptPresent": false,
+        "oldGenerationWritesAfterDelete": 0
+      },
+      "expectedView": "current-generation library; no old destination, history or report"
+    },
+    {
+      "id": "G-terminal-delete-after",
+      "start": "fairness_2; terminal request admitted",
+      "order": [
+        "terminal atomic commit",
+        "Delete all generation replacement",
+        "late terminal callback and held report read"
+      ],
+      "expectedDurable": {
+        "oldAttemptPresent": false,
+        "oldGenerationWritesAfterDelete": 0
+      },
+      "expectedView": "current-generation library; old Completed report cannot publish"
+    },
+    {
+      "id": "G-terminal-individual-delete",
+      "start": "fairness_2; terminal request admitted",
+      "order": [
+        "individual attempt tombstone",
+        "old terminal request/retry"
+      ],
+      "expectedDurable": {
+        "oldAttemptPresent": false,
+        "tombstoneRetained": true,
+        "reportSnapshot": null
+      },
+      "expectedView": "no old Test Complete or report"
+    },
+    {
+      "id": "G-terminal-repeat-readback",
+      "start": "fairness_2; terminal commit, callback lost",
+      "order": [
+        "same-request readback",
+        "same-request retry",
+        "Close settlement readback"
+      ],
+      "expectedDurable": {
+        "status": "Completed",
+        "completedCount": 1,
+        "reportSnapshotPages": 2,
+        "reportBytesUnchanged": true
+      },
+      "expectedView": "library; no duplicate terminal or Test Complete publication"
+    },
+    {
+      "id": "G-terminal-restart-new-arm",
+      "start": "fairness_2; terminal committed before Restart, callback lost",
+      "order": [
+        "Restart settlement readback",
+        "fresh unarmed Ready",
+        "assert no new attempt or form allocation",
+        "candidate Ready Next",
+        "new arm commit",
+        "same-request arm readback",
+        "old terminal callback"
+      ],
+      "expectedDurable": {
+        "oldStatus": "Completed",
+        "oldReportSnapshotPages": 2,
+        "atReady": {
+          "newAttemptCount": 0,
+          "formCounterDelta": 0
+        },
+        "afterReadyNext": {
+          "newAttemptCount": 1,
+          "formCounterDelta": 1,
+          "newAttemptIdDifferent": true
+        }
+      },
+      "expectedView": "unarmed Ready until candidate Next; new award only after arm readback; old Completed remains in history"
+    },
+    {
+      "id": "G-terminal-try-again",
+      "start": "completed report_2",
+      "order": [
+        "Try Again",
+        "old report/root readback",
+        "fresh unarmed Ready",
+        "assert no new attempt or form allocation",
+        "candidate Ready Next",
+        "new arm commit",
+        "same-request arm readback"
+      ],
+      "expectedDurable": {
+        "oldStatus": "Completed",
+        "oldReportSnapshotPages": 2,
+        "atReady": {
+          "newAttemptCount": 0,
+          "formCounterDelta": 0
+        },
+        "afterReadyNext": {
+          "newAttemptCount": 1,
+          "formCounterDelta": 1,
+          "newAttemptIdDifferent": true
+        }
+      },
+      "expectedView": "unarmed Ready until candidate Next; then new award; old report remains byte-identical in history"
+    },
+    {
+      "id": "G-withdrawal-no-try-again",
+      "start": "fairness_2; withdrawal committed first",
+      "order": [
+        "terminal request rejected",
+        "open Incomplete review",
+        "attempt report Try Again"
+      ],
+      "expectedDurable": {
+        "oldStatus": "Incomplete",
+        "reportSnapshot": null,
+        "newArmCount": 0
+      },
+      "expectedView": "no report Try Again control; Incomplete review only"
+    },
+    {
+      "id": "G-ready-restart-before-arm",
+      "start": "unarmed Ready; old attempt settled",
+      "order": [
+        "Restart accepted",
+        "old Ready epoch invalidated",
+        "late Ready Next request"
+      ],
+      "expectedDurable": {
+        "newAttemptCount": 0,
+        "formCounterDelta": 0
+      },
+      "expectedView": "new unarmed Ready; no award"
+    },
+    {
+      "id": "G-ready-close-before-arm",
+      "start": "unarmed Ready; old attempt settled",
+      "order": [
+        "Close accepted",
+        "old Ready epoch invalidated",
+        "late Ready Next request"
+      ],
+      "expectedDurable": {
+        "newAttemptCount": 0,
+        "formCounterDelta": 0
+      },
+      "expectedView": "library; no award"
+    },
+    {
+      "id": "G-ready-arm-before-close",
+      "start": "unarmed Ready; old attempt settled",
+      "order": [
+        "candidate Ready Next arm commit",
+        "Close withdrawal commit",
+        "arm callback lost",
+        "same-request readback"
+      ],
+      "expectedDurable": {
+        "newAttemptCount": 1,
+        "formCounterDelta": 1,
+        "newAttemptStatus": "Incomplete",
+        "newAttemptPlayCapability": false
+      },
+      "expectedView": "library after settlement; no stale award"
+    },
+    {
+      "id": "G-ready-arm-unknown",
+      "start": "unarmed Ready; old attempt settled",
+      "order": [
+        "candidate Ready Next request admitted",
+        "callback and readback held",
+        "Close requested"
+      ],
+      "expectedDurable": {
+        "armCommitKnowledge": "unknown to view",
+        "formCounterDeltaPossible": [
+          0,
+          1
+        ],
+        "secondArmAllowed": false
+      },
+      "expectedView": "library pending/checking; no award or second form allocation until same-request readback"
+    },
+    {
+      "id": "G-try-again-delete-before-ready-next",
+      "start": "completed report_2",
+      "order": [
+        "Try Again",
+        "fresh unarmed Ready",
+        "Delete all commit",
+        "late candidate Ready Next"
+      ],
+      "expectedDurable": {
+        "oldAttemptPresent": false,
+        "newAttemptCount": 0,
+        "oldGenerationWritesAfterDelete": 0
+      },
+      "expectedView": "current-generation library; no old report or award"
+    },
+    {
+      "id": "G-try-again-delete-after-ready-next",
+      "start": "completed report_2",
+      "order": [
+        "Try Again",
+        "fresh unarmed Ready",
+        "candidate Ready Next arm commit",
+        "Delete all commit",
+        "late arm callback and held old report read"
+      ],
+      "expectedDurable": {
+        "oldAttemptPresent": false,
+        "newAttemptPresent": false,
+        "oldGenerationWritesAfterDelete": 0
+      },
+      "expectedView": "current-generation library; no old report or new award"
+    },
+    {
+      "id": "G-try-again-individual-old-delete",
+      "start": "completed report_2",
+      "order": [
+        "Try Again",
+        "candidate Ready Next arm commit/readback",
+        "delete old Completed attempt",
+        "late old report callback"
+      ],
+      "expectedDurable": {
+        "oldAttemptPresent": false,
+        "newAttemptPresent": true,
+        "newAttemptIdDifferent": true
+      },
+      "expectedView": "new attempt remains current; deleted old report cannot publish"
+    },
+    {
+      "id": "G-duplicate-try-again-close",
+      "start": "completed report_2",
+      "order": [
+        "two Try Again activations",
+        "Close accepted before Ready Next",
+        "old navigation callbacks"
+      ],
+      "expectedDurable": {
+        "oldStatus": "Completed",
+        "oldReportSnapshotPages": 2,
+        "newAttemptCount": 0,
+        "formCounterDelta": 0
+      },
+      "expectedView": "library; old report retained; no award"
+    },
+    {
+      "id": "G-duplicate-restart-close-terminal-first",
+      "start": "fairness_2; terminal commit before navigation, callback lost",
+      "order": [
+        "two Restart activations",
+        "Close accepted as later destination",
+        "withdrawal commit/readback",
+        "old navigation callbacks"
+      ],
+      "expectedDurable": {
+        "oldStatus": "Completed",
+        "oldReportSnapshotPages": 2,
+        "newAttemptCount": 0,
+        "formCounterDelta": 0
+      },
+      "expectedView": "library; old Completed history retained; no award"
+    },
+    {
+      "id": "G-duplicate-restart-close-withdrawal-first",
+      "start": "fairness_2; terminal not committed",
+      "order": [
+        "two Restart activations",
+        "Close accepted as later destination",
+        "withdrawal commit/readback",
+        "late terminal callback"
+      ],
+      "expectedDurable": {
+        "oldStatus": "Incomplete",
+        "oldReportSnapshot": null,
+        "newAttemptCount": 0,
+        "formCounterDelta": 0
+      },
+      "expectedView": "library; Incomplete review only; no award"
+    },
+    {
+      "id": "G-reload-unarmed-ready",
+      "start": "unarmed Ready; old Completed settled",
+      "order": [
+        "page reload",
+        "current root readback"
+      ],
+      "expectedDurable": {
+        "oldStatus": "Completed",
+        "newAttemptCount": 0,
+        "formCounterDelta": 0
+      },
+      "expectedView": "Ready remains unarmed; no ghost attempt or award"
+    },
+    {
+      "id": "G-reload-armed-pending-settlement",
+      "start": "fairness_2; Close requested, terminal and withdrawal writes held",
+      "order": [
+        "page reload",
+        "root read shows unchanged Armed",
+        "atomic fence/settlement ordered with in-flight terminal",
+        "same-request readback"
+      ],
+      "expectedDurable": {
+        "possibleExactStates": [
+          "Completed with immutable two-page report",
+          "Incomplete with no full report"
+        ],
+        "newArmAllowed": "after confirmed settlement only"
+      },
+      "expectedView": "no scored resume; checking/Retry then library; no status or report claim before readback"
+    }
+  ],
+  "authorityCases": [
+    {
+      "id": "exit-Close-exit-first",
+      "description": "Admit arm and exit; deliver callbacks after both root orders",
+      "expected": {
+        "generation": 1,
+        "counter": 0,
+        "attempts": [],
+        "openTickets": 0,
+        "route": "library",
+        "view": "library",
+        "exposure": 0,
+        "owner": "owner-1",
+        "leaseLive": true
+      }
+    },
+    {
+      "id": "exit-Close-arm-first",
+      "description": "Admit arm and exit; deliver callbacks after both root orders",
+      "expected": {
+        "generation": 1,
+        "counter": 1,
+        "attempts": [
+          [
+            "Incomplete",
+            false,
+            0,
+            null
+          ]
+        ],
+        "openTickets": 0,
+        "route": "library",
+        "view": "library",
+        "exposure": 1,
+        "owner": "owner-1",
+        "leaseLive": true
+      }
+    },
+    {
+      "id": "exit-Restart-exit-first",
+      "description": "Admit arm and exit; deliver callbacks after both root orders",
+      "expected": {
+        "generation": 1,
+        "counter": 0,
+        "attempts": [],
+        "openTickets": 1,
+        "route": "ready",
+        "view": "ready",
+        "exposure": 0,
+        "owner": "owner-1",
+        "leaseLive": true
+      }
+    },
+    {
+      "id": "exit-Restart-arm-first",
+      "description": "Admit arm and exit; deliver callbacks after both root orders",
+      "expected": {
+        "generation": 1,
+        "counter": 1,
+        "attempts": [
+          [
+            "Incomplete",
+            false,
+            0,
+            null
+          ]
+        ],
+        "openTickets": 1,
+        "route": "ready",
+        "view": "ready",
+        "exposure": 1,
+        "owner": "owner-1",
+        "leaseLive": true
+      }
+    },
+    {
+      "id": "arm-committed-close-admitted-before-delivery",
+      "description": "The old seal gap is removed: arm already owns active route; delayed Close still retires that attempt",
+      "expected": {
+        "generation": 1,
+        "counter": 1,
+        "attempts": [
+          [
+            "Incomplete",
+            false,
+            0,
+            null
+          ]
+        ],
+        "openTickets": 0,
+        "route": "library",
+        "view": "library",
+        "exposure": 1,
+        "owner": "owner-1",
+        "leaseLive": true
+      }
+    },
+    {
+      "id": "stale-ready-callback-after-award",
+      "description": "Publishing award changes opaque token; old Ready callback cannot admit exit",
+      "expected": {
+        "generation": 1,
+        "counter": 1,
+        "attempts": [
+          [
+            "Armed",
+            true,
+            0,
+            null
+          ]
+        ],
+        "openTickets": 0,
+        "route": "active",
+        "view": "award_1",
+        "exposure": 1,
+        "owner": "owner-1",
+        "leaseLive": true
+      }
+    },
+    {
+      "id": "restart-close-close-first",
+      "description": "Close overrides a pending Restart with its callback lost",
+      "expected": {
+        "generation": 1,
+        "counter": 0,
+        "attempts": [],
+        "openTickets": 0,
+        "route": "library",
+        "view": "library",
+        "exposure": 0,
+        "owner": "owner-1",
+        "leaseLive": true
+      }
+    },
+    {
+      "id": "restart-close-restart-first",
+      "description": "Close overrides a pending Restart with its callback lost",
+      "expected": {
+        "generation": 1,
+        "counter": 0,
+        "attempts": [],
+        "openTickets": 0,
+        "route": "library",
+        "view": "library",
+        "exposure": 0,
+        "owner": "owner-1",
+        "leaseLive": true
+      }
+    },
+    {
+      "id": "wrong-restart-chain",
+      "description": "Root rejects mismatched original ticket even when successor is current",
+      "expected": {
+        "generation": 1,
+        "counter": 0,
+        "attempts": [],
+        "openTickets": 1,
+        "route": "ready",
+        "view": "checking",
+        "exposure": 0,
+        "owner": "owner-1",
+        "leaseLive": true
+      }
+    },
+    {
+      "id": "stale-T1-versus-T2",
+      "description": "Historical replay and newly forged old-lineage exit cannot touch T2",
+      "expected": {
+        "generation": 1,
+        "counter": 1,
+        "attempts": [
+          [
+            "Armed",
+            true,
+            0,
+            null
+          ]
+        ],
+        "openTickets": 0,
+        "route": "active",
+        "view": "award_1",
+        "exposure": 1,
+        "owner": "owner-1",
+        "leaseLive": true
+      }
+    },
+    {
+      "id": "cross-owner-route",
+      "description": "Owner 2 cannot use owner 1 current Instructions epoch to open Ready",
+      "expected": {
+        "generation": 1,
+        "counter": 0,
+        "attempts": [],
+        "openTickets": 0,
+        "route": "instructions",
+        "view": "instructions",
+        "exposure": 0,
+        "owner": "owner-1",
+        "leaseLive": true
+      }
+    },
+    {
+      "id": "owner-loss-before-arm",
+      "description": "Explicit lease loss and new claim fence old requests",
+      "expected": {
+        "generation": 1,
+        "counter": 0,
+        "attempts": [],
+        "openTickets": 0,
+        "route": "library",
+        "view": "library",
+        "exposure": 0,
+        "owner": "owner-2",
+        "leaseLive": true
+      }
+    },
+    {
+      "id": "owner-loss-after-arm",
+      "description": "Explicit lease loss and new claim fence old requests",
+      "expected": {
+        "generation": 1,
+        "counter": 1,
+        "attempts": [
+          [
+            "Incomplete",
+            false,
+            0,
+            null
+          ]
+        ],
+        "openTickets": 0,
+        "route": "library",
+        "view": "library",
+        "exposure": 1,
+        "owner": "owner-2",
+        "leaseLive": true
+      }
+    },
+    {
+      "id": "duplicate-and-conflicting-requests",
+      "description": "Double activation creates no second request; retry is identical; conflicting bytes reject",
+      "expected": {
+        "generation": 1,
+        "counter": 1,
+        "attempts": [
+          [
+            "Armed",
+            true,
+            0,
+            null
+          ]
+        ],
+        "openTickets": 0,
+        "route": "active",
+        "view": "award_1",
+        "exposure": 1,
+        "owner": "owner-1",
+        "leaseLive": true
+      }
+    },
+    {
+      "id": "delete-before-arm",
+      "description": "Generation replacement fences held write, exit and publication",
+      "expected": {
+        "generation": 2,
+        "counter": 0,
+        "attempts": [],
+        "openTickets": 0,
+        "route": "library",
+        "view": "library",
+        "exposure": 0,
+        "owner": null,
+        "leaseLive": false
+      }
+    },
+    {
+      "id": "delete-after-arm",
+      "description": "Generation replacement fences held write, exit and publication",
+      "expected": {
+        "generation": 2,
+        "counter": 0,
+        "attempts": [],
+        "openTickets": 0,
+        "route": "library",
+        "view": "library",
+        "exposure": 0,
+        "owner": null,
+        "leaseLive": false
+      }
+    },
+    {
+      "id": "terminal-Close-exit-first",
+      "description": "Terminal derives report from committed rounds; exit preserves committed completion",
+      "expected": {
+        "generation": 1,
+        "counter": 1,
+        "attempts": [
+          [
+            "Incomplete",
+            false,
+            0,
+            null
+          ]
+        ],
+        "openTickets": 0,
+        "route": "library",
+        "view": "library",
+        "exposure": 1,
+        "owner": "owner-1",
+        "leaseLive": true
+      }
+    },
+    {
+      "id": "terminal-Close-terminal-first",
+      "description": "Terminal derives report from committed rounds; exit preserves committed completion",
+      "expected": {
+        "generation": 1,
+        "counter": 1,
+        "attempts": [
+          [
+            "Completed",
+            false,
+            2,
+            8
+          ]
+        ],
+        "openTickets": 0,
+        "route": "library",
+        "view": "library",
+        "exposure": 1,
+        "owner": "owner-1",
+        "leaseLive": true
+      }
+    },
+    {
+      "id": "terminal-Restart-exit-first",
+      "description": "Terminal derives report from committed rounds; exit preserves committed completion",
+      "expected": {
+        "generation": 1,
+        "counter": 1,
+        "attempts": [
+          [
+            "Incomplete",
+            false,
+            0,
+            null
+          ]
+        ],
+        "openTickets": 1,
+        "route": "ready",
+        "view": "ready",
+        "exposure": 1,
+        "owner": "owner-1",
+        "leaseLive": true
+      }
+    },
+    {
+      "id": "terminal-Restart-terminal-first",
+      "description": "Terminal derives report from committed rounds; exit preserves committed completion",
+      "expected": {
+        "generation": 1,
+        "counter": 1,
+        "attempts": [
+          [
+            "Completed",
+            false,
+            2,
+            8
+          ]
+        ],
+        "openTickets": 1,
+        "route": "ready",
+        "view": "ready",
+        "exposure": 1,
+        "owner": "owner-1",
+        "leaseLive": true
+      }
+    },
+    {
+      "id": "fake-terminal-after-arm",
+      "description": "Caller-supplied report cannot manufacture completion",
+      "expected": {
+        "generation": 1,
+        "counter": 1,
+        "attempts": [
+          [
+            "Armed",
+            true,
+            0,
+            null
+          ]
+        ],
+        "openTickets": 0,
+        "route": "active",
+        "view": "award_1",
+        "exposure": 1,
+        "owner": "owner-1",
+        "leaseLive": true
+      }
+    },
+    {
+      "id": "held-readback-and-reload",
+      "description": "Committed arm plus locally pending Close does not publish; reload requires recovery",
+      "expected": {
+        "generation": 1,
+        "counter": 1,
+        "attempts": [
+          [
+            "Armed",
+            true,
+            0,
+            null
+          ]
+        ],
+        "openTickets": 0,
+        "route": "active",
+        "view": "recovery",
+        "exposure": 1,
+        "owner": "owner-1",
+        "leaseLive": true
+      }
+    },
+    {
+      "id": "late-open-and-fresh-launch",
+      "description": "Old Instructions request cannot reopen after Close; fresh library action can",
+      "expected": {
+        "generation": 1,
+        "counter": 0,
+        "attempts": [],
+        "openTickets": 1,
+        "route": "ready",
+        "view": "ready",
+        "exposure": 0,
+        "owner": "owner-1",
+        "leaseLive": true
+      }
+    },
+    {
+      "id": "report-try-again-old-deletion",
+      "description": "Try Again remains unarmed; deleting old report does not remove new attempt",
+      "expected": {
+        "generation": 1,
+        "counter": 2,
+        "attempts": [
+          [
+            "Armed",
+            true,
+            0,
+            null
+          ]
+        ],
+        "openTickets": 0,
+        "route": "active",
+        "view": "award_1",
+        "exposure": 1,
+        "owner": "owner-1",
+        "leaseLive": true
+      }
+    },
+    {
+      "id": "stale-readback-after-deletion",
+      "description": "A read from before deletion cannot publish even with its old callback",
+      "expected": {
+        "generation": 2,
+        "counter": 0,
+        "attempts": [],
+        "openTickets": 0,
+        "route": "library",
+        "view": "library",
+        "exposure": 0,
+        "owner": null,
+        "leaseLive": false
+      }
+    },
+    {
+      "id": "instructions-close-close-first",
+      "description": "Close binds an admitted Ready-opening request even when its callback is lost",
+      "expected": {
+        "generation": 1,
+        "counter": 0,
+        "attempts": [],
+        "openTickets": 0,
+        "route": "library",
+        "view": "library",
+        "exposure": 0,
+        "owner": "owner-1",
+        "leaseLive": true
+      }
+    },
+    {
+      "id": "instructions-close-ready-first",
+      "description": "Close binds an admitted Ready-opening request even when its callback is lost",
+      "expected": {
+        "generation": 1,
+        "counter": 0,
+        "attempts": [],
+        "openTickets": 0,
+        "route": "library",
+        "view": "library",
+        "exposure": 0,
+        "owner": "owner-1",
+        "leaseLive": true
+      }
+    },
+    {
+      "id": "try-again-close-close-first",
+      "description": "Pending Try Again cannot lose a later Close or erase the old report",
+      "expected": {
+        "generation": 1,
+        "counter": 1,
+        "attempts": [
+          [
+            "Completed",
+            false,
+            2,
+            8
+          ]
+        ],
+        "openTickets": 0,
+        "route": "library",
+        "view": "library",
+        "exposure": 1,
+        "owner": "owner-1",
+        "leaseLive": true
+      }
+    },
+    {
+      "id": "try-again-close-ready-first",
+      "description": "Pending Try Again cannot lose a later Close or erase the old report",
+      "expected": {
+        "generation": 1,
+        "counter": 1,
+        "attempts": [
+          [
+            "Completed",
+            false,
+            2,
+            8
+          ]
+        ],
+        "openTickets": 0,
+        "route": "library",
+        "view": "library",
+        "exposure": 1,
+        "owner": "owner-1",
+        "leaseLive": true
+      }
+    },
+    {
+      "id": "pending-Restart-old-delete",
+      "description": "Old attempt deletion preserves exact pending successor across unrelated root revisions",
+      "expected": {
+        "generation": 1,
+        "counter": 1,
+        "attempts": [],
+        "openTickets": 1,
+        "route": "ready",
+        "view": "ready",
+        "exposure": 0,
+        "owner": "owner-1",
+        "leaseLive": true
+      }
+    },
+    {
+      "id": "pending-Restart-old-delete-close",
+      "description": "Old attempt deletion preserves exact pending successor across unrelated root revisions",
+      "expected": {
+        "generation": 1,
+        "counter": 1,
+        "attempts": [],
+        "openTickets": 0,
+        "route": "library",
+        "view": "library",
+        "exposure": 0,
+        "owner": "owner-1",
+        "leaseLive": true
+      }
+    },
+    {
+      "id": "pending-tryAgain-old-delete",
+      "description": "Old attempt deletion preserves exact pending successor across unrelated root revisions",
+      "expected": {
+        "generation": 1,
+        "counter": 1,
+        "attempts": [],
+        "openTickets": 1,
+        "route": "ready",
+        "view": "ready",
+        "exposure": 0,
+        "owner": "owner-1",
+        "leaseLive": true
+      }
+    },
+    {
+      "id": "pending-tryAgain-old-delete-close",
+      "description": "Old attempt deletion preserves exact pending successor across unrelated root revisions",
+      "expected": {
+        "generation": 1,
+        "counter": 1,
+        "attempts": [],
+        "openTickets": 0,
+        "route": "library",
+        "view": "library",
+        "exposure": 0,
+        "owner": "owner-1",
+        "leaseLive": true
+      }
+    },
+    {
+      "id": "pending-arm-current-delete",
+      "description": "Deleting the actual successor denies held publication despite a recorded outcome",
+      "expected": {
+        "generation": 1,
+        "counter": 1,
+        "attempts": [],
+        "openTickets": 0,
+        "route": "library",
+        "view": "library",
+        "exposure": 0,
+        "owner": "owner-1",
+        "leaseLive": true
+      }
+    },
+    {
+      "id": "pending-restart-successor-replaced",
+      "description": "A committed old Restart cannot survive a genuine later route transition",
+      "expected": {
+        "generation": 1,
+        "counter": 1,
+        "attempts": [
+          [
+            "Incomplete",
+            false,
+            0,
+            null
+          ]
+        ],
+        "openTickets": 0,
+        "route": "library",
+        "view": "library",
+        "exposure": 1,
+        "owner": "owner-1",
+        "leaseLive": true
+      }
+    }
+  ],
+  "checks": {
+    "filmed": {
+      "formId": "ME2-1",
+      "policyId": "filmed-give-two",
+      "finalCentsByRound": [
+        [
+          800,
+          700
+        ],
+        [
+          800,
+          700
+        ]
+      ],
+      "fairnessByRound": [
+        8,
+        8
+      ]
+    },
+    "constraints": [
+      "two distinct partners",
+      "1500 cents conserved per round",
+      "round 1 Give only in original 50 cent steps",
+      "round 2 signed Give or Take in 50 cent steps",
+      "fairness 0 through 10 inclusive",
+      "draft choice and rating never commit until Confirm/Next"
+    ],
+    "controlCases": [
+      "double Next or Confirm",
+      "Enter plus pointer same turn",
+      "preview Take then commit Give",
+      "change rating 8 to 0 before Next",
+      "Close/Restart at every active stage",
+      "report page arrows and dots",
+      "Tips and Back Report",
+      "Try Again reaches unarmed Ready; only candidate Ready Next allocates a new attempt"
+    ],
+    "authorityCases": [
+      "arm held/rejected/committed-undelivered",
+      "decision held/rejected/committed-undelivered",
+      "result maybe painted before receipt",
+      "transparent or occluded glyph denies receipt",
+      "fairness selected but uncommitted",
+      "round 1 terminal before round 2 arm",
+      "late callback after withdrawal",
+      "Delete all and replacement both orders",
+      "history/report publication versus deletion both orders",
+      "BroadcastChannel absent",
+      "corrupt present root blocks"
+    ]
+  },
+  "payloadSha256": "f6e22ee234e0500ca40abb0be61c02ee66cbda1c6f1e9eef2c569c34f793d902"
+}

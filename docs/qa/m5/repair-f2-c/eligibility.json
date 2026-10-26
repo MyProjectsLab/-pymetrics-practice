@@ -1,0 +1,202 @@
+[
+  {
+    "case": "queued-back-drill",
+    "chains": 0,
+    "active": false,
+    "invalid": [
+      "95862a1f-b313-474a-98fc-c36f4021906b"
+    ],
+    "rejected": []
+  },
+  {
+    "case": "queued-back-all",
+    "chains": 0,
+    "active": false,
+    "invalid": [],
+    "rejected": []
+  },
+  {
+    "case": "queued-back-unrelated",
+    "chains": 1,
+    "active": true,
+    "invalid": [
+      "179c822c-b68b-410c-a780-d9629ac78a3a"
+    ],
+    "rejected": []
+  },
+  {
+    "case": "queued-watchdog-drill",
+    "chains": 0,
+    "active": false,
+    "invalid": [
+      "cb60451c-6f6f-4ec7-85f4-b6607f9f1ebd"
+    ],
+    "rejected": []
+  },
+  {
+    "case": "queued-watchdog-all",
+    "chains": 0,
+    "active": false,
+    "invalid": [],
+    "rejected": []
+  },
+  {
+    "case": "queued-watchdog-unrelated",
+    "chains": 1,
+    "active": true,
+    "invalid": [
+      "a788c8a8-1858-41a6-969c-89dfce8086f1"
+    ],
+    "rejected": []
+  },
+  {
+    "case": "read-back-drill",
+    "chains": 0,
+    "active": false,
+    "invalid": [
+      "ed772bc3-9aaa-4f29-b783-f512b8139eef"
+    ],
+    "rejected": []
+  },
+  {
+    "case": "read-back-all",
+    "chains": 0,
+    "active": false,
+    "invalid": [],
+    "rejected": []
+  },
+  {
+    "case": "read-back-unrelated",
+    "chains": 1,
+    "active": true,
+    "invalid": [
+      "df3dba5a-54f8-43b1-be54-a0e12d4ce08b"
+    ],
+    "rejected": []
+  },
+  {
+    "case": "read-watchdog-drill",
+    "chains": 0,
+    "active": false,
+    "invalid": [
+      "35680908-fe80-4312-bdaa-ba3401a1f795"
+    ],
+    "rejected": []
+  },
+  {
+    "case": "read-watchdog-all",
+    "chains": 0,
+    "active": false,
+    "invalid": [],
+    "rejected": []
+  },
+  {
+    "case": "read-watchdog-unrelated",
+    "chains": 1,
+    "active": true,
+    "invalid": [
+      "813322ac-e05c-48a2-aee6-87aebbd543a6"
+    ],
+    "rejected": []
+  },
+  {
+    "case": "frame-back-drill",
+    "chains": 0,
+    "active": false,
+    "invalid": [
+      "d5195609-62f9-4a3c-a393-6c771f9c2190"
+    ],
+    "rejected": []
+  },
+  {
+    "case": "frame-back-all",
+    "chains": 0,
+    "active": false,
+    "invalid": [],
+    "rejected": []
+  },
+  {
+    "case": "frame-back-unrelated",
+    "chains": 1,
+    "active": true,
+    "invalid": [
+      "b59ec571-82c8-4bfd-8fd2-27ce0ae7f3c6"
+    ],
+    "rejected": []
+  },
+  {
+    "case": "frame-watchdog-drill",
+    "chains": 0,
+    "active": false,
+    "invalid": [
+      "903d8470-c7ce-4167-b3c9-e4077e758964"
+    ],
+    "rejected": []
+  },
+  {
+    "case": "frame-watchdog-all",
+    "chains": 0,
+    "active": false,
+    "invalid": [],
+    "rejected": []
+  },
+  {
+    "case": "frame-watchdog-unrelated",
+    "chains": 1,
+    "active": true,
+    "invalid": [
+      "beea38c2-bf38-4568-b28f-5c11ab8631a3"
+    ],
+    "rejected": []
+  },
+  {
+    "case": "confirm-before-back-drill",
+    "chains": 0,
+    "active": false,
+    "invalid": [
+      "6a11fda7-07b9-4d66-9d73-5e5f395111e1"
+    ],
+    "rejected": []
+  },
+  {
+    "case": "confirm-before-back-all",
+    "chains": 0,
+    "active": false,
+    "invalid": [],
+    "rejected": []
+  },
+  {
+    "case": "confirm-before-back-unrelated",
+    "chains": 1,
+    "active": true,
+    "invalid": [
+      "821ccb97-0a36-4e18-945d-55edacbd53ec"
+    ],
+    "rejected": []
+  },
+  {
+    "case": "confirm-after-back-drill",
+    "chains": 0,
+    "active": false,
+    "invalid": [
+      "0d470ce7-844d-4e5b-8dba-1481f8aa7476"
+    ],
+    "rejected": []
+  },
+  {
+    "case": "confirm-after-back-all",
+    "chains": 0,
+    "active": false,
+    "invalid": [],
+    "rejected": []
+  },
+  {
+    "case": "confirm-after-back-unrelated",
+    "chains": 1,
+    "active": true,
+    "invalid": [
+      "1d2eaabb-db9d-4539-b31e-1a95b4f7cdc7"
+    ],
+    "rejected": []
+  }
+]

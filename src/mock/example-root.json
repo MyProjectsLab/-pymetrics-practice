@@ -1,0 +1,150 @@
+{
+  "schema": "ap-mock-root-v1",
+  "installationId": "00000000-0000-4000-8000-000000000001",
+  "revision": 1,
+  "nextMockOrdinal": 2,
+  "mocks": [
+    {
+      "id": "M00000000-0000-4000-8000-000000000001.1",
+      "ordinal": 1,
+      "revision": 0,
+      "version": "assessment-practice-full-mock/1.0.0",
+      "sequenceVersion": "ap-mock-sequence/1",
+      "phase": "preflight",
+      "cursor": 1,
+      "createdWallMs": 100000000,
+      "checkpointWallMs": 100000000,
+      "continuity": "uninterrupted",
+      "goal": "early_career_finance",
+      "invitation": "not_available",
+      "localPrivacyAcknowledged": true,
+      "settings": [
+        {
+          "revision": 1,
+          "atWallMs": 100000000,
+          "preferences": {
+            "controls": "physical_keyboard",
+            "reducedMotion": false,
+            "digitsMode": "visual",
+            "digitsEntryMs": 20000,
+            "lengthsVariant": "standard",
+            "facesMode": "standard-v1"
+          },
+          "changedKeys": []
+        }
+      ],
+      "slots": [
+        {
+          "index": 1,
+          "game": "keypresses",
+          "resolution": "pending",
+          "acceptedLaunchId": null,
+          "attempts": []
+        },
+        {
+          "index": 2,
+          "game": "stop",
+          "resolution": "pending",
+          "acceptedLaunchId": null,
+          "attempts": []
+        },
+        {
+          "index": 3,
+          "game": "digits",
+          "resolution": "pending",
+          "acceptedLaunchId": null,
+          "attempts": []
+        },
+        {
+          "index": 4,
+          "game": "arrows",
+          "resolution": "pending",
+          "acceptedLaunchId": null,
+          "attempts": []
+        },
+        {
+          "index": 5,
+          "game": "balloons",
+          "resolution": "pending",
+          "acceptedLaunchId": null,
+          "attempts": []
+        },
+        {
+          "index": 6,
+          "game": "towers",
+          "resolution": "pending",
+          "acceptedLaunchId": null,
+          "attempts": []
+        },
+        {
+          "index": 7,
+          "game": "lengths",
+          "resolution": "pending",
+          "acceptedLaunchId": null,
+          "attempts": []
+        },
+        {
+          "index": 8,
+          "game": "cards",
+          "resolution": "pending",
+          "acceptedLaunchId": null,
+          "attempts": []
+        },
+        {
+          "index": 9,
+          "game": "easy_hard",
+          "resolution": "pending",
+          "acceptedLaunchId": null,
+          "attempts": []
+        },
+        {
+          "index": 10,
+          "game": "money_1",
+          "resolution": "pending",
+          "acceptedLaunchId": null,
+          "attempts": []
+        },
+        {
+          "index": 11,
+          "game": "money_2",
+          "resolution": "pending",
+          "acceptedLaunchId": null,
+          "attempts": []
+        },
+        {
+          "index": 12,
+          "game": "faces",
+          "resolution": "pending",
+          "acceptedLaunchId": null,
+          "attempts": []
+        }
+      ],
+      "breaks": [],
+      "scheduledBreak": "not_due",
+      "activeLaunchId": null,
+      "lastCommand": null
+    }
+  ],
+  "lastRootCommand": {
+    "requestId": "00000000-0000-4000-8000-000000000002",
+    "expectedRevision": 0,
+    "kind": "create",
+    "targetMockId": "M00000000-0000-4000-8000-000000000001.1",
+    "oldInstallationId": "00000000-0000-4000-8000-000000000001",
+    "newInstallationId": "00000000-0000-4000-8000-000000000001",
+    "resultRevision": 1,
+    "creationMetadata": {
+      "goal": "early_career_finance",
+      "invitation": "not_available",
+      "preferences": {
+        "controls": "physical_keyboard",
+        "reducedMotion": false,
+        "digitsMode": "visual",
+        "digitsEntryMs": 20000,
+        "lengthsVariant": "standard",
+        "facesMode": "standard-v1"
+      },
+      "createdWallMs": 100000000
+    }
+  }
+}

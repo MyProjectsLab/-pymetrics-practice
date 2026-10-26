@@ -1,0 +1,6 @@
+
+> assessment-practice@0.0.0 lint
+> oxlint
+
+docs/qa/m5/repair-f1-f3/cross-tab.mjs:47:49: warning eslint(no-unused-vars): Parameter 's' is declared but never used. Unused parameters should start with a '_'. help: Consider removing this parameter.
+src/App.tsx:62:57: warning react-hooks(exhaustive-deps): React Hook useEffect has a missing dependency: 'refreshHistory' help: Either include it or remove the dependency array.

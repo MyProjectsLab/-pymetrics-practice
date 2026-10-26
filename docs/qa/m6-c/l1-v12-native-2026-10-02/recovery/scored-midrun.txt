@@ -1,0 +1,68 @@
+Window: "Assessment Practice", App: Google Chrome.
+0 standard window Assessment Practice - Google Chrome, URL: 127.0.0.1:5592/, Secondary Actions: Raise
+	1 container Assessment Practice - Google Chrome, URL: 127.0.0.1:5592/
+		2 container
+			3 toolbar
+				4 button Back
+				5 button (disabled) Forward
+				6 button Reload
+				7 container
+					8 pop up button View site information
+					9 text field (settable) Address and search bar, Value: 127.0.0.1:5592, Placeholder: Ask Google or type a URL
+					10 button Bookmark this tab
+				11 container
+					12 pop up button Open Claude
+Has access to this site
+					13 pop up button Extensions
+				14 checkbox Downloads
+				15 button renzo
+				16 pop up button Chrome
+			17 toolbar Bookmarks
+				18 toolbar Saved Tab Groups
+					19 saved tab group button  🧪 Stop M6-C group - Closed
+					20 saved tab group button  🧪 Stop M3 QA group - Closed
+					21 saved tab group button  🔎 New entrant diligence group - Closed
+					22 saved tab group button  Claude group - Closed
+					23 saved tab group button  Claude group - Closed
+					24 saved tab group button  Claude group - Closed
+					25 saved tab group button  ✅Claude group - Closed
+					26 button Tab groups
+				27 splitter Separator
+				28 bookmark button La Repubblica.it - News in tempo reale - Le notizie e i video di politica, cronaca, economia, sport
+				29 bookmark button Prime Video: Search
+				30 bookmark button Netflix
+				31 bookmark button Select Profile | Disney+
+				32 bookmark button LexZilla — Legal Made Simple
+			33 container
+				34 scroll area
+					35 HTML content Assessment Practice, URL: 127.0.0.1:5592/
+						36 container
+							37 text Stop · Private preview
+							38 container Timed Stop task
+								39 container
+									40 text GO: press  Space  · NO-GO: do nothing
+			41 pop up button Tab search
+			42 container
+				43 tab group
+					44 tab (selected, settable, boolean) Assessment Practice - Memory usage - 120 MB, Value: on
+						45 button Close
+					46 tab (settable, boolean) Stop L1 local evidence export - Memory usage - 128 MB, Value: off
+						47 button Close
+			48 button New Tab
+			49 button Open Gemini in Chrome
+	50 close button
+	51 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	52 minimize button
+53 menu bar
+	54 Chrome
+	55 File
+	56 Edit
+	57 View
+	58 History
+	59 Bookmarks
+	60 Profiles
+	61 Tab
+	62 Window
+	63 Help
+
+The focused UI element is 38 container Timed Stop task

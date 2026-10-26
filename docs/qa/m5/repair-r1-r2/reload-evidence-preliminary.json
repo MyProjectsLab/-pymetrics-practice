@@ -1,0 +1,23 @@
+{
+  "browser": "145.0.7632.6",
+  "cases": [
+    {
+      "mode": "baseline",
+      "name": "intact",
+      "expectedValid": true,
+      "admitted": true,
+      "activeChain": true,
+      "memory": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+      "reportButtons": 1,
+      "progressSeries": 1,
+      "invalidatingEventAbsent": true,
+      "resultHash": "21dec123949f008716303baafc697571976f13b395826943242cdccc5e017b55",
+      "exposureHash": "62e107e34f51aa7177a99cc6ab6de7c8b555624ecf9b4ddbc4e83d9e6293cbb9",
+      "rawHashBefore": "e08f0960863d070b92805243623f469665d2f2e53be3e63cd73bc8cc9cb137f6",
+      "rawHashAfter": "e08f0960863d070b92805243623f469665d2f2e53be3e63cd73bc8cc9cb137f6",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "error": "AssertionError [ERR_ASSERTION]: baseline/timing-note\n\nfalse !== true\n\n    at file:///Users/renzo/Documents/Assessment%20Practice/App/docs/qa/m5/repair-r1-r2/reload-evidence.mjs:66:12"
+}

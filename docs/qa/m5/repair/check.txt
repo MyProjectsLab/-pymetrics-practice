@@ -1,0 +1,45 @@
+
+> assessment-practice@0.0.0 check
+> npm run lint && npm test && npm run forms:check && npm run drills:check && npm run build
+
+
+> assessment-practice@0.0.0 lint
+> oxlint
+
+
+> assessment-practice@0.0.0 test
+> vitest run
+
+
+ RUN  v4.1.11 /Users/renzo/Documents/Assessment Practice/App
+
+
+ Test Files  27 passed (27)
+      Tests  424 passed (424)
+   Start at  06:47:53
+   Duration  3.14s (transform 1.08s, setup 952ms, import 1.84s, tests 7.02s, environment 3.19s)
+
+
+> assessment-practice@0.0.0 forms:check
+> node scripts/generate-stop-forms.mjs --check
+
+14 stored Stop manifests match the deterministic generator.
+
+> assessment-practice@0.0.0 drills:check
+> node scripts/generate-stop-drills.mjs --check
+
+5 stored drill manifests match the deterministic generator.
+
+> assessment-practice@0.0.0 build
+> tsc -b && vite build
+
+vite v8.3.1 building client environment for production...
+transforming...
+✓ 56 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.50 kB │ gzip:   0.30 kB
+dist/assets/index-CRyXorHF.css    5.35 kB │ gzip:   1.93 kB
+dist/assets/index-BIgU5CFM.js   372.09 kB │ gzip: 110.41 kB
+
+✓ built in 67ms

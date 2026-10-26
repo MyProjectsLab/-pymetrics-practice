@@ -1,0 +1,231 @@
+{
+  "scope": "One native warm-up interruption, restart, pause, valid completion, save and reload; not physical timing or browser certification",
+  "sessionId": "8a567c70-e988-46f6-b2e8-1ef2acb943d5",
+  "formId": "stop-baseline-01",
+  "browserTimeOrigins": [
+    1790996147809,
+    1790996662150.3
+  ],
+  "trustedWarmupHide": {
+    "type": "visibilitychange",
+    "utc": "2026-10-03T02:58:24.072Z",
+    "epochMs": 1790996304072,
+    "timeOriginMs": 1790996147809,
+    "performanceNowMs": 156263.8999999985,
+    "eventTimeStampMs": 156263.80000000447,
+    "isTrusted": true,
+    "visibilityState": "hidden",
+    "hasFocus": false,
+    "href": "http://127.0.0.1:5592/",
+    "innerWidth": 1512,
+    "innerHeight": 827,
+    "outerWidth": 1512,
+    "outerHeight": 948,
+    "screenX": 0,
+    "screenY": 34,
+    "devicePixelRatio": 2,
+    "screen": {
+      "width": 1512,
+      "height": 982,
+      "availWidth": 1512,
+      "availHeight": 948,
+      "availLeft": 0,
+      "availTop": 34
+    },
+    "fullscreenElement": false,
+    "displayModeFullscreen": false,
+    "visualViewport": {
+      "width": 1512,
+      "height": 827,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0
+    }
+  },
+  "journalInterruption": {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "8a567c70-e988-46f6-b2e8-1ef2acb943d5",
+    "sequenceNumber": 8,
+    "timestampMs": 156264.8999999985,
+    "type": "warmup_interrupted",
+    "payload": {
+      "reason": "hidden",
+      "triggerSequenceNumber": 7
+    }
+  },
+  "journalRestart": {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "8a567c70-e988-46f6-b2e8-1ef2acb943d5",
+    "sequenceNumber": 9,
+    "timestampMs": 156264.8999999985,
+    "type": "warmup_restart_required",
+    "payload": {
+      "triggerSequenceNumber": 8
+    }
+  },
+  "interruptionLocation": "Live warm-up initial fixation, before trial 0 was scheduled",
+  "freshWarmupIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "warmupCompletion": {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "8a567c70-e988-46f6-b2e8-1ef2acb943d5",
+    "sequenceNumber": 71,
+    "timestampMs": 199037.70000000298,
+    "type": "batch_finished",
+    "payload": {
+      "phase": "warmup",
+      "trialCount": 8
+    }
+  },
+  "pauseHide": {
+    "type": "visibilitychange",
+    "utc": "2026-10-03T02:59:33.775Z",
+    "epochMs": 1790996373775,
+    "timeOriginMs": 1790996147809,
+    "performanceNowMs": 225966.8999999985,
+    "eventTimeStampMs": 225966.8999999985,
+    "isTrusted": true,
+    "visibilityState": "hidden",
+    "hasFocus": false,
+    "href": "http://127.0.0.1:5592/",
+    "innerWidth": 1512,
+    "innerHeight": 827,
+    "outerWidth": 1512,
+    "outerHeight": 948,
+    "screenX": 0,
+    "screenY": 34,
+    "devicePixelRatio": 2,
+    "screen": {
+      "width": 1512,
+      "height": 982,
+      "availWidth": 1512,
+      "availHeight": 948,
+      "availLeft": 0,
+      "availTop": 34
+    },
+    "fullscreenElement": false,
+    "displayModeFullscreen": false,
+    "visualViewport": {
+      "width": 1512,
+      "height": 827,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0
+    }
+  },
+  "pauseExposureUnchanged": true,
+  "acceptedScoredStart": {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "8a567c70-e988-46f6-b2e8-1ef2acb943d5",
+    "sequenceNumber": 72,
+    "timestampMs": 268314.3999999985,
+    "type": "protection_started",
+    "payload": {
+      "responseKey": "Space",
+      "held": false
+    }
+  },
+  "scoredScheduledPresentedRemovedResolved": 80,
+  "firstScoredPresentation": {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "8a567c70-e988-46f6-b2e8-1ef2acb943d5",
+    "sequenceNumber": 76,
+    "timestampMs": 269328.1000000015,
+    "type": "stimulus_presented",
+    "payload": {
+      "trialIndex": 0,
+      "stimulus": "GO",
+      "confirmedOnsetMs": 269328.1000000015,
+      "eligibleAtMs": 269325.5
+    }
+  },
+  "completion": {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "8a567c70-e988-46f6-b2e8-1ef2acb943d5",
+    "sequenceNumber": 638,
+    "timestampMs": 445534.200000003,
+    "type": "session_completed",
+    "payload": {
+      "eventCount": 638,
+      "validity": "valid",
+      "checksum": "sha256:12fbd0af98e8c3d455195660c95c920864f9227d8915ffbfd97baf307e1f1e02",
+      "scoringVersion": "stop_scoring_v1"
+    }
+  },
+  "journalCount": 639,
+  "exposure": {
+    "formId": "stop-baseline-01",
+    "exposedAtWall": "2026-10-03T03:00:17.136Z",
+    "visualProfile": "standard",
+    "deleted": false,
+    "sessionId": "8a567c70-e988-46f6-b2e8-1ef2acb943d5",
+    "certainty": "confirmed"
+  },
+  "viewport": {
+    "inner": [
+      1512,
+      827
+    ],
+    "outer": [
+      1512,
+      948
+    ],
+    "screenPosition": [
+      0,
+      34
+    ],
+    "runObservations": 172,
+    "protectedSamples": 88,
+    "maxProtectedSampleGapMs": 2001.6000000014901,
+    "liveResizeEvents": 0,
+    "preparationResizeClusters": [
+      {
+        "firstUtc": "2026-10-03T02:56:16.790Z",
+        "lastUtc": "2026-10-03T02:56:17.718Z",
+        "count": 51,
+        "firstWidth": 1485,
+        "lastWidth": 1073,
+        "minimumWidth": 1073
+      },
+      {
+        "firstUtc": "2026-10-03T02:56:20.475Z",
+        "lastUtc": "2026-10-03T02:56:21.751Z",
+        "count": 33,
+        "firstWidth": 1049,
+        "lastWidth": 696,
+        "minimumWidth": 682
+      },
+      {
+        "firstUtc": "2026-10-03T02:56:44.128Z",
+        "lastUtc": "2026-10-03T02:56:44.468Z",
+        "count": 21,
+        "firstWidth": 701,
+        "lastWidth": 1512,
+        "minimumWidth": 701
+      }
+    ]
+  },
+  "reloadComparison": {
+    "sameResult": true,
+    "sameJournal": true,
+    "sameExposure": true,
+    "sameVisibleReportText": true,
+    "canonicalResultSha256": "a10463465cd86c7f5d3514684c38eb72f330d086bbd6cc599463aed85364c906",
+    "canonicalJournalSha256": "913c4439f24bd89fe8f4966b42bb49079bc5e90064c12b2f50150c46942a9bf7"
+  },
+  "limits": [
+    "Native app-bridge actions; not independently calibrated physical input.",
+    "No scored responses; no reaction-time or performance claim.",
+    "QA observer overhead unmeasured.",
+    "Pre-live guide window resizing retained; initiating actor unknown, maximization restored before warm-up.",
+    "No pre/post-onset cases repeated; no wider matrix, Chrome certification, M6-C completion or release claim."
+  ]
+}

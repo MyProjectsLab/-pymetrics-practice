@@ -1,0 +1,1211 @@
+{
+  "browser": "145.0.7632.6",
+  "delivery": "unavailable",
+  "cases": [
+    {
+      "label": "queued-back-drill",
+      "pass": true,
+      "onsets": 0,
+      "invalidRule": "stop_validity_v1.lifecycle",
+      "heldLocks": {
+        "held": [
+          {
+            "clientId": "6b729e5d-7498-497f-9461-45608732e37c",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ],
+        "pending": [
+          {
+            "clientId": "6b729e5d-7498-497f-9461-45608732e37c",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ]
+      },
+      "canceledLocks": {
+        "held": [
+          {
+            "clientId": "6b729e5d-7498-497f-9461-45608732e37c",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ],
+        "pending": []
+      },
+      "deletionLocks": {
+        "held": [],
+        "pending": []
+      },
+      "marker": null,
+      "reservation": null,
+      "chainCount": 0,
+      "lateTrace": [
+        {
+          "what": "admission-request",
+          "at": 1790822142567
+        }
+      ],
+      "unchangedBytes": true
+    },
+    {
+      "label": "queued-back-all",
+      "pass": true,
+      "onsets": 0,
+      "invalidRule": "stop_validity_v1.lifecycle",
+      "heldLocks": {
+        "held": [
+          {
+            "clientId": "44bb5d3f-0e83-448b-9067-f3c32bdf5d35",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ],
+        "pending": [
+          {
+            "clientId": "44bb5d3f-0e83-448b-9067-f3c32bdf5d35",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ]
+      },
+      "canceledLocks": {
+        "held": [
+          {
+            "clientId": "44bb5d3f-0e83-448b-9067-f3c32bdf5d35",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ],
+        "pending": []
+      },
+      "deletionLocks": {
+        "held": [],
+        "pending": []
+      },
+      "marker": null,
+      "reservation": null,
+      "chainCount": 0,
+      "lateTrace": [
+        {
+          "what": "admission-request",
+          "at": 1790822164241.7
+        }
+      ],
+      "unchangedBytes": true
+    },
+    {
+      "label": "queued-back-unrelated",
+      "pass": true,
+      "onsets": 0,
+      "invalidRule": "stop_validity_v1.lifecycle",
+      "heldLocks": {
+        "held": [
+          {
+            "clientId": "44a106b9-61bc-4ed9-aab8-1416bfba87fa",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ],
+        "pending": [
+          {
+            "clientId": "44a106b9-61bc-4ed9-aab8-1416bfba87fa",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ]
+      },
+      "canceledLocks": {
+        "held": [
+          {
+            "clientId": "44a106b9-61bc-4ed9-aab8-1416bfba87fa",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ],
+        "pending": []
+      },
+      "deletionLocks": {
+        "held": [],
+        "pending": []
+      },
+      "marker": null,
+      "reservation": null,
+      "chainCount": 1,
+      "lateTrace": [
+        {
+          "what": "admission-request",
+          "at": 1790822185707.3
+        }
+      ],
+      "unchangedBytes": true
+    },
+    {
+      "label": "queued-watchdog-drill",
+      "pass": true,
+      "onsets": 0,
+      "invalidRule": "stop_validity_v1.severe_timing",
+      "heldLocks": {
+        "held": [
+          {
+            "clientId": "7df87c5c-09fd-4053-8dbc-3157daa39aaf",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ],
+        "pending": [
+          {
+            "clientId": "7df87c5c-09fd-4053-8dbc-3157daa39aaf",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ]
+      },
+      "canceledLocks": {
+        "held": [
+          {
+            "clientId": "7df87c5c-09fd-4053-8dbc-3157daa39aaf",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ],
+        "pending": []
+      },
+      "deletionLocks": {
+        "held": [],
+        "pending": []
+      },
+      "marker": null,
+      "reservation": null,
+      "chainCount": 0,
+      "lateTrace": [
+        {
+          "what": "admission-request",
+          "at": 1790822207400.5
+        }
+      ],
+      "unchangedBytes": true
+    },
+    {
+      "label": "queued-watchdog-all",
+      "pass": true,
+      "onsets": 0,
+      "invalidRule": "stop_validity_v1.severe_timing",
+      "heldLocks": {
+        "held": [
+          {
+            "clientId": "066b4240-e331-4275-9dc3-14553b87fc5c",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ],
+        "pending": [
+          {
+            "clientId": "066b4240-e331-4275-9dc3-14553b87fc5c",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ]
+      },
+      "canceledLocks": {
+        "held": [
+          {
+            "clientId": "066b4240-e331-4275-9dc3-14553b87fc5c",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ],
+        "pending": []
+      },
+      "deletionLocks": {
+        "held": [],
+        "pending": []
+      },
+      "marker": null,
+      "reservation": null,
+      "chainCount": 0,
+      "lateTrace": [
+        {
+          "what": "admission-request",
+          "at": 1790822229591.3
+        }
+      ],
+      "unchangedBytes": true
+    },
+    {
+      "label": "queued-watchdog-unrelated",
+      "pass": true,
+      "onsets": 0,
+      "invalidRule": "stop_validity_v1.severe_timing",
+      "heldLocks": {
+        "held": [
+          {
+            "clientId": "a8c6be29-e7a0-4122-9ef6-bd37db768d25",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ],
+        "pending": [
+          {
+            "clientId": "a8c6be29-e7a0-4122-9ef6-bd37db768d25",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ]
+      },
+      "canceledLocks": {
+        "held": [
+          {
+            "clientId": "a8c6be29-e7a0-4122-9ef6-bd37db768d25",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ],
+        "pending": []
+      },
+      "deletionLocks": {
+        "held": [],
+        "pending": []
+      },
+      "marker": null,
+      "reservation": null,
+      "chainCount": 1,
+      "lateTrace": [
+        {
+          "what": "admission-request",
+          "at": 1790822251566.0999
+        }
+      ],
+      "unchangedBytes": true
+    },
+    {
+      "label": "read-back-drill",
+      "pass": true,
+      "onsets": 0,
+      "invalidRule": "stop_validity_v1.lifecycle",
+      "heldLocks": {
+        "held": [
+          {
+            "clientId": "5c829315-eb0a-4b50-a0ea-2a9886ed916a",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ],
+        "pending": []
+      },
+      "canceledLocks": {
+        "held": [],
+        "pending": []
+      },
+      "deletionLocks": {
+        "held": [],
+        "pending": []
+      },
+      "marker": null,
+      "reservation": null,
+      "chainCount": 0,
+      "lateTrace": [
+        {
+          "what": "admission-request",
+          "at": 1790822273817.2
+        },
+        {
+          "what": "promise-held",
+          "at": 1790822273823.4
+        },
+        {
+          "what": "promise-released",
+          "at": 1790822274243.2
+        }
+      ],
+      "unchangedBytes": true
+    },
+    {
+      "label": "read-back-all",
+      "pass": true,
+      "onsets": 0,
+      "invalidRule": "stop_validity_v1.lifecycle",
+      "heldLocks": {
+        "held": [
+          {
+            "clientId": "0652c36c-31d4-407b-a922-e2370439635a",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ],
+        "pending": []
+      },
+      "canceledLocks": {
+        "held": [],
+        "pending": []
+      },
+      "deletionLocks": {
+        "held": [],
+        "pending": []
+      },
+      "marker": null,
+      "reservation": null,
+      "chainCount": 0,
+      "lateTrace": [
+        {
+          "what": "admission-request",
+          "at": 1790822295533.7
+        },
+        {
+          "what": "promise-held",
+          "at": 1790822295539.2998
+        },
+        {
+          "what": "promise-released",
+          "at": 1790822295786.2
+        }
+      ],
+      "unchangedBytes": true
+    },
+    {
+      "label": "read-back-unrelated",
+      "pass": true,
+      "onsets": 0,
+      "invalidRule": "stop_validity_v1.lifecycle",
+      "heldLocks": {
+        "held": [
+          {
+            "clientId": "3bac7f77-4d61-4596-8a52-ace873cff04c",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ],
+        "pending": []
+      },
+      "canceledLocks": {
+        "held": [],
+        "pending": []
+      },
+      "deletionLocks": {
+        "held": [],
+        "pending": []
+      },
+      "marker": null,
+      "reservation": null,
+      "chainCount": 1,
+      "lateTrace": [
+        {
+          "what": "admission-request",
+          "at": 1790822316998.9
+        },
+        {
+          "what": "promise-held",
+          "at": 1790822317004.4
+        },
+        {
+          "what": "promise-released",
+          "at": 1790822317391.7
+        }
+      ],
+      "unchangedBytes": true
+    },
+    {
+      "label": "read-watchdog-drill",
+      "pass": true,
+      "onsets": 0,
+      "invalidRule": "stop_validity_v1.severe_timing",
+      "heldLocks": {
+        "held": [
+          {
+            "clientId": "587e8f11-2382-4a39-acb3-5776cf8e79c4",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ],
+        "pending": []
+      },
+      "canceledLocks": {
+        "held": [],
+        "pending": []
+      },
+      "deletionLocks": {
+        "held": [],
+        "pending": []
+      },
+      "marker": null,
+      "reservation": null,
+      "chainCount": 0,
+      "lateTrace": [
+        {
+          "what": "admission-request",
+          "at": 1790822338698.8
+        },
+        {
+          "what": "promise-held",
+          "at": 1790822338704.2002
+        },
+        {
+          "what": "promise-released",
+          "at": 1790822339619.2002
+        }
+      ],
+      "unchangedBytes": true
+    },
+    {
+      "label": "read-watchdog-all",
+      "pass": true,
+      "onsets": 0,
+      "invalidRule": "stop_validity_v1.severe_timing",
+      "heldLocks": {
+        "held": [
+          {
+            "clientId": "02be249e-86ff-48e9-b261-d9eda6ae6c65",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ],
+        "pending": []
+      },
+      "canceledLocks": {
+        "held": [],
+        "pending": []
+      },
+      "deletionLocks": {
+        "held": [],
+        "pending": []
+      },
+      "marker": null,
+      "reservation": null,
+      "chainCount": 0,
+      "lateTrace": [
+        {
+          "what": "admission-request",
+          "at": 1790822360847.5999
+        },
+        {
+          "what": "promise-held",
+          "at": 1790822360853.5999
+        },
+        {
+          "what": "promise-released",
+          "at": 1790822361608.5999
+        }
+      ],
+      "unchangedBytes": true
+    },
+    {
+      "label": "read-watchdog-unrelated",
+      "pass": true,
+      "onsets": 0,
+      "invalidRule": "stop_validity_v1.severe_timing",
+      "heldLocks": {
+        "held": [
+          {
+            "clientId": "fdcd8e55-7a06-4ce5-8523-fb0ca70ab101",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ],
+        "pending": []
+      },
+      "canceledLocks": {
+        "held": [],
+        "pending": []
+      },
+      "deletionLocks": {
+        "held": [],
+        "pending": []
+      },
+      "marker": null,
+      "reservation": null,
+      "chainCount": 1,
+      "lateTrace": [
+        {
+          "what": "admission-request",
+          "at": 1790822382789.2
+        },
+        {
+          "what": "promise-held",
+          "at": 1790822382795.2
+        },
+        {
+          "what": "promise-released",
+          "at": 1790822383773.4
+        }
+      ],
+      "unchangedBytes": true
+    },
+    {
+      "label": "frame-back-drill",
+      "pass": true,
+      "onsets": 0,
+      "invalidRule": "stop_validity_v1.lifecycle",
+      "heldLocks": {
+        "held": [
+          {
+            "clientId": "b0aace3b-5941-4a98-906d-e0d5a6ca9473",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ],
+        "pending": []
+      },
+      "canceledLocks": {
+        "held": [],
+        "pending": []
+      },
+      "deletionLocks": {
+        "held": [],
+        "pending": []
+      },
+      "marker": null,
+      "reservation": null,
+      "chainCount": 0,
+      "lateTrace": [
+        {
+          "what": "admission-request",
+          "at": 1790822404989.2
+        },
+        {
+          "what": "admitted",
+          "at": 1790822404994.5999
+        },
+        {
+          "what": "promise-held",
+          "at": 1790822404994.7
+        },
+        {
+          "what": "promise-released",
+          "at": 1790822405403.0999
+        },
+        {
+          "what": "presentation-settled",
+          "at": 1790822405403.0999
+        }
+      ],
+      "unchangedBytes": true
+    },
+    {
+      "label": "frame-back-all",
+      "pass": true,
+      "onsets": 0,
+      "invalidRule": "stop_validity_v1.lifecycle",
+      "heldLocks": {
+        "held": [
+          {
+            "clientId": "d6856d3c-ad87-4ebe-b1bf-847e77f7c2a3",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ],
+        "pending": []
+      },
+      "canceledLocks": {
+        "held": [],
+        "pending": []
+      },
+      "deletionLocks": {
+        "held": [],
+        "pending": []
+      },
+      "marker": null,
+      "reservation": null,
+      "chainCount": 0,
+      "lateTrace": [
+        {
+          "what": "admission-request",
+          "at": 1790822426548
+        },
+        {
+          "what": "admitted",
+          "at": 1790822426549.6
+        },
+        {
+          "what": "promise-held",
+          "at": 1790822426549.6
+        },
+        {
+          "what": "promise-released",
+          "at": 1790822426777.7002
+        },
+        {
+          "what": "presentation-settled",
+          "at": 1790822426777.7002
+        }
+      ],
+      "unchangedBytes": true
+    },
+    {
+      "label": "frame-back-unrelated",
+      "pass": true,
+      "onsets": 0,
+      "invalidRule": "stop_validity_v1.lifecycle",
+      "heldLocks": {
+        "held": [
+          {
+            "clientId": "90288da8-bb94-4393-a3c4-e1fb0e74b682",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ],
+        "pending": []
+      },
+      "canceledLocks": {
+        "held": [],
+        "pending": []
+      },
+      "deletionLocks": {
+        "held": [],
+        "pending": []
+      },
+      "marker": null,
+      "reservation": null,
+      "chainCount": 1,
+      "lateTrace": [
+        {
+          "what": "admission-request",
+          "at": 1790822447881.2998
+        },
+        {
+          "what": "admitted",
+          "at": 1790822447882.7998
+        },
+        {
+          "what": "promise-held",
+          "at": 1790822447882.7998
+        },
+        {
+          "what": "promise-released",
+          "at": 1790822448251.5
+        },
+        {
+          "what": "presentation-settled",
+          "at": 1790822448251.5
+        }
+      ],
+      "unchangedBytes": true
+    },
+    {
+      "label": "frame-watchdog-drill",
+      "pass": true,
+      "onsets": 0,
+      "invalidRule": "stop_validity_v1.severe_timing",
+      "heldLocks": {
+        "held": [
+          {
+            "clientId": "2fc2e8d1-50b5-4a3b-9415-3d5cfb1f759d",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ],
+        "pending": []
+      },
+      "canceledLocks": {
+        "held": [],
+        "pending": []
+      },
+      "deletionLocks": {
+        "held": [],
+        "pending": []
+      },
+      "marker": null,
+      "reservation": null,
+      "chainCount": 0,
+      "lateTrace": [
+        {
+          "what": "admission-request",
+          "at": 1790822469414.1
+        },
+        {
+          "what": "admitted",
+          "at": 1790822469415.7
+        },
+        {
+          "what": "promise-held",
+          "at": 1790822469415.7
+        },
+        {
+          "what": "promise-released",
+          "at": 1790822470244.6
+        },
+        {
+          "what": "presentation-settled",
+          "at": 1790822470244.6
+        }
+      ],
+      "unchangedBytes": true
+    },
+    {
+      "label": "frame-watchdog-all",
+      "pass": true,
+      "onsets": 0,
+      "invalidRule": "stop_validity_v1.severe_timing",
+      "heldLocks": {
+        "held": [
+          {
+            "clientId": "239616c6-8037-4de9-88ee-4572bcd6f91f",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ],
+        "pending": []
+      },
+      "canceledLocks": {
+        "held": [],
+        "pending": []
+      },
+      "deletionLocks": {
+        "held": [],
+        "pending": []
+      },
+      "marker": null,
+      "reservation": null,
+      "chainCount": 0,
+      "lateTrace": [
+        {
+          "what": "admission-request",
+          "at": 1790822491472.5
+        },
+        {
+          "what": "admitted",
+          "at": 1790822491475
+        },
+        {
+          "what": "promise-held",
+          "at": 1790822491475
+        },
+        {
+          "what": "promise-released",
+          "at": 1790822492231.5
+        },
+        {
+          "what": "presentation-settled",
+          "at": 1790822492231.5
+        }
+      ],
+      "unchangedBytes": true
+    },
+    {
+      "label": "frame-watchdog-unrelated",
+      "pass": true,
+      "onsets": 0,
+      "invalidRule": "stop_validity_v1.severe_timing",
+      "heldLocks": {
+        "held": [
+          {
+            "clientId": "ce4f1504-0e25-4eef-b128-3d56d97236e3",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ],
+        "pending": []
+      },
+      "canceledLocks": {
+        "held": [],
+        "pending": []
+      },
+      "deletionLocks": {
+        "held": [],
+        "pending": []
+      },
+      "marker": null,
+      "reservation": null,
+      "chainCount": 1,
+      "lateTrace": [
+        {
+          "what": "admission-request",
+          "at": 1790822513413.0999
+        },
+        {
+          "what": "admitted",
+          "at": 1790822513419
+        },
+        {
+          "what": "promise-held",
+          "at": 1790822513419
+        },
+        {
+          "what": "promise-released",
+          "at": 1790822514386.5
+        },
+        {
+          "what": "presentation-settled",
+          "at": 1790822514386.5
+        }
+      ],
+      "unchangedBytes": true
+    },
+    {
+      "label": "confirm-before-back-drill",
+      "pass": true,
+      "onsets": 1,
+      "invalidRule": "stop_validity_v1.lifecycle",
+      "heldLocks": {
+        "held": [
+          {
+            "clientId": "cb98da49-4aa0-4b56-9b52-6632c9b4daac",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ],
+        "pending": []
+      },
+      "canceledLocks": {
+        "held": [],
+        "pending": []
+      },
+      "deletionLocks": {
+        "held": [],
+        "pending": []
+      },
+      "marker": {
+        "formId": "stop-retest-03",
+        "exposedAtWall": "2026-10-01T02:42:14.633Z",
+        "visualProfile": "standard",
+        "deleted": false,
+        "sessionId": "6a11fda7-07b9-4d66-9d73-5e5f395111e1",
+        "certainty": "confirmed"
+      },
+      "reservation": null,
+      "chainCount": 0,
+      "lateTrace": [
+        {
+          "what": "admission-request",
+          "at": 1790822535638.2
+        },
+        {
+          "what": "admitted",
+          "at": 1790822535644
+        },
+        {
+          "what": "real-onset-confirm-called",
+          "at": 1790822535646.7
+        },
+        {
+          "what": "promise-held",
+          "at": 1790822535646.7
+        },
+        {
+          "what": "promise-released",
+          "at": 1790822536081.4
+        },
+        {
+          "what": "late-confirm-rejected:AbortError",
+          "at": 1790822536081.5
+        },
+        {
+          "what": "presentation-settled",
+          "at": 1790822536081.5
+        }
+      ],
+      "unchangedBytes": true
+    },
+    {
+      "label": "confirm-before-back-all",
+      "pass": true,
+      "onsets": 1,
+      "invalidRule": "stop_validity_v1.lifecycle",
+      "heldLocks": {
+        "held": [
+          {
+            "clientId": "1a20db03-d215-4123-aa9d-17ec61a97fd5",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ],
+        "pending": []
+      },
+      "canceledLocks": {
+        "held": [],
+        "pending": []
+      },
+      "deletionLocks": {
+        "held": [],
+        "pending": []
+      },
+      "marker": null,
+      "reservation": null,
+      "chainCount": 0,
+      "lateTrace": [
+        {
+          "what": "admission-request",
+          "at": 1790822557321.4
+        },
+        {
+          "what": "admitted",
+          "at": 1790822557327.4
+        },
+        {
+          "what": "real-onset-confirm-called",
+          "at": 1790822557330.2
+        },
+        {
+          "what": "promise-held",
+          "at": 1790822557330.3
+        },
+        {
+          "what": "promise-released",
+          "at": 1790822557590
+        },
+        {
+          "what": "late-confirm-rejected:AbortError",
+          "at": 1790822557590
+        },
+        {
+          "what": "presentation-settled",
+          "at": 1790822557590.1
+        }
+      ],
+      "unchangedBytes": true
+    },
+    {
+      "label": "confirm-before-back-unrelated",
+      "pass": true,
+      "onsets": 1,
+      "invalidRule": "stop_validity_v1.lifecycle",
+      "heldLocks": {
+        "held": [
+          {
+            "clientId": "e5650901-5f03-42f3-80dc-1afc8f0ec591",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ],
+        "pending": []
+      },
+      "canceledLocks": {
+        "held": [],
+        "pending": []
+      },
+      "deletionLocks": {
+        "held": [],
+        "pending": []
+      },
+      "marker": {
+        "formId": "stop-retest-03",
+        "exposedAtWall": "2026-10-01T02:42:57.758Z",
+        "visualProfile": "standard",
+        "deleted": false,
+        "sessionId": "821ccb97-0a36-4e18-945d-55edacbd53ec",
+        "certainty": "confirmed"
+      },
+      "reservation": null,
+      "chainCount": 1,
+      "lateTrace": [
+        {
+          "what": "admission-request",
+          "at": 1790822578762.9001
+        },
+        {
+          "what": "admitted",
+          "at": 1790822578768.5
+        },
+        {
+          "what": "real-onset-confirm-called",
+          "at": 1790822578771.3
+        },
+        {
+          "what": "promise-held",
+          "at": 1790822578771.4001
+        },
+        {
+          "what": "promise-released",
+          "at": 1790822579223.4001
+        },
+        {
+          "what": "late-confirm-rejected:AbortError",
+          "at": 1790822579223.4001
+        },
+        {
+          "what": "presentation-settled",
+          "at": 1790822579223.5
+        }
+      ],
+      "unchangedBytes": true
+    },
+    {
+      "label": "confirm-after-back-drill",
+      "pass": true,
+      "onsets": 1,
+      "invalidRule": "stop_validity_v1.lifecycle",
+      "heldLocks": {
+        "held": [
+          {
+            "clientId": "3322d979-939a-44cb-99ae-e0fbca65769f",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ],
+        "pending": []
+      },
+      "canceledLocks": {
+        "held": [],
+        "pending": []
+      },
+      "deletionLocks": {
+        "held": [],
+        "pending": []
+      },
+      "marker": {
+        "formId": "stop-retest-01",
+        "exposedAtWall": "2026-10-01T02:43:20.496Z",
+        "visualProfile": "standard",
+        "deleted": false,
+        "sessionId": "0d470ce7-844d-4e5b-8dba-1481f8aa7476",
+        "certainty": "confirmed"
+      },
+      "reservation": null,
+      "chainCount": 0,
+      "lateTrace": [
+        {
+          "what": "admission-request",
+          "at": 1790822600487.7
+        },
+        {
+          "what": "admitted",
+          "at": 1790822600493.4
+        },
+        {
+          "what": "real-onset-confirm-called",
+          "at": 1790822600496.4
+        },
+        {
+          "what": "confirmation-committed",
+          "at": 1790822600503.2
+        },
+        {
+          "what": "promise-held",
+          "at": 1790822600503.2
+        },
+        {
+          "what": "promise-released",
+          "at": 1790822600925.4
+        },
+        {
+          "what": "presentation-settled",
+          "at": 1790822600925.4
+        }
+      ],
+      "unchangedBytes": true
+    },
+    {
+      "label": "confirm-after-back-all",
+      "pass": true,
+      "onsets": 1,
+      "invalidRule": "stop_validity_v1.lifecycle",
+      "heldLocks": {
+        "held": [
+          {
+            "clientId": "0d289976-0845-403e-9916-040b32214395",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ],
+        "pending": []
+      },
+      "canceledLocks": {
+        "held": [],
+        "pending": []
+      },
+      "deletionLocks": {
+        "held": [],
+        "pending": []
+      },
+      "marker": null,
+      "reservation": null,
+      "chainCount": 0,
+      "lateTrace": [
+        {
+          "what": "admission-request",
+          "at": 1790822622170.8
+        },
+        {
+          "what": "admitted",
+          "at": 1790822622176.9
+        },
+        {
+          "what": "real-onset-confirm-called",
+          "at": 1790822622179.4
+        },
+        {
+          "what": "confirmation-committed",
+          "at": 1790822622185.6
+        },
+        {
+          "what": "promise-held",
+          "at": 1790822622185.6
+        },
+        {
+          "what": "promise-released",
+          "at": 1790822622428.8
+        },
+        {
+          "what": "presentation-settled",
+          "at": 1790822622428.8
+        }
+      ],
+      "unchangedBytes": true
+    },
+    {
+      "label": "confirm-after-back-unrelated",
+      "pass": true,
+      "onsets": 1,
+      "invalidRule": "stop_validity_v1.lifecycle",
+      "heldLocks": {
+        "held": [
+          {
+            "clientId": "443c8e6f-6c19-4f48-8b42-84395c5c64b7",
+            "mode": "exclusive",
+            "name": "assessment-practice-stop-presentation-v1"
+          }
+        ],
+        "pending": []
+      },
+      "canceledLocks": {
+        "held": [],
+        "pending": []
+      },
+      "deletionLocks": {
+        "held": [],
+        "pending": []
+      },
+      "marker": {
+        "formId": "stop-retest-01",
+        "exposedAtWall": "2026-10-01T02:44:03.604Z",
+        "visualProfile": "standard",
+        "deleted": false,
+        "sessionId": "1d2eaabb-db9d-4539-b31e-1a95b4f7cdc7",
+        "certainty": "confirmed"
+      },
+      "reservation": null,
+      "chainCount": 1,
+      "lateTrace": [
+        {
+          "what": "admission-request",
+          "at": 1790822643595.5
+        },
+        {
+          "what": "admitted",
+          "at": 1790822643601.2
+        },
+        {
+          "what": "real-onset-confirm-called",
+          "at": 1790822643604.2
+        },
+        {
+          "what": "confirmation-committed",
+          "at": 1790822643610.4
+        },
+        {
+          "what": "promise-held",
+          "at": 1790822643610.4
+        },
+        {
+          "what": "promise-released",
+          "at": 1790822644000.5999
+        },
+        {
+          "what": "presentation-settled",
+          "at": 1790822644000.5999
+        }
+      ],
+      "unchangedBytes": true
+    }
+  ],
+  "errors": []
+}

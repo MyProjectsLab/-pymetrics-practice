@@ -1,0 +1,183 @@
+
+ RUN  v4.1.11 /Users/renzo/Documents/Assessment Practice/App
+
+ ❯ src/stop/Preflight.test.tsx (10 tests | 1 failed) 143ms
+   × M6-A discloses assistive-input latency before readiness 4ms
+ ❯ src/stop/training.test.ts (15 tests | 1 failed) 413ms
+   × S46 compares unrounded adjacent representable severities 2ms
+ ❯ src/stop/run.test.ts (74 tests | 1 failed) 3562ms
+   × M6-A ends a missing initial frame at 2000 ms and fences late delivery 5ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/stop/Preflight.test.tsx > M6-A discloses assistive-input latency before readiness
+TestingLibraryElementError: Unable to find an element with the text: This input method can change response timing. You can use it to learn the rule, but this beta will not compare the timing result with the standard physical-keyboard form.. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<p[39m
+      [33mclass[39m=[32m"eyebrow"[39m
+    [36m>[39m
+      [0mStop · Device and accessibility[0m
+    [36m</p>[39m
+    [36m<h1[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [0mCheck your setup[0m
+    [36m</h1>[39m
+    [36m<p>[39m
+      [0mUse a laptop or desktop with a physical keyboard. Close distractions and keep this tab visible until the game ends. Choose any accessibility setting before you start; changing it during the game ends the session.[0m
+    [36m</p>[39m
+    [36m<label[39m
+      [33mclass[39m=[32m"choice"[39m
+    [36m>[39m
+      [36m<input[39m
+        [33mchecked[39m=[32m""[39m
+        [33mtype[39m=[32m"checkbox"[39m
+      [36m/>[39m
+      [36m<span>[39m
+        [0mI’m using a laptop or desktop with a physical keyboard.[0m
+      [36m</span>[39m
+    [36m</label>[39m
+    [36m<p>[39m
+      [0mResponse key: [0m
+      [36m<kbd>[39m
+        [0mSpace[0m
+      [36m</kbd>[39m
+    [36m</p>[39m
+    [36m<button[39m
+      [33mclass[39m=[32m"secondary"[39m
+    [36m>[39m
+      [0mChange key[0m
+    [36m</button>[39m
+    [36m<fieldset>[39m
+      [36m<legend>[39m
+        [0mVisual symbols[0m
+      [36m</legend>[39m
+      [36m<label[39m
+        [33mclass[39m=[32m"choice"[39m
+      [36m>[39m
+        [36m<input[39m
+          [33mchecked[39m=[32m""[39m
+          [33mname[39m=[32m"visual"[39m
+          [33mtype[39m=[32m"radio"[39m
+        [36m/>[39m
+        [0mStandard color-plus-marker symbols[0m
+      [36m</label>[39m
+      [36m<label[39m
+        [33mclass[39m=[32m"choice"[39m
+      [36m>[39m
+        [36m<input[39m
+          [33mname[39m=[32m"visual"[39m
+          [33mtype[39m=[32m"radio"[39m
+        [36m/>[39m
+        [0mHigh-distinction shape form[0m
+      [36m</label>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"rule-grid"[39m
+      [36m>[39m
+        [36m<div>[39m
+          [36m<img[39m
+            [33malt[39m=[32m"GO — vertical marker"[39m
+            [33mclass[39m=[32m"stimulus"[39m
+            [33mheight[39m=[32m"128"[39m
+            [33msrc[39m=[32m"/stop/stimuli/standard-go.svg"[39m
+            [33mwidth[39m=[32m"128"[39m
+          [36m/>[39m
+          [36m<p>[39m
+            [0mGO — press [0m
+            [0mSpace[0m
+          [36m</p>[39m
+        [36m</div>[39m
+        [36m<div>[39m
+          [36m<img[39m
+            [33malt[39m=[32m"NO-GO — horizontal marker"[39m
+            [33mclass[39m=[32m"stimulus"[39m
+            [33mheight[39m=[32m"128"[39m
+            [33msrc[39m=[32m"/stop/stimuli/standard-no-go.svg"[39m
+            [33mwidth[39m=[32m"128"[39m
+          [36m/>[39m
+          [36m<p>[39m
+            [0mNO-GO — do nothing[0m
+          [36m</p>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</fieldset>[39m
+    [36m<p>[39m
+      [0mStandard timing. Extended-time mode is planned after Public Beta 0.1 and is not available in this release.[0m
+    [36m</p>[39m
+    [36m<p[39m
+      [33mclass[39m=[32m"note"[39m
+    [36m>[39m
+      [0mResults and sequence-use records are kept only while this page remains open. Refreshing, closing the tab, or leaving the site clears them. These records cannot establish which sequences you started on earlier visits or in other tabs.[0m
+      [0m If local data were cleared or evicted, this visit is a fresh installation: earlier results cannot be reconstructed, and no sequence can be guaranteed new relative to earlier use.[0m
+    [36m</p>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"actions"[39m
+    [36m>[39m
+      [36m<button>[39m
+        [0mRun input check[0m
+      [36m</button>[39m
+    [36m</div>[39m
+    [36m<div[39m
+      [33mrole[39m=[32m"status"[39m
+    [36m/>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"actions"[39m
+    [36m>[39m
+      [36m<button[39m
+        [33mdisabled[39m=[32m""[39m
+      [36m>[39m
+        [0mContinue to readiness[0m
+      [36m</button>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/stop/Preflight.test.tsx:53:17
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  src/stop/run.test.ts > M6-A ends a missing initial frame at 2000 ms and fences late delivery
+AssertionError: expected 'live' to be 'invalid' // Object.is equality
+
+Expected: "invalid"
+Received: "live"
+
+ ❯ src/stop/run.test.ts:850:35
+    848|   expect(h.run.snapshot().screen).toBe('live')
+    849|   await h.advance(2000)
+    850|   expect(h.run.snapshot().screen).toBe('invalid')
+       |                                   ^
+    851|   const before = h.run.snapshot().events
+    852|   ready(); await h.advance(10000)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  src/stop/training.test.ts > S46 compares unrounded adjacent representable severities
+AssertionError: expected 'stability' to be 'detection' // Object.is equality
+
+Expected: "detection"
+Received: "stability"
+
+ ❯ src/stop/training.test.ts:327:28
+    325|     const routed = routeStop(baseline(half(27, 0), half(27, 0), { iqr:…
+    326|     const recorded = routed.candidates.find(c => c.id === 'stability')…
+    327|     expect(routed.drillId).toBe(recorded - 1 < .001 ? 'detection' : 's…
+       |                            ^
+    328|     expect(routed.tieBreak).toBe(recorded - 1 < .001)
+    329|   }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  3 failed (3)
+      Tests  3 failed | 96 passed (99)
+   Start at  22:03:24
+   Duration  3.77s (transform 224ms, setup 110ms, import 288ms, tests 4.12s, environment 250ms)
+

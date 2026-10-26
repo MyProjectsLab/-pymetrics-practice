@@ -1,0 +1,142 @@
+{
+  "browser": "145.0.7632.6",
+  "cases": [
+    {
+      "finding": "F1",
+      "kind": "baseline",
+      "condition": "failed",
+      "events": 6,
+      "journalHash": "fda578aca6c90b60f58bc872308e3da5a9f75ce6a394a13712a2712917c2936e",
+      "failedMemoryReview": true,
+      "reloadBeforeSaveAbsent": true,
+      "retryAndReloadPreserved": true
+    },
+    {
+      "finding": "F1",
+      "kind": "baseline",
+      "condition": "delayed",
+      "events": 5,
+      "journalHash": "16b1697d27bec2d506022af79eebb12a84401268cab634639dca270c5a49f52e",
+      "failedMemoryReview": true,
+      "reloadBeforeSaveAbsent": true,
+      "retryAndReloadPreserved": true
+    },
+    {
+      "finding": "F1",
+      "kind": "baseline",
+      "condition": "delayed-reject",
+      "events": 5,
+      "journalHash": "b8b7678147c4825efb6040130131afb3fda2b4e23689857f20ef62b6698f44fa",
+      "failedMemoryReview": true,
+      "reloadBeforeSaveAbsent": true,
+      "retryAndReloadPreserved": true
+    },
+    {
+      "finding": "F1",
+      "kind": "drill",
+      "condition": "failed",
+      "events": 522,
+      "journalHash": "23fc3502d189f234f6b59bdccb87c61b2bd66c6dda6fd617c025b421c9803f0d",
+      "failedMemoryReview": true,
+      "reloadBeforeSaveAbsent": true,
+      "retryAndReloadPreserved": true
+    },
+    {
+      "finding": "F1",
+      "kind": "drill",
+      "condition": "delayed",
+      "events": 522,
+      "journalHash": "ea4cfc88776198e122284c307dad1e805569539dd49ef78bf99caf274f8d04dc",
+      "failedMemoryReview": true,
+      "reloadBeforeSaveAbsent": true,
+      "retryAndReloadPreserved": true
+    },
+    {
+      "finding": "F1",
+      "kind": "drill",
+      "condition": "delayed-reject",
+      "events": 522,
+      "journalHash": "b324c2772b4f86232753ffae88eaca1bbc6023ac6ca13d5c19db6a38ac139e39",
+      "failedMemoryReview": true,
+      "reloadBeforeSaveAbsent": true,
+      "retryAndReloadPreserved": true
+    },
+    {
+      "finding": "F2",
+      "kind": "draft",
+      "linked": false,
+      "staleRetestBlocked": true,
+      "unrelatedSaved": false
+    },
+    {
+      "finding": "F2",
+      "kind": "draft",
+      "linked": true,
+      "staleRetestBlocked": true,
+      "unrelatedSaved": false
+    },
+    {
+      "finding": "F2",
+      "kind": "all",
+      "linked": false,
+      "staleRetestBlocked": true,
+      "unrelatedSaved": false
+    },
+    {
+      "finding": "F2",
+      "kind": "unrelated",
+      "linked": false,
+      "staleRetestBlocked": false,
+      "unrelatedSaved": true
+    },
+    {
+      "finding": "F2",
+      "kind": "drill",
+      "boundary": "reservation",
+      "notificationsDisabled": true,
+      "rejected": true,
+      "knownUnexposed": true
+    },
+    {
+      "finding": "F2",
+      "kind": "drill",
+      "boundary": "arm",
+      "notificationsDisabled": true,
+      "rejected": true,
+      "knownUnexposed": true
+    },
+    {
+      "finding": "F2",
+      "kind": "all",
+      "boundary": "reservation",
+      "notificationsDisabled": true,
+      "rejected": true,
+      "knownUnexposed": true
+    },
+    {
+      "finding": "F2",
+      "kind": "all",
+      "boundary": "arm",
+      "notificationsDisabled": true,
+      "rejected": true,
+      "knownUnexposed": true
+    },
+    {
+      "finding": "F2",
+      "kind": "drill",
+      "boundary": "actual scored initial fixation",
+      "events": 79,
+      "scoredOnsets": 0,
+      "markerAbsent": true
+    },
+    {
+      "finding": "F2",
+      "kind": "all",
+      "boundary": "actual scored initial fixation",
+      "events": 79,
+      "scoredOnsets": 0,
+      "markerAbsent": true
+    }
+  ],
+  "errors": []
+}

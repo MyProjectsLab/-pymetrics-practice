@@ -1,0 +1,164 @@
+[
+  {
+    "name": "missing fixation_pending all confirmation frames, watchdog and late frames fenced",
+    "status": "PASS",
+    "detail": {
+      "reason": "watchdog",
+      "lateUnchanged": true
+    }
+  },
+  {
+    "name": "missing fixation all confirmation frames, watchdog and late frames fenced",
+    "status": "PASS",
+    "detail": {
+      "reason": "watchdog",
+      "lateUnchanged": true
+    }
+  },
+  {
+    "name": "missing stimulus all confirmation frames, watchdog and late frames fenced",
+    "status": "PASS",
+    "detail": {
+      "reason": "watchdog",
+      "lateUnchanged": true
+    }
+  },
+  {
+    "name": "missing removed all confirmation frames, watchdog and late frames fenced",
+    "status": "PASS",
+    "detail": {
+      "reason": "watchdog",
+      "lateUnchanged": true
+    }
+  },
+  {
+    "name": "missing resolved all confirmation frames, watchdog and late frames fenced",
+    "status": "PASS",
+    "detail": {
+      "reason": "watchdog",
+      "lateUnchanged": true
+    }
+  },
+  {
+    "name": "missing feedback all confirmation frames, watchdog and late frames fenced",
+    "status": "PASS",
+    "detail": {
+      "reason": "watchdog",
+      "lateUnchanged": true
+    }
+  },
+  {
+    "name": "individual delete-first at trial 2 without notifications",
+    "status": "PASS",
+    "detail": {
+      "onsets": 1,
+      "reason": "ownership",
+      "rootRetired": true
+    }
+  },
+  {
+    "name": "individual onset-first at trial 2 without notifications",
+    "status": "PASS",
+    "detail": {
+      "onsets": 2,
+      "reason": "ownership",
+      "rootRetired": true
+    }
+  },
+  {
+    "name": "replacement delete-first at trial 2 without notifications",
+    "status": "PASS",
+    "detail": {
+      "onsets": 1,
+      "reason": "ownership",
+      "rootRetired": true
+    }
+  },
+  {
+    "name": "replacement onset-first at trial 2 without notifications",
+    "status": "PASS",
+    "detail": {
+      "onsets": 2,
+      "reason": "ownership",
+      "rootRetired": true
+    }
+  },
+  {
+    "name": "held authority read canceled; order lock and late callback released",
+    "status": "PASS",
+    "detail": {
+      "canceled": true,
+      "lateUnchanged": true,
+      "deletionCompleted": true
+    }
+  },
+  {
+    "name": "canceled owner acquisition callback cannot start later",
+    "status": "PASS",
+    "detail": {
+      "noLateStart": true
+    }
+  },
+  {
+    "name": "two live owners cannot arm simultaneously",
+    "status": "PASS",
+    "detail": {
+      "secondBlocked": true,
+      "arms": 1
+    }
+  },
+  {
+    "name": "checkpoint write-failed gates and exact same-byte recovery",
+    "status": "PASS",
+    "detail": {
+      "closed": 30,
+      "confirmedAfterRetry": true,
+      "lateNoAdvance": true
+    }
+  },
+  {
+    "name": "checkpoint delivery-held gates and exact same-byte recovery",
+    "status": "PASS",
+    "detail": {
+      "closed": 30,
+      "confirmedAfterRetry": true,
+      "lateNoAdvance": true
+    }
+  },
+  {
+    "name": "hide after checkpoint capture is gated; exact read confirms before manual Continue",
+    "status": "PASS",
+    "detail": {
+      "hideGated": true,
+      "manualReacquired": true
+    }
+  },
+  {
+    "name": "terminal write-failed retains immutable review and releases live owner",
+    "status": "PASS",
+    "detail": {
+      "phase": "completed",
+      "bankedCents": 800,
+      "ownerReleased": true,
+      "recovered": true
+    }
+  },
+  {
+    "name": "terminal delivery-held retains immutable review and releases live owner",
+    "status": "PASS",
+    "detail": {
+      "phase": "completed",
+      "bankedCents": 800,
+      "ownerReleased": true,
+      "recovered": true
+    }
+  },
+  {
+    "name": "pointer held outside response control and simultaneous contact ignored",
+    "status": "PASS",
+    "detail": {
+      "oneAnswer": true,
+      "outsideReleased": true
+    }
+  }
+]

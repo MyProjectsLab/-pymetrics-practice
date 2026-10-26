@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "checks": [
+    "320px reflow",
+    "keyboard allow and withdrawal",
+    "page reload consent off",
+    "new random ID after reload/reconsent",
+    "bfcache-style pagehide consent reset"
+  ],
+  "requests": [
+    {
+      "event": "stop_guide_opened",
+      "session_id": "c392d094-569f-480d-8044-1815147002f1"
+    },
+    {
+      "event": "stop_guide_opened",
+      "session_id": "8719bfdc-27f9-4b40-b945-e6767d73f22a"
+    }
+  ]
+}

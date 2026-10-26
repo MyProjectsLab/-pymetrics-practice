@@ -1,0 +1,87 @@
+
+> assessment-practice@0.0.0 test
+> vitest run src/stop/History.test.tsx
+
+
+ RUN  v4.1.11 /Users/renzo/Documents/Assessment Practice/App
+
+ ❯ src/stop/History.test.tsx (4 tests | 1 failed) 89ms
+     × moves focus with history screens and permits keyboard cancellation without deleting data 49ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/stop/History.test.tsx > M5 compatible-profile history (S73) > moves focus with history screens and permits keyboard cancellation without deleting data
+Error: expect(element).toHaveFocus()
+
+Expected element with focus:
+  <h1
+  tabindex="-1"
+>
+  Stop history
+</h1>
+Received element with focus:
+  <body>
+  <div>
+    <section
+      class="journey"
+    >
+      <div
+        class="panel"
+      >
+        <h1
+          tabindex="-1"
+        >
+          Stop history
+        </h1>
+        <p>
+          Results are stored in this browser. Clearing site data or browser eviction can remove them. Earlier visits after cleared data cannot be reconstructed.
+        </p>
+        <div
+          class="actions"
+        >
+          <button>
+            Practise Stop
+          </button>
+          <button
+            class="secondary"
+          >
+            Back to library
+          </button>
+          <button
+            class="secondary"
+          >
+            Delete all Assessment Practice data
+          </button>
+        </div>
+        <h2>
+          Results and attempts
+        </h2>
+        <p>
+          No Stop results are saved in this browser.
+        </p>
+        <h2>
+          Progress by compatible profile
+        </h2>
+        <h2>
+          Baseline and retest comparisons
+        </h2>
+      </div>
+    </section>
+  </div>
+</body>
+ ❯ src/stop/History.test.tsx:24:67
+     22|     render(<StopHistory history={{ valid: [], invalid: [], rejected: […
+     23|       store={{} as StopLocalStore} onRefresh={vi.fn()} onLibrary={vi.f…
+     24|     expect(screen.getByRole('heading', { name: 'Stop history' })).toHa…
+       |                                                                   ^
+     25|     fireEvent.click(screen.getByRole('button', { name: 'Delete all Ass…
+     26|     const confirmation = screen.getByRole('alertdialog')
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  01:12:23
+   Duration  562ms (transform 97ms, setup 40ms, import 143ms, tests 89ms, environment 235ms)
+

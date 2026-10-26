@@ -1,0 +1,117 @@
+{
+  "browser": "145.0.7632.6",
+  "results": [
+    {
+      "name": "publication failure before first fixation",
+      "start": {
+        "started": false,
+        "error": "Error: Arrows scored start was canceled"
+      },
+      "result": {
+        "phase": "invalid",
+        "reason": "technical",
+        "onsets": 0,
+        "protected": false,
+        "hostChildren": 0,
+        "competingOwner": true
+      },
+      "pass": true
+    },
+    {
+      "name": "obscured rule cue",
+      "start": {
+        "started": true
+      },
+      "result": {
+        "hit": true,
+        "ready": false,
+        "phase": "invalid",
+        "reason": "viewport",
+        "competingOwner": true
+      },
+      "pass": true
+    },
+    {
+      "name": "painted cue overlay without pointer hit testing",
+      "start": {
+        "started": true
+      },
+      "result": {
+        "hit": false,
+        "ready": false,
+        "phase": "invalid",
+        "reason": "viewport",
+        "competingOwner": true
+      },
+      "pass": true
+    },
+    {
+      "name": "partially obscured cue word",
+      "start": {
+        "started": true
+      },
+      "result": {
+        "hit": true,
+        "ready": false,
+        "phase": "invalid",
+        "reason": "viewport",
+        "competingOwner": true
+      },
+      "pass": true
+    },
+    {
+      "name": "stage child painted overlay",
+      "start": {
+        "started": true
+      },
+      "result": {
+        "hit": false,
+        "ready": false,
+        "phase": "invalid",
+        "reason": "viewport",
+        "competingOwner": true
+      },
+      "pass": true
+    },
+    {
+      "name": "non-interactive content behind visible stimulus",
+      "start": {
+        "started": true
+      },
+      "result": {
+        "cueVisible": true,
+        "ready": true,
+        "styleUnchanged": true,
+        "phase": "stimulus",
+        "reason": null,
+        "protected": true
+      },
+      "pass": true
+    },
+    {
+      "name": "underlying content does not block Start",
+      "start": {
+        "started": true
+      },
+      "result": {
+        "ready": true,
+        "phase": "fixation_pending",
+        "style": "none"
+      },
+      "pass": true
+    },
+    {
+      "name": "transparent host ancestor",
+      "start": {
+        "started": true
+      },
+      "result": {
+        "ready": false,
+        "phase": "invalid",
+        "reason": "viewport",
+        "competingOwner": true
+      },
+      "pass": true
+    }
+  ]
+}

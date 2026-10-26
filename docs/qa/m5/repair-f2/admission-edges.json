@@ -1,0 +1,71 @@
+{
+  "browser": "145.0.7632.6",
+  "delivery": "unavailable",
+  "cases": [
+    {
+      "kind": "drill-no-observer",
+      "pass": true,
+      "claim": {
+        "sessionId": "2a010c87-06e4-4085-a0d0-d5c33784cb51",
+        "formId": "stop-retest-04",
+        "family": "retest",
+        "expiresAtMs": 1790809314047,
+        "chainId": "a56cdd75-fd77-4366-9950-69e687a5ad9f",
+        "armed": false,
+        "ownerTabId": "d071052c-a1d9-4597-9bcc-18cbd0610971"
+      },
+      "zeroAfterRelease": true,
+      "invalidRule": "stop_validity_v1.integrity"
+    },
+    {
+      "kind": "all-no-observer",
+      "pass": true,
+      "claim": {
+        "sessionId": "30a7e9e5-d13d-4693-bdfc-db3c7226e3ee",
+        "formId": "stop-retest-02",
+        "family": "retest",
+        "expiresAtMs": 1790809336015,
+        "chainId": "a56cdd75-fd77-4366-9950-69e687a5ad9f",
+        "armed": false,
+        "ownerTabId": "96cbec0a-ff46-431e-8f73-1a0249e58270"
+      },
+      "zeroAfterRelease": true,
+      "invalidRule": "stop_validity_v1.integrity"
+    },
+    {
+      "kind": "queued-cancel",
+      "pass": true,
+      "claim": {
+        "sessionId": "51582fae-c909-4a0c-8923-99e0cbbc085e",
+        "formId": "stop-retest-03",
+        "family": "retest",
+        "expiresAtMs": 1790809357923,
+        "chainId": "a56cdd75-fd77-4366-9950-69e687a5ad9f",
+        "armed": false,
+        "ownerTabId": "3ba85c08-a4c3-4ce4-98f2-1a1960f49033"
+      },
+      "zeroAfterRelease": true,
+      "invalidRule": "stop_validity_v1.severe_timing"
+    },
+    {
+      "kind": "admitted-cancel",
+      "pass": true,
+      "claim": {
+        "sessionId": "f46e81e4-2483-4811-b7b2-990807fd4309",
+        "formId": "stop-retest-02",
+        "family": "retest",
+        "expiresAtMs": 1790809379839,
+        "chainId": "a56cdd75-fd77-4366-9950-69e687a5ad9f",
+        "armed": false,
+        "ownerTabId": "e5425aa5-65f0-48ca-a4bc-cf2068c18003"
+      },
+      "zeroAfterRelease": true,
+      "invalidRule": "stop_validity_v1.severe_timing"
+    },
+    {
+      "kind": "unsupported",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

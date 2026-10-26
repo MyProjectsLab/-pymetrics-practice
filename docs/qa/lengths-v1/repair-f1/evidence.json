@@ -1,0 +1,37 @@
+{
+  "baseline": {
+    "heldResolutionCallbacks": 1,
+    "barsAfterDeadline": 2,
+    "browserTimeMs": 5546,
+    "durableTerminal": null
+  },
+  "repaired": {
+    "heldResolutionCallbacks": 1,
+    "barsAfterDeadline": 0,
+    "onsetMs": 1168,
+    "resolutionDueMs": 2568,
+    "watchdogDueMs": 4568,
+    "invalidationMs": 4568,
+    "reason": "watchdog",
+    "durablePhase": "invalid",
+    "timedEventsBeforeLateCallback": 7,
+    "timedEventsAfterLateCallback": 7,
+    "timedEventsIdenticalAfterLateCallback": true,
+    "timedEventsSha256": "799f03a5f071be988f71f763b707e3adb5d05ac25419c9320ce60f5feba52a5f",
+    "visibleAfterLateCallback": "Lengths · Standalone Practice\n\nBack to library\nLengths report\n\nInvalid attempt. Saved in this browser.\n\nForm LS1 · lengt"
+  },
+  "healthy": {
+    "blockComplete": true,
+    "checkpoint": "checkpoint",
+    "closed": 24,
+    "presented": 24,
+    "resolved": 24,
+    "offset": 24,
+    "invalidated": 0,
+    "errors": []
+  },
+  "rawSha256": {
+    "baseline": "340bb58e5b6e35dbe6a5ee5dc75f51ec49945f74032ef0f2e07da9bbe115137b",
+    "repaired": "b1a7f66ad756d223adf17dd410d7f55f9ed7e8647c0d5fb3a54aef2dd35d61c5"
+  }
+}

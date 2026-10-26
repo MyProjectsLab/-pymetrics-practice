@@ -1,0 +1,107 @@
+[
+  {
+    "capture": "pre-edit",
+    "id": "13cb30eb-0075-4bf2-8617-a7a2e756ca84",
+    "events": 643,
+    "counts": {
+      "hits": 0,
+      "misses": 60,
+      "withholds": 20,
+      "falseAlarms": 0
+    },
+    "visibility": [
+      201.0,
+      210.70000004768372
+    ],
+    "deadlineLateness": [
+      0.09999990463256836,
+      2.0999999046325684
+    ],
+    "finalInterval": 1200.7000000476837,
+    "journalSha256": "a91784aa5336e1e27495532e187ebfedea285fc1186473fc0c5b0185056920a9"
+  },
+  {
+    "capture": "full-after",
+    "id": "9c4f705f-4adf-4b10-9905-76b4e8e56ad8",
+    "events": 643,
+    "counts": {
+      "hits": 0,
+      "misses": 60,
+      "withholds": 20,
+      "falseAlarms": 0
+    },
+    "visibility": [
+      200.70000004768372,
+      210.40000009536743
+    ],
+    "deadlineLateness": [
+      0.10000014305114746,
+      1.7000000476837158
+    ],
+    "finalInterval": 1200.2999999523163,
+    "journalSha256": "4e135522cc6b9d5dfe41a59670b3a0ba3dbe0c9c5e6330fcfadd8e32fd70e25b"
+  },
+  {
+    "capture": "retry-control",
+    "id": "e5a41441-478e-4929-9243-fd1e5d0da531",
+    "events": 643,
+    "counts": {
+      "hits": 0,
+      "misses": 60,
+      "withholds": 20,
+      "falseAlarms": 0
+    },
+    "visibility": [
+      201.39999985694885,
+      210.5
+    ],
+    "deadlineLateness": [
+      0.09999990463256836,
+      1.7000000476837158
+    ],
+    "finalInterval": 1201.2999999523163,
+    "journalSha256": "50826ff861668698bb570f92de81e1e232c15d8c799af24daa8ab704a667dfdd"
+  },
+  {
+    "capture": "c2-drill",
+    "id": "a2633a0a-949c-4cc5-8a60-c0e781045ff4",
+    "events": 643,
+    "counts": {
+      "hits": 0,
+      "misses": 60,
+      "withholds": 20,
+      "falseAlarms": 0
+    },
+    "visibility": [
+      200.5,
+      210.39999985694885
+    ],
+    "deadlineLateness": [
+      0.09999990463256836,
+      1.6999998092651367
+    ],
+    "finalInterval": 1200.8999998569489,
+    "journalSha256": "faa41aacf2404e5e49dd8e7d8001a4157be1d767d7655ebdbbecf3e6884aa002"
+  },
+  {
+    "capture": "c4-all",
+    "id": "8fd4326d-d0e4-49f8-abe0-064afdc120ec",
+    "events": 643,
+    "counts": {
+      "hits": 0,
+      "misses": 60,
+      "withholds": 20,
+      "falseAlarms": 0
+    },
+    "visibility": [
+      200.29999995231628,
+      210.59999990463257
+    ],
+    "deadlineLateness": [
+      0.09999990463256836,
+      1.5
+    ],
+    "finalInterval": 1200.5,
+    "journalSha256": "3fdc649fa64aeba842bfd765a8e1e4861ab1b48b6d6a0d840a57d52e045bd0c0"
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "name": "200% CSS magnification",
+    "status": "PASS",
+    "detail": {
+      "width": 480,
+      "simulation": "CSS zoom, not browser UI zoom qualification"
+    }
+  },
+  {
+    "name": "noninteractive overlay",
+    "status": "PASS",
+    "detail": {
+      "blocked": true
+    }
+  },
+  {
+    "name": "protected resize",
+    "status": "PASS",
+    "detail": {
+      "invalid": true,
+      "reason": "viewport"
+    }
+  },
+  {
+    "name": "legacy root isolation",
+    "status": "PASS",
+    "detail": {
+      "legacyBytesUnchanged": true,
+      "seed": "empty valid legacy installation root"
+    }
+  }
+]

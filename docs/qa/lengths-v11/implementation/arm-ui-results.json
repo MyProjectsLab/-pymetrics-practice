@@ -1,0 +1,29 @@
+[
+  {
+    "name": "production candidate uncertain arm retry: timeout",
+    "status": "PASS",
+    "detail": {
+      "counter": 1,
+      "sameRequest": true,
+      "sameSession": true
+    }
+  },
+  {
+    "name": "production candidate uncertain arm retry: End",
+    "status": "PASS",
+    "detail": {
+      "counter": 1,
+      "sameRequest": true,
+      "sameSession": true
+    }
+  },
+  {
+    "name": "production candidate uncertain arm retry: held key",
+    "status": "PASS",
+    "detail": {
+      "counter": 1,
+      "sameRequest": true,
+      "sameSession": true
+    }
+  }
+]

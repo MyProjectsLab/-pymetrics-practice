@@ -1,0 +1,40 @@
+{
+  "browser": "145.0.7632.6",
+  "arms": [
+    {
+      "ordinal": 2,
+      "formId": "AR2",
+      "sessionId": "730886e0-40a1-4e9a-b55c-b21bbc9e62d8",
+      "retryIdentical": true,
+      "eventTypes": [
+        "prepared",
+        "form_assigned",
+        "armed"
+      ]
+    },
+    {
+      "ordinal": 1,
+      "formId": "AR1",
+      "sessionId": "1b932a53-7433-4fe5-b7a6-b7f0f8671275",
+      "retryIdentical": true,
+      "eventTypes": [
+        "prepared",
+        "form_assigned",
+        "armed"
+      ]
+    }
+  ],
+  "recovered": {
+    "count": 2,
+    "revision": 2,
+    "ordinals": [
+      1,
+      2
+    ],
+    "eventCounts": [
+      3,
+      3
+    ]
+  },
+  "passed": true
+}

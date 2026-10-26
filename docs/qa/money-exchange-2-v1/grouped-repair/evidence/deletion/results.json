@@ -1,0 +1,74 @@
+[
+  {
+    "name": "delete-all-before-arm",
+    "pass": true
+  },
+  {
+    "name": "delete-all-after-arm",
+    "pass": true
+  },
+  {
+    "name": "old-report-delete-preserves-new-attempt",
+    "pass": true
+  },
+  {
+    "name": "current-attempt-delete-withdraws",
+    "pass": true
+  },
+  {
+    "name": "report-deletion-while-read-held",
+    "pass": true
+  },
+  {
+    "name": "native-history-delete-focus",
+    "pass": true
+  },
+  {
+    "name": "pending-Restart-old-delete-false",
+    "pass": true
+  },
+  {
+    "name": "pending-Restart-old-delete-true",
+    "pass": true
+  },
+  {
+    "name": "pending-TryAgain-old-delete-false",
+    "pass": true
+  },
+  {
+    "name": "pending-TryAgain-old-delete-true",
+    "pass": true
+  },
+  {
+    "name": "stale-ready-handler-after-successor",
+    "pass": true
+  },
+  {
+    "name": "history-refresh-after-external-deletion",
+    "pass": true
+  },
+  {
+    "name": "delete-before-pending-Restart-false",
+    "pass": true
+  },
+  {
+    "name": "delete-before-pending-Restart-true",
+    "pass": true
+  },
+  {
+    "name": "delete-before-pending-TryAgain-false",
+    "pass": true
+  },
+  {
+    "name": "delete-before-pending-TryAgain-true",
+    "pass": true
+  },
+  {
+    "name": "D6-local-delete-immediate-fence-held-write",
+    "pass": true
+  },
+  {
+    "name": "V21-held-obsolete-close-cannot-restore-screen",
+    "pass": true
+  }
+]

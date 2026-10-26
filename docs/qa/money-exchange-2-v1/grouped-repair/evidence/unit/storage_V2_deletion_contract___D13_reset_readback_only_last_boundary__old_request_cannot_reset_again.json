@@ -1,0 +1,139 @@
+[
+  {
+    "version": "money_exchange_2_storage_v2_0",
+    "activity": {},
+    "installationId": "18c04aab-67f5-4967-8005-0e0df5c5b1bd",
+    "generation": 3,
+    "revision": 6,
+    "lease": {
+      "ownerId": null,
+      "epoch": 4,
+      "live": false
+    },
+    "route": {
+      "stage": "library",
+      "epoch": 7,
+      "ownerId": null
+    },
+    "ticketSerial": 0,
+    "currentTicketId": null,
+    "tickets": {},
+    "activeAttemptId": null,
+    "formCounter": 0,
+    "exposureHistory": [],
+    "attempts": {},
+    "tombstones": {},
+    "outcomes": {
+      "test/6": {
+        "payloadHash": "{\"kind\":\"deleteAll\",\"requestId\":\"test/6\",\"installationId\":\"18c04aab-67f5-4967-8005-0e0df5c5b1bd\",\"generation\":2}",
+        "command": {
+          "kind": "deleteAll",
+          "requestId": "test/6",
+          "installationId": "18c04aab-67f5-4967-8005-0e0df5c5b1bd",
+          "generation": 2
+        },
+        "result": {
+          "generation": 3
+        },
+        "route": {
+          "stage": "library",
+          "epoch": 7,
+          "ownerId": null
+        },
+        "revision": 6
+      }
+    },
+    "navigation": null,
+    "proofs": {},
+    "retired": {},
+    "resetReceipt": {
+      "payloadHash": "{\"kind\":\"deleteAll\",\"requestId\":\"test/6\",\"installationId\":\"18c04aab-67f5-4967-8005-0e0df5c5b1bd\",\"generation\":2}",
+      "command": {
+        "kind": "deleteAll",
+        "requestId": "test/6",
+        "installationId": "18c04aab-67f5-4967-8005-0e0df5c5b1bd",
+        "generation": 2
+      },
+      "result": {
+        "generation": 3
+      },
+      "route": {
+        "stage": "library",
+        "epoch": 7,
+        "ownerId": null
+      },
+      "revision": 6
+    },
+    "checkpoint": {
+      "version": "storage_v2_0",
+      "revision": 6,
+      "state": {
+        "version": "money_exchange_2_storage_v2_0",
+        "activity": {},
+        "installationId": "18c04aab-67f5-4967-8005-0e0df5c5b1bd",
+        "generation": 3,
+        "revision": 6,
+        "lease": {
+          "ownerId": null,
+          "epoch": 4,
+          "live": false
+        },
+        "route": {
+          "stage": "library",
+          "epoch": 7,
+          "ownerId": null
+        },
+        "ticketSerial": 0,
+        "currentTicketId": null,
+        "tickets": {},
+        "activeAttemptId": null,
+        "formCounter": 0,
+        "exposureHistory": [],
+        "attempts": {},
+        "tombstones": {},
+        "outcomes": {
+          "test/6": {
+            "payloadHash": "{\"kind\":\"deleteAll\",\"requestId\":\"test/6\",\"installationId\":\"18c04aab-67f5-4967-8005-0e0df5c5b1bd\",\"generation\":2}",
+            "command": {
+              "kind": "deleteAll",
+              "requestId": "test/6",
+              "installationId": "18c04aab-67f5-4967-8005-0e0df5c5b1bd",
+              "generation": 2
+            },
+            "result": {
+              "generation": 3
+            },
+            "route": {
+              "stage": "library",
+              "epoch": 7,
+              "ownerId": null
+            },
+            "revision": 6
+          }
+        },
+        "navigation": null,
+        "proofs": {},
+        "retired": {},
+        "resetReceipt": {
+          "payloadHash": "{\"kind\":\"deleteAll\",\"requestId\":\"test/6\",\"installationId\":\"18c04aab-67f5-4967-8005-0e0df5c5b1bd\",\"generation\":2}",
+          "command": {
+            "kind": "deleteAll",
+            "requestId": "test/6",
+            "installationId": "18c04aab-67f5-4967-8005-0e0df5c5b1bd",
+            "generation": 2
+          },
+          "result": {
+            "generation": 3
+          },
+          "route": {
+            "stage": "library",
+            "epoch": 7,
+            "ownerId": null
+          },
+          "revision": 6
+        }
+      }
+    },
+    "tail": []
+  }
+]

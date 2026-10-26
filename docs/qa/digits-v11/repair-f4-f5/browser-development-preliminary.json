@@ -1,0 +1,271 @@
+[
+  {
+    "name": "normal adaptive C W C W C W, native Enter, saved report and byte-identical reload/history",
+    "status": "PASS",
+    "detail": {
+      "lengths": [
+        4,
+        5,
+        4,
+        5,
+        4,
+        5
+      ],
+      "review": {
+        "status": "valid",
+        "scoringVersion": "digits_scoring_v1_1",
+        "formId": "DV1",
+        "mode": "visual",
+        "exactCorrect": 3,
+        "wrong": 3,
+        "skipped": 3,
+        "timedOut": 0,
+        "assistedEntry": false,
+        "maximumRecalledLength": 4,
+        "byLength": [
+          {
+            "length": 4,
+            "exact": 3,
+            "of": 3,
+            "percent": 100
+          },
+          {
+            "length": 5,
+            "exact": 0,
+            "of": 3,
+            "percent": 0
+          }
+        ],
+        "closedTrials": 6,
+        "completionReason": "three_mistakes",
+        "serialPositionErrors": [
+          {
+            "position": 1,
+            "errors": 3,
+            "opportunities": 6,
+            "percent": 50
+          },
+          {
+            "position": 2,
+            "errors": 3,
+            "opportunities": 6,
+            "percent": 50
+          },
+          {
+            "position": 3,
+            "errors": 3,
+            "opportunities": 6,
+            "percent": 50
+          },
+          {
+            "position": 4,
+            "errors": 3,
+            "opportunities": 6,
+            "percent": 50
+          },
+          {
+            "position": 5,
+            "errors": 3,
+            "opportunities": 3,
+            "percent": 100
+          }
+        ],
+        "positionMatches": 12,
+        "substitutions": 0,
+        "transpositionPairs": 0,
+        "missingSuffix": 15,
+        "fullMatchingTimeouts": 0
+      },
+      "events": 82,
+      "unchangedSnapshot": true
+    }
+  },
+  {
+    "name": "keypad trusted input and protected feedback blur",
+    "status": "PASS",
+    "detail": {
+      "closed": 1,
+      "reason": "blur",
+      "presented": 1
+    }
+  },
+  {
+    "name": "untrusted input rejected; held physical key repeat suppressed",
+    "status": "PASS",
+    "detail": {
+      "untrustedIgnored": true,
+      "heldKeySingleDigit": true
+    }
+  },
+  {
+    "name": "committed arm held delivery, same-request retry, and late callback cannot double rotate",
+    "status": "PASS",
+    "detail": {
+      "armCounter": 1,
+      "sameRequestRecovered": true
+    }
+  },
+  {
+    "name": "genuine checkpoint failure disables Next; one same-byte retry recovers",
+    "status": "PASS",
+    "detail": {
+      "samePrefixVerified": true,
+      "closed": 1
+    }
+  },
+  {
+    "name": "committed held checkpoint then feedback End reconciles before terminal; late callback fenced",
+    "status": "PASS",
+    "detail": {
+      "reason": "candidate_ended",
+      "closed": 1,
+      "lateCheckpointIgnored": true
+    }
+  },
+  {
+    "name": "terminal held delivery shows unsaved draft; retry confirms same bytes",
+    "status": "PASS",
+    "detail": {
+      "sameBytes": true,
+      "review": {
+        "status": "invalid",
+        "reason": "blur",
+        "presented": 1,
+        "closed": 0,
+        "unresolved": 1
+      }
+    }
+  },
+  {
+    "name": "individual deletion_first: shared Next/deletion boundary without notifications",
+    "status": "PASS",
+    "detail": {
+      "successorDigitsObserved": 0,
+      "attempts": 0,
+      "visualCounter": 1,
+      "orderTrace": [
+        {
+          "type": "data_lock_acquired",
+          "wallMs": 1791486669938,
+          "atMs": 4958.799999952316
+        },
+        {
+          "type": "data_lock_released",
+          "wallMs": 1791486669939,
+          "atMs": 4959.100000023842
+        }
+      ],
+      "deletionObservation": {
+        "type": "deletion_committed",
+        "wallMs": 1791486669891
+      }
+    }
+  },
+  {
+    "name": "individual next_first: shared Next/deletion boundary without notifications",
+    "status": "PASS",
+    "detail": {
+      "successorDigitsObserved": 1,
+      "attempts": 0,
+      "visualCounter": 1,
+      "orderTrace": [
+        {
+          "type": "data_lock_acquired",
+          "wallMs": 1791486674923,
+          "atMs": 4949
+        },
+        {
+          "type": "digit_dom_write",
+          "value": "9",
+          "wallMs": 1791486674939,
+          "atMs": 4964.600000023842
+        },
+        {
+          "type": "data_lock_released",
+          "wallMs": 1791486674954,
+          "atMs": 4980.299999952316
+        },
+        {
+          "type": "data_lock_acquired",
+          "wallMs": 1791486675912,
+          "atMs": 5938.100000023842
+        },
+        {
+          "type": "data_lock_released",
+          "wallMs": 1791486675918,
+          "atMs": 5943.5
+        }
+      ],
+      "deletionObservation": {
+        "type": "deletion_committed",
+        "wallMs": 1791486674957
+      }
+    }
+  },
+  {
+    "name": "all deletion_first: shared Next/deletion boundary without notifications",
+    "status": "PASS",
+    "detail": {
+      "successorDigitsObserved": 0,
+      "attempts": 0,
+      "visualCounter": 0,
+      "orderTrace": [
+        {
+          "type": "data_lock_acquired",
+          "wallMs": 1791486681272,
+          "atMs": 4971.100000023842
+        },
+        {
+          "type": "data_lock_released",
+          "wallMs": 1791486681273,
+          "atMs": 4972
+        }
+      ],
+      "deletionObservation": {
+        "type": "deletion_committed",
+        "wallMs": 1791486681228
+      }
+    }
+  },
+  {
+    "name": "all next_first: shared Next/deletion boundary without notifications",
+    "status": "PASS",
+    "detail": {
+      "successorDigitsObserved": 1,
+      "attempts": 0,
+      "visualCounter": 0,
+      "orderTrace": [
+        {
+          "type": "data_lock_acquired",
+          "wallMs": 1791486686289,
+          "atMs": 4947.5
+        },
+        {
+          "type": "digit_dom_write",
+          "value": "9",
+          "wallMs": 1791486686305,
+          "atMs": 4963.600000023842
+        },
+        {
+          "type": "data_lock_released",
+          "wallMs": 1791486686322,
+          "atMs": 4980.700000047684
+        },
+        {
+          "type": "data_lock_acquired",
+          "wallMs": 1791486687278,
+          "atMs": 5936.100000023842
+        },
+        {
+          "type": "data_lock_released",
+          "wallMs": 1791486687278,
+          "atMs": 5937
+        }
+      ],
+      "deletionObservation": {
+        "type": "deletion_committed",
+        "wallMs": 1791486686325
+      }
+    }
+  }
+]

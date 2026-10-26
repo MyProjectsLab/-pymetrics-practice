@@ -1,0 +1,158 @@
+[
+  {
+    "name": "arm candidate opening/retry/reload exact activity and timed bytes",
+    "status": "PASS",
+    "rootsRecord": 0,
+    "rootsFile": "browser-roots.json.gz"
+  },
+  {
+    "name": "checkpoint candidate opening/retry/reload exact activity and timed bytes",
+    "status": "PASS",
+    "rootsRecord": 1,
+    "rootsFile": "browser-roots.json.gz"
+  },
+  {
+    "name": "terminal candidate opening/retry/reload exact activity and timed bytes",
+    "status": "PASS",
+    "rootsRecord": 2,
+    "rootsFile": "browser-roots.json.gz"
+  },
+  {
+    "name": "arm publication-first extension with held before-commit activity delivery",
+    "status": "PASS",
+    "rootsRecord": 3,
+    "rootsFile": "browser-roots.json.gz"
+  },
+  {
+    "name": "arm publication-first extension with held after-commit activity delivery",
+    "status": "PASS",
+    "rootsRecord": 4,
+    "rootsFile": "browser-roots.json.gz"
+  },
+  {
+    "name": "checkpoint publication-first extension with held before-commit activity delivery",
+    "status": "PASS",
+    "rootsRecord": 5,
+    "rootsFile": "browser-roots.json.gz"
+  },
+  {
+    "name": "checkpoint publication-first extension with held after-commit activity delivery",
+    "status": "PASS",
+    "rootsRecord": 6,
+    "rootsFile": "browser-roots.json.gz"
+  },
+  {
+    "name": "arm held before-commit opening then individual without notifications",
+    "status": "PASS",
+    "rootsRecord": 7,
+    "rootsFile": "browser-roots.json.gz"
+  },
+  {
+    "name": "arm held after-commit opening then individual without notifications",
+    "status": "PASS",
+    "rootsRecord": 8,
+    "rootsFile": "browser-roots.json.gz"
+  },
+  {
+    "name": "arm held before-commit opening then replacement without notifications",
+    "status": "PASS",
+    "rootsRecord": 9,
+    "rootsFile": "browser-roots.json.gz"
+  },
+  {
+    "name": "arm held after-commit opening then replacement without notifications",
+    "status": "PASS",
+    "rootsRecord": 10,
+    "rootsFile": "browser-roots.json.gz"
+  },
+  {
+    "name": "checkpoint held before-commit opening then individual without notifications",
+    "status": "PASS",
+    "rootsRecord": 11,
+    "rootsFile": "browser-roots.json.gz"
+  },
+  {
+    "name": "checkpoint held after-commit opening then individual without notifications",
+    "status": "PASS",
+    "rootsRecord": 12,
+    "rootsFile": "browser-roots.json.gz"
+  },
+  {
+    "name": "checkpoint held before-commit opening then replacement without notifications",
+    "status": "PASS",
+    "rootsRecord": 13,
+    "rootsFile": "browser-roots.json.gz"
+  },
+  {
+    "name": "checkpoint held after-commit opening then replacement without notifications",
+    "status": "PASS",
+    "rootsRecord": 14,
+    "rootsFile": "browser-roots.json.gz"
+  },
+  {
+    "name": "terminal held before-commit opening then individual without notifications",
+    "status": "PASS",
+    "rootsRecord": 15,
+    "rootsFile": "browser-roots.json.gz"
+  },
+  {
+    "name": "terminal held after-commit opening then individual without notifications",
+    "status": "PASS",
+    "rootsRecord": 16,
+    "rootsFile": "browser-roots.json.gz"
+  },
+  {
+    "name": "terminal held before-commit opening then replacement without notifications",
+    "status": "PASS",
+    "rootsRecord": 17,
+    "rootsFile": "browser-roots.json.gz"
+  },
+  {
+    "name": "terminal held after-commit opening then replacement without notifications",
+    "status": "PASS",
+    "rootsRecord": 18,
+    "rootsFile": "browser-roots.json.gz"
+  },
+  {
+    "name": "arm deletion-first stale history opening individual",
+    "status": "PASS",
+    "rootsRecord": 19,
+    "rootsFile": "browser-roots.json.gz"
+  },
+  {
+    "name": "arm deletion-first stale history opening replacement",
+    "status": "PASS",
+    "rootsRecord": 20,
+    "rootsFile": "browser-roots.json.gz"
+  },
+  {
+    "name": "checkpoint deletion-first stale history opening individual",
+    "status": "PASS",
+    "rootsRecord": 21,
+    "rootsFile": "browser-roots.json.gz"
+  },
+  {
+    "name": "checkpoint deletion-first stale history opening replacement",
+    "status": "PASS",
+    "rootsRecord": 22,
+    "rootsFile": "browser-roots.json.gz"
+  },
+  {
+    "name": "terminal deletion-first stale history opening individual",
+    "status": "PASS",
+    "rootsRecord": 23,
+    "rootsFile": "browser-roots.json.gz"
+  },
+  {
+    "name": "terminal deletion-first stale history opening replacement",
+    "status": "PASS",
+    "rootsRecord": 24,
+    "rootsFile": "browser-roots.json.gz"
+  },
+  {
+    "name": "native OBS-1 same committed checkpoint ID after extension, mismatched retry/new stale ID rejected",
+    "status": "PASS",
+    "rootsRecord": 25,
+    "rootsFile": "browser-roots.json.gz"
+  }
+]

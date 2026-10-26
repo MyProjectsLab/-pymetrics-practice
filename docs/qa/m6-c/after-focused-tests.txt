@@ -1,0 +1,13 @@
+
+> assessment-practice@0.0.0 test
+> vitest run src/stop/History.test.tsx src/stop/Report.test.tsx src/App.test.tsx
+
+
+ RUN  v4.1.11 /Users/renzo/Documents/Assessment Practice/App
+
+
+ Test Files  3 passed (3)
+      Tests  26 passed (26)
+   Start at  01:12:56
+   Duration  1.54s (transform 313ms, setup 144ms, import 485ms, tests 1.20s, environment 826ms)
+

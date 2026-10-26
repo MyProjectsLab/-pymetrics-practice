@@ -1,0 +1,76 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "routes": [
+    {
+      "src": "^/.*$",
+      "headers": {
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Referrer-Policy": "no-referrer",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "X-Robots-Tag": "noindex, follow",
+        "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+        "Content-Security-Policy": "base-uri 'self'; object-src 'none'; frame-ancestors 'none'"
+      },
+      "continue": true
+    },
+    {
+      "src": "^/(?:pymetrics-practice\\.html|blackstone-pymetrics\\.html|robots\\.txt|sitemap\\.xml)?$",
+      "headers": {
+        "X-Robots-Tag": "index, follow"
+      },
+      "continue": true
+    },
+    {
+      "src": "^/$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^/practice$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^/mock$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^/mock/report$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^/practice/keypresses$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^/practice/stop$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^/practice/digits$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^/practice/balloons$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^/practice/towers$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^/practice/cards$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^/practice/easy-or-hard$",
+      "dest": "/index.html"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "^/.*$",
+      "status": 404
+    }
+  ]
+}

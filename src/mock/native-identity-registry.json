@@ -1,0 +1,531 @@
+{
+  "version": "ap-mock-native-identities/2",
+  "scope": "Finite current public identities; integrated Lengths V1.3 dependency. Native validation remains completion authority.",
+  "current": [
+    {
+      "game": "keypresses",
+      "databaseFamily": "keypresses-v1",
+      "versions": {
+        "specification": "keypresses_spec_v1_0_2",
+        "scoring": "keypresses_scoring_v1_0_2",
+        "event": "keypresses_event_v2",
+        "formVersion": null,
+        "formHashKind": "none",
+        "presentation": "keypresses_presentation_plan_v1",
+        "feedback": null,
+        "assetBankHash": null,
+        "report": null
+      },
+      "forms": [
+        {
+          "id": null,
+          "hash": null
+        }
+      ]
+    },
+    {
+      "game": "stop",
+      "databaseFamily": "stop-v1",
+      "versions": {
+        "specification": "1.3",
+        "scoring": "stop_scoring_v13",
+        "event": "stop_engine_event_v1",
+        "formVersion": "2",
+        "formHashKind": "per_form",
+        "presentation": null,
+        "feedback": null,
+        "assetBankHash": null,
+        "report": "stop_report_v13"
+      },
+      "forms": [
+        {
+          "id": "stop-v13-baseline-01",
+          "hash": "0bbd49818785c1580ee7fed9b38016ab39909c26c57246bdeb7361558ea0d138"
+        },
+        {
+          "id": "stop-v13-baseline-02",
+          "hash": "4885533124529fd2ca870df9859cfb4e601bc2af23d723acda71ea1e97ac3e77"
+        },
+        {
+          "id": "stop-v13-baseline-03",
+          "hash": "dddb920fec579d52b909ca5396809722c5b6cb8a9d36d035bf4431abe8bb0e62"
+        },
+        {
+          "id": "stop-v13-baseline-04",
+          "hash": "033f286abd2ee0d97f87dd90aba7018fd36f4d733966c7c3ac1590b17a9504c9"
+        }
+      ]
+    },
+    {
+      "game": "digits",
+      "databaseFamily": "digits-v11",
+      "versions": {
+        "specification": "digits_spec_v1_1",
+        "scoring": "digits_scoring_v1_1",
+        "event": "digits_event_v1_1",
+        "formVersion": "digits_forms_v1_1",
+        "formHashKind": "manifest_payload",
+        "presentation": null,
+        "feedback": null,
+        "assetBankHash": null,
+        "report": null
+      },
+      "forms": [
+        {
+          "id": "DV1",
+          "hash": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+        },
+        {
+          "id": "DV2",
+          "hash": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+        },
+        {
+          "id": "DV3",
+          "hash": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+        },
+        {
+          "id": "DV4",
+          "hash": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+        },
+        {
+          "id": "DV5",
+          "hash": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+        },
+        {
+          "id": "DV6",
+          "hash": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+        },
+        {
+          "id": "DA1",
+          "hash": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+        },
+        {
+          "id": "DA2",
+          "hash": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+        },
+        {
+          "id": "DA3",
+          "hash": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+        },
+        {
+          "id": "DA4",
+          "hash": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+        },
+        {
+          "id": "DA5",
+          "hash": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+        },
+        {
+          "id": "DA6",
+          "hash": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+        }
+      ]
+    },
+    {
+      "game": "arrows",
+      "databaseFamily": "arrows-v11",
+      "versions": {
+        "specification": "arrows_spec_v1_1",
+        "scoring": "arrows_scoring_v1_1",
+        "event": "arrows_event_v1_1",
+        "formVersion": "arrows_forms_v1_1",
+        "formHashKind": "manifest_payload",
+        "presentation": "arrows_presentation_v1_1",
+        "feedback": null,
+        "assetBankHash": null,
+        "report": null
+      },
+      "forms": [
+        {
+          "id": "AR11-1",
+          "hash": "bedfa8c58fd9bde20cf7b9408b6ac5909c6bae45d025bff9c3de8041f8ae6855"
+        },
+        {
+          "id": "AR11-2",
+          "hash": "bedfa8c58fd9bde20cf7b9408b6ac5909c6bae45d025bff9c3de8041f8ae6855"
+        },
+        {
+          "id": "AR11-3",
+          "hash": "bedfa8c58fd9bde20cf7b9408b6ac5909c6bae45d025bff9c3de8041f8ae6855"
+        },
+        {
+          "id": "AR11-4",
+          "hash": "bedfa8c58fd9bde20cf7b9408b6ac5909c6bae45d025bff9c3de8041f8ae6855"
+        },
+        {
+          "id": "AR11-5",
+          "hash": "bedfa8c58fd9bde20cf7b9408b6ac5909c6bae45d025bff9c3de8041f8ae6855"
+        },
+        {
+          "id": "AR11-6",
+          "hash": "bedfa8c58fd9bde20cf7b9408b6ac5909c6bae45d025bff9c3de8041f8ae6855"
+        }
+      ]
+    },
+    {
+      "game": "balloons",
+      "databaseFamily": "balloons-v1",
+      "versions": {
+        "specification": "balloons-v1.0",
+        "scoring": "balloons-scoring-v1",
+        "event": "balloons-event-v1",
+        "formVersion": "balloons-scored-v1",
+        "formHashKind": "per_form",
+        "presentation": null,
+        "feedback": null,
+        "assetBankHash": null,
+        "report": null
+      },
+      "forms": [
+        {
+          "id": "RP1",
+          "hash": "4425f093e748a4036184b72f3f9b17a68776a03ccc38ac5b05eef5fc49537621"
+        },
+        {
+          "id": "RP2",
+          "hash": "a4b1ac4393e3f836362cc6e1cb2afb45fd89e5b2736b92f2460c67d5a350a5ce"
+        },
+        {
+          "id": "RP3",
+          "hash": "107a47a641ad7f131b1ea20a63c218d863d8ce0cc4776f9d07884852a1d96ec3"
+        }
+      ]
+    },
+    {
+      "game": "towers",
+      "databaseFamily": "towers-v1",
+      "versions": {
+        "specification": null,
+        "scoring": null,
+        "event": "towers-events-v1.0-draft",
+        "formVersion": "towers-form-v1.0-draft",
+        "formHashKind": "per_form",
+        "presentation": null,
+        "feedback": null,
+        "assetBankHash": null,
+        "report": null
+      },
+      "forms": [
+        {
+          "id": "TW1",
+          "hash": "bfb13f60cf5383840bf2d45bc691d84c94488150ce64e76793d3a3f15e987014"
+        },
+        {
+          "id": "TW2",
+          "hash": "b93f1dabfb1d7e89a71774658f1a813a0d145c691ba63065086fa866cfa482f8"
+        },
+        {
+          "id": "TW3",
+          "hash": "5de25d34a2310f1d9ba6a829185504c84816a65f421e00afdb0bd9a4dd90e084"
+        },
+        {
+          "id": "TW4",
+          "hash": "dc484c03b7daf7c4faa7278046d14d6bb2d87528db8b919ecf7f204112522907"
+        },
+        {
+          "id": "TW5",
+          "hash": "6f56ac92455ff438583a035722a5f53c533faa28135760ea3a878fe430ea61e7"
+        },
+        {
+          "id": "TW6",
+          "hash": "b8b6306833ed8ce6571d9ef940a5c39b7508b934268afaf60a272e1c3f62224b"
+        }
+      ]
+    },
+    {
+      "game": "lengths",
+      "databaseFamily": "lengths-mouth-v13",
+      "versions": {
+        "specification": "lengths_mouth_spec_v1_3",
+        "scoring": "lengths_mouth_scoring_v2",
+        "event": "lengths_mouth_event_v2",
+        "formVersion": "lengths_mouth_forms_v1_3",
+        "formHashKind": "per_form",
+        "presentation": "lengths_mouth_presentation_v1_2",
+        "feedback": null,
+        "assetBankHash": null,
+        "report": "lengths_mouth_report_v1_3"
+      },
+      "forms": [
+        {
+          "id": "LM13-1",
+          "hash": "b048730ab2791c9fdbb7e4199db65a311910259ab8a72bdc55d9cbd257aa23b6"
+        },
+        {
+          "id": "LM13-2",
+          "hash": "3c64da390d94f51f49391d5aaa0d99a7617cd5f3f330e3979450c1cb4fc1143d"
+        },
+        {
+          "id": "LM13-3",
+          "hash": "eb81e07d2d83c1bec7d72dac0822076baf719ad6cbebbe0cb39efc6f5fa0370f"
+        },
+        {
+          "id": "LM13-4",
+          "hash": "cdd150fda322db895e60839553f806f1470acbf1eb1b2656e5dd7267ee76a3cf"
+        },
+        {
+          "id": "LM13-5",
+          "hash": "463d381c26c7f4fb7f615a533c58af1b6cb15a6891950f50ff965c47e2fdd3dc"
+        },
+        {
+          "id": "LM13-6",
+          "hash": "48e91b6fd201d2d13eeaf8996c62e67ef88cf802b523a66396419b6abd828032"
+        }
+      ]
+    },
+    {
+      "game": "cards",
+      "databaseFamily": "cards-v11",
+      "versions": {
+        "specification": "cards-rules/1.1.0",
+        "scoring": "cards-score/1.1.0",
+        "event": "cards-events/1.1.0",
+        "formVersion": "cards-forms/1.1.0",
+        "formHashKind": "per_form",
+        "presentation": null,
+        "feedback": null,
+        "assetBankHash": null,
+        "report": null
+      },
+      "forms": [
+        {
+          "id": "CD1",
+          "hash": "43cce8a820f3f2c37cfb3e2467e70aae2fff23db1845dba038f6baeaa4fead73"
+        },
+        {
+          "id": "CD2",
+          "hash": "87d411bc7ecbc842f8ccd0482f7c93bb603e062608caa4ceb1fa3e05442ed8b6"
+        },
+        {
+          "id": "CD3",
+          "hash": "48fd61dee4895fcdc9ffae136641e02ea20bb6d73dfca29e47e34e1aa2464a80"
+        },
+        {
+          "id": "CD4",
+          "hash": "b71a551e4eacc2a85139d8b191d7c950f1c107b4fc537f422e6190e905d4699e"
+        },
+        {
+          "id": "CD5",
+          "hash": "63c1f0db8d9831710489978a4e9609f15f227aee03acca1c89da48405f65ac1a"
+        },
+        {
+          "id": "CD6",
+          "hash": "efbf8cf0a2ab361b4bb1c485de3e5f930a13ebf5aee84af73ec68d5324214eff"
+        }
+      ]
+    },
+    {
+      "game": "easy_hard",
+      "databaseFamily": "easy-hard-v1",
+      "versions": {
+        "specification": null,
+        "scoring": null,
+        "event": "easy-hard-events-v1.0-draft",
+        "formVersion": "easy-hard-forms-v1.0-draft",
+        "formHashKind": "per_form",
+        "presentation": null,
+        "feedback": null,
+        "assetBankHash": null,
+        "report": null
+      },
+      "forms": [
+        {
+          "id": "EH1",
+          "hash": "5b846708ffef3600d07d7b11e75789d6acb598001ddf5b05d0848e7f5c931ad0"
+        },
+        {
+          "id": "EH2",
+          "hash": "960edd14adfd4b03a622c936ec14c371e2a78030f3ff5ca6c8ae21b4578f6fa3"
+        },
+        {
+          "id": "EH3",
+          "hash": "ad31c4eb54f73e4c4c0b84184bfb39c79e5937a1aea26887d0a343502fb20363"
+        },
+        {
+          "id": "EH4",
+          "hash": "caae2a55c33e49bde8ae15beacff1884bcb03933f11a80c2bc56ee9ffa379b8c"
+        }
+      ]
+    },
+    {
+      "game": "money_1",
+      "databaseFamily": "money1-v1",
+      "versions": {
+        "specification": "money_exchange_1_spec_v1_0",
+        "scoring": null,
+        "event": "money_exchange_1_event_v1_0",
+        "formVersion": "money_exchange_1_forms_v1_0",
+        "formHashKind": "manifest_payload",
+        "presentation": null,
+        "feedback": null,
+        "assetBankHash": null,
+        "report": null
+      },
+      "forms": [
+        {
+          "id": "ME1-1",
+          "hash": "cf4c07b085e883bce0ddcaea98fd4a5e4571ebf968a9ad1f440d81da40461cb0"
+        },
+        {
+          "id": "ME1-2",
+          "hash": "cf4c07b085e883bce0ddcaea98fd4a5e4571ebf968a9ad1f440d81da40461cb0"
+        },
+        {
+          "id": "ME1-3",
+          "hash": "cf4c07b085e883bce0ddcaea98fd4a5e4571ebf968a9ad1f440d81da40461cb0"
+        },
+        {
+          "id": "ME1-4",
+          "hash": "cf4c07b085e883bce0ddcaea98fd4a5e4571ebf968a9ad1f440d81da40461cb0"
+        },
+        {
+          "id": "ME1-5",
+          "hash": "cf4c07b085e883bce0ddcaea98fd4a5e4571ebf968a9ad1f440d81da40461cb0"
+        },
+        {
+          "id": "ME1-6",
+          "hash": "cf4c07b085e883bce0ddcaea98fd4a5e4571ebf968a9ad1f440d81da40461cb0"
+        }
+      ]
+    },
+    {
+      "game": "money_2",
+      "databaseFamily": "money2-v2",
+      "versions": {
+        "specification": null,
+        "scoring": null,
+        "event": "money_exchange_2_event_v1_0",
+        "formVersion": null,
+        "formHashKind": "per_form",
+        "presentation": null,
+        "feedback": null,
+        "assetBankHash": null,
+        "report": null
+      },
+      "forms": [
+        {
+          "id": "ME2-1",
+          "hash": "1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea"
+        },
+        {
+          "id": "ME2-2",
+          "hash": "f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830"
+        },
+        {
+          "id": "ME2-3",
+          "hash": "bc0a798eb3c1b7936e533ce1750a3ff6f6869e985cacda58df86521eb5244e1f"
+        },
+        {
+          "id": "ME2-4",
+          "hash": "3d98007fa37886e30564a47ce34321436653b3f73958747f22cc114494140ffe"
+        },
+        {
+          "id": "ME2-5",
+          "hash": "d1f14e242cfcc806284253cb8a23b61c123108a6350dff94774aae51ccc937bc"
+        },
+        {
+          "id": "ME2-6",
+          "hash": "e881594aad4bdbbac33cc421bf7973fc426058f60c456c41bc6c80f72faca056"
+        }
+      ]
+    },
+    {
+      "game": "faces",
+      "databaseFamily": "faces-v3",
+      "versions": {
+        "specification": null,
+        "scoring": "faces-descriptive-v3",
+        "event": "faces-event-v2",
+        "formVersion": null,
+        "formHashKind": "per_form",
+        "presentation": "faces-report-presentation-v3",
+        "feedback": "faces-feedback-v3",
+        "assetBankHash": "7a7e835a3b1c5277eca45b19d82f2ba917305b886727b104a2ac7a94e95f4854",
+        "report": null
+      },
+      "forms": [
+        {
+          "id": "faces-bank-practice-v2",
+          "hash": "75ff16a9eaf4f0cff8eda2e80f66b4d886c9fcc5f7eae364b3859ab4cb584e16"
+        }
+      ]
+    }
+  ],
+  "legacyFacesReview": {
+    "game": "faces",
+    "databaseFamily": "faces-v3",
+    "versions": {
+      "specification": null,
+      "scoring": "faces-descriptive-v2",
+      "event": "faces-event-v2",
+      "formVersion": null,
+      "formHashKind": "per_form",
+      "presentation": "faces-report-presentation-v3",
+      "feedback": null,
+      "assetBankHash": "7a7e835a3b1c5277eca45b19d82f2ba917305b886727b104a2ac7a94e95f4854",
+      "report": null
+    },
+    "forms": [
+      {
+        "id": "faces-bank-discussion-v1",
+        "hash": "cb12f328b155b79019e10ce38ab2c4b59ed806df3ae64f5f4ea3eeded26c9ff6"
+      }
+    ],
+    "newMockArmAllowed": false
+  },
+  "reviewOnly": [
+    {
+      "game": "keypresses",
+      "databaseFamily": "keypresses-v1",
+      "versions": {
+        "specification": "keypresses_spec_v1_0_1",
+        "scoring": "keypresses_scoring_v1_0_1",
+        "event": "keypresses_event_v1",
+        "formVersion": null,
+        "formHashKind": "none",
+        "presentation": "keypresses_presentation_plan_v1",
+        "feedback": null,
+        "assetBankHash": null,
+        "report": null
+      },
+      "forms": [{ "id": null, "hash": null }],
+      "newMockArmAllowed": false,
+      "purpose": "Historical Keypresses result; retain its original down-count interpretation"
+    },
+    {
+      "game": "stop",
+      "databaseFamily": "stop-v1",
+      "versions": {
+        "specification": "1.3",
+        "scoring": null,
+        "event": "stop_engine_event_v1",
+        "formVersion": "2",
+        "formHashKind": "per_form",
+        "presentation": null,
+        "feedback": null,
+        "assetBankHash": null,
+        "report": null
+      },
+      "forms": [
+        {
+          "id": "stop-v13-baseline-01",
+          "hash": "0bbd49818785c1580ee7fed9b38016ab39909c26c57246bdeb7361558ea0d138"
+        },
+        {
+          "id": "stop-v13-baseline-02",
+          "hash": "4885533124529fd2ca870df9859cfb4e601bc2af23d723acda71ea1e97ac3e77"
+        },
+        {
+          "id": "stop-v13-baseline-03",
+          "hash": "dddb920fec579d52b909ca5396809722c5b6cb8a9d36d035bf4431abe8bb0e62"
+        },
+        {
+          "id": "stop-v13-baseline-04",
+          "hash": "033f286abd2ee0d97f87dd90aba7018fd36f4d733966c7c3ac1590b17a9504c9"
+        }
+      ],
+      "newMockArmAllowed": false,
+      "purpose": "V1.3 baseline invalid draft with assigned form; native draft validator only, never normal_complete"
+    }
+  ]
+}

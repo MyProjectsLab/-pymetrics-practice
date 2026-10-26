@@ -1,0 +1,12 @@
+openSaved one deletion between load and report publication PASS
+openSaved all deletion between load and report publication PASS
+report stage 2 held success then newer Replay PASS
+report stage 2 held error then newer Replay PASS
+report stage 3 held success then newer Replay PASS
+report stage 3 held error then newer Replay PASS
+report stage 5 held success then newer Replay PASS
+report stage 5 held error then newer Replay PASS
+initial open hold_read then unmount PASS
+initial open hold_fail_read then unmount PASS
+voice sample held success after visual switch PASS
+voice sample held error after visual switch PASS

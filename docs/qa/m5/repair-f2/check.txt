@@ -1,0 +1,47 @@
+
+> assessment-practice@0.0.0 check
+> npm run lint && npm test && npm run forms:check && npm run drills:check && npm run build
+
+
+> assessment-practice@0.0.0 lint
+> oxlint
+
+docs/qa/m5/repair-f1-f3/cross-tab.mjs:47:49: warning eslint(no-unused-vars): Parameter 's' is declared but never used. Unused parameters should start with a '_'. help: Consider removing this parameter.
+src/App.tsx:51:57: warning react-hooks(exhaustive-deps): React Hook useEffect has a missing dependency: 'refreshHistory' help: Either include it or remove the dependency array.
+
+> assessment-practice@0.0.0 test
+> vitest run
+
+
+ RUN  v4.1.11 /Users/renzo/Documents/Assessment Practice/App
+
+
+ Test Files  28 passed (28)
+      Tests  439 passed (439)
+   Start at  18:43:08
+   Duration  3.69s (transform 1.02s, setup 827ms, import 1.73s, tests 7.49s, environment 2.98s)
+
+
+> assessment-practice@0.0.0 forms:check
+> node scripts/generate-stop-forms.mjs --check
+
+14 stored Stop manifests match the deterministic generator.
+
+> assessment-practice@0.0.0 drills:check
+> node scripts/generate-stop-drills.mjs --check
+
+5 stored drill manifests match the deterministic generator.
+
+> assessment-practice@0.0.0 build
+> tsc -b && vite build
+
+vite v8.3.1 building client environment for production...
+transforming...
+✓ 58 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.50 kB │ gzip:   0.30 kB
+dist/assets/index-CRyXorHF.css    5.35 kB │ gzip:   1.93 kB
+dist/assets/index-CR9qDF-S.js   383.26 kB │ gzip: 113.72 kB
+
+✓ built in 55ms

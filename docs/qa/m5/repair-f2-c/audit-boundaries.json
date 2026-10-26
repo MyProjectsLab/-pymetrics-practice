@@ -1,0 +1,95 @@
+{
+  "cases": [
+    {
+      "kind": "draft",
+      "delivery": "delivered",
+      "attempts": {
+        "saveChain": "DeletedChainError",
+        "reserve": "DeletedChainError",
+        "arm": "Error",
+        "saveDraft": "DeletedChainError"
+      },
+      "atomicDraftRelationship": true,
+      "retestExposureAbsent": true,
+      "replacementWorkPreserved": false,
+      "retired": true,
+      "noResumeAfterReload": true
+    },
+    {
+      "kind": "all",
+      "delivery": "delivered",
+      "attempts": {
+        "saveChain": "InstallationClearedError",
+        "reserve": "InstallationClearedError",
+        "arm": "InstallationClearedError",
+        "saveDraft": "InstallationClearedError"
+      },
+      "atomicDraftRelationship": true,
+      "retestExposureAbsent": true,
+      "replacementWorkPreserved": true,
+      "retired": false,
+      "noResumeAfterReload": true
+    },
+    {
+      "kind": "draft",
+      "delivery": "delayed",
+      "attempts": {
+        "saveChain": "DeletedChainError",
+        "reserve": "DeletedChainError",
+        "arm": "Error",
+        "saveDraft": "DeletedChainError"
+      },
+      "atomicDraftRelationship": true,
+      "retestExposureAbsent": true,
+      "replacementWorkPreserved": false,
+      "retired": true,
+      "noResumeAfterReload": true
+    },
+    {
+      "kind": "all",
+      "delivery": "delayed",
+      "attempts": {
+        "saveChain": "InstallationClearedError",
+        "reserve": "InstallationClearedError",
+        "arm": "InstallationClearedError",
+        "saveDraft": "InstallationClearedError"
+      },
+      "atomicDraftRelationship": true,
+      "retestExposureAbsent": true,
+      "replacementWorkPreserved": true,
+      "retired": false,
+      "noResumeAfterReload": true
+    },
+    {
+      "kind": "draft",
+      "delivery": "unavailable",
+      "attempts": {
+        "saveChain": "DeletedChainError",
+        "reserve": "DeletedChainError",
+        "arm": "Error",
+        "saveDraft": "DeletedChainError"
+      },
+      "atomicDraftRelationship": true,
+      "retestExposureAbsent": true,
+      "replacementWorkPreserved": false,
+      "retired": true,
+      "noResumeAfterReload": true
+    },
+    {
+      "kind": "all",
+      "delivery": "unavailable",
+      "attempts": {
+        "saveChain": "InstallationClearedError",
+        "reserve": "InstallationClearedError",
+        "arm": "InstallationClearedError",
+        "saveDraft": "InstallationClearedError"
+      },
+      "atomicDraftRelationship": true,
+      "retestExposureAbsent": true,
+      "replacementWorkPreserved": true,
+      "retired": false,
+      "noResumeAfterReload": true
+    }
+  ],
+  "errors": []
+}

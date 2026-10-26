@@ -1,0 +1,23 @@
+normal adaptive C W C W C W, native Enter, saved report and byte-identical reload/history PASS
+keypad trusted input and protected feedback blur PASS
+untrusted input rejected; held physical key repeat suppressed PASS
+committed arm held delivery, same-request retry, and late callback cannot double rotate PASS
+genuine checkpoint failure disables Next; one same-byte retry recovers PASS
+committed held checkpoint then feedback End reconciles before terminal; late callback fenced PASS
+terminal held delivery shows unsaved draft; retry confirms same bytes PASS
+individual deletion_first: shared Next/deletion boundary without notifications PASS
+individual next_first: shared Next/deletion boundary without notifications PASS
+all deletion_first: shared Next/deletion boundary without notifications PASS
+all next_first: shared Next/deletion boundary without notifications PASS
+eligible local-auditory full callback-injected journey, save and exact reload PASS
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.innerText: Target page, context or browser has been closed
+    at run (/private/tmp/digits-v11-impl/docs/qa/digits-v11/repair-f4-f5/browser-baseline.mjs:62:112)
+    at async file:///private/tmp/digits-v11-impl/docs/qa/digits-v11/repair-f4-f5/browser-baseline.mjs:296:1 {
+  log: []
+}
+
+Node.js v24.13.1

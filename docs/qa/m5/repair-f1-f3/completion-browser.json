@@ -1,0 +1,28 @@
+{
+  "browser": "145.0.7632.6",
+  "errors": [],
+  "checks": {
+    "completion": {
+      "count": 1,
+      "formId": "stop-baseline-04",
+      "eventCount": 644,
+      "exposure": "confirmed"
+    },
+    "timing": {
+      "visibilityMin": 200.70000004768372,
+      "visibilityMax": 210.10000014305115,
+      "finalFixationMs": 1202.5,
+      "counts": {
+        "hits": 0,
+        "misses": 60,
+        "withholds": 20,
+        "falseAlarms": 0
+      }
+    },
+    "reportViewed": true,
+    "reloaded": true,
+    "individualDeleted": true,
+    "markerRetained": true
+  },
+  "pass": true
+}

@@ -1,0 +1,221 @@
+{
+  "version": "145.0.7632.6",
+  "results": [
+    {
+      "case": "inventory-maintenance",
+      "rounds": 18,
+      "actions": 78,
+      "announcements": [
+        "Type 1. Collected. Current 0 cents. 0 cents banked; 0 cents lost this round. Banked total 0 cents.",
+        "Type 3. Collected. Current 0 cents. 5 cents banked; 0 cents lost this round. Banked total 5 cents.",
+        "Type 2. Collected. Current 0 cents. 20 cents banked; 0 cents lost this round. Banked total 25 cents.",
+        "Type 3. Balloon burst. Current 0 cents. 0 cents banked; 5 cents lost this round. Banked total 25 cents.",
+        "Type 2. Balloon burst. Current 0 cents. 0 cents banked; 0 cents lost this round. Banked total 25 cents.",
+        "Type 1. Collected. Current 0 cents. 30 cents banked; 0 cents lost this round. Banked total 55 cents.",
+        "Type 2. Collected. Current 0 cents. 0 cents banked; 0 cents lost this round. Banked total 55 cents.",
+        "Type 2. Collected. Current 0 cents. 5 cents banked; 0 cents lost this round. Banked total 60 cents.",
+        "Type 3. Collected. Current 0 cents. 20 cents banked; 0 cents lost this round. Banked total 80 cents.",
+        "Type 1. Balloon burst. Current 0 cents. 0 cents banked; 10 cents lost this round. Banked total 80 cents.",
+        "Type 1. Collected. Current 0 cents. 10 cents banked; 0 cents lost this round. Banked total 90 cents.",
+        "Type 3. Balloon burst. Current 0 cents. 0 cents banked; 15 cents lost this round. Banked total 90 cents.",
+        "Type 1. Collected. Current 0 cents. 0 cents banked; 0 cents lost this round. Banked total 90 cents.",
+        "Type 3. Collected. Current 0 cents. 5 cents banked; 0 cents lost this round. Banked total 95 cents.",
+        "Type 1. Collected. Current 0 cents. 20 cents banked; 0 cents lost this round. Banked total 115 cents.",
+        "Type 2. Balloon burst. Current 0 cents. 0 cents banked; 115 cents lost this round. Banked total 115 cents.",
+        "Type 2. Collected. Current 0 cents. 10 cents banked; 0 cents lost this round. Banked total 125 cents.",
+        "Type 3. Collected. Current 0 cents. 30 cents banked; 0 cents lost this round. Banked total 155 cents."
+      ]
+    },
+    {
+      "case": "inventory-outcome",
+      "rounds": 18,
+      "actions": 87,
+      "announcements": [
+        "Type 3. Collected. Current 0 cents. 0 cents banked; 0 cents lost this round. Banked total 0 cents.",
+        "Type 1. Collected. Current 0 cents. 5 cents banked; 0 cents lost this round. Banked total 5 cents.",
+        "Type 2. Collected. Current 0 cents. 20 cents banked; 0 cents lost this round. Banked total 25 cents.",
+        "Type 2. Balloon burst. Current 0 cents. 0 cents banked; 110 cents lost this round. Banked total 25 cents.",
+        "Type 3. Collected. Current 0 cents. 10 cents banked; 0 cents lost this round. Banked total 35 cents.",
+        "Type 1. Balloon burst. Current 0 cents. 0 cents banked; 5 cents lost this round. Banked total 35 cents.",
+        "Type 1. Collected. Current 0 cents. 0 cents banked; 0 cents lost this round. Banked total 35 cents.",
+        "Type 2. Collected. Current 0 cents. 5 cents banked; 0 cents lost this round. Banked total 40 cents.",
+        "Type 3. Collected. Current 0 cents. 20 cents banked; 0 cents lost this round. Banked total 60 cents.",
+        "Type 1. Balloon burst. Current 0 cents. 0 cents banked; 15 cents lost this round. Banked total 60 cents.",
+        "Type 3. Collected. Current 0 cents. 10 cents banked; 0 cents lost this round. Banked total 70 cents.",
+        "Type 2. Collected. Current 0 cents. 30 cents banked; 0 cents lost this round. Banked total 100 cents.",
+        "Type 1. Collected. Current 0 cents. 0 cents banked; 0 cents lost this round. Banked total 100 cents.",
+        "Type 2. Collected. Current 0 cents. 5 cents banked; 0 cents lost this round. Banked total 105 cents.",
+        "Type 3. Collected. Current 0 cents. 20 cents banked; 0 cents lost this round. Banked total 125 cents.",
+        "Type 2. Balloon burst. Current 0 cents. 0 cents banked; 50 cents lost this round. Banked total 125 cents.",
+        "Type 3. Collected. Current 0 cents. 10 cents banked; 0 cents lost this round. Banked total 135 cents.",
+        "Type 1. Collected. Current 0 cents. 30 cents banked; 0 cents lost this round. Banked total 165 cents."
+      ]
+    },
+    {
+      "case": "inventory-information",
+      "rounds": 18,
+      "actions": 55,
+      "announcements": [
+        "Type 3. Collected. Current 0 cents. 0 cents banked; 0 cents lost this round. Banked total 0 cents.",
+        "Type 2. Collected. Current 0 cents. 5 cents banked; 0 cents lost this round. Banked total 5 cents.",
+        "Type 2. Balloon burst. Current 0 cents. 0 cents banked; 15 cents lost this round. Banked total 5 cents.",
+        "Type 1. Balloon burst. Current 0 cents. 0 cents banked; 0 cents lost this round. Banked total 5 cents.",
+        "Type 1. Collected. Current 0 cents. 10 cents banked; 0 cents lost this round. Banked total 15 cents.",
+        "Type 3. Collected. Current 0 cents. 30 cents banked; 0 cents lost this round. Banked total 45 cents.",
+        "Type 2. Collected. Current 0 cents. 0 cents banked; 0 cents lost this round. Banked total 45 cents.",
+        "Type 2. Collected. Current 0 cents. 5 cents banked; 0 cents lost this round. Banked total 50 cents.",
+        "Type 3. Collected. Current 0 cents. 20 cents banked; 0 cents lost this round. Banked total 70 cents.",
+        "Type 1. Balloon burst. Current 0 cents. 0 cents banked; 5 cents lost this round. Banked total 70 cents.",
+        "Type 1. Collected. Current 0 cents. 10 cents banked; 0 cents lost this round. Banked total 80 cents.",
+        "Type 3. Collected. Current 0 cents. 30 cents banked; 0 cents lost this round. Banked total 110 cents.",
+        "Type 2. Collected. Current 0 cents. 0 cents banked; 0 cents lost this round. Banked total 110 cents.",
+        "Type 3. Collected. Current 0 cents. 5 cents banked; 0 cents lost this round. Banked total 115 cents.",
+        "Type 1. Collected. Current 0 cents. 20 cents banked; 0 cents lost this round. Banked total 135 cents.",
+        "Type 2. Balloon burst. Current 0 cents. 0 cents banked; 15 cents lost this round. Banked total 135 cents.",
+        "Type 3. Collected. Current 0 cents. 10 cents banked; 0 cents lost this round. Banked total 145 cents.",
+        "Type 1. Balloon burst. Current 0 cents. 0 cents banked; 5 cents lost this round. Banked total 145 cents."
+      ]
+    },
+    {
+      "case": "inventory-updating",
+      "rounds": 18,
+      "actions": 94,
+      "announcements": [
+        "Type 1. Collected. Current 0 cents. 0 cents banked; 0 cents lost this round. Banked total 0 cents.",
+        "Type 2. Collected. Current 0 cents. 5 cents banked; 0 cents lost this round. Banked total 5 cents.",
+        "Type 3. Collected. Current 0 cents. 20 cents banked; 0 cents lost this round. Banked total 25 cents.",
+        "Type 3. Automatic cap collection. Current 0 cents. 160 cents banked; 0 cents lost this round. Banked total 185 cents.",
+        "Type 2. Collected. Current 0 cents. 10 cents banked; 0 cents lost this round. Banked total 195 cents.",
+        "Type 1. Balloon burst. Current 0 cents. 0 cents banked; 25 cents lost this round. Banked total 195 cents.",
+        "Type 3. Collected. Current 0 cents. 0 cents banked; 0 cents lost this round. Banked total 195 cents.",
+        "Type 2. Collected. Current 0 cents. 5 cents banked; 0 cents lost this round. Banked total 200 cents.",
+        "Type 2. Collected. Current 0 cents. 20 cents banked; 0 cents lost this round. Banked total 220 cents.",
+        "Type 1. Balloon burst. Current 0 cents. 0 cents banked; 15 cents lost this round. Banked total 220 cents.",
+        "Type 1. Balloon burst. Current 0 cents. 0 cents banked; 5 cents lost this round. Banked total 220 cents.",
+        "Type 3. Collected. Current 0 cents. 30 cents banked; 0 cents lost this round. Banked total 250 cents.",
+        "Type 1. Collected. Current 0 cents. 0 cents banked; 0 cents lost this round. Banked total 250 cents.",
+        "Type 3. Collected. Current 0 cents. 5 cents banked; 0 cents lost this round. Banked total 255 cents.",
+        "Type 2. Collected. Current 0 cents. 20 cents banked; 0 cents lost this round. Banked total 275 cents.",
+        "Type 1. Balloon burst. Current 0 cents. 0 cents banked; 25 cents lost this round. Banked total 275 cents.",
+        "Type 2. Collected. Current 0 cents. 10 cents banked; 0 cents lost this round. Banked total 285 cents.",
+        "Type 3. Collected. Current 0 cents. 30 cents banked; 0 cents lost this round. Banked total 315 cents."
+      ]
+    },
+    {
+      "case": "inventory-consistencyA",
+      "rounds": 18,
+      "actions": 56,
+      "announcements": [
+        "Type 1. Collected. Current 0 cents. 0 cents banked; 0 cents lost this round. Banked total 0 cents.",
+        "Type 1. Collected. Current 0 cents. 5 cents banked; 0 cents lost this round. Banked total 5 cents.",
+        "Type 1. Collected. Current 0 cents. 20 cents banked; 0 cents lost this round. Banked total 25 cents.",
+        "Type 1. Balloon burst. Current 0 cents. 0 cents banked; 10 cents lost this round. Banked total 25 cents.",
+        "Type 1. Collected. Current 0 cents. 10 cents banked; 0 cents lost this round. Banked total 35 cents.",
+        "Type 1. Collected. Current 0 cents. 30 cents banked; 0 cents lost this round. Banked total 65 cents.",
+        "Type 1. Collected. Current 0 cents. 0 cents banked; 0 cents lost this round. Banked total 65 cents.",
+        "Type 1. Collected. Current 0 cents. 5 cents banked; 0 cents lost this round. Banked total 70 cents.",
+        "Type 1. Collected. Current 0 cents. 20 cents banked; 0 cents lost this round. Banked total 90 cents.",
+        "Type 1. Balloon burst. Current 0 cents. 0 cents banked; 10 cents lost this round. Banked total 90 cents.",
+        "Type 1. Balloon burst. Current 0 cents. 0 cents banked; 0 cents lost this round. Banked total 90 cents.",
+        "Type 1. Collected. Current 0 cents. 30 cents banked; 0 cents lost this round. Banked total 120 cents.",
+        "Type 1. Collected. Current 0 cents. 0 cents banked; 0 cents lost this round. Banked total 120 cents.",
+        "Type 1. Collected. Current 0 cents. 5 cents banked; 0 cents lost this round. Banked total 125 cents.",
+        "Type 1. Balloon burst. Current 0 cents. 0 cents banked; 5 cents lost this round. Banked total 125 cents.",
+        "Type 1. Balloon burst. Current 0 cents. 0 cents banked; 5 cents lost this round. Banked total 125 cents.",
+        "Type 1. Collected. Current 0 cents. 10 cents banked; 0 cents lost this round. Banked total 135 cents.",
+        "Type 1. Balloon burst. Current 0 cents. 0 cents banked; 25 cents lost this round. Banked total 135 cents."
+      ]
+    },
+    {
+      "case": "inventory-consistencyB",
+      "rounds": 18,
+      "actions": 73,
+      "announcements": [
+        "Type 2. Collected. Current 0 cents. 0 cents banked; 0 cents lost this round. Banked total 0 cents.",
+        "Type 2. Collected. Current 0 cents. 5 cents banked; 0 cents lost this round. Banked total 5 cents.",
+        "Type 2. Collected. Current 0 cents. 20 cents banked; 0 cents lost this round. Banked total 25 cents.",
+        "Type 2. Balloon burst. Current 0 cents. 0 cents banked; 25 cents lost this round. Banked total 25 cents.",
+        "Type 2. Collected. Current 0 cents. 10 cents banked; 0 cents lost this round. Banked total 35 cents.",
+        "Type 2. Collected. Current 0 cents. 30 cents banked; 0 cents lost this round. Banked total 65 cents.",
+        "Type 2. Collected. Current 0 cents. 0 cents banked; 0 cents lost this round. Banked total 65 cents.",
+        "Type 2. Balloon burst. Current 0 cents. 0 cents banked; 0 cents lost this round. Banked total 65 cents.",
+        "Type 2. Balloon burst. Current 0 cents. 0 cents banked; 10 cents lost this round. Banked total 65 cents.",
+        "Type 2. Balloon burst. Current 0 cents. 0 cents banked; 40 cents lost this round. Banked total 65 cents.",
+        "Type 2. Collected. Current 0 cents. 10 cents banked; 0 cents lost this round. Banked total 75 cents.",
+        "Type 2. Balloon burst. Current 0 cents. 0 cents banked; 25 cents lost this round. Banked total 75 cents.",
+        "Type 2. Collected. Current 0 cents. 0 cents banked; 0 cents lost this round. Banked total 75 cents.",
+        "Type 2. Collected. Current 0 cents. 5 cents banked; 0 cents lost this round. Banked total 80 cents.",
+        "Type 2. Collected. Current 0 cents. 20 cents banked; 0 cents lost this round. Banked total 100 cents.",
+        "Type 2. Balloon burst. Current 0 cents. 0 cents banked; 35 cents lost this round. Banked total 100 cents.",
+        "Type 2. Collected. Current 0 cents. 10 cents banked; 0 cents lost this round. Banked total 110 cents.",
+        "Type 2. Collected. Current 0 cents. 30 cents banked; 0 cents lost this round. Banked total 140 cents."
+      ]
+    },
+    {
+      "case": "inventory-consistencyC",
+      "rounds": 18,
+      "actions": 130,
+      "announcements": [
+        "Type 3. Collected. Current 0 cents. 0 cents banked; 0 cents lost this round. Banked total 0 cents.",
+        "Type 3. Collected. Current 0 cents. 5 cents banked; 0 cents lost this round. Banked total 5 cents.",
+        "Type 3. Collected. Current 0 cents. 20 cents banked; 0 cents lost this round. Banked total 25 cents.",
+        "Type 3. Balloon burst. Current 0 cents. 0 cents banked; 140 cents lost this round. Banked total 25 cents.",
+        "Type 3. Collected. Current 0 cents. 10 cents banked; 0 cents lost this round. Banked total 35 cents.",
+        "Type 3. Collected. Current 0 cents. 30 cents banked; 0 cents lost this round. Banked total 65 cents.",
+        "Type 3. Collected. Current 0 cents. 0 cents banked; 0 cents lost this round. Banked total 65 cents.",
+        "Type 3. Collected. Current 0 cents. 5 cents banked; 0 cents lost this round. Banked total 70 cents.",
+        "Type 3. Collected. Current 0 cents. 20 cents banked; 0 cents lost this round. Banked total 90 cents.",
+        "Type 3. Balloon burst. Current 0 cents. 0 cents banked; 70 cents lost this round. Banked total 90 cents.",
+        "Type 3. Collected. Current 0 cents. 10 cents banked; 0 cents lost this round. Banked total 100 cents.",
+        "Type 3. Collected. Current 0 cents. 30 cents banked; 0 cents lost this round. Banked total 130 cents.",
+        "Type 3. Collected. Current 0 cents. 0 cents banked; 0 cents lost this round. Banked total 130 cents.",
+        "Type 3. Collected. Current 0 cents. 5 cents banked; 0 cents lost this round. Banked total 135 cents.",
+        "Type 3. Collected. Current 0 cents. 20 cents banked; 0 cents lost this round. Banked total 155 cents.",
+        "Type 3. Automatic cap collection. Current 0 cents. 160 cents banked; 0 cents lost this round. Banked total 315 cents.",
+        "Type 3. Collected. Current 0 cents. 10 cents banked; 0 cents lost this round. Banked total 325 cents.",
+        "Type 3. Collected. Current 0 cents. 30 cents banked; 0 cents lost this round. Banked total 355 cents."
+      ]
+    },
+    {
+      "case": "delete-all",
+      "root": {
+        "version": "balloons-durable-v1",
+        "installationId": "be3ac348-8a7f-43ff-a52b-90e45b2e059b",
+        "revision": 1,
+        "generation": 0,
+        "owner": null,
+        "records": {},
+        "tombstones": {}
+      }
+    },
+    {
+      "case": "ownership",
+      "generation": 4
+    },
+    {
+      "case": "blur",
+      "pausedPumps": 0
+    },
+    {
+      "case": "hidden",
+      "pausedPumps": 0
+    },
+    {
+      "case": "pending-blur",
+      "pausedPumps": 1
+    },
+    {
+      "case": "pending-hidden",
+      "pausedPumps": 1
+    },
+    {
+      "case": "held-enter-focus-transfer"
+    },
+    {
+      "case": "familiar",
+      "prior": [
+        "9ae07349-6b53-4154-b78d-c2d302c94da6"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+[
+  {
+    "name": "continuation 31 automatic individual delete-first without notifications",
+    "status": "PASS",
+    "detail": {
+      "trialIndex": 31,
+      "path": "automatic",
+      "mode": "individual",
+      "order": "delete-first",
+      "onsets": 30,
+      "neutralBeforeAdmission": true,
+      "retiredRoot": true
+    }
+  },
+  {
+    "name": "continuation 31 automatic individual onset-first without notifications",
+    "status": "PASS",
+    "detail": {
+      "trialIndex": 31,
+      "path": "automatic",
+      "mode": "individual",
+      "order": "onset-first",
+      "onsets": 31,
+      "neutralBeforeAdmission": true,
+      "retiredRoot": true
+    }
+  },
+  {
+    "name": "continuation 31 automatic replacement delete-first without notifications",
+    "status": "PASS",
+    "detail": {
+      "trialIndex": 31,
+      "path": "automatic",
+      "mode": "replacement",
+      "order": "delete-first",
+      "onsets": 30,
+      "neutralBeforeAdmission": true,
+      "retiredRoot": true
+    }
+  },
+  {
+    "name": "continuation 31 automatic replacement onset-first without notifications",
+    "status": "PASS",
+    "detail": {
+      "trialIndex": 31,
+      "path": "automatic",
+      "mode": "replacement",
+      "order": "onset-first",
+      "onsets": 31,
+      "neutralBeforeAdmission": true,
+      "retiredRoot": true
+    }
+  },
+  {
+    "name": "continuation 31 manual individual delete-first without notifications",
+    "status": "PASS",
+    "detail": {
+      "trialIndex": 31,
+      "path": "manual",
+      "mode": "individual",
+      "order": "delete-first",
+      "onsets": 30,
+      "neutralBeforeAdmission": true,
+      "retiredRoot": true
+    }
+  },
+  {
+    "name": "continuation 31 manual individual onset-first without notifications",
+    "status": "PASS",
+    "detail": {
+      "trialIndex": 31,
+      "path": "manual",
+      "mode": "individual",
+      "order": "onset-first",
+      "onsets": 31,
+      "neutralBeforeAdmission": true,
+      "retiredRoot": true
+    }
+  },
+  {
+    "name": "continuation 31 manual replacement delete-first without notifications",
+    "status": "PASS",
+    "detail": {
+      "trialIndex": 31,
+      "path": "manual",
+      "mode": "replacement",
+      "order": "delete-first",
+      "onsets": 30,
+      "neutralBeforeAdmission": true,
+      "retiredRoot": true
+    }
+  },
+  {
+    "name": "continuation 31 manual replacement onset-first without notifications",
+    "status": "PASS",
+    "detail": {
+      "trialIndex": 31,
+      "path": "manual",
+      "mode": "replacement",
+      "order": "onset-first",
+      "onsets": 31,
+      "neutralBeforeAdmission": true,
+      "retiredRoot": true
+    }
+  },
+  {
+    "name": "continuation 61 automatic individual delete-first without notifications",
+    "status": "PASS",
+    "detail": {
+      "trialIndex": 61,
+      "path": "automatic",
+      "mode": "individual",
+      "order": "delete-first",
+      "onsets": 60,
+      "neutralBeforeAdmission": true,
+      "retiredRoot": true
+    }
+  },
+  {
+    "name": "continuation 61 automatic individual onset-first without notifications",
+    "status": "PASS",
+    "detail": {
+      "trialIndex": 61,
+      "path": "automatic",
+      "mode": "individual",
+      "order": "onset-first",
+      "onsets": 61,
+      "neutralBeforeAdmission": true,
+      "retiredRoot": true
+    }
+  },
+  {
+    "name": "continuation 61 automatic replacement delete-first without notifications",
+    "status": "PASS",
+    "detail": {
+      "trialIndex": 61,
+      "path": "automatic",
+      "mode": "replacement",
+      "order": "delete-first",
+      "onsets": 60,
+      "neutralBeforeAdmission": true,
+      "retiredRoot": true
+    }
+  },
+  {
+    "name": "continuation 61 automatic replacement onset-first without notifications",
+    "status": "PASS",
+    "detail": {
+      "trialIndex": 61,
+      "path": "automatic",
+      "mode": "replacement",
+      "order": "onset-first",
+      "onsets": 61,
+      "neutralBeforeAdmission": true,
+      "retiredRoot": true
+    }
+  },
+  {
+    "name": "continuation 61 manual individual delete-first without notifications",
+    "status": "PASS",
+    "detail": {
+      "trialIndex": 61,
+      "path": "manual",
+      "mode": "individual",
+      "order": "delete-first",
+      "onsets": 60,
+      "neutralBeforeAdmission": true,
+      "retiredRoot": true
+    }
+  },
+  {
+    "name": "continuation 61 manual individual onset-first without notifications",
+    "status": "PASS",
+    "detail": {
+      "trialIndex": 61,
+      "path": "manual",
+      "mode": "individual",
+      "order": "onset-first",
+      "onsets": 61,
+      "neutralBeforeAdmission": true,
+      "retiredRoot": true
+    }
+  },
+  {
+    "name": "continuation 61 manual replacement delete-first without notifications",
+    "status": "PASS",
+    "detail": {
+      "trialIndex": 61,
+      "path": "manual",
+      "mode": "replacement",
+      "order": "delete-first",
+      "onsets": 60,
+      "neutralBeforeAdmission": true,
+      "retiredRoot": true
+    }
+  },
+  {
+    "name": "continuation 61 manual replacement onset-first without notifications",
+    "status": "PASS",
+    "detail": {
+      "trialIndex": 61,
+      "path": "manual",
+      "mode": "replacement",
+      "order": "onset-first",
+      "onsets": 61,
+      "neutralBeforeAdmission": true,
+      "retiredRoot": true
+    }
+  }
+]

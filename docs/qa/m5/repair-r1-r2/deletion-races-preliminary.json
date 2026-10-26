@@ -1,0 +1,443 @@
+{
+  "browser": "145.0.7632.6",
+  "cases": [
+    {
+      "failure": "failed",
+      "action": "drill",
+      "order": "retry-before-delete",
+      "before": {
+        "status": "failed",
+        "memory": [
+          "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+          "unsaved-other-attempt"
+        ],
+        "calls": 2
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 6
+      },
+      "writes": [
+        {
+          "chainId": "0f590a61-3498-4989-b0fb-79a27cb27361",
+          "status": "drill_complete",
+          "attempts": [
+            "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "0f590a61-3498-4989-b0fb-79a27cb27361",
+          "status": "drill_complete",
+          "attempts": [
+            "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "0f590a61-3498-4989-b0fb-79a27cb27361",
+          "status": "drill_complete",
+          "attempts": [
+            "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "0f590a61-3498-4989-b0fb-79a27cb27361",
+          "status": "drill_complete",
+          "attempts": [
+            "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "0f590a61-3498-4989-b0fb-79a27cb27361",
+          "status": "drill_complete",
+          "attempts": [
+            "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "0f590a61-3498-4989-b0fb-79a27cb27361",
+          "status": "drill_complete",
+          "attempts": [
+            "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "DeletedChainError",
+      "activeAfterReload": 0,
+      "drillRows": 1,
+      "retainedAttemptIds": [
+        "unsaved-other-attempt"
+      ],
+      "deletedDraftAbsent": false,
+      "durableHash": "d083bccbf86e8eb6de6b591dd84e24265005720d76f380dd2db265a17d3dbb7b",
+      "reloadHash": "d083bccbf86e8eb6de6b591dd84e24265005720d76f380dd2db265a17d3dbb7b",
+      "unrelatedPreserved": true,
+      "pass": true
+    },
+    {
+      "failure": "failed",
+      "action": "drill",
+      "order": "retry-after-delete",
+      "before": {
+        "status": "failed",
+        "memory": [
+          "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+          "unsaved-other-attempt"
+        ],
+        "calls": 2
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 4
+      },
+      "writes": [
+        {
+          "chainId": "0f590a61-3498-4989-b0fb-79a27cb27361",
+          "status": "drill_complete",
+          "attempts": [
+            "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "0f590a61-3498-4989-b0fb-79a27cb27361",
+          "status": "drill_complete",
+          "attempts": [
+            "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "0f590a61-3498-4989-b0fb-79a27cb27361",
+          "status": "drill_complete",
+          "attempts": [
+            "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "0f590a61-3498-4989-b0fb-79a27cb27361",
+          "status": "drill_complete",
+          "attempts": [
+            "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "DeletedChainError",
+      "activeAfterReload": 0,
+      "drillRows": 1,
+      "retainedAttemptIds": [
+        "unsaved-other-attempt"
+      ],
+      "deletedDraftAbsent": false,
+      "durableHash": "e0b623717abed5f7ae135879ebcf597494fa91824f1db4a6ad536a544e910fff",
+      "reloadHash": "e0b623717abed5f7ae135879ebcf597494fa91824f1db4a6ad536a544e910fff",
+      "unrelatedPreserved": true,
+      "pass": true
+    },
+    {
+      "failure": "failed",
+      "action": "retest",
+      "order": "retry-before-delete",
+      "before": {
+        "status": "failed",
+        "memory": [
+          "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+          "unsaved-other-attempt"
+        ],
+        "calls": 2
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 6
+      },
+      "writes": [
+        {
+          "chainId": "0f590a61-3498-4989-b0fb-79a27cb27361",
+          "status": "drill_complete",
+          "attempts": [
+            "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "0f590a61-3498-4989-b0fb-79a27cb27361",
+          "status": "drill_complete",
+          "attempts": [
+            "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "0f590a61-3498-4989-b0fb-79a27cb27361",
+          "status": "drill_complete",
+          "attempts": [
+            "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "0f590a61-3498-4989-b0fb-79a27cb27361",
+          "status": "drill_complete",
+          "attempts": [
+            "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "0f590a61-3498-4989-b0fb-79a27cb27361",
+          "status": "drill_complete",
+          "attempts": [
+            "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "0f590a61-3498-4989-b0fb-79a27cb27361",
+          "status": "drill_complete",
+          "attempts": [
+            "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "DeletedChainError",
+      "activeAfterReload": 0,
+      "drillRows": 2,
+      "retainedAttemptIds": [
+        "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+        "unsaved-other-attempt"
+      ],
+      "deletedDraftAbsent": true,
+      "durableHash": "a90ead5e05f93c2bbda5c963c91ebbdd063979146d360a109a3dfe626972576f",
+      "reloadHash": "a90ead5e05f93c2bbda5c963c91ebbdd063979146d360a109a3dfe626972576f",
+      "unrelatedPreserved": true,
+      "pass": true
+    },
+    {
+      "failure": "failed",
+      "action": "retest",
+      "order": "retry-after-delete",
+      "before": {
+        "status": "failed",
+        "memory": [
+          "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+          "unsaved-other-attempt"
+        ],
+        "calls": 2
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 4
+      },
+      "writes": [
+        {
+          "chainId": "0f590a61-3498-4989-b0fb-79a27cb27361",
+          "status": "drill_complete",
+          "attempts": [
+            "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "0f590a61-3498-4989-b0fb-79a27cb27361",
+          "status": "drill_complete",
+          "attempts": [
+            "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "0f590a61-3498-4989-b0fb-79a27cb27361",
+          "status": "drill_complete",
+          "attempts": [
+            "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "0f590a61-3498-4989-b0fb-79a27cb27361",
+          "status": "drill_complete",
+          "attempts": [
+            "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "DeletedChainError",
+      "activeAfterReload": 0,
+      "drillRows": 2,
+      "retainedAttemptIds": [
+        "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+        "unsaved-other-attempt"
+      ],
+      "deletedDraftAbsent": true,
+      "durableHash": "e1df72696bc2b5a25eb8ef2ac81f1baa039e3ab73d770aa133bec23a841c2287",
+      "reloadHash": "e1df72696bc2b5a25eb8ef2ac81f1baa039e3ab73d770aa133bec23a841c2287",
+      "unrelatedPreserved": true,
+      "pass": true
+    },
+    {
+      "failure": "failed",
+      "action": "baseline",
+      "order": "retry-before-delete",
+      "before": {
+        "status": "failed",
+        "memory": [
+          "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+          "unsaved-other-attempt"
+        ],
+        "calls": 2
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 6
+      },
+      "writes": [
+        {
+          "chainId": "0f590a61-3498-4989-b0fb-79a27cb27361",
+          "status": "drill_complete",
+          "attempts": [
+            "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "0f590a61-3498-4989-b0fb-79a27cb27361",
+          "status": "drill_complete",
+          "attempts": [
+            "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "0f590a61-3498-4989-b0fb-79a27cb27361",
+          "status": "drill_complete",
+          "attempts": [
+            "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "0f590a61-3498-4989-b0fb-79a27cb27361",
+          "status": "drill_complete",
+          "attempts": [
+            "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "0f590a61-3498-4989-b0fb-79a27cb27361",
+          "status": "drill_complete",
+          "attempts": [
+            "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "0f590a61-3498-4989-b0fb-79a27cb27361",
+          "status": "drill_complete",
+          "attempts": [
+            "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "DeletedChainError",
+      "activeAfterReload": 0,
+      "drillRows": 2,
+      "retainedAttemptIds": [
+        "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+        "unsaved-other-attempt"
+      ],
+      "deletedDraftAbsent": false,
+      "durableHash": "4e2dc2665a6b279646b30de5e1c50d10bf3e5a8c11bceef7b1a618d329cefbca",
+      "reloadHash": "4e2dc2665a6b279646b30de5e1c50d10bf3e5a8c11bceef7b1a618d329cefbca",
+      "unrelatedPreserved": true,
+      "pass": true
+    },
+    {
+      "failure": "failed",
+      "action": "baseline",
+      "order": "retry-after-delete",
+      "before": {
+        "status": "failed",
+        "memory": [
+          "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+          "unsaved-other-attempt"
+        ],
+        "calls": 2
+      },
+      "memoryAfterDelete": {
+        "id": null,
+        "attempts": [],
+        "status": "saved",
+        "calls": 4
+      },
+      "writes": [
+        {
+          "chainId": "0f590a61-3498-4989-b0fb-79a27cb27361",
+          "status": "drill_complete",
+          "attempts": [
+            "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "0f590a61-3498-4989-b0fb-79a27cb27361",
+          "status": "drill_complete",
+          "attempts": [
+            "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "0f590a61-3498-4989-b0fb-79a27cb27361",
+          "status": "drill_complete",
+          "attempts": [
+            "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+            "unsaved-other-attempt"
+          ]
+        },
+        {
+          "chainId": "0f590a61-3498-4989-b0fb-79a27cb27361",
+          "status": "drill_complete",
+          "attempts": [
+            "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+            "unsaved-other-attempt"
+          ]
+        }
+      ],
+      "staleStorageReplay": "DeletedChainError",
+      "activeAfterReload": 0,
+      "drillRows": 2,
+      "retainedAttemptIds": [
+        "65c3a0c6-7a32-40ca-9746-e1cf39803b29",
+        "unsaved-other-attempt"
+      ],
+      "deletedDraftAbsent": false,
+      "durableHash": "7f0128fd27de006959b79e71c989358e1cd2727d55c8023c0bd82095f1889a84",
+      "reloadHash": "7f0128fd27de006959b79e71c989358e1cd2727d55c8023c0bd82095f1889a84",
+      "unrelatedPreserved": true,
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ '2336bcb382f4d7eaf7e6bd09c9274a4e69cdf4c6407c9ec2f2b938d17b17836f'\n- 'dd126c2707d736d47f2a14364db11f57e15cf0c2848c54bb09fe394ee8a64f11'\n\n    at file:///Users/renzo/Documents/Assessment%20Practice/App/docs/qa/m5/repair-r1-r2/deletion-races.mjs:96:46"
+}

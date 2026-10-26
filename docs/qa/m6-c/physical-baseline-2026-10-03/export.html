@@ -1,0 +1,35 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Stop physical-baseline QA export</title>
+<h1>Stop physical-baseline QA export</h1>
+<p>Reads local browser events and Stop storage on this disposable loopback origin.</p>
+<button id="download" disabled>Download evidence</button>
+<p id="status">Loading</p>
+<script>
+;(async () => {
+  const button = document.getElementById('download')
+  const status = document.getElementById('status')
+  const browserEvents = JSON.parse(localStorage.getItem('stop-physical-baseline-browser-events-v1') || '[]')
+  const db = await new Promise((resolve, reject) => {
+    const request = indexedDB.open('assessment-practice-stop', 1)
+    request.onsuccess = () => resolve(request.result)
+    request.onerror = () => reject(request.error)
+  })
+  const request = db.transaction('installation', 'readonly').objectStore('installation').get('stop')
+  request.onsuccess = () => {
+    const raw = { schema: 'stop_physical_baseline_qa_v1', browserEvents, installation: request.result || {} }
+    status.textContent = `Browser events: ${browserEvents.length}; saved results: ${Object.keys(raw.installation.results || {}).length}; drafts: ${Object.keys(raw.installation.drafts || {}).length}`
+    button.disabled = false
+    button.onclick = () => {
+      const url = URL.createObjectURL(new Blob([JSON.stringify(raw, null, 2)], { type: 'application/json' }))
+      const link = document.createElement('a')
+      link.href = url
+      link.download = 'stop-physical-baseline-' + (new URLSearchParams(location.search).get('case') || 'capture') + '.json'
+      link.click()
+      setTimeout(() => URL.revokeObjectURL(url), 1000)
+    }
+    db.close()
+  }
+  request.onerror = () => { status.textContent = String(request.error) }
+})().catch(error => { document.getElementById('status').textContent = String(error) })
+</script>

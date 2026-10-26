@@ -1,0 +1,274 @@
+
+> assessment-practice@0.0.0 test
+> vitest run --reporter=verbose src/stop/engine src/stop/run.test.ts src/stop/training.test.ts
+
+
+ RUN  v4.1.11 /Users/renzo/Documents/Assessment Practice/App
+
+ ✓ src/stop/engine/input.test.ts > Stop input resolution > waits for an observed keyup before initial fixation when the key was held at entry 2ms
+ ✓ src/stop/engine/input.test.ts > Stop input resolution > requires keyup even if subsequent held keydowns omit the repeat flag 0ms
+ ✓ src/stop/engine/input.test.ts > Stop input resolution > ignores a repeated keydown even without a prior observed keydown, and waits for release 0ms
+ ✓ src/stop/engine/input.test.ts > Stop input resolution > does not invalidate for 20 repeated " " events alone 0ms
+ ✓ src/stop/engine/input.test.ts > Stop input resolution > does not invalidate for 20 repeated "x" events alone 0ms
+ ✓ src/stop/engine/input.test.ts > Stop input resolution > accepts only the first keydown and logs repeats and a second eligible press 0ms
+ ✓ src/stop/engine/input.test.ts > Stop input resolution > logs a wrong key without closing the response window 0ms
+ ✓ src/stop/engine/input.test.ts > Stop input resolution > uses the supplied preflight binding 0ms
+ ✓ src/stop/engine/input.test.ts > Stop input resolution > does not carry an extra key or a late key into the next trial 0ms
+ ✓ src/stop/engine/input.test.ts > Stop input resolution > logs fixation input while waiting for a next rendered frame and keeps it disarmed 0ms
+ ✓ src/stop/engine/input.test.ts > Stop input resolution > does not infer release when focus changes 0ms
+ ✓ src/stop/engine/input.test.ts > Stop input resolution > does not score input reported while unfocused 0ms
+ ✓ src/stop/engine/input.test.ts > Stop §14.4 thresholds > invalidates on the third anticipatory outcome, while retaining all three outcomes 0ms
+ ✓ src/stop/engine/input.test.ts > Stop §14.4 thresholds > 100 ms responses never increment the anticipatory count 0ms
+ ✓ src/stop/engine/input.test.ts > Stop §14.4 thresholds > invalidates on the third distinct scored fixation press 0ms
+ ✓ src/stop/engine/input.test.ts > Stop §14.4 thresholds > invalidates at five wrong inputs, not four 0ms
+ ✓ src/stop/engine/input.test.ts > Stop §14.4 thresholds > makes an extra-input note at five and invalidates at ten 0ms
+ ✓ src/stop/engine/input.test.ts > Stop §14.4 thresholds > does not count warm-up wrong/fixation inputs toward scored-only thresholds 0ms
+ ✓ src/stop/engine/interruption.test.ts > Stop protected interval interruptions > handles visible blur lasting 999 ms 1ms
+ ✓ src/stop/engine/interruption.test.ts > Stop protected interval interruptions > handles visible blur lasting 1000 ms 0ms
+ ✓ src/stop/engine/interruption.test.ts > Stop protected interval interruptions > handles visible blur lasting 1001 ms 0ms
+ ✓ src/stop/engine/interruption.test.ts > Stop protected interval interruptions > invalidates a long blur without waiting for focus to return or another input 0ms
+ ✓ src/stop/engine/interruption.test.ts > Stop protected interval interruptions > repeated exact 1,000 ms blurs never invalidate by count alone 0ms
+ ✓ src/stop/engine/interruption.test.ts > Stop protected interval interruptions > does not restart the blur timer on duplicate blur notifications 0ms
+ ✓ src/stop/engine/interruption.test.ts > Stop protected interval interruptions > continues protecting focus while a batch is awaiting arming 0ms
+ ✓ src/stop/engine/interruption.test.ts > Stop protected interval interruptions > requires focus before beginning initial fixation 0ms
+ ✓ src/stop/engine/interruption.test.ts > Stop protected interval interruptions > hidden document invalidates immediately at 0 0ms
+ ✓ src/stop/engine/interruption.test.ts > Stop protected interval interruptions > hidden document invalidates immediately at 999 0ms
+ ✓ src/stop/engine/interruption.test.ts > Stop protected interval interruptions > hidden document invalidates immediately at 1100 0ms
+ ✓ src/stop/engine/interruption.test.ts > Stop protected interval interruptions > hidden document invalidates immediately at 1500 0ms
+ ✓ src/stop/engine/interruption.test.ts > Stop protected interval interruptions > hidden document invalidates immediately at 3200 0ms
+ ✓ src/stop/engine/interruption.test.ts > Stop protected interval interruptions > pagehide invalidates, never restoring an interrupted run 0ms
+ ✓ src/stop/engine/interruption.test.ts > Stop protected interval interruptions > freeze invalidates, never restoring an interrupted run 0ms
+ ✓ src/stop/engine/interruption.test.ts > Stop protected interval interruptions > resume invalidates, never restoring an interrupted run 0ms
+ ✓ src/stop/engine/interruption.test.ts > Stop protected interval interruptions > pageshow invalidates, never restoring an interrupted run 0ms
+ ✓ src/stop/engine/interruption.test.ts > Stop protected interval interruptions > checks viewport 768 × 600 0ms
+ ✓ src/stop/engine/interruption.test.ts > Stop protected interval interruptions > checks viewport 767 × 600 0ms
+ ✓ src/stop/engine/interruption.test.ts > Stop protected interval interruptions > checks viewport 768 × 599 0ms
+ ✓ src/stop/engine/interruption.test.ts > Stop protected interval interruptions > checks viewport 320 × 600 0ms
+ ✓ src/stop/engine/interruption.test.ts > Stop protected interval interruptions > checks viewport NaN × 600 0ms
+ ✓ src/stop/engine/interruption.test.ts > Stop protected interval interruptions > invalidates response_key changes 0ms
+ ✓ src/stop/engine/interruption.test.ts > Stop protected interval interruptions > invalidates visual_profile changes 0ms
+ ✓ src/stop/engine/interruption.test.ts > Stop protected interval interruptions > invalidates timing_profile changes 0ms
+ ✓ src/stop/engine/interruption.test.ts > Stop protected interval interruptions > invalidates input_device_class changes 0ms
+ ✓ src/stop/engine/interruption.test.ts > Stop protected interval interruptions > invalidates accessibility changes 0ms
+ ✓ src/stop/engine/interruption.test.ts > Stop protected interval interruptions > stops all score-affecting callbacks and input after invalidation 1ms
+ ✓ src/stop/engine/interruption.test.ts > Stop protected interval interruptions > preserves an already resolved outcome, but cancels advancement after invalidation 0ms
+ ✓ src/stop/engine/interruption.test.ts > Stop protected interval interruptions > uses the causal event sequence for each invalidation 0ms
+ ✓ src/stop/engine/interruption.test.ts > Stop protected interval interruptions > keeps protection after the final interval until the caller completion boundary 0ms
+ ✓ src/stop/engine/integrity.test.ts > Engine event journal and integrity > continues an existing session sequence and preserves causal references and batch checks 2ms
+ ✓ src/stop/engine/integrity.test.ts > Engine event journal and integrity > has immutable order, payloads, session/schema/rule versions, and one monotonic clock 1ms
+ ✓ src/stop/engine/integrity.test.ts > Engine event journal and integrity > uses immutable snapshots and copies caller-supplied trials 0ms
+ ✓ src/stop/engine/integrity.test.ts > Engine event journal and integrity > invalidates a bad/regressed clock NaN without regressing event envelopes 0ms
+ ✓ src/stop/engine/integrity.test.ts > Engine event journal and integrity > invalidates a bad/regressed clock Infinity without regressing event envelopes 0ms
+ ✓ src/stop/engine/integrity.test.ts > Engine event journal and integrity > invalidates a bad/regressed clock -1 without regressing event envelopes 0ms
+ ✓ src/stop/engine/integrity.test.ts > Engine event journal and integrity > invalidates a bad/regressed clock 999 without regressing event envelopes 0ms
+ ✓ src/stop/engine/integrity.test.ts > Engine event journal and integrity > rejects duplicate confirmations and never creates a second onset 0ms
+ ✓ src/stop/engine/integrity.test.ts > Engine event journal and integrity > rejects a frame confirmed before its eligible onset 0ms
+ ✓ src/stop/engine/integrity.test.ts > Engine event journal and integrity > detects missing or duplicate stimulus_presented in retained events 0ms
+ ✓ src/stop/engine/integrity.test.ts > Engine event journal and integrity > detects missing or duplicate stimulus_removed in retained events 0ms
+ ✓ src/stop/engine/integrity.test.ts > Engine event journal and integrity > detects missing or duplicate response_accepted in retained events 0ms
+ ✓ src/stop/engine/integrity.test.ts > Engine event journal and integrity > detects missing or duplicate trial_resolved in retained events 0ms
+ ✓ src/stop/engine/integrity.test.ts > Engine event journal and integrity > checks a matching sink journal without creating a valid product result 0ms
+ ✓ src/stop/engine/integrity.test.ts > Engine event journal and integrity > batch event audit passes a correct response=true fixture 0ms
+ ✓ src/stop/engine/integrity.test.ts > Engine event journal and integrity > batch event audit passes a correct response=false fixture 0ms
+ ✓ src/stop/engine/integrity.test.ts > Engine event journal and integrity > rejects corrupted batch: held 0ms
+ ✓ src/stop/engine/integrity.test.ts > Engine event journal and integrity > rejects corrupted batch: repeat 0ms
+ ✓ src/stop/engine/integrity.test.ts > Engine event journal and integrity > rejects corrupted batch: wrong 0ms
+ ✓ src/stop/engine/integrity.test.ts > Engine event journal and integrity > rejects corrupted batch: response_missing 0ms
+ ✓ src/stop/engine/integrity.test.ts > Engine event journal and integrity > rejects corrupted batch: response_duplicate 0ms
+ ✓ src/stop/engine/integrity.test.ts > Engine event journal and integrity > rejects corrupted batch: resolution_missing 0ms
+ ✓ src/stop/engine/integrity.test.ts > Engine event journal and integrity > rejects corrupted batch: stimulus_duplicate 0ms
+ ✓ src/stop/engine/integrity.test.ts > Engine event journal and integrity > rejects corrupted batch: negative_rt 0ms
+ ✓ src/stop/engine/integrity.test.ts > Engine event journal and integrity > rejects corrupted batch: wrong_outcome 0ms
+ ✓ src/stop/engine/integrity.test.ts > Engine event journal and integrity > rejects corrupted batch: missing_timestamp 0ms
+ ✓ src/stop/engine/integrity.test.ts > Engine event journal and integrity > rejects corrupted batch: regressed_timestamp 2ms
+ ✓ src/stop/engine/integrity.test.ts > Engine event journal and integrity > rejects corrupted batch: wrong_schema 0ms
+ ✓ src/stop/engine/integrity.test.ts > Engine event journal and integrity > rejects an outcome-producing response inserted into a timeout record 0ms
+ ✓ src/stop/engine/integrity.test.ts > Engine event journal and integrity > invalidates safely if the event sink fails, preserving a local diagnostic 0ms
+ ✓ src/stop/engine/integrity.test.ts > Engine event journal and integrity > guards against reentrant sinks 0ms
+ ✓ src/stop/engine/integrity.test.ts > Engine event journal and integrity > requires a single-phase caller batch and never selects a form 0ms
+ ✓ src/stop/engine/integrity.test.ts > Engine event journal and integrity > starts another supplied phase with a fresh initial fixation without ending protection 0ms
+ ✓ src/stop/engine/integrity.test.ts > Faulty adapter contracts > rejects an inclusive deadline timer dispatched exactly on the boundary 0ms
+ ✓ src/stop/engine/integrity.test.ts > Faulty adapter contracts > rejects duplicate scheduler delivery before another trial can be created 0ms
+ ✓ src/stop/engine/integrity.test.ts > Faulty adapter contracts > rejects a missing clock sample, even before a trial starts 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §7–9 timing boundaries (synthetic frames) > accepts response at 0 ms from confirmed onset 2ms
+ ✓ src/stop/engine/timing.test.ts > Stop §7–9 timing boundaries (synthetic frames) > accepts response at 99 ms from confirmed onset 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §7–9 timing boundaries (synthetic frames) > accepts response at 100 ms from confirmed onset 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §7–9 timing boundaries (synthetic frames) > accepts response at 199 ms from confirmed onset 1ms
+ ✓ src/stop/engine/timing.test.ts > Stop §7–9 timing boundaries (synthetic frames) > accepts response at 200 ms from confirmed onset 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §7–9 timing boundaries (synthetic frames) > accepts response at 201 ms from confirmed onset 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §7–9 timing boundaries (synthetic frames) > accepts response at 999 ms from confirmed onset 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §7–9 timing boundaries (synthetic frames) > accepts response at 1000 ms from confirmed onset 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §7–9 timing boundaries (synthetic frames) > treats 1,001 ms as late and preserves the timeout 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §7–9 timing boundaries (synthetic frames) > also closes an expired window when the timer has not been dispatched 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §7–9 timing boundaries (synthetic frames) > keeps the exact 1,000 ms tie open before timeout dispatch 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §7–9 timing boundaries (synthetic frames) > resolves GO timeout as miss 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §7–9 timing boundaries (synthetic frames) > resolves NO_GO timeout as correct_withhold 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §7–9 timing boundaries (synthetic frames) > resolves a NO-GO response as a false alarm 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §7–9 timing boundaries (synthetic frames) > waits 1,000 ms before the first warmup frame 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §7–9 timing boundaries (synthetic frames) > waits 1,000 ms before the first scored frame 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §7–9 timing boundaries (synthetic frames) > next onset follows the transition anchor for response at 99 ms 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §7–9 timing boundaries (synthetic frames) > next onset follows the transition anchor for response at 100 ms 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §7–9 timing boundaries (synthetic frames) > next onset follows the transition anchor for response at 199 ms 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §7–9 timing boundaries (synthetic frames) > next onset follows the transition anchor for response at 200 ms 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §7–9 timing boundaries (synthetic frames) > next onset follows the transition anchor for response at 350 ms 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §7–9 timing boundaries (synthetic frames) > next onset follows the transition anchor for response at 1000 ms 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §7–9 timing boundaries (synthetic frames) > next timeout-path onset follows 1,000 + 1,200 ms, ignoring timer dispatch lateness 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §7–9 timing boundaries (synthetic frames) > anchors to the confirmed frame, including delayed first and later frames 1ms
+ ✓ src/stop/engine/timing.test.ts > Stop §7–9 timing boundaries (synthetic frames) > keeps the original eligible initial onset when its scheduler is late 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > flags a delayed initial warm-up transition for the single restart 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > detects a severe missing offset even after an early outcome resolved 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > visibility at 99 is severe 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > visibility at 100 is non_severe 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > visibility at 149 is non_severe 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > visibility at 150 is clean 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > visibility at 250 is clean 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > visibility at 251 is non_severe 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > visibility at 500 is non_severe 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > visibility at 501 is severe 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > deadline at 100 is clean 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > deadline at 101 is non_severe 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > deadline at 500 is non_severe 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > deadline at 501 is severe 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > onset at 100 is clean 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > onset at 101 is non_severe 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > onset at 500 is non_severe 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > onset at 501 is severe 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > post_resolution at 1099 is non_severe 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > post_resolution at 1100 is clean 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > post_resolution at 1300 is clean 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > post_resolution at 1301 is non_severe 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > post_resolution at 1700 is non_severe 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > post_resolution at 1701 is severe 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > transition at 500 is clean 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > transition at 501 is severe 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > rejects incompatible timestamp NaN 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > rejects incompatible timestamp Infinity 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > rejects incompatible timestamp -1 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > evaluates confirmed visibility 99 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > evaluates confirmed visibility 100 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > evaluates confirmed visibility 149 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > evaluates confirmed visibility 150 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > evaluates confirmed visibility 250 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > evaluates confirmed visibility 251 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > evaluates confirmed visibility 500 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > evaluates confirmed visibility 501 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > preserves accuracy but excludes the affected timing trial for one anomaly 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > counts two separate timing observations, including on one trial 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > checks deadline callback lateness 100 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > checks deadline callback lateness 101 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > checks deadline callback lateness 500 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > checks deadline callback lateness 501 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > checks onset confirmation lateness 100 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > checks onset confirmation lateness 101 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > checks onset confirmation lateness 500 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > checks onset confirmation lateness 501 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > records a delayed post-resolution/onset transition as one observation with both bands 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > checks the last post-resolution interval as well 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > stops on a missing frame instead of hanging 0ms
+ ✓ src/stop/engine/timing.test.ts > Stop §14 timing anomalies > allows one caller-controlled warm-up restart, then invalidates the next timing anomaly 0ms
+ ✓ src/stop/engine/timing.test.ts > Founder clarification M2B-02 — confirmed transition anchor > records an early GO outcome immediately and leaves visibility intact 0ms
+ ✓ src/stop/engine/timing.test.ts > Founder clarification M2B-02 — confirmed transition anchor > records an early NO_GO outcome immediately and leaves visibility intact 0ms
+ ✓ src/stop/engine/timing.test.ts > Founder clarification M2B-02 — confirmed transition anchor > response at 99 ms with valid offset at 201 ms uses the later timestamp 0ms
+ ✓ src/stop/engine/timing.test.ts > Founder clarification M2B-02 — confirmed transition anchor > response at 99 ms with valid offset at 216 ms uses the later timestamp 0ms
+ ✓ src/stop/engine/timing.test.ts > Founder clarification M2B-02 — confirmed transition anchor > response at 99 ms with valid offset at 250 ms uses the later timestamp 0ms
+ ✓ src/stop/engine/timing.test.ts > Founder clarification M2B-02 — confirmed transition anchor > response at 100 ms with valid offset at 250 ms uses the later timestamp 0ms
+ ✓ src/stop/engine/timing.test.ts > Founder clarification M2B-02 — confirmed transition anchor > response at 199 ms with valid offset at 250 ms uses the later timestamp 0ms
+ ✓ src/stop/engine/timing.test.ts > Founder clarification M2B-02 — confirmed transition anchor > response at 200 ms with valid offset at 250 ms uses the later timestamp 0ms
+ ✓ src/stop/engine/timing.test.ts > Founder clarification M2B-02 — confirmed transition anchor > response at 225 ms with valid offset at 250 ms uses the later timestamp 0ms
+ ✓ src/stop/engine/timing.test.ts > Founder clarification M2B-02 — confirmed transition anchor > response at 249 ms with valid offset at 250 ms uses the later timestamp 0ms
+ ✓ src/stop/engine/timing.test.ts > Founder clarification M2B-02 — confirmed transition anchor > response at 250 ms with valid offset at 250 ms uses the later timestamp 0ms
+ ✓ src/stop/engine/timing.test.ts > Founder clarification M2B-02 — confirmed transition anchor > response at 350 ms with valid offset at 250 ms uses the later timestamp 0ms
+ ✓ src/stop/engine/timing.test.ts > Founder clarification M2B-02 — confirmed transition anchor > final response 99 / offset 200 finishes at onset + 1400 ms 0ms
+ ✓ src/stop/engine/timing.test.ts > Founder clarification M2B-02 — confirmed transition anchor > final response 100 / offset 200 finishes at onset + 1400 ms 0ms
+ ✓ src/stop/engine/timing.test.ts > Founder clarification M2B-02 — confirmed transition anchor > final response 199 / offset 200 finishes at onset + 1400 ms 0ms
+ ✓ src/stop/engine/timing.test.ts > Founder clarification M2B-02 — confirmed transition anchor > final response 200 / offset 200 finishes at onset + 1400 ms 0ms
+ ✓ src/stop/engine/timing.test.ts > Founder clarification M2B-02 — confirmed transition anchor > final response 350 / offset 200 finishes at onset + 1550 ms 0ms
+ ✓ src/stop/engine/timing.test.ts > Founder clarification M2B-02 — confirmed transition anchor > final response null / offset 200 finishes at onset + 2200 ms 0ms
+ ✓ src/stop/engine/timing.test.ts > Founder clarification M2B-02 — confirmed transition anchor > final response 99 / offset 250 finishes at onset + 1450 ms 0ms
+ ✓ src/stop/engine/timing.test.ts > Founder clarification M2B-02 — confirmed transition anchor > final response 225 / offset 250 finishes at onset + 1450 ms 0ms
+ ✓ src/stop/engine/timing.test.ts > Founder clarification M2B-02 — confirmed transition anchor > final response 250 / offset 250 finishes at onset + 1450 ms 0ms
+ ✓ src/stop/engine/timing.test.ts > Founder clarification M2B-02 — confirmed transition anchor > final response 350 / offset 250 finishes at onset + 1550 ms 1ms
+ ✓ src/stop/engine/timing.test.ts > Founder clarification M2B-02 — confirmed transition anchor > final response null / offset 250 finishes at onset + 2200 ms 0ms
+ ✓ src/stop/engine/timing.test.ts > Founder clarification M2B-02 — confirmed transition anchor > also handles a response delivered before offset confirmation at the same timestamp 0ms
+ ✓ src/stop/engine/timing.test.ts > Founder clarification M2B-02 — confirmed transition anchor > uses the first confirmed next frame after the corrected eligibility time 0ms
+ ✓ src/stop/engine/timing.test.ts > Founder clarification M2B-02 — confirmed transition anchor > an anomalous offset produces only its real visibility anomaly (final=false) 0ms
+ ✓ src/stop/engine/timing.test.ts > Founder clarification M2B-02 — confirmed transition anchor > an anomalous offset produces only its real visibility anomaly (final=true) 0ms
+ ✓ src/stop/engine/timing.test.ts > Founder clarification M2B-02 — confirmed transition anchor > measures real transition lateness from the corrected anchor (final=false) 0ms
+ ✓ src/stop/engine/timing.test.ts > Founder clarification M2B-02 — confirmed transition anchor > measures real transition lateness from the corrected anchor (final=true) 0ms
+ ✓ src/stop/engine/timing.test.ts > Founder clarification M2B-02 — confirmed transition anchor > does not start an interval after invalidation while waiting for offset 0ms
+ ✓ src/stop/engine/timing.test.ts > Founder clarification M2B-02 — confirmed transition anchor > does not start an interval when a warm-up offset requests a restart 0ms
+ ✓ src/stop/training.test.ts > S45–S47 router and temporary-chain boundary > routes exact withholding and detection thresholds and records nonselected candidates 2ms
+ ✓ src/stop/training.test.ts > S45–S47 router and temporary-chain boundary > uses complete halves, and requires both the false-alarm rise and two additional errors 0ms
+ ✓ src/stop/training.test.ts > S45–S47 router and temporary-chain boundary > excludes stability for every timing note while continuing to evaluate other routes, including maintenance 0ms
+ ✓ src/stop/training.test.ts > S45–S47 router and temporary-chain boundary > applies a strict less-than-0.001 severity tie and the fixed priority 0ms
+ ✓ src/stop/training.test.ts > S45–S47 router and temporary-chain boundary > retains an attempt exactly once and keeps valid and invalid resume eligibility separate 1ms
+ ✓ src/stop/training.test.ts > S45–S47 router and temporary-chain boundary > permits sequential chains only after completion and retains the exact temporary disclosure 0ms
+ ✓ src/stop/training.test.ts > S45–S47 router and temporary-chain boundary > retains same-page exposure records across completed sequential chains 0ms
+ ✓ src/stop/training.test.ts > M5 local chain activity (N2) > records actual recommendation, start, completion, and retest transitions without fabricating events on restore 52ms
+ ✓ src/stop/run.test.ts > M2B-2 orchestration and retained development boundary > runs fixed unscored warm-up then reconciles all 80 manifest trials, preserving every event 90ms
+ ✓ src/stop/run.test.ts > M2B-2 orchestration and retained development boundary > release before onset vs consumption after onset: false 8ms
+ ✓ src/stop/run.test.ts > M2B-2 orchestration and retained development boundary > release before onset vs consumption after onset: true 8ms
+ ✓ src/stop/training.test.ts > M5 repair: failed chain writes and per-attempt starts > retains failed writes and retries in order without promising saved history or collapsing retries 151ms
+ ✓ src/stop/training.test.ts > R1 deletion and retained queue > stops automatic retry after deletion while a failed write is still in flight 2ms
+ ✓ src/stop/training.test.ts > R1 deletion and retained queue > rejects a retired snapshot once, clears that chain, and preserves unrelated queued transitions 52ms
+ ✓ src/stop/run.test.ts > M2B-2 orchestration and retained development boundary > retains a confirmed onset before immediate timing/blur rejection (blur=false) 8ms
+ ✓ src/stop/run.test.ts > M2B-2 orchestration and retained development boundary > retains a confirmed onset before immediate timing/blur rejection (blur=true) 8ms
+ ✓ src/stop/run.test.ts > M2B-2 orchestration and retained development boundary > one warm-up anomaly restarts the exact sequence; the second invalidates without exposure 2ms
+ ✓ src/stop/run.test.ts > M2B-2 orchestration and retained development boundary > stops hidden during warm-up with no timing retry 0ms
+ ✓ src/stop/run.test.ts > M2B-2 orchestration and retained development boundary > stops blur during warm-up with no timing retry 1ms
+ ✓ src/stop/run.test.ts > M2B-2 orchestration and retained development boundary > stops pagehide during warm-up with no timing retry 1ms
+ ✓ src/stop/run.test.ts > M2B-2 orchestration and retained development boundary > stops pageshow during warm-up with no timing retry 1ms
+ ✓ src/stop/run.test.ts > M2B-2 orchestration and retained development boundary > stops freeze during warm-up with no timing retry 0ms
+ ✓ src/stop/run.test.ts > M2B-2 orchestration and retained development boundary > stops resume during warm-up with no timing retry 0ms
+ ✓ src/stop/run.test.ts > M2B-2 orchestration and retained development boundary > stops resize during warm-up with no timing retry 1ms
+ ✓ src/stop/run.test.ts > M2B-2 orchestration and retained development boundary > invalidates attempted response_key change even between batches 7ms
+ ✓ src/stop/run.test.ts > M2B-2 orchestration and retained development boundary > invalidates attempted visual_profile change even between batches 8ms
+ ✓ src/stop/run.test.ts > M2B-2 orchestration and retained development boundary > invalidates attempted timing_profile change even between batches 7ms
+ ✓ src/stop/run.test.ts > M2B-2 orchestration and retained development boundary > invalidates attempted input_device_class change even between batches 7ms
+ ✓ src/stop/run.test.ts > M2B-2 orchestration and retained development boundary > invalidates attempted accessibility change even between batches 7ms
+ ✓ src/stop/run.test.ts > M2B-2 orchestration and retained development boundary > repeated brief blur is retained without invalidation; long blur stops between batches 8ms
+ ✓ src/stop/run.test.ts > M2B-2 orchestration and retained development boundary > retains M2B-02 early, post-offset, timeout anchors and no inherited input 11ms
+ ✓ src/stop/run.test.ts > M2B-2 orchestration and retained development boundary > exhaustion ends with a development record, without a reused form 7ms
+ ✓ src/stop/run.test.ts > M2B-2 orchestration and retained development boundary > keeps protection during asynchronous completion validation and never closes an interrupted draft 75ms
+ ✓ src/stop/run.test.ts > M2B-2 orchestration and retained development boundary > uses replay forms only for an explicitly selected replay and preserves exposure 8ms
+ ✓ src/stop/run.test.ts > M2B-2 orchestration and retained development boundary > uses an unexposed replay form and stops when the replay family is exhausted 8ms
+ ✓ src/stop/run.test.ts > M2B-2 orchestration and retained development boundary > completes an ordinary replay as a descriptive result without a retest or training action 75ms
+ ✓ src/stop/run.test.ts > M2B-2 orchestration and retained development boundary > stops when manifest validation fails at check 1 7ms
+ ✓ src/stop/run.test.ts > M2B-2 orchestration and retained development boundary > stops when manifest validation fails at check 2 72ms
+ ✓ src/stop/run.test.ts > M2B-2 orchestration and retained development boundary > a held response key at scored activation cannot leak into the first trial 8ms
+ ✓ src/stop/run.test.ts > M2B-2 orchestration and retained development boundary > an unhandled integration failure uses the technical recovery rule 0ms
+ ✓ src/stop/run.test.ts > M4 retest reservation and consumption integration (S50–S52) > reuses only the explanation reservation, releases before onset, and consumes after confirmed onset 15ms
+ ✓ src/stop/run.test.ts > M4 retest reservation and consumption integration (S50–S52) > expires without consuming before scored start and never substitutes another form 7ms
+ ✓ src/stop/run.test.ts > M4 retest reservation and consumption integration (S50–S52) > rechecks before scored presentation and retains a real confirmed presentation if expiry races later 7ms
+ ✓ src/stop/run.test.ts > M4 retest reservation and consumption integration (S50–S52) > invalidates a confirmed first onset at expired wall time 1800000 after a successful guard 8ms
+ ✓ src/stop/run.test.ts > M4 retest reservation and consumption integration (S50–S52) > invalidates a confirmed first onset at expired wall time 1800001 after a successful guard 7ms
+ ✓ src/stop/run.test.ts > M4 retest reservation and consumption integration (S50–S52) > keeps a form consumed when the reservation expires after a valid first onset 74ms
+ ✓ src/stop/run.test.ts > M4 retest reservation and consumption integration (S50–S52) > completes a scored retest under the unchanged standard scorer and verifies its same-tab result 74ms
+ ✓ src/stop/run.test.ts > memory exposure repository > injects local tie-breaking, rejects invalid randomness, and never consumes a reservation 0ms
+ ✓ src/stop/run.test.ts > M3 B1–B3 audit repair regressions > rejects corrupted presentation identity in actual same-tab recovery while preserving evidence and exposure 77ms
+ ✓ src/stop/run.test.ts > M3 B1–B3 audit repair regressions > rejects corrupted missing presentations in actual same-tab recovery while preserving evidence and exposure 77ms
+ ✓ src/stop/run.test.ts > M3 B1–B3 audit repair regressions > rejects corrupted accepted response timing in actual same-tab recovery while preserving evidence and exposure 81ms
+ ✓ src/stop/run.test.ts > M3 B1–B3 audit repair regressions > rejects corrupted form seed in actual same-tab recovery while preserving evidence and exposure 81ms
+ ✓ src/stop/run.test.ts > M3 B1–B3 audit repair regressions > rejects corrupted invalidation in actual same-tab recovery while preserving evidence and exposure 78ms
+ ✓ src/stop/run.test.ts > M3 B1–B3 audit repair regressions > rejects corrupted missing offset in actual same-tab recovery while preserving evidence and exposure 76ms
+ ✓ src/stop/run.test.ts > M3 B1–B3 audit repair regressions > rejects corrupted duplicate resolution in actual same-tab recovery while preserving evidence and exposure 76ms
+ ✓ src/stop/run.test.ts > M3 B1–B3 audit repair regressions > rejects corrupted quality note missing in actual same-tab recovery while preserving evidence and exposure 75ms
+ ✓ src/stop/run.test.ts > M3 B1–B3 audit repair regressions > rejects corrupted summary mismatch in actual same-tab recovery while preserving evidence and exposure 82ms
+ ✓ src/stop/run.test.ts > M3 B1–B3 audit repair regressions > rejects corrupted completion count in actual same-tab recovery while preserving evidence and exposure 76ms
+ ✓ src/stop/run.test.ts > M3 B1–B3 audit repair regressions > extra-input boundary 0 preserves outcomes, note and invalidation rules 77ms
+ ✓ src/stop/run.test.ts > M3 B1–B3 audit repair regressions > extra-input boundary 4 preserves outcomes, note and invalidation rules 76ms
+ ✓ src/stop/run.test.ts > M3 B1–B3 audit repair regressions > extra-input boundary 5 preserves outcomes, note and invalidation rules 76ms
+ ✓ src/stop/run.test.ts > M3 B1–B3 audit repair regressions > extra-input boundary 9 preserves outcomes, note and invalidation rules 77ms
+ ✓ src/stop/run.test.ts > M3 B1–B3 audit repair regressions > extra-input boundary 10 preserves outcomes, note and invalidation rules 8ms
+ ✓ src/stop/run.test.ts > M3 B1–B3 audit repair regressions > recovers an intact record with both timing and extra-input notes 77ms
+ ✓ src/stop/run.test.ts > M5 completion storage boundary (S59) > retries one failed completion write; 1 failures 74ms
+ ✓ src/stop/run.test.ts > M5 completion storage boundary (S59) > retries one failed completion write; 2 failures 76ms
+ ✓ src/stop/run.test.ts > M5 completion storage boundary (S59) > quarantines altered or unsupported saved evidence without clearing its exposure marker (S68) 96ms
+ ✓ src/stop/run.test.ts > R2: protected evidence without a derived invalidation > reconciles baseline lifecycle/settings/thresholds and preserves rejected bytes 139ms
+ ✓ src/stop/run.test.ts > R2: protected evidence without a derived invalidation > reconciles retest lifecycle/settings/thresholds and preserves rejected bytes 139ms
+ ✓ src/stop/run.test.ts > R2: protected evidence without a derived invalidation > permits the specified single warm-up restart and a genuine scored timing note 78ms
+
+ Test Files  6 passed (6)
+      Tests  262 passed (262)
+   Start at  12:54:24
+   Duration  2.62s (transform 322ms, setup 281ms, import 433ms, tests 2.71s, environment 0ms)

@@ -1,0 +1,78 @@
+Window: "Assessment Practice", App: Safari.
+0 standard window Assessment Practice, ID: SafariWindow?IsSecure=false&UUID=AE81CA67-3614-4C41-AFDA-49B6CFBA9A42, Secondary Actions: Raise
+	1 split group
+		2 tab group
+			3 scroll area
+				4 HTML content Description: Assessment Practice, URL: 127.0.0.1:5588/
+					5 link Skip to content, Value: 127.0.0.1:5588/#main-content
+					6 container
+						7 button Assessment Practice — game library
+						8 text Private preview
+					9 container
+						10 text YOUR PRACTICE LIBRARY
+						11 heading Value: 1, Learn the task.
+Practise with clarity.
+							12 text Learn the task.
+							13 text Practise with clarity.
+						14 text Learn the rules and controls of original Assessment Practice exercises.
+						15 container Explore the games
+							16 heading Explore the games, Value: 2
+								17 text Explore the games
+							18 container Stop
+								19 text PRACTICE AND DESCRIPTIVE REPORT AVAILABLE
+								20 heading Stop, Value: 3
+									21 text Stop
+								22 text Respond to GO. Withhold on NO-GO. Review your accuracy, response timing, and consistency on this Assessment Practice task.
+								23 text About 4 minutes · Physical keyboard recommended
+								24 button Open Stop
+						25 container Optional Stop analytics
+							26 heading Optional Stop analytics, Value: 2
+								27 text Optional Stop analytics
+							28 text Development candidate — proposed notice for founder and privacy review. Collection is disabled in the default build.
+							29 text May we collect optional Stop usage analytics to understand which preparation steps are used and identify broad technical problems? We collect only guide, device-check, session, report, training, drill and retest events, broad technical outcomes, a random identifier for this page session, and the time the server receives each event. We do not collect answers, scores, response times, keys, accommodation choices, drill identities, local-history identifiers, names, contact details or employer information. Your 
+							30 text Withdraw to stop new analytics requests, discard unsent events and forget this page’s analytics identifier. A request already received cannot be recalled. Previously received rows remain subject to the retention policy; withdrawal and deleting local history do not delete those rows. After this page’s identifier is forgotten, we cannot use it to locate earlier rows. You can change your choice from the library. Closing or refreshing this page also turns consent off.
+							31 text Analytics consent is off.
+							32 button (disabled) Allow optional analytics
+							33 button Decline analytics
+						34 button Stop history
+						35 text Results and sequence-use records are saved in this browser. Clearing site data or browser eviction can remove them. These records cannot establish which sequences you started before that happened or in other browsers.
+					36 text Original preparation exercises. Follow the instructions in your invitation.
+				37 scroll bar (settable, float) 0
+	38 image WindowControlShadowView._shadowImageView
+	39 toolbar
+		40 container Secondary Actions: Move next, Remove from toolbar
+			41 button Description: show sidebar, Help: Show sidebar, ID: SidebarButton
+			42 menu button Description: Tab Group picker, ID: TabGroupPickerButton?TabGroup=
+		43 container BackForwardSegmentedControl
+			44 button Description: Go back, Help: Show the previous page, ID: BackButton
+			45 button (disabled) Description: Go forward, Help: Show the next page, ID: ForwardButton
+		46 button Description: Paramount Quality+, Secondary Actions: Move previous, Move next, Remove from toolbar
+		47 container Secondary Actions: Move previous, Move next, Remove from toolbar
+			48 button Page Menu, ID: AssistantButton
+			49 button Add page to Reading List, ID: OneStepBookmarkingButton
+			50 text field (settable) Description: smart search field, Value: 127.0.0.1:5588, ID: WEB_BROWSER_ADDRESS_AND_SEARCH_FIELD
+			51 button Translation Available, ID: TranslationButton
+			52 button Reload this page, ID: ReloadButton
+		53 button Description: Share, ID: ShareButton, Secondary Actions: Move previous, Move next, Remove from toolbar
+		54 button Description: New Tab, ID: NewTabButton, Secondary Actions: Move previous, Move next, Remove from toolbar
+		55 button Description: Tab Overview, ID: TabOverviewButton, Secondary Actions: Move previous, Remove from toolbar
+	56 tab group Description: Tab bar, 2 tabs, ID: TabBar?isSeparate=false
+		57 tab Start Page, Value: off, ID: TabBarTab?isPinned=false&isNarrow=false&isActive=false, Secondary Actions: close tab
+			58 image Description: favorite, ID: FaviconImageView
+			59 text Value: Start Page, ID: UnifiedTabBarButton._titleTextField
+		60 tab Assessment Practice, Help: To interact with the items in this button, press Control-Option-Shift-Down Arrow., Value: on, ID: TabBarTab?isPinned=false&isNarrow=false&isActive=true, Secondary Actions: close tab
+			61 image FaviconImageView
+			62 text Value: Assessment Practice, ID: UnifiedTabBarButton._titleTextField
+	63 close button
+	64 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	65 minimize button
+66 menu bar
+	67 Safari
+	68 File
+	69 Edit
+	70 View, ID: SafariViewMenu
+	71 History
+	72 Bookmarks, ID: SafariBookmarksMenu
+	73 Develop
+	74 Window, ID: SafariWindowMenu
+	75 Help, ID: SafariHelpMenu

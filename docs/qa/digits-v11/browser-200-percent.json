@@ -1,0 +1,30 @@
+[
+  {
+    "name": "200 percent CSS zoom keyboard entry, normal button Enter, and report focus",
+    "status": "PASS",
+    "detail": {
+      "method": "CSS zoom 2 at 1280x800, bounded reflow evidence",
+      "layout": {
+        "left": 74,
+        "right": 970,
+        "top": 331.015625,
+        "bottom": 606.984375,
+        "width": 1280,
+        "height": 800,
+        "scrollWidth": 1280,
+        "clientWidth": 1280,
+        "scrollY": 0,
+        "stimulus": {
+          "x": 74,
+          "y": 203.015625,
+          "width": 1132,
+          "height": 128,
+          "top": 203.015625,
+          "right": 1206,
+          "bottom": 331.015625,
+          "left": 74
+        }
+      }
+    }
+  }
+]

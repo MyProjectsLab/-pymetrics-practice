@@ -1,0 +1,3223 @@
+[
+  {
+    "version": "money_exchange_2_storage_v2_0",
+    "activity": {
+      "A1.1": [
+        {
+          "id": "test/24",
+          "kind": "report_opened",
+          "at": 24
+        },
+        {
+          "id": "test/27",
+          "kind": "report_opened",
+          "at": 27
+        }
+      ]
+    },
+    "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+    "generation": 1,
+    "revision": 34,
+    "lease": {
+      "ownerId": "owner",
+      "epoch": 2,
+      "live": true
+    },
+    "route": {
+      "stage": "library",
+      "epoch": 35,
+      "ownerId": "owner"
+    },
+    "ticketSerial": 3,
+    "currentTicketId": null,
+    "tickets": {
+      "T1.1": {
+        "id": "T1.1",
+        "generation": 1,
+        "ownerId": "owner",
+        "leaseEpoch": 2,
+        "state": "consumed",
+        "attemptId": "A1.1"
+      },
+      "T1.2": {
+        "id": "T1.2",
+        "generation": 1,
+        "ownerId": "owner",
+        "leaseEpoch": 2,
+        "state": "consumed",
+        "attemptId": "A1.2"
+      },
+      "T1.3": {
+        "id": "T1.3",
+        "generation": 1,
+        "ownerId": "owner",
+        "leaseEpoch": 2,
+        "state": "canceled",
+        "attemptId": "A1.3"
+      }
+    },
+    "activeAttemptId": null,
+    "formCounter": 3,
+    "exposureHistory": [
+      {
+        "attemptId": "A1.1",
+        "formId": "ME2-1",
+        "formDigest": "1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea"
+      },
+      {
+        "attemptId": "A1.2",
+        "formId": "ME2-2",
+        "formDigest": "f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830"
+      },
+      {
+        "attemptId": "A1.3",
+        "formId": "ME2-3",
+        "formDigest": "bc0a798eb3c1b7936e533ce1750a3ff6f6869e985cacda58df86521eb5244e1f"
+      }
+    ],
+    "attempts": {
+      "A1.1": {
+        "id": "A1.1",
+        "ordinal": 1,
+        "createdAt": 4,
+        "context": {
+          "input": "keyboard"
+        },
+        "events": [
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 1,
+            "requestId": "test/4",
+            "at": 4,
+            "kind": "attempt_armed"
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 2,
+            "requestId": "test/4",
+            "at": 4,
+            "kind": "round_intent",
+            "round": 1
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 3,
+            "requestId": "test/5",
+            "at": 5,
+            "kind": "stage_committed",
+            "data": {
+              "from": "award_1",
+              "to": "connecting_1"
+            }
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 4,
+            "requestId": "test/6",
+            "at": 6,
+            "kind": "stage_committed",
+            "data": {
+              "from": "connecting_1",
+              "to": "connected_1"
+            }
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 5,
+            "requestId": "test/7",
+            "at": 7,
+            "kind": "stage_committed",
+            "data": {
+              "from": "connected_1",
+              "to": "partner_rules_1"
+            }
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 6,
+            "requestId": "test/8",
+            "at": 8,
+            "kind": "stage_committed",
+            "data": {
+              "from": "partner_rules_1",
+              "to": "bonus_1"
+            }
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 7,
+            "requestId": "test/9",
+            "at": 9,
+            "kind": "bonus_presented",
+            "round": 1,
+            "data": {
+              "recipient": "candidate"
+            }
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 8,
+            "requestId": "test/9",
+            "at": 9,
+            "kind": "stage_committed",
+            "data": {
+              "from": "bonus_1",
+              "to": "choice_1"
+            }
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 9,
+            "requestId": "test/10",
+            "at": 10,
+            "kind": "decision_committed",
+            "round": 1,
+            "data": {
+              "signedGiveCents": 200,
+              "actor": "candidate",
+              "candidateFinalCents": 800,
+              "partnerFinalCents": 700
+            }
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 10,
+            "requestId": "test/10",
+            "at": 10,
+            "kind": "possibly_revealed",
+            "round": 1,
+            "data": {
+              "identity": "{\"generation\":1,\"attemptId\":\"A1.1\",\"formDigest\":\"1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea\",\"roundId\":\"A1.1/R1\",\"partner\":\"Partner A\",\"bonusRecipient\":\"candidate\",\"decision\":{\"signedGiveCents\":200,\"actor\":\"candidate\",\"candidateFinalCents\":800,\"partnerFinalCents\":700}}"
+            }
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 11,
+            "requestId": "test/10",
+            "at": 10,
+            "kind": "stage_committed",
+            "data": {
+              "from": "choice_1",
+              "to": "result_1"
+            }
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 12,
+            "requestId": "test/11",
+            "at": 11,
+            "kind": "result_receipt",
+            "round": 1,
+            "data": {
+              "identity": "{\"generation\":1,\"attemptId\":\"A1.1\",\"formDigest\":\"1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea\",\"roundId\":\"A1.1/R1\",\"partner\":\"Partner A\",\"bonusRecipient\":\"candidate\",\"decision\":{\"signedGiveCents\":200,\"actor\":\"candidate\",\"candidateFinalCents\":800,\"partnerFinalCents\":700}}"
+            }
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 13,
+            "requestId": "test/11",
+            "at": 11,
+            "kind": "stage_committed",
+            "data": {
+              "from": "result_1",
+              "to": "result_1"
+            }
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 14,
+            "requestId": "test/12",
+            "at": 12,
+            "kind": "stage_committed",
+            "data": {
+              "from": "result_1",
+              "to": "fairness_1"
+            }
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 15,
+            "requestId": "test/13",
+            "at": 13,
+            "kind": "fairness_committed",
+            "round": 1,
+            "data": {
+              "rating": 8
+            }
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 16,
+            "requestId": "test/13",
+            "at": 13,
+            "kind": "round_terminal",
+            "round": 1
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 17,
+            "requestId": "test/13",
+            "at": 13,
+            "kind": "stage_committed",
+            "data": {
+              "from": "fairness_1",
+              "to": "new_partner"
+            }
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 18,
+            "requestId": "test/14",
+            "at": 14,
+            "kind": "round_intent",
+            "round": 2
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 19,
+            "requestId": "test/14",
+            "at": 14,
+            "kind": "stage_committed",
+            "data": {
+              "from": "new_partner",
+              "to": "award_2"
+            }
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 20,
+            "requestId": "test/15",
+            "at": 15,
+            "kind": "stage_committed",
+            "data": {
+              "from": "award_2",
+              "to": "connecting_2"
+            }
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 21,
+            "requestId": "test/16",
+            "at": 16,
+            "kind": "stage_committed",
+            "data": {
+              "from": "connecting_2",
+              "to": "connected_2"
+            }
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 22,
+            "requestId": "test/17",
+            "at": 17,
+            "kind": "stage_committed",
+            "data": {
+              "from": "connected_2",
+              "to": "partner_rules_2"
+            }
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 23,
+            "requestId": "test/18",
+            "at": 18,
+            "kind": "stage_committed",
+            "data": {
+              "from": "partner_rules_2",
+              "to": "bonus_2"
+            }
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 24,
+            "requestId": "test/19",
+            "at": 19,
+            "kind": "bonus_presented",
+            "round": 2,
+            "data": {
+              "recipient": "candidate"
+            }
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 25,
+            "requestId": "test/19",
+            "at": 19,
+            "kind": "stage_committed",
+            "data": {
+              "from": "bonus_2",
+              "to": "choice_2"
+            }
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 26,
+            "requestId": "test/20",
+            "at": 20,
+            "kind": "decision_committed",
+            "round": 2,
+            "data": {
+              "signedGiveCents": 200,
+              "actor": "candidate",
+              "candidateFinalCents": 800,
+              "partnerFinalCents": 700
+            }
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 27,
+            "requestId": "test/20",
+            "at": 20,
+            "kind": "possibly_revealed",
+            "round": 2,
+            "data": {
+              "identity": "{\"generation\":1,\"attemptId\":\"A1.1\",\"formDigest\":\"1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea\",\"roundId\":\"A1.1/R2\",\"partner\":\"Partner B\",\"bonusRecipient\":\"candidate\",\"decision\":{\"signedGiveCents\":200,\"actor\":\"candidate\",\"candidateFinalCents\":800,\"partnerFinalCents\":700}}"
+            }
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 28,
+            "requestId": "test/20",
+            "at": 20,
+            "kind": "stage_committed",
+            "data": {
+              "from": "choice_2",
+              "to": "result_2"
+            }
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 29,
+            "requestId": "test/21",
+            "at": 21,
+            "kind": "result_receipt",
+            "round": 2,
+            "data": {
+              "identity": "{\"generation\":1,\"attemptId\":\"A1.1\",\"formDigest\":\"1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea\",\"roundId\":\"A1.1/R2\",\"partner\":\"Partner B\",\"bonusRecipient\":\"candidate\",\"decision\":{\"signedGiveCents\":200,\"actor\":\"candidate\",\"candidateFinalCents\":800,\"partnerFinalCents\":700}}"
+            }
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 30,
+            "requestId": "test/21",
+            "at": 21,
+            "kind": "stage_committed",
+            "data": {
+              "from": "result_2",
+              "to": "result_2"
+            }
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 31,
+            "requestId": "test/22",
+            "at": 22,
+            "kind": "stage_committed",
+            "data": {
+              "from": "result_2",
+              "to": "fairness_2"
+            }
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 32,
+            "requestId": "test/23",
+            "at": 23,
+            "kind": "fairness_committed",
+            "round": 2,
+            "data": {
+              "rating": 8
+            }
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 33,
+            "requestId": "test/23",
+            "at": 23,
+            "kind": "round_terminal",
+            "round": 2
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 34,
+            "requestId": "test/23",
+            "at": 23,
+            "kind": "completed"
+          }
+        ],
+        "revision": 20,
+        "generation": 1,
+        "ownerId": "owner",
+        "leaseEpoch": 2,
+        "originTicketId": "T1.1",
+        "formId": "ME2-1",
+        "formDigest": "1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea",
+        "status": "Completed",
+        "playCapability": false,
+        "stage": "test_complete",
+        "rounds": [
+          {
+            "id": "A1.1/R1",
+            "partner": "Partner A",
+            "bonusRecipient": "candidate",
+            "armed": true,
+            "decision": {
+              "signedGiveCents": 200,
+              "actor": "candidate",
+              "candidateFinalCents": 800,
+              "partnerFinalCents": 700
+            },
+            "exposure": "render_receipt",
+            "receiptIdentity": "{\"generation\":1,\"attemptId\":\"A1.1\",\"formDigest\":\"1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea\",\"roundId\":\"A1.1/R1\",\"partner\":\"Partner A\",\"bonusRecipient\":\"candidate\",\"decision\":{\"signedGiveCents\":200,\"actor\":\"candidate\",\"candidateFinalCents\":800,\"partnerFinalCents\":700}}",
+            "fairness": 8,
+            "terminal": true
+          },
+          {
+            "id": "A1.1/R2",
+            "partner": "Partner B",
+            "bonusRecipient": "candidate",
+            "armed": true,
+            "decision": {
+              "signedGiveCents": 200,
+              "actor": "candidate",
+              "candidateFinalCents": 800,
+              "partnerFinalCents": 700
+            },
+            "exposure": "render_receipt",
+            "receiptIdentity": "{\"generation\":1,\"attemptId\":\"A1.1\",\"formDigest\":\"1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea\",\"roundId\":\"A1.1/R2\",\"partner\":\"Partner B\",\"bonusRecipient\":\"candidate\",\"decision\":{\"signedGiveCents\":200,\"actor\":\"candidate\",\"candidateFinalCents\":800,\"partnerFinalCents\":700}}",
+            "fairness": 8,
+            "terminal": true
+          }
+        ],
+        "reportSnapshot": [
+          {
+            "generation": 1,
+            "attemptId": "A1.1",
+            "formId": "ME2-1",
+            "formDigest": "1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea",
+            "round": 1,
+            "partner": "Partner A",
+            "bonusRecipient": "candidate",
+            "candidateStartCents": 500,
+            "partnerStartCents": 500,
+            "signedGiveCents": 200,
+            "actor": "candidate",
+            "candidateFinalCents": 800,
+            "partnerFinalCents": 700,
+            "fairness": 8
+          },
+          {
+            "generation": 1,
+            "attemptId": "A1.1",
+            "formId": "ME2-1",
+            "formDigest": "1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea",
+            "round": 2,
+            "partner": "Partner B",
+            "bonusRecipient": "candidate",
+            "candidateStartCents": 500,
+            "partnerStartCents": 500,
+            "signedGiveCents": 200,
+            "actor": "candidate",
+            "candidateFinalCents": 800,
+            "partnerFinalCents": 700,
+            "fairness": 8
+          }
+        ]
+      },
+      "A1.2": {
+        "id": "A1.2",
+        "ordinal": 2,
+        "createdAt": 30,
+        "context": {},
+        "events": [
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 1,
+            "requestId": "test/30",
+            "at": 30,
+            "kind": "attempt_armed"
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 2,
+            "requestId": "test/30",
+            "at": 30,
+            "kind": "round_intent",
+            "round": 1
+          },
+          {
+            "version": "money_exchange_2_event_v1_0",
+            "seq": 3,
+            "requestId": "test/29",
+            "at": 29,
+            "kind": "ended_incomplete",
+            "data": {
+              "reason": "candidate-exit"
+            }
+          }
+        ],
+        "revision": 1,
+        "generation": 1,
+        "ownerId": "owner",
+        "leaseEpoch": 2,
+        "originTicketId": "T1.2",
+        "formId": "ME2-2",
+        "formDigest": "f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830",
+        "status": "Incomplete",
+        "playCapability": false,
+        "stage": "award_1",
+        "rounds": [
+          {
+            "id": "A1.2/R1",
+            "partner": "Partner C",
+            "bonusRecipient": "candidate",
+            "armed": true,
+            "decision": null,
+            "exposure": "unshown",
+            "receiptIdentity": null,
+            "fairness": null,
+            "terminal": false
+          },
+          {
+            "id": "A1.2/R2",
+            "partner": "Partner D",
+            "bonusRecipient": "partner",
+            "armed": false,
+            "decision": null,
+            "exposure": "unshown",
+            "receiptIdentity": null,
+            "fairness": null,
+            "terminal": false
+          }
+        ],
+        "reportSnapshot": null,
+        "endedReason": "candidate-exit"
+      }
+    },
+    "tombstones": {
+      "A1.3": true
+    },
+    "outcomes": {
+      "test/4": {
+        "payloadHash": "{\"kind\":\"arm\",\"requestId\":\"test/4\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":4,\"ticketId\":\"T1.1\",\"at\":4,\"context\":{\"input\":\"keyboard\"}}",
+        "command": {
+          "kind": "arm",
+          "requestId": "test/4",
+          "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 4,
+          "ticketId": "T1.1",
+          "at": 4,
+          "context": {
+            "input": "keyboard"
+          }
+        },
+        "result": {
+          "ticketId": "T1.1",
+          "attemptId": "A1.1",
+          "stage": "award_1"
+        },
+        "route": {
+          "stage": "active",
+          "epoch": 5,
+          "ownerId": "owner"
+        },
+        "revision": 4
+      },
+      "test/5": {
+        "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/5\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":5,\"ticketId\":\"T1.1\",\"at\":5,\"stage\":\"award_1\",\"expectedRevision\":1}",
+        "command": {
+          "kind": "step",
+          "requestId": "test/5",
+          "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 5,
+          "ticketId": "T1.1",
+          "at": 5,
+          "stage": "award_1",
+          "expectedRevision": 1
+        },
+        "result": {
+          "stage": "connecting_1",
+          "attemptId": "A1.1"
+        },
+        "route": {
+          "stage": "active",
+          "epoch": 6,
+          "ownerId": "owner"
+        },
+        "revision": 5
+      },
+      "test/6": {
+        "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/6\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":6,\"ticketId\":\"T1.1\",\"at\":6,\"stage\":\"connecting_1\",\"expectedRevision\":2,\"operation\":\"animation\"}",
+        "command": {
+          "kind": "step",
+          "requestId": "test/6",
+          "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 6,
+          "ticketId": "T1.1",
+          "at": 6,
+          "stage": "connecting_1",
+          "expectedRevision": 2,
+          "operation": "animation"
+        },
+        "result": {
+          "stage": "connected_1",
+          "attemptId": "A1.1"
+        },
+        "route": {
+          "stage": "active",
+          "epoch": 7,
+          "ownerId": "owner"
+        },
+        "revision": 6
+      },
+      "test/7": {
+        "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/7\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":7,\"ticketId\":\"T1.1\",\"at\":7,\"stage\":\"connected_1\",\"expectedRevision\":3}",
+        "command": {
+          "kind": "step",
+          "requestId": "test/7",
+          "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 7,
+          "ticketId": "T1.1",
+          "at": 7,
+          "stage": "connected_1",
+          "expectedRevision": 3
+        },
+        "result": {
+          "stage": "partner_rules_1",
+          "attemptId": "A1.1"
+        },
+        "route": {
+          "stage": "active",
+          "epoch": 8,
+          "ownerId": "owner"
+        },
+        "revision": 7
+      },
+      "test/8": {
+        "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/8\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":8,\"ticketId\":\"T1.1\",\"at\":8,\"stage\":\"partner_rules_1\",\"expectedRevision\":4}",
+        "command": {
+          "kind": "step",
+          "requestId": "test/8",
+          "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 8,
+          "ticketId": "T1.1",
+          "at": 8,
+          "stage": "partner_rules_1",
+          "expectedRevision": 4
+        },
+        "result": {
+          "stage": "bonus_1",
+          "attemptId": "A1.1"
+        },
+        "route": {
+          "stage": "active",
+          "epoch": 9,
+          "ownerId": "owner"
+        },
+        "revision": 8
+      },
+      "test/9": {
+        "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/9\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":9,\"ticketId\":\"T1.1\",\"at\":9,\"stage\":\"bonus_1\",\"expectedRevision\":5}",
+        "command": {
+          "kind": "step",
+          "requestId": "test/9",
+          "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 9,
+          "ticketId": "T1.1",
+          "at": 9,
+          "stage": "bonus_1",
+          "expectedRevision": 5
+        },
+        "result": {
+          "stage": "choice_1",
+          "attemptId": "A1.1"
+        },
+        "route": {
+          "stage": "active",
+          "epoch": 10,
+          "ownerId": "owner"
+        },
+        "revision": 9
+      },
+      "test/10": {
+        "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/10\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":10,\"ticketId\":\"T1.1\",\"at\":10,\"stage\":\"choice_1\",\"expectedRevision\":6,\"cents\":200}",
+        "command": {
+          "kind": "step",
+          "requestId": "test/10",
+          "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 10,
+          "ticketId": "T1.1",
+          "at": 10,
+          "stage": "choice_1",
+          "expectedRevision": 6,
+          "cents": 200
+        },
+        "result": {
+          "stage": "result_1",
+          "attemptId": "A1.1"
+        },
+        "route": {
+          "stage": "active",
+          "epoch": 11,
+          "ownerId": "owner"
+        },
+        "revision": 10
+      },
+      "test/11": {
+        "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/11\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":11,\"ticketId\":\"T1.1\",\"at\":11,\"stage\":\"result_1\",\"expectedRevision\":7,\"operation\":\"receipt\",\"receipt\":\"{\\\"generation\\\":1,\\\"attemptId\\\":\\\"A1.1\\\",\\\"formDigest\\\":\\\"1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea\\\",\\\"roundId\\\":\\\"A1.1/R1\\\",\\\"partner\\\":\\\"Partner A\\\",\\\"bonusRecipient\\\":\\\"candidate\\\",\\\"decision\\\":{\\\"signedGiveCents\\\":200,\\\"actor\\\":\\\"candidate\\\",\\\"candidateFinalCents\\\":800,\\\"partnerFinalCents\\\":700}}\"}",
+        "command": {
+          "kind": "step",
+          "requestId": "test/11",
+          "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 11,
+          "ticketId": "T1.1",
+          "at": 11,
+          "stage": "result_1",
+          "expectedRevision": 7,
+          "operation": "receipt",
+          "receipt": "{\"generation\":1,\"attemptId\":\"A1.1\",\"formDigest\":\"1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea\",\"roundId\":\"A1.1/R1\",\"partner\":\"Partner A\",\"bonusRecipient\":\"candidate\",\"decision\":{\"signedGiveCents\":200,\"actor\":\"candidate\",\"candidateFinalCents\":800,\"partnerFinalCents\":700}}"
+        },
+        "result": {
+          "stage": "result_1",
+          "attemptId": "A1.1"
+        },
+        "route": {
+          "stage": "active",
+          "epoch": 12,
+          "ownerId": "owner"
+        },
+        "revision": 11
+      },
+      "test/12": {
+        "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/12\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":12,\"ticketId\":\"T1.1\",\"at\":12,\"stage\":\"result_1\",\"expectedRevision\":8}",
+        "command": {
+          "kind": "step",
+          "requestId": "test/12",
+          "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 12,
+          "ticketId": "T1.1",
+          "at": 12,
+          "stage": "result_1",
+          "expectedRevision": 8
+        },
+        "result": {
+          "stage": "fairness_1",
+          "attemptId": "A1.1"
+        },
+        "route": {
+          "stage": "active",
+          "epoch": 13,
+          "ownerId": "owner"
+        },
+        "revision": 12
+      },
+      "test/13": {
+        "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/13\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":13,\"ticketId\":\"T1.1\",\"at\":13,\"stage\":\"fairness_1\",\"expectedRevision\":9,\"rating\":8}",
+        "command": {
+          "kind": "step",
+          "requestId": "test/13",
+          "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 13,
+          "ticketId": "T1.1",
+          "at": 13,
+          "stage": "fairness_1",
+          "expectedRevision": 9,
+          "rating": 8
+        },
+        "result": {
+          "stage": "new_partner",
+          "attemptId": "A1.1"
+        },
+        "route": {
+          "stage": "active",
+          "epoch": 14,
+          "ownerId": "owner"
+        },
+        "revision": 13
+      },
+      "test/14": {
+        "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/14\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":14,\"ticketId\":\"T1.1\",\"at\":14,\"stage\":\"new_partner\",\"expectedRevision\":10}",
+        "command": {
+          "kind": "step",
+          "requestId": "test/14",
+          "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 14,
+          "ticketId": "T1.1",
+          "at": 14,
+          "stage": "new_partner",
+          "expectedRevision": 10
+        },
+        "result": {
+          "stage": "award_2",
+          "attemptId": "A1.1"
+        },
+        "route": {
+          "stage": "active",
+          "epoch": 15,
+          "ownerId": "owner"
+        },
+        "revision": 14
+      },
+      "test/15": {
+        "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/15\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":15,\"ticketId\":\"T1.1\",\"at\":15,\"stage\":\"award_2\",\"expectedRevision\":11}",
+        "command": {
+          "kind": "step",
+          "requestId": "test/15",
+          "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 15,
+          "ticketId": "T1.1",
+          "at": 15,
+          "stage": "award_2",
+          "expectedRevision": 11
+        },
+        "result": {
+          "stage": "connecting_2",
+          "attemptId": "A1.1"
+        },
+        "route": {
+          "stage": "active",
+          "epoch": 16,
+          "ownerId": "owner"
+        },
+        "revision": 15
+      },
+      "test/16": {
+        "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/16\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":16,\"ticketId\":\"T1.1\",\"at\":16,\"stage\":\"connecting_2\",\"expectedRevision\":12,\"operation\":\"animation\"}",
+        "command": {
+          "kind": "step",
+          "requestId": "test/16",
+          "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 16,
+          "ticketId": "T1.1",
+          "at": 16,
+          "stage": "connecting_2",
+          "expectedRevision": 12,
+          "operation": "animation"
+        },
+        "result": {
+          "stage": "connected_2",
+          "attemptId": "A1.1"
+        },
+        "route": {
+          "stage": "active",
+          "epoch": 17,
+          "ownerId": "owner"
+        },
+        "revision": 16
+      },
+      "test/17": {
+        "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/17\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":17,\"ticketId\":\"T1.1\",\"at\":17,\"stage\":\"connected_2\",\"expectedRevision\":13}",
+        "command": {
+          "kind": "step",
+          "requestId": "test/17",
+          "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 17,
+          "ticketId": "T1.1",
+          "at": 17,
+          "stage": "connected_2",
+          "expectedRevision": 13
+        },
+        "result": {
+          "stage": "partner_rules_2",
+          "attemptId": "A1.1"
+        },
+        "route": {
+          "stage": "active",
+          "epoch": 18,
+          "ownerId": "owner"
+        },
+        "revision": 17
+      },
+      "test/18": {
+        "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/18\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":18,\"ticketId\":\"T1.1\",\"at\":18,\"stage\":\"partner_rules_2\",\"expectedRevision\":14}",
+        "command": {
+          "kind": "step",
+          "requestId": "test/18",
+          "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 18,
+          "ticketId": "T1.1",
+          "at": 18,
+          "stage": "partner_rules_2",
+          "expectedRevision": 14
+        },
+        "result": {
+          "stage": "bonus_2",
+          "attemptId": "A1.1"
+        },
+        "route": {
+          "stage": "active",
+          "epoch": 19,
+          "ownerId": "owner"
+        },
+        "revision": 18
+      },
+      "test/19": {
+        "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/19\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":19,\"ticketId\":\"T1.1\",\"at\":19,\"stage\":\"bonus_2\",\"expectedRevision\":15}",
+        "command": {
+          "kind": "step",
+          "requestId": "test/19",
+          "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 19,
+          "ticketId": "T1.1",
+          "at": 19,
+          "stage": "bonus_2",
+          "expectedRevision": 15
+        },
+        "result": {
+          "stage": "choice_2",
+          "attemptId": "A1.1"
+        },
+        "route": {
+          "stage": "active",
+          "epoch": 20,
+          "ownerId": "owner"
+        },
+        "revision": 19
+      },
+      "test/20": {
+        "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/20\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":20,\"ticketId\":\"T1.1\",\"at\":20,\"stage\":\"choice_2\",\"expectedRevision\":16,\"cents\":200}",
+        "command": {
+          "kind": "step",
+          "requestId": "test/20",
+          "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 20,
+          "ticketId": "T1.1",
+          "at": 20,
+          "stage": "choice_2",
+          "expectedRevision": 16,
+          "cents": 200
+        },
+        "result": {
+          "stage": "result_2",
+          "attemptId": "A1.1"
+        },
+        "route": {
+          "stage": "active",
+          "epoch": 21,
+          "ownerId": "owner"
+        },
+        "revision": 20
+      },
+      "test/21": {
+        "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/21\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":21,\"ticketId\":\"T1.1\",\"at\":21,\"stage\":\"result_2\",\"expectedRevision\":17,\"operation\":\"receipt\",\"receipt\":\"{\\\"generation\\\":1,\\\"attemptId\\\":\\\"A1.1\\\",\\\"formDigest\\\":\\\"1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea\\\",\\\"roundId\\\":\\\"A1.1/R2\\\",\\\"partner\\\":\\\"Partner B\\\",\\\"bonusRecipient\\\":\\\"candidate\\\",\\\"decision\\\":{\\\"signedGiveCents\\\":200,\\\"actor\\\":\\\"candidate\\\",\\\"candidateFinalCents\\\":800,\\\"partnerFinalCents\\\":700}}\"}",
+        "command": {
+          "kind": "step",
+          "requestId": "test/21",
+          "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 21,
+          "ticketId": "T1.1",
+          "at": 21,
+          "stage": "result_2",
+          "expectedRevision": 17,
+          "operation": "receipt",
+          "receipt": "{\"generation\":1,\"attemptId\":\"A1.1\",\"formDigest\":\"1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea\",\"roundId\":\"A1.1/R2\",\"partner\":\"Partner B\",\"bonusRecipient\":\"candidate\",\"decision\":{\"signedGiveCents\":200,\"actor\":\"candidate\",\"candidateFinalCents\":800,\"partnerFinalCents\":700}}"
+        },
+        "result": {
+          "stage": "result_2",
+          "attemptId": "A1.1"
+        },
+        "route": {
+          "stage": "active",
+          "epoch": 22,
+          "ownerId": "owner"
+        },
+        "revision": 21
+      },
+      "test/22": {
+        "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/22\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":22,\"ticketId\":\"T1.1\",\"at\":22,\"stage\":\"result_2\",\"expectedRevision\":18}",
+        "command": {
+          "kind": "step",
+          "requestId": "test/22",
+          "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 22,
+          "ticketId": "T1.1",
+          "at": 22,
+          "stage": "result_2",
+          "expectedRevision": 18
+        },
+        "result": {
+          "stage": "fairness_2",
+          "attemptId": "A1.1"
+        },
+        "route": {
+          "stage": "active",
+          "epoch": 23,
+          "ownerId": "owner"
+        },
+        "revision": 22
+      },
+      "test/23": {
+        "payloadHash": "{\"kind\":\"terminal\",\"requestId\":\"test/23\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":23,\"ticketId\":\"T1.1\",\"at\":23,\"stage\":\"fairness_2\",\"expectedRevision\":19,\"rating\":8}",
+        "command": {
+          "kind": "terminal",
+          "requestId": "test/23",
+          "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 23,
+          "ticketId": "T1.1",
+          "at": 23,
+          "stage": "fairness_2",
+          "expectedRevision": 19,
+          "rating": 8
+        },
+        "result": {
+          "stage": "test_complete",
+          "attemptId": "A1.1"
+        },
+        "route": {
+          "stage": "test_complete",
+          "epoch": 24,
+          "ownerId": "owner"
+        },
+        "revision": 23
+      },
+      "test/24": {
+        "payloadHash": "{\"kind\":\"report\",\"requestId\":\"test/24\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":24,\"ticketId\":\"T1.1\",\"at\":24}",
+        "command": {
+          "kind": "report",
+          "requestId": "test/24",
+          "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 24,
+          "ticketId": "T1.1",
+          "at": 24
+        },
+        "result": {
+          "stage": "report_1",
+          "attemptId": "A1.1"
+        },
+        "route": {
+          "stage": "report",
+          "epoch": 25,
+          "ownerId": "owner"
+        },
+        "revision": 24
+      },
+      "test/27": {
+        "payloadHash": "{\"kind\":\"historyReport\",\"requestId\":\"test/27\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":27,\"at\":27,\"attemptId\":\"A1.1\"}",
+        "command": {
+          "kind": "historyReport",
+          "requestId": "test/27",
+          "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 27,
+          "at": 27,
+          "attemptId": "A1.1"
+        },
+        "result": {
+          "stage": "review",
+          "attemptId": "A1.1"
+        },
+        "route": {
+          "stage": "review",
+          "epoch": 28,
+          "ownerId": "owner"
+        },
+        "revision": 27
+      },
+      "test/30": {
+        "payloadHash": "{\"kind\":\"arm\",\"requestId\":\"test/30\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":29,\"ticketId\":\"T1.2\",\"at\":30}",
+        "command": {
+          "kind": "arm",
+          "requestId": "test/30",
+          "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 29,
+          "ticketId": "T1.2",
+          "at": 30
+        },
+        "result": {
+          "ticketId": "T1.2",
+          "attemptId": "A1.2",
+          "stage": "award_1"
+        },
+        "route": {
+          "stage": "active",
+          "epoch": 30,
+          "ownerId": "owner"
+        },
+        "revision": 29
+      },
+      "test/34": {
+        "payloadHash": "{\"kind\":\"deleteAttempt\",\"requestId\":\"test/34\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"attemptId\":\"A1.3\"}",
+        "command": {
+          "kind": "deleteAttempt",
+          "requestId": "test/34",
+          "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+          "generation": 1,
+          "attemptId": "A1.3"
+        },
+        "result": {
+          "deleted": "A1.3"
+        },
+        "route": {
+          "stage": "library",
+          "epoch": 35,
+          "ownerId": "owner"
+        },
+        "revision": 34
+      }
+    },
+    "navigation": null,
+    "proofs": {
+      "A1.1": {
+        "commands": [
+          {
+            "kind": "arm",
+            "requestId": "test/4",
+            "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 4,
+            "ticketId": "T1.1",
+            "at": 4,
+            "context": {
+              "input": "keyboard"
+            }
+          },
+          {
+            "kind": "step",
+            "requestId": "test/5",
+            "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 5,
+            "ticketId": "T1.1",
+            "at": 5,
+            "stage": "award_1",
+            "expectedRevision": 1
+          },
+          {
+            "kind": "step",
+            "requestId": "test/6",
+            "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 6,
+            "ticketId": "T1.1",
+            "at": 6,
+            "stage": "connecting_1",
+            "expectedRevision": 2,
+            "operation": "animation"
+          },
+          {
+            "kind": "step",
+            "requestId": "test/7",
+            "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 7,
+            "ticketId": "T1.1",
+            "at": 7,
+            "stage": "connected_1",
+            "expectedRevision": 3
+          },
+          {
+            "kind": "step",
+            "requestId": "test/8",
+            "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 8,
+            "ticketId": "T1.1",
+            "at": 8,
+            "stage": "partner_rules_1",
+            "expectedRevision": 4
+          },
+          {
+            "kind": "step",
+            "requestId": "test/9",
+            "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 9,
+            "ticketId": "T1.1",
+            "at": 9,
+            "stage": "bonus_1",
+            "expectedRevision": 5
+          },
+          {
+            "kind": "step",
+            "requestId": "test/10",
+            "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 10,
+            "ticketId": "T1.1",
+            "at": 10,
+            "stage": "choice_1",
+            "expectedRevision": 6,
+            "cents": 200
+          },
+          {
+            "kind": "step",
+            "requestId": "test/11",
+            "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 11,
+            "ticketId": "T1.1",
+            "at": 11,
+            "stage": "result_1",
+            "expectedRevision": 7,
+            "operation": "receipt",
+            "receipt": "{\"generation\":1,\"attemptId\":\"A1.1\",\"formDigest\":\"1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea\",\"roundId\":\"A1.1/R1\",\"partner\":\"Partner A\",\"bonusRecipient\":\"candidate\",\"decision\":{\"signedGiveCents\":200,\"actor\":\"candidate\",\"candidateFinalCents\":800,\"partnerFinalCents\":700}}"
+          },
+          {
+            "kind": "step",
+            "requestId": "test/12",
+            "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 12,
+            "ticketId": "T1.1",
+            "at": 12,
+            "stage": "result_1",
+            "expectedRevision": 8
+          },
+          {
+            "kind": "step",
+            "requestId": "test/13",
+            "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 13,
+            "ticketId": "T1.1",
+            "at": 13,
+            "stage": "fairness_1",
+            "expectedRevision": 9,
+            "rating": 8
+          },
+          {
+            "kind": "step",
+            "requestId": "test/14",
+            "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 14,
+            "ticketId": "T1.1",
+            "at": 14,
+            "stage": "new_partner",
+            "expectedRevision": 10
+          },
+          {
+            "kind": "step",
+            "requestId": "test/15",
+            "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 15,
+            "ticketId": "T1.1",
+            "at": 15,
+            "stage": "award_2",
+            "expectedRevision": 11
+          },
+          {
+            "kind": "step",
+            "requestId": "test/16",
+            "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 16,
+            "ticketId": "T1.1",
+            "at": 16,
+            "stage": "connecting_2",
+            "expectedRevision": 12,
+            "operation": "animation"
+          },
+          {
+            "kind": "step",
+            "requestId": "test/17",
+            "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 17,
+            "ticketId": "T1.1",
+            "at": 17,
+            "stage": "connected_2",
+            "expectedRevision": 13
+          },
+          {
+            "kind": "step",
+            "requestId": "test/18",
+            "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 18,
+            "ticketId": "T1.1",
+            "at": 18,
+            "stage": "partner_rules_2",
+            "expectedRevision": 14
+          },
+          {
+            "kind": "step",
+            "requestId": "test/19",
+            "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 19,
+            "ticketId": "T1.1",
+            "at": 19,
+            "stage": "bonus_2",
+            "expectedRevision": 15
+          },
+          {
+            "kind": "step",
+            "requestId": "test/20",
+            "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 20,
+            "ticketId": "T1.1",
+            "at": 20,
+            "stage": "choice_2",
+            "expectedRevision": 16,
+            "cents": 200
+          },
+          {
+            "kind": "step",
+            "requestId": "test/21",
+            "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 21,
+            "ticketId": "T1.1",
+            "at": 21,
+            "stage": "result_2",
+            "expectedRevision": 17,
+            "operation": "receipt",
+            "receipt": "{\"generation\":1,\"attemptId\":\"A1.1\",\"formDigest\":\"1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea\",\"roundId\":\"A1.1/R2\",\"partner\":\"Partner B\",\"bonusRecipient\":\"candidate\",\"decision\":{\"signedGiveCents\":200,\"actor\":\"candidate\",\"candidateFinalCents\":800,\"partnerFinalCents\":700}}"
+          },
+          {
+            "kind": "step",
+            "requestId": "test/22",
+            "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 22,
+            "ticketId": "T1.1",
+            "at": 22,
+            "stage": "result_2",
+            "expectedRevision": 18
+          },
+          {
+            "kind": "terminal",
+            "requestId": "test/23",
+            "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 23,
+            "ticketId": "T1.1",
+            "at": 23,
+            "stage": "fairness_2",
+            "expectedRevision": 19,
+            "rating": 8
+          }
+        ]
+      },
+      "A1.2": {
+        "commands": [
+          {
+            "kind": "arm",
+            "requestId": "test/30",
+            "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 29,
+            "ticketId": "T1.2",
+            "at": 30
+          },
+          {
+            "kind": "exit",
+            "requestId": "test/29",
+            "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 28,
+            "at": 29,
+            "destination": "Close",
+            "afterReadyRequestId": "test/28"
+          }
+        ],
+        "lineage": {
+          "test/29": {
+            "opening": {
+              "kind": "reviewReplay",
+              "requestId": "test/28",
+              "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 28,
+              "attemptId": "A1.1"
+            },
+            "ticketId": "T1.2"
+          }
+        }
+      }
+    },
+    "retired": {
+      "test/1": {
+        "requestId": "test/1",
+        "deletionId": "test/34",
+        "attemptId": null,
+        "generation": 1
+      },
+      "test/2": {
+        "requestId": "test/2",
+        "deletionId": "test/34",
+        "attemptId": null,
+        "generation": 1
+      },
+      "test/3": {
+        "requestId": "test/3",
+        "deletionId": "test/34",
+        "attemptId": null,
+        "generation": 1
+      },
+      "test/25": {
+        "requestId": "test/25",
+        "deletionId": "test/34",
+        "attemptId": "A1.1",
+        "generation": 1
+      },
+      "test/26": {
+        "requestId": "test/26",
+        "deletionId": "test/34",
+        "attemptId": null,
+        "generation": 1
+      },
+      "test/28": {
+        "requestId": "test/28",
+        "deletionId": "test/34",
+        "attemptId": "A1.1",
+        "generation": 1
+      },
+      "test/29": {
+        "requestId": "test/29",
+        "deletionId": "test/34",
+        "attemptId": "A1.2",
+        "generation": 1
+      },
+      "test/31": {
+        "requestId": "test/31",
+        "deletionId": "test/34",
+        "attemptId": null,
+        "generation": 1
+      },
+      "test/32": {
+        "requestId": "test/32",
+        "deletionId": "test/34",
+        "attemptId": null,
+        "generation": 1
+      },
+      "test/33": {
+        "requestId": "test/33",
+        "deletionId": "test/34",
+        "attemptId": "A1.3",
+        "generation": 1
+      }
+    },
+    "resetReceipt": null,
+    "checkpoint": {
+      "version": "storage_v2_0",
+      "revision": 34,
+      "state": {
+        "version": "money_exchange_2_storage_v2_0",
+        "activity": {
+          "A1.1": [
+            {
+              "id": "test/24",
+              "kind": "report_opened",
+              "at": 24
+            },
+            {
+              "id": "test/27",
+              "kind": "report_opened",
+              "at": 27
+            }
+          ]
+        },
+        "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+        "generation": 1,
+        "revision": 34,
+        "lease": {
+          "ownerId": "owner",
+          "epoch": 2,
+          "live": true
+        },
+        "route": {
+          "stage": "library",
+          "epoch": 35,
+          "ownerId": "owner"
+        },
+        "ticketSerial": 3,
+        "currentTicketId": null,
+        "tickets": {
+          "T1.1": {
+            "id": "T1.1",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "state": "consumed",
+            "attemptId": "A1.1"
+          },
+          "T1.2": {
+            "id": "T1.2",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "state": "consumed",
+            "attemptId": "A1.2"
+          },
+          "T1.3": {
+            "id": "T1.3",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "state": "canceled",
+            "attemptId": "A1.3"
+          }
+        },
+        "activeAttemptId": null,
+        "formCounter": 3,
+        "exposureHistory": [
+          {
+            "attemptId": "A1.1",
+            "formId": "ME2-1",
+            "formDigest": "1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea"
+          },
+          {
+            "attemptId": "A1.2",
+            "formId": "ME2-2",
+            "formDigest": "f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830"
+          },
+          {
+            "attemptId": "A1.3",
+            "formId": "ME2-3",
+            "formDigest": "bc0a798eb3c1b7936e533ce1750a3ff6f6869e985cacda58df86521eb5244e1f"
+          }
+        ],
+        "attempts": {
+          "A1.1": {
+            "id": "A1.1",
+            "ordinal": 1,
+            "createdAt": 4,
+            "context": {
+              "input": "keyboard"
+            },
+            "events": [
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 1,
+                "requestId": "test/4",
+                "at": 4,
+                "kind": "attempt_armed"
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 2,
+                "requestId": "test/4",
+                "at": 4,
+                "kind": "round_intent",
+                "round": 1
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 3,
+                "requestId": "test/5",
+                "at": 5,
+                "kind": "stage_committed",
+                "data": {
+                  "from": "award_1",
+                  "to": "connecting_1"
+                }
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 4,
+                "requestId": "test/6",
+                "at": 6,
+                "kind": "stage_committed",
+                "data": {
+                  "from": "connecting_1",
+                  "to": "connected_1"
+                }
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 5,
+                "requestId": "test/7",
+                "at": 7,
+                "kind": "stage_committed",
+                "data": {
+                  "from": "connected_1",
+                  "to": "partner_rules_1"
+                }
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 6,
+                "requestId": "test/8",
+                "at": 8,
+                "kind": "stage_committed",
+                "data": {
+                  "from": "partner_rules_1",
+                  "to": "bonus_1"
+                }
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 7,
+                "requestId": "test/9",
+                "at": 9,
+                "kind": "bonus_presented",
+                "round": 1,
+                "data": {
+                  "recipient": "candidate"
+                }
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 8,
+                "requestId": "test/9",
+                "at": 9,
+                "kind": "stage_committed",
+                "data": {
+                  "from": "bonus_1",
+                  "to": "choice_1"
+                }
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 9,
+                "requestId": "test/10",
+                "at": 10,
+                "kind": "decision_committed",
+                "round": 1,
+                "data": {
+                  "signedGiveCents": 200,
+                  "actor": "candidate",
+                  "candidateFinalCents": 800,
+                  "partnerFinalCents": 700
+                }
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 10,
+                "requestId": "test/10",
+                "at": 10,
+                "kind": "possibly_revealed",
+                "round": 1,
+                "data": {
+                  "identity": "{\"generation\":1,\"attemptId\":\"A1.1\",\"formDigest\":\"1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea\",\"roundId\":\"A1.1/R1\",\"partner\":\"Partner A\",\"bonusRecipient\":\"candidate\",\"decision\":{\"signedGiveCents\":200,\"actor\":\"candidate\",\"candidateFinalCents\":800,\"partnerFinalCents\":700}}"
+                }
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 11,
+                "requestId": "test/10",
+                "at": 10,
+                "kind": "stage_committed",
+                "data": {
+                  "from": "choice_1",
+                  "to": "result_1"
+                }
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 12,
+                "requestId": "test/11",
+                "at": 11,
+                "kind": "result_receipt",
+                "round": 1,
+                "data": {
+                  "identity": "{\"generation\":1,\"attemptId\":\"A1.1\",\"formDigest\":\"1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea\",\"roundId\":\"A1.1/R1\",\"partner\":\"Partner A\",\"bonusRecipient\":\"candidate\",\"decision\":{\"signedGiveCents\":200,\"actor\":\"candidate\",\"candidateFinalCents\":800,\"partnerFinalCents\":700}}"
+                }
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 13,
+                "requestId": "test/11",
+                "at": 11,
+                "kind": "stage_committed",
+                "data": {
+                  "from": "result_1",
+                  "to": "result_1"
+                }
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 14,
+                "requestId": "test/12",
+                "at": 12,
+                "kind": "stage_committed",
+                "data": {
+                  "from": "result_1",
+                  "to": "fairness_1"
+                }
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 15,
+                "requestId": "test/13",
+                "at": 13,
+                "kind": "fairness_committed",
+                "round": 1,
+                "data": {
+                  "rating": 8
+                }
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 16,
+                "requestId": "test/13",
+                "at": 13,
+                "kind": "round_terminal",
+                "round": 1
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 17,
+                "requestId": "test/13",
+                "at": 13,
+                "kind": "stage_committed",
+                "data": {
+                  "from": "fairness_1",
+                  "to": "new_partner"
+                }
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 18,
+                "requestId": "test/14",
+                "at": 14,
+                "kind": "round_intent",
+                "round": 2
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 19,
+                "requestId": "test/14",
+                "at": 14,
+                "kind": "stage_committed",
+                "data": {
+                  "from": "new_partner",
+                  "to": "award_2"
+                }
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 20,
+                "requestId": "test/15",
+                "at": 15,
+                "kind": "stage_committed",
+                "data": {
+                  "from": "award_2",
+                  "to": "connecting_2"
+                }
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 21,
+                "requestId": "test/16",
+                "at": 16,
+                "kind": "stage_committed",
+                "data": {
+                  "from": "connecting_2",
+                  "to": "connected_2"
+                }
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 22,
+                "requestId": "test/17",
+                "at": 17,
+                "kind": "stage_committed",
+                "data": {
+                  "from": "connected_2",
+                  "to": "partner_rules_2"
+                }
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 23,
+                "requestId": "test/18",
+                "at": 18,
+                "kind": "stage_committed",
+                "data": {
+                  "from": "partner_rules_2",
+                  "to": "bonus_2"
+                }
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 24,
+                "requestId": "test/19",
+                "at": 19,
+                "kind": "bonus_presented",
+                "round": 2,
+                "data": {
+                  "recipient": "candidate"
+                }
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 25,
+                "requestId": "test/19",
+                "at": 19,
+                "kind": "stage_committed",
+                "data": {
+                  "from": "bonus_2",
+                  "to": "choice_2"
+                }
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 26,
+                "requestId": "test/20",
+                "at": 20,
+                "kind": "decision_committed",
+                "round": 2,
+                "data": {
+                  "signedGiveCents": 200,
+                  "actor": "candidate",
+                  "candidateFinalCents": 800,
+                  "partnerFinalCents": 700
+                }
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 27,
+                "requestId": "test/20",
+                "at": 20,
+                "kind": "possibly_revealed",
+                "round": 2,
+                "data": {
+                  "identity": "{\"generation\":1,\"attemptId\":\"A1.1\",\"formDigest\":\"1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea\",\"roundId\":\"A1.1/R2\",\"partner\":\"Partner B\",\"bonusRecipient\":\"candidate\",\"decision\":{\"signedGiveCents\":200,\"actor\":\"candidate\",\"candidateFinalCents\":800,\"partnerFinalCents\":700}}"
+                }
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 28,
+                "requestId": "test/20",
+                "at": 20,
+                "kind": "stage_committed",
+                "data": {
+                  "from": "choice_2",
+                  "to": "result_2"
+                }
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 29,
+                "requestId": "test/21",
+                "at": 21,
+                "kind": "result_receipt",
+                "round": 2,
+                "data": {
+                  "identity": "{\"generation\":1,\"attemptId\":\"A1.1\",\"formDigest\":\"1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea\",\"roundId\":\"A1.1/R2\",\"partner\":\"Partner B\",\"bonusRecipient\":\"candidate\",\"decision\":{\"signedGiveCents\":200,\"actor\":\"candidate\",\"candidateFinalCents\":800,\"partnerFinalCents\":700}}"
+                }
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 30,
+                "requestId": "test/21",
+                "at": 21,
+                "kind": "stage_committed",
+                "data": {
+                  "from": "result_2",
+                  "to": "result_2"
+                }
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 31,
+                "requestId": "test/22",
+                "at": 22,
+                "kind": "stage_committed",
+                "data": {
+                  "from": "result_2",
+                  "to": "fairness_2"
+                }
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 32,
+                "requestId": "test/23",
+                "at": 23,
+                "kind": "fairness_committed",
+                "round": 2,
+                "data": {
+                  "rating": 8
+                }
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 33,
+                "requestId": "test/23",
+                "at": 23,
+                "kind": "round_terminal",
+                "round": 2
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 34,
+                "requestId": "test/23",
+                "at": 23,
+                "kind": "completed"
+              }
+            ],
+            "revision": 20,
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "originTicketId": "T1.1",
+            "formId": "ME2-1",
+            "formDigest": "1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea",
+            "status": "Completed",
+            "playCapability": false,
+            "stage": "test_complete",
+            "rounds": [
+              {
+                "id": "A1.1/R1",
+                "partner": "Partner A",
+                "bonusRecipient": "candidate",
+                "armed": true,
+                "decision": {
+                  "signedGiveCents": 200,
+                  "actor": "candidate",
+                  "candidateFinalCents": 800,
+                  "partnerFinalCents": 700
+                },
+                "exposure": "render_receipt",
+                "receiptIdentity": "{\"generation\":1,\"attemptId\":\"A1.1\",\"formDigest\":\"1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea\",\"roundId\":\"A1.1/R1\",\"partner\":\"Partner A\",\"bonusRecipient\":\"candidate\",\"decision\":{\"signedGiveCents\":200,\"actor\":\"candidate\",\"candidateFinalCents\":800,\"partnerFinalCents\":700}}",
+                "fairness": 8,
+                "terminal": true
+              },
+              {
+                "id": "A1.1/R2",
+                "partner": "Partner B",
+                "bonusRecipient": "candidate",
+                "armed": true,
+                "decision": {
+                  "signedGiveCents": 200,
+                  "actor": "candidate",
+                  "candidateFinalCents": 800,
+                  "partnerFinalCents": 700
+                },
+                "exposure": "render_receipt",
+                "receiptIdentity": "{\"generation\":1,\"attemptId\":\"A1.1\",\"formDigest\":\"1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea\",\"roundId\":\"A1.1/R2\",\"partner\":\"Partner B\",\"bonusRecipient\":\"candidate\",\"decision\":{\"signedGiveCents\":200,\"actor\":\"candidate\",\"candidateFinalCents\":800,\"partnerFinalCents\":700}}",
+                "fairness": 8,
+                "terminal": true
+              }
+            ],
+            "reportSnapshot": [
+              {
+                "generation": 1,
+                "attemptId": "A1.1",
+                "formId": "ME2-1",
+                "formDigest": "1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea",
+                "round": 1,
+                "partner": "Partner A",
+                "bonusRecipient": "candidate",
+                "candidateStartCents": 500,
+                "partnerStartCents": 500,
+                "signedGiveCents": 200,
+                "actor": "candidate",
+                "candidateFinalCents": 800,
+                "partnerFinalCents": 700,
+                "fairness": 8
+              },
+              {
+                "generation": 1,
+                "attemptId": "A1.1",
+                "formId": "ME2-1",
+                "formDigest": "1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea",
+                "round": 2,
+                "partner": "Partner B",
+                "bonusRecipient": "candidate",
+                "candidateStartCents": 500,
+                "partnerStartCents": 500,
+                "signedGiveCents": 200,
+                "actor": "candidate",
+                "candidateFinalCents": 800,
+                "partnerFinalCents": 700,
+                "fairness": 8
+              }
+            ]
+          },
+          "A1.2": {
+            "id": "A1.2",
+            "ordinal": 2,
+            "createdAt": 30,
+            "context": {},
+            "events": [
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 1,
+                "requestId": "test/30",
+                "at": 30,
+                "kind": "attempt_armed"
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 2,
+                "requestId": "test/30",
+                "at": 30,
+                "kind": "round_intent",
+                "round": 1
+              },
+              {
+                "version": "money_exchange_2_event_v1_0",
+                "seq": 3,
+                "requestId": "test/29",
+                "at": 29,
+                "kind": "ended_incomplete",
+                "data": {
+                  "reason": "candidate-exit"
+                }
+              }
+            ],
+            "revision": 1,
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "originTicketId": "T1.2",
+            "formId": "ME2-2",
+            "formDigest": "f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830",
+            "status": "Incomplete",
+            "playCapability": false,
+            "stage": "award_1",
+            "rounds": [
+              {
+                "id": "A1.2/R1",
+                "partner": "Partner C",
+                "bonusRecipient": "candidate",
+                "armed": true,
+                "decision": null,
+                "exposure": "unshown",
+                "receiptIdentity": null,
+                "fairness": null,
+                "terminal": false
+              },
+              {
+                "id": "A1.2/R2",
+                "partner": "Partner D",
+                "bonusRecipient": "partner",
+                "armed": false,
+                "decision": null,
+                "exposure": "unshown",
+                "receiptIdentity": null,
+                "fairness": null,
+                "terminal": false
+              }
+            ],
+            "reportSnapshot": null,
+            "endedReason": "candidate-exit"
+          }
+        },
+        "tombstones": {
+          "A1.3": true
+        },
+        "outcomes": {
+          "test/4": {
+            "payloadHash": "{\"kind\":\"arm\",\"requestId\":\"test/4\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":4,\"ticketId\":\"T1.1\",\"at\":4,\"context\":{\"input\":\"keyboard\"}}",
+            "command": {
+              "kind": "arm",
+              "requestId": "test/4",
+              "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 4,
+              "ticketId": "T1.1",
+              "at": 4,
+              "context": {
+                "input": "keyboard"
+              }
+            },
+            "result": {
+              "ticketId": "T1.1",
+              "attemptId": "A1.1",
+              "stage": "award_1"
+            },
+            "route": {
+              "stage": "active",
+              "epoch": 5,
+              "ownerId": "owner"
+            },
+            "revision": 4
+          },
+          "test/5": {
+            "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/5\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":5,\"ticketId\":\"T1.1\",\"at\":5,\"stage\":\"award_1\",\"expectedRevision\":1}",
+            "command": {
+              "kind": "step",
+              "requestId": "test/5",
+              "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 5,
+              "ticketId": "T1.1",
+              "at": 5,
+              "stage": "award_1",
+              "expectedRevision": 1
+            },
+            "result": {
+              "stage": "connecting_1",
+              "attemptId": "A1.1"
+            },
+            "route": {
+              "stage": "active",
+              "epoch": 6,
+              "ownerId": "owner"
+            },
+            "revision": 5
+          },
+          "test/6": {
+            "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/6\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":6,\"ticketId\":\"T1.1\",\"at\":6,\"stage\":\"connecting_1\",\"expectedRevision\":2,\"operation\":\"animation\"}",
+            "command": {
+              "kind": "step",
+              "requestId": "test/6",
+              "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 6,
+              "ticketId": "T1.1",
+              "at": 6,
+              "stage": "connecting_1",
+              "expectedRevision": 2,
+              "operation": "animation"
+            },
+            "result": {
+              "stage": "connected_1",
+              "attemptId": "A1.1"
+            },
+            "route": {
+              "stage": "active",
+              "epoch": 7,
+              "ownerId": "owner"
+            },
+            "revision": 6
+          },
+          "test/7": {
+            "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/7\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":7,\"ticketId\":\"T1.1\",\"at\":7,\"stage\":\"connected_1\",\"expectedRevision\":3}",
+            "command": {
+              "kind": "step",
+              "requestId": "test/7",
+              "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 7,
+              "ticketId": "T1.1",
+              "at": 7,
+              "stage": "connected_1",
+              "expectedRevision": 3
+            },
+            "result": {
+              "stage": "partner_rules_1",
+              "attemptId": "A1.1"
+            },
+            "route": {
+              "stage": "active",
+              "epoch": 8,
+              "ownerId": "owner"
+            },
+            "revision": 7
+          },
+          "test/8": {
+            "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/8\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":8,\"ticketId\":\"T1.1\",\"at\":8,\"stage\":\"partner_rules_1\",\"expectedRevision\":4}",
+            "command": {
+              "kind": "step",
+              "requestId": "test/8",
+              "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 8,
+              "ticketId": "T1.1",
+              "at": 8,
+              "stage": "partner_rules_1",
+              "expectedRevision": 4
+            },
+            "result": {
+              "stage": "bonus_1",
+              "attemptId": "A1.1"
+            },
+            "route": {
+              "stage": "active",
+              "epoch": 9,
+              "ownerId": "owner"
+            },
+            "revision": 8
+          },
+          "test/9": {
+            "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/9\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":9,\"ticketId\":\"T1.1\",\"at\":9,\"stage\":\"bonus_1\",\"expectedRevision\":5}",
+            "command": {
+              "kind": "step",
+              "requestId": "test/9",
+              "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 9,
+              "ticketId": "T1.1",
+              "at": 9,
+              "stage": "bonus_1",
+              "expectedRevision": 5
+            },
+            "result": {
+              "stage": "choice_1",
+              "attemptId": "A1.1"
+            },
+            "route": {
+              "stage": "active",
+              "epoch": 10,
+              "ownerId": "owner"
+            },
+            "revision": 9
+          },
+          "test/10": {
+            "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/10\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":10,\"ticketId\":\"T1.1\",\"at\":10,\"stage\":\"choice_1\",\"expectedRevision\":6,\"cents\":200}",
+            "command": {
+              "kind": "step",
+              "requestId": "test/10",
+              "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 10,
+              "ticketId": "T1.1",
+              "at": 10,
+              "stage": "choice_1",
+              "expectedRevision": 6,
+              "cents": 200
+            },
+            "result": {
+              "stage": "result_1",
+              "attemptId": "A1.1"
+            },
+            "route": {
+              "stage": "active",
+              "epoch": 11,
+              "ownerId": "owner"
+            },
+            "revision": 10
+          },
+          "test/11": {
+            "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/11\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":11,\"ticketId\":\"T1.1\",\"at\":11,\"stage\":\"result_1\",\"expectedRevision\":7,\"operation\":\"receipt\",\"receipt\":\"{\\\"generation\\\":1,\\\"attemptId\\\":\\\"A1.1\\\",\\\"formDigest\\\":\\\"1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea\\\",\\\"roundId\\\":\\\"A1.1/R1\\\",\\\"partner\\\":\\\"Partner A\\\",\\\"bonusRecipient\\\":\\\"candidate\\\",\\\"decision\\\":{\\\"signedGiveCents\\\":200,\\\"actor\\\":\\\"candidate\\\",\\\"candidateFinalCents\\\":800,\\\"partnerFinalCents\\\":700}}\"}",
+            "command": {
+              "kind": "step",
+              "requestId": "test/11",
+              "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 11,
+              "ticketId": "T1.1",
+              "at": 11,
+              "stage": "result_1",
+              "expectedRevision": 7,
+              "operation": "receipt",
+              "receipt": "{\"generation\":1,\"attemptId\":\"A1.1\",\"formDigest\":\"1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea\",\"roundId\":\"A1.1/R1\",\"partner\":\"Partner A\",\"bonusRecipient\":\"candidate\",\"decision\":{\"signedGiveCents\":200,\"actor\":\"candidate\",\"candidateFinalCents\":800,\"partnerFinalCents\":700}}"
+            },
+            "result": {
+              "stage": "result_1",
+              "attemptId": "A1.1"
+            },
+            "route": {
+              "stage": "active",
+              "epoch": 12,
+              "ownerId": "owner"
+            },
+            "revision": 11
+          },
+          "test/12": {
+            "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/12\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":12,\"ticketId\":\"T1.1\",\"at\":12,\"stage\":\"result_1\",\"expectedRevision\":8}",
+            "command": {
+              "kind": "step",
+              "requestId": "test/12",
+              "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 12,
+              "ticketId": "T1.1",
+              "at": 12,
+              "stage": "result_1",
+              "expectedRevision": 8
+            },
+            "result": {
+              "stage": "fairness_1",
+              "attemptId": "A1.1"
+            },
+            "route": {
+              "stage": "active",
+              "epoch": 13,
+              "ownerId": "owner"
+            },
+            "revision": 12
+          },
+          "test/13": {
+            "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/13\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":13,\"ticketId\":\"T1.1\",\"at\":13,\"stage\":\"fairness_1\",\"expectedRevision\":9,\"rating\":8}",
+            "command": {
+              "kind": "step",
+              "requestId": "test/13",
+              "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 13,
+              "ticketId": "T1.1",
+              "at": 13,
+              "stage": "fairness_1",
+              "expectedRevision": 9,
+              "rating": 8
+            },
+            "result": {
+              "stage": "new_partner",
+              "attemptId": "A1.1"
+            },
+            "route": {
+              "stage": "active",
+              "epoch": 14,
+              "ownerId": "owner"
+            },
+            "revision": 13
+          },
+          "test/14": {
+            "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/14\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":14,\"ticketId\":\"T1.1\",\"at\":14,\"stage\":\"new_partner\",\"expectedRevision\":10}",
+            "command": {
+              "kind": "step",
+              "requestId": "test/14",
+              "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 14,
+              "ticketId": "T1.1",
+              "at": 14,
+              "stage": "new_partner",
+              "expectedRevision": 10
+            },
+            "result": {
+              "stage": "award_2",
+              "attemptId": "A1.1"
+            },
+            "route": {
+              "stage": "active",
+              "epoch": 15,
+              "ownerId": "owner"
+            },
+            "revision": 14
+          },
+          "test/15": {
+            "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/15\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":15,\"ticketId\":\"T1.1\",\"at\":15,\"stage\":\"award_2\",\"expectedRevision\":11}",
+            "command": {
+              "kind": "step",
+              "requestId": "test/15",
+              "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 15,
+              "ticketId": "T1.1",
+              "at": 15,
+              "stage": "award_2",
+              "expectedRevision": 11
+            },
+            "result": {
+              "stage": "connecting_2",
+              "attemptId": "A1.1"
+            },
+            "route": {
+              "stage": "active",
+              "epoch": 16,
+              "ownerId": "owner"
+            },
+            "revision": 15
+          },
+          "test/16": {
+            "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/16\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":16,\"ticketId\":\"T1.1\",\"at\":16,\"stage\":\"connecting_2\",\"expectedRevision\":12,\"operation\":\"animation\"}",
+            "command": {
+              "kind": "step",
+              "requestId": "test/16",
+              "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 16,
+              "ticketId": "T1.1",
+              "at": 16,
+              "stage": "connecting_2",
+              "expectedRevision": 12,
+              "operation": "animation"
+            },
+            "result": {
+              "stage": "connected_2",
+              "attemptId": "A1.1"
+            },
+            "route": {
+              "stage": "active",
+              "epoch": 17,
+              "ownerId": "owner"
+            },
+            "revision": 16
+          },
+          "test/17": {
+            "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/17\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":17,\"ticketId\":\"T1.1\",\"at\":17,\"stage\":\"connected_2\",\"expectedRevision\":13}",
+            "command": {
+              "kind": "step",
+              "requestId": "test/17",
+              "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 17,
+              "ticketId": "T1.1",
+              "at": 17,
+              "stage": "connected_2",
+              "expectedRevision": 13
+            },
+            "result": {
+              "stage": "partner_rules_2",
+              "attemptId": "A1.1"
+            },
+            "route": {
+              "stage": "active",
+              "epoch": 18,
+              "ownerId": "owner"
+            },
+            "revision": 17
+          },
+          "test/18": {
+            "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/18\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":18,\"ticketId\":\"T1.1\",\"at\":18,\"stage\":\"partner_rules_2\",\"expectedRevision\":14}",
+            "command": {
+              "kind": "step",
+              "requestId": "test/18",
+              "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 18,
+              "ticketId": "T1.1",
+              "at": 18,
+              "stage": "partner_rules_2",
+              "expectedRevision": 14
+            },
+            "result": {
+              "stage": "bonus_2",
+              "attemptId": "A1.1"
+            },
+            "route": {
+              "stage": "active",
+              "epoch": 19,
+              "ownerId": "owner"
+            },
+            "revision": 18
+          },
+          "test/19": {
+            "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/19\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":19,\"ticketId\":\"T1.1\",\"at\":19,\"stage\":\"bonus_2\",\"expectedRevision\":15}",
+            "command": {
+              "kind": "step",
+              "requestId": "test/19",
+              "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 19,
+              "ticketId": "T1.1",
+              "at": 19,
+              "stage": "bonus_2",
+              "expectedRevision": 15
+            },
+            "result": {
+              "stage": "choice_2",
+              "attemptId": "A1.1"
+            },
+            "route": {
+              "stage": "active",
+              "epoch": 20,
+              "ownerId": "owner"
+            },
+            "revision": 19
+          },
+          "test/20": {
+            "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/20\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":20,\"ticketId\":\"T1.1\",\"at\":20,\"stage\":\"choice_2\",\"expectedRevision\":16,\"cents\":200}",
+            "command": {
+              "kind": "step",
+              "requestId": "test/20",
+              "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 20,
+              "ticketId": "T1.1",
+              "at": 20,
+              "stage": "choice_2",
+              "expectedRevision": 16,
+              "cents": 200
+            },
+            "result": {
+              "stage": "result_2",
+              "attemptId": "A1.1"
+            },
+            "route": {
+              "stage": "active",
+              "epoch": 21,
+              "ownerId": "owner"
+            },
+            "revision": 20
+          },
+          "test/21": {
+            "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/21\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":21,\"ticketId\":\"T1.1\",\"at\":21,\"stage\":\"result_2\",\"expectedRevision\":17,\"operation\":\"receipt\",\"receipt\":\"{\\\"generation\\\":1,\\\"attemptId\\\":\\\"A1.1\\\",\\\"formDigest\\\":\\\"1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea\\\",\\\"roundId\\\":\\\"A1.1/R2\\\",\\\"partner\\\":\\\"Partner B\\\",\\\"bonusRecipient\\\":\\\"candidate\\\",\\\"decision\\\":{\\\"signedGiveCents\\\":200,\\\"actor\\\":\\\"candidate\\\",\\\"candidateFinalCents\\\":800,\\\"partnerFinalCents\\\":700}}\"}",
+            "command": {
+              "kind": "step",
+              "requestId": "test/21",
+              "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 21,
+              "ticketId": "T1.1",
+              "at": 21,
+              "stage": "result_2",
+              "expectedRevision": 17,
+              "operation": "receipt",
+              "receipt": "{\"generation\":1,\"attemptId\":\"A1.1\",\"formDigest\":\"1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea\",\"roundId\":\"A1.1/R2\",\"partner\":\"Partner B\",\"bonusRecipient\":\"candidate\",\"decision\":{\"signedGiveCents\":200,\"actor\":\"candidate\",\"candidateFinalCents\":800,\"partnerFinalCents\":700}}"
+            },
+            "result": {
+              "stage": "result_2",
+              "attemptId": "A1.1"
+            },
+            "route": {
+              "stage": "active",
+              "epoch": 22,
+              "ownerId": "owner"
+            },
+            "revision": 21
+          },
+          "test/22": {
+            "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/22\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":22,\"ticketId\":\"T1.1\",\"at\":22,\"stage\":\"result_2\",\"expectedRevision\":18}",
+            "command": {
+              "kind": "step",
+              "requestId": "test/22",
+              "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 22,
+              "ticketId": "T1.1",
+              "at": 22,
+              "stage": "result_2",
+              "expectedRevision": 18
+            },
+            "result": {
+              "stage": "fairness_2",
+              "attemptId": "A1.1"
+            },
+            "route": {
+              "stage": "active",
+              "epoch": 23,
+              "ownerId": "owner"
+            },
+            "revision": 22
+          },
+          "test/23": {
+            "payloadHash": "{\"kind\":\"terminal\",\"requestId\":\"test/23\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":23,\"ticketId\":\"T1.1\",\"at\":23,\"stage\":\"fairness_2\",\"expectedRevision\":19,\"rating\":8}",
+            "command": {
+              "kind": "terminal",
+              "requestId": "test/23",
+              "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 23,
+              "ticketId": "T1.1",
+              "at": 23,
+              "stage": "fairness_2",
+              "expectedRevision": 19,
+              "rating": 8
+            },
+            "result": {
+              "stage": "test_complete",
+              "attemptId": "A1.1"
+            },
+            "route": {
+              "stage": "test_complete",
+              "epoch": 24,
+              "ownerId": "owner"
+            },
+            "revision": 23
+          },
+          "test/24": {
+            "payloadHash": "{\"kind\":\"report\",\"requestId\":\"test/24\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":24,\"ticketId\":\"T1.1\",\"at\":24}",
+            "command": {
+              "kind": "report",
+              "requestId": "test/24",
+              "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 24,
+              "ticketId": "T1.1",
+              "at": 24
+            },
+            "result": {
+              "stage": "report_1",
+              "attemptId": "A1.1"
+            },
+            "route": {
+              "stage": "report",
+              "epoch": 25,
+              "ownerId": "owner"
+            },
+            "revision": 24
+          },
+          "test/27": {
+            "payloadHash": "{\"kind\":\"historyReport\",\"requestId\":\"test/27\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":27,\"at\":27,\"attemptId\":\"A1.1\"}",
+            "command": {
+              "kind": "historyReport",
+              "requestId": "test/27",
+              "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 27,
+              "at": 27,
+              "attemptId": "A1.1"
+            },
+            "result": {
+              "stage": "review",
+              "attemptId": "A1.1"
+            },
+            "route": {
+              "stage": "review",
+              "epoch": 28,
+              "ownerId": "owner"
+            },
+            "revision": 27
+          },
+          "test/30": {
+            "payloadHash": "{\"kind\":\"arm\",\"requestId\":\"test/30\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":29,\"ticketId\":\"T1.2\",\"at\":30}",
+            "command": {
+              "kind": "arm",
+              "requestId": "test/30",
+              "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 29,
+              "ticketId": "T1.2",
+              "at": 30
+            },
+            "result": {
+              "ticketId": "T1.2",
+              "attemptId": "A1.2",
+              "stage": "award_1"
+            },
+            "route": {
+              "stage": "active",
+              "epoch": 30,
+              "ownerId": "owner"
+            },
+            "revision": 29
+          },
+          "test/34": {
+            "payloadHash": "{\"kind\":\"deleteAttempt\",\"requestId\":\"test/34\",\"installationId\":\"fe280afb-6981-4d35-99f4-88f985936278\",\"generation\":1,\"attemptId\":\"A1.3\"}",
+            "command": {
+              "kind": "deleteAttempt",
+              "requestId": "test/34",
+              "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+              "generation": 1,
+              "attemptId": "A1.3"
+            },
+            "result": {
+              "deleted": "A1.3"
+            },
+            "route": {
+              "stage": "library",
+              "epoch": 35,
+              "ownerId": "owner"
+            },
+            "revision": 34
+          }
+        },
+        "navigation": null,
+        "proofs": {
+          "A1.1": {
+            "commands": [
+              {
+                "kind": "arm",
+                "requestId": "test/4",
+                "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+                "generation": 1,
+                "ownerId": "owner",
+                "leaseEpoch": 2,
+                "routeEpoch": 4,
+                "ticketId": "T1.1",
+                "at": 4,
+                "context": {
+                  "input": "keyboard"
+                }
+              },
+              {
+                "kind": "step",
+                "requestId": "test/5",
+                "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+                "generation": 1,
+                "ownerId": "owner",
+                "leaseEpoch": 2,
+                "routeEpoch": 5,
+                "ticketId": "T1.1",
+                "at": 5,
+                "stage": "award_1",
+                "expectedRevision": 1
+              },
+              {
+                "kind": "step",
+                "requestId": "test/6",
+                "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+                "generation": 1,
+                "ownerId": "owner",
+                "leaseEpoch": 2,
+                "routeEpoch": 6,
+                "ticketId": "T1.1",
+                "at": 6,
+                "stage": "connecting_1",
+                "expectedRevision": 2,
+                "operation": "animation"
+              },
+              {
+                "kind": "step",
+                "requestId": "test/7",
+                "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+                "generation": 1,
+                "ownerId": "owner",
+                "leaseEpoch": 2,
+                "routeEpoch": 7,
+                "ticketId": "T1.1",
+                "at": 7,
+                "stage": "connected_1",
+                "expectedRevision": 3
+              },
+              {
+                "kind": "step",
+                "requestId": "test/8",
+                "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+                "generation": 1,
+                "ownerId": "owner",
+                "leaseEpoch": 2,
+                "routeEpoch": 8,
+                "ticketId": "T1.1",
+                "at": 8,
+                "stage": "partner_rules_1",
+                "expectedRevision": 4
+              },
+              {
+                "kind": "step",
+                "requestId": "test/9",
+                "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+                "generation": 1,
+                "ownerId": "owner",
+                "leaseEpoch": 2,
+                "routeEpoch": 9,
+                "ticketId": "T1.1",
+                "at": 9,
+                "stage": "bonus_1",
+                "expectedRevision": 5
+              },
+              {
+                "kind": "step",
+                "requestId": "test/10",
+                "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+                "generation": 1,
+                "ownerId": "owner",
+                "leaseEpoch": 2,
+                "routeEpoch": 10,
+                "ticketId": "T1.1",
+                "at": 10,
+                "stage": "choice_1",
+                "expectedRevision": 6,
+                "cents": 200
+              },
+              {
+                "kind": "step",
+                "requestId": "test/11",
+                "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+                "generation": 1,
+                "ownerId": "owner",
+                "leaseEpoch": 2,
+                "routeEpoch": 11,
+                "ticketId": "T1.1",
+                "at": 11,
+                "stage": "result_1",
+                "expectedRevision": 7,
+                "operation": "receipt",
+                "receipt": "{\"generation\":1,\"attemptId\":\"A1.1\",\"formDigest\":\"1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea\",\"roundId\":\"A1.1/R1\",\"partner\":\"Partner A\",\"bonusRecipient\":\"candidate\",\"decision\":{\"signedGiveCents\":200,\"actor\":\"candidate\",\"candidateFinalCents\":800,\"partnerFinalCents\":700}}"
+              },
+              {
+                "kind": "step",
+                "requestId": "test/12",
+                "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+                "generation": 1,
+                "ownerId": "owner",
+                "leaseEpoch": 2,
+                "routeEpoch": 12,
+                "ticketId": "T1.1",
+                "at": 12,
+                "stage": "result_1",
+                "expectedRevision": 8
+              },
+              {
+                "kind": "step",
+                "requestId": "test/13",
+                "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+                "generation": 1,
+                "ownerId": "owner",
+                "leaseEpoch": 2,
+                "routeEpoch": 13,
+                "ticketId": "T1.1",
+                "at": 13,
+                "stage": "fairness_1",
+                "expectedRevision": 9,
+                "rating": 8
+              },
+              {
+                "kind": "step",
+                "requestId": "test/14",
+                "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+                "generation": 1,
+                "ownerId": "owner",
+                "leaseEpoch": 2,
+                "routeEpoch": 14,
+                "ticketId": "T1.1",
+                "at": 14,
+                "stage": "new_partner",
+                "expectedRevision": 10
+              },
+              {
+                "kind": "step",
+                "requestId": "test/15",
+                "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+                "generation": 1,
+                "ownerId": "owner",
+                "leaseEpoch": 2,
+                "routeEpoch": 15,
+                "ticketId": "T1.1",
+                "at": 15,
+                "stage": "award_2",
+                "expectedRevision": 11
+              },
+              {
+                "kind": "step",
+                "requestId": "test/16",
+                "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+                "generation": 1,
+                "ownerId": "owner",
+                "leaseEpoch": 2,
+                "routeEpoch": 16,
+                "ticketId": "T1.1",
+                "at": 16,
+                "stage": "connecting_2",
+                "expectedRevision": 12,
+                "operation": "animation"
+              },
+              {
+                "kind": "step",
+                "requestId": "test/17",
+                "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+                "generation": 1,
+                "ownerId": "owner",
+                "leaseEpoch": 2,
+                "routeEpoch": 17,
+                "ticketId": "T1.1",
+                "at": 17,
+                "stage": "connected_2",
+                "expectedRevision": 13
+              },
+              {
+                "kind": "step",
+                "requestId": "test/18",
+                "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+                "generation": 1,
+                "ownerId": "owner",
+                "leaseEpoch": 2,
+                "routeEpoch": 18,
+                "ticketId": "T1.1",
+                "at": 18,
+                "stage": "partner_rules_2",
+                "expectedRevision": 14
+              },
+              {
+                "kind": "step",
+                "requestId": "test/19",
+                "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+                "generation": 1,
+                "ownerId": "owner",
+                "leaseEpoch": 2,
+                "routeEpoch": 19,
+                "ticketId": "T1.1",
+                "at": 19,
+                "stage": "bonus_2",
+                "expectedRevision": 15
+              },
+              {
+                "kind": "step",
+                "requestId": "test/20",
+                "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+                "generation": 1,
+                "ownerId": "owner",
+                "leaseEpoch": 2,
+                "routeEpoch": 20,
+                "ticketId": "T1.1",
+                "at": 20,
+                "stage": "choice_2",
+                "expectedRevision": 16,
+                "cents": 200
+              },
+              {
+                "kind": "step",
+                "requestId": "test/21",
+                "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+                "generation": 1,
+                "ownerId": "owner",
+                "leaseEpoch": 2,
+                "routeEpoch": 21,
+                "ticketId": "T1.1",
+                "at": 21,
+                "stage": "result_2",
+                "expectedRevision": 17,
+                "operation": "receipt",
+                "receipt": "{\"generation\":1,\"attemptId\":\"A1.1\",\"formDigest\":\"1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea\",\"roundId\":\"A1.1/R2\",\"partner\":\"Partner B\",\"bonusRecipient\":\"candidate\",\"decision\":{\"signedGiveCents\":200,\"actor\":\"candidate\",\"candidateFinalCents\":800,\"partnerFinalCents\":700}}"
+              },
+              {
+                "kind": "step",
+                "requestId": "test/22",
+                "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+                "generation": 1,
+                "ownerId": "owner",
+                "leaseEpoch": 2,
+                "routeEpoch": 22,
+                "ticketId": "T1.1",
+                "at": 22,
+                "stage": "result_2",
+                "expectedRevision": 18
+              },
+              {
+                "kind": "terminal",
+                "requestId": "test/23",
+                "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+                "generation": 1,
+                "ownerId": "owner",
+                "leaseEpoch": 2,
+                "routeEpoch": 23,
+                "ticketId": "T1.1",
+                "at": 23,
+                "stage": "fairness_2",
+                "expectedRevision": 19,
+                "rating": 8
+              }
+            ]
+          },
+          "A1.2": {
+            "commands": [
+              {
+                "kind": "arm",
+                "requestId": "test/30",
+                "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+                "generation": 1,
+                "ownerId": "owner",
+                "leaseEpoch": 2,
+                "routeEpoch": 29,
+                "ticketId": "T1.2",
+                "at": 30
+              },
+              {
+                "kind": "exit",
+                "requestId": "test/29",
+                "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+                "generation": 1,
+                "ownerId": "owner",
+                "leaseEpoch": 2,
+                "routeEpoch": 28,
+                "at": 29,
+                "destination": "Close",
+                "afterReadyRequestId": "test/28"
+              }
+            ],
+            "lineage": {
+              "test/29": {
+                "opening": {
+                  "kind": "reviewReplay",
+                  "requestId": "test/28",
+                  "installationId": "fe280afb-6981-4d35-99f4-88f985936278",
+                  "generation": 1,
+                  "ownerId": "owner",
+                  "leaseEpoch": 2,
+                  "routeEpoch": 28,
+                  "attemptId": "A1.1"
+                },
+                "ticketId": "T1.2"
+              }
+            }
+          }
+        },
+        "retired": {
+          "test/1": {
+            "requestId": "test/1",
+            "deletionId": "test/34",
+            "attemptId": null,
+            "generation": 1
+          },
+          "test/2": {
+            "requestId": "test/2",
+            "deletionId": "test/34",
+            "attemptId": null,
+            "generation": 1
+          },
+          "test/3": {
+            "requestId": "test/3",
+            "deletionId": "test/34",
+            "attemptId": null,
+            "generation": 1
+          },
+          "test/25": {
+            "requestId": "test/25",
+            "deletionId": "test/34",
+            "attemptId": "A1.1",
+            "generation": 1
+          },
+          "test/26": {
+            "requestId": "test/26",
+            "deletionId": "test/34",
+            "attemptId": null,
+            "generation": 1
+          },
+          "test/28": {
+            "requestId": "test/28",
+            "deletionId": "test/34",
+            "attemptId": "A1.1",
+            "generation": 1
+          },
+          "test/29": {
+            "requestId": "test/29",
+            "deletionId": "test/34",
+            "attemptId": "A1.2",
+            "generation": 1
+          },
+          "test/31": {
+            "requestId": "test/31",
+            "deletionId": "test/34",
+            "attemptId": null,
+            "generation": 1
+          },
+          "test/32": {
+            "requestId": "test/32",
+            "deletionId": "test/34",
+            "attemptId": null,
+            "generation": 1
+          },
+          "test/33": {
+            "requestId": "test/33",
+            "deletionId": "test/34",
+            "attemptId": "A1.3",
+            "generation": 1
+          }
+        },
+        "resetReceipt": null
+      }
+    },
+    "tail": []
+  }
+]

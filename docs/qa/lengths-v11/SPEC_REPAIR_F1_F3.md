@@ -1,0 +1,9 @@
+# Lengths Mouth V1.1 packet repair F1–F3
+
+The [first independent packet audit](/private/tmp/lengths-v11-spec-audit/AUDIT.md) at `ad8e632f79f987d7b861c9f802a2bfb4439a82ff` found three specification-readiness blockers, not product-code defects. Its separate Python regeneration and all eight original scalar fixtures passed. This grouped repair leaves every form and the generator byte-identical.
+
+- **F1 timing/evidence:** An explicit stage table now permits a factual response before face removal, defines resolution/feedback due times and mandatory confirming events, assigns timing notes, and fixes checkpoint and final protection boundaries. Eleven primitive fixture cases were added for early/late responses, missing stages, omission, feedback, checkpoint and terminal capture.
+- **F2 authority:** Start, every new face onset, continuation, report/history publication and deletion share an ordered authority boundary through visible publication. The deletion-first and onset-first outcomes, absent notifications, cancellation, released locks and late callbacks are stated and fixture-tested. Response handling remains synchronous.
+- **F3 report arithmetic:** Zero-response tendency, odd/even median-of-halves quartiles, exact category/set denominators and a deterministic practical-observation template are now defined. Added nine-value and 44/45, 29/30 fixtures.
+
+The checker now pins both approved candidate manifest and fixture digests, rather than accepting a self-rehashed manifest. The revised fixture digest is `5f5656bc35cff5b776075968b88ab369a4820af8233c741801044d42f28b50a8`. `node scripts/check-lengths-mouth-forms.mjs`, JSON parsing and `git diff --check` pass. This remains a specification **candidate** until a new separate exact-SHA read-only review passes; no V1.1 application code was implemented.

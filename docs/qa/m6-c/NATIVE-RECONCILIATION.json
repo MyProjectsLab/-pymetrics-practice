@@ -1,0 +1,158 @@
+[
+  {
+    "sessionId": "67ef4591-1ac0-4b42-a028-a2e9c7122a2d",
+    "form": "stop-baseline-03",
+    "setup": {
+      "binding": {
+        "code": "Space",
+        "label": "Space"
+      },
+      "visualProfile": "standard",
+      "physicalKeyboard": true
+    },
+    "recordedValidity": "valid",
+    "counts": {
+      "hits": 0,
+      "misses": 60,
+      "withholds": 20,
+      "falseAlarms": 0
+    },
+    "blocks": [
+      {
+        "hits": 0,
+        "misses": 15,
+        "withholds": 5,
+        "falseAlarms": 0
+      },
+      {
+        "hits": 0,
+        "misses": 15,
+        "withholds": 5,
+        "falseAlarms": 0
+      },
+      {
+        "hits": 0,
+        "misses": 15,
+        "withholds": 5,
+        "falseAlarms": 0
+      },
+      {
+        "hits": 0,
+        "misses": 15,
+        "withholds": 5,
+        "falseAlarms": 0
+      }
+    ],
+    "overallPercent": 25,
+    "warmupTrials": 8,
+    "scoredTrials": 80,
+    "eventCount": 646,
+    "domConfirmedVisibleMs": {
+      "min": 200.5,
+      "max": 209.19999980926514,
+      "count": 80
+    },
+    "domOnsetDelayMs": {
+      "min": 1.2000000476837158,
+      "max": 10.5,
+      "count": 80
+    },
+    "domPostResolutionIntervalMs": {
+      "min": 1201.2000000476837,
+      "max": 1210.5,
+      "count": 79
+    },
+    "lifecycleEvidence": [
+      {
+        "schemaVersion": "stop_engine_event_v1",
+        "sessionId": "67ef4591-1ac0-4b42-a028-a2e9c7122a2d",
+        "sequenceNumber": 16,
+        "timestampMs": 278002.80000019073,
+        "type": "visibility_changed",
+        "payload": {
+          "visible": true
+        }
+      }
+    ],
+    "reconciliation": "PASS for counts, blocks, form order, rates, RT suppression, 1200 ms requested anchor",
+    "qualification": "Not physical timing or native lifecycle certification. Second run included unresolved tab-switch probes."
+  },
+  {
+    "sessionId": "93f0121e-6b77-4670-a10e-6b61e1a9d1d9",
+    "form": "stop-baseline-01",
+    "setup": {
+      "binding": {
+        "code": "KeyA",
+        "label": "A"
+      },
+      "visualProfile": "shape_accommodation_v1",
+      "physicalKeyboard": true
+    },
+    "recordedValidity": "valid",
+    "counts": {
+      "hits": 0,
+      "misses": 60,
+      "withholds": 20,
+      "falseAlarms": 0
+    },
+    "blocks": [
+      {
+        "hits": 0,
+        "misses": 15,
+        "withholds": 5,
+        "falseAlarms": 0
+      },
+      {
+        "hits": 0,
+        "misses": 15,
+        "withholds": 5,
+        "falseAlarms": 0
+      },
+      {
+        "hits": 0,
+        "misses": 15,
+        "withholds": 5,
+        "falseAlarms": 0
+      },
+      {
+        "hits": 0,
+        "misses": 15,
+        "withholds": 5,
+        "falseAlarms": 0
+      }
+    ],
+    "overallPercent": 25,
+    "warmupTrials": 8,
+    "scoredTrials": 80,
+    "eventCount": 644,
+    "domConfirmedVisibleMs": {
+      "min": 200.89999985694885,
+      "max": 209.09999990463257,
+      "count": 80
+    },
+    "domOnsetDelayMs": {
+      "min": 1.2000000476837158,
+      "max": 10.700000047683716,
+      "count": 80
+    },
+    "domPostResolutionIntervalMs": {
+      "min": 1201.2000000476837,
+      "max": 1210.7000000476837,
+      "count": 79
+    },
+    "lifecycleEvidence": [
+      {
+        "schemaVersion": "stop_engine_event_v1",
+        "sessionId": "93f0121e-6b77-4670-a10e-6b61e1a9d1d9",
+        "sequenceNumber": 16,
+        "timestampMs": 251214.40000009537,
+        "type": "visibility_changed",
+        "payload": {
+          "visible": true
+        }
+      }
+    ],
+    "reconciliation": "PASS for counts, blocks, form order, rates, RT suppression, 1200 ms requested anchor",
+    "qualification": "Not physical timing or native lifecycle certification. Second run included unresolved tab-switch probes."
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "name": "retired one: held Local history then Replay late list",
+    "status": "PASS",
+    "detail": {
+      "beforeRelease": "Back to library\nDigits\n\nWatch one digit at a time, then enter the digits in order. Start with four digits. A correct answer adds one digit; a mistake removes one. Three mistakes end the run.\n\nTime varies with your answers. Allow at least five minutes. A rare long run can take more than 20 minutes, plus any time you spend before Next.\n\nOriginal forms rotate and may repeat after six starts or local data deletion.\n\nYour actual assessment invitation controls what to prepare. This is an independent practice exercise.\n\nThis shows recall of these Assessment Practice digit sequences in this browser. It is not an intelligence, memory-capacity, employer, or hiring score. Visual and auditory runs and timing accommodations are different experiences; their results are not calibrated equivalents.\n\nSee exampleLocal history",
+      "afterRelease": "Back to library\nDigits local history\n\nClearing local data also clears form-exposure and rotation history; a form may repeat afterward.\n\nNo saved Digits attempts in this browser.\n\nDelete all Digits dataPractice again",
+      "guideRemains": 0,
+      "durable": {
+        "version": "digits_storage_v1_1",
+        "installationId": "bdc16581-5a69-4487-a4df-bd0b5cb46098",
+        "revision": 5,
+        "counters": {
+          "visual": 1,
+          "auditory": 0
+        },
+        "attempts": {},
+        "tombstones": {
+          "f77bcee5-b470-450b-924e-1c53b5b25bd8": {
+            "requestId": "27c236c6-316c-45de-ac69-b94b9fd6dae0",
+            "mode": "visual",
+            "ordinal": 1,
+            "deletedAtWallMs": 1791485406627
+          }
+        },
+        "activity": {}
+      }
+    }
+  },
+  {
+    "name": "retired all: held Local history then Replay late list",
+    "status": "PASS",
+    "detail": {
+      "beforeRelease": "Back to library\nDigits\n\nWatch one digit at a time, then enter the digits in order. Start with four digits. A correct answer adds one digit; a mistake removes one. Three mistakes end the run.\n\nTime varies with your answers. Allow at least five minutes. A rare long run can take more than 20 minutes, plus any time you spend before Next.\n\nOriginal forms rotate and may repeat after six starts or local data deletion.\n\nYour actual assessment invitation controls what to prepare. This is an independent practice exercise.\n\nThis shows recall of these Assessment Practice digit sequences in this browser. It is not an intelligence, memory-capacity, employer, or hiring score. Visual and auditory runs and timing accommodations are different experiences; their results are not calibrated equivalents.\n\nSee exampleLocal history",
+      "afterRelease": "Back to library\n\nHistory could not be read. Local data may be unavailable.\n\nDigits unavailable\n\nScored Practice requires working local storage and exclusive browser ownership. No temporary result is presented as saved.\n\nReload DigitsLibrary",
+      "guideRemains": 0,
+      "durable": {
+        "version": "digits_storage_v1_1",
+        "installationId": "84e0c7db-898a-442d-b84a-ad42c06e4524",
+        "revision": 0,
+        "counters": {
+          "visual": 0,
+          "auditory": 0
+        },
+        "attempts": {},
+        "tombstones": {},
+        "activity": {}
+      }
+    }
+  },
+  {
+    "name": "saved history: held rejected openSaved then Practice again late catch",
+    "status": "PASS",
+    "detail": {
+      "beforeRelease": "Back to library\nDigits\n\nWatch one digit at a time, then enter the digits in order. Start with four digits. A correct answer adds one digit; a mistake removes one. Three mistakes end the run.\n\nTime varies with your answers. Allow at least five minutes. A rare long run can take more than 20 minutes, plus any time you spend before Next.\n\nOriginal forms rotate and may repeat after six starts or local data deletion.\n\nYour actual assessment invitation controls what to prepare. This is an independent practice exercise.\n\nThis shows recall of these Assessment Practice digit sequences in this browser. It is not an intelligence, memory-capacity, employer, or hiring score. Visual and auditory runs and timing accommodations are different experiences; their results are not calibrated equivalents.\n\nSee exampleLocal history",
+      "afterRelease": "Back to library\n\nThe saved record could not be verified.\n\nDigits local history\n\nClearing local data also clears form-exposure and rotation history; a form may repeat afterward.\n\nDV1 · visual · standard entry · keyboard · attempt 1 · invalid · 10/8/2026, 2:50:15 PM · saved resultOpen reviewDelete this attempt\nDelete all Digits dataPractice again",
+      "guideRemains": 0
+    }
+  },
+  {
+    "name": "retired replacement: Library then current history is available",
+    "status": "PASS",
+    "detail": {
+      "body": "Back to library\nDigits local history\n\nClearing local data also clears form-exposure and rotation history; a form may repeat afterward.\n\nNo saved Digits attempts in this browser.\n\nDelete all Digits dataPractice again",
+      "unchangedRoot": true
+    }
+  },
+  {
+    "name": "saved report: held poll followed by Replay ignores stale success",
+    "status": "PASS",
+    "detail": {
+      "guideRemains": true
+    }
+  },
+  {
+    "name": "saved report: held Local history then Library ignores old component update",
+    "status": "PASS",
+    "detail": {
+      "libraryRemains": true
+    }
+  }
+]

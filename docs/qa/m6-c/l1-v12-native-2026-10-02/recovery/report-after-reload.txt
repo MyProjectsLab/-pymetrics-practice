@@ -1,0 +1,166 @@
+Window: "Assessment Practice", App: Google Chrome.
+0 standard window Assessment Practice - Google Chrome, URL: 127.0.0.1:5592/, Secondary Actions: Raise
+	1 container Assessment Practice - Google Chrome, URL: 127.0.0.1:5592/
+		2 container
+			3 toolbar
+				4 button Back
+				5 button (disabled) Forward
+				6 button Reload
+				7 container
+					8 pop up button View site information
+					9 text field (settable) Address and search bar, Value: 127.0.0.1:5592, Placeholder: Ask Google or type a URL
+					10 button Bookmark this tab
+				11 container
+					12 pop up button Open Claude
+Has access to this site
+					13 pop up button Extensions
+				14 checkbox New download available
+				15 button renzo
+				16 pop up button Chrome
+			17 toolbar Bookmarks
+				18 toolbar Saved Tab Groups
+					19 saved tab group button  🧪 Stop M6-C group - Closed
+					20 saved tab group button  🧪 Stop M3 QA group - Closed
+					21 saved tab group button  🔎 New entrant diligence group - Closed
+					22 saved tab group button  Claude group - Closed
+					23 saved tab group button  Claude group - Closed
+					24 saved tab group button  Claude group - Closed
+					25 saved tab group button  ✅Claude group - Closed
+					26 button Tab groups
+				27 splitter Separator
+				28 bookmark button La Repubblica.it - News in tempo reale - Le notizie e i video di politica, cronaca, economia, sport
+				29 bookmark button Prime Video: Search
+				30 bookmark button Netflix
+				31 bookmark button Select Profile | Disney+
+				32 bookmark button LexZilla — Legal Made Simple
+			33 container
+				34 scroll area
+					35 HTML content Assessment Practice, URL: 127.0.0.1:5592/
+						36 container
+							37 link Skip to content, Value: 127.0.0.1:5592/#main-content
+							38 button Assessment Practice — game library
+							39 text Private preview
+							40 container Your Stop practice result
+								41 heading Your Stop practice result, Value: 1
+									42 text Your Stop practice result
+								43 container
+									44 text Valid  ·  Standard color-plus-marker form  · Form  stop-baseline-01
+								45 text This report describes what happened on this Assessment Practice sequence. It is not an employer score or a personality assessment.
+								46 container
+									47 text Scoring version:  stop_scoring_v1 . Response key:  Space . Physical keyboard self-confirmed; standard timing.
+								48 heading Your responses, Value: 2
+									49 text Your responses
+								50 container
+									51 text You responded to  0  of 60 GO symbols ( 0 %). You missed  60 .
+								52 container
+									53 text You withheld your response to  20  of 20 NO-GO symbols ( 100 %). You made  0  false alarms.
+								54 container
+									55 text Overall,  20  of 80 trials were correct ( 25 %).
+								56 heading Your response timing, Value: 2
+									57 text Your response timing
+								58 text There were no eligible correct GO responses for a response-time summary.
+								59 text Response-time results exclude anticipatory responses and trials with timing anomalies.
+								60 heading What happened over the task, Value: 2
+									61 text What happened over the task
+								62 container
+									63 text From Block 1 to Block 4, overall accuracy changed by  0  percentage points, GO hit rate by  0  points, and false-alarm rate by  0  points.
+								64 text There was not enough clean data for a reliable block comparison.
+								65 container Block results
+									66 table Four hidden 20-trial blocks
+										67 text Four hidden 20-trial blocks
+										68 row
+											69 column header
+												70 text Block
+											71 column header
+												72 text GO correct
+											73 column header
+												74 text NO-GO correct
+											75 column header
+												76 text Median GO response time
+											77 column header
+												78 text Data note
+										79 row
+											80 row header
+												81 text 1
+											82 cell
+												83 text 0  of 15
+											84 cell
+												85 text 5  of 5
+											86 cell
+												87 text Unavailable
+											88 cell
+												89 text Too few eligible GO responses for a timing comparison
+										90 row
+											91 row header
+												92 text 2
+											93 cell
+												94 text 0  of 15
+											95 cell
+												96 text 5  of 5
+											97 cell
+												98 text Unavailable
+											99 cell
+												100 text Too few eligible GO responses for a timing comparison
+										101 row
+											102 row header
+												103 text 3
+											104 cell
+												105 text 0  of 15
+											106 cell
+												107 text 5  of 5
+											108 cell
+												109 text Unavailable
+											110 cell
+												111 text Too few eligible GO responses for a timing comparison
+										112 row
+											113 row header
+												114 text 4
+											115 cell
+												116 text 0  of 15
+											117 cell
+												118 text 5  of 5
+											119 cell
+												120 text Unavailable
+											121 cell
+												122 text Too few eligible GO responses for a timing comparison
+								123 heading After errors, Value: 2
+									124 text After errors
+								125 text There were not enough qualifying trials to describe your response speed after errors.
+								126 heading After GO runs, Value: 2
+									127 text After GO runs
+								128 text Your false-alarm rate was 0% when NO-GO followed at least three GO symbols and 0% on other qualifying NO-GO trials (similar). This describes your responses in this sequence. It does not mean a NO-GO symbol becomes more likely after a run of GO symbols.
+								129 heading Data quality, Value: 2
+									130 text Data quality
+								131 text This session met the completion, focus, input, and timing rules for a valid result.
+								132 text This result is saved in this browser until you delete it, clear site data, or the browser evicts it.
+								133 heading What this result means, Value: 2
+									134 text What this result means
+								135 text It shows your accuracy, response timing, and consistency on one Assessment Practice Stop sequence. It cannot establish a stable attention or impulse-control trait, reproduce a proprietary assessment score, predict employer fit, or tell you whether you will be selected. Device, sequence, familiarity, fatigue, and ordinary variation can affect results.
+								136 button Practise another sequence
+								137 button Back to library
+							138 text Original preparation exercises. Follow the instructions in your invitation.
+			139 pop up button Tab search
+			140 container
+				141 tab group
+					142 tab (selected, settable, boolean) Assessment Practice - Memory usage - 136 MB, Value: on
+						143 button Close
+					144 tab (settable, boolean) Stop L1 local evidence export - Memory usage - 228 MB, Value: off
+						145 button Close
+			146 button New Tab
+			147 button Open Gemini in Chrome
+	148 close button
+	149 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	150 minimize button
+151 menu bar
+	152 Chrome
+	153 File
+	154 Edit
+	155 View
+	156 History
+	157 Bookmarks
+	158 Profiles
+	159 Tab
+	160 Window
+	161 Help
+
+The focused UI element is 41 heading Your Stop practice result, Value: 1

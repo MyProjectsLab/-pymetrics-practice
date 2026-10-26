@@ -1,0 +1,11 @@
+# Lengths Mouth V1.3 — standalone development PASS
+
+Product `b308b732c133055a31b51c8356c8e62ab4e4ff39` was integrated by exact fast-forward on 2026-10-19, with no runtime changes from the independently audited candidate.
+
+[Independent whole-milestone review](../../../../work-evidence/lengths-v13/implementation/independent-b308b73/REVIEW.md) covers A01–A17 through new native and production historical-reset lifecycle checks across all three historical families and explicitly justified unchanged evidence. Audit manifest SHA256: `15c811118f488decbf3fb96e6975a242a5baabf81c40c4d819942cec3a9a432f`. All 478 identity checks and 65 independently rebuilt outputs passed. Prior whole90, Saved/reload and numerical evidence retains its stated scope; it was not rerun merely for this isolated repair.
+
+The failures at `150f7a5` (F1–F4) and `335e33a` (R1) remain historical. The second repair passes; no third-failure design challenge is triggered. Closed envelopes, bounded Continue reclaim, ordered historical publication/recovery, complete original historical reports and fresh-versus-uncertain reset lifecycle are closed within the finite audit scope. Founder-approved mounted-history checks remain local and stop on exit. Historical records retain their original meanings; no legacy rescore or founder-data access occurred.
+
+[Accepted packet](../../../../work-evidence/lengths-v13/packet-2026-10-18/README.md) manifest: `6dd4387b86751e1ead49e85941d94a933e6e08a9f383d2d95085c8fa6a58f0cf`. [Freeze](../../../../work-evidence/lengths-v13/frozen-v13-2026-10-19/FREEZE.json): `51cdebad9312cce9a6d855a94134c0f3219f3917bf4cad020df450ffe0331df2`. Original 46/44 forms, mixed reward opportunities and post-reward descriptive measure are not claims about hidden provider rules or equivalent difficulty.
+
+[Integration record](../../../../work-evidence/lengths-v13/implementation/integration-b308b73/INTEGRATION.json) binds the exact product and preserved dirty governance/reference bytes. Founder acceptance, physical visual/perceptual fidelity, Safari/device/accessibility/speech/storage qualification, full-mock integration, deployment and public release remain open. No push, deployment, release or analytics activation occurred. Full-mock R2 must independently pass with this concrete dependency before its implementation.

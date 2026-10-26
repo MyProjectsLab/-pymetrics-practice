@@ -1,0 +1,66 @@
+
+> assessment-practice@0.0.0 test
+> vitest run src/balloons/training-router.test.ts -t exploratory ordering --silent=false --reporter=verbose
+
+
+ RUN  v4.1.11 /Users/renzo/Documents/Assessment Practice/App
+
+stdout | src/balloons/training-router.test.ts > exploratory ordering probe: 100 block-preserving interleavings per fixture
+Exploratory ordering: 0/2500 primary routes changed; same-profile chronology and block counts preserved.
+
+ ↓ src/balloons/training-router.test.ts > 25 frozen fixtures independently derived from primitive actions > binds the exact frozen 975-round packet
+ ↓ src/balloons/training-router.test.ts > 25 frozen fixtures independently derived from primitive actions > 'outcome_min2': every outcome, denominator, trigger, priority and evidence tie
+ ↓ src/balloons/training-router.test.ts > 25 frozen fixtures independently derived from primitive actions > 'outcome_only1': every outcome, denominator, trigger, priority and evidence tie
+ ↓ src/balloons/training-router.test.ts > 25 frozen fixtures independently derived from primitive actions > 'outcome_delta4': every outcome, denominator, trigger, priority and evidence tie
+ ↓ src/balloons/training-router.test.ts > 25 frozen fixtures independently derived from primitive actions > 'outcome_overlap': every outcome, denominator, trigger, priority and evidence tie
+ ↓ src/balloons/training-router.test.ts > 25 frozen fixtures independently derived from primitive actions > 'information_exact3': every outcome, denominator, trigger, priority and evidence tie
+ ↓ src/balloons/training-router.test.ts > 25 frozen fixtures independently derived from primitive actions > 'information_early2': every outcome, denominator, trigger, priority and evidence tie
+ ↓ src/balloons/training-router.test.ts > 25 frozen fixtures independently derived from primitive actions > 'information_median2': every outcome, denominator, trigger, priority and evidence tie
+ ↓ src/balloons/training-router.test.ts > 25 frozen fixtures independently derived from primitive actions > 'information_late2': every outcome, denominator, trigger, priority and evidence tie
+ ↓ src/balloons/training-router.test.ts > 25 frozen fixtures independently derived from primitive actions > 'information_pair_tie': every outcome, denominator, trigger, priority and evidence tie
+ ↓ src/balloons/training-router.test.ts > 25 frozen fixtures independently derived from primitive actions > 'updating_exact2': every outcome, denominator, trigger, priority and evidence tie
+ ↓ src/balloons/training-router.test.ts > 25 frozen fixtures independently derived from primitive actions > 'updating_early1': every outcome, denominator, trigger, priority and evidence tie
+ ↓ src/balloons/training-router.test.ts > 25 frozen fixtures independently derived from primitive actions > 'updating_range3': every outcome, denominator, trigger, priority and evidence tie
+ ↓ src/balloons/training-router.test.ts > 25 frozen fixtures independently derived from primitive actions > 'updating_late2': every outcome, denominator, trigger, priority and evidence tie
+ ↓ src/balloons/training-router.test.ts > 25 frozen fixtures independently derived from primitive actions > 'consistency_exact6': every outcome, denominator, trigger, priority and evidence tie
+ ↓ src/balloons/training-router.test.ts > 25 frozen fixtures independently derived from primitive actions > 'consistency_iqr5': every outcome, denominator, trigger, priority and evidence tie
+ ↓ src/balloons/training-router.test.ts > 25 frozen fixtures independently derived from primitive actions > 'consistency_n7': every outcome, denominator, trigger, priority and evidence tie
+ ↓ src/balloons/training-router.test.ts > 25 frozen fixtures independently derived from primitive actions > 'consistency_caps_excluded': every outcome, denominator, trigger, priority and evidence tie
+ ↓ src/balloons/training-router.test.ts > 25 frozen fixtures independently derived from primitive actions > 'maintenance_all_zero': every outcome, denominator, trigger, priority and evidence tie
+ ↓ src/balloons/training-router.test.ts > 25 frozen fixtures independently derived from primitive actions > 'maintenance_zero_voluntary': every outcome, denominator, trigger, priority and evidence tie
+ ↓ src/balloons/training-router.test.ts > 25 frozen fixtures independently derived from primitive actions > 'consistency_n8_fractional': every outcome, denominator, trigger, priority and evidence tie
+ ↓ src/balloons/training-router.test.ts > 25 frozen fixtures independently derived from primitive actions > 'information_fractional_median_2_5': every outcome, denominator, trigger, priority and evidence tie
+ ↓ src/balloons/training-router.test.ts > 25 frozen fixtures independently derived from primitive actions > 'consistency_competing_categories': every outcome, denominator, trigger, priority and evidence tie
+ ↓ src/balloons/training-router.test.ts > 25 frozen fixtures independently derived from primitive actions > 'consistency_category_tie': every outcome, denominator, trigger, priority and evidence tie
+ ↓ src/balloons/training-router.test.ts > 25 frozen fixtures independently derived from primitive actions > 'information_over_consistency': every outcome, denominator, trigger, priority and evidence tie
+ ↓ src/balloons/training-router.test.ts > 25 frozen fixtures independently derived from primitive actions > 'pump32_burst_cap_and_loss': every outcome, denominator, trigger, priority and evidence tie
+ ↓ src/balloons/training-router.test.ts > quartiles discard an odd center and preserve exact halves
+ ↓ src/balloons/training-router.test.ts > router fails closed: missing
+ ↓ src/balloons/training-router.test.ts > router fails closed: unsaved
+ ↓ src/balloons/training-router.test.ts > router fails closed: deleted
+ ↓ src/balloons/training-router.test.ts > router fails closed: replacement
+ ↓ src/balloons/training-router.test.ts > router fails closed: incomplete
+ ↓ src/balloons/training-router.test.ts > router fails closed: invalid
+ ↓ src/balloons/training-router.test.ts > router fails closed: replay
+ ↓ src/balloons/training-router.test.ts > router fails closed: corrupt
+ ↓ src/balloons/training-router.test.ts > router fails closed: closed
+ ↓ src/balloons/training-router.test.ts > router fails closed: chain_deleted
+ ↓ src/balloons/training-router.test.ts > BL1 admits zero voluntary and all-zero voluntary; mappings are form-based
+ ↓ src/balloons/training-router.test.ts > BL2 admits zero voluntary and all-zero voluntary; mappings are form-based
+ ↓ src/balloons/training-router.test.ts > BL3 admits zero voluntary and all-zero voluntary; mappings are form-based
+ ↓ src/balloons/training-router.test.ts > report-view events do not change the baseline/router binding
+ ↓ src/balloons/training-router.test.ts > consistency tie uses voluntary count before alphabetical profile
+ ↓ src/balloons/training-router.test.ts > information evidence breaks early-count ties by late median difference before alphabet
+ ↓ src/balloons/training-router.test.ts > raw evidence cannot admit illegal short observations
+ ↓ src/balloons/training-router.test.ts > raw evidence cannot admit illegal round observations
+ ↓ src/balloons/training-router.test.ts > raw evidence cannot admit illegal cap_as_voluntary observations
+ ↓ src/balloons/training-router.test.ts > raw evidence cannot admit illegal burst_as_voluntary observations
+ ↓ src/balloons/training-router.test.ts > raw evidence cannot admit illegal cent observations
+ ↓ src/balloons/training-router.test.ts > raw evidence cannot admit illegal attempt observations
+ ↓ src/balloons/training-router.test.ts > raw evidence cannot admit illegal profile observations
+ ✓ src/balloons/training-router.test.ts > exploratory ordering probe: 100 block-preserving interleavings per fixture 124ms
+
+ Test Files  1 passed (1)
+      Tests  1 passed | 50 skipped (51)
+   Start at  08:18:09
+   Duration  413ms (transform 69ms, setup 22ms, import 79ms, tests 127ms, environment 137ms)

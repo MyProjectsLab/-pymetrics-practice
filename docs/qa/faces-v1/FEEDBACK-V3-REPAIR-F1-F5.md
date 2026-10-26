@@ -1,0 +1,11 @@
+# Faces feedback — grouped F1–F5 developer repair
+
+Base `bd1a98fe24f53e203c7b41d712e8bd25818682c8` failed the independent feedback milestone audit on F1–F5. This is its first grouped repair submission. Original Faces failures d4f5e16, b18c56a and 5636d2e remain separate historical records.
+
+Both report disclosures now use the existing ordered Store publication/action path with revocable descriptors, current-view and owned-tree checks. Incomplete review covers every fixed item factually, including zero-intent and trailing Not shown items, without completed scores, keys, portraits or timed resume. The current label guide retains original cautious feature guidance alongside the new conventions; familiarity copy distinguishes unknown, new-local-record and familiar. Root-v2 exposure accepts only the original exact pair; root-v3 retains the two supported pairs.
+
+Developer checks: 29 focused tests, 44 deterministic model groups and 80 native browser groups pass. These include original counterexamples, both full timing-mode journeys, finite historical/current reports, migration outcomes, disclosure deletion/replacement orders, delayed/canceled publication, late native callbacks, 0/1/13 response incomplete states, all ten help entries, and three familiarity values for both tuples. Type checks and isolated production build pass. Lint passes with three existing warnings outside the changed scope. Frozen packet/resources and unrelated main work are unchanged.
+
+[Full report and failure ledger](../../../../work-evidence/faces-v1/implementation/feedback-v3-repair-f1-f5/REPORT.md), [evidence manifest](../../../../work-evidence/faces-v1/implementation/feedback-v3-repair-f1-f5/MANIFEST.json), and [pre-edit grouped plan](../../../../work-evidence/faces-v1/implementation/feedback-v3-repair-f1-f5/PLAN.md) bind the exact commit and source/build identities. Original failing reproductions and the audit remain preserved.
+
+Developer verification is not an independent PASS. Separate exact-SHA review, founder acceptance, browser/device/accessibility qualification, integration, deployment and release remain open. Production-controller observations use disposable Chromium contexts with synthetic roots; controlled lock/read-delivery injections and separately built Store harness mutations are labeled in the report. No founder browser records were accessed.

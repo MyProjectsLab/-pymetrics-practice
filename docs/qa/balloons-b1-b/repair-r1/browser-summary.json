@@ -1,0 +1,242 @@
+{
+  "evidence": "developer execution against final production build; not an independent audit",
+  "totalPassed": 65,
+  "failed": 0,
+  "suites": [
+    {
+      "file": "r1-results.json",
+      "passed": 7,
+      "cases": [
+        "r1-action-zero",
+        "r1-action",
+        "r1-action_pending",
+        "r1-action-unavailable",
+        "r1-action-held-read",
+        "r1-failed-intent-cleanup",
+        "r1-failed-action-cleanup"
+      ]
+    },
+    {
+      "file": "independent-results.json",
+      "passed": 11,
+      "cases": [
+        "independent-complete-journeys",
+        "healthy-delayed-history-read",
+        "no-notifications-assignment-individual",
+        "no-notifications-assignment-installation",
+        "no-notifications-arm-individual",
+        "no-notifications-arm-installation",
+        "no-notifications-confirm-individual",
+        "no-notifications-confirm-installation",
+        "no-notifications-action-individual",
+        "no-notifications-action-installation",
+        "persistent-intent-failure-recovery"
+      ]
+    },
+    {
+      "file": "supplemental-results.json",
+      "passed": 3,
+      "cases": [
+        "failed-intent-and-cleanup-completes-as-baseline",
+        "native-space-source-and-repeat",
+        "healthy-normal-report-polling"
+      ]
+    },
+    {
+      "file": "repair-boundary-results.json",
+      "passed": 37,
+      "cases": [
+        "repair-absent-assignment-individual-delete-first",
+        "repair-absent-assignment-individual-delivery-first",
+        "repair-absent-assignment-installation-delete-first",
+        "repair-absent-assignment-installation-delivery-first",
+        "repair-absent-arm-individual-delete-first",
+        "repair-absent-arm-individual-delivery-first",
+        "repair-absent-arm-installation-delete-first",
+        "repair-absent-arm-installation-delivery-first",
+        "repair-absent-confirm-individual-delete-first",
+        "repair-absent-confirm-individual-delivery-first",
+        "repair-absent-confirm-installation-delete-first",
+        "repair-absent-confirm-installation-delivery-first",
+        "repair-absent-action-individual-delete-first",
+        "repair-absent-action-individual-delivery-first",
+        "repair-absent-action-installation-delete-first",
+        "repair-absent-action-installation-delivery-first",
+        "repair-delayed-assignment-individual-delete-first",
+        "repair-delayed-assignment-individual-delivery-first",
+        "repair-delayed-assignment-installation-delete-first",
+        "repair-delayed-assignment-installation-delivery-first",
+        "repair-delayed-arm-individual-delete-first",
+        "repair-delayed-arm-individual-delivery-first",
+        "repair-delayed-arm-installation-delete-first",
+        "repair-delayed-arm-installation-delivery-first",
+        "repair-delayed-confirm-individual-delete-first",
+        "repair-delayed-confirm-individual-delivery-first",
+        "repair-delayed-confirm-installation-delete-first",
+        "repair-delayed-confirm-installation-delivery-first",
+        "repair-delayed-action-individual-delete-first",
+        "repair-delayed-action-individual-delivery-first",
+        "repair-delayed-action-installation-delete-first",
+        "repair-delayed-action-installation-delivery-first",
+        "repair-slow-report-absent-individual",
+        "repair-slow-report-absent-installation",
+        "repair-slow-report-delayed-individual",
+        "repair-slow-report-delayed-installation",
+        "repair-native-input-positive-controls"
+      ]
+    },
+    {
+      "file": "repair-control-results.json",
+      "passed": 4,
+      "cases": [
+        "repair-committed-recovery-action_pending",
+        "repair-committed-recovery-action",
+        "repair-committed-recovery-clean-pause",
+        "repair-slow-report-restored-and-fast-stable"
+      ]
+    },
+    {
+      "file": "native-order-results.json",
+      "passed": 1,
+      "cases": [
+        "independent-native-default-order-and-holds"
+      ]
+    },
+    {
+      "file": "timeout-results.json",
+      "passed": 1,
+      "cases": [
+        "independent-report-timeout-later-recovery"
+      ]
+    },
+    {
+      "file": "rp-reload-results.json",
+      "passed": 1,
+      "cases": [
+        "independent-fresh-RP-save-direct-reload"
+      ]
+    }
+  ],
+  "r1": [
+    {
+      "name": "r1-action-zero",
+      "pass": true,
+      "copy": "Balloons practice\n\nForm BL1 \u00b7 Standalone practice\n\nSaved completion verified: all 39 rounds. Open history to review the saved result.\n\nReview saved completion in history\nRound 39. Type 2. Current 0 cents. Banked 0 cents.\nPause and open history",
+      "bankedCents": 0,
+      "eligibleAfterReload": true
+    },
+    {
+      "name": "r1-action",
+      "pass": true,
+      "copy": "Balloons practice\n\nForm BL1 \u00b7 Standalone practice\n\nSaved completion verified: all 39 rounds. Open history to review the saved result.\n\nReview saved completion in history\nRound 39. Type 2. Current 0 cents. Banked 0 cents.\nPause and open history",
+      "bankedCents": 5,
+      "eligibleAfterReload": true
+    },
+    {
+      "name": "r1-action_pending",
+      "pass": true,
+      "copy": "Balloons practice\n\nForm BL1 \u00b7 Standalone practice \u00b7 Review only; not eligible as a baseline\n\nSaved journal checked. Unsaved or unconfirmed work was not replayed. Controls are paused. This attempt is not eligible as a durable baseline. Only committed actions can be recovered.\n\nLast visible committed state: round 39, 1 successful pumps, 0 cents banked. Unconfirmed or unsaved work cannot establish a baseline.\n\nCheck and resume saved session\nRound 39. Type 2. Current 0 cents. Banked 0 cents.\nPause and open history",
+      "bankedCents": 5,
+      "eligibleAfterReload": false
+    },
+    {
+      "name": "r1-action-unavailable",
+      "pass": true,
+      "copy": "Balloons practice\n\nForm BL1 \u00b7 Standalone practice\n\nSave status needs checking. Controls are paused until the saved session can be verified.\n\nCheck save status\nRound 39. Type 2. Current 0 cents. Banked 0 cents.\nPause and open history",
+      "bankedCents": 5,
+      "eligibleAfterReload": true
+    },
+    {
+      "name": "r1-action-held-read",
+      "pass": true,
+      "copy": "Balloons practice\n\nForm BL1 \u00b7 Standalone practice\n\nSave status needs checking. Controls are paused until the saved session can be verified.\n\nCheck save status\nRound 39. Type 2. Current 0 cents. Banked 0 cents.\nPause and open history",
+      "bankedCents": 5,
+      "eligibleAfterReload": true
+    },
+    {
+      "name": "r1-failed-intent-cleanup",
+      "pass": true,
+      "copy": "Balloons practice\n\nForm BL1 \u00b7 Standalone practice\n\nA local write failed. Save status needs checking. Controls are paused until the saved session can be verified.\n\nCheck save status\nRound 39. Type 2. Current 0 cents. Banked 0 cents.\nPause and open history",
+      "bankedCents": 5,
+      "eligibleAfterReload": false
+    },
+    {
+      "name": "r1-failed-action-cleanup",
+      "pass": true,
+      "copy": "Balloons practice\n\nForm BL1 \u00b7 Standalone practice\n\nA local write failed. Save status needs checking. Controls are paused until the saved session can be verified.\n\nCheck save status\nRound 39. Type 2. Current 0 cents. Banked 0 cents.\nPause and open history",
+      "bankedCents": 5,
+      "eligibleAfterReload": false
+    }
+  ],
+  "arithmetic": [
+    {
+      "label": "fresh developer BL journey",
+      "form": "BL1",
+      "rounds": 39,
+      "coreEvents": 303,
+      "durableEvents": 603,
+      "actions": 262,
+      "totals": [
+        39,
+        26,
+        13,
+        455,
+        470,
+        198,
+        185,
+        26,
+        6,
+        0
+      ],
+      "exposure": "form_exposed",
+      "confirmed": 39,
+      "visibleTablesMatch": true
+    },
+    {
+      "label": "fresh developer final root BL1",
+      "form": "BL1",
+      "rounds": 39,
+      "coreEvents": 303,
+      "durableEvents": 605,
+      "actions": 262,
+      "totals": [
+        39,
+        26,
+        13,
+        455,
+        470,
+        198,
+        185,
+        26,
+        6,
+        0
+      ],
+      "exposure": "form_exposed",
+      "confirmed": 39,
+      "visibleTablesMatch": false
+    },
+    {
+      "label": "fresh developer final root RP1",
+      "form": "RP1",
+      "rounds": 39,
+      "coreEvents": 118,
+      "durableEvents": 234,
+      "actions": 77,
+      "totals": [
+        39,
+        39,
+        0,
+        0,
+        0,
+        0,
+        0,
+        39,
+        39,
+        0
+      ],
+      "exposure": "form_exposed",
+      "confirmed": 39,
+      "visibleTablesMatch": false
+    }
+  ]
+}

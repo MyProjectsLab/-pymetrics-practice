@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "rounds": 126,
+  "events": 708,
+  "inventories": [
+    {
+      "inventory": "D-maintenance",
+      "rounds": 18,
+      "events": 97,
+      "banked": 155,
+      "lost": 145
+    },
+    {
+      "inventory": "D-outcome",
+      "rounds": 18,
+      "events": 108,
+      "banked": 165,
+      "lost": 180
+    },
+    {
+      "inventory": "D-information",
+      "rounds": 18,
+      "events": 74,
+      "banked": 145,
+      "lost": 40
+    },
+    {
+      "inventory": "D-updating",
+      "rounds": 18,
+      "events": 113,
+      "banked": 315,
+      "lost": 70
+    },
+    {
+      "inventory": "D-consistency-A",
+      "rounds": 18,
+      "events": 75,
+      "banked": 135,
+      "lost": 55
+    },
+    {
+      "inventory": "D-consistency-B",
+      "rounds": 18,
+      "events": 92,
+      "banked": 140,
+      "lost": 135
+    },
+    {
+      "inventory": "D-consistency-C",
+      "rounds": 18,
+      "events": 149,
+      "banked": 355,
+      "lost": 210
+    }
+  ]
+}

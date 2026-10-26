@@ -1,0 +1,271 @@
+{
+  "target": "uncommitted F3-R3 repair from 936952806f95fafdbdf3ebc7af2c613381cd21ff",
+  "browser": "145.0.7632.6",
+  "source": "Auditor's independent-probes.mjs copied to /private/tmp/arrows-a6-f3r3-local; native-clock Chromium; full raw results retained there.",
+  "groups": {
+    "local": [
+      {
+        "name": "underlay_play_none",
+        "pass": true,
+        "ready": true,
+        "phase": "stimulus",
+        "reason": null,
+        "ownerHeld": true,
+        "exactStyle": true
+      },
+      {
+        "name": "underlay_play_auto",
+        "pass": true,
+        "ready": true,
+        "phase": "stimulus",
+        "reason": null,
+        "ownerHeld": true,
+        "exactStyle": true
+      },
+      {
+        "name": "underlay_admission_none",
+        "pass": true,
+        "ready": true,
+        "admitted": true,
+        "exactStyle": true
+      },
+      {
+        "name": "underlay_admission_auto",
+        "pass": true,
+        "ready": true,
+        "admitted": true,
+        "exactStyle": true
+      },
+      {
+        "name": "nested_behind_play",
+        "pass": true,
+        "ready": true,
+        "phase": "stimulus",
+        "reason": null,
+        "ownerHeld": true,
+        "exactStyle": true
+      },
+      {
+        "name": "nested_behind_admission",
+        "pass": true,
+        "ready": true,
+        "admitted": true,
+        "exactStyle": true
+      },
+      {
+        "name": "nested_above_play",
+        "pass": true,
+        "ready": false,
+        "phase": "invalid",
+        "reason": "viewport",
+        "ownerHeld": false,
+        "exactStyle": true
+      },
+      {
+        "name": "nested_above_admission",
+        "pass": true,
+        "ready": false,
+        "admitted": false,
+        "exactStyle": true,
+        "error": "Error: The Arrows display is not fully visible. Resize or zoom out before starting."
+      },
+      {
+        "name": "healthy_app_underlay_keyboard",
+        "pass": true,
+        "phase": "stimulus",
+        "reason": null,
+        "exactStyle": true,
+        "layoutMaxMs": 1
+      },
+      {
+        "name": "healthy_app_underlay_pointer",
+        "pass": true,
+        "phase": "stimulus",
+        "reason": null,
+        "exactStyle": true,
+        "layoutMaxMs": 1
+      }
+    ],
+    "front": [
+      {
+        "name": "overlay_cue_none",
+        "pass": true,
+        "ready": false,
+        "phase": "invalid",
+        "reason": "viewport",
+        "ownerHeld": false,
+        "exactStyle": true
+      },
+      {
+        "name": "overlay_cue_auto",
+        "pass": true,
+        "ready": false,
+        "phase": "invalid",
+        "reason": "viewport",
+        "ownerHeld": false,
+        "exactStyle": true
+      },
+      {
+        "name": "overlay_keyword_none",
+        "pass": true,
+        "ready": false,
+        "phase": "invalid",
+        "reason": "viewport",
+        "ownerHeld": false,
+        "exactStyle": true
+      },
+      {
+        "name": "overlay_keyword_auto",
+        "pass": true,
+        "ready": false,
+        "phase": "invalid",
+        "reason": "viewport",
+        "ownerHeld": false,
+        "exactStyle": true
+      },
+      {
+        "name": "overlay_symbol_none",
+        "pass": true,
+        "ready": false,
+        "phase": "invalid",
+        "reason": "viewport",
+        "ownerHeld": false,
+        "exactStyle": true
+      },
+      {
+        "name": "overlay_symbol_auto",
+        "pass": true,
+        "ready": false,
+        "phase": "invalid",
+        "reason": "viewport",
+        "ownerHeld": false,
+        "exactStyle": true
+      },
+      {
+        "name": "overlay_control_none",
+        "pass": true,
+        "ready": false,
+        "phase": "invalid",
+        "reason": "viewport",
+        "ownerHeld": false,
+        "exactStyle": true
+      },
+      {
+        "name": "overlay_control_auto",
+        "pass": true,
+        "ready": false,
+        "phase": "invalid",
+        "reason": "viewport",
+        "ownerHeld": false,
+        "exactStyle": true
+      },
+      {
+        "name": "stage_child_keyword_none",
+        "pass": true,
+        "ready": false,
+        "phase": "invalid",
+        "reason": "viewport",
+        "ownerHeld": false,
+        "exactStyle": true
+      },
+      {
+        "name": "stage_child_keyword_auto",
+        "pass": true,
+        "ready": false,
+        "phase": "invalid",
+        "reason": "viewport",
+        "ownerHeld": false,
+        "exactStyle": true
+      },
+      {
+        "name": "nested_behind_play",
+        "pass": true,
+        "ready": true,
+        "phase": "stimulus",
+        "reason": null,
+        "ownerHeld": true,
+        "exactStyle": true
+      },
+      {
+        "name": "nested_behind_admission",
+        "pass": true,
+        "ready": true,
+        "admitted": true,
+        "exactStyle": true
+      },
+      {
+        "name": "nested_above_play",
+        "pass": true,
+        "ready": false,
+        "phase": "invalid",
+        "reason": "viewport",
+        "ownerHeld": false,
+        "exactStyle": true
+      },
+      {
+        "name": "nested_above_admission",
+        "pass": true,
+        "ready": false,
+        "admitted": false,
+        "exactStyle": true,
+        "error": "Error: The Arrows display is not fully visible. Resize or zoom out before starting."
+      }
+    ],
+    "style": [
+      {
+        "name": "style_absent_behind",
+        "pass": true,
+        "ready": true,
+        "phase": "stimulus",
+        "reason": null,
+        "ownerHeld": true,
+        "exactStyle": true
+      },
+      {
+        "name": "style_absent_above",
+        "pass": true,
+        "ready": false,
+        "phase": "invalid",
+        "reason": "viewport",
+        "ownerHeld": false,
+        "exactStyle": true
+      },
+      {
+        "name": "style_empty_behind",
+        "pass": true,
+        "ready": true,
+        "phase": "stimulus",
+        "reason": null,
+        "ownerHeld": true,
+        "exactStyle": true
+      },
+      {
+        "name": "style_empty_above",
+        "pass": true,
+        "ready": false,
+        "phase": "invalid",
+        "reason": "viewport",
+        "ownerHeld": false,
+        "exactStyle": true
+      },
+      {
+        "name": "style_unusual_behind",
+        "pass": true,
+        "ready": true,
+        "phase": "stimulus",
+        "reason": null,
+        "ownerHeld": true,
+        "exactStyle": true
+      },
+      {
+        "name": "style_unusual_above",
+        "pass": true,
+        "ready": false,
+        "phase": "invalid",
+        "reason": "viewport",
+        "ownerHeld": false,
+        "exactStyle": true
+      }
+    ]
+  }
+}

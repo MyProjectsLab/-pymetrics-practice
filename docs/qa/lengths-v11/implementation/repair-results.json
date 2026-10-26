@@ -1,0 +1,128 @@
+[
+  {
+    "name": "pending committed arm page_exit cancellation cannot start late",
+    "status": "PASS",
+    "detail": {
+      "reason": "page_exit",
+      "noLatePlay": true,
+      "counter": 1
+    }
+  },
+  {
+    "name": "pending committed arm hidden cancellation cannot start late",
+    "status": "PASS",
+    "detail": {
+      "reason": "hidden",
+      "noLatePlay": true,
+      "counter": 1
+    }
+  },
+  {
+    "name": "pending committed arm blur cancellation cannot start late",
+    "status": "PASS",
+    "detail": {
+      "reason": "blur",
+      "noLatePlay": true,
+      "counter": 1
+    }
+  },
+  {
+    "name": "selected held key during arm cleans ownership; same request retry and fresh release",
+    "status": "PASS",
+    "detail": {
+      "sameRequest": true,
+      "counter": 1,
+      "heldInherited": true,
+      "ownerReusable": true
+    }
+  },
+  {
+    "name": "exact DOM confirmation missing-face",
+    "status": "PASS",
+    "detail": {
+      "failure": "missing-face",
+      "reason": "viewport",
+      "events": [
+        "prepared",
+        "form_assigned",
+        "armed",
+        "set_started",
+        "fixation_confirmed",
+        "invalidated"
+      ]
+    }
+  },
+  {
+    "name": "exact DOM confirmation retained-face",
+    "status": "PASS",
+    "detail": {
+      "failure": "retained-face",
+      "reason": "viewport",
+      "events": [
+        "prepared",
+        "form_assigned",
+        "armed",
+        "set_started",
+        "fixation_confirmed",
+        "face_presented",
+        "response",
+        "input_released",
+        "invalidated"
+      ]
+    }
+  },
+  {
+    "name": "exact DOM confirmation missing-positive",
+    "status": "PASS",
+    "detail": {
+      "failure": "missing-positive",
+      "reason": "viewport",
+      "events": [
+        "fixation_confirmed",
+        "face_presented",
+        "response",
+        "input_released",
+        "face_removed",
+        "trial_resolved",
+        "invalidated"
+      ]
+    }
+  },
+  {
+    "name": "exact DOM confirmation retained-feedback",
+    "status": "PASS",
+    "detail": {
+      "failure": "retained-feedback",
+      "reason": "viewport",
+      "events": [
+        "fixation_confirmed",
+        "face_presented",
+        "response",
+        "input_released",
+        "face_removed",
+        "trial_resolved",
+        "feedback_presented",
+        "reward_earned",
+        "invalidated"
+      ]
+    }
+  },
+  {
+    "name": "same delayed frame factual onset before failure monitor-first",
+    "status": "PASS",
+    "detail": {
+      "order": "monitor-first",
+      "onsetBeforeInvalid": true,
+      "reason": "frame_gap"
+    }
+  },
+  {
+    "name": "same delayed frame factual onset before failure stage-first",
+    "status": "PASS",
+    "detail": {
+      "order": "stage-first",
+      "onsetBeforeInvalid": true,
+      "reason": "frame_gap"
+    }
+  }
+]

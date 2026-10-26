@@ -1,0 +1,31 @@
+{
+  "version": "money_exchange_1_forms_v1_0",
+  "generator": "money_exchange_1_generator_v1_0",
+  "forms": [
+    {
+      "id": "ME1-1",
+      "returnBps": 4100
+    },
+    {
+      "id": "ME1-2",
+      "returnBps": 2000
+    },
+    {
+      "id": "ME1-3",
+      "returnBps": 6500
+    },
+    {
+      "id": "ME1-4",
+      "returnBps": 0
+    },
+    {
+      "id": "ME1-5",
+      "returnBps": 8000
+    },
+    {
+      "id": "ME1-6",
+      "returnBps": 3500
+    }
+  ],
+  "payloadSha256": "cf4c07b085e883bce0ddcaea98fd4a5e4571ebf968a9ad1f440d81da40461cb0"
+}

@@ -1,0 +1,838 @@
+{
+  "version": "digits_storage_v1_1",
+  "installationId": "d144e5df-6a7c-485a-a8bc-747df0b2ae29",
+  "revision": 7,
+  "counters": {
+    "visual": 2,
+    "auditory": 0
+  },
+  "attempts": {
+    "9f485eb5-f4ec-4c81-aa82-c5f0aa68d91f": {
+      "requestId": "54f8653d-57ed-4d35-9a57-4fcf8ceff203",
+      "sessionId": "9f485eb5-f4ec-4c81-aa82-c5f0aa68d91f",
+      "mode": "visual",
+      "ordinal": 1,
+      "createdAtWallMs": 1791486719938,
+      "arm": {
+        "specificationVersion": "digits_spec_v1_1",
+        "scoringVersion": "digits_scoring_v1_1",
+        "form": {
+          "id": "DV1",
+          "mode": "visual",
+          "seed": 3512795137,
+          "version": "digits_forms_v1_1",
+          "generatorVersion": "digits_constructor_v1_1",
+          "manifestDigest": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+        },
+        "identity": {
+          "installationId": "d144e5df-6a7c-485a-a8bc-747df0b2ae29",
+          "sessionId": "9f485eb5-f4ec-4c81-aa82-c5f0aa68d91f",
+          "requestId": "54f8653d-57ed-4d35-9a57-4fcf8ceff203",
+          "clockDomainId": "3924fbbb-dbeb-40f1-b1ac-7ff4e042c5e0",
+          "route": "standalone"
+        },
+        "profile": {
+          "mode": "visual",
+          "entryWindow": 20000,
+          "highContrast": false,
+          "reducedMotion": false,
+          "entryMethod": "keyboard",
+          "assistedEntryDeclared": false,
+          "voice": null,
+          "browserContext": {
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36",
+            "viewportWidth": 1280,
+            "viewportHeight": 800,
+            "devicePixelRatio": 1
+          }
+        },
+        "armedAtMs": 929.8000000715256,
+        "phase": "armed",
+        "trialIndex": 1,
+        "digitIndex": 0,
+        "length": 4,
+        "target": null,
+        "presentedTargets": [],
+        "wrongCount": 0,
+        "completionReason": null,
+        "presentedTrials": 0,
+        "closed": [],
+        "entryOpenedMs": null,
+        "entryDeadlineMs": null,
+        "nextDueMs": null,
+        "digitOnsetMs": null,
+        "speechStartMs": null,
+        "lastFrameMs": null,
+        "draft": "",
+        "draftAssisted": false,
+        "invalidReason": null,
+        "commands": [],
+        "events": [
+          {
+            "schemaVersion": "digits_event_v1_1",
+            "installationId": "d144e5df-6a7c-485a-a8bc-747df0b2ae29",
+            "sessionId": "9f485eb5-f4ec-4c81-aa82-c5f0aa68d91f",
+            "formId": "DV1",
+            "clockDomainId": "3924fbbb-dbeb-40f1-b1ac-7ff4e042c5e0",
+            "sequenceNumber": 1,
+            "block": 0,
+            "trialIndex": 1,
+            "atMs": 929.8000000715256,
+            "type": "prepared",
+            "detail": {
+              "mode": "visual",
+              "entryWindow": 20000
+            }
+          },
+          {
+            "schemaVersion": "digits_event_v1_1",
+            "installationId": "d144e5df-6a7c-485a-a8bc-747df0b2ae29",
+            "sessionId": "9f485eb5-f4ec-4c81-aa82-c5f0aa68d91f",
+            "formId": "DV1",
+            "clockDomainId": "3924fbbb-dbeb-40f1-b1ac-7ff4e042c5e0",
+            "sequenceNumber": 2,
+            "block": 0,
+            "trialIndex": 1,
+            "atMs": 929.8000000715256,
+            "type": "form_assigned",
+            "detail": {
+              "formId": "DV1",
+              "formsVersion": "digits_forms_v1_1",
+              "generatorVersion": "digits_constructor_v1_1",
+              "manifestDigest": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+            }
+          },
+          {
+            "schemaVersion": "digits_event_v1_1",
+            "installationId": "d144e5df-6a7c-485a-a8bc-747df0b2ae29",
+            "sessionId": "9f485eb5-f4ec-4c81-aa82-c5f0aa68d91f",
+            "formId": "DV1",
+            "clockDomainId": "3924fbbb-dbeb-40f1-b1ac-7ff4e042c5e0",
+            "sequenceNumber": 3,
+            "block": 0,
+            "trialIndex": 1,
+            "atMs": 929.8000000715256,
+            "type": "armed",
+            "detail": {
+              "profile": "{\"mode\":\"visual\",\"entryWindow\":20000,\"highContrast\":false,\"reducedMotion\":false,\"entryMethod\":\"keyboard\",\"assistedEntryDeclared\":false,\"voice\":null,\"browserContext\":{\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36\",\"viewportWidth\":1280,\"viewportHeight\":800,\"devicePixelRatio\":1}}"
+            }
+          }
+        ]
+      },
+      "snapshot": {
+        "revision": 2,
+        "kind": "terminal",
+        "state": {
+          "specificationVersion": "digits_spec_v1_1",
+          "scoringVersion": "digits_scoring_v1_1",
+          "form": {
+            "id": "DV1",
+            "mode": "visual",
+            "seed": 3512795137,
+            "version": "digits_forms_v1_1",
+            "generatorVersion": "digits_constructor_v1_1",
+            "manifestDigest": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+          },
+          "identity": {
+            "installationId": "d144e5df-6a7c-485a-a8bc-747df0b2ae29",
+            "sessionId": "9f485eb5-f4ec-4c81-aa82-c5f0aa68d91f",
+            "requestId": "54f8653d-57ed-4d35-9a57-4fcf8ceff203",
+            "clockDomainId": "3924fbbb-dbeb-40f1-b1ac-7ff4e042c5e0",
+            "route": "standalone"
+          },
+          "profile": {
+            "mode": "visual",
+            "entryWindow": 20000,
+            "highContrast": false,
+            "reducedMotion": false,
+            "entryMethod": "keyboard",
+            "assistedEntryDeclared": false,
+            "voice": null,
+            "browserContext": {
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36",
+              "viewportWidth": 1280,
+              "viewportHeight": 800,
+              "devicePixelRatio": 1
+            }
+          },
+          "armedAtMs": 929.8000000715256,
+          "phase": "invalid",
+          "trialIndex": 1,
+          "digitIndex": 0,
+          "length": 4,
+          "target": null,
+          "presentedTargets": [],
+          "wrongCount": 0,
+          "completionReason": null,
+          "presentedTrials": 0,
+          "closed": [],
+          "entryOpenedMs": null,
+          "entryDeadlineMs": null,
+          "nextDueMs": null,
+          "digitOnsetMs": null,
+          "speechStartMs": null,
+          "lastFrameMs": null,
+          "draft": "",
+          "draftAssisted": false,
+          "invalidReason": "blur",
+          "commands": [
+            {
+              "kind": "invalidate",
+              "atMs": 949.5,
+              "reason": "blur"
+            }
+          ],
+          "events": [
+            {
+              "schemaVersion": "digits_event_v1_1",
+              "installationId": "d144e5df-6a7c-485a-a8bc-747df0b2ae29",
+              "sessionId": "9f485eb5-f4ec-4c81-aa82-c5f0aa68d91f",
+              "formId": "DV1",
+              "clockDomainId": "3924fbbb-dbeb-40f1-b1ac-7ff4e042c5e0",
+              "sequenceNumber": 1,
+              "block": 0,
+              "trialIndex": 1,
+              "atMs": 929.8000000715256,
+              "type": "prepared",
+              "detail": {
+                "mode": "visual",
+                "entryWindow": 20000
+              }
+            },
+            {
+              "schemaVersion": "digits_event_v1_1",
+              "installationId": "d144e5df-6a7c-485a-a8bc-747df0b2ae29",
+              "sessionId": "9f485eb5-f4ec-4c81-aa82-c5f0aa68d91f",
+              "formId": "DV1",
+              "clockDomainId": "3924fbbb-dbeb-40f1-b1ac-7ff4e042c5e0",
+              "sequenceNumber": 2,
+              "block": 0,
+              "trialIndex": 1,
+              "atMs": 929.8000000715256,
+              "type": "form_assigned",
+              "detail": {
+                "formId": "DV1",
+                "formsVersion": "digits_forms_v1_1",
+                "generatorVersion": "digits_constructor_v1_1",
+                "manifestDigest": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+              }
+            },
+            {
+              "schemaVersion": "digits_event_v1_1",
+              "installationId": "d144e5df-6a7c-485a-a8bc-747df0b2ae29",
+              "sessionId": "9f485eb5-f4ec-4c81-aa82-c5f0aa68d91f",
+              "formId": "DV1",
+              "clockDomainId": "3924fbbb-dbeb-40f1-b1ac-7ff4e042c5e0",
+              "sequenceNumber": 3,
+              "block": 0,
+              "trialIndex": 1,
+              "atMs": 929.8000000715256,
+              "type": "armed",
+              "detail": {
+                "profile": "{\"mode\":\"visual\",\"entryWindow\":20000,\"highContrast\":false,\"reducedMotion\":false,\"entryMethod\":\"keyboard\",\"assistedEntryDeclared\":false,\"voice\":null,\"browserContext\":{\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36\",\"viewportWidth\":1280,\"viewportHeight\":800,\"devicePixelRatio\":1}}"
+              }
+            },
+            {
+              "schemaVersion": "digits_event_v1_1",
+              "installationId": "d144e5df-6a7c-485a-a8bc-747df0b2ae29",
+              "sessionId": "9f485eb5-f4ec-4c81-aa82-c5f0aa68d91f",
+              "formId": "DV1",
+              "clockDomainId": "3924fbbb-dbeb-40f1-b1ac-7ff4e042c5e0",
+              "sequenceNumber": 4,
+              "block": 0,
+              "trialIndex": 1,
+              "atMs": 949.5,
+              "type": "invalidated",
+              "detail": {
+                "reason": "blur"
+              }
+            }
+          ]
+        },
+        "review": {
+          "status": "invalid",
+          "reason": "blur",
+          "presented": 0,
+          "closed": 0,
+          "unresolved": 0
+        }
+      }
+    },
+    "42bd50d5-a7a7-4892-8f26-bf69317f449a": {
+      "requestId": "2fe02696-e11d-4ff0-9015-322d3fda0960",
+      "sessionId": "42bd50d5-a7a7-4892-8f26-bf69317f449a",
+      "mode": "visual",
+      "ordinal": 2,
+      "createdAtWallMs": 1791486720289,
+      "arm": {
+        "specificationVersion": "digits_spec_v1_1",
+        "scoringVersion": "digits_scoring_v1_1",
+        "form": {
+          "id": "DV2",
+          "mode": "visual",
+          "seed": 3512795138,
+          "version": "digits_forms_v1_1",
+          "generatorVersion": "digits_constructor_v1_1",
+          "manifestDigest": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+        },
+        "identity": {
+          "installationId": "d144e5df-6a7c-485a-a8bc-747df0b2ae29",
+          "sessionId": "42bd50d5-a7a7-4892-8f26-bf69317f449a",
+          "requestId": "2fe02696-e11d-4ff0-9015-322d3fda0960",
+          "clockDomainId": "9d80c1c0-2c5f-4ebb-9d36-ff3ac59b9376",
+          "route": "standalone"
+        },
+        "profile": {
+          "mode": "visual",
+          "entryWindow": 20000,
+          "highContrast": false,
+          "reducedMotion": false,
+          "entryMethod": "keyboard",
+          "assistedEntryDeclared": false,
+          "voice": null,
+          "browserContext": {
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36",
+            "viewportWidth": 1280,
+            "viewportHeight": 800,
+            "devicePixelRatio": 1
+          }
+        },
+        "armedAtMs": 1280.8999999761581,
+        "phase": "armed",
+        "trialIndex": 1,
+        "digitIndex": 0,
+        "length": 4,
+        "target": null,
+        "presentedTargets": [],
+        "wrongCount": 0,
+        "completionReason": null,
+        "presentedTrials": 0,
+        "closed": [],
+        "entryOpenedMs": null,
+        "entryDeadlineMs": null,
+        "nextDueMs": null,
+        "digitOnsetMs": null,
+        "speechStartMs": null,
+        "lastFrameMs": null,
+        "draft": "",
+        "draftAssisted": false,
+        "invalidReason": null,
+        "commands": [],
+        "events": [
+          {
+            "schemaVersion": "digits_event_v1_1",
+            "installationId": "d144e5df-6a7c-485a-a8bc-747df0b2ae29",
+            "sessionId": "42bd50d5-a7a7-4892-8f26-bf69317f449a",
+            "formId": "DV2",
+            "clockDomainId": "9d80c1c0-2c5f-4ebb-9d36-ff3ac59b9376",
+            "sequenceNumber": 1,
+            "block": 0,
+            "trialIndex": 1,
+            "atMs": 1280.8999999761581,
+            "type": "prepared",
+            "detail": {
+              "mode": "visual",
+              "entryWindow": 20000
+            }
+          },
+          {
+            "schemaVersion": "digits_event_v1_1",
+            "installationId": "d144e5df-6a7c-485a-a8bc-747df0b2ae29",
+            "sessionId": "42bd50d5-a7a7-4892-8f26-bf69317f449a",
+            "formId": "DV2",
+            "clockDomainId": "9d80c1c0-2c5f-4ebb-9d36-ff3ac59b9376",
+            "sequenceNumber": 2,
+            "block": 0,
+            "trialIndex": 1,
+            "atMs": 1280.8999999761581,
+            "type": "form_assigned",
+            "detail": {
+              "formId": "DV2",
+              "formsVersion": "digits_forms_v1_1",
+              "generatorVersion": "digits_constructor_v1_1",
+              "manifestDigest": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+            }
+          },
+          {
+            "schemaVersion": "digits_event_v1_1",
+            "installationId": "d144e5df-6a7c-485a-a8bc-747df0b2ae29",
+            "sessionId": "42bd50d5-a7a7-4892-8f26-bf69317f449a",
+            "formId": "DV2",
+            "clockDomainId": "9d80c1c0-2c5f-4ebb-9d36-ff3ac59b9376",
+            "sequenceNumber": 3,
+            "block": 0,
+            "trialIndex": 1,
+            "atMs": 1280.8999999761581,
+            "type": "armed",
+            "detail": {
+              "profile": "{\"mode\":\"visual\",\"entryWindow\":20000,\"highContrast\":false,\"reducedMotion\":false,\"entryMethod\":\"keyboard\",\"assistedEntryDeclared\":false,\"voice\":null,\"browserContext\":{\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36\",\"viewportWidth\":1280,\"viewportHeight\":800,\"devicePixelRatio\":1}}"
+            }
+          }
+        ]
+      },
+      "snapshot": {
+        "revision": 6,
+        "kind": "terminal",
+        "state": {
+          "specificationVersion": "digits_spec_v1_1",
+          "scoringVersion": "digits_scoring_v1_1",
+          "form": {
+            "id": "DV2",
+            "mode": "visual",
+            "seed": 3512795138,
+            "version": "digits_forms_v1_1",
+            "generatorVersion": "digits_constructor_v1_1",
+            "manifestDigest": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+          },
+          "identity": {
+            "installationId": "d144e5df-6a7c-485a-a8bc-747df0b2ae29",
+            "sessionId": "42bd50d5-a7a7-4892-8f26-bf69317f449a",
+            "requestId": "2fe02696-e11d-4ff0-9015-322d3fda0960",
+            "clockDomainId": "9d80c1c0-2c5f-4ebb-9d36-ff3ac59b9376",
+            "route": "standalone"
+          },
+          "profile": {
+            "mode": "visual",
+            "entryWindow": 20000,
+            "highContrast": false,
+            "reducedMotion": false,
+            "entryMethod": "keyboard",
+            "assistedEntryDeclared": false,
+            "voice": null,
+            "browserContext": {
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36",
+              "viewportWidth": 1280,
+              "viewportHeight": 800,
+              "devicePixelRatio": 1
+            }
+          },
+          "armedAtMs": 1280.8999999761581,
+          "phase": "invalid",
+          "trialIndex": 1,
+          "digitIndex": 4,
+          "length": 3,
+          "target": "4555",
+          "presentedTargets": [
+            "4555"
+          ],
+          "wrongCount": 1,
+          "completionReason": null,
+          "presentedTrials": 1,
+          "closed": [
+            {
+              "index": 1,
+              "target": "4555",
+              "answer": "",
+              "skipped": true,
+              "timedOut": false,
+              "assistedEntry": false,
+              "source": "keyboard",
+              "exactCorrect": false
+            }
+          ],
+          "entryOpenedMs": 5747.5,
+          "entryDeadlineMs": 25747.5,
+          "nextDueMs": null,
+          "digitOnsetMs": null,
+          "speechStartMs": null,
+          "lastFrameMs": 5747.5,
+          "draft": "",
+          "draftAssisted": false,
+          "invalidReason": "candidate_ended",
+          "commands": [
+            {
+              "kind": "start",
+              "atMs": 1296.3999999761581
+            },
+            {
+              "kind": "visual_onset",
+              "dueMs": 1296.3999999761581,
+              "atMs": 1313.3000000715256
+            },
+            {
+              "kind": "visual_offset",
+              "dueMs": 2013.3000000715256,
+              "atMs": 2029.7000000476837
+            },
+            {
+              "kind": "visual_onset",
+              "dueMs": 2279.7000000476837,
+              "atMs": 2296.7000000476837
+            },
+            {
+              "kind": "visual_offset",
+              "dueMs": 2996.7000000476837,
+              "atMs": 3013
+            },
+            {
+              "kind": "visual_onset",
+              "dueMs": 3263,
+              "atMs": 3279.7000000476837
+            },
+            {
+              "kind": "visual_offset",
+              "dueMs": 3979.7000000476837,
+              "atMs": 3996.3000000715256
+            },
+            {
+              "kind": "visual_onset",
+              "dueMs": 4246.300000071526,
+              "atMs": 4263
+            },
+            {
+              "kind": "visual_offset",
+              "dueMs": 4963,
+              "atMs": 4979.600000023842
+            },
+            {
+              "kind": "entry_opened",
+              "dueMs": 5729.600000023842,
+              "atMs": 5747.5
+            },
+            {
+              "kind": "skip",
+              "atMs": 5783.899999976158
+            },
+            {
+              "kind": "invalidate",
+              "atMs": 5849.5,
+              "reason": "candidate_ended"
+            }
+          ],
+          "events": [
+            {
+              "schemaVersion": "digits_event_v1_1",
+              "installationId": "d144e5df-6a7c-485a-a8bc-747df0b2ae29",
+              "sessionId": "42bd50d5-a7a7-4892-8f26-bf69317f449a",
+              "formId": "DV2",
+              "clockDomainId": "9d80c1c0-2c5f-4ebb-9d36-ff3ac59b9376",
+              "sequenceNumber": 1,
+              "block": 0,
+              "trialIndex": 1,
+              "atMs": 1280.8999999761581,
+              "type": "prepared",
+              "detail": {
+                "mode": "visual",
+                "entryWindow": 20000
+              }
+            },
+            {
+              "schemaVersion": "digits_event_v1_1",
+              "installationId": "d144e5df-6a7c-485a-a8bc-747df0b2ae29",
+              "sessionId": "42bd50d5-a7a7-4892-8f26-bf69317f449a",
+              "formId": "DV2",
+              "clockDomainId": "9d80c1c0-2c5f-4ebb-9d36-ff3ac59b9376",
+              "sequenceNumber": 2,
+              "block": 0,
+              "trialIndex": 1,
+              "atMs": 1280.8999999761581,
+              "type": "form_assigned",
+              "detail": {
+                "formId": "DV2",
+                "formsVersion": "digits_forms_v1_1",
+                "generatorVersion": "digits_constructor_v1_1",
+                "manifestDigest": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+              }
+            },
+            {
+              "schemaVersion": "digits_event_v1_1",
+              "installationId": "d144e5df-6a7c-485a-a8bc-747df0b2ae29",
+              "sessionId": "42bd50d5-a7a7-4892-8f26-bf69317f449a",
+              "formId": "DV2",
+              "clockDomainId": "9d80c1c0-2c5f-4ebb-9d36-ff3ac59b9376",
+              "sequenceNumber": 3,
+              "block": 0,
+              "trialIndex": 1,
+              "atMs": 1280.8999999761581,
+              "type": "armed",
+              "detail": {
+                "profile": "{\"mode\":\"visual\",\"entryWindow\":20000,\"highContrast\":false,\"reducedMotion\":false,\"entryMethod\":\"keyboard\",\"assistedEntryDeclared\":false,\"voice\":null,\"browserContext\":{\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36\",\"viewportWidth\":1280,\"viewportHeight\":800,\"devicePixelRatio\":1}}"
+              }
+            },
+            {
+              "schemaVersion": "digits_event_v1_1",
+              "installationId": "d144e5df-6a7c-485a-a8bc-747df0b2ae29",
+              "sessionId": "42bd50d5-a7a7-4892-8f26-bf69317f449a",
+              "formId": "DV2",
+              "clockDomainId": "9d80c1c0-2c5f-4ebb-9d36-ff3ac59b9376",
+              "sequenceNumber": 4,
+              "block": 0,
+              "trialIndex": 1,
+              "atMs": 1296.3999999761581,
+              "type": "trial_started",
+              "detail": {
+                "targetLength": 4,
+                "acceptedAtMs": 1296.3999999761581,
+                "generatorVersion": "digits_constructor_v1_1",
+                "profile": "{\"mode\":\"visual\",\"entryWindow\":20000,\"highContrast\":false,\"reducedMotion\":false,\"entryMethod\":\"keyboard\",\"assistedEntryDeclared\":false,\"voice\":null,\"browserContext\":{\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36\",\"viewportWidth\":1280,\"viewportHeight\":800,\"devicePixelRatio\":1}}"
+              }
+            },
+            {
+              "schemaVersion": "digits_event_v1_1",
+              "installationId": "d144e5df-6a7c-485a-a8bc-747df0b2ae29",
+              "sessionId": "42bd50d5-a7a7-4892-8f26-bf69317f449a",
+              "formId": "DV2",
+              "clockDomainId": "9d80c1c0-2c5f-4ebb-9d36-ff3ac59b9376",
+              "sequenceNumber": 5,
+              "block": 0,
+              "trialIndex": 1,
+              "atMs": 1313.3000000715256,
+              "type": "digit_presented",
+              "detail": {
+                "digitIndex": 1,
+                "value": "4",
+                "dueMs": 1296.3999999761581,
+                "actualMs": 1313.3000000715256,
+                "latenessMs": 16.90000009536743
+              }
+            },
+            {
+              "schemaVersion": "digits_event_v1_1",
+              "installationId": "d144e5df-6a7c-485a-a8bc-747df0b2ae29",
+              "sessionId": "42bd50d5-a7a7-4892-8f26-bf69317f449a",
+              "formId": "DV2",
+              "clockDomainId": "9d80c1c0-2c5f-4ebb-9d36-ff3ac59b9376",
+              "sequenceNumber": 6,
+              "block": 0,
+              "trialIndex": 1,
+              "atMs": 2029.7000000476837,
+              "type": "digit_ended",
+              "detail": {
+                "digitIndex": 1,
+                "value": "4",
+                "dueMs": 2013.3000000715256,
+                "actualMs": 2029.7000000476837,
+                "latenessMs": 16.399999976158142
+              }
+            },
+            {
+              "schemaVersion": "digits_event_v1_1",
+              "installationId": "d144e5df-6a7c-485a-a8bc-747df0b2ae29",
+              "sessionId": "42bd50d5-a7a7-4892-8f26-bf69317f449a",
+              "formId": "DV2",
+              "clockDomainId": "9d80c1c0-2c5f-4ebb-9d36-ff3ac59b9376",
+              "sequenceNumber": 7,
+              "block": 0,
+              "trialIndex": 1,
+              "atMs": 2296.7000000476837,
+              "type": "digit_presented",
+              "detail": {
+                "digitIndex": 2,
+                "value": "5",
+                "dueMs": 2279.7000000476837,
+                "actualMs": 2296.7000000476837,
+                "latenessMs": 17
+              }
+            },
+            {
+              "schemaVersion": "digits_event_v1_1",
+              "installationId": "d144e5df-6a7c-485a-a8bc-747df0b2ae29",
+              "sessionId": "42bd50d5-a7a7-4892-8f26-bf69317f449a",
+              "formId": "DV2",
+              "clockDomainId": "9d80c1c0-2c5f-4ebb-9d36-ff3ac59b9376",
+              "sequenceNumber": 8,
+              "block": 0,
+              "trialIndex": 1,
+              "atMs": 3013,
+              "type": "digit_ended",
+              "detail": {
+                "digitIndex": 2,
+                "value": "5",
+                "dueMs": 2996.7000000476837,
+                "actualMs": 3013,
+                "latenessMs": 16.299999952316284
+              }
+            },
+            {
+              "schemaVersion": "digits_event_v1_1",
+              "installationId": "d144e5df-6a7c-485a-a8bc-747df0b2ae29",
+              "sessionId": "42bd50d5-a7a7-4892-8f26-bf69317f449a",
+              "formId": "DV2",
+              "clockDomainId": "9d80c1c0-2c5f-4ebb-9d36-ff3ac59b9376",
+              "sequenceNumber": 9,
+              "block": 0,
+              "trialIndex": 1,
+              "atMs": 3279.7000000476837,
+              "type": "digit_presented",
+              "detail": {
+                "digitIndex": 3,
+                "value": "5",
+                "dueMs": 3263,
+                "actualMs": 3279.7000000476837,
+                "latenessMs": 16.700000047683716
+              }
+            },
+            {
+              "schemaVersion": "digits_event_v1_1",
+              "installationId": "d144e5df-6a7c-485a-a8bc-747df0b2ae29",
+              "sessionId": "42bd50d5-a7a7-4892-8f26-bf69317f449a",
+              "formId": "DV2",
+              "clockDomainId": "9d80c1c0-2c5f-4ebb-9d36-ff3ac59b9376",
+              "sequenceNumber": 10,
+              "block": 0,
+              "trialIndex": 1,
+              "atMs": 3996.3000000715256,
+              "type": "digit_ended",
+              "detail": {
+                "digitIndex": 3,
+                "value": "5",
+                "dueMs": 3979.7000000476837,
+                "actualMs": 3996.3000000715256,
+                "latenessMs": 16.600000023841858
+              }
+            },
+            {
+              "schemaVersion": "digits_event_v1_1",
+              "installationId": "d144e5df-6a7c-485a-a8bc-747df0b2ae29",
+              "sessionId": "42bd50d5-a7a7-4892-8f26-bf69317f449a",
+              "formId": "DV2",
+              "clockDomainId": "9d80c1c0-2c5f-4ebb-9d36-ff3ac59b9376",
+              "sequenceNumber": 11,
+              "block": 0,
+              "trialIndex": 1,
+              "atMs": 4263,
+              "type": "digit_presented",
+              "detail": {
+                "digitIndex": 4,
+                "value": "5",
+                "dueMs": 4246.300000071526,
+                "actualMs": 4263,
+                "latenessMs": 16.699999928474426
+              }
+            },
+            {
+              "schemaVersion": "digits_event_v1_1",
+              "installationId": "d144e5df-6a7c-485a-a8bc-747df0b2ae29",
+              "sessionId": "42bd50d5-a7a7-4892-8f26-bf69317f449a",
+              "formId": "DV2",
+              "clockDomainId": "9d80c1c0-2c5f-4ebb-9d36-ff3ac59b9376",
+              "sequenceNumber": 12,
+              "block": 0,
+              "trialIndex": 1,
+              "atMs": 4979.600000023842,
+              "type": "digit_ended",
+              "detail": {
+                "digitIndex": 4,
+                "value": "5",
+                "dueMs": 4963,
+                "actualMs": 4979.600000023842,
+                "latenessMs": 16.600000023841858
+              }
+            },
+            {
+              "schemaVersion": "digits_event_v1_1",
+              "installationId": "d144e5df-6a7c-485a-a8bc-747df0b2ae29",
+              "sessionId": "42bd50d5-a7a7-4892-8f26-bf69317f449a",
+              "formId": "DV2",
+              "clockDomainId": "9d80c1c0-2c5f-4ebb-9d36-ff3ac59b9376",
+              "sequenceNumber": 13,
+              "block": 0,
+              "trialIndex": 1,
+              "atMs": 5747.5,
+              "type": "entry_opened",
+              "detail": {
+                "deadlineMs": 25747.5,
+                "entryWindowVersion": "standard",
+                "dueMs": 5729.600000023842,
+                "actualMs": 5747.5,
+                "latenessMs": 17.899999976158142
+              }
+            },
+            {
+              "schemaVersion": "digits_event_v1_1",
+              "installationId": "d144e5df-6a7c-485a-a8bc-747df0b2ae29",
+              "sessionId": "42bd50d5-a7a7-4892-8f26-bf69317f449a",
+              "formId": "DV2",
+              "clockDomainId": "9d80c1c0-2c5f-4ebb-9d36-ff3ac59b9376",
+              "sequenceNumber": 14,
+              "block": 0,
+              "trialIndex": 1,
+              "atMs": 5783.899999976158,
+              "type": "answer_committed",
+              "detail": {
+                "answer": "",
+                "skipped": true,
+                "timedOut": false,
+                "assistedEntry": false,
+                "source": "keyboard"
+              }
+            },
+            {
+              "schemaVersion": "digits_event_v1_1",
+              "installationId": "d144e5df-6a7c-485a-a8bc-747df0b2ae29",
+              "sessionId": "42bd50d5-a7a7-4892-8f26-bf69317f449a",
+              "formId": "DV2",
+              "clockDomainId": "9d80c1c0-2c5f-4ebb-9d36-ff3ac59b9376",
+              "sequenceNumber": 15,
+              "block": 0,
+              "trialIndex": 1,
+              "atMs": 5783.899999976158,
+              "type": "trial_closed",
+              "detail": {
+                "targetLength": 4,
+                "wrongCount": 1,
+                "exactCorrect": false,
+                "nextLength": 3,
+                "positionMatches": 0,
+                "substitutions": 0,
+                "transpositionPairs": 0,
+                "missingSuffix": 4
+              }
+            },
+            {
+              "schemaVersion": "digits_event_v1_1",
+              "installationId": "d144e5df-6a7c-485a-a8bc-747df0b2ae29",
+              "sessionId": "42bd50d5-a7a7-4892-8f26-bf69317f449a",
+              "formId": "DV2",
+              "clockDomainId": "9d80c1c0-2c5f-4ebb-9d36-ff3ac59b9376",
+              "sequenceNumber": 16,
+              "block": 0,
+              "trialIndex": 1,
+              "atMs": 5849.5,
+              "type": "invalidated",
+              "detail": {
+                "reason": "candidate_ended"
+              }
+            }
+          ]
+        },
+        "review": {
+          "status": "invalid",
+          "reason": "candidate_ended",
+          "presented": 1,
+          "closed": 1,
+          "unresolved": 0
+        }
+      }
+    }
+  },
+  "tombstones": {},
+  "activity": {
+    "9f485eb5-f4ec-4c81-aa82-c5f0aa68d91f": [
+      {
+        "version": "digits_event_v1_1",
+        "type": "report_viewed",
+        "installationId": "d144e5df-6a7c-485a-a8bc-747df0b2ae29",
+        "sessionId": "9f485eb5-f4ec-4c81-aa82-c5f0aa68d91f",
+        "viewId": "0211665b-ed1b-45df-8d08-805e2f29375e",
+        "sequenceNumber": 1,
+        "sourceSurface": "live",
+        "observedWallMs": 1791486719963,
+        "resultRevision": 2
+      }
+    ],
+    "42bd50d5-a7a7-4892-8f26-bf69317f449a": [
+      {
+        "version": "digits_event_v1_1",
+        "type": "report_viewed",
+        "installationId": "d144e5df-6a7c-485a-a8bc-747df0b2ae29",
+        "sessionId": "42bd50d5-a7a7-4892-8f26-bf69317f449a",
+        "viewId": "665d97d8-ea33-42d2-9e2b-e8f2308e1df2",
+        "sequenceNumber": 1,
+        "sourceSurface": "live",
+        "observedWallMs": 1791486724875,
+        "resultRevision": 6
+      }
+    ]
+  }
+}

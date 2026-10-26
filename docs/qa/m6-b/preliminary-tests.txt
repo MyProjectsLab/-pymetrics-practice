@@ -1,0 +1,15 @@
+
+> assessment-practice@0.0.0 test
+> vitest run
+
+
+ RUN  v4.1.11 /Users/renzo/Documents/Assessment Practice/App
+
+(node:83939) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+ Test Files  35 passed (35)
+      Tests  631 passed (631)
+   Start at  23:30:57
+   Duration  5.12s (transform 1.28s, setup 1.11s, import 2.29s, tests 10.31s, environment 3.97s)
+

@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "browser": "145.0.7632.6",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36",
+  "errors": [],
+  "baseline": {
+    "formId": "stop-baseline-04",
+    "counts": {
+      "hits": 0,
+      "misses": 60,
+      "withholds": 20,
+      "falseAlarms": 0
+    }
+  },
+  "drill": {
+    "id": "detection",
+    "completedBlocks": 3
+  },
+  "retest": {
+    "formId": "stop-retest-03",
+    "counts": {
+      "hits": 0,
+      "misses": 60,
+      "withholds": 20,
+      "falseAlarms": 0
+    }
+  },
+  "comparison": "Skip to content\nap\nAssessment Practice\nPrivate preview\nBack to library\n\nStop · Advanced training\n\nBaseline and retest\n\nThis compares two valid Assessment Practice sessions with the same settings.\n\nBefore this retest began, the records retained in this tab contained no earlier scored start of its sequence. These records do not cover earlier visits or other tabs.\n\nOverall accuracy changed from 25% to 25% (+0 percentage points).\n\nGO hit rate changed from 0% to 0%.\n\nNO-GO correct-withhold rate changed from 100% to 100%.\n\nThis is a descriptive difference between two Assessment Practice sequences. It does not prove that the drill caused the change, that a stable trait changed, or that workplace performance will change.\n\nAssessment Practice forms share the same design rules but have not yet been calibrated as equivalent. Some change may reflect sequence difficulty or ordinary variation.\n\nAdditional outcomes\n\nHits changed from 0 to 0; misses from 60 to 60.\n\nCorrect withholds changed from 20 to 20; false alarms from 0 to 0.\n\nGO miss rate changed from 100% to 100%; NO-GO false-alarm rate changed from 0% to 0%.\n\nFirst-to-last-block overall accuracy changed by +0 points in the baseline and +0 points in the retest.\n\nFirst-to-last-block GO hit rate changed by +0 points in the baseline and +0 points in the retest.\n\nFirst-to-last-block false-alarm rate changed by +0 points in the baseline and +0 points in the retest.\n\nResults and sequence-use records are kept only while this page remains open. Refreshing, closing the tab, or leaving the site clears them. These records cannot establish which sequences you started on earlier visits or in other tabs.\n\nStart a new baseline\nOriginal preparation exercises. Follow the instructions in your invitation."
+}

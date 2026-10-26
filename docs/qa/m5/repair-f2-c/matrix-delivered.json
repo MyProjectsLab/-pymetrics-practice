@@ -1,0 +1,620 @@
+{
+  "browser": "145.0.7632.6",
+  "delivery": "delivered",
+  "cases": [
+    {
+      "delivery": "delivered",
+      "point": "before-arm",
+      "kind": "drill",
+      "pass": true,
+      "blockedWhileHeld": null,
+      "claim": {
+        "sessionId": "8c75f3e5-d499-418c-912f-a20bf8a59345",
+        "formId": "stop-retest-04",
+        "family": "retest",
+        "expiresAtMs": 1790823948310,
+        "chainId": "b355f264-ac7a-48b0-a174-907a4bd12f0f",
+        "armed": false,
+        "ownerTabId": "9852e662-50ee-40e2-a692-919a03cf7730"
+      },
+      "confirmations": [],
+      "deletion": {
+        "requestedAt": 1790822167683.7998,
+        "committedAt": 1790822167694.2998
+      },
+      "onsets": 0,
+      "marker": null,
+      "reservation": null,
+      "eligible": false,
+      "draftStorage": "persistent_local",
+      "invalidRule": "stop_validity_v1.integrity",
+      "revisionDelivery": null,
+      "replacement": null
+    },
+    {
+      "delivery": "delivered",
+      "point": "before-arm",
+      "kind": "all",
+      "pass": true,
+      "blockedWhileHeld": null,
+      "claim": {
+        "sessionId": "bb722f00-3a2c-4567-ae7b-48cb7863301c",
+        "formId": "stop-retest-02",
+        "family": "retest",
+        "expiresAtMs": 1790823970035,
+        "chainId": "b355f264-ac7a-48b0-a174-907a4bd12f0f",
+        "armed": false,
+        "ownerTabId": "5abe70da-5dfb-4774-aabb-01817e9311a4"
+      },
+      "confirmations": [],
+      "deletion": {
+        "requestedAt": 1790822189400.9,
+        "committedAt": 1790822189410.0999
+      },
+      "onsets": 0,
+      "marker": null,
+      "reservation": null,
+      "eligible": false,
+      "draftStorage": "temporary_memory",
+      "invalidRule": "stop_validity_v1.integrity",
+      "revisionDelivery": null,
+      "replacement": [
+        "InstallationClearedError",
+        "InstallationClearedError",
+        "InstallationClearedError",
+        "InstallationClearedError",
+        "InstallationClearedError"
+      ]
+    },
+    {
+      "delivery": "delivered",
+      "point": "before-arm",
+      "kind": "unrelated",
+      "pass": true,
+      "blockedWhileHeld": null,
+      "claim": {
+        "sessionId": "855af670-2f0f-496b-b276-15d342577195",
+        "formId": "stop-retest-04",
+        "family": "retest",
+        "expiresAtMs": 1790823991628,
+        "chainId": "b355f264-ac7a-48b0-a174-907a4bd12f0f",
+        "armed": false,
+        "ownerTabId": "eefbbc30-4208-4f9c-99dd-f3b3674bd1cb"
+      },
+      "confirmations": [
+        {
+          "at": 1790822212058,
+          "args": [
+            "855af670-2f0f-496b-b276-15d342577195",
+            "stop-retest-04",
+            "2026-10-01T02:36:52.057Z",
+            "b355f264-ac7a-48b0-a174-907a4bd12f0f",
+            {}
+          ]
+        }
+      ],
+      "deletion": {
+        "requestedAt": 1790822211000.2998,
+        "committedAt": 1790822211011
+      },
+      "onsets": 1,
+      "marker": {
+        "formId": "stop-retest-04",
+        "exposedAtWall": "2026-10-01T02:36:52.057Z",
+        "visualProfile": "standard",
+        "deleted": false,
+        "sessionId": "855af670-2f0f-496b-b276-15d342577195",
+        "certainty": "confirmed"
+      },
+      "reservation": null,
+      "eligible": true,
+      "draftStorage": "persistent_local",
+      "invalidRule": "stop_validity_v1.lifecycle",
+      "revisionDelivery": null,
+      "replacement": null
+    },
+    {
+      "delivery": "delivered",
+      "point": "fixation",
+      "kind": "drill",
+      "pass": true,
+      "blockedWhileHeld": null,
+      "claim": {
+        "sessionId": "3c8df505-3cbe-4d67-9ab4-f10785947a16",
+        "formId": "stop-retest-02",
+        "family": "retest",
+        "expiresAtMs": 1790824013252,
+        "chainId": "b355f264-ac7a-48b0-a174-907a4bd12f0f",
+        "armed": false,
+        "ownerTabId": "a314d123-59a8-40f3-9cc2-9e4e12b37862"
+      },
+      "confirmations": [],
+      "deletion": {
+        "requestedAt": 1790822232650,
+        "committedAt": 1790822232661.5
+      },
+      "onsets": 0,
+      "marker": null,
+      "reservation": null,
+      "eligible": false,
+      "draftStorage": "persistent_local",
+      "invalidRule": "stop_validity_v1.integrity",
+      "revisionDelivery": null,
+      "replacement": null
+    },
+    {
+      "delivery": "delivered",
+      "point": "fixation",
+      "kind": "all",
+      "pass": true,
+      "blockedWhileHeld": null,
+      "claim": {
+        "sessionId": "afb06a66-6b84-44ab-bc3b-a895e6116787",
+        "formId": "stop-retest-02",
+        "family": "retest",
+        "expiresAtMs": 1790824034951,
+        "chainId": "b355f264-ac7a-48b0-a174-907a4bd12f0f",
+        "armed": false,
+        "ownerTabId": "32700c06-87cf-4294-a254-036d4df608f4"
+      },
+      "confirmations": [],
+      "deletion": {
+        "requestedAt": 1790822254341.9001,
+        "committedAt": 1790822254351.4001
+      },
+      "onsets": 0,
+      "marker": null,
+      "reservation": null,
+      "eligible": false,
+      "draftStorage": "temporary_memory",
+      "invalidRule": "stop_validity_v1.integrity",
+      "revisionDelivery": null,
+      "replacement": [
+        "InstallationClearedError",
+        "InstallationClearedError",
+        "InstallationClearedError",
+        "InstallationClearedError",
+        "InstallationClearedError"
+      ]
+    },
+    {
+      "delivery": "delivered",
+      "point": "fixation",
+      "kind": "unrelated",
+      "pass": true,
+      "blockedWhileHeld": null,
+      "claim": {
+        "sessionId": "9dfe3a47-d958-4e34-a942-b47e345138b2",
+        "formId": "stop-retest-02",
+        "family": "retest",
+        "expiresAtMs": 1790824056559,
+        "chainId": "b355f264-ac7a-48b0-a174-907a4bd12f0f",
+        "armed": false,
+        "ownerTabId": "1977838f-406a-449d-aa8d-6fcf4eba89b8"
+      },
+      "confirmations": [
+        {
+          "at": 1790822276957.8,
+          "args": [
+            "9dfe3a47-d958-4e34-a942-b47e345138b2",
+            "stop-retest-02",
+            "2026-10-01T02:37:56.957Z",
+            "b355f264-ac7a-48b0-a174-907a4bd12f0f",
+            {}
+          ]
+        }
+      ],
+      "deletion": {
+        "requestedAt": 1790822275958.3,
+        "committedAt": 1790822275969
+      },
+      "onsets": 1,
+      "marker": {
+        "formId": "stop-retest-02",
+        "exposedAtWall": "2026-10-01T02:37:56.957Z",
+        "visualProfile": "standard",
+        "deleted": false,
+        "sessionId": "9dfe3a47-d958-4e34-a942-b47e345138b2",
+        "certainty": "confirmed"
+      },
+      "reservation": null,
+      "eligible": true,
+      "draftStorage": "persistent_local",
+      "invalidRule": "stop_validity_v1.lifecycle",
+      "revisionDelivery": null,
+      "replacement": null
+    },
+    {
+      "delivery": "delivered",
+      "point": "delete-first",
+      "kind": "drill",
+      "pass": true,
+      "blockedWhileHeld": true,
+      "claim": {
+        "sessionId": "eb8c7022-3eec-4608-be56-491ce83785f1",
+        "formId": "stop-retest-04",
+        "family": "retest",
+        "expiresAtMs": 1790824078234,
+        "chainId": "b355f264-ac7a-48b0-a174-907a4bd12f0f",
+        "armed": false,
+        "ownerTabId": "27e7f2b4-fec2-4644-9a33-5b69a892f93a"
+      },
+      "confirmations": [],
+      "deletion": {
+        "requestedAt": 1790822297633.2002,
+        "committedAt": 1790822298643.7002
+      },
+      "onsets": 0,
+      "marker": null,
+      "reservation": null,
+      "eligible": false,
+      "draftStorage": "persistent_local",
+      "invalidRule": "stop_validity_v1.integrity",
+      "revisionDelivery": null,
+      "replacement": null
+    },
+    {
+      "delivery": "delivered",
+      "point": "delete-first",
+      "kind": "all",
+      "pass": true,
+      "blockedWhileHeld": true,
+      "claim": {
+        "sessionId": "1c63ede9-405f-410a-9271-b1f5865c0b5c",
+        "formId": "stop-retest-03",
+        "family": "retest",
+        "expiresAtMs": 1790824100949,
+        "chainId": "b355f264-ac7a-48b0-a174-907a4bd12f0f",
+        "armed": false,
+        "ownerTabId": "18628764-6e45-44bc-b211-608626eba4cf"
+      },
+      "confirmations": [],
+      "deletion": {
+        "requestedAt": 1790822320349.6,
+        "committedAt": 1790822321359.6
+      },
+      "onsets": 0,
+      "marker": null,
+      "reservation": null,
+      "eligible": false,
+      "draftStorage": "temporary_memory",
+      "invalidRule": "stop_validity_v1.integrity",
+      "revisionDelivery": null,
+      "replacement": [
+        "InstallationClearedError",
+        "InstallationClearedError",
+        "InstallationClearedError",
+        "InstallationClearedError",
+        "InstallationClearedError"
+      ]
+    },
+    {
+      "delivery": "delivered",
+      "point": "delete-first",
+      "kind": "unrelated",
+      "pass": true,
+      "blockedWhileHeld": true,
+      "claim": {
+        "sessionId": "1380c689-394b-450d-bc01-410779f27b6e",
+        "formId": "stop-retest-04",
+        "family": "retest",
+        "expiresAtMs": 1790824123533,
+        "chainId": "b355f264-ac7a-48b0-a174-907a4bd12f0f",
+        "armed": false,
+        "ownerTabId": "f79b69b5-3818-47da-858e-6123f2203c87"
+      },
+      "confirmations": [
+        {
+          "at": 1790822343952.2,
+          "args": [
+            "1380c689-394b-450d-bc01-410779f27b6e",
+            "stop-retest-04",
+            "2026-10-01T02:39:03.951Z",
+            "b355f264-ac7a-48b0-a174-907a4bd12f0f",
+            {}
+          ]
+        }
+      ],
+      "deletion": {
+        "requestedAt": 1790822342932.5999,
+        "committedAt": 1790822343942.2998
+      },
+      "onsets": 1,
+      "marker": {
+        "formId": "stop-retest-04",
+        "exposedAtWall": "2026-10-01T02:39:03.951Z",
+        "visualProfile": "standard",
+        "deleted": false,
+        "sessionId": "1380c689-394b-450d-bc01-410779f27b6e",
+        "certainty": "confirmed"
+      },
+      "reservation": null,
+      "eligible": true,
+      "draftStorage": "persistent_local",
+      "invalidRule": "stop_validity_v1.lifecycle",
+      "revisionDelivery": null,
+      "replacement": null
+    },
+    {
+      "delivery": "delivered",
+      "point": "present-first",
+      "kind": "drill",
+      "pass": true,
+      "blockedWhileHeld": true,
+      "claim": {
+        "sessionId": "61ca4896-af83-482f-95f0-cdcecf41d6ae",
+        "formId": "stop-retest-04",
+        "family": "retest",
+        "expiresAtMs": 1790824146283,
+        "chainId": "b355f264-ac7a-48b0-a174-907a4bd12f0f",
+        "armed": false,
+        "ownerTabId": "5b337ea6-92a7-4a89-94cf-d4ab25f980c2"
+      },
+      "confirmations": [
+        {
+          "at": 1790822366689.2,
+          "args": [
+            "61ca4896-af83-482f-95f0-cdcecf41d6ae",
+            "stop-retest-04",
+            "2026-10-01T02:39:26.689Z",
+            "b355f264-ac7a-48b0-a174-907a4bd12f0f",
+            {}
+          ]
+        }
+      ],
+      "deletion": {
+        "requestedAt": 1790822366649.2,
+        "committedAt": 1790822366702.2
+      },
+      "onsets": 1,
+      "marker": {
+        "formId": "stop-retest-04",
+        "exposedAtWall": "2026-10-01T02:39:26.689Z",
+        "visualProfile": "standard",
+        "deleted": false,
+        "sessionId": "61ca4896-af83-482f-95f0-cdcecf41d6ae",
+        "certainty": "confirmed"
+      },
+      "reservation": null,
+      "eligible": false,
+      "draftStorage": "persistent_local",
+      "invalidRule": "stop_validity_v1.integrity",
+      "revisionDelivery": null,
+      "replacement": null
+    },
+    {
+      "delivery": "delivered",
+      "point": "present-first",
+      "kind": "all",
+      "pass": true,
+      "blockedWhileHeld": true,
+      "claim": {
+        "sessionId": "2b5bf1d1-6320-4ae1-be4e-0333963387bf",
+        "formId": "stop-retest-02",
+        "family": "retest",
+        "expiresAtMs": 1790824169024,
+        "chainId": "b355f264-ac7a-48b0-a174-907a4bd12f0f",
+        "armed": false,
+        "ownerTabId": "ccd2a712-e465-4d22-aeda-df4355062a65"
+      },
+      "confirmations": [
+        {
+          "at": 1790822389405.7998,
+          "args": [
+            "2b5bf1d1-6320-4ae1-be4e-0333963387bf",
+            "stop-retest-02",
+            "2026-10-01T02:39:49.405Z",
+            "b355f264-ac7a-48b0-a174-907a4bd12f0f",
+            {}
+          ]
+        }
+      ],
+      "deletion": {
+        "requestedAt": 1790822389365.9001,
+        "committedAt": 1790822389413.1
+      },
+      "onsets": 1,
+      "marker": null,
+      "reservation": null,
+      "eligible": false,
+      "draftStorage": "temporary_memory",
+      "invalidRule": "stop_validity_v1.integrity",
+      "revisionDelivery": null,
+      "replacement": [
+        "InstallationClearedError",
+        "InstallationClearedError",
+        "InstallationClearedError",
+        "InstallationClearedError",
+        "InstallationClearedError"
+      ]
+    },
+    {
+      "delivery": "delivered",
+      "point": "present-first",
+      "kind": "unrelated",
+      "pass": true,
+      "blockedWhileHeld": true,
+      "claim": {
+        "sessionId": "07013adf-a7ef-4f29-9802-76d0dd956fef",
+        "formId": "stop-retest-03",
+        "family": "retest",
+        "expiresAtMs": 1790824191567,
+        "chainId": "b355f264-ac7a-48b0-a174-907a4bd12f0f",
+        "armed": false,
+        "ownerTabId": "ae14d829-3d09-4b98-a2bf-de5c0da9e9c8"
+      },
+      "confirmations": [
+        {
+          "at": 1790822411989.0999,
+          "args": [
+            "07013adf-a7ef-4f29-9802-76d0dd956fef",
+            "stop-retest-03",
+            "2026-10-01T02:40:11.989Z",
+            "b355f264-ac7a-48b0-a174-907a4bd12f0f",
+            {}
+          ]
+        }
+      ],
+      "deletion": {
+        "requestedAt": 1790822411949.4001,
+        "committedAt": 1790822412003.6
+      },
+      "onsets": 1,
+      "marker": {
+        "formId": "stop-retest-03",
+        "exposedAtWall": "2026-10-01T02:40:11.989Z",
+        "visualProfile": "standard",
+        "deleted": false,
+        "sessionId": "07013adf-a7ef-4f29-9802-76d0dd956fef",
+        "certainty": "confirmed"
+      },
+      "reservation": null,
+      "eligible": true,
+      "draftStorage": "persistent_local",
+      "invalidRule": "stop_validity_v1.lifecycle",
+      "revisionDelivery": null,
+      "replacement": null
+    },
+    {
+      "delivery": "delivered",
+      "point": "after",
+      "kind": "drill",
+      "pass": true,
+      "blockedWhileHeld": null,
+      "claim": {
+        "sessionId": "a3a825c1-38d3-4ed3-815b-e55fcdfae374",
+        "formId": "stop-retest-02",
+        "family": "retest",
+        "expiresAtMs": 1790824214307,
+        "chainId": "b355f264-ac7a-48b0-a174-907a4bd12f0f",
+        "armed": false,
+        "ownerTabId": "f8c264e1-fea0-4e6e-893c-05639006a5a5"
+      },
+      "confirmations": [
+        {
+          "at": 1790822434605.3,
+          "args": [
+            "a3a825c1-38d3-4ed3-815b-e55fcdfae374",
+            "stop-retest-02",
+            "2026-10-01T02:40:34.605Z",
+            "b355f264-ac7a-48b0-a174-907a4bd12f0f",
+            {}
+          ]
+        }
+      ],
+      "deletion": {
+        "requestedAt": 1790822434614.5,
+        "committedAt": 1790822434624.7
+      },
+      "onsets": 1,
+      "marker": {
+        "formId": "stop-retest-02",
+        "exposedAtWall": "2026-10-01T02:40:34.605Z",
+        "visualProfile": "standard",
+        "deleted": false,
+        "sessionId": "a3a825c1-38d3-4ed3-815b-e55fcdfae374",
+        "certainty": "confirmed"
+      },
+      "reservation": null,
+      "eligible": false,
+      "draftStorage": "persistent_local",
+      "invalidRule": "stop_validity_v1.integrity",
+      "revisionDelivery": null,
+      "replacement": null
+    },
+    {
+      "delivery": "delivered",
+      "point": "after",
+      "kind": "all",
+      "pass": true,
+      "blockedWhileHeld": null,
+      "claim": {
+        "sessionId": "809c5554-6007-4fb0-930b-73e38d83646b",
+        "formId": "stop-retest-02",
+        "family": "retest",
+        "expiresAtMs": 1790824236923,
+        "chainId": "b355f264-ac7a-48b0-a174-907a4bd12f0f",
+        "armed": false,
+        "ownerTabId": "35b43aa2-429a-43ea-9957-b65b195cf9db"
+      },
+      "confirmations": [
+        {
+          "at": 1790822457255,
+          "args": [
+            "809c5554-6007-4fb0-930b-73e38d83646b",
+            "stop-retest-02",
+            "2026-10-01T02:40:57.254Z",
+            "b355f264-ac7a-48b0-a174-907a4bd12f0f",
+            {}
+          ]
+        }
+      ],
+      "deletion": {
+        "requestedAt": 1790822457264.5,
+        "committedAt": 1790822457274
+      },
+      "onsets": 1,
+      "marker": null,
+      "reservation": null,
+      "eligible": false,
+      "draftStorage": "temporary_memory",
+      "invalidRule": "stop_validity_v1.integrity",
+      "revisionDelivery": null,
+      "replacement": [
+        "InstallationClearedError",
+        "InstallationClearedError",
+        "InstallationClearedError",
+        "InstallationClearedError",
+        "InstallationClearedError"
+      ]
+    },
+    {
+      "delivery": "delivered",
+      "point": "after",
+      "kind": "unrelated",
+      "pass": true,
+      "blockedWhileHeld": null,
+      "claim": {
+        "sessionId": "e1abc2a6-78c0-47ca-bb9d-2a623887d8d7",
+        "formId": "stop-retest-03",
+        "family": "retest",
+        "expiresAtMs": 1790824259482,
+        "chainId": "b355f264-ac7a-48b0-a174-907a4bd12f0f",
+        "armed": false,
+        "ownerTabId": "11de0e97-e1fc-4c87-aedc-c6f48df85a05"
+      },
+      "confirmations": [
+        {
+          "at": 1790822479796.5999,
+          "args": [
+            "e1abc2a6-78c0-47ca-bb9d-2a623887d8d7",
+            "stop-retest-03",
+            "2026-10-01T02:41:19.796Z",
+            "b355f264-ac7a-48b0-a174-907a4bd12f0f",
+            {}
+          ]
+        }
+      ],
+      "deletion": {
+        "requestedAt": 1790822479806.1,
+        "committedAt": 1790822479816.1
+      },
+      "onsets": 1,
+      "marker": {
+        "formId": "stop-retest-03",
+        "exposedAtWall": "2026-10-01T02:41:19.796Z",
+        "visualProfile": "standard",
+        "deleted": false,
+        "sessionId": "e1abc2a6-78c0-47ca-bb9d-2a623887d8d7",
+        "certainty": "confirmed"
+      },
+      "reservation": null,
+      "eligible": true,
+      "draftStorage": "persistent_local",
+      "invalidRule": "stop_validity_v1.lifecycle",
+      "revisionDelivery": null,
+      "replacement": null
+    }
+  ],
+  "errors": []
+}

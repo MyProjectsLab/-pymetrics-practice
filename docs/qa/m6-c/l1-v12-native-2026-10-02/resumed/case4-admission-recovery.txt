@@ -1,0 +1,69 @@
+Window: "Assessment Practice", App: Google Chrome.
+0 standard window Assessment Practice - Google Chrome, URL: 127.0.0.1:5592/, Secondary Actions: Raise
+	1 container Assessment Practice - Google Chrome, URL: 127.0.0.1:5592/
+		2 container
+			3 toolbar
+				4 button Back
+				5 button (disabled) Forward
+				6 button Reload
+				7 container
+					8 pop up button View site information
+					9 text field (settable) Address and search bar, Value: 127.0.0.1:5592, Placeholder: Ask Google or type a URL
+					10 button Bookmark this tab
+				11 pop up button Extensions
+				12 checkbox Downloads, Value: 0
+				13 button renzo
+				14 pop up button Chrome
+			15 toolbar Bookmarks
+				16 toolbar Saved Tab Groups
+					17 saved tab group button  🧪 Stop M6-C group - Closed
+					18 saved tab group button  🧪 Stop M3 QA group - Closed
+					19 button Tab groups
+				20 splitter Separator
+				21 bookmark button La Repubblica.it - News in tempo reale - Le notizie e i video di politica, cronaca, economia, sport
+				22 pop up button Menu containing hidden bookmarks
+			23 container
+				24 scroll area
+					25 HTML content Assessment Practice, URL: 127.0.0.1:5592/
+						26 container
+							27 link Skip to content, Value: 127.0.0.1:5592/#main-content
+							28 button Assessment Practice — game library
+							29 text Private preview
+							30 container
+								31 text Stop · Private preview
+								32 heading Warm-up complete, Value: 1
+									33 text Warm-up complete
+								34 text You can pause here. When you select ‘Start scored task,’ keep this tab active until Stop ends. Switching away during the scored task makes the attempt invalid. Enlarge the window or use a larger screen before starting.
+								35 button Start scored task
+							36 text Original preparation exercises. Follow the instructions in your invitation.
+			37 container Infobar Container
+				38 container Infobar
+					39 container
+						40 text Google Chrome isn't your default browser
+						41 button Set as default
+					42 button Close
+			43 pop up button Tab search
+			44 container
+				45 tab group
+					46 tab (selected, settable, boolean) Assessment Practice - Memory usage - 147 MB, Value: on
+						47 button Close
+					48 tab (settable, boolean) Stop L1 local evidence export - Memory usage - 49.2 MB, Value: off
+						49 button Close
+			50 button New Tab
+			51 button Open Gemini in Chrome
+	52 close button
+	53 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	54 minimize button
+55 menu bar
+	56 Chrome
+	57 File
+	58 Edit
+	59 View
+	60 History
+	61 Bookmarks
+	62 Profiles
+	63 Tab
+	64 Window
+	65 Help
+
+The focused UI element is 35 button Start scored task

@@ -1,0 +1,11 @@
+# Simple-start presentation 1.0
+
+Founder requested short, simple instructions and fewer visible setup choices across all twelve assessments on2026-10-26. This original presentation addendum changes copy/hierarchy only, plus the explicit Stop physical-keyboard declaration described below. Frozen gameplay, forms, event/schema/scoring versions, clock/response rules, guide-completion proof, report meanings and source ownership remain unchanged.
+
+Guides: three short rules and one primary Continue action. Examples, history and saved-setup reuse remain optional. Existing controller-required rule questions stay genuine and cannot be auto-answered or represented as passed. Start means actual task start, not a next setup page. Optional settings collapse without modifying stored or selected values; selected non-default controls and restrictions remain visible. Progress/deletion/unsaved warnings retain their actual meanings. Main menu denotes the assessment library; mock and history return destinations remain explicit.
+
+Stop V1.3: selecting Test my keyboard explicitly confirms use of a physical keyboard, as stated in adjacent visible text, replacing a separate checkbox interaction. This is a human declaration, not automatic hardware detection. It sets the same physicalKeyboard field but does not pass the input test. Existing trusted, unmodified, nonrepeat keydown/keyup pair, receipt, generation cancellation, selected-code/profile, viewport and latency restrictions still apply. A stored latency declaration is never cleared automatically. Legacy/retest Preflight behavior is unchanged.
+
+Native Money1/Money2/Faces retain their owned public rendering, input/guide commands and authority boundaries; only existing text and action labels are shortened. No new native disclosures, handlers, credentials or network calls. Detailed research/privacy and original reports remain available.
+
+Qualification: ordinary public entry/readiness/control-check observations and focused native receipt/transition tests, source audit, type/lint/build. Founder deferred ordinary Chrome checks; record native five/print and physical-iPhone limitations explicitly. This is not a full-game recertification, an automatic release decision or proof all twelve work on iPhone.

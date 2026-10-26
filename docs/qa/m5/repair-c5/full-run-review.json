@@ -1,0 +1,26 @@
+[
+  {
+    "case": "full-after",
+    "events": 643,
+    "saveCalls": 2,
+    "pass": true
+  },
+  {
+    "case": "retry-control",
+    "events": 643,
+    "saveCalls": 2,
+    "pass": true
+  },
+  {
+    "case": "c2-drill",
+    "events": 643,
+    "saveCalls": 1,
+    "pass": true
+  },
+  {
+    "case": "c4-all",
+    "events": 643,
+    "saveCalls": 1,
+    "pass": true
+  }
+]

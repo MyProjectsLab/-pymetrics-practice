@@ -1,0 +1,70 @@
+[
+  {
+    "boundary": "read-delivery",
+    "deletion": "drill",
+    "abortedBeforeDeletion": true,
+    "promiseSettledAtDeletion": false,
+    "locks": {
+      "held": [],
+      "pending": []
+    },
+    "replacementUnchanged": true,
+    "trace": [
+      "read-delivery-held",
+      "signal-aborted",
+      "transaction-aborted",
+      "confirmation-rejected:AbortError"
+    ]
+  },
+  {
+    "boundary": "read-delivery",
+    "deletion": "all",
+    "abortedBeforeDeletion": true,
+    "promiseSettledAtDeletion": false,
+    "locks": {
+      "held": [],
+      "pending": []
+    },
+    "replacementUnchanged": true,
+    "trace": [
+      "read-delivery-held",
+      "signal-aborted",
+      "transaction-aborted",
+      "confirmation-rejected:AbortError"
+    ]
+  },
+  {
+    "boundary": "write-uncommitted",
+    "deletion": "drill",
+    "abortedBeforeDeletion": true,
+    "promiseSettledAtDeletion": true,
+    "locks": {
+      "held": [],
+      "pending": []
+    },
+    "replacementUnchanged": true,
+    "trace": [
+      "write-not-committed",
+      "signal-aborted",
+      "confirmation-rejected:Error",
+      "transaction-aborted"
+    ]
+  },
+  {
+    "boundary": "write-uncommitted",
+    "deletion": "all",
+    "abortedBeforeDeletion": true,
+    "promiseSettledAtDeletion": true,
+    "locks": {
+      "held": [],
+      "pending": []
+    },
+    "replacementUnchanged": true,
+    "trace": [
+      "write-not-committed",
+      "signal-aborted",
+      "confirmation-rejected:Error",
+      "transaction-aborted"
+    ]
+  }
+]

@@ -1,0 +1,333 @@
+{
+  "formId": "faces-bank-discussion-v1",
+  "formHash": "cb12f328b155b79019e10ce38ab2c4b59ed806df3ae64f5f4ea3eeded26c9ff6",
+  "bankHash": "7a7e835a3b1c5277eca45b19d82f2ba917305b886727b104a2ac7a94e95f4854",
+  "labels": [
+    "Anger",
+    "Determination",
+    "Disgust",
+    "Fear",
+    "Happiness",
+    "Hope",
+    "Pain",
+    "Sadness",
+    "Surprise",
+    "Puzzlement"
+  ],
+  "items": [
+    {
+      "item": 0,
+      "kind": "context",
+      "assetId": "F-P04",
+      "assetSha256": "b3ad867fd331da2cfbf808effd54dec1b4306310d81567a91f2064aecdab48d0",
+      "context": "Ari has been repairing an old radio. Twice it has gone silent just before the final check. Ari studies the wiring again, puts the tools back in order, and begins another careful test.",
+      "contextSha256": "05d1a5f89f99ea05d9b2bb93c79402def92477a12506ec9be5e7f1f649d1377b",
+      "intended": "Determination",
+      "matchEligible": true,
+      "src": "./assets/F-P04.png",
+      "explanation": {
+        "physical_clues": "Brows drawn together, steady eyes and a closed, set mouth.",
+        "context_clue": "Ari returns to a difficult repair after setbacks.",
+        "closest_alternative": "Puzzlement",
+        "why_this_authored_answer": "The repeated deliberate attempt supplies the persistence clue; the face alone could also look puzzled.",
+        "reviewRole": "answer-match"
+      }
+    },
+    {
+      "item": 1,
+      "kind": "context",
+      "assetId": "R3-A",
+      "assetSha256": "fa54ea90ee399aa8598e7b72bf2f0788db84464d3798682dd3a218552c661d10",
+      "context": "Nadia has applied for a workshop she has wanted to attend for years. Places are limited, and no decisions have been announced. While waiting for next week's email, she pictures herself taking part and keeps the week free.",
+      "contextSha256": "d362e5de4c6ccb2af6a39b00fc0dae7bc7ea99baa3014e8b652909832c312ec1",
+      "intended": "Hope",
+      "matchEligible": false,
+      "src": "./assets/R3-A.png",
+      "explanation": {
+        "physical_clues": "An upward gaze and relaxed parted lips. The expression can also suggest a quieter, more reflective reading.",
+        "context_clue": "The story describes a desired workshop place that has not yet been decided.",
+        "closest_alternative": "Sadness",
+        "why_this_authored_answer": "Hope is the authored reading because the desired outcome remains uncertain. The portrait can support a different reading. This item is excluded from answer matching; it has no right or wrong mark.",
+        "reviewRole": "discussion-only"
+      }
+    },
+    {
+      "item": 2,
+      "kind": "context",
+      "assetId": "R-B",
+      "assetSha256": "c6fed6512a9e6e2dd1663b2d88b76e9a3c4da1167dee08f4f12d12799534cb26",
+      "context": "Sam is carrying a box through a doorway when its edge catches a finger against the frame. Sam quickly sets the box down and holds the finger still while the sharp sensation continues.",
+      "contextSha256": "d45de8d48cd0d50057bc5bb1fc43059e83b3d16bb2dc9ea694eb8f792625a4e3",
+      "intended": "Pain",
+      "matchEligible": true,
+      "src": "./assets/R-B.png",
+      "explanation": {
+        "physical_clues": "Eyes partly squeezed shut, a furrow between the brows and unevenly tightened lips.",
+        "context_clue": "Sam has just trapped a finger and still feels a sharp sensation.",
+        "closest_alternative": "Disgust",
+        "why_this_authored_answer": "The bodily hurt in the story resolves the neighboring reading; facial tension is shared and is insufficient by itself.",
+        "reviewRole": "answer-match"
+      }
+    },
+    {
+      "item": 3,
+      "kind": "context",
+      "assetId": "F-P06",
+      "assetSha256": "96c490d012c6a05225080b07a9ed95484bbe0c6b6cd710861e8e8eda206def62",
+      "context": "Rae follows the platform number printed on a rail ticket. The display above that platform lists a different destination, but another sign points back to the same place. Rae compares the ticket and the two signs once more.",
+      "contextSha256": "eb226bf93d7a2ce832e687c5b6095e2576c02cd379c821124b2bdc22c049b919",
+      "intended": "Puzzlement",
+      "matchEligible": true,
+      "src": "./assets/F-P06.png",
+      "explanation": {
+        "physical_clues": "Uneven, drawn brows, a slight head angle and a closed mouth.",
+        "context_clue": "Rae compares signs that give conflicting travel information.",
+        "closest_alternative": "Surprise",
+        "why_this_authored_answer": "The continued attempt to resolve the mismatch supports this interpretation rather than only an initial reaction.",
+        "reviewRole": "answer-match"
+      }
+    },
+    {
+      "item": 4,
+      "kind": "context",
+      "assetId": "F-P07",
+      "assetSha256": "dd17d944ab4192b432c07cebaa24585463f531d454c0a09e55a5ffd28918b8f3",
+      "context": "Noor is waiting to hear whether a community garden can keep its site. A message says the owner has agreed to discuss a longer lease and asks the group to bring its plans. No decision has been made yet. Noor reads the invitation again.",
+      "contextSha256": "4be7c0cef721aa66b6dc3688d68efac7d46fa528b939ff86fb9439cd4ebe510e",
+      "intended": "Hope",
+      "matchEligible": true,
+      "src": "./assets/F-P07.png",
+      "explanation": {
+        "physical_clues": "Upward gaze, lifted inner brows and slightly parted lips.",
+        "context_clue": "Noor receives an invitation to discuss a lease, with no decision yet.",
+        "closest_alternative": "Surprise",
+        "why_this_authored_answer": "The desirable but uncertain future outcome is the main clue. Using the story is part of this item.",
+        "reviewRole": "answer-match"
+      }
+    },
+    {
+      "item": 5,
+      "kind": "context",
+      "assetId": "F-P08",
+      "assetSha256": "cc6ecd790af064e450900b958d9f0a5058ba0efd47cb773054cc8aacee60e880",
+      "context": "Morgan is learning a difficult passage on a musical instrument. The same transition has failed several times. Morgan slows the tempo, marks the troublesome notes and immediately tries the passage again.",
+      "contextSha256": "93ff47fe1b2355fbce05b3fa1c1bd6615ec5a7599ed459e9c2d6c33a4f4cceb9",
+      "intended": "Determination",
+      "matchEligible": true,
+      "src": "./assets/F-P08.png",
+      "explanation": {
+        "physical_clues": "Focused eyes beneath lowered brows, with lips held together.",
+        "context_clue": "Morgan adjusts the practice method and tries the difficult passage again.",
+        "closest_alternative": "Anger",
+        "why_this_authored_answer": "Continued purposeful effort is explicit; the set face could otherwise suggest frustration.",
+        "reviewRole": "answer-match"
+      }
+    },
+    {
+      "item": 6,
+      "kind": "context",
+      "assetId": "R3-C",
+      "assetSha256": "1dac8505dafe73a30ffa4b7d93f80d0c107d05f6ee41791598275f6e011662e2",
+      "context": "For several minutes, Eli has been comparing two copies of the same timetable. They show different departure times for the same train. Eli checks the dates and station names again, but still cannot work out which time to use.",
+      "contextSha256": "4980034b41ed5b12a13ec7c01096bf2849c80bff0985d1f796c038079d83acc5",
+      "intended": "Puzzlement",
+      "matchEligible": false,
+      "src": "./assets/R3-C.png",
+      "explanation": {
+        "physical_clues": "Uneven brows, narrowed eyes, a head tilt and closed lips. These did not establish one agreed interpretation.",
+        "context_clue": "The person continues checking conflicting timetable information.",
+        "closest_alternative": "Surprise",
+        "why_this_authored_answer": "Puzzlement is the authored reading because the uncertainty continues. Surprise remains plausible. This item is excluded from answer matching; it has no right or wrong mark.",
+        "reviewRole": "discussion-only"
+      }
+    },
+    {
+      "item": 7,
+      "kind": "context",
+      "assetId": "F-P10",
+      "assetSha256": "ecd02868b16f53160e87413e184c9eb03bc3a317afbd4348c40aae6232b98e82",
+      "context": "Casey has been sitting with one leg folded for a long time. On standing, a sudden calf cramp makes Casey stop and hold the leg while waiting for the muscle to loosen.",
+      "contextSha256": "df4f33b7bcf31201bb89407025d57362ec36b6bf1e703f965b377361c2298bb1",
+      "intended": "Pain",
+      "matchEligible": true,
+      "src": "./assets/F-P10.png",
+      "explanation": {
+        "physical_clues": "Squeezed eyes, furrowed brows and a tense, asymmetric mouth.",
+        "context_clue": "Casey stops because of a sudden calf cramp.",
+        "closest_alternative": "Disgust",
+        "why_this_authored_answer": "The physical sensation in the story is decisive; the facial contraction alone is not unique.",
+        "reviewRole": "answer-match"
+      }
+    },
+    {
+      "item": 8,
+      "kind": "photo",
+      "assetId": "F-P03",
+      "assetSha256": "faaaf389971d52def00ac67aadb6c7d6db89d7b7a5e1b357989d89932e4b792a",
+      "context": null,
+      "contextSha256": null,
+      "intended": "Surprise",
+      "matchEligible": true,
+      "src": "./assets/F-P03.png",
+      "explanation": {
+        "physical_clues": "Raised brows, widened eyes and a rounded open mouth.",
+        "context_clue": "No written situation.",
+        "closest_alternative": "Fear",
+        "why_this_authored_answer": "The authored reading emphasizes the open reaction, while the neighboring label remains plausible.",
+        "reviewRole": "answer-match"
+      }
+    },
+    {
+      "item": 9,
+      "kind": "photo",
+      "assetId": "R-D",
+      "assetSha256": "bab7eb8efba3b3e3c895324f3424f4ce09a957ee2e95f9474929cd8a23e579d2",
+      "context": null,
+      "contextSha256": null,
+      "intended": "Fear",
+      "matchEligible": true,
+      "src": "./assets/R-D.png",
+      "explanation": {
+        "physical_clues": "Widened eyes with tense lids, inner brows drawn upward together and parted, stretched lips.",
+        "context_clue": "No written situation.",
+        "closest_alternative": "Surprise",
+        "why_this_authored_answer": "The author emphasizes tension across the eyes and mouth. Surprise can also involve widened eyes and an open mouth, so those features alone do not settle the distinction.",
+        "reviewRole": "answer-match"
+      }
+    },
+    {
+      "item": 10,
+      "kind": "photo",
+      "assetId": "R-E",
+      "assetSha256": "cc41b2505ad093762ce355a277ab5841ba31cdba754e2584e693c5347f7105d7",
+      "context": null,
+      "contextSha256": null,
+      "intended": "Anger",
+      "matchEligible": true,
+      "src": "./assets/R-E.png",
+      "explanation": {
+        "physical_clues": "Lowered, drawn brows, a direct gaze and compressed lips with a set jaw.",
+        "context_clue": "No written situation.",
+        "closest_alternative": "Puzzlement",
+        "why_this_authored_answer": "The author emphasizes the direct, tense expression. Concentration and puzzlement can share these features, so the face can support neighboring interpretations.",
+        "reviewRole": "answer-match"
+      }
+    },
+    {
+      "item": 11,
+      "kind": "photo",
+      "assetId": "F-P12",
+      "assetSha256": "26a765098c6512dddf459b6554f01e53dd7783d3a981f3a0d8fb1883aaa8ff30",
+      "context": null,
+      "contextSha256": null,
+      "intended": "Surprise",
+      "matchEligible": true,
+      "src": "./assets/F-P12.png",
+      "explanation": {
+        "physical_clues": "Lifted brows, wide eyes and an open mouth.",
+        "context_clue": "No written situation.",
+        "closest_alternative": "Fear",
+        "why_this_authored_answer": "The authored reading emphasizes the open reaction; these visible features also overlap with the alternative.",
+        "reviewRole": "answer-match"
+      }
+    },
+    {
+      "item": 12,
+      "kind": "photo",
+      "assetId": "F-P13",
+      "assetSha256": "4d02fcb8c467d16a9fa4f469236084c1a4943c339eec71380dd379f6ef945bde",
+      "context": null,
+      "contextSha256": null,
+      "intended": "Fear",
+      "matchEligible": true,
+      "src": "./assets/F-P13.png",
+      "explanation": {
+        "physical_clues": "Raised inner brows drawn together, wide eyes and a tense parted mouth.",
+        "context_clue": "No written situation.",
+        "closest_alternative": "Surprise",
+        "why_this_authored_answer": "The authored distinction emphasizes the pulled, tense brow and mouth, without treating them as proof of an internal state.",
+        "reviewRole": "answer-match"
+      }
+    },
+    {
+      "item": 13,
+      "kind": "photo",
+      "assetId": "F-P14",
+      "assetSha256": "5cfe9431962696dce1744667eea793ea445894d84a854c89389942907449c3d9",
+      "context": null,
+      "contextSha256": null,
+      "intended": "Anger",
+      "matchEligible": true,
+      "src": "./assets/F-P14.png",
+      "explanation": {
+        "physical_clues": "Lowered brows, narrowed focused eyes and a tightly set mouth.",
+        "context_clue": "No written situation.",
+        "closest_alternative": "Determination",
+        "why_this_authored_answer": "Tension supports the author reading, but a goal-directed situation could change the interpretation. None is provided here.",
+        "reviewRole": "answer-match"
+      }
+    }
+  ],
+  "help": [
+    {
+      "label": "Anger",
+      "physical_clue_check": "Inspect the brow, eyelid tension, lips and jaw together.",
+      "closest_confusion": "A set mouth and lowered brows can overlap with determination.",
+      "context_check": "Check whether the situation describes conflict or sustained goal-directed effort."
+    },
+    {
+      "label": "Determination",
+      "physical_clue_check": "Look for concentration, but avoid treating a fixed gaze as an answer.",
+      "closest_confusion": "Anger and puzzlement may share a focused expression.",
+      "context_check": "A continued attempt after setbacks is a useful written distinction in these authored items."
+    },
+    {
+      "label": "Disgust",
+      "physical_clue_check": "Inspect nose, upper lip and eye contraction; do not decide from one feature.",
+      "closest_confusion": "Pain can also involve a contracted face.",
+      "context_check": "Distinguish an aversive situation from explicit bodily hurt when text is supplied."
+    },
+    {
+      "label": "Fear",
+      "physical_clue_check": "Compare eye opening with tension around the lids, brows and mouth.",
+      "closest_confusion": "Surprise can also involve wide eyes and an open mouth.",
+      "context_check": "Use a described threat if present; do not invent one for photo-only items."
+    },
+    {
+      "label": "Happiness",
+      "physical_clue_check": "Inspect the mouth and cheeks together rather than using any smile as a shortcut.",
+      "closest_confusion": "A small smile can overlap with hope.",
+      "context_check": "Distinguish a positive outcome already experienced from an uncertain desired outcome."
+    },
+    {
+      "label": "Hope",
+      "physical_clue_check": "An attentive gaze or small smile alone does not establish this label.",
+      "closest_confusion": "Happiness and surprise are plausible nearby readings.",
+      "context_check": "In these authored contexts the positive outcome remains uncertain."
+    },
+    {
+      "label": "Pain",
+      "physical_clue_check": "Inspect contraction across eyes, brows and mouth together.",
+      "closest_confusion": "Disgust and tension can look similar.",
+      "context_check": "Explicit bodily hurt is the central clue when the story supplies it."
+    },
+    {
+      "label": "Sadness",
+      "physical_clue_check": "Inspect brow, gaze and mouth together; lowered gaze alone is insufficient.",
+      "closest_confusion": "Quiet concentration or discomfort may resemble it.",
+      "context_check": "Use a supplied loss or disappointment context, without inventing a history."
+    },
+    {
+      "label": "Surprise",
+      "physical_clue_check": "Inspect the combined opening of eyes, brows and mouth.",
+      "closest_confusion": "Fear and puzzlement can share some features.",
+      "context_check": "A still image cannot establish duration; use event sequence only when the text provides it."
+    },
+    {
+      "label": "Puzzlement",
+      "physical_clue_check": "Inspect brow asymmetry, eye narrowing, mouth and head angle together.",
+      "closest_confusion": "Surprise, determination and anger can overlap.",
+      "context_check": "Conflicting information and continued checking distinguish several of these authored stories."
+    }
+  ]
+}

@@ -1,0 +1,313 @@
+{
+  "independent-results": [
+    {
+      "name": "independent-complete-journeys",
+      "pass": true,
+      "spaceSource": "unknown_or_assistive",
+      "BL": 39,
+      "RP": 39,
+      "banked": 455,
+      "lost": 470
+    },
+    {
+      "name": "healthy-delayed-history-read",
+      "pass": false,
+      "reportVisibleAfterHealthyReads": false,
+      "storageUnchanged": true,
+      "text": "Balloons history\n\nSaved only in this browser. Deleting one result keeps its sequence exposure and chain tombstone, so it cannot become unseen again.\n\n2 retained attempts. 0 deletion tombstones.\n\nRP1 \u00b7 Standalone practice\n\nSaved \u00b7 39/39 rounds \u00b7 intact practice result\n\nOpen saved reportDelete this result\nBL1 \u00b7 Standalone practice\n\nSaved \u00b7 39/39 rounds \u00b7 valid standalone baseline\n\nOpen saved reportDelete this result\n\nDelete all Balloons data clears results, chains and local sequence exposure. Earlier use can no longer be known; a future sequence may be one you have already seen.\n\nDelete all Balloons dataPractise againStart another baseline with an unseen BL form"
+    },
+    {
+      "name": "no-notifications-assignment-individual",
+      "pass": false,
+      "deletionFinishedWithoutOriginTabExit": false,
+      "locksAt2600ms": {
+        "held": [
+          {
+            "clientId": "29e7cdc1-6f90-4a78-a3d5-ca7ebc2681ec",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:mutation"
+          },
+          {
+            "clientId": "29e7cdc1-6f90-4a78-a3d5-ca7ebc2681ec",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:owner"
+          }
+        ],
+        "pending": [
+          {
+            "clientId": "186c1338-ec43-4070-a324-c4dc44fc12ec",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:mutation"
+          }
+        ]
+      },
+      "savingTabText": "Balloons history\n\nSaved only in this browser. Deleting one result keeps its sequence exposure and chain tombstone, so it cannot become unseen again.\n\n0 retained attempts. 1 deletion tombstones.\n\nDelete all Balloons data clears results, chains and local sequence exposure. Earlier use can no longer be known; a future sequence may be one you have already seen.\n\nDelete all Balloons dataPractise againStart another baseline with an unseen BL form",
+      "originalInstallation": "e23baec8-02c7-4897-84d8-529d44ef386e",
+      "afterExitInstallation": "e23baec8-02c7-4897-84d8-529d44ef386e",
+      "lateDeliveryResurrected": false
+    },
+    {
+      "name": "no-notifications-assignment-installation",
+      "pass": false,
+      "deletionFinishedWithoutOriginTabExit": false,
+      "locksAt2600ms": {
+        "held": [
+          {
+            "clientId": "42b9ce93-d571-42f8-bc99-6053150e65dc",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:mutation"
+          },
+          {
+            "clientId": "42b9ce93-d571-42f8-bc99-6053150e65dc",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:owner"
+          }
+        ],
+        "pending": [
+          {
+            "clientId": "c97895c6-79be-4d15-9842-bc0236f83a08",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:mutation"
+          }
+        ]
+      },
+      "savingTabText": "Balloons durable integrity: installation replaced\n\nBalloons history\n\nSaved only in this browser. Deleting one result keeps its sequence exposure and chain tombstone, so it cannot become unseen again.\n\nChecking saved history\u2026\n\nPractise againStart another baseline with an unseen BL form",
+      "originalInstallation": "6a556f93-bbe3-4a82-8ea6-1682ad57ce2e",
+      "afterExitInstallation": "aa7b5f66-6ef1-4e20-a828-910191e425d4",
+      "lateDeliveryResurrected": false
+    },
+    {
+      "name": "no-notifications-arm-individual",
+      "pass": false,
+      "deletionFinishedWithoutOriginTabExit": false,
+      "locksAt2600ms": {
+        "held": [
+          {
+            "clientId": "a6be266d-2b9c-4fa2-a970-fb02aff87224",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:mutation"
+          },
+          {
+            "clientId": "a6be266d-2b9c-4fa2-a970-fb02aff87224",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:owner"
+          }
+        ],
+        "pending": [
+          {
+            "clientId": "660fa717-f932-41e7-8f82-a577d5a6b96e",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:mutation"
+          }
+        ]
+      },
+      "savingTabText": "Balloons history\n\nSaved only in this browser. Deleting one result keeps its sequence exposure and chain tombstone, so it cannot become unseen again.\n\n0 retained attempts. 1 deletion tombstones.\n\nDelete all Balloons data clears results, chains and local sequence exposure. Earlier use can no longer be known; a future sequence may be one you have already seen.\n\nDelete all Balloons dataPractise againStart another baseline with an unseen BL form",
+      "originalInstallation": "bf75bef3-bde2-4687-a357-2efc34b1339b",
+      "afterExitInstallation": "bf75bef3-bde2-4687-a357-2efc34b1339b",
+      "lateDeliveryResurrected": false
+    },
+    {
+      "name": "no-notifications-arm-installation",
+      "pass": false,
+      "deletionFinishedWithoutOriginTabExit": false,
+      "locksAt2600ms": {
+        "held": [
+          {
+            "clientId": "3109e77d-724f-4137-8ede-d1311f255a2a",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:mutation"
+          },
+          {
+            "clientId": "3109e77d-724f-4137-8ede-d1311f255a2a",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:owner"
+          }
+        ],
+        "pending": [
+          {
+            "clientId": "8780aa60-b1e1-4e99-b14b-2db9859c056c",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:mutation"
+          }
+        ]
+      },
+      "savingTabText": "Balloons durable integrity: installation replaced\n\nBalloons history\n\nSaved only in this browser. Deleting one result keeps its sequence exposure and chain tombstone, so it cannot become unseen again.\n\nChecking saved history\u2026\n\nPractise againStart another baseline with an unseen BL form",
+      "originalInstallation": "c92a91f1-7821-40ab-aa1a-12092622cde6",
+      "afterExitInstallation": "6ac4d46a-8c14-43be-b6bf-e65c350af078",
+      "lateDeliveryResurrected": false
+    },
+    {
+      "name": "no-notifications-confirm-individual",
+      "pass": false,
+      "deletionFinishedWithoutOriginTabExit": false,
+      "locksAt2600ms": {
+        "held": [
+          {
+            "clientId": "5c593875-7594-40f0-8e90-90371e821cbe",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:mutation"
+          },
+          {
+            "clientId": "5c593875-7594-40f0-8e90-90371e821cbe",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:owner"
+          }
+        ],
+        "pending": [
+          {
+            "clientId": "d51775e5-34d4-47c1-bb86-d9282ab1e2bc",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:mutation"
+          }
+        ]
+      },
+      "savingTabText": "Balloons history\n\nSaved only in this browser. Deleting one result keeps its sequence exposure and chain tombstone, so it cannot become unseen again.\n\n0 retained attempts. 1 deletion tombstones.\n\nDelete all Balloons data clears results, chains and local sequence exposure. Earlier use can no longer be known; a future sequence may be one you have already seen.\n\nDelete all Balloons dataPractise againStart another baseline with an unseen BL form",
+      "originalInstallation": "eefa125f-abde-42e8-b5b7-8e44ee1e26de",
+      "afterExitInstallation": "eefa125f-abde-42e8-b5b7-8e44ee1e26de",
+      "lateDeliveryResurrected": false
+    },
+    {
+      "name": "no-notifications-confirm-installation",
+      "pass": false,
+      "deletionFinishedWithoutOriginTabExit": false,
+      "locksAt2600ms": {
+        "held": [
+          {
+            "clientId": "375bf44b-f74c-4c51-a404-45e55250dccd",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:mutation"
+          },
+          {
+            "clientId": "375bf44b-f74c-4c51-a404-45e55250dccd",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:owner"
+          }
+        ],
+        "pending": [
+          {
+            "clientId": "9e7a5ed6-8121-4675-980f-b7b1659fec41",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:mutation"
+          }
+        ]
+      },
+      "savingTabText": "Balloons durable integrity: installation replaced\n\nBalloons history\n\nSaved only in this browser. Deleting one result keeps its sequence exposure and chain tombstone, so it cannot become unseen again.\n\nChecking saved history\u2026\n\nPractise againStart another baseline with an unseen BL form",
+      "originalInstallation": "99900848-bba2-4af9-80eb-7d590bc5a89a",
+      "afterExitInstallation": "3c183963-21b1-4aa2-9af2-85bf7dc17d37",
+      "lateDeliveryResurrected": false
+    },
+    {
+      "name": "no-notifications-action-individual",
+      "pass": false,
+      "deletionFinishedWithoutOriginTabExit": false,
+      "locksAt2600ms": {
+        "held": [
+          {
+            "clientId": "c2f50b6c-a26c-41ff-a4bf-22d9527f6e65",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:mutation"
+          },
+          {
+            "clientId": "c2f50b6c-a26c-41ff-a4bf-22d9527f6e65",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:owner"
+          }
+        ],
+        "pending": [
+          {
+            "clientId": "dfcd2526-4c8b-4dba-8766-d3cb5753be98",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:mutation"
+          }
+        ]
+      },
+      "savingTabText": "Balloons history\n\nSaved only in this browser. Deleting one result keeps its sequence exposure and chain tombstone, so it cannot become unseen again.\n\n0 retained attempts. 1 deletion tombstones.\n\nDelete all Balloons data clears results, chains and local sequence exposure. Earlier use can no longer be known; a future sequence may be one you have already seen.\n\nDelete all Balloons dataPractise againStart another baseline with an unseen BL form",
+      "originalInstallation": "fc72db9f-76d6-49b7-8ecb-3483e970e646",
+      "afterExitInstallation": "fc72db9f-76d6-49b7-8ecb-3483e970e646",
+      "lateDeliveryResurrected": false
+    },
+    {
+      "name": "no-notifications-action-installation",
+      "pass": false,
+      "deletionFinishedWithoutOriginTabExit": false,
+      "locksAt2600ms": {
+        "held": [
+          {
+            "clientId": "02d5ea2d-b126-46ce-bfbe-1160b6443f00",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:mutation"
+          },
+          {
+            "clientId": "02d5ea2d-b126-46ce-bfbe-1160b6443f00",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:owner"
+          }
+        ],
+        "pending": [
+          {
+            "clientId": "ea886bb2-8086-48e1-b920-2a8d4736204a",
+            "mode": "exclusive",
+            "name": "assessment-practice-balloons-v1:mutation"
+          }
+        ]
+      },
+      "savingTabText": "Balloons durable integrity: installation replaced\n\nBalloons history\n\nSaved only in this browser. Deleting one result keeps its sequence exposure and chain tombstone, so it cannot become unseen again.\n\nChecking saved history\u2026\n\nPractise againStart another baseline with an unseen BL form",
+      "originalInstallation": "5796f2f9-7d88-43fa-bc76-d447af63ce83",
+      "afterExitInstallation": "a521ba4f-a96c-4e98-a0ab-bc1a0488e323",
+      "lateDeliveryResurrected": false
+    },
+    {
+      "name": "persistent-intent-failure-recovery",
+      "pass": false,
+      "warning": "Balloons practice\n\nForm BL1 \u00b7 Standalone practice\n\nUnsaved action or display. Controls are paused. This attempt is not eligible as a durable baseline. Only committed actions can be recovered. Independent injected put failure\n\nLast visible committed state: round 1, 0 successful pumps, 0 cents banked. Unconfirmed or unsaved work cannot establish a baseline.\n\nCheck and resume saved session\nRound 1. Type 1. Current 0 cents. Banked 0 cents.\nPause and open history",
+      "storedAfterFailure": {
+        "phase": "active",
+        "eligible": true,
+        "pending": null
+      },
+      "afterRecovery": {
+        "phase": "active",
+        "eligible": true,
+        "form": "BL1"
+      }
+    }
+  ],
+  "supplemental-results": [
+    {
+      "name": "failed-intent-and-cleanup-completes-as-baseline",
+      "pass": false,
+      "unsavedText": "Balloons practice\n\nForm BL1 \u00b7 Standalone practice\n\nUnsaved action or display. Controls are paused. This attempt is not eligible as a durable baseline. Only committed actions can be recovered. Independent injected put failure\n\nLast visible committed state: round 1, 0 successful pumps, 0 cents banked. Unconfirmed or unsaved work cannot establish a baseline.\n\nCheck and resume saved session\nRound 1. Type 1. Current 0 cents. Banked 0 cents.\nPause and open history",
+      "reportText": "BALLOONS \u00b7 LOCAL REPORT\n\nYour choices and outcomes\n\nSaved \u00b7 39 of 39 rounds complete \u00b7 Intact practice result.\n\nForm BL1 \u00b7 balloons-v1.0 \u00b7 balloons-scored-v1 \u00b7 balloons-scoring-v1\n\nSaved standalone baseline. Advanced Training is not available in this build.\n\n0 cents collected. 0 cents lost from uncollected balloons.\n\nLost value was never deducted from money collected earlier. All money is simulated.\n\n39 collected and 0 burst out of 39 balloons.\n\nGroup\tRounds\tCollected\tBurst\tBanked cents\tLost cents\tAttempted pumps\tSuccessful pumps\tVoluntary\tZero-pump\tCap\nAll balloons\t39\t39\t0\t0\t0\t0\t0\t39\t39\t0\nType 1\t13\t13\t0\t0\t0\t0\t0\t13\t13\t0\nType 2\t13\t13\t0\t0\t0\t0\t0\t13\t13\t0\nType 3\t13\t13\t0\t0\t0\t0\t0\t13\t13\t0\nVoluntary collection points\n\nBursts are censored observations of intended attempts. Automatic cap collections are censored at 32 successful pumps. Neither supplies a voluntary stopping point.\n\nType 1\n\nMedian: 0 pumps (13 voluntary collections).\n\nEarly median 0 (4 voluntary); late median 0 (5 voluntary). Late minus early: 0 pumps.\n\nType 2\n\nMedian: 0 pumps (13 voluntary collections).\n\nEarly median 0 (5 voluntary); late median 0 (4 voluntary). Late minus early: 0 pumps.\n\nType 3\n\nMedian: 0 pumps (13 voluntary collections).\n\nEarly median 0 (4 voluntary); late median 0 (4 voluntary). Late minus early: 0 pumps.\n\nBy block\n\nEarly: rounds 1\u201313. Middle: 14\u201326. Late: 27\u201339.\n\nGroup\tRounds\tCollected\tBurst\tBanked cents\tLost cents\tAttempted pumps\tSuccessful pumps\tVoluntary\tZero-pump\tCap\nearly\t13\t13\t0\t0\t0\t0\t0\t13\t13\t0\nmiddle\t13\t13\t0\t0\t0\t0\t0\t13\t13\t0\nlate\t13\t13\t0\t0\t0\t0\t0\t13\t13\t0\nSession context\n\nInput sources recorded: mouse. Mixed sources do not invalidate this untimed task.\n\n1 interruption/recovery records. Decision latency is not reported; no latency is calculated across pauses or reloads.\n\nType text and stripe/dot/grid patterns. Round-start and outcome announcements. No growth animation used. Settings were fixed at readiness.\n\nRecorded browser context\nRound review\nRound\tType\tAttempts\tSuccesses\tOutcome\tBanked cents\tLost cents\n1\tType 1\t0\t0\tvoluntary collect\t0\t0\n2\tType 2\t0\t0\tvoluntary collect\t0\t0\n3\tType 3\t0\t0\tvoluntary collect\t0\t0\n4\tType 2\t0\t0\tvoluntary collect\t0\t0\n5\tType 1\t0\t0\tvoluntary collect\t0\t0\n6\tType 3\t0\t0\tvoluntary collect\t0\t0\n7\tType 3\t0\t0\tvoluntary collect\t0\t0\n8\tType 2\t0\t0\tvoluntary collect\t0\t0\n9\tType 2\t0\t0\tvoluntary collect\t0\t0\n10\tType 1\t0\t0\tvoluntary collect\t0\t0\n11\tType 2\t0\t0\tvoluntary collect\t0\t0\n12\tType 3\t0\t0\tvoluntary collect\t0\t0\n13\tType 1\t0\t0\tvoluntary collect\t0\t0\n14\tType 2\t0\t0\tvoluntary collect\t0\t0\n15\tType 1\t0\t0\tvoluntary collect\t0\t0\n16\tType 3\t0\t0\tvoluntary collect\t0\t0\n17\tType 3\t0\t0\tvoluntary collect\t0\t0\n18\tType 3\t0\t0\tvoluntary collect\t0\t0\n19\tType 2\t0\t0\tvoluntary collect\t0\t0\n20\tType 2\t0\t0\tvoluntary collect\t0\t0\n21\tType 1\t0\t0\tvoluntary collect\t0\t0\n22\tType 1\t0\t0\tvoluntary collect\t0\t0\n23\tType 1\t0\t0\tvoluntary collect\t0\t0\n24\tType 2\t0\t0\tvoluntary collect\t0\t0\n25\tType 3\t0\t0\tvoluntary collect\t0\t0\n26\tType 3\t0\t0\tvoluntary collect\t0\t0\n27\tType 1\t0\t0\tvoluntary collect\t0\t0\n28\tType 1\t0\t0\tvoluntary collect\t0\t0\n29\tType 3\t0\t0\tvoluntary collect\t0\t0\n30\tType 2\t0\t0\tvoluntary collect\t0\t0\n31\tType 1\t0\t0\tvoluntary collect\t0\t0\n32\tType 3\t0\t0\tvoluntary collect\t0\t0\n33\tType 1\t0\t0\tvoluntary collect\t0\t0\n34\tType 2\t0\t0\tvoluntary collect\t0\t0\n35\tType 2\t0\t0\tvoluntary collect\t0\t0\n36\tType 1\t0\t0\tvoluntary collect\t0\t0\n37\tType 3\t0\t0\tvoluntary collect\t0\t0\n38\tType 3\t0\t0\tvoluntary collect\t0\t0\n39\tType 2\t0\t0\tvoluntary collect\t0\t0\n\nThese are the choices and outcomes from this Assessment Practice sequence. A different sequence could produce a different amount. This result is not a personality score or a prediction of an employer's decision.\n\nThese fixed sequences are not calibrated equivalent forms. Total collected is one sampled outcome, not a skill or personality measure.\n\nPractise againBalloons history",
+      "eligible": true
+    },
+    {
+      "name": "native-space-source-and-repeat",
+      "pass": false,
+      "sources": [
+        {
+          "input": "Space Collect",
+          "source": "unknown_or_assistive"
+        },
+        {
+          "input": "Space Pump",
+          "source": "unknown_or_assistive"
+        },
+        {
+          "input": "Enter Pump",
+          "source": "keyboard"
+        },
+        {
+          "input": "Space Pump",
+          "source": "unknown_or_assistive"
+        }
+      ],
+      "heldFocusReleaseAddsNoAction": true
+    },
+    {
+      "name": "healthy-normal-report-polling",
+      "pass": true,
+      "normalPollReportRemovals": 0,
+      "reportVisible": true
+    }
+  ]
+}

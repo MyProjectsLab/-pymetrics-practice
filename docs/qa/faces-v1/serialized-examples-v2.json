@@ -1,0 +1,187 @@
+{
+  "freshRoot": {
+    "schema": "faces-root-v2",
+    "installationId": "install-A",
+    "generation": 0,
+    "revision": 0,
+    "nextSequence": 1,
+    "route": null,
+    "attempts": [],
+    "requestFences": [],
+    "attemptFences": [],
+    "exposure": [],
+    "guideCompletion": null,
+    "lastGuideReceipt": null,
+    "deletionReceipts": [],
+    "lastReset": null
+  },
+  "openedIntentRoot": {
+    "schema": "faces-root-v2",
+    "installationId": "install-A",
+    "generation": 0,
+    "revision": 3,
+    "nextSequence": 3,
+    "route": {
+      "id": "route-A",
+      "lease": "lease-A",
+      "epoch": 1,
+      "state": "play",
+      "attemptId": "attempt-A",
+      "pendingOpeningId": null,
+      "navigation": null
+    },
+    "attempts": [
+      {
+        "id": "attempt-A",
+        "routeId": "route-A",
+        "leaseId": "lease-A",
+        "formId": "faces-bank-discussion-v1",
+        "formHash": "cb12f328b155b79019e10ce38ab2c4b59ed806df3ae64f5f4ea3eeded26c9ff6",
+        "assetBankHash": "7a7e835a3b1c5277eca45b19d82f2ba917305b886727b104a2ac7a94e95f4854",
+        "modeId": "standard-v1",
+        "scoringVersion": "faces-descriptive-v2",
+        "startedAtWall": "2026-10-13T06:50:00Z",
+        "clockDocumentId": "doc-A",
+        "status": "active",
+        "facts": {
+          "intents": [
+            {
+              "requestId": "intent-A0",
+              "item": 0,
+              "assetId": "F-P04",
+              "assetSha256": "b3ad867fd331da2cfbf808effd54dec1b4306310d81567a91f2064aecdab48d0",
+              "contextSha256": "05d1a5f89f99ea05d9b2bb93c79402def92477a12506ec9be5e7f1f649d1377b"
+            }
+          ],
+          "onsets": [],
+          "responses": [],
+          "expired": []
+        },
+        "report": null,
+        "receipts": [
+          {
+            "sequence": 1,
+            "outcome": "applied",
+            "command": {
+              "eventVersion": "faces-event-v2",
+              "installationId": "install-A",
+              "generation": 0,
+              "routeId": "route-A",
+              "leaseId": "lease-A",
+              "attemptId": "attempt-A",
+              "requestId": "open-A",
+              "kind": "open",
+              "payload": {
+                "readyEpoch": 1,
+                "formId": "faces-bank-discussion-v1",
+                "formHash": "cb12f328b155b79019e10ce38ab2c4b59ed806df3ae64f5f4ea3eeded26c9ff6",
+                "assetBankHash": "7a7e835a3b1c5277eca45b19d82f2ba917305b886727b104a2ac7a94e95f4854",
+                "modeId": "standard-v1",
+                "scoringVersion": "faces-descriptive-v2",
+                "startedAtWall": "2026-10-13T06:50:00Z",
+                "clockDocumentId": "doc-A",
+                "familiarity": "new-local-record"
+              }
+            },
+            "dependency": null
+          },
+          {
+            "sequence": 2,
+            "outcome": "applied",
+            "command": {
+              "eventVersion": "faces-event-v2",
+              "installationId": "install-A",
+              "generation": 0,
+              "routeId": "route-A",
+              "leaseId": "lease-A",
+              "attemptId": "attempt-A",
+              "requestId": "intent-A0",
+              "kind": "intent",
+              "payload": {
+                "item": 0,
+                "assetId": "F-P04",
+                "assetSha256": "b3ad867fd331da2cfbf808effd54dec1b4306310d81567a91f2064aecdab48d0",
+                "contextSha256": "05d1a5f89f99ea05d9b2bb93c79402def92477a12506ec9be5e7f1f649d1377b"
+              }
+            },
+            "dependency": null
+          }
+        ]
+      }
+    ],
+    "requestFences": [],
+    "attemptFences": [],
+    "exposure": [
+      {
+        "formId": "faces-bank-discussion-v1",
+        "assetBankHash": "7a7e835a3b1c5277eca45b19d82f2ba917305b886727b104a2ac7a94e95f4854",
+        "familiarity": "familiar"
+      }
+    ],
+    "guideCompletion": {
+      "guideVersion": "faces-guide-v2",
+      "checkVersion": "faces-check-v2"
+    },
+    "lastGuideReceipt": {
+      "requestId": "guide-A",
+      "guideVersion": "faces-guide-v2",
+      "checkVersion": "faces-check-v2"
+    },
+    "deletionReceipts": [],
+    "lastReset": null
+  },
+  "reportShapeOnly": {
+    "excludedItems": [
+      1,
+      6
+    ],
+    "formHash": "cb12f328b155b79019e10ce38ab2c4b59ed806df3ae64f5f4ea3eeded26c9ff6",
+    "modeId": "standard-v1",
+    "scoringVersion": "faces-descriptive-v2",
+    "context": {
+      "total": 8,
+      "eligibleTotal": 6,
+      "excludedTotal": 2,
+      "matches": 6,
+      "timelyMatches": 6,
+      "lateCount": 0,
+      "timelyLatencySumUs": 8000000,
+      "timelyCount": 8,
+      "lateLatencySumUs": 0,
+      "lateCountForMean": 0
+    },
+    "photo": {
+      "total": 6,
+      "eligibleTotal": 6,
+      "excludedTotal": 0,
+      "matches": 6,
+      "timelyMatches": 6,
+      "lateCount": 0,
+      "timelyLatencySumUs": 6000000,
+      "timelyCount": 6,
+      "lateLatencySumUs": 0,
+      "lateCountForMean": 0
+    },
+    "confusionPairs": [],
+    "familiarity": "familiar"
+  },
+  "deleteCommand": {
+    "requestId": "delete-A",
+    "expectedInstallationId": "install-A",
+    "expectedGeneration": 0,
+    "kind": "delete",
+    "payload": {
+      "targetAttemptId": "attempt-A"
+    }
+  },
+  "resetCommand": {
+    "requestId": "reset-A",
+    "expectedInstallationId": "install-A",
+    "expectedGeneration": 0,
+    "kind": "reset",
+    "payload": {
+      "proposedNewInstallationId": "install-B",
+      "proposedNewGeneration": 1
+    }
+  }
+}

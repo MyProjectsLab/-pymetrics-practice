@@ -1,0 +1,197 @@
+[
+  {
+    "name": "F4 retired one: pending history detached and fresh current installation",
+    "status": "PASS",
+    "detail": {
+      "pending": "Back to library\nLoading Digits local history\n\nChecking current local storage.\n\nPractice againLocal historyLibrary",
+      "settled": "Back to library\nDigits local history\n\nClearing local data also clears form-exposure and rotation history; a form may repeat afterward.\n\nNo saved Digits attempts in this browser.\n\nDelete all Digits dataPractice again",
+      "unchangedRoot": true
+    }
+  },
+  {
+    "name": "F4 retired all: pending history detached and fresh current installation",
+    "status": "PASS",
+    "detail": {
+      "pending": "Back to library\nLoading Digits local history\n\nChecking current local storage.\n\nPractice againLocal historyLibrary",
+      "settled": "Back to library\nDigits local history\n\nClearing local data also clears form-exposure and rotation history; a form may repeat afterward.\n\nNo saved Digits attempts in this browser.\n\nDelete all Digits dataPractice again",
+      "unchangedRoot": true
+    }
+  },
+  {
+    "name": "F5 retired one history hold_read then newer Replay",
+    "status": "PASS",
+    "detail": {
+      "guideRemains": true,
+      "unchangedRoot": true
+    }
+  },
+  {
+    "name": "F5 retired all history hold_read then newer Replay",
+    "status": "PASS",
+    "detail": {
+      "guideRemains": true,
+      "unchangedRoot": true
+    }
+  },
+  {
+    "name": "F5 retired one history hold_fail_read then newer Replay",
+    "status": "PASS",
+    "detail": {
+      "guideRemains": true,
+      "unchangedRoot": true
+    }
+  },
+  {
+    "name": "F5 retired all history hold_fail_read then newer Replay",
+    "status": "PASS",
+    "detail": {
+      "guideRemains": true,
+      "unchangedRoot": true
+    }
+  },
+  {
+    "name": "F5 openSaved hold_read then newer Replay",
+    "status": "PASS",
+    "detail": {
+      "guideRemains": true,
+      "unchangedRoot": true
+    }
+  },
+  {
+    "name": "F5 openSaved hold_fail_read then newer Replay",
+    "status": "PASS",
+    "detail": {
+      "guideRemains": true,
+      "unchangedRoot": true
+    }
+  },
+  {
+    "name": "report poll hold_read then newer Replay",
+    "status": "PASS",
+    "detail": {
+      "guideRemains": true,
+      "unchangedRoot": true
+    }
+  },
+  {
+    "name": "report poll hold_fail_read then newer Replay",
+    "status": "PASS",
+    "detail": {
+      "guideRemains": true,
+      "unchangedRoot": true
+    }
+  },
+  {
+    "name": "Replay current-store hold_read then newer History",
+    "status": "PASS",
+    "detail": {
+      "historyRemains": true,
+      "newHandleReviewWorks": true
+    }
+  },
+  {
+    "name": "Replay current-store hold_fail_read then newer History",
+    "status": "PASS",
+    "detail": {
+      "historyRemains": true,
+      "newHandleReviewWorks": true
+    }
+  },
+  {
+    "name": "stale delete one hold_other then newer Replay",
+    "status": "PASS",
+    "detail": {
+      "guideRemains": true,
+      "newHandleHistoryWorks": true,
+      "unchangedRoot": true
+    }
+  },
+  {
+    "name": "stale delete one hold_fail_other then newer Replay",
+    "status": "PASS",
+    "detail": {
+      "guideRemains": true,
+      "newHandleHistoryWorks": true,
+      "unchangedRoot": true
+    }
+  },
+  {
+    "name": "stale delete all hold_other then newer Replay",
+    "status": "PASS",
+    "detail": {
+      "guideRemains": true,
+      "newHandleHistoryWorks": true,
+      "unchangedRoot": true
+    }
+  },
+  {
+    "name": "stale delete all hold_fail_other then newer Replay",
+    "status": "PASS",
+    "detail": {
+      "guideRemains": true,
+      "newHandleHistoryWorks": true,
+      "unchangedRoot": true
+    }
+  },
+  {
+    "name": "history refresh hold_read then Library",
+    "status": "PASS",
+    "detail": {
+      "libraryRemains": true,
+      "unchangedRoot": true
+    }
+  },
+  {
+    "name": "history refresh hold_fail_read then Library",
+    "status": "PASS",
+    "detail": {
+      "libraryRemains": true,
+      "unchangedRoot": true
+    }
+  },
+  {
+    "name": "current delete one: current History or Replay usable",
+    "status": "PASS",
+    "detail": {
+      "body": "Back to library\nDigits local history\n\nClearing local data also clears form-exposure and rotation history; a form may repeat afterward.\n\nNo saved Digits attempts in this browser.\n\nDelete all Digits dataPractice again",
+      "durable": {
+        "version": "digits_storage_v1_1",
+        "installationId": "0efcf738-523b-4cd6-880c-0cf15448ebbb",
+        "revision": 5,
+        "counters": {
+          "visual": 1,
+          "auditory": 0
+        },
+        "attempts": {},
+        "tombstones": {
+          "f21cfed5-63b3-45c4-849c-b6a20c5d1c6a": {
+            "requestId": "3dcf272d-c775-4090-b1e3-80346a5f0c1d",
+            "mode": "visual",
+            "ordinal": 1,
+            "deletedAtWallMs": 1791486829304
+          }
+        },
+        "activity": {}
+      }
+    }
+  },
+  {
+    "name": "current delete all: current History or Replay usable",
+    "status": "PASS",
+    "detail": {
+      "body": "Back to library\nDigits local history\n\nClearing local data also clears form-exposure and rotation history; a form may repeat afterward.\n\nNo saved Digits attempts in this browser.\n\nDelete all Digits dataPractice again",
+      "durable": {
+        "version": "digits_storage_v1_1",
+        "installationId": "ede459a0-06c7-4447-ac30-a20690f5b2ab",
+        "revision": 0,
+        "counters": {
+          "visual": 0,
+          "auditory": 0
+        },
+        "attempts": {},
+        "tombstones": {},
+        "activity": {}
+      }
+    }
+  }
+]

@@ -1,0 +1,429 @@
+{
+  "version": "money_exchange_2_storage_v2_0",
+  "activity": {},
+  "installationId": "c6a0cdc5-e8f7-47c0-90e3-0c39b3042f8d",
+  "generation": 1,
+  "revision": 25,
+  "lease": {
+    "ownerId": "native-owner",
+    "epoch": 2,
+    "live": true
+  },
+  "route": {
+    "stage": "library",
+    "epoch": 26,
+    "ownerId": "native-owner"
+  },
+  "ticketSerial": 1,
+  "currentTicketId": null,
+  "tickets": {
+    "T1.1": {
+      "id": "T1.1",
+      "generation": 1,
+      "ownerId": "native-owner",
+      "leaseEpoch": 2,
+      "state": "canceled",
+      "attemptId": "A1.1"
+    }
+  },
+  "activeAttemptId": null,
+  "formCounter": 1,
+  "exposureHistory": [
+    {
+      "attemptId": "A1.1",
+      "formId": "ME2-1",
+      "formDigest": "1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea"
+    }
+  ],
+  "attempts": {},
+  "tombstones": {
+    "A1.1": true
+  },
+  "outcomes": {
+    "native/25": {
+      "payloadHash": "{\"kind\":\"deleteAttempt\",\"requestId\":\"native/25\",\"installationId\":\"c6a0cdc5-e8f7-47c0-90e3-0c39b3042f8d\",\"generation\":1,\"attemptId\":\"A1.1\"}",
+      "command": {
+        "kind": "deleteAttempt",
+        "requestId": "native/25",
+        "installationId": "c6a0cdc5-e8f7-47c0-90e3-0c39b3042f8d",
+        "generation": 1,
+        "attemptId": "A1.1"
+      },
+      "result": {
+        "deleted": "A1.1"
+      },
+      "route": {
+        "stage": "library",
+        "epoch": 26,
+        "ownerId": "native-owner"
+      },
+      "revision": 25
+    }
+  },
+  "navigation": null,
+  "proofs": {},
+  "retired": {
+    "native/1": {
+      "requestId": "native/1",
+      "deletionId": "native/25",
+      "attemptId": null,
+      "generation": 1
+    },
+    "native/2": {
+      "requestId": "native/2",
+      "deletionId": "native/25",
+      "attemptId": null,
+      "generation": 1
+    },
+    "native/3": {
+      "requestId": "native/3",
+      "deletionId": "native/25",
+      "attemptId": null,
+      "generation": 1
+    },
+    "native/4": {
+      "requestId": "native/4",
+      "deletionId": "native/25",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/5": {
+      "requestId": "native/5",
+      "deletionId": "native/25",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/6": {
+      "requestId": "native/6",
+      "deletionId": "native/25",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/7": {
+      "requestId": "native/7",
+      "deletionId": "native/25",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/8": {
+      "requestId": "native/8",
+      "deletionId": "native/25",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/9": {
+      "requestId": "native/9",
+      "deletionId": "native/25",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/10": {
+      "requestId": "native/10",
+      "deletionId": "native/25",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/11": {
+      "requestId": "native/11",
+      "deletionId": "native/25",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/12": {
+      "requestId": "native/12",
+      "deletionId": "native/25",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/13": {
+      "requestId": "native/13",
+      "deletionId": "native/25",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/14": {
+      "requestId": "native/14",
+      "deletionId": "native/25",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/15": {
+      "requestId": "native/15",
+      "deletionId": "native/25",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/16": {
+      "requestId": "native/16",
+      "deletionId": "native/25",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/17": {
+      "requestId": "native/17",
+      "deletionId": "native/25",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/18": {
+      "requestId": "native/18",
+      "deletionId": "native/25",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/19": {
+      "requestId": "native/19",
+      "deletionId": "native/25",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/20": {
+      "requestId": "native/20",
+      "deletionId": "native/25",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/21": {
+      "requestId": "native/21",
+      "deletionId": "native/25",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/22": {
+      "requestId": "native/22",
+      "deletionId": "native/25",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/23": {
+      "requestId": "native/23",
+      "deletionId": "native/25",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/24": {
+      "requestId": "native/24",
+      "deletionId": "native/25",
+      "attemptId": "A1.1",
+      "generation": 1
+    }
+  },
+  "resetReceipt": null,
+  "checkpoint": {
+    "version": "storage_v2_0",
+    "revision": 25,
+    "state": {
+      "version": "money_exchange_2_storage_v2_0",
+      "activity": {},
+      "installationId": "c6a0cdc5-e8f7-47c0-90e3-0c39b3042f8d",
+      "generation": 1,
+      "revision": 25,
+      "lease": {
+        "ownerId": "native-owner",
+        "epoch": 2,
+        "live": true
+      },
+      "route": {
+        "stage": "library",
+        "epoch": 26,
+        "ownerId": "native-owner"
+      },
+      "ticketSerial": 1,
+      "currentTicketId": null,
+      "tickets": {
+        "T1.1": {
+          "id": "T1.1",
+          "generation": 1,
+          "ownerId": "native-owner",
+          "leaseEpoch": 2,
+          "state": "canceled",
+          "attemptId": "A1.1"
+        }
+      },
+      "activeAttemptId": null,
+      "formCounter": 1,
+      "exposureHistory": [
+        {
+          "attemptId": "A1.1",
+          "formId": "ME2-1",
+          "formDigest": "1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea"
+        }
+      ],
+      "attempts": {},
+      "tombstones": {
+        "A1.1": true
+      },
+      "outcomes": {
+        "native/25": {
+          "payloadHash": "{\"kind\":\"deleteAttempt\",\"requestId\":\"native/25\",\"installationId\":\"c6a0cdc5-e8f7-47c0-90e3-0c39b3042f8d\",\"generation\":1,\"attemptId\":\"A1.1\"}",
+          "command": {
+            "kind": "deleteAttempt",
+            "requestId": "native/25",
+            "installationId": "c6a0cdc5-e8f7-47c0-90e3-0c39b3042f8d",
+            "generation": 1,
+            "attemptId": "A1.1"
+          },
+          "result": {
+            "deleted": "A1.1"
+          },
+          "route": {
+            "stage": "library",
+            "epoch": 26,
+            "ownerId": "native-owner"
+          },
+          "revision": 25
+        }
+      },
+      "navigation": null,
+      "proofs": {},
+      "retired": {
+        "native/1": {
+          "requestId": "native/1",
+          "deletionId": "native/25",
+          "attemptId": null,
+          "generation": 1
+        },
+        "native/2": {
+          "requestId": "native/2",
+          "deletionId": "native/25",
+          "attemptId": null,
+          "generation": 1
+        },
+        "native/3": {
+          "requestId": "native/3",
+          "deletionId": "native/25",
+          "attemptId": null,
+          "generation": 1
+        },
+        "native/4": {
+          "requestId": "native/4",
+          "deletionId": "native/25",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/5": {
+          "requestId": "native/5",
+          "deletionId": "native/25",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/6": {
+          "requestId": "native/6",
+          "deletionId": "native/25",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/7": {
+          "requestId": "native/7",
+          "deletionId": "native/25",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/8": {
+          "requestId": "native/8",
+          "deletionId": "native/25",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/9": {
+          "requestId": "native/9",
+          "deletionId": "native/25",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/10": {
+          "requestId": "native/10",
+          "deletionId": "native/25",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/11": {
+          "requestId": "native/11",
+          "deletionId": "native/25",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/12": {
+          "requestId": "native/12",
+          "deletionId": "native/25",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/13": {
+          "requestId": "native/13",
+          "deletionId": "native/25",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/14": {
+          "requestId": "native/14",
+          "deletionId": "native/25",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/15": {
+          "requestId": "native/15",
+          "deletionId": "native/25",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/16": {
+          "requestId": "native/16",
+          "deletionId": "native/25",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/17": {
+          "requestId": "native/17",
+          "deletionId": "native/25",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/18": {
+          "requestId": "native/18",
+          "deletionId": "native/25",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/19": {
+          "requestId": "native/19",
+          "deletionId": "native/25",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/20": {
+          "requestId": "native/20",
+          "deletionId": "native/25",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/21": {
+          "requestId": "native/21",
+          "deletionId": "native/25",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/22": {
+          "requestId": "native/22",
+          "deletionId": "native/25",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/23": {
+          "requestId": "native/23",
+          "deletionId": "native/25",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/24": {
+          "requestId": "native/24",
+          "deletionId": "native/25",
+          "attemptId": "A1.1",
+          "generation": 1
+        }
+      },
+      "resetReceipt": null
+    }
+  },
+  "tail": []
+}

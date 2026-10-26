@@ -1,0 +1,2625 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://assessment-practice.invalid/schemas/full-mock-v1-packet-r2-final.json",
+  "title": "Full mock metadata only root",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": "ap-mock-root-v1"
+    },
+    "installationId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "nextMockOrdinal": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9007199254740991
+    },
+    "mocks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/mock"
+      },
+      "minItems": 0,
+      "maxItems": 50
+    },
+    "lastRootCommand": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/rootReceipt"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "schema",
+    "installationId",
+    "revision",
+    "nextMockOrdinal",
+    "mocks",
+    "lastRootCommand"
+  ],
+  "$defs": {
+    "preferences": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "controls": {
+          "enum": [
+            "physical_keyboard",
+            "alternative"
+          ]
+        },
+        "reducedMotion": {
+          "type": "boolean"
+        },
+        "digitsMode": {
+          "enum": [
+            "visual",
+            "auditory"
+          ]
+        },
+        "digitsEntryMs": {
+          "enum": [
+            20000,
+            35000
+          ]
+        },
+        "lengthsVariant": {
+          "enum": [
+            "standard",
+            "visual_accommodation"
+          ]
+        },
+        "facesMode": {
+          "enum": [
+            "standard-v1",
+            "extended-v1"
+          ]
+        }
+      },
+      "required": [
+        "controls",
+        "reducedMotion",
+        "digitsMode",
+        "digitsEntryMs",
+        "lengthsVariant",
+        "facesMode"
+      ]
+    },
+    "settings": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "revision": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 64
+        },
+        "atWallMs": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "preferences": {
+          "$ref": "#/$defs/preferences"
+        },
+        "changedKeys": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "controls",
+              "reducedMotion",
+              "digitsMode",
+              "digitsEntryMs",
+              "lengthsVariant",
+              "facesMode"
+            ]
+          },
+          "minItems": 0,
+          "maxItems": 6
+        }
+      },
+      "required": [
+        "revision",
+        "atWallMs",
+        "preferences",
+        "changedKeys"
+      ]
+    },
+    "nativeReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "adapterVersion": {
+          "const": "ap-mock-adapter/2"
+        },
+        "game": {
+          "enum": [
+            "keypresses",
+            "stop",
+            "digits",
+            "arrows",
+            "balloons",
+            "towers",
+            "lengths",
+            "cards",
+            "easy_hard",
+            "money_1",
+            "money_2",
+            "faces"
+          ]
+        },
+        "databaseFamily": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        },
+        "installationId": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9._:-]{1,160}$"
+        },
+        "generation": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "attemptId": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9._:-]{1,160}$"
+        },
+        "armRequestId": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9._:-]{1,160}$"
+        },
+        "originTicketId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9._:-]{1,160}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "versions": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "specification": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 160
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "formId": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 160
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "formHash": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "scoring": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 160
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "event": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 160
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "presentation": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 160
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "feedback": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 160
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "formVersion": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 160
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "formHashKind": {
+              "enum": [
+                "none",
+                "per_form",
+                "manifest_payload"
+              ]
+            },
+            "assetBankHash": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "report": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 160
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "specification",
+            "formId",
+            "formHash",
+            "scoring",
+            "event",
+            "presentation",
+            "feedback",
+            "formVersion",
+            "formHashKind",
+            "assetBankHash",
+            "report"
+          ]
+        },
+        "settingsRevision": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 64
+        },
+        "resultRevision": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 9007199254740991
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "adapterVersion",
+        "game",
+        "databaseFamily",
+        "installationId",
+        "generation",
+        "attemptId",
+        "armRequestId",
+        "originTicketId",
+        "versions",
+        "settingsRevision",
+        "resultRevision"
+      ],
+      "allOf": [
+        {
+          "oneOf": [
+            {
+              "properties": {
+                "game": {
+                  "const": "keypresses"
+                },
+                "databaseFamily": {
+                  "const": "keypresses-v1"
+                },
+                "generation": {
+                  "type": "null"
+                },
+                "originTicketId": {
+                  "type": "null"
+                },
+                "versions": {
+                  "allOf": [
+                    {
+                      "properties": {
+                        "specification": {
+                          "const": "keypresses_spec_v1_0_1"
+                        },
+                        "scoring": {
+                          "const": "keypresses_scoring_v1_0_1"
+                        },
+                        "event": {
+                          "const": "keypresses_event_v1"
+                        },
+                        "formVersion": {
+                          "const": null
+                        },
+                        "formHashKind": {
+                          "const": "none"
+                        },
+                        "presentation": {
+                          "const": "keypresses_presentation_plan_v1"
+                        },
+                        "feedback": {
+                          "const": null
+                        },
+                        "assetBankHash": {
+                          "const": null
+                        },
+                        "report": {
+                          "const": null
+                        }
+                      }
+                    },
+                    {
+                      "oneOf": [
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": null
+                            },
+                            "formHash": {
+                              "const": null
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "resultRevision": {
+                  "type": "null"
+                }
+              }
+            },
+            {
+              "properties": {
+                "game": {
+                  "const": "stop"
+                },
+                "databaseFamily": {
+                  "const": "stop-v1"
+                },
+                "generation": {
+                  "type": "null"
+                },
+                "originTicketId": {
+                  "type": "null"
+                },
+                "versions": {
+                  "allOf": [
+                    {
+                      "properties": {
+                        "specification": {
+                          "const": "1.3"
+                        },
+                        "scoring": {
+                          "const": "stop_scoring_v13"
+                        },
+                        "event": {
+                          "const": "stop_engine_event_v1"
+                        },
+                        "formVersion": {
+                          "const": "2"
+                        },
+                        "formHashKind": {
+                          "const": "per_form"
+                        },
+                        "presentation": {
+                          "const": null
+                        },
+                        "feedback": {
+                          "const": null
+                        },
+                        "assetBankHash": {
+                          "const": null
+                        },
+                        "report": {
+                          "const": "stop_report_v13"
+                        }
+                      }
+                    },
+                    {
+                      "oneOf": [
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "stop-v13-baseline-01"
+                            },
+                            "formHash": {
+                              "const": "0bbd49818785c1580ee7fed9b38016ab39909c26c57246bdeb7361558ea0d138"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "stop-v13-baseline-02"
+                            },
+                            "formHash": {
+                              "const": "4885533124529fd2ca870df9859cfb4e601bc2af23d723acda71ea1e97ac3e77"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "stop-v13-baseline-03"
+                            },
+                            "formHash": {
+                              "const": "dddb920fec579d52b909ca5396809722c5b6cb8a9d36d035bf4431abe8bb0e62"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "stop-v13-baseline-04"
+                            },
+                            "formHash": {
+                              "const": "033f286abd2ee0d97f87dd90aba7018fd36f4d733966c7c3ac1590b17a9504c9"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "resultRevision": {
+                  "type": "null"
+                }
+              }
+            },
+            {
+              "properties": {
+                "game": {
+                  "const": "digits"
+                },
+                "databaseFamily": {
+                  "const": "digits-v11"
+                },
+                "generation": {
+                  "type": "null"
+                },
+                "originTicketId": {
+                  "type": "null"
+                },
+                "versions": {
+                  "allOf": [
+                    {
+                      "properties": {
+                        "specification": {
+                          "const": "digits_spec_v1_1"
+                        },
+                        "scoring": {
+                          "const": "digits_scoring_v1_1"
+                        },
+                        "event": {
+                          "const": "digits_event_v1_1"
+                        },
+                        "formVersion": {
+                          "const": "digits_forms_v1_1"
+                        },
+                        "formHashKind": {
+                          "const": "manifest_payload"
+                        },
+                        "presentation": {
+                          "const": null
+                        },
+                        "feedback": {
+                          "const": null
+                        },
+                        "assetBankHash": {
+                          "const": null
+                        },
+                        "report": {
+                          "const": null
+                        }
+                      }
+                    },
+                    {
+                      "oneOf": [
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "DV1"
+                            },
+                            "formHash": {
+                              "const": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "DV2"
+                            },
+                            "formHash": {
+                              "const": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "DV3"
+                            },
+                            "formHash": {
+                              "const": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "DV4"
+                            },
+                            "formHash": {
+                              "const": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "DV5"
+                            },
+                            "formHash": {
+                              "const": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "DV6"
+                            },
+                            "formHash": {
+                              "const": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "DA1"
+                            },
+                            "formHash": {
+                              "const": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "DA2"
+                            },
+                            "formHash": {
+                              "const": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "DA3"
+                            },
+                            "formHash": {
+                              "const": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "DA4"
+                            },
+                            "formHash": {
+                              "const": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "DA5"
+                            },
+                            "formHash": {
+                              "const": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "DA6"
+                            },
+                            "formHash": {
+                              "const": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "resultRevision": {
+                  "type": "null"
+                }
+              }
+            },
+            {
+              "properties": {
+                "game": {
+                  "const": "arrows"
+                },
+                "databaseFamily": {
+                  "const": "arrows-v11"
+                },
+                "generation": {
+                  "type": "null"
+                },
+                "originTicketId": {
+                  "type": "null"
+                },
+                "versions": {
+                  "allOf": [
+                    {
+                      "properties": {
+                        "specification": {
+                          "const": "arrows_spec_v1_1"
+                        },
+                        "scoring": {
+                          "const": "arrows_scoring_v1_1"
+                        },
+                        "event": {
+                          "const": "arrows_event_v1_1"
+                        },
+                        "formVersion": {
+                          "const": "arrows_forms_v1_1"
+                        },
+                        "formHashKind": {
+                          "const": "manifest_payload"
+                        },
+                        "presentation": {
+                          "const": "arrows_presentation_v1_1"
+                        },
+                        "feedback": {
+                          "const": null
+                        },
+                        "assetBankHash": {
+                          "const": null
+                        },
+                        "report": {
+                          "const": null
+                        }
+                      }
+                    },
+                    {
+                      "oneOf": [
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "AR11-1"
+                            },
+                            "formHash": {
+                              "const": "bedfa8c58fd9bde20cf7b9408b6ac5909c6bae45d025bff9c3de8041f8ae6855"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "AR11-2"
+                            },
+                            "formHash": {
+                              "const": "bedfa8c58fd9bde20cf7b9408b6ac5909c6bae45d025bff9c3de8041f8ae6855"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "AR11-3"
+                            },
+                            "formHash": {
+                              "const": "bedfa8c58fd9bde20cf7b9408b6ac5909c6bae45d025bff9c3de8041f8ae6855"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "AR11-4"
+                            },
+                            "formHash": {
+                              "const": "bedfa8c58fd9bde20cf7b9408b6ac5909c6bae45d025bff9c3de8041f8ae6855"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "AR11-5"
+                            },
+                            "formHash": {
+                              "const": "bedfa8c58fd9bde20cf7b9408b6ac5909c6bae45d025bff9c3de8041f8ae6855"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "AR11-6"
+                            },
+                            "formHash": {
+                              "const": "bedfa8c58fd9bde20cf7b9408b6ac5909c6bae45d025bff9c3de8041f8ae6855"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "resultRevision": {
+                  "type": "null"
+                }
+              }
+            },
+            {
+              "properties": {
+                "game": {
+                  "const": "balloons"
+                },
+                "databaseFamily": {
+                  "const": "balloons-v1"
+                },
+                "generation": {
+                  "type": "null"
+                },
+                "originTicketId": {
+                  "type": "null"
+                },
+                "versions": {
+                  "allOf": [
+                    {
+                      "properties": {
+                        "specification": {
+                          "const": "balloons-v1.0"
+                        },
+                        "scoring": {
+                          "const": "balloons-scoring-v1"
+                        },
+                        "event": {
+                          "const": "balloons-event-v1"
+                        },
+                        "formVersion": {
+                          "const": "balloons-scored-v1"
+                        },
+                        "formHashKind": {
+                          "const": "per_form"
+                        },
+                        "presentation": {
+                          "const": null
+                        },
+                        "feedback": {
+                          "const": null
+                        },
+                        "assetBankHash": {
+                          "const": null
+                        },
+                        "report": {
+                          "const": null
+                        }
+                      }
+                    },
+                    {
+                      "oneOf": [
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "RP1"
+                            },
+                            "formHash": {
+                              "const": "4425f093e748a4036184b72f3f9b17a68776a03ccc38ac5b05eef5fc49537621"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "RP2"
+                            },
+                            "formHash": {
+                              "const": "a4b1ac4393e3f836362cc6e1cb2afb45fd89e5b2736b92f2460c67d5a350a5ce"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "RP3"
+                            },
+                            "formHash": {
+                              "const": "107a47a641ad7f131b1ea20a63c218d863d8ce0cc4776f9d07884852a1d96ec3"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "resultRevision": {
+                  "type": "null"
+                }
+              }
+            },
+            {
+              "properties": {
+                "game": {
+                  "const": "towers"
+                },
+                "databaseFamily": {
+                  "const": "towers-v1"
+                },
+                "generation": {
+                  "type": "null"
+                },
+                "originTicketId": {
+                  "type": "null"
+                },
+                "versions": {
+                  "allOf": [
+                    {
+                      "properties": {
+                        "specification": {
+                          "const": null
+                        },
+                        "scoring": {
+                          "const": null
+                        },
+                        "event": {
+                          "const": "towers-events-v1.0-draft"
+                        },
+                        "formVersion": {
+                          "const": "towers-form-v1.0-draft"
+                        },
+                        "formHashKind": {
+                          "const": "per_form"
+                        },
+                        "presentation": {
+                          "const": null
+                        },
+                        "feedback": {
+                          "const": null
+                        },
+                        "assetBankHash": {
+                          "const": null
+                        },
+                        "report": {
+                          "const": null
+                        }
+                      }
+                    },
+                    {
+                      "oneOf": [
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "TW1"
+                            },
+                            "formHash": {
+                              "const": "bfb13f60cf5383840bf2d45bc691d84c94488150ce64e76793d3a3f15e987014"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "TW2"
+                            },
+                            "formHash": {
+                              "const": "b93f1dabfb1d7e89a71774658f1a813a0d145c691ba63065086fa866cfa482f8"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "TW3"
+                            },
+                            "formHash": {
+                              "const": "5de25d34a2310f1d9ba6a829185504c84816a65f421e00afdb0bd9a4dd90e084"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "TW4"
+                            },
+                            "formHash": {
+                              "const": "dc484c03b7daf7c4faa7278046d14d6bb2d87528db8b919ecf7f204112522907"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "TW5"
+                            },
+                            "formHash": {
+                              "const": "6f56ac92455ff438583a035722a5f53c533faa28135760ea3a878fe430ea61e7"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "TW6"
+                            },
+                            "formHash": {
+                              "const": "b8b6306833ed8ce6571d9ef940a5c39b7508b934268afaf60a272e1c3f62224b"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "resultRevision": {
+                  "type": "null"
+                }
+              }
+            },
+            {
+              "properties": {
+                "game": {
+                  "const": "lengths"
+                },
+                "databaseFamily": {
+                  "const": "lengths-mouth-v13"
+                },
+                "generation": {
+                  "type": "null"
+                },
+                "originTicketId": {
+                  "type": "null"
+                },
+                "versions": {
+                  "allOf": [
+                    {
+                      "properties": {
+                        "specification": {
+                          "const": "lengths_mouth_spec_v1_3"
+                        },
+                        "scoring": {
+                          "const": "lengths_mouth_scoring_v2"
+                        },
+                        "event": {
+                          "const": "lengths_mouth_event_v2"
+                        },
+                        "formVersion": {
+                          "const": "lengths_mouth_forms_v1_3"
+                        },
+                        "formHashKind": {
+                          "const": "per_form"
+                        },
+                        "presentation": {
+                          "const": "lengths_mouth_presentation_v1_2"
+                        },
+                        "feedback": {
+                          "const": null
+                        },
+                        "assetBankHash": {
+                          "const": null
+                        },
+                        "report": {
+                          "const": "lengths_mouth_report_v1_3"
+                        }
+                      }
+                    },
+                    {
+                      "oneOf": [
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "LM13-1"
+                            },
+                            "formHash": {
+                              "const": "b048730ab2791c9fdbb7e4199db65a311910259ab8a72bdc55d9cbd257aa23b6"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "LM13-2"
+                            },
+                            "formHash": {
+                              "const": "3c64da390d94f51f49391d5aaa0d99a7617cd5f3f330e3979450c1cb4fc1143d"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "LM13-3"
+                            },
+                            "formHash": {
+                              "const": "eb81e07d2d83c1bec7d72dac0822076baf719ad6cbebbe0cb39efc6f5fa0370f"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "LM13-4"
+                            },
+                            "formHash": {
+                              "const": "cdd150fda322db895e60839553f806f1470acbf1eb1b2656e5dd7267ee76a3cf"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "LM13-5"
+                            },
+                            "formHash": {
+                              "const": "463d381c26c7f4fb7f615a533c58af1b6cb15a6891950f50ff965c47e2fdd3dc"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "LM13-6"
+                            },
+                            "formHash": {
+                              "const": "48e91b6fd201d2d13eeaf8996c62e67ef88cf802b523a66396419b6abd828032"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "properties": {
+                "game": {
+                  "const": "cards"
+                },
+                "databaseFamily": {
+                  "const": "cards-v11"
+                },
+                "generation": {
+                  "type": "null"
+                },
+                "originTicketId": {
+                  "type": "null"
+                },
+                "versions": {
+                  "allOf": [
+                    {
+                      "properties": {
+                        "specification": {
+                          "const": "cards-rules/1.1.0"
+                        },
+                        "scoring": {
+                          "const": "cards-score/1.1.0"
+                        },
+                        "event": {
+                          "const": "cards-events/1.1.0"
+                        },
+                        "formVersion": {
+                          "const": "cards-forms/1.1.0"
+                        },
+                        "formHashKind": {
+                          "const": "per_form"
+                        },
+                        "presentation": {
+                          "const": null
+                        },
+                        "feedback": {
+                          "const": null
+                        },
+                        "assetBankHash": {
+                          "const": null
+                        },
+                        "report": {
+                          "const": null
+                        }
+                      }
+                    },
+                    {
+                      "oneOf": [
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "CD1"
+                            },
+                            "formHash": {
+                              "const": "43cce8a820f3f2c37cfb3e2467e70aae2fff23db1845dba038f6baeaa4fead73"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "CD2"
+                            },
+                            "formHash": {
+                              "const": "87d411bc7ecbc842f8ccd0482f7c93bb603e062608caa4ceb1fa3e05442ed8b6"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "CD3"
+                            },
+                            "formHash": {
+                              "const": "48fd61dee4895fcdc9ffae136641e02ea20bb6d73dfca29e47e34e1aa2464a80"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "CD4"
+                            },
+                            "formHash": {
+                              "const": "b71a551e4eacc2a85139d8b191d7c950f1c107b4fc537f422e6190e905d4699e"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "CD5"
+                            },
+                            "formHash": {
+                              "const": "63c1f0db8d9831710489978a4e9609f15f227aee03acca1c89da48405f65ac1a"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "CD6"
+                            },
+                            "formHash": {
+                              "const": "efbf8cf0a2ab361b4bb1c485de3e5f930a13ebf5aee84af73ec68d5324214eff"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "resultRevision": {
+                  "type": "null"
+                }
+              }
+            },
+            {
+              "properties": {
+                "game": {
+                  "const": "easy_hard"
+                },
+                "databaseFamily": {
+                  "const": "easy-hard-v1"
+                },
+                "generation": {
+                  "type": "null"
+                },
+                "originTicketId": {
+                  "type": "null"
+                },
+                "versions": {
+                  "allOf": [
+                    {
+                      "properties": {
+                        "specification": {
+                          "const": null
+                        },
+                        "scoring": {
+                          "const": null
+                        },
+                        "event": {
+                          "const": "easy-hard-events-v1.0-draft"
+                        },
+                        "formVersion": {
+                          "const": "easy-hard-forms-v1.0-draft"
+                        },
+                        "formHashKind": {
+                          "const": "per_form"
+                        },
+                        "presentation": {
+                          "const": null
+                        },
+                        "feedback": {
+                          "const": null
+                        },
+                        "assetBankHash": {
+                          "const": null
+                        },
+                        "report": {
+                          "const": null
+                        }
+                      }
+                    },
+                    {
+                      "oneOf": [
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "EH1"
+                            },
+                            "formHash": {
+                              "const": "5b846708ffef3600d07d7b11e75789d6acb598001ddf5b05d0848e7f5c931ad0"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "EH2"
+                            },
+                            "formHash": {
+                              "const": "960edd14adfd4b03a622c936ec14c371e2a78030f3ff5ca6c8ae21b4578f6fa3"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "EH3"
+                            },
+                            "formHash": {
+                              "const": "ad31c4eb54f73e4c4c0b84184bfb39c79e5937a1aea26887d0a343502fb20363"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "EH4"
+                            },
+                            "formHash": {
+                              "const": "caae2a55c33e49bde8ae15beacff1884bcb03933f11a80c2bc56ee9ffa379b8c"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "resultRevision": {
+                  "type": "null"
+                }
+              }
+            },
+            {
+              "properties": {
+                "game": {
+                  "const": "money_1"
+                },
+                "databaseFamily": {
+                  "const": "money1-v1"
+                },
+                "generation": {
+                  "type": "null"
+                },
+                "originTicketId": {
+                  "type": "null"
+                },
+                "versions": {
+                  "allOf": [
+                    {
+                      "properties": {
+                        "specification": {
+                          "const": "money_exchange_1_spec_v1_0"
+                        },
+                        "scoring": {
+                          "const": null
+                        },
+                        "event": {
+                          "const": "money_exchange_1_event_v1_0"
+                        },
+                        "formVersion": {
+                          "const": "money_exchange_1_forms_v1_0"
+                        },
+                        "formHashKind": {
+                          "const": "manifest_payload"
+                        },
+                        "presentation": {
+                          "const": null
+                        },
+                        "feedback": {
+                          "const": null
+                        },
+                        "assetBankHash": {
+                          "const": null
+                        },
+                        "report": {
+                          "const": null
+                        }
+                      }
+                    },
+                    {
+                      "oneOf": [
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "ME1-1"
+                            },
+                            "formHash": {
+                              "const": "cf4c07b085e883bce0ddcaea98fd4a5e4571ebf968a9ad1f440d81da40461cb0"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "ME1-2"
+                            },
+                            "formHash": {
+                              "const": "cf4c07b085e883bce0ddcaea98fd4a5e4571ebf968a9ad1f440d81da40461cb0"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "ME1-3"
+                            },
+                            "formHash": {
+                              "const": "cf4c07b085e883bce0ddcaea98fd4a5e4571ebf968a9ad1f440d81da40461cb0"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "ME1-4"
+                            },
+                            "formHash": {
+                              "const": "cf4c07b085e883bce0ddcaea98fd4a5e4571ebf968a9ad1f440d81da40461cb0"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "ME1-5"
+                            },
+                            "formHash": {
+                              "const": "cf4c07b085e883bce0ddcaea98fd4a5e4571ebf968a9ad1f440d81da40461cb0"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "ME1-6"
+                            },
+                            "formHash": {
+                              "const": "cf4c07b085e883bce0ddcaea98fd4a5e4571ebf968a9ad1f440d81da40461cb0"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "resultRevision": {
+                  "type": "null"
+                }
+              }
+            },
+            {
+              "properties": {
+                "game": {
+                  "const": "money_2"
+                },
+                "databaseFamily": {
+                  "const": "money2-v2"
+                },
+                "generation": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "originTicketId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 160
+                },
+                "versions": {
+                  "allOf": [
+                    {
+                      "properties": {
+                        "specification": {
+                          "const": null
+                        },
+                        "scoring": {
+                          "const": null
+                        },
+                        "event": {
+                          "const": "money_exchange_2_event_v1_0"
+                        },
+                        "formVersion": {
+                          "const": null
+                        },
+                        "formHashKind": {
+                          "const": "per_form"
+                        },
+                        "presentation": {
+                          "const": null
+                        },
+                        "feedback": {
+                          "const": null
+                        },
+                        "assetBankHash": {
+                          "const": null
+                        },
+                        "report": {
+                          "const": null
+                        }
+                      }
+                    },
+                    {
+                      "oneOf": [
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "ME2-1"
+                            },
+                            "formHash": {
+                              "const": "1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "ME2-2"
+                            },
+                            "formHash": {
+                              "const": "f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "ME2-3"
+                            },
+                            "formHash": {
+                              "const": "bc0a798eb3c1b7936e533ce1750a3ff6f6869e985cacda58df86521eb5244e1f"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "ME2-4"
+                            },
+                            "formHash": {
+                              "const": "3d98007fa37886e30564a47ce34321436653b3f73958747f22cc114494140ffe"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "ME2-5"
+                            },
+                            "formHash": {
+                              "const": "d1f14e242cfcc806284253cb8a23b61c123108a6350dff94774aae51ccc937bc"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "ME2-6"
+                            },
+                            "formHash": {
+                              "const": "e881594aad4bdbbac33cc421bf7973fc426058f60c456c41bc6c80f72faca056"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "resultRevision": {
+                  "type": "null"
+                }
+              }
+            },
+            {
+              "properties": {
+                "game": {
+                  "const": "faces"
+                },
+                "databaseFamily": {
+                  "const": "faces-v3"
+                },
+                "generation": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "originTicketId": {
+                  "type": "null"
+                },
+                "versions": {
+                  "allOf": [
+                    {
+                      "properties": {
+                        "specification": {
+                          "const": null
+                        },
+                        "scoring": {
+                          "const": "faces-descriptive-v3"
+                        },
+                        "event": {
+                          "const": "faces-event-v2"
+                        },
+                        "formVersion": {
+                          "const": null
+                        },
+                        "formHashKind": {
+                          "const": "per_form"
+                        },
+                        "presentation": {
+                          "const": "faces-report-presentation-v3"
+                        },
+                        "feedback": {
+                          "const": "faces-feedback-v3"
+                        },
+                        "assetBankHash": {
+                          "const": "7a7e835a3b1c5277eca45b19d82f2ba917305b886727b104a2ac7a94e95f4854"
+                        },
+                        "report": {
+                          "const": null
+                        }
+                      }
+                    },
+                    {
+                      "oneOf": [
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "faces-bank-practice-v2"
+                            },
+                            "formHash": {
+                              "const": "75ff16a9eaf4f0cff8eda2e80f66b4d886c9fcc5f7eae364b3859ab4cb584e16"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "resultRevision": {
+                  "type": "null"
+                }
+              }
+            },
+            {
+              "properties": {
+                "game": {
+                  "const": "faces"
+                },
+                "databaseFamily": {
+                  "const": "faces-v3"
+                },
+                "generation": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "originTicketId": {
+                  "type": "null"
+                },
+                "versions": {
+                  "allOf": [
+                    {
+                      "properties": {
+                        "specification": {
+                          "const": null
+                        },
+                        "scoring": {
+                          "const": "faces-descriptive-v2"
+                        },
+                        "event": {
+                          "const": "faces-event-v2"
+                        },
+                        "formVersion": {
+                          "const": null
+                        },
+                        "formHashKind": {
+                          "const": "per_form"
+                        },
+                        "presentation": {
+                          "const": "faces-report-presentation-v3"
+                        },
+                        "feedback": {
+                          "const": null
+                        },
+                        "assetBankHash": {
+                          "const": "7a7e835a3b1c5277eca45b19d82f2ba917305b886727b104a2ac7a94e95f4854"
+                        },
+                        "report": {
+                          "const": null
+                        }
+                      }
+                    },
+                    {
+                      "oneOf": [
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "faces-bank-discussion-v1"
+                            },
+                            "formHash": {
+                              "const": "cb12f328b155b79019e10ce38ab2c4b59ed806df3ae64f5f4ea3eeded26c9ff6"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "resultRevision": {
+                  "type": "null"
+                }
+              }
+            },
+            {
+              "properties": {
+                "game": {
+                  "const": "stop"
+                },
+                "databaseFamily": {
+                  "const": "stop-v1"
+                },
+                "generation": {
+                  "type": "null"
+                },
+                "originTicketId": {
+                  "type": "null"
+                },
+                "versions": {
+                  "allOf": [
+                    {
+                      "properties": {
+                        "specification": {
+                          "const": "1.3"
+                        },
+                        "scoring": {
+                          "const": null
+                        },
+                        "event": {
+                          "const": "stop_engine_event_v1"
+                        },
+                        "formVersion": {
+                          "const": "2"
+                        },
+                        "formHashKind": {
+                          "const": "per_form"
+                        },
+                        "presentation": {
+                          "const": null
+                        },
+                        "feedback": {
+                          "const": null
+                        },
+                        "assetBankHash": {
+                          "const": null
+                        },
+                        "report": {
+                          "const": null
+                        }
+                      }
+                    },
+                    {
+                      "oneOf": [
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "stop-v13-baseline-01"
+                            },
+                            "formHash": {
+                              "const": "0bbd49818785c1580ee7fed9b38016ab39909c26c57246bdeb7361558ea0d138"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "stop-v13-baseline-02"
+                            },
+                            "formHash": {
+                              "const": "4885533124529fd2ca870df9859cfb4e601bc2af23d723acda71ea1e97ac3e77"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "stop-v13-baseline-03"
+                            },
+                            "formHash": {
+                              "const": "dddb920fec579d52b909ca5396809722c5b6cb8a9d36d035bf4431abe8bb0e62"
+                            }
+                          }
+                        },
+                        {
+                          "properties": {
+                            "formId": {
+                              "const": "stop-v13-baseline-04"
+                            },
+                            "formHash": {
+                              "const": "033f286abd2ee0d97f87dd90aba7018fd36f4d733966c7c3ac1590b17a9504c9"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "resultRevision": {
+                  "type": "null"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "nativeArm": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "requestId": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9._:-]{1,160}$"
+        },
+        "attemptId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9._:-]{1,160}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "originTicketId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9._:-]{1,160}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "installationId": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9._:-]{1,160}$"
+        },
+        "generation": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "requestKind": {
+          "enum": [
+            "start",
+            "arm",
+            "reserve",
+            "assign",
+            "open"
+          ]
+        },
+        "nativeIdentity": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "key": {
+                "enum": [
+                  "runId",
+                  "documentId",
+                  "sessionId",
+                  "routeId",
+                  "leaseId",
+                  "ticketId",
+                  "ownerId"
+                ]
+              },
+              "value": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9._:-]{1,160}$"
+              }
+            },
+            "required": [
+              "key",
+              "value"
+            ]
+          },
+          "minItems": 0,
+          "maxItems": 7
+        }
+      },
+      "required": [
+        "requestId",
+        "attemptId",
+        "originTicketId",
+        "installationId",
+        "generation",
+        "requestKind",
+        "nativeIdentity"
+      ]
+    },
+    "attempt": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ordinal": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 16
+        },
+        "launchId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "phase": {
+          "enum": [
+            "pending_launch",
+            "arm_pending",
+            "armed",
+            "terminal_verified",
+            "review_only",
+            "canceled_no_arm",
+            "accepted",
+            "omitted"
+          ]
+        },
+        "ownerDocumentId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "settingsRevision": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 64
+        },
+        "nativeArm": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/nativeArm"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reference": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/nativeReference"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "classification": {
+          "enum": [
+            "unknown",
+            "normal_complete",
+            "task_limit",
+            "invalid",
+            "incomplete",
+            "no_arm"
+          ]
+        },
+        "availability": {
+          "enum": [
+            "unchecked",
+            "available",
+            "unavailable",
+            "corrupt",
+            "deleted",
+            "replaced"
+          ]
+        },
+        "reason": {
+          "enum": [
+            "none",
+            "natural_limit",
+            "technical_interruption",
+            "user_exit",
+            "unconfirmed",
+            "no_inventory",
+            "unsupported",
+            "missing",
+            "corrupt",
+            "deleted",
+            "replaced",
+            "no_arm"
+          ]
+        },
+        "startedWallMs": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "terminalAcknowledgedWallMs": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "ordinal",
+        "launchId",
+        "phase",
+        "ownerDocumentId",
+        "settingsRevision",
+        "nativeArm",
+        "reference",
+        "classification",
+        "availability",
+        "reason",
+        "startedWallMs",
+        "terminalAcknowledgedWallMs"
+      ]
+    },
+    "slot": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "index": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 12
+        },
+        "game": {
+          "enum": [
+            "keypresses",
+            "stop",
+            "digits",
+            "arrows",
+            "balloons",
+            "towers",
+            "lengths",
+            "cards",
+            "easy_hard",
+            "money_1",
+            "money_2",
+            "faces"
+          ]
+        },
+        "resolution": {
+          "enum": [
+            "pending",
+            "normal_complete",
+            "task_limit",
+            "omitted"
+          ]
+        },
+        "acceptedLaunchId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "attempts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/attempt"
+          },
+          "minItems": 0,
+          "maxItems": 16
+        }
+      },
+      "required": [
+        "index",
+        "game",
+        "resolution",
+        "acceptedLaunchId",
+        "attempts"
+      ]
+    },
+    "break": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "kind": {
+          "enum": [
+            "scheduled",
+            "accommodation"
+          ]
+        },
+        "afterSlot": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 11
+        },
+        "startWallMs": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "endWallMs": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "clockDocumentId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "startMonoMs": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "endMonoMs": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "elapsedMs": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "durationBasis": {
+          "enum": [
+            "open",
+            "monotonic",
+            "estimated_wall",
+            "unknown"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "afterSlot",
+        "startWallMs",
+        "endWallMs",
+        "clockDocumentId",
+        "startMonoMs",
+        "endMonoMs",
+        "elapsedMs",
+        "durationBasis"
+      ]
+    },
+    "receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "requestId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "expectedRevision": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "kind": {
+          "enum": [
+            "start",
+            "launch",
+            "arm_pending",
+            "bind_arm",
+            "terminal",
+            "accept",
+            "cancel_no_arm",
+            "review_only",
+            "omit",
+            "settings",
+            "break_start",
+            "break_end",
+            "decline_break",
+            "leave",
+            "resume",
+            "finish_early",
+            "source_status"
+          ]
+        },
+        "launchId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "resultRevision": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "canonicalMetadata": {
+          "description": "Exact closed allowlisted command, constrained by command-specific shapes in DATA-CONTRACT.md. No source data.",
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "slot": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 12
+            },
+            "settingsRevision": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 64
+            },
+            "breakId": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "checkpointWallMs": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            "preferences": {
+              "$ref": "#/$defs/preferences"
+            },
+            "nativeArm": {
+              "$ref": "#/$defs/nativeArm"
+            },
+            "reference": {
+              "$ref": "#/$defs/nativeReference"
+            },
+            "classification": {
+              "enum": [
+                "normal_complete",
+                "task_limit",
+                "invalid",
+                "incomplete",
+                "no_arm"
+              ]
+            },
+            "reason": {
+              "enum": [
+                "none",
+                "natural_limit",
+                "technical_interruption",
+                "user_exit",
+                "unconfirmed",
+                "no_inventory",
+                "unsupported",
+                "missing",
+                "corrupt",
+                "deleted",
+                "replaced",
+                "no_arm"
+              ]
+            },
+            "breakRecord": {
+              "$ref": "#/$defs/break"
+            },
+            "continuity": {
+              "enum": [
+                "resumed",
+                "multi_session",
+                "multi_session_time_uncertain"
+              ]
+            },
+            "availability": {
+              "enum": [
+                "available",
+                "unavailable",
+                "corrupt",
+                "deleted",
+                "replaced"
+              ]
+            }
+          }
+        }
+      },
+      "required": [
+        "requestId",
+        "expectedRevision",
+        "kind",
+        "launchId",
+        "resultRevision",
+        "canonicalMetadata"
+      ]
+    },
+    "mock": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9._:-]{1,160}$"
+        },
+        "ordinal": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "version": {
+          "const": "assessment-practice-full-mock/1.0.0"
+        },
+        "sequenceVersion": {
+          "const": "ap-mock-sequence/1"
+        },
+        "phase": {
+          "enum": [
+            "preflight",
+            "boundary",
+            "launching",
+            "in_game",
+            "checking",
+            "break",
+            "finished",
+            "ended_early"
+          ]
+        },
+        "cursor": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 13
+        },
+        "createdWallMs": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "checkpointWallMs": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "continuity": {
+          "enum": [
+            "uninterrupted",
+            "resumed",
+            "multi_session",
+            "multi_session_time_uncertain"
+          ]
+        },
+        "goal": {
+          "enum": [
+            "early_career_finance",
+            "general_practice"
+          ]
+        },
+        "invitation": {
+          "enum": [
+            "checked",
+            "not_available"
+          ]
+        },
+        "localPrivacyAcknowledged": {
+          "const": true
+        },
+        "settings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/settings"
+          },
+          "minItems": 1,
+          "maxItems": 64
+        },
+        "slots": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/slot"
+          },
+          "minItems": 12,
+          "maxItems": 12
+        },
+        "breaks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/break"
+          },
+          "minItems": 0,
+          "maxItems": 64
+        },
+        "scheduledBreak": {
+          "enum": [
+            "not_due",
+            "offered",
+            "declined",
+            "taken"
+          ]
+        },
+        "activeLaunchId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "lastCommand": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/receipt"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "ordinal",
+        "revision",
+        "version",
+        "sequenceVersion",
+        "phase",
+        "cursor",
+        "createdWallMs",
+        "checkpointWallMs",
+        "continuity",
+        "goal",
+        "invitation",
+        "localPrivacyAcknowledged",
+        "settings",
+        "slots",
+        "breaks",
+        "scheduledBreak",
+        "activeLaunchId",
+        "lastCommand"
+      ]
+    },
+    "rootReceipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "requestId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "expectedRevision": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "kind": {
+          "enum": [
+            "create",
+            "delete_one",
+            "delete_all"
+          ]
+        },
+        "targetMockId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9._:-]{1,160}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "oldInstallationId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "newInstallationId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "resultRevision": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "creationMetadata": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "goal": {
+                  "enum": [
+                    "early_career_finance",
+                    "general_practice"
+                  ]
+                },
+                "invitation": {
+                  "enum": [
+                    "checked",
+                    "not_available"
+                  ]
+                },
+                "preferences": {
+                  "$ref": "#/$defs/preferences"
+                },
+                "createdWallMs": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 9007199254740991
+                }
+              },
+              "required": [
+                "goal",
+                "invitation",
+                "preferences",
+                "createdWallMs"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "requestId",
+        "expectedRevision",
+        "kind",
+        "targetMockId",
+        "oldInstallationId",
+        "newInstallationId",
+        "resultRevision",
+        "creationMetadata"
+      ]
+    }
+  }
+}

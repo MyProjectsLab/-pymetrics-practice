@@ -1,0 +1,97 @@
+{
+  "browser": "145.0.7632.6",
+  "results": [
+    {
+      "started": {
+        "phase": "fixation_pending",
+        "form": "AR1",
+        "ordinal": 1
+      },
+      "visible": {
+        "stage": "stimulus",
+        "symbols": 5,
+        "onset": 1,
+        "correct": "right"
+      },
+      "afterFirst": {
+        "phase": "fixation",
+        "trial": 2,
+        "closed": 1,
+        "responses": 1,
+        "actualOnset": 924.5,
+        "actualOffset": 2437.899999976158
+      },
+      "ended": {
+        "phase": "invalid",
+        "reason": "blur",
+        "retainedOnsets": 1,
+        "retainedClosed": 1,
+        "ownerHeld": false
+      },
+      "pass": true
+    },
+    {
+      "heldStarted": 2,
+      "whileHeld": {
+        "response": null,
+        "held": true
+      },
+      "afterFresh": {
+        "response": {
+          "direction": "left",
+          "atMs": 3356.699999988079,
+          "source": "keyboard"
+        },
+        "responses": 1
+      },
+      "pass": true
+    },
+    {
+      "withheld": {
+        "before": {
+          "phase": "invalid",
+          "reason": "watchdog",
+          "onsets": 0
+        },
+        "afterOnsets": 0,
+        "invalidations": 1,
+        "ownerHeld": false
+      },
+      "pass": true
+    },
+    {
+      "pointer": {
+        "response": {
+          "direction": "left",
+          "atMs": 992.3000000119209,
+          "source": "mouse"
+        },
+        "responseEvents": 1,
+        "extraEvents": 1,
+        "profile": "pointer"
+      },
+      "pass": true
+    },
+    {
+      "late": {
+        "phase": "invalid",
+        "reason": "timing",
+        "onsets": 1,
+        "invalidations": 1,
+        "onsetAt": 1231.7000000476837,
+        "ownerHeld": false
+      },
+      "pass": true
+    },
+    {
+      "technical": {
+        "phase": "invalid",
+        "reason": "technical",
+        "onsets": 1,
+        "invalidations": 1,
+        "ownerHeld": false
+      },
+      "pass": true
+    }
+  ]
+}

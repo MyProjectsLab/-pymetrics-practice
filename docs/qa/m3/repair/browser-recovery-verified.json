@@ -1,0 +1,40 @@
+{
+  "source": "browser-recovery.json",
+  "browser": "145.0.7632.6",
+  "form": "stop-baseline-01",
+  "events": 792,
+  "counts": {
+    "hits": 57,
+    "misses": 3,
+    "withholds": 17,
+    "falseAlarms": 3
+  },
+  "timing": {
+    "count": 57,
+    "q1": 361.09999990463257,
+    "median": 371.40000009536743,
+    "q3": 381.7000000476837,
+    "iqr": 20.600000143051147
+  },
+  "displayMedian": 371.0,
+  "displayIqr": 21.0,
+  "visibleDurationRange": [
+    200.29999995231628,
+    208.5
+  ],
+  "onsetDelayRange": [
+    0.5999999046325684,
+    10.799999952316284
+  ],
+  "transitionRange": [
+    1200.5999999046326,
+    1210.7999999523163
+  ],
+  "qualityNotes": [
+    {
+      "ruleId": "stop_validity_v1.five_extra_inputs",
+      "triggerSequenceNumber": 113
+    }
+  ],
+  "result": "PASS"
+}

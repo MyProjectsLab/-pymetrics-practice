@@ -1,0 +1,23 @@
+{
+  "sessionId": "93ba0dae-e7ff-4df1-acaa-a4c883240e99",
+  "formId": "stop-baseline-03",
+  "beforeOrPause": {
+    "installationId": "2c598f85-4729-4e92-9e08-ef4c0a4a41f2",
+    "exposures": {},
+    "reservations": {}
+  },
+  "after": {
+    "installationId": "2c598f85-4729-4e92-9e08-ef4c0a4a41f2",
+    "exposures": {
+      "stop-baseline-03": {
+        "formId": "stop-baseline-03",
+        "exposedAtWall": "2026-10-03T02:22:52.317Z",
+        "visualProfile": "standard",
+        "deleted": false,
+        "sessionId": "93ba0dae-e7ff-4df1-acaa-a4c883240e99",
+        "certainty": "confirmed"
+      }
+    },
+    "reservations": {}
+  }
+}

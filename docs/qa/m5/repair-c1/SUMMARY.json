@@ -1,0 +1,241 @@
+{
+  "parent": "555288d6d19916d4092fa093498aa849ed142391",
+  "preEdit": {
+    "bothDeliveryBoundariesReproduced": true,
+    "testsFailedBeforeRepair": true,
+    "evidence": [
+      "before/completed-before.json",
+      "before/completed-after.json",
+      "before/acceptance-tests.txt"
+    ]
+  },
+  "focused": [
+    {
+      "case": "before-drill-exit-ordinary",
+      "events": 643,
+      "actualLocksEmpty": true,
+      "immutableJournal": true,
+      "lateBytesIdentical": true
+    },
+    {
+      "case": "after-all-none-ordinary",
+      "events": 643,
+      "actualLocksEmpty": true,
+      "immutableJournal": true,
+      "lateBytesIdentical": true
+    },
+    {
+      "case": "before-all-none-ordinary",
+      "events": 643,
+      "actualLocksEmpty": true,
+      "immutableJournal": true,
+      "lateBytesIdentical": true
+    },
+    {
+      "case": "after-drill-review-ordinary",
+      "events": 643,
+      "actualLocksEmpty": true,
+      "immutableJournal": true,
+      "lateBytesIdentical": true
+    },
+    {
+      "case": "before-none-review-fail",
+      "events": 643,
+      "actualLocksEmpty": true,
+      "immutableJournal": true,
+      "lateBytesIdentical": true
+    },
+    {
+      "case": "after-none-review-retry",
+      "events": 643,
+      "actualLocksEmpty": true,
+      "immutableJournal": true,
+      "lateBytesIdentical": true
+    }
+  ],
+  "finalCodeReruns": [
+    {
+      "case": "before-all-none-ordinary",
+      "events": 643,
+      "actualLocksEmpty": true,
+      "immutableJournal": true,
+      "lateBytesIdentical": true
+    },
+    {
+      "case": "after-drill-exit-ordinary",
+      "events": 643,
+      "actualLocksEmpty": true,
+      "immutableJournal": true,
+      "lateBytesIdentical": true
+    }
+  ],
+  "replacementChainCallback": {
+    "preGuardBrowserFailure": "focused/replacement-chain-before-guard.json",
+    "preGuardTestFailures": "focused/callback-before-guard-tests.txt",
+    "finalPass": true
+  },
+  "ordinaryProduction": {
+    "baseline": {
+      "sessionId": "398756c6-c59f-4944-8ce2-ac26b695de32",
+      "formId": "stop-baseline-04",
+      "events": 644,
+      "counts": {
+        "hits": 0,
+        "misses": 60,
+        "withholds": 20,
+        "falseAlarms": 0
+      },
+      "accuracy": 0.25,
+      "noAcceptedResponses": true,
+      "visibilityMs": [
+        200.79999995231628,
+        211.09999990463257
+      ],
+      "deadlineLatenessMs": [
+        0.09999990463256836,
+        2.9000000953674316
+      ],
+      "finalIntervalMs": 1201.6000001430511,
+      "pass": true
+    },
+    "retest": {
+      "sessionId": "698bfb64-bb18-4f71-bc9b-06313d8974e8",
+      "formId": "stop-retest-01",
+      "events": 643,
+      "counts": {
+        "hits": 0,
+        "misses": 60,
+        "withholds": 20,
+        "falseAlarms": 0
+      },
+      "accuracy": 0.25,
+      "noAcceptedResponses": true,
+      "visibilityMs": [
+        200.79999995231628,
+        210.70000004768372
+      ],
+      "deadlineLatenessMs": [
+        0.09999990463256836,
+        1.5
+      ],
+      "finalIntervalMs": 1200.0,
+      "pass": true
+    },
+    "preOnsetBackPass": true
+  },
+  "regressions": {
+    "orderingCases": 45,
+    "cancellationCases": [
+      {
+        "case": "read-pending",
+        "onsets": 0,
+        "locksEmpty": true
+      },
+      {
+        "case": "confirm-pending",
+        "onsets": 1,
+        "locksEmpty": true
+      },
+      {
+        "case": "watchdog",
+        "locksEmpty": true
+      }
+    ],
+    "protocolCases": 13,
+    "protocolErrors": [],
+    "D1F1Cases": 7,
+    "deletionRetryCases": 36,
+    "deletionEdges": 2,
+    "draftInstallBoundaries": 6,
+    "admissionEdges": 5,
+    "originalOnsetCases": 8,
+    "F3Cases": 24,
+    "R2Cases": 76,
+    "affectedB1B2B3B4B5N1": true,
+    "matrixExitCodes": [
+      {
+        "delivery": "delivered",
+        "code": 0
+      },
+      {
+        "delivery": "delayed",
+        "code": 0
+      },
+      {
+        "delivery": "unavailable",
+        "code": 0
+      }
+    ],
+    "originalRunnerExitCodes": [
+      {
+        "name": "admission-edges",
+        "code": 0
+      },
+      {
+        "name": "onset",
+        "code": 0
+      },
+      {
+        "name": "audit-f1",
+        "code": 0
+      },
+      {
+        "name": "audit-boundaries",
+        "code": 0
+      },
+      {
+        "name": "deletion-races",
+        "code": 0
+      },
+      {
+        "name": "deletion-edges",
+        "code": 0
+      },
+      {
+        "name": "initial-fixation-load",
+        "code": 0
+      },
+      {
+        "name": "reload-evidence",
+        "code": 0
+      },
+      {
+        "name": "regressions",
+        "code": 0
+      },
+      {
+        "name": "supplement",
+        "code": 0
+      },
+      {
+        "name": "f2c-candidate-reproduction",
+        "code": 0
+      },
+      {
+        "name": "f2c-watchdog-reproduction",
+        "code": 0
+      },
+      {
+        "name": "f2c-protocol",
+        "code": 1
+      }
+    ],
+    "protocolRerun": "Passed all 13 after creating the fresh output subdirectory; original code 1 was a retained harness path failure."
+  },
+  "checks": {
+    "command": "npm run check",
+    "testFiles": 29,
+    "tests": 453,
+    "forms": 14,
+    "drills": 5,
+    "lint": "pass with two inherited warnings",
+    "typeScript": "pass",
+    "build": "pass",
+    "diffCheck": "pass"
+  },
+  "evidenceClasses": {
+    "injected": "Held/rejected delivery and synthetic IndexedDB transaction fixtures",
+    "ordinary": "Production bundle baseline and retest; no injected responses, stalls or timing faults; retest prerequisites seeded"
+  },
+  "limits": "Headless Chromium 145.0.7632.6 on macOS, 1200x800; developer evidence only. See VERIFICATION.md for full limits and open gates."
+}

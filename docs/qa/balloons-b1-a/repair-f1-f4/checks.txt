@@ -1,0 +1,57 @@
+TESTS
+
+> assessment-practice@0.0.0 test
+> vitest run
+
+
+ RUN  v4.1.11 /Users/renzo/Documents/Assessment Practice/App
+
+(node:59563) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+ Test Files  39 passed (39)
+      Tests  731 passed (731)
+   Start at  16:55:24
+   Duration  6.18s (transform 1.48s, setup 1.36s, import 2.99s, tests 17.27s, environment 5.34s)
+
+
+MANIFESTS
+
+> assessment-practice@0.0.0 balloons:check
+> node scripts/check-balloons-manifests.mjs
+
+Balloons: frozen file SHA, first-nine regeneration (seeds 0..34), hashes, 39/13 and block/order/quartile/band constraints, all 36 signatures, cap and fixed-k review values passed.
+
+LINT
+
+> assessment-practice@0.0.0 lint
+> oxlint
+
+docs/qa/m5/repair-f1-f3/cross-tab.mjs:47:49: warning eslint(no-unused-vars): Parameter 's' is declared but never used. Unused parameters should start with a '_'. help: Consider removing this parameter.
+src/App.tsx:62:57: warning react-hooks(exhaustive-deps): React Hook useEffect has a missing dependency: 'refreshHistory' help: Either include it or remove the dependency array.
+
+BUILD
+
+> assessment-practice@0.0.0 build
+> tsc -b && vite build && node scripts/build-analytics.mjs
+
+vite v8.3.1 building client environment for production...
+transforming...
+✓ 64 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.50 kB │ gzip:   0.30 kB
+dist/assets/index-BFu-PDJW.css    5.39 kB │ gzip:   1.94 kB
+dist/assets/index-D8pj7mZZ.js   413.89 kB │ gzip: 122.46 kB
+
+✓ built in 86ms
+vite v8.3.1 building client environment for production...
+transforming...
+✓ 6 modules transformed.
+rendering chunks...
+computing gzip size...
+dist-analytics/platform-B2bkFrLQ.js  0.62 kB │ gzip: 0.40 kB
+dist-analytics/purge.js              1.32 kB │ gzip: 0.64 kB
+dist-analytics/collector.js          5.18 kB │ gzip: 2.07 kB
+
+✓ built in 12ms

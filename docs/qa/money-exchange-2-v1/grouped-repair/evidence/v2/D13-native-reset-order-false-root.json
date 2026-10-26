@@ -1,0 +1,137 @@
+{
+  "version": "money_exchange_2_storage_v2_0",
+  "activity": {},
+  "installationId": "bcf5c35d-cbb6-4581-add2-bb7c643781f2",
+  "generation": 2,
+  "revision": 28,
+  "lease": {
+    "ownerId": null,
+    "epoch": 3,
+    "live": false
+  },
+  "route": {
+    "stage": "library",
+    "epoch": 28,
+    "ownerId": null
+  },
+  "ticketSerial": 0,
+  "currentTicketId": null,
+  "tickets": {},
+  "activeAttemptId": null,
+  "formCounter": 0,
+  "exposureHistory": [],
+  "attempts": {},
+  "tombstones": {},
+  "outcomes": {
+    "native/2": {
+      "payloadHash": "{\"kind\":\"deleteAll\",\"requestId\":\"native/2\",\"installationId\":\"bcf5c35d-cbb6-4581-add2-bb7c643781f2\",\"generation\":1}",
+      "command": {
+        "kind": "deleteAll",
+        "requestId": "native/2",
+        "installationId": "bcf5c35d-cbb6-4581-add2-bb7c643781f2",
+        "generation": 1
+      },
+      "result": {
+        "generation": 2
+      },
+      "route": {
+        "stage": "library",
+        "epoch": 28,
+        "ownerId": null
+      },
+      "revision": 28
+    }
+  },
+  "navigation": null,
+  "proofs": {},
+  "retired": {},
+  "resetReceipt": {
+    "payloadHash": "{\"kind\":\"deleteAll\",\"requestId\":\"native/2\",\"installationId\":\"bcf5c35d-cbb6-4581-add2-bb7c643781f2\",\"generation\":1}",
+    "command": {
+      "kind": "deleteAll",
+      "requestId": "native/2",
+      "installationId": "bcf5c35d-cbb6-4581-add2-bb7c643781f2",
+      "generation": 1
+    },
+    "result": {
+      "generation": 2
+    },
+    "route": {
+      "stage": "library",
+      "epoch": 28,
+      "ownerId": null
+    },
+    "revision": 28
+  },
+  "checkpoint": {
+    "version": "storage_v2_0",
+    "revision": 28,
+    "state": {
+      "version": "money_exchange_2_storage_v2_0",
+      "activity": {},
+      "installationId": "bcf5c35d-cbb6-4581-add2-bb7c643781f2",
+      "generation": 2,
+      "revision": 28,
+      "lease": {
+        "ownerId": null,
+        "epoch": 3,
+        "live": false
+      },
+      "route": {
+        "stage": "library",
+        "epoch": 28,
+        "ownerId": null
+      },
+      "ticketSerial": 0,
+      "currentTicketId": null,
+      "tickets": {},
+      "activeAttemptId": null,
+      "formCounter": 0,
+      "exposureHistory": [],
+      "attempts": {},
+      "tombstones": {},
+      "outcomes": {
+        "native/2": {
+          "payloadHash": "{\"kind\":\"deleteAll\",\"requestId\":\"native/2\",\"installationId\":\"bcf5c35d-cbb6-4581-add2-bb7c643781f2\",\"generation\":1}",
+          "command": {
+            "kind": "deleteAll",
+            "requestId": "native/2",
+            "installationId": "bcf5c35d-cbb6-4581-add2-bb7c643781f2",
+            "generation": 1
+          },
+          "result": {
+            "generation": 2
+          },
+          "route": {
+            "stage": "library",
+            "epoch": 28,
+            "ownerId": null
+          },
+          "revision": 28
+        }
+      },
+      "navigation": null,
+      "proofs": {},
+      "retired": {},
+      "resetReceipt": {
+        "payloadHash": "{\"kind\":\"deleteAll\",\"requestId\":\"native/2\",\"installationId\":\"bcf5c35d-cbb6-4581-add2-bb7c643781f2\",\"generation\":1}",
+        "command": {
+          "kind": "deleteAll",
+          "requestId": "native/2",
+          "installationId": "bcf5c35d-cbb6-4581-add2-bb7c643781f2",
+          "generation": 1
+        },
+        "result": {
+          "generation": 2
+        },
+        "route": {
+          "stage": "library",
+          "epoch": 28,
+          "ownerId": null
+        },
+        "revision": 28
+      }
+    }
+  },
+  "tail": []
+}

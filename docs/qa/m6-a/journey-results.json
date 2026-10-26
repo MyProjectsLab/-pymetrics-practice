@@ -1,0 +1,59 @@
+{
+  "sourceRuns": [
+    "journey-browser.json (six asserted cases before the documented clock-injection harness failure)",
+    "journey-lease-before-onset.json (corrected remaining case)",
+    "journey-access.json (full-page screenshot)"
+  ],
+  "cases": [
+    {
+      "kind": "access",
+      "keyboardRestart": null,
+      "latencyGate": true,
+      "invalidRule": null,
+      "scoredOnsets": 0
+    },
+    {
+      "kind": "warmup-missing",
+      "keyboardRestart": true,
+      "latencyGate": null,
+      "invalidRule": "stop_validity_v1.integrity",
+      "scoredOnsets": 0
+    },
+    {
+      "kind": "warmup-hidden",
+      "keyboardRestart": true,
+      "latencyGate": null,
+      "invalidRule": "stop_validity_v1.hidden",
+      "scoredOnsets": 0
+    },
+    {
+      "kind": "scored-missing",
+      "keyboardRestart": true,
+      "latencyGate": null,
+      "invalidRule": "stop_validity_v1.integrity",
+      "scoredOnsets": 0
+    },
+    {
+      "kind": "scored-save-failure",
+      "keyboardRestart": true,
+      "latencyGate": null,
+      "invalidRule": "stop_validity_v1.integrity",
+      "scoredOnsets": 0
+    },
+    {
+      "kind": "lease-before-arm",
+      "keyboardRestart": true,
+      "latencyGate": null,
+      "invalidRule": "stop_validity_v1.integrity",
+      "scoredOnsets": 0
+    },
+    {
+      "kind": "lease-before-onset",
+      "keyboardRestart": true,
+      "latencyGate": null,
+      "invalidRule": "stop_validity_v1.integrity",
+      "scoredOnsets": 0
+    }
+  ],
+  "passedCases": 7
+}

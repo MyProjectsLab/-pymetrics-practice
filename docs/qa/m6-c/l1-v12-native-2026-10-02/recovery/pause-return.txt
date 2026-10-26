@@ -1,0 +1,99 @@
+Window: "Assessment Practice", App: Google Chrome.
+0 standard window Assessment Practice - Google Chrome, URL: 127.0.0.1:5592/, Secondary Actions: Raise
+	1 container Assessment Practice - Google Chrome, URL: 127.0.0.1:5592/
+		2 container
+			3 toolbar
+				4 button Back
+				5 button (disabled) Forward
+				6 button Reload
+				7 container
+					8 pop up button View site information
+					9 text field (settable) Address and search bar, Value: 127.0.0.1:5592, Placeholder: Ask Google or type a URL
+					10 button Bookmark this tab
+				11 container
+					12 pop up button Open Claude
+Has access to this site
+					13 pop up button Extensions
+				14 checkbox New download available
+				15 button renzo
+				16 pop up button Chrome
+			17 toolbar Bookmarks
+				18 toolbar Saved Tab Groups
+					19 saved tab group button  🧪 Stop M6-C group - Closed
+					20 saved tab group button  🧪 Stop M3 QA group - Closed
+					21 saved tab group button  🔎 New entrant diligence group - Closed
+					22 saved tab group button  Claude group - Closed
+					23 saved tab group button  Claude group - Closed
+					24 saved tab group button  Claude group - Closed
+					25 saved tab group button  ✅Claude group - Closed
+					26 button Tab groups
+				27 splitter Separator
+				28 bookmark button La Repubblica.it - News in tempo reale - Le notizie e i video di politica, cronaca, economia, sport
+				29 bookmark button Prime Video: Search
+				30 bookmark button Netflix
+				31 bookmark button Select Profile | Disney+
+				32 bookmark button LexZilla — Legal Made Simple
+			33 container
+				34 scroll area
+					35 HTML content Assessment Practice, URL: 127.0.0.1:5592/
+						36 container
+							37 link Skip to content, Value: 127.0.0.1:5592/#main-content
+							38 button Assessment Practice — game library
+							39 text Private preview
+							40 container
+								41 text Stop · Private preview
+								42 heading Warm-up complete, Value: 1
+									43 text Warm-up complete
+								44 text You can pause here. When you select ‘Start scored task,’ keep this tab active until Stop ends. Switching away during the scored task makes the attempt invalid.
+								45 button Start scored task
+							46 text Original preparation exercises. Follow the instructions in your invitation.
+			47 pop up button Tab search
+			48 container
+				49 tab group
+					50 tab (selected, settable, boolean) Assessment Practice - Memory usage - 117 MB, Value: on
+						51 button Close
+					52 tab (settable, boolean) Stop L1 local evidence export - Memory usage - 128 MB, Value: off
+						53 button Close
+			54 button New Tab
+			55 button Open Gemini in Chrome
+		56 container Recent Download History
+			57 container
+				58 scroll area
+					59 container
+						60 button stop-v12-recovery-pause.json 720 KB • Done
+						61 text stop-v12-recovery-pause.json
+						62 text 720 KB • Done
+						63 button stop-v12-recovery-before.json 383 KB • 4 minutes ago
+						64 text stop-v12-recovery-before.json
+						65 text 383 KB • 4 minutes ago
+						66 button stop-v12-native-post-onset.json 439 KB • 28 minutes ago
+						67 text stop-v12-native-post-onset.json
+						68 text 439 KB • 28 minutes ago
+						69 button stop-v12-native-pre-onset.json 378 KB • 32 minutes ago
+						70 text stop-v12-native-pre-onset.json
+						71 text 378 KB • 32 minutes ago
+						72 button stop-v12-native-cases1-2-final.json 330 KB • 33 minutes ago
+						73 text stop-v12-native-cases1-2-final.json
+						74 text 330 KB • 33 minutes ago
+						75 button stop-v12-native-warmup-pause.json 29.8 KB • 37 minutes ago
+						76 text stop-v12-native-warmup-pause.json
+						77 text 29.8 KB • 37 minutes ago
+						78 button stop-v12-native-control.json 4.9 KB • 40 minutes ago
+						79 text stop-v12-native-control.json
+						80 text 4.9 KB • 40 minutes ago
+	81 close button
+	82 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	83 minimize button
+84 menu bar
+	85 Chrome
+	86 File
+	87 Edit
+	88 View
+	89 History
+	90 Bookmarks
+	91 Profiles
+	92 Tab
+	93 Window
+	94 Help
+
+The focused UI element is 42 heading Warm-up complete, Value: 1

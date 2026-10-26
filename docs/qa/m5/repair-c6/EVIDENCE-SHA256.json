@@ -1,0 +1,138 @@
+{
+  "sourceSHA256": "bf7b9db5bd5e69221b5b42c4810f230954a4e4d7fd7995573f7f981cd15261d4",
+  "journals": {
+    "c6": [
+      {
+        "session": "a6d007ba-3566-423f-b70d-37a91a83bd8d",
+        "events": 643,
+        "journalSHA256": "6fc13840dfbcb09663cada9fcc0d3ad5b0f5c67d9774020d6de087ba759e392d",
+        "summarySHA256": "5b04cda0b9e7cbf340b250322f57c3de9a33649ebc058ef3a1a62a292ea0d155",
+        "visibleMs": [
+          200.60000014305115,
+          210.29999995231628
+        ],
+        "deadlineLatenessMs": [
+          0.09999990463256836,
+          1.8000001907348633
+        ],
+        "betweenTrialMs": [
+          1201.2999999523163,
+          1209.3000001907349
+        ]
+      }
+    ],
+    "c2": [
+      {
+        "session": "c6c2fc62-4927-4365-99b8-864b050092e2",
+        "events": 643,
+        "journalSHA256": "ca093abe4f02734ba2d12ddb7d6ba5b8bc1e7f48d129ff11686bc9725c35db35",
+        "summarySHA256": "5b04cda0b9e7cbf340b250322f57c3de9a33649ebc058ef3a1a62a292ea0d155",
+        "visibleMs": [
+          200.69999980926514,
+          209.40000009536743
+        ],
+        "deadlineLatenessMs": [
+          0.09999990463256836,
+          2.0999999046325684
+        ],
+        "betweenTrialMs": [
+          1201.0999999046326,
+          1209.5
+        ]
+      }
+    ],
+    "c4": [
+      {
+        "session": "854a4e78-c459-4233-8286-53ad7919aa30",
+        "events": 643,
+        "journalSHA256": "165cd38591e9b7b3875ae18c02806635f6e7a7537c11698075f196a470c17461",
+        "summarySHA256": "97d48209f8b3fb9c975015aafc4865510cb9bdd305a5db5b8096e276b5e61c87",
+        "visibleMs": [
+          200.5,
+          209.90000009536743
+        ],
+        "deadlineLatenessMs": [
+          0.10000014305114746,
+          1.5
+        ],
+        "betweenTrialMs": [
+          1201.2000000476837,
+          1209.1999998092651
+        ]
+      }
+    ],
+    "retry": [
+      {
+        "session": "f32e16df-5c9f-46ba-a662-cec9fb016ac5",
+        "events": 643,
+        "journalSHA256": "f1b88190fda30c46ccd2d614f7fbec45da74d244b802fe298e0e555665b1495b",
+        "summarySHA256": "97d48209f8b3fb9c975015aafc4865510cb9bdd305a5db5b8096e276b5e61c87",
+        "visibleMs": [
+          200.59999990463257,
+          209.39999985694885
+        ],
+        "deadlineLatenessMs": [
+          0.09999990463256836,
+          1.5
+        ],
+        "betweenTrialMs": [
+          1201.5,
+          1209.6000001430511
+        ]
+      }
+    ],
+    "c3": [
+      {
+        "session": "cc0a332d-9641-43e8-b138-84656c1aa28e",
+        "events": 643,
+        "journalSHA256": "013ec5eb4dfb4ddcef5efdb7ec4339f829cbfa04ebc22e1d13e061bf4136c0d6",
+        "summarySHA256": "5b04cda0b9e7cbf340b250322f57c3de9a33649ebc058ef3a1a62a292ea0d155",
+        "visibleMs": [
+          200.70000004768372,
+          209.5
+        ],
+        "deadlineLatenessMs": [
+          0.09999990463256836,
+          1.7000000476837158
+        ],
+        "betweenTrialMs": [
+          1201.5,
+          1209.5999999046326
+        ]
+      },
+      {
+        "session": "3521e957-1532-4bb0-8a85-85d02956b5ab",
+        "events": 643,
+        "journalSHA256": "b984f8890dfa655278e56a68bfaf4a2abbfd27e039a171b4741ddf81111172bf",
+        "summarySHA256": "5b04cda0b9e7cbf340b250322f57c3de9a33649ebc058ef3a1a62a292ea0d155",
+        "visibleMs": [
+          200.5,
+          209.60000014305115
+        ],
+        "deadlineLatenessMs": [
+          0.09999990463256836,
+          2.0999999046325684
+        ],
+        "betweenTrialMs": [
+          1201.0,
+          1209.4000000953674
+        ]
+      }
+    ]
+  },
+  "evidenceSHA256": {
+    "full-after/unavailable-before-none-report-fail.json": "50b3fb0ae3f5eb2cb44de5bed39f6d5258c4578c916bafe6d99c51f3eb637839",
+    "c2/delayed-before-drill-exit-ordinary.json": "d5f8f3b047a412dd341dac1b0c01951d76dfe3749201e980eeb8dbfa0fabc59a",
+    "c4/delayed-after-all-report-ordinary.json": "23389a89a5dd53f48cf05632be0323d91b7e69947b3328e936ca4a29ef7a51d2",
+    "retry/unavailable-before-unrelated-report-retry.json": "e0ba9f9f7bf9424df0bd497e7490a9c0fec4a48a064167eae3c156a24a294a3e",
+    "overlap/two-retests-late-first.json": "71ff515b8708fbffe0fecb49cfc132f372274b752e710c71a91ee53cd841a9e3",
+    "open-stalled-matrix-after.json": "ae389b46f2a93944046ceb99a34d317595984d84aad497b8fce206bba57d1358",
+    "resume-matrix-after.json": "f892ffd00bdf0d1209a52a9f4c434f50262226c34dffb9309710503366ddee92",
+    "open-authority-after.json": "fd163eef08c8f029ca23002b43eff691e34c4beafc7ec7c1f928c8613885805b",
+    "authority-probes-after.json": "13b50347b48818796fe3ae722bcf593707980be3d6ed7075d47dcb42443edc25",
+    "open-authority-keyboard-visibility.json": "0bbae84c2242a5c381c386cb1b66548c954a4c8782e7ff9382ff4c282f5594a4",
+    "full-open-authority/unavailable-before-none-report-fail.json": "2578ccaea2d728c34c2b80022ff5e0f752de4acd5cc806de9dc6313e5faaa2a8",
+    "full-open-authority/stale-open-comparison.png": "79cb8a3bba513582177373e231e1445f64a94a9c173284120f9f511e67f9ed3d",
+    "full-after/stale-open-comparison.png": "c47f715b8766832695fce263b5b78e7333c9b2a19aa855f11e714a6e36365d8f"
+  }
+}

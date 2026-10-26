@@ -1,0 +1,191 @@
+{
+  "browser": "145.0.7632.6",
+  "cases": [
+    {
+      "name": "pre-arm-cancel-late-assignment",
+      "pass": true,
+      "details": {
+        "exposure": "released_unseen",
+        "mounts": 0
+      }
+    },
+    {
+      "name": "post-arm-cancel",
+      "pass": true,
+      "details": {
+        "sessionId": "1cc01c96-bece-4328-8066-51956444be65",
+        "exposure": "exposure_uncertain",
+        "eligible": true,
+        "injection": "held transaction completion delivery"
+      }
+    },
+    {
+      "name": "post-arm-hide",
+      "pass": true,
+      "details": {
+        "sessionId": "d84e2566-8a74-4d13-bf8e-e4fbfd858520",
+        "exposure": "exposure_uncertain",
+        "eligible": false,
+        "injection": "synthetic visibility delivery"
+      }
+    },
+    {
+      "name": "post-arm-reload",
+      "pass": true,
+      "details": {
+        "sessionId": "86fbe7e1-4ae3-4560-bb55-9909631de796",
+        "exposure": "form_exposed",
+        "eligible": false,
+        "injection": "held transaction completion delivery"
+      }
+    },
+    {
+      "name": "failed-arm-write",
+      "pass": true,
+      "details": {
+        "exposure": "form_exposed",
+        "eligible": false,
+        "actionCounter": 1,
+        "injection": "one IDB put throws; atomic transaction abort"
+      }
+    },
+    {
+      "name": "failed-confirm-write",
+      "pass": true,
+      "details": {
+        "exposure": "form_exposed",
+        "eligible": false,
+        "actionCounter": 1,
+        "injection": "one IDB put throws; atomic transaction abort"
+      }
+    },
+    {
+      "name": "failed-action_pending-write",
+      "pass": true,
+      "details": {
+        "exposure": "form_exposed",
+        "eligible": false,
+        "actionCounter": 1,
+        "injection": "one IDB put throws; atomic transaction abort"
+      }
+    },
+    {
+      "name": "failed-action-write",
+      "pass": true,
+      "details": {
+        "exposure": "form_exposed",
+        "eligible": false,
+        "actionCounter": 1,
+        "injection": "one IDB put throws; atomic transaction abort"
+      }
+    },
+    {
+      "name": "pending-action-rapid-clicks-and-late-delivery",
+      "pass": true,
+      "details": {
+        "actionCounter": 5,
+        "ignoredDuringWrite": 5,
+        "freshPumps": 2
+      }
+    },
+    {
+      "name": "keyboard-exit-during-pending-write",
+      "pass": true,
+      "details": {
+        "nativeKeyboardExit": true,
+        "injection": "held action transaction completion delivery"
+      }
+    },
+    {
+      "name": "deletion-individual-during-delayed-assignment",
+      "pass": true,
+      "details": {
+        "records": 0,
+        "tombstones": 1,
+        "lateDeliveryResurrected": false
+      }
+    },
+    {
+      "name": "deletion-installation-during-delayed-assignment",
+      "pass": true,
+      "details": {
+        "records": 0,
+        "tombstones": 0,
+        "lateDeliveryResurrected": false
+      }
+    },
+    {
+      "name": "deletion-individual-during-delayed-arm",
+      "pass": true,
+      "details": {
+        "records": 0,
+        "tombstones": 1,
+        "lateDeliveryResurrected": false
+      }
+    },
+    {
+      "name": "deletion-installation-during-delayed-arm",
+      "pass": true,
+      "details": {
+        "records": 0,
+        "tombstones": 0,
+        "lateDeliveryResurrected": false
+      }
+    },
+    {
+      "name": "deletion-individual-during-delayed-confirm",
+      "pass": true,
+      "details": {
+        "records": 0,
+        "tombstones": 1,
+        "lateDeliveryResurrected": false
+      }
+    },
+    {
+      "name": "deletion-installation-during-delayed-confirm",
+      "pass": true,
+      "details": {
+        "records": 0,
+        "tombstones": 0,
+        "lateDeliveryResurrected": false
+      }
+    },
+    {
+      "name": "deletion-individual-during-delayed-action",
+      "pass": true,
+      "details": {
+        "records": 0,
+        "tombstones": 1,
+        "lateDeliveryResurrected": false
+      }
+    },
+    {
+      "name": "deletion-installation-during-delayed-action",
+      "pass": true,
+      "details": {
+        "records": 0,
+        "tombstones": 0,
+        "lateDeliveryResurrected": false
+      }
+    },
+    {
+      "name": "two-tab-owner-and-truthful-replay-assignment",
+      "pass": true,
+      "details": {
+        "formIds": [
+          "BL1",
+          "RP1"
+        ]
+      }
+    },
+    {
+      "name": "delayed-frame-cancel-and-late-callback",
+      "pass": true,
+      "details": {
+        "exposure": "exposure_uncertain",
+        "confirmedRounds": []
+      }
+    }
+  ],
+  "errors": []
+}

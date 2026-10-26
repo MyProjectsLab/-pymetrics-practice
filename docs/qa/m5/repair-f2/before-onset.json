@@ -1,0 +1,254 @@
+{
+  "browser": "145.0.7632.6",
+  "cases": [
+    {
+      "delivery": "delivered",
+      "kind": "drill",
+      "point": "before",
+      "claim": {
+        "sessionId": "11b66dfb-a866-44a9-835b-082c0187873b",
+        "formId": "stop-retest-01",
+        "family": "retest",
+        "expiresAtMs": 1790808582831,
+        "chainId": "a56cdd75-fd77-4366-9950-69e687a5ad9f",
+        "armed": true,
+        "ownerTabId": "85926764-4f3e-449f-b0d8-323026cd316d"
+      },
+      "confirmedBeforeDeletion": 0,
+      "confirmedAfterDeletion": 0,
+      "activeAfterDeletion": false,
+      "onsetsInDraft": 0,
+      "markerAfterDeletion": null,
+      "markerAfterExit": null,
+      "retired": true,
+      "expectedBlocked": true,
+      "visible": "Skip to content\nap\nAssessment Practice\nPrivate preview\n\nYOUR PRACTICE LIBRARY\n\nLearn the task.\nPractise with clarity.\n\nLearn the rules and controls of original Assessment Practice exercises.\n\nExplore the games\n│\n—\n\nPRACTICE AND DESCRIPTIVE REPORT AVAILABLE\n\nStop\n\nRespond to GO. Withhold on NO-GO. Review your accuracy, response timing, and consistency on this Assessment Practice task.\n\nAbout 4 minutes · Physical keyboard recommended\n\nOpen Stop →\nStop history\n\nResults and sequence-use records are saved in this browser. Clearing site data or browser eviction can remove them. These records cannot establish which sequences you started before that happened or in other browsers.\n\nOriginal preparation exercises. Follow the instructions in your invitation.",
+      "pass": true
+    },
+    {
+      "delivery": "delivered",
+      "kind": "all",
+      "point": "before",
+      "claim": {
+        "sessionId": "e88a6c09-e683-46d4-b58a-b26387db00f2",
+        "formId": "stop-retest-02",
+        "family": "retest",
+        "expiresAtMs": 1790808604624,
+        "chainId": "a56cdd75-fd77-4366-9950-69e687a5ad9f",
+        "armed": true,
+        "ownerTabId": "4fb95004-8c7e-4df6-80b9-139d2fdb8c00"
+      },
+      "confirmedBeforeDeletion": 0,
+      "confirmedAfterDeletion": 0,
+      "activeAfterDeletion": false,
+      "onsetsInDraft": 0,
+      "markerAfterDeletion": null,
+      "markerAfterExit": null,
+      "retired": false,
+      "expectedBlocked": true,
+      "visible": "Skip to content\nap\nAssessment Practice\nPrivate preview\n\nYOUR PRACTICE LIBRARY\n\nLearn the task.\nPractise with clarity.\n\nLearn the rules and controls of original Assessment Practice exercises.\n\nExplore the games\n│\n—\n\nPRACTICE AND DESCRIPTIVE REPORT AVAILABLE\n\nStop\n\nRespond to GO. Withhold on NO-GO. Review your accuracy, response timing, and consistency on this Assessment Practice task.\n\nAbout 4 minutes · Physical keyboard recommended\n\nOpen Stop →\n\nResults and sequence-use records are kept only while this page remains open. Refreshing, closing the tab, or leaving the site clears them. These records cannot establish which sequences you started on earlier visits or in other tabs.\n\nOriginal preparation exercises. Follow the instructions in your invitation.",
+      "pass": true
+    },
+    {
+      "delivery": "unavailable",
+      "kind": "drill",
+      "point": "before",
+      "claim": {
+        "sessionId": "3425ea39-07eb-41e6-b710-5b1b951dc40b",
+        "formId": "stop-retest-03",
+        "family": "retest",
+        "expiresAtMs": 1790808626309,
+        "chainId": "a56cdd75-fd77-4366-9950-69e687a5ad9f",
+        "armed": true,
+        "ownerTabId": "ad487bab-b9cb-43c4-bd5f-9b6111964ae1"
+      },
+      "confirmedBeforeDeletion": 0,
+      "confirmedAfterDeletion": 1,
+      "activeAfterDeletion": true,
+      "onsetsInDraft": 1,
+      "markerAfterDeletion": {
+        "formId": "stop-retest-03",
+        "exposedAtWall": "2026-09-30T22:20:46.718Z",
+        "visualProfile": "standard",
+        "deleted": false,
+        "sessionId": "3425ea39-07eb-41e6-b710-5b1b951dc40b",
+        "certainty": "confirmed"
+      },
+      "markerAfterExit": {
+        "formId": "stop-retest-03",
+        "exposedAtWall": "2026-09-30T22:20:46.718Z",
+        "visualProfile": "standard",
+        "deleted": false,
+        "sessionId": "3425ea39-07eb-41e6-b710-5b1b951dc40b",
+        "certainty": "confirmed"
+      },
+      "retired": true,
+      "expectedBlocked": true,
+      "visible": "Stop · Private preview\n\nGO: press Space · NO-GO: do nothing",
+      "pass": false
+    },
+    {
+      "delivery": "unavailable",
+      "kind": "all",
+      "point": "before",
+      "claim": {
+        "sessionId": "d7885bfb-0acd-42aa-8f6f-142ee2e93f8f",
+        "formId": "stop-retest-03",
+        "family": "retest",
+        "expiresAtMs": 1790808648032,
+        "chainId": "a56cdd75-fd77-4366-9950-69e687a5ad9f",
+        "armed": true,
+        "ownerTabId": "d3db3f9e-78a3-4c16-85fe-96e077c50d6d"
+      },
+      "confirmedBeforeDeletion": 0,
+      "confirmedAfterDeletion": 1,
+      "activeAfterDeletion": true,
+      "onsetsInDraft": 1,
+      "markerAfterDeletion": null,
+      "markerAfterExit": null,
+      "retired": false,
+      "expectedBlocked": true,
+      "visible": "Stop · Private preview\n\nGO: press Space · NO-GO: do nothing",
+      "pass": false
+    },
+    {
+      "delivery": "delayed",
+      "kind": "drill",
+      "point": "before",
+      "claim": {
+        "sessionId": "998ed5de-3b34-4dc8-8f29-ac48f8676498",
+        "formId": "stop-retest-04",
+        "family": "retest",
+        "expiresAtMs": 1790808669724,
+        "chainId": "a56cdd75-fd77-4366-9950-69e687a5ad9f",
+        "armed": true,
+        "ownerTabId": "04a3dbc2-abb6-4dcf-bb2f-f3dea43bdf46"
+      },
+      "confirmedBeforeDeletion": 0,
+      "confirmedAfterDeletion": 1,
+      "activeAfterDeletion": true,
+      "onsetsInDraft": 1,
+      "markerAfterDeletion": {
+        "formId": "stop-retest-04",
+        "exposedAtWall": "2026-09-30T22:21:30.141Z",
+        "visualProfile": "standard",
+        "deleted": false,
+        "sessionId": "998ed5de-3b34-4dc8-8f29-ac48f8676498",
+        "certainty": "confirmed"
+      },
+      "markerAfterExit": {
+        "formId": "stop-retest-04",
+        "exposedAtWall": "2026-09-30T22:21:30.141Z",
+        "visualProfile": "standard",
+        "deleted": false,
+        "sessionId": "998ed5de-3b34-4dc8-8f29-ac48f8676498",
+        "certainty": "confirmed"
+      },
+      "retired": true,
+      "expectedBlocked": true,
+      "visible": "Stop · Private preview\n\nGO: press Space · NO-GO: do nothing",
+      "pass": false
+    },
+    {
+      "delivery": "delayed",
+      "kind": "all",
+      "point": "before",
+      "claim": {
+        "sessionId": "0c116e69-13af-4064-85f6-b26c42a2f496",
+        "formId": "stop-retest-01",
+        "family": "retest",
+        "expiresAtMs": 1790808691465,
+        "chainId": "a56cdd75-fd77-4366-9950-69e687a5ad9f",
+        "armed": true,
+        "ownerTabId": "c39dd730-2148-4829-b664-e349ab94fc40"
+      },
+      "confirmedBeforeDeletion": 0,
+      "confirmedAfterDeletion": 1,
+      "activeAfterDeletion": true,
+      "onsetsInDraft": 1,
+      "markerAfterDeletion": null,
+      "markerAfterExit": null,
+      "retired": false,
+      "expectedBlocked": true,
+      "visible": "Stop · Private preview\n\nGO: press Space · NO-GO: do nothing",
+      "pass": false
+    },
+    {
+      "delivery": "delivered",
+      "kind": "drill",
+      "point": "after",
+      "claim": {
+        "sessionId": "ab54c028-22b7-43f9-a22f-7c395bd3a6bd",
+        "formId": "stop-retest-01",
+        "family": "retest",
+        "expiresAtMs": 1790808713098,
+        "chainId": "a56cdd75-fd77-4366-9950-69e687a5ad9f",
+        "armed": true,
+        "ownerTabId": "6fcc8213-7177-4dff-b9f0-8dd71c39370f"
+      },
+      "confirmedBeforeDeletion": 1,
+      "confirmedAfterDeletion": 1,
+      "activeAfterDeletion": false,
+      "onsetsInDraft": 1,
+      "markerAfterDeletion": {
+        "formId": "stop-retest-01",
+        "exposedAtWall": "2026-09-30T22:22:13.531Z",
+        "visualProfile": "standard",
+        "deleted": false,
+        "sessionId": "ab54c028-22b7-43f9-a22f-7c395bd3a6bd",
+        "certainty": "confirmed"
+      },
+      "markerAfterExit": {
+        "formId": "stop-retest-01",
+        "exposedAtWall": "2026-09-30T22:22:13.531Z",
+        "visualProfile": "standard",
+        "deleted": false,
+        "sessionId": "ab54c028-22b7-43f9-a22f-7c395bd3a6bd",
+        "certainty": "confirmed"
+      },
+      "retired": true,
+      "expectedBlocked": false,
+      "visible": "Skip to content\nap\nAssessment Practice\nPrivate preview\n\nYOUR PRACTICE LIBRARY\n\nLearn the task.\nPractise with clarity.\n\nLearn the rules and controls of original Assessment Practice exercises.\n\nExplore the games\n│\n—\n\nPRACTICE AND DESCRIPTIVE REPORT AVAILABLE\n\nStop\n\nRespond to GO. Withhold on NO-GO. Review your accuracy, response timing, and consistency on this Assessment Practice task.\n\nAbout 4 minutes · Physical keyboard recommended\n\nOpen Stop →\nStop history\n\nResults and sequence-use records are saved in this browser. Clearing site data or browser eviction can remove them. These records cannot establish which sequences you started before that happened or in other browsers.\n\nOriginal preparation exercises. Follow the instructions in your invitation.",
+      "pass": true
+    },
+    {
+      "delivery": "delivered",
+      "kind": "unrelated",
+      "point": "before",
+      "claim": {
+        "sessionId": "b5118158-a2e0-4f4d-8d40-649cf738387f",
+        "formId": "stop-retest-03",
+        "family": "retest",
+        "expiresAtMs": 1790808735982,
+        "chainId": "a56cdd75-fd77-4366-9950-69e687a5ad9f",
+        "armed": true,
+        "ownerTabId": "b8e9975a-7b17-48a4-9209-e8bf33b5a6b8"
+      },
+      "confirmedBeforeDeletion": 0,
+      "confirmedAfterDeletion": 1,
+      "activeAfterDeletion": true,
+      "onsetsInDraft": 1,
+      "markerAfterDeletion": {
+        "formId": "stop-retest-03",
+        "exposedAtWall": "2026-09-30T22:22:36.385Z",
+        "visualProfile": "standard",
+        "deleted": false,
+        "sessionId": "b5118158-a2e0-4f4d-8d40-649cf738387f",
+        "certainty": "confirmed"
+      },
+      "markerAfterExit": {
+        "formId": "stop-retest-03",
+        "exposedAtWall": "2026-09-30T22:22:36.385Z",
+        "visualProfile": "standard",
+        "deleted": false,
+        "sessionId": "b5118158-a2e0-4f4d-8d40-649cf738387f",
+        "certainty": "confirmed"
+      },
+      "retired": false,
+      "expectedBlocked": false,
+      "visible": "Stop · Private preview\n\nGO: press Space · NO-GO: do nothing",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

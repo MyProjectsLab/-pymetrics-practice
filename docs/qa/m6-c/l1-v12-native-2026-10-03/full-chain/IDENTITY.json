@@ -1,0 +1,56 @@
+{
+  "startingQaHead": "70c7286f0d8059b352d9a1ab9baecd476945fc92",
+  "branch": "main",
+  "startingWorkingTree": "clean",
+  "productHead": "f6b8ae05ab024e603ebe3fc8e1a42f71dd4b14b1",
+  "productDiffFromProductHead": "empty for src, server, scripts, package files, index.html, Vite and TypeScript configuration",
+  "productionBuild": {
+    "command": "npm run build",
+    "result": "pass",
+    "originalIndexSha256": "cc294dfd86ea30ff845f452f0bc7d6e0ef2dbc2ed285d3ae2bcef03b185246c5",
+    "bundle": "dist/assets/index-D8pj7mZZ.js",
+    "bundleSha256": "883608dd9dd37db873b013259c93995870ef2995959ebe46e4e560aad5ef3acd",
+    "css": "dist/assets/index-BFu-PDJW.css",
+    "cssSha256": "632bae8949a5d7ad0be3116fac1bbea5bb4e797dc9eedb8a92f480e2cd98b7c9"
+  },
+  "qaObserver": {
+    "source": "../../l1-v12-native-2026-10-02/recovery/viewport-recorder.js",
+    "sourceSha256": "b0183912a81168e36ab9d65aa79bfb61f55f469f2945e37f535246a243308041",
+    "exporter": "../../l1-v12-native-2026-10-02/recovery/export-helper.html",
+    "exporterSha256": "355773a1fc79f3043f1c63883fc5d74aa28bef3dad79e56106c00d54494fce9c",
+    "insertion": "Ignored dist/index.html only, before unchanged production bundle",
+    "origin": "http://127.0.0.1:5593/",
+    "effect": "Capture-phase browser observations to a separate QA localStorage key and read-only IndexedDB export; no product data or clock override",
+    "overhead": "unmeasured"
+  },
+  "nativeBrowser": {
+    "name": "Google Chrome",
+    "version": "154.0.8037.95",
+    "build": "Official Build",
+    "architecture": "arm64",
+    "revision": "05d469856e75794131cc2e5d9b2f6b6f10a70388-refs/branch-heads/8037@{#1592}",
+    "commandLine": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome --flag-switches-begin --flag-switches-end",
+    "control": "Native Google Chrome app accessibility and app-bridge input; no DevTools or CDP attachment"
+  },
+  "os": {
+    "name": "macOS",
+    "version": "26.6.2",
+    "build": "25G83",
+    "machine": "MacBook Pro Mac17,2, Apple M5, 32 GB"
+  },
+  "display": {
+    "systemProfiler": "Built-in Liquid Retina XDR Color LCD, internal connection, main display, mirror off, 3024 x 1964 Retina",
+    "browserScreenCssPixels": [1512, 982],
+    "browserAvailableCssPixels": [1512, 948],
+    "devicePixelRatio": 2,
+    "liveViewportCssPixels": [1512, 827],
+    "refreshRate": "not measured or attested",
+    "scanoutTiming": "not measured"
+  },
+  "input": {
+    "productSetupRecord": "physicalKeyboard true, self-confirmed through the UI",
+    "actualQaActions": "Tool-dispatched native app-bridge Space input; no human physical-keyboard scored-response attestation",
+    "physicalInputLatency": "not measured"
+  },
+  "localTime": "2026-10-03 America/New_York; raw browser timestamps are UTC"
+}

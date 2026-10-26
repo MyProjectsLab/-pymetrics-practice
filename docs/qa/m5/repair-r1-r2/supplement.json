@@ -1,0 +1,98 @@
+{
+  "errors": [],
+  "pendingAndOrdering": {
+    "pending": {
+      "status": "pending",
+      "attempts": 1,
+      "calls": [
+        {
+          "status": "drilling",
+          "n": 0,
+          "event": null
+        }
+      ]
+    },
+    "ordered": [
+      {
+        "status": "drilling",
+        "n": 0,
+        "event": null
+      },
+      {
+        "status": "drill_complete",
+        "n": 1,
+        "event": null
+      },
+      {
+        "status": "drill_complete",
+        "n": 1,
+        "event": "drill_completed"
+      }
+    ],
+    "durableAttempts": 1
+  },
+  "failedReload": {
+    "attempts": 0,
+    "status": "assigned",
+    "activities": [
+      {
+        "key": "3848a0fc-956e-4f3d-a13d-720b7324013f:storage_failure:drill_complete:1",
+        "sessionId": "7d73de58-d60e-4ff1-83e7-a42adfd2609b",
+        "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+        "type": "storage_failure",
+        "payload": {
+          "errorClass": "training_chain_write",
+          "storageMode": "temporary_memory"
+        },
+        "schemaVersion": "stop_local_activity_v1",
+        "sequenceNumber": 1,
+        "recordedAtWall": "2026-09-30T16:52:54.312Z"
+      },
+      {
+        "key": "3848a0fc-956e-4f3d-a13d-720b7324013f:drill_completed:d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+        "sessionId": "d96eaa1b-227b-486c-af6f-4847b7e71b5a",
+        "chainId": "3848a0fc-956e-4f3d-a13d-720b7324013f",
+        "type": "drill_completed",
+        "payload": {
+          "ruleVersion": "stop_drill_router_v1",
+          "drillId": "detection",
+          "reasonMetrics": {
+            "missRate": 1,
+            "misses": 60,
+            "falseAlarmRate": 0
+          }
+        },
+        "schemaVersion": "stop_local_activity_v1",
+        "sequenceNumber": 1,
+        "recordedAtWall": "2026-09-30T16:52:54.311Z"
+      }
+    ]
+  },
+  "deleteAllWarning": "Delete all local Assessment Practice data?\n\nThis removes results, events, settings, training chains, and form-exposure history from this browser. It cannot be undone. If you return later, the product will not know which forms you previously saw and cannot guarantee that a sequence is new relative to your earlier use.\n\nDelete all local data\nKeep my data",
+  "deleteAll": true,
+  "preOnsetRetestChain": {
+    "restored": true,
+    "reservedForm": "stop-retest-04",
+    "released": true
+  },
+  "lifecycle": [
+    {
+      "type": "visibility_changed",
+      "valid": 0,
+      "chain": false,
+      "preserved": true
+    },
+    {
+      "type": "page_lifecycle_changed",
+      "valid": 0,
+      "chain": false,
+      "preserved": true
+    },
+    {
+      "type": "setting_changed",
+      "valid": 0,
+      "chain": false,
+      "preserved": true
+    }
+  ]
+}

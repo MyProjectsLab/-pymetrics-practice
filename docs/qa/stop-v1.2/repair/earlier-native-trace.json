@@ -1,0 +1,893 @@
+{
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+  "viewport": {
+    "width": 320,
+    "height": 581
+  },
+  "scripts": [
+    "http://127.0.0.1:5589/assets/index-D8pj7mZZ.js",
+    "http://127.0.0.1:5589/qa-browser-probe.js"
+  ],
+  "trace": [
+    {
+      "at": "2026-10-02T20:18:02.423Z",
+      "type": "pageshow",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:13.382Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:13.383Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:13.384Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:13.654Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:13.654Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:13.660Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:13.662Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:13.919Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:13.919Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:13.929Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:13.931Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:14.185Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:14.185Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:14.187Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:14.188Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:14.419Z",
+      "type": "keydown",
+      "code": "KeyF",
+      "trusted": true,
+      "prevented": false,
+      "target": "Press one new physical key for GO.Tab moves to the next control.Cancel key captu"
+    },
+    {
+      "at": "2026-10-02T20:18:14.420Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:14.424Z",
+      "type": "keyup",
+      "code": "KeyF",
+      "trusted": true,
+      "prevented": false,
+      "target": "\n    Skip to contentap Assessment PracticePrivate previewBackStop \u00b7 Private prev"
+    },
+    {
+      "at": "2026-10-02T20:18:14.488Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:14.490Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:14.491Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:14.754Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:14.755Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:14.757Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:14.758Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:14.988Z",
+      "type": "keydown",
+      "code": "Tab",
+      "trusted": true,
+      "prevented": false,
+      "target": "Try the rule"
+    },
+    {
+      "at": "2026-10-02T20:18:14.989Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:14.989Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:14.990Z",
+      "type": "keyup",
+      "code": "Tab",
+      "trusted": true,
+      "prevented": false,
+      "target": "Check example"
+    },
+    {
+      "at": "2026-10-02T20:18:15.280Z",
+      "type": "keydown",
+      "code": "Space",
+      "trusted": true,
+      "prevented": false,
+      "target": "Check example"
+    },
+    {
+      "at": "2026-10-02T20:18:15.282Z",
+      "type": "keyup",
+      "code": "Space",
+      "trusted": true,
+      "prevented": false,
+      "target": "Check example"
+    },
+    {
+      "at": "2026-10-02T20:18:22.478Z",
+      "type": "keydown",
+      "code": "Space",
+      "trusted": true,
+      "prevented": false,
+      "target": "Next example"
+    },
+    {
+      "at": "2026-10-02T20:18:22.480Z",
+      "type": "keyup",
+      "code": "Space",
+      "trusted": true,
+      "prevented": false,
+      "target": "Next example"
+    },
+    {
+      "at": "2026-10-02T20:18:22.746Z",
+      "type": "keydown",
+      "code": "KeyF",
+      "trusted": true,
+      "prevented": false,
+      "target": "Check example"
+    },
+    {
+      "at": "2026-10-02T20:18:22.748Z",
+      "type": "keyup",
+      "code": "KeyF",
+      "trusted": true,
+      "prevented": false,
+      "target": "Check example"
+    },
+    {
+      "at": "2026-10-02T20:18:22.951Z",
+      "type": "keydown",
+      "code": "Enter",
+      "trusted": true,
+      "prevented": false,
+      "target": "Check example"
+    },
+    {
+      "at": "2026-10-02T20:18:22.954Z",
+      "type": "keyup",
+      "code": "Enter",
+      "trusted": true,
+      "prevented": false,
+      "target": "Next example"
+    },
+    {
+      "at": "2026-10-02T20:18:23.256Z",
+      "type": "keydown",
+      "code": "Space",
+      "trusted": true,
+      "prevented": false,
+      "target": "Next example"
+    },
+    {
+      "at": "2026-10-02T20:18:23.257Z",
+      "type": "keyup",
+      "code": "Space",
+      "trusted": true,
+      "prevented": false,
+      "target": "Next example"
+    },
+    {
+      "at": "2026-10-02T20:18:23.557Z",
+      "type": "keydown",
+      "code": "KeyF",
+      "trusted": true,
+      "prevented": false,
+      "target": "Check example"
+    },
+    {
+      "at": "2026-10-02T20:18:23.559Z",
+      "type": "keyup",
+      "code": "KeyF",
+      "trusted": true,
+      "prevented": false,
+      "target": "Check example"
+    },
+    {
+      "at": "2026-10-02T20:18:23.564Z",
+      "type": "keydown",
+      "code": "Space",
+      "trusted": true,
+      "prevented": false,
+      "target": "Check example"
+    },
+    {
+      "at": "2026-10-02T20:18:23.565Z",
+      "type": "keyup",
+      "code": "Space",
+      "trusted": true,
+      "prevented": false,
+      "target": "Check example"
+    },
+    {
+      "at": "2026-10-02T20:18:33.805Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:33.805Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:33.807Z",
+      "type": "pagehide",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:33.807Z",
+      "type": "visibilitychange",
+      "trusted": true,
+      "visibility": "hidden"
+    },
+    {
+      "at": "2026-10-02T20:18:33.828Z",
+      "type": "pageshow",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:33.965Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:33.966Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:33.967Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:34.234Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:34.234Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:34.236Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:34.237Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:34.499Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:34.500Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:34.501Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:34.501Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:34.738Z",
+      "type": "keydown",
+      "code": "Tab",
+      "trusted": true,
+      "prevented": false,
+      "target": "Try the rule"
+    },
+    {
+      "at": "2026-10-02T20:18:34.738Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:34.739Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:34.740Z",
+      "type": "keyup",
+      "code": "Tab",
+      "trusted": true,
+      "prevented": false,
+      "target": "Check example"
+    },
+    {
+      "at": "2026-10-02T20:18:35.058Z",
+      "type": "keydown",
+      "code": "Space",
+      "trusted": true,
+      "prevented": false,
+      "target": "Check example"
+    },
+    {
+      "at": "2026-10-02T20:18:35.059Z",
+      "type": "keyup",
+      "code": "Space",
+      "trusted": true,
+      "prevented": false,
+      "target": "Check example"
+    },
+    {
+      "at": "2026-10-02T20:18:35.363Z",
+      "type": "keydown",
+      "code": "Enter",
+      "trusted": true,
+      "prevented": false,
+      "target": "Check example"
+    },
+    {
+      "at": "2026-10-02T20:18:35.365Z",
+      "type": "keyup",
+      "code": "Enter",
+      "trusted": true,
+      "prevented": false,
+      "target": "Next example"
+    },
+    {
+      "at": "2026-10-02T20:18:35.665Z",
+      "type": "keydown",
+      "code": "Space",
+      "trusted": true,
+      "prevented": false,
+      "target": "Next example"
+    },
+    {
+      "at": "2026-10-02T20:18:35.667Z",
+      "type": "keyup",
+      "code": "Space",
+      "trusted": true,
+      "prevented": false,
+      "target": "Next example"
+    },
+    {
+      "at": "2026-10-02T20:18:44.465Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:44.465Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:44.466Z",
+      "type": "pagehide",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:44.466Z",
+      "type": "visibilitychange",
+      "trusted": true,
+      "visibility": "hidden"
+    },
+    {
+      "at": "2026-10-02T20:18:44.485Z",
+      "type": "pageshow",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:44.554Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:44.555Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:44.556Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:44.836Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:44.836Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:44.845Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:44.846Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:45.102Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:45.102Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:45.111Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:45.114Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:45.368Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:45.368Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:45.635Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:45.635Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:45.637Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:45.637Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:45.870Z",
+      "type": "keydown",
+      "code": "Space",
+      "trusted": true,
+      "prevented": false,
+      "target": "Press Space once to confirm that this browser receives your response key.Tab mov"
+    },
+    {
+      "at": "2026-10-02T20:18:45.870Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:45.871Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:45.873Z",
+      "type": "keyup",
+      "code": "Space",
+      "trusted": true,
+      "prevented": false,
+      "target": "Continue to readiness"
+    },
+    {
+      "at": "2026-10-02T20:18:50.434Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:50.435Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:56.498Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:56.499Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:56.501Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:56.502Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:57.070Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:18:57.071Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:19:01.781Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:19:01.781Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:19:10.182Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:19:10.182Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:19:22.508Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:19:22.508Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:19:22.513Z",
+      "type": "keydown",
+      "code": "Enter",
+      "trusted": true,
+      "prevented": false,
+      "target": "Restart warm-up"
+    },
+    {
+      "at": "2026-10-02T20:19:22.516Z",
+      "type": "keyup",
+      "code": "Enter",
+      "trusted": true,
+      "prevented": false,
+      "target": "Restart warm-up"
+    },
+    {
+      "at": "2026-10-02T20:20:03.428Z",
+      "type": "keydown",
+      "code": "Tab",
+      "trusted": true,
+      "prevented": false,
+      "target": "Restart warm-up"
+    },
+    {
+      "at": "2026-10-02T20:20:03.429Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:20:03.429Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:20:03.430Z",
+      "type": "keyup",
+      "code": "Tab",
+      "trusted": true,
+      "prevented": false,
+      "target": "Inject warm-up hidden event (QA)"
+    },
+    {
+      "at": "2026-10-02T20:20:03.435Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:20:03.435Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:20:03.437Z",
+      "type": "keydown",
+      "code": "Enter",
+      "trusted": true,
+      "prevented": false,
+      "target": "Restart warm-up"
+    },
+    {
+      "at": "2026-10-02T20:20:03.438Z",
+      "type": "keyup",
+      "code": "Enter",
+      "trusted": true,
+      "prevented": false,
+      "target": "Restart warm-up"
+    },
+    {
+      "at": "2026-10-02T20:20:12.491Z",
+      "type": "keydown",
+      "code": "Enter",
+      "trusted": true,
+      "prevented": false,
+      "target": "Restart warm-up"
+    },
+    {
+      "at": "2026-10-02T20:20:12.492Z",
+      "type": "keyup",
+      "code": "Enter",
+      "trusted": true,
+      "prevented": false,
+      "target": "Restart warm-up"
+    },
+    {
+      "at": "2026-10-02T20:20:33.303Z",
+      "type": "keydown",
+      "code": "Enter",
+      "trusted": true,
+      "prevented": false,
+      "target": "Restart warm-up"
+    },
+    {
+      "at": "2026-10-02T20:20:33.304Z",
+      "type": "keyup",
+      "code": "Enter",
+      "trusted": true,
+      "prevented": false,
+      "target": "Restart warm-up"
+    },
+    {
+      "at": "2026-10-02T20:20:42.466Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:20:42.466Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:20:42.735Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:20:42.735Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:31:24.882Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:31:24.882Z",
+      "type": "blur",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:31:24.883Z",
+      "type": "pagehide",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:31:24.883Z",
+      "type": "visibilitychange",
+      "trusted": true,
+      "visibility": "hidden"
+    },
+    {
+      "at": "2026-10-02T20:31:24.904Z",
+      "type": "pageshow",
+      "trusted": true,
+      "visibility": "visible"
+    },
+    {
+      "at": "2026-10-02T20:31:24.949Z",
+      "type": "focus",
+      "trusted": true,
+      "visibility": "visible"
+    }
+  ]
+}

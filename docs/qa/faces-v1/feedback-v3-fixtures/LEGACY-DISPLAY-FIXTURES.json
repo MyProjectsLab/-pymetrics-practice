@@ -1,0 +1,464 @@
+{
+  "status": "Literal author display expectations for R2 correction; no product execution claimed. All input responses are synthetic.",
+  "indexConvention": "itemNumber lists are one-based; excludedItems and stored item indexes are zero-based.",
+  "common": {
+    "formId": "faces-bank-discussion-v1",
+    "formHash": "cb12f328b155b79019e10ce38ab2c4b59ed806df3ae64f5f4ea3eeded26c9ff6",
+    "assetBankHash": "7a7e835a3b1c5277eca45b19d82f2ba917305b886727b104a2ac7a94e95f4854",
+    "scoringVersion": "faces-descriptive-v2",
+    "modeId": "standard-v1",
+    "excludedItems": [
+      1,
+      6
+    ],
+    "reportPresentationVersion": "faces-report-presentation-v3",
+    "itemExplanationSource": "frozen historical form content, not faces-feedback-v3",
+    "visibleNote": "Earlier scoring: 12 answers counted. Items 2 and 7 were discussion-only and did not affect this score. Timing covers all 14 answers."
+  },
+  "preservationRule": "Render each synthetic saved attempt through the plain shared report without changing any saved report/fact/receipt or identity field; report presentation version belongs to application display metadata. Discussion-only2/7 never gain true/false match facts. Historical incomplete has report=null.",
+  "cases": [
+    {
+      "id": "legacy-mixed-completed",
+      "choices": [
+        "Determination",
+        "Sadness",
+        "Pain",
+        "Surprise",
+        "Hope",
+        "Determination",
+        "Puzzlement",
+        "Disgust",
+        "Surprise",
+        "Surprise",
+        "Anger",
+        "Surprise",
+        "Fear",
+        "Determination"
+      ],
+      "elapsedUs": [
+        1000000,
+        2000000,
+        30000000,
+        4000000,
+        29999999,
+        31000000,
+        5000000,
+        6000000,
+        1000000,
+        7000000,
+        2000000,
+        7000001,
+        6999999,
+        3000000
+      ],
+      "status": "completed",
+      "expected": {
+        "primary": "8 of 12 answers matched",
+        "contextMatched": "4 of 6",
+        "contextWithinTime": "2 of 6",
+        "contextNote": "6 of 8 answers counted",
+        "photoMatched": "4 of 6",
+        "photoWithinTime": "3 of 6",
+        "late": "4 of 14 answers were late.",
+        "wrongItemNumbers": [
+          4,
+          8,
+          10,
+          14
+        ],
+        "lateMatchedItemNumbers": [
+          3,
+          6,
+          12
+        ],
+        "discussion": [
+          {
+            "number": 2,
+            "selected": "Sadness",
+            "practiceInterpretation": "Hope",
+            "mark": null,
+            "timely": true
+          },
+          {
+            "number": 7,
+            "selected": "Puzzlement",
+            "practiceInterpretation": "Puzzlement",
+            "mark": null,
+            "timely": true
+          }
+        ],
+        "timing": {
+          "contextWithin": "8.00 s (6 answers)",
+          "contextLate": "30.50 s (2 answers)",
+          "photoWithin": "3.25 s (4 answers)",
+          "photoLate": "7.00 s (2 answers)"
+        },
+        "savedReport": {
+          "excludedItems": [
+            1,
+            6
+          ],
+          "context": {
+            "total": 8,
+            "eligibleTotal": 6,
+            "excludedTotal": 2,
+            "matches": 4,
+            "timelyMatches": 2,
+            "lateCount": 2,
+            "timelyLatencySumUs": 47999999,
+            "timelyCount": 6,
+            "lateLatencySumUs": 61000000,
+            "lateCountForMean": 2
+          },
+          "photo": {
+            "total": 6,
+            "eligibleTotal": 6,
+            "excludedTotal": 0,
+            "matches": 4,
+            "timelyMatches": 3,
+            "lateCount": 2,
+            "timelyLatencySumUs": 12999999,
+            "timelyCount": 4,
+            "lateLatencySumUs": 14000001,
+            "lateCountForMean": 2
+          },
+          "confusionPairs": [
+            {
+              "category": "context",
+              "intended": "Pain",
+              "selected": "Disgust",
+              "count": 1
+            },
+            {
+              "category": "context",
+              "intended": "Puzzlement",
+              "selected": "Surprise",
+              "count": 1
+            },
+            {
+              "category": "photo",
+              "intended": "Anger",
+              "selected": "Determination",
+              "count": 1
+            },
+            {
+              "category": "photo",
+              "intended": "Fear",
+              "selected": "Surprise",
+              "count": 1
+            }
+          ],
+          "note": "Remaining report identity/familiarity fields use this exact old tuple and the preserved opening, unchanged."
+        },
+        "overallWithinTime": "5 of 12 matched within time"
+      }
+    },
+    {
+      "id": "legacy-all-scored-matched-timely",
+      "choices": [
+        "Determination",
+        "Sadness",
+        "Pain",
+        "Puzzlement",
+        "Hope",
+        "Determination",
+        "Surprise",
+        "Pain",
+        "Surprise",
+        "Fear",
+        "Anger",
+        "Surprise",
+        "Fear",
+        "Anger"
+      ],
+      "elapsedUs": [
+        1000000,
+        1000000,
+        1000000,
+        1000000,
+        1000000,
+        1000000,
+        1000000,
+        1000000,
+        1000000,
+        1000000,
+        1000000,
+        1000000,
+        1000000,
+        1000000
+      ],
+      "status": "completed",
+      "expected": {
+        "primary": "12 of 12 answers matched",
+        "contextMatched": "6 of 6",
+        "contextWithinTime": "6 of 6",
+        "photoMatched": "6 of 6",
+        "photoWithinTime": "6 of 6",
+        "late": "All 14 answers were within time.",
+        "emptyReview": "All 12 scored answers matched the practice answers",
+        "wrongItemNumbers": [],
+        "lateMatchedItemNumbers": [],
+        "discussionItemNumbers": [
+          2,
+          7
+        ],
+        "discussionMarks": [
+          null,
+          null
+        ],
+        "discussionSelected": [
+          "Sadness",
+          "Surprise"
+        ],
+        "timing": {
+          "contextWithin": "1.00 s (8 answers)",
+          "contextLate": "No late answers",
+          "photoWithin": "1.00 s (6 answers)",
+          "photoLate": "No late answers"
+        },
+        "sumsAndCounts": {
+          "contextTimely": [
+            8000000,
+            8
+          ],
+          "contextLate": [
+            0,
+            0
+          ],
+          "photoTimely": [
+            6000000,
+            6
+          ],
+          "photoLate": [
+            0,
+            0
+          ]
+        },
+        "overallWithinTime": "12 of 12 matched within time"
+      }
+    },
+    {
+      "id": "legacy-all-scored-wrong-timely",
+      "choices": [
+        "Happiness",
+        "Happiness",
+        "Happiness",
+        "Happiness",
+        "Happiness",
+        "Happiness",
+        "Happiness",
+        "Happiness",
+        "Happiness",
+        "Happiness",
+        "Happiness",
+        "Happiness",
+        "Happiness",
+        "Happiness"
+      ],
+      "elapsedUs": [
+        1000000,
+        1000000,
+        1000000,
+        1000000,
+        1000000,
+        1000000,
+        1000000,
+        1000000,
+        1000000,
+        1000000,
+        1000000,
+        1000000,
+        1000000,
+        1000000
+      ],
+      "status": "completed",
+      "expected": {
+        "primary": "0 of 12 answers matched",
+        "contextMatched": "0 of 6",
+        "contextWithinTime": "0 of 6",
+        "photoMatched": "0 of 6",
+        "photoWithinTime": "0 of 6",
+        "late": "All 14 answers were within time.",
+        "wrongItemNumbers": [
+          1,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "lateMatchedItemNumbers": [],
+        "discussionItemNumbers": [
+          2,
+          7
+        ],
+        "discussionMarks": [
+          null,
+          null
+        ],
+        "timing": {
+          "contextWithin": "1.00 s (8 answers)",
+          "contextLate": "No late answers",
+          "photoWithin": "1.00 s (6 answers)",
+          "photoLate": "No late answers"
+        },
+        "confusionPairCountsInCanonicalOrder": [
+          2,
+          1,
+          2,
+          1,
+          2,
+          2,
+          2
+        ],
+        "confusionPairTotal": 12,
+        "overallWithinTime": "0 of 12 matched within time"
+      }
+    },
+    {
+      "id": "legacy-all-scored-matched-late",
+      "choices": [
+        "Determination",
+        "Sadness",
+        "Pain",
+        "Puzzlement",
+        "Hope",
+        "Determination",
+        "Surprise",
+        "Pain",
+        "Surprise",
+        "Fear",
+        "Anger",
+        "Surprise",
+        "Fear",
+        "Anger"
+      ],
+      "elapsedUs": [
+        30000000,
+        30000000,
+        30000000,
+        30000000,
+        30000000,
+        30000000,
+        30000000,
+        30000000,
+        7000000,
+        7000000,
+        7000000,
+        7000000,
+        7000000,
+        7000000
+      ],
+      "status": "completed",
+      "expected": {
+        "primary": "12 of 12 answers matched",
+        "contextMatched": "6 of 6",
+        "contextWithinTime": "0 of 6",
+        "photoMatched": "6 of 6",
+        "photoWithinTime": "0 of 6",
+        "late": "14 of 14 answers were late.",
+        "emptyReview": "All 12 scored answers matched the practice answers",
+        "wrongItemNumbers": [],
+        "lateMatchedItemNumbers": [
+          1,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "discussionItemNumbers": [
+          2,
+          7
+        ],
+        "discussionMarks": [
+          null,
+          null
+        ],
+        "discussionTiming": "Answered after time expired",
+        "timing": {
+          "contextWithin": "No answers within time",
+          "contextLate": "30.00 s (8 answers)",
+          "photoWithin": "No answers within time",
+          "photoLate": "7.00 s (6 answers)"
+        },
+        "sumsAndCounts": {
+          "contextTimely": [
+            0,
+            0
+          ],
+          "contextLate": [
+            240000000,
+            8
+          ],
+          "photoTimely": [
+            0,
+            0
+          ],
+          "photoLate": [
+            42000000,
+            6
+          ]
+        },
+        "overallWithinTime": "0 of 12 matched within time"
+      }
+    },
+    {
+      "id": "legacy-first13-incomplete",
+      "choices": [
+        "Determination",
+        "Sadness",
+        "Pain",
+        "Surprise",
+        "Hope",
+        "Determination",
+        "Puzzlement",
+        "Disgust",
+        "Surprise",
+        "Surprise",
+        "Anger",
+        "Surprise",
+        "Fear"
+      ],
+      "elapsedUs": [
+        1000000,
+        2000000,
+        30000000,
+        4000000,
+        29999999,
+        31000000,
+        5000000,
+        6000000,
+        1000000,
+        7000000,
+        2000000,
+        7000001,
+        6999999
+      ],
+      "status": "incomplete",
+      "terminal": "exit after response for zero-based12, before intent for13",
+      "expected": {
+        "report": null,
+        "message": "Practice stopped — 13 of 14 answers saved. There is no final score.",
+        "item14State": "Not shown",
+        "scoreCards": [],
+        "matchingMarks": [],
+        "answerKeyOrPortraitReview": false,
+        "perItemFacts": "Saved selections and their existing timely/late states only; no invented answer for item14.",
+        "action": "Start a new practice"
+      }
+    }
+  ]
+}

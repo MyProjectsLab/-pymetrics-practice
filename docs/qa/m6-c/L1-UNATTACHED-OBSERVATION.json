@@ -1,0 +1,312 @@
+{
+  "schema": "stop_m6c_l1_unattached_diagnostic_v1",
+  "baseSha": "c41260b2a9b9bfba8d9e4a0617200602f0402f51",
+  "dateLocal": "2026-10-02",
+  "chromeVersion": "154.0.8037.95",
+  "macOSVersion": "26.6.2",
+  "method": "Native Chrome window controlled through macOS accessibility bridge. No CUA browser-tab handle, CDP, DevTools or debugger attachment in this run. Early capture-phase recorder was injected into ignored dist/index.html; product source/assets were unchanged. OS key actions were tool-dispatched, and 60 Hz/physical keyboard use was not attested.",
+  "clock": "Browser recorder and Stop journal use performance.now in the same page; recorder also saved UTC/epoch times. Browser entries were observed via native AX export page; journal entries came from the local IndexedDB draft.",
+  "controlAndCases": [
+    {
+      "name": "control",
+      "browserEvents": [
+        {
+          "type": "blur",
+          "utc": "2026-10-02T10:10:43.450Z",
+          "epochMs": 1790935843450,
+          "timeOriginMs": 1790935833322.5,
+          "performanceNowMs": 10127.799999952316,
+          "eventTimeStampMs": 10127.699999809265,
+          "isTrusted": true,
+          "visibilityState": "visible",
+          "hasFocus": false,
+          "href": "http://127.0.0.1:5588/"
+        },
+        {
+          "type": "visibilitychange",
+          "utc": "2026-10-02T10:10:43.450Z",
+          "epochMs": 1790935843450,
+          "timeOriginMs": 1790935833322.5,
+          "performanceNowMs": 10128,
+          "eventTimeStampMs": 10127.899999856949,
+          "isTrusted": true,
+          "visibilityState": "hidden",
+          "hasFocus": false,
+          "href": "http://127.0.0.1:5588/"
+        },
+        {
+          "type": "visibilitychange",
+          "utc": "2026-10-02T10:10:53.712Z",
+          "epochMs": 1790935853712,
+          "timeOriginMs": 1790935833322.5,
+          "performanceNowMs": 20390.099999904633,
+          "eventTimeStampMs": 20390.099999904633,
+          "isTrusted": true,
+          "visibilityState": "visible",
+          "hasFocus": false,
+          "href": "http://127.0.0.1:5588/"
+        },
+        {
+          "type": "focus",
+          "utc": "2026-10-02T10:10:53.712Z",
+          "epochMs": 1790935853712,
+          "timeOriginMs": 1790935833322.5,
+          "performanceNowMs": 20390.39999985695,
+          "eventTimeStampMs": 20390.39999985695,
+          "isTrusted": true,
+          "visibilityState": "visible",
+          "hasFocus": true,
+          "href": "http://127.0.0.1:5588/"
+        }
+      ]
+    },
+    {
+      "name": "warmup",
+      "browserEvents": [
+        {
+          "type": "blur",
+          "utc": "2026-10-02T10:15:38.727Z",
+          "epochMs": 1790936138727,
+          "timeOriginMs": 1790935833322.5,
+          "performanceNowMs": 305404.89999985695,
+          "eventTimeStampMs": 305404.89999985695,
+          "isTrusted": true,
+          "visibilityState": "visible",
+          "hasFocus": false,
+          "href": "http://127.0.0.1:5588/"
+        },
+        {
+          "type": "blur",
+          "utc": "2026-10-02T10:15:38.727Z",
+          "epochMs": 1790936138727,
+          "timeOriginMs": 1790935833322.5,
+          "performanceNowMs": 305405.09999990463,
+          "eventTimeStampMs": 305405.09999990463,
+          "isTrusted": true,
+          "visibilityState": "visible",
+          "hasFocus": false,
+          "href": "http://127.0.0.1:5588/"
+        },
+        {
+          "type": "visibilitychange",
+          "utc": "2026-10-02T10:15:38.728Z",
+          "epochMs": 1790936138728,
+          "timeOriginMs": 1790935833322.5,
+          "performanceNowMs": 305405.69999980927,
+          "eventTimeStampMs": 305405.59999990463,
+          "isTrusted": true,
+          "visibilityState": "hidden",
+          "hasFocus": false,
+          "href": "http://127.0.0.1:5588/"
+        },
+        {
+          "type": "visibilitychange",
+          "utc": "2026-10-02T10:15:39.128Z",
+          "epochMs": 1790936139128,
+          "timeOriginMs": 1790935833322.5,
+          "performanceNowMs": 305806,
+          "eventTimeStampMs": 305806,
+          "isTrusted": true,
+          "visibilityState": "visible",
+          "hasFocus": false,
+          "href": "http://127.0.0.1:5588/"
+        },
+        {
+          "type": "focus",
+          "utc": "2026-10-02T10:15:39.128Z",
+          "epochMs": 1790936139128,
+          "timeOriginMs": 1790935833322.5,
+          "performanceNowMs": 305806.19999980927,
+          "eventTimeStampMs": 305806.19999980927,
+          "isTrusted": true,
+          "visibilityState": "visible",
+          "hasFocus": true,
+          "href": "http://127.0.0.1:5588/"
+        },
+        {
+          "type": "focus",
+          "utc": "2026-10-02T10:15:39.129Z",
+          "epochMs": 1790936139129,
+          "timeOriginMs": 1790935833322.5,
+          "performanceNowMs": 305806.5,
+          "eventTimeStampMs": 305806.5,
+          "isTrusted": true,
+          "visibilityState": "visible",
+          "hasFocus": true,
+          "href": "http://127.0.0.1:5588/"
+        }
+      ],
+      "stopDraft": {
+        "sessionId": "3fbdcc24-cdbd-4715-a028-f15bb2058020",
+        "invalidRule": "stop_validity_v1.hidden",
+        "eventCount": 48,
+        "warmupTrialsScheduled": 4,
+        "scoredTrialsScheduled": 0,
+        "journalEvents": [
+          {
+            "type": "visibility_changed",
+            "timestampMs": 297103.5,
+            "payload": {
+              "visible": true
+            },
+            "sequenceNumber": 16
+          },
+          {
+            "type": "focus_changed",
+            "timestampMs": 305405.39999985695,
+            "payload": {
+              "focused": false,
+              "durationMs": null
+            },
+            "sequenceNumber": 46
+          },
+          {
+            "type": "visibility_changed",
+            "timestampMs": 305405.7999999523,
+            "payload": {
+              "visible": false
+            },
+            "sequenceNumber": 47
+          },
+          {
+            "type": "session_invalidated",
+            "timestampMs": 305405.7999999523,
+            "payload": {
+              "ruleId": "stop_validity_v1.hidden",
+              "triggerSequenceNumber": 47
+            },
+            "sequenceNumber": 48
+          }
+        ],
+        "visibleOutcome": "This run cannot continue as a valid session; Not eligible for comparison"
+      }
+    },
+    {
+      "name": "scored",
+      "browserEvents": [
+        {
+          "type": "blur",
+          "utc": "2026-10-02T10:22:47.030Z",
+          "epochMs": 1790936567030,
+          "timeOriginMs": 1790935833322.5,
+          "performanceNowMs": 733718.0999999046,
+          "eventTimeStampMs": 733718.0999999046,
+          "isTrusted": true,
+          "visibilityState": "visible",
+          "hasFocus": false,
+          "href": "http://127.0.0.1:5588/"
+        },
+        {
+          "type": "blur",
+          "utc": "2026-10-02T10:22:47.030Z",
+          "epochMs": 1790936567030,
+          "timeOriginMs": 1790935833322.5,
+          "performanceNowMs": 733718.2999999523,
+          "eventTimeStampMs": 733718.2999999523,
+          "isTrusted": true,
+          "visibilityState": "visible",
+          "hasFocus": false,
+          "href": "http://127.0.0.1:5588/"
+        },
+        {
+          "type": "visibilitychange",
+          "utc": "2026-10-02T10:22:47.031Z",
+          "epochMs": 1790936567031,
+          "timeOriginMs": 1790935833322.5,
+          "performanceNowMs": 733718.6999998093,
+          "eventTimeStampMs": 733718.6999998093,
+          "isTrusted": true,
+          "visibilityState": "hidden",
+          "hasFocus": false,
+          "href": "http://127.0.0.1:5588/"
+        },
+        {
+          "type": "visibilitychange",
+          "utc": "2026-10-02T10:22:47.439Z",
+          "epochMs": 1790936567439,
+          "timeOriginMs": 1790935833322.5,
+          "performanceNowMs": 734126.5,
+          "eventTimeStampMs": 734126.5,
+          "isTrusted": true,
+          "visibilityState": "visible",
+          "hasFocus": false,
+          "href": "http://127.0.0.1:5588/"
+        },
+        {
+          "type": "focus",
+          "utc": "2026-10-02T10:22:47.439Z",
+          "epochMs": 1790936567439,
+          "timeOriginMs": 1790935833322.5,
+          "performanceNowMs": 734126.899999857,
+          "eventTimeStampMs": 734126.899999857,
+          "isTrusted": true,
+          "visibilityState": "visible",
+          "hasFocus": true,
+          "href": "http://127.0.0.1:5588/"
+        },
+        {
+          "type": "focus",
+          "utc": "2026-10-02T10:22:47.439Z",
+          "epochMs": 1790936567439,
+          "timeOriginMs": 1790935833322.5,
+          "performanceNowMs": 734127.0999999046,
+          "eventTimeStampMs": 734127.0999999046,
+          "isTrusted": true,
+          "visibilityState": "visible",
+          "hasFocus": true,
+          "href": "http://127.0.0.1:5588/"
+        }
+      ],
+      "stopDraft": {
+        "sessionId": "f7a205f0-b90c-4c85-91ca-59bc72101a69",
+        "invalidRule": "stop_validity_v1.hidden",
+        "eventCount": 125,
+        "warmupTrialsScheduled": 8,
+        "scoredTrialsScheduled": 6,
+        "journalEvents": [
+          {
+            "type": "visibility_changed",
+            "timestampMs": 682407.899999857,
+            "payload": {
+              "visible": true
+            },
+            "sequenceNumber": 16
+          },
+          {
+            "type": "focus_changed",
+            "timestampMs": 733718.5,
+            "payload": {
+              "focused": false,
+              "durationMs": null
+            },
+            "sequenceNumber": 123
+          },
+          {
+            "type": "visibility_changed",
+            "timestampMs": 733718.899999857,
+            "payload": {
+              "visible": false
+            },
+            "sequenceNumber": 124
+          },
+          {
+            "type": "session_invalidated",
+            "timestampMs": 733718.899999857,
+            "payload": {
+              "ruleId": "stop_validity_v1.hidden",
+              "triggerSequenceNumber": 124
+            },
+            "sequenceNumber": 125
+          }
+        ],
+        "visibleOutcome": "This run cannot continue as a valid session; Not eligible for comparison"
+      }
+    }
+  ],
+  "excludedAttempt": {
+    "sessionId": "19f558ff-bb3b-4cc2-8b39-902ebd9b33e5",
+    "reason": "Switched during scored-start handoff before any scored trial was scheduled. This is not scored-interval evidence.",
+    "scoredTrialsScheduled": 0
+  },
+  "interpretation": "In these diagnostic runs Chrome delivered trusted hidden visibility events and Stop recorded visible=false and invalidated the matching drafts. No mishandling of a delivered hidden event was reproduced. The earlier debugger-attached valid run remains unexplained; this run does not certify the approved physical Chrome row."
+}

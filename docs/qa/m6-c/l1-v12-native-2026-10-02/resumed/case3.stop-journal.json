@@ -1,0 +1,894 @@
+[
+  {
+    "schemaVersion": "stop_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 1,
+    "timestampMs": 421758.1000000015,
+    "type": "guide_opened",
+    "payload": {
+      "source": "library"
+    }
+  },
+  {
+    "schemaVersion": "stop_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 2,
+    "timestampMs": 429497.3999999985,
+    "type": "shortcut_chosen",
+    "payload": {
+      "sourceSessionId": "93ba0dae-e7ff-4df1-acaa-a4c883240e99",
+      "ruleVersion": "stop_rule_v1",
+      "experienceVersion": "1.2",
+      "skipped": [
+        "rule",
+        "examples",
+        "comprehension"
+      ]
+    }
+  },
+  {
+    "schemaVersion": "stop_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 3,
+    "timestampMs": 435397.799999997,
+    "type": "device_check_completed",
+    "payload": {
+      "inputBinding": "Space",
+      "inputDeviceClass": "physical_keyboard",
+      "visualProfile": "standard",
+      "timingProfile": "standard"
+    }
+  },
+  {
+    "schemaVersion": "stop_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 4,
+    "timestampMs": 441764.200000003,
+    "type": "readiness_confirmed",
+    "payload": {
+      "focused": true,
+      "visible": true
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 5,
+    "timestampMs": 441765.6000000015,
+    "type": "fixation_started",
+    "payload": {
+      "kind": "initial",
+      "expectedAtMs": 441765.6000000015,
+      "trialIndex": null
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 6,
+    "timestampMs": 442766,
+    "type": "trial_scheduled",
+    "payload": {
+      "trial": {
+        "phase": "warmup",
+        "index": 0,
+        "stimulus": "GO"
+      },
+      "eligibleAtMs": 442765.6000000015
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 7,
+    "timestampMs": 442767.700000003,
+    "type": "fixation_ended",
+    "payload": {
+      "kind": "initial",
+      "expectedAtMs": 442765.6000000015,
+      "trialIndex": null
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 8,
+    "timestampMs": 442767.700000003,
+    "type": "stimulus_presented",
+    "payload": {
+      "trialIndex": 0,
+      "stimulus": "GO",
+      "confirmedOnsetMs": 442767.700000003,
+      "eligibleAtMs": 442765.6000000015
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 9,
+    "timestampMs": 442968.5,
+    "type": "stimulus_removed",
+    "payload": {
+      "trialIndex": 0,
+      "confirmedOffsetMs": 442968.5,
+      "visibleDurationMs": 200.79999999701977
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 10,
+    "timestampMs": 443768.799999997,
+    "type": "trial_timed_out",
+    "payload": {
+      "trialIndex": 0,
+      "deadlineMs": 443767.700000003,
+      "latenessMs": 1.0999999940395355
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 11,
+    "timestampMs": 443768.799999997,
+    "type": "trial_resolved",
+    "payload": {
+      "trialIndex": 0,
+      "outcome": {
+        "stimulus": "GO",
+        "kind": "miss",
+        "responseTimeMs": null
+      },
+      "source": "timeout",
+      "resolvedAtMs": 443767.700000003,
+      "triggerSequenceNumber": 10
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 12,
+    "timestampMs": 443768.799999997,
+    "type": "fixation_started",
+    "payload": {
+      "kind": "post_resolution",
+      "expectedAtMs": 443767.700000003,
+      "trialIndex": 0
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 13,
+    "timestampMs": 444968.8999999985,
+    "type": "trial_scheduled",
+    "payload": {
+      "trial": {
+        "phase": "warmup",
+        "index": 1,
+        "stimulus": "GO"
+      },
+      "eligibleAtMs": 444967.700000003
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 14,
+    "timestampMs": 444969.8999999985,
+    "type": "fixation_ended",
+    "payload": {
+      "kind": "post_resolution",
+      "expectedAtMs": 444967.700000003,
+      "trialIndex": 0
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 15,
+    "timestampMs": 444969.8999999985,
+    "type": "stimulus_presented",
+    "payload": {
+      "trialIndex": 1,
+      "stimulus": "GO",
+      "confirmedOnsetMs": 444969.8999999985,
+      "eligibleAtMs": 444967.700000003
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 16,
+    "timestampMs": 445185.3999999985,
+    "type": "stimulus_removed",
+    "payload": {
+      "trialIndex": 1,
+      "confirmedOffsetMs": 445185.3999999985,
+      "visibleDurationMs": 215.5
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 17,
+    "timestampMs": 445970.6000000015,
+    "type": "trial_timed_out",
+    "payload": {
+      "trialIndex": 1,
+      "deadlineMs": 445969.8999999985,
+      "latenessMs": 0.7000000029802322
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 18,
+    "timestampMs": 445970.6000000015,
+    "type": "trial_resolved",
+    "payload": {
+      "trialIndex": 1,
+      "outcome": {
+        "stimulus": "GO",
+        "kind": "miss",
+        "responseTimeMs": null
+      },
+      "source": "timeout",
+      "resolvedAtMs": 445969.8999999985,
+      "triggerSequenceNumber": 17
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 19,
+    "timestampMs": 445970.6000000015,
+    "type": "fixation_started",
+    "payload": {
+      "kind": "post_resolution",
+      "expectedAtMs": 445969.8999999985,
+      "trialIndex": 1
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 20,
+    "timestampMs": 447171.200000003,
+    "type": "trial_scheduled",
+    "payload": {
+      "trial": {
+        "phase": "warmup",
+        "index": 2,
+        "stimulus": "NO_GO"
+      },
+      "eligibleAtMs": 447169.8999999985
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 21,
+    "timestampMs": 447172.200000003,
+    "type": "fixation_ended",
+    "payload": {
+      "kind": "post_resolution",
+      "expectedAtMs": 447169.8999999985,
+      "trialIndex": 1
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 22,
+    "timestampMs": 447172.200000003,
+    "type": "stimulus_presented",
+    "payload": {
+      "trialIndex": 2,
+      "stimulus": "NO_GO",
+      "confirmedOnsetMs": 447172.200000003,
+      "eligibleAtMs": 447169.8999999985
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 23,
+    "timestampMs": 447385.200000003,
+    "type": "stimulus_removed",
+    "payload": {
+      "trialIndex": 2,
+      "confirmedOffsetMs": 447385.200000003,
+      "visibleDurationMs": 213
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 24,
+    "timestampMs": 448173.299999997,
+    "type": "trial_timed_out",
+    "payload": {
+      "trialIndex": 2,
+      "deadlineMs": 448172.200000003,
+      "latenessMs": 1.0999999940395355
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 25,
+    "timestampMs": 448173.299999997,
+    "type": "trial_resolved",
+    "payload": {
+      "trialIndex": 2,
+      "outcome": {
+        "stimulus": "NO_GO",
+        "kind": "correct_withhold",
+        "responseTimeMs": null
+      },
+      "source": "timeout",
+      "resolvedAtMs": 448172.200000003,
+      "triggerSequenceNumber": 24
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 26,
+    "timestampMs": 448173.299999997,
+    "type": "fixation_started",
+    "payload": {
+      "kind": "post_resolution",
+      "expectedAtMs": 448172.200000003,
+      "trialIndex": 2
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 27,
+    "timestampMs": 449372.799999997,
+    "type": "trial_scheduled",
+    "payload": {
+      "trial": {
+        "phase": "warmup",
+        "index": 3,
+        "stimulus": "GO"
+      },
+      "eligibleAtMs": 449372.200000003
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 28,
+    "timestampMs": 449373.8999999985,
+    "type": "fixation_ended",
+    "payload": {
+      "kind": "post_resolution",
+      "expectedAtMs": 449372.200000003,
+      "trialIndex": 2
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 29,
+    "timestampMs": 449373.8999999985,
+    "type": "stimulus_presented",
+    "payload": {
+      "trialIndex": 3,
+      "stimulus": "GO",
+      "confirmedOnsetMs": 449373.8999999985,
+      "eligibleAtMs": 449372.200000003
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 30,
+    "timestampMs": 449585.8999999985,
+    "type": "stimulus_removed",
+    "payload": {
+      "trialIndex": 3,
+      "confirmedOffsetMs": 449585.8999999985,
+      "visibleDurationMs": 212
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 31,
+    "timestampMs": 450375.299999997,
+    "type": "trial_timed_out",
+    "payload": {
+      "trialIndex": 3,
+      "deadlineMs": 450373.8999999985,
+      "latenessMs": 1.3999999985098839
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 32,
+    "timestampMs": 450375.299999997,
+    "type": "trial_resolved",
+    "payload": {
+      "trialIndex": 3,
+      "outcome": {
+        "stimulus": "GO",
+        "kind": "miss",
+        "responseTimeMs": null
+      },
+      "source": "timeout",
+      "resolvedAtMs": 450373.8999999985,
+      "triggerSequenceNumber": 31
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 33,
+    "timestampMs": 450375.299999997,
+    "type": "fixation_started",
+    "payload": {
+      "kind": "post_resolution",
+      "expectedAtMs": 450373.8999999985,
+      "trialIndex": 3
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 34,
+    "timestampMs": 451574.700000003,
+    "type": "trial_scheduled",
+    "payload": {
+      "trial": {
+        "phase": "warmup",
+        "index": 4,
+        "stimulus": "GO"
+      },
+      "eligibleAtMs": 451573.8999999985
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 35,
+    "timestampMs": 451575.799999997,
+    "type": "fixation_ended",
+    "payload": {
+      "kind": "post_resolution",
+      "expectedAtMs": 451573.8999999985,
+      "trialIndex": 3
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 36,
+    "timestampMs": 451575.799999997,
+    "type": "stimulus_presented",
+    "payload": {
+      "trialIndex": 4,
+      "stimulus": "GO",
+      "confirmedOnsetMs": 451575.799999997,
+      "eligibleAtMs": 451573.8999999985
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 37,
+    "timestampMs": 451785.3999999985,
+    "type": "stimulus_removed",
+    "payload": {
+      "trialIndex": 4,
+      "confirmedOffsetMs": 451785.3999999985,
+      "visibleDurationMs": 209.60000000149012
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 38,
+    "timestampMs": 452576.3999999985,
+    "type": "trial_timed_out",
+    "payload": {
+      "trialIndex": 4,
+      "deadlineMs": 452575.799999997,
+      "latenessMs": 0.6000000014901161
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 39,
+    "timestampMs": 452576.3999999985,
+    "type": "trial_resolved",
+    "payload": {
+      "trialIndex": 4,
+      "outcome": {
+        "stimulus": "GO",
+        "kind": "miss",
+        "responseTimeMs": null
+      },
+      "source": "timeout",
+      "resolvedAtMs": 452575.799999997,
+      "triggerSequenceNumber": 38
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 40,
+    "timestampMs": 452576.3999999985,
+    "type": "fixation_started",
+    "payload": {
+      "kind": "post_resolution",
+      "expectedAtMs": 452575.799999997,
+      "trialIndex": 4
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 41,
+    "timestampMs": 453776.799999997,
+    "type": "trial_scheduled",
+    "payload": {
+      "trial": {
+        "phase": "warmup",
+        "index": 5,
+        "stimulus": "GO"
+      },
+      "eligibleAtMs": 453775.799999997
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 42,
+    "timestampMs": 453778.1000000015,
+    "type": "fixation_ended",
+    "payload": {
+      "kind": "post_resolution",
+      "expectedAtMs": 453775.799999997,
+      "trialIndex": 4
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 43,
+    "timestampMs": 453778.1000000015,
+    "type": "stimulus_presented",
+    "payload": {
+      "trialIndex": 5,
+      "stimulus": "GO",
+      "confirmedOnsetMs": 453778.1000000015,
+      "eligibleAtMs": 453775.799999997
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 44,
+    "timestampMs": 453985.299999997,
+    "type": "stimulus_removed",
+    "payload": {
+      "trialIndex": 5,
+      "confirmedOffsetMs": 453985.299999997,
+      "visibleDurationMs": 207.19999999552965
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 45,
+    "timestampMs": 454779.1000000015,
+    "type": "trial_timed_out",
+    "payload": {
+      "trialIndex": 5,
+      "deadlineMs": 454778.1000000015,
+      "latenessMs": 1
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 46,
+    "timestampMs": 454779.1000000015,
+    "type": "trial_resolved",
+    "payload": {
+      "trialIndex": 5,
+      "outcome": {
+        "stimulus": "GO",
+        "kind": "miss",
+        "responseTimeMs": null
+      },
+      "source": "timeout",
+      "resolvedAtMs": 454778.1000000015,
+      "triggerSequenceNumber": 45
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 47,
+    "timestampMs": 454779.1000000015,
+    "type": "fixation_started",
+    "payload": {
+      "kind": "post_resolution",
+      "expectedAtMs": 454778.1000000015,
+      "trialIndex": 5
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 48,
+    "timestampMs": 455978.299999997,
+    "type": "trial_scheduled",
+    "payload": {
+      "trial": {
+        "phase": "warmup",
+        "index": 6,
+        "stimulus": "NO_GO"
+      },
+      "eligibleAtMs": 455978.1000000015
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 49,
+    "timestampMs": 455979.6000000015,
+    "type": "fixation_ended",
+    "payload": {
+      "kind": "post_resolution",
+      "expectedAtMs": 455978.1000000015,
+      "trialIndex": 5
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 50,
+    "timestampMs": 455979.6000000015,
+    "type": "stimulus_presented",
+    "payload": {
+      "trialIndex": 6,
+      "stimulus": "NO_GO",
+      "confirmedOnsetMs": 455979.6000000015,
+      "eligibleAtMs": 455978.1000000015
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 51,
+    "timestampMs": 456185.299999997,
+    "type": "stimulus_removed",
+    "payload": {
+      "trialIndex": 6,
+      "confirmedOffsetMs": 456185.299999997,
+      "visibleDurationMs": 205.69999999552965
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 52,
+    "timestampMs": 456980.200000003,
+    "type": "trial_timed_out",
+    "payload": {
+      "trialIndex": 6,
+      "deadlineMs": 456979.6000000015,
+      "latenessMs": 0.6000000014901161
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 53,
+    "timestampMs": 456980.200000003,
+    "type": "trial_resolved",
+    "payload": {
+      "trialIndex": 6,
+      "outcome": {
+        "stimulus": "NO_GO",
+        "kind": "correct_withhold",
+        "responseTimeMs": null
+      },
+      "source": "timeout",
+      "resolvedAtMs": 456979.6000000015,
+      "triggerSequenceNumber": 52
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 54,
+    "timestampMs": 456980.200000003,
+    "type": "fixation_started",
+    "payload": {
+      "kind": "post_resolution",
+      "expectedAtMs": 456979.6000000015,
+      "trialIndex": 6
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 55,
+    "timestampMs": 458180.8999999985,
+    "type": "trial_scheduled",
+    "payload": {
+      "trial": {
+        "phase": "warmup",
+        "index": 7,
+        "stimulus": "GO"
+      },
+      "eligibleAtMs": 458179.6000000015
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 56,
+    "timestampMs": 458182.3999999985,
+    "type": "fixation_ended",
+    "payload": {
+      "kind": "post_resolution",
+      "expectedAtMs": 458179.6000000015,
+      "trialIndex": 6
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 57,
+    "timestampMs": 458182.3999999985,
+    "type": "stimulus_presented",
+    "payload": {
+      "trialIndex": 7,
+      "stimulus": "GO",
+      "confirmedOnsetMs": 458182.3999999985,
+      "eligibleAtMs": 458179.6000000015
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 58,
+    "timestampMs": 458385.799999997,
+    "type": "stimulus_removed",
+    "payload": {
+      "trialIndex": 7,
+      "confirmedOffsetMs": 458385.799999997,
+      "visibleDurationMs": 203.39999999850988
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 59,
+    "timestampMs": 459183.299999997,
+    "type": "trial_timed_out",
+    "payload": {
+      "trialIndex": 7,
+      "deadlineMs": 459182.3999999985,
+      "latenessMs": 0.8999999985098839
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 60,
+    "timestampMs": 459183.299999997,
+    "type": "trial_resolved",
+    "payload": {
+      "trialIndex": 7,
+      "outcome": {
+        "stimulus": "GO",
+        "kind": "miss",
+        "responseTimeMs": null
+      },
+      "source": "timeout",
+      "resolvedAtMs": 459182.3999999985,
+      "triggerSequenceNumber": 59
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 61,
+    "timestampMs": 459183.299999997,
+    "type": "fixation_started",
+    "payload": {
+      "kind": "post_resolution",
+      "expectedAtMs": 459182.3999999985,
+      "trialIndex": 7
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 62,
+    "timestampMs": 460383.700000003,
+    "type": "fixation_ended",
+    "payload": {
+      "kind": "post_resolution",
+      "expectedAtMs": 460382.3999999985,
+      "trialIndex": 7
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 63,
+    "timestampMs": 460383.700000003,
+    "type": "integrity_checked",
+    "payload": {
+      "valid": true,
+      "detail": "Required batch events reconcile"
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 64,
+    "timestampMs": 460383.700000003,
+    "type": "batch_finished",
+    "payload": {
+      "phase": "warmup",
+      "trialCount": 8
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 65,
+    "timestampMs": 472615.299999997,
+    "type": "protection_started",
+    "payload": {
+      "responseKey": "Space",
+      "held": false
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 66,
+    "timestampMs": 472626,
+    "type": "focus_changed",
+    "payload": {
+      "focused": false,
+      "durationMs": null
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 67,
+    "timestampMs": 472626.799999997,
+    "type": "visibility_changed",
+    "payload": {
+      "visible": false
+    }
+  },
+  {
+    "schemaVersion": "stop_engine_event_v1",
+    "sessionId": "351e8b4f-b7f9-42d0-a01d-a5c4b1daa3a2",
+    "sequenceNumber": 68,
+    "timestampMs": 472626.799999997,
+    "type": "session_invalidated",
+    "payload": {
+      "ruleId": "stop_validity_v1.hidden",
+      "triggerSequenceNumber": 67
+    }
+  }
+]

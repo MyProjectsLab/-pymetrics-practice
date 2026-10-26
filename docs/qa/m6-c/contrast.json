@@ -1,0 +1,90 @@
+[
+  {
+    "element": "body",
+    "foreground": "#172d30",
+    "background": "#f6f7f3",
+    "ratio": 13.418727107895249,
+    "minimum": 4.5,
+    "passes": true
+  },
+  {
+    "element": "body panel",
+    "foreground": "#172d30",
+    "background": "#ffffff",
+    "ratio": 14.438286934066095,
+    "minimum": 4.5,
+    "passes": true
+  },
+  {
+    "element": "secondary text",
+    "foreground": "#52645e",
+    "background": "#f6f7f3",
+    "ratio": 5.837728997565711,
+    "minimum": 4.5,
+    "passes": true
+  },
+  {
+    "element": "eyebrow",
+    "foreground": "#436459",
+    "background": "#ffffff",
+    "ratio": 6.550666458031872,
+    "minimum": 4.5,
+    "passes": true
+  },
+  {
+    "element": "button",
+    "foreground": "#ffffff",
+    "background": "#18594f",
+    "ratio": 8.137352106718396,
+    "minimum": 4.5,
+    "passes": true
+  },
+  {
+    "element": "focus",
+    "foreground": "#995500",
+    "background": "#ffffff",
+    "ratio": 5.747345481809384,
+    "minimum": 3,
+    "passes": true
+  },
+  {
+    "element": "focus canvas",
+    "foreground": "#995500",
+    "background": "#f6f7f3",
+    "ratio": 5.34149660325914,
+    "minimum": 3,
+    "passes": true
+  },
+  {
+    "element": "GO marker",
+    "foreground": "#ffffff",
+    "background": "#b42334",
+    "ratio": 6.500221671993602,
+    "minimum": 3,
+    "passes": true
+  },
+  {
+    "element": "NO-GO marker",
+    "foreground": "#ffffff",
+    "background": "#147d4f",
+    "ratio": 5.1519918980357495,
+    "minimum": 3,
+    "passes": true
+  },
+  {
+    "element": "shape marker",
+    "foreground": "#ffffff",
+    "background": "#172033",
+    "ratio": 16.268480224545662,
+    "minimum": 3,
+    "passes": true
+  },
+  {
+    "element": "fixation",
+    "foreground": "#172033",
+    "background": "#f6f7f3",
+    "ratio": 15.119681274535429,
+    "minimum": 3,
+    "passes": true
+  }
+]

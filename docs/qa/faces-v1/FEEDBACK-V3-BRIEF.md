@@ -1,0 +1,9 @@
+# Faces feedback V3 bounded implementation
+
+Base main: `97689f9239cc6cb7ed9b25c163587413fcca6e51`. Prior independently audited Faces runtime: `74006db3733c453512a6df8f393d885a9a6970c4`. Frozen amendment: `work-evidence/faces-v1/feedback-frozen-v3-2026-10-18/FREEZE.json`, SHA-256 `1f2561cff818ee6b5337b26060035762d57aab161d59892b992649e0ba636c58`; bound 16-file packet manifest SHA-256 `b54210054bad6e014cc3754b01b199482747f2293dfe0d77a9039f2bf09690b3`.
+
+Outcome: future Faces starts use the exact practice-v2/descriptive-v3 tuple and mark all 14 answers. Both historical and new completed records use the same plain report presentation with their own exact denominators. The new selected-answer teaching applies only to the new tuple. Historical reports, facts, receipts and discussion-only items 2/7 retain their saved meaning. A valid root-v2 is read intact and migrates atomically on its first permitted mutation; retained noncurrent guide metadata remains intact and cannot skip the v3 check.
+
+Acceptance: exact closed identities; literal scoring and timing fixtures; all five historical display fixtures; v1 guide witness and negative neighbors; mixed history and survivor bytes; same-bank familiarity; incomplete report null; changed browser review, details, navigation and erasure; Standard and Extended full journeys; native abort and failed-write/readback behavior. Implementation and developer evidence are one candidate; independent exact-SHA audit follows separately.
+
+Write scope: `src/faces` form/feedback/schema/model/controller/storage/owned-stage changes, focused Faces tests and these Faces QA records. The historical `form.json`, portraits, frozen packets and other games remain unchanged. No private founder database, HTML preview, push, merge, deployment or release is part of this milestone.

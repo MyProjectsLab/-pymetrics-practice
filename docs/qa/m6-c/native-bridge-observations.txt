@@ -1,0 +1,25 @@
+M6-C native control observations, 2026-10-02.
+Verbatim excerpts retained from native computer-use outputs; full product journals are separate JSON artifacts.
+
+Chrome, before native switch:
+77 tab (selected, settable, boolean) Assessment Practice - Part of group 🧪 Stop M6-C - Memory usage - 140 MB, Value: on
+105 tab (settable, boolean) M6-C local evidence helper - Part of group 🧪 Stop M6-C, Value: off
+
+Chrome, after click on native helper tab during warm-up-complete screen:
+77 tab (settable, boolean) Assessment Practice - Part of group 🧪 Stop M6-C - Memory usage - 140 MB, Value: off
+105 tab (selected, settable, boolean) M6-C local evidence helper - Part of group 🧪 Stop M6-C, Value: on
+
+Then returned to Assessment Practice, clicked Start scored task, observed Timed Stop task, sent native ctrl+Tab.
+Native Chrome returned:
+77 tab (settable, boolean) Assessment Practice - Part of group 🧪 Stop M6-C - Memory usage - 140 MB, Value: off
+105 tab (selected, settable, boolean) M6-C local evidence helper - Part of group 🧪 Stop M6-C, Value: on
+
+The original page remained on Timed Stop task when inspected after returning. Final local records later contained its completed valid shape/A result and no hidden/blur event. The exact timing and delivery cause were not established; do not count this as a lifecycle pass.
+
+Safari initial URL paste:
+Computer Use server error -10005: Timed out waiting for the application to read the clipboard
+
+Native address field setValue + Return loaded the app library. Full AX and screenshot are safari-library.txt and safari-library.png. AX click on Open Stop produced no tree change. Observed-coordinate click and Tab/Return also produced no guide transition. These attempts cannot establish Safari keyboard or journey correctness.
+
+Viewport limitation:
+Later viewport.set({width:320,height:800}) attempts for seeded history left measured innerWidth=1200, innerHeight=727. Reset+set retry did not change those dimensions. Captures were renamed desktop and excluded from narrow-width claims. Earlier before/after history captures independently measured 320 pixels and are retained as such.

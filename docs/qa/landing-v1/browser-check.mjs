@@ -1,0 +1,65 @@
+import { chromium } from '/Users/renzo/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs'
+import { writeFile } from 'node:fs/promises'
+import assert from 'node:assert/strict'
+
+const browser = await chromium.launch({ headless: true, channel: 'chrome' })
+const origin = process.env.LANDING_ORIGIN || 'http://127.0.0.1:4179'
+const output = process.env.LANDING_EVIDENCE || 'docs/qa/landing-v1'
+const results = []
+try {
+  const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } })
+  const errors = [], requests = []
+  page.on('pageerror', error => errors.push(error.message))
+  page.on('request', request => requests.push(request.url()))
+  await page.goto(origin)
+  await page.evaluate(() => document.fonts.ready)
+  await page.getByRole('heading', { name: 'Get to know the games.' }).waitFor()
+  assert(await page.locator('.ap-photo-frame img').evaluate(img => img.complete && img.naturalWidth > 0))
+  assert(await page.evaluate(() => document.fonts.check('400 16px "AP Inter"') && document.fonts.check('400 80px "AP Newsreader"')))
+  assert(requests.every(url => url.startsWith(origin)))
+  assert.equal((await page.evaluate(() => indexedDB.databases())).length, 0)
+  results.push('Local photo and both fonts loaded; no third-party requests or IndexedDB opened by landing')
+  for (const width of [1440, 1024, 768, 390, 320]) {
+    await page.setViewportSize({ width, height: 1000 })
+    await page.screenshot({ path: `${output}/landing-${width}.png`, fullPage: true })
+    assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `Overflow at ${width}`)
+    results.push(`No horizontal overflow at ${width}px`)
+  }
+  await page.setViewportSize({ width: 1440, height: 1000 })
+  await page.goto(origin)
+  await page.keyboard.press('Tab')
+  assert.equal(await page.locator(':focus').textContent(), 'Skip to content')
+  await page.keyboard.press('Enter')
+  assert.equal(await page.locator(':focus').getAttribute('id'), 'landing-main')
+  await page.getByRole('link', { name: 'How it works', exact: true }).click()
+  assert.equal(new URL(page.url()).hash, '#how-it-works')
+  await page.getByRole('link', { name: 'The games', exact: true }).click()
+  assert.equal(new URL(page.url()).hash, '#practice-games')
+  await page.getByRole('link', { name: 'Explore the practice library' }).click()
+  await page.getByRole('button', { name: 'Open Stop', exact: true }).waitFor()
+  assert.equal(new URL(page.url()).pathname, '/practice')
+  assert.equal(await page.locator('.ap-theme').count(), 0)
+  const legacy = await page.evaluate(() => ({ background: getComputedStyle(document.documentElement).backgroundColor, heading: getComputedStyle(document.querySelector('h1')).fontFamily, styles: [...document.styleSheets].map(s => s.href) }))
+  assert.equal(legacy.background, 'rgb(246, 247, 243)')
+  assert(!legacy.styles.some(url => url?.includes('Landing')))
+  await page.screenshot({ path: `${output}/unchanged-practice.png`, fullPage: true })
+  await page.reload()
+  await page.getByRole('button', { name: 'Open Stop', exact: true }).waitFor()
+  await page.getByRole('button', { name: 'Open Stop', exact: true }).click()
+  await page.getByRole('button', { name: 'See the rule', exact: true }).waitFor()
+  await page.goBack()
+  await page.getByRole('heading', { name: 'Get to know the games.' }).waitFor()
+  await page.goto(`${origin}/index.html`)
+  await page.getByRole('button', { name: 'Open Stop', exact: true }).waitFor()
+  results.push('Skip/focus, both section links, practice navigation/reload, Stop guide, Back and legacy index entry passed; legacy colors/CSS retained')
+  const failure = await browser.newPage({ viewport: { width: 390, height: 844 }, reducedMotion: 'reduce' })
+  await failure.route('**/brand/study-library.jpg', route => route.abort())
+  await failure.goto(origin)
+  await failure.getByText('Photograph unavailable', { exact: true }).waitFor()
+  assert(await failure.evaluate(() => document.documentElement.scrollWidth <= innerWidth))
+  await failure.screenshot({ path: `${output}/photo-fallback.png`, fullPage: true })
+  results.push('Photo failure retains designed fallback and usable navigation; reduced-motion layout has no overflow')
+  assert.deepEqual(errors, [])
+  await writeFile(`${output}/browser-results.json`, JSON.stringify({ browser: browser.version(), results, legacy, errors }, null, 2))
+  console.log(JSON.stringify(results, null, 2))
+} finally { await browser.close() }

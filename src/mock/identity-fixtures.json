@@ -1,0 +1,2067 @@
+{
+  "version": "ap-mock-identity-fixtures/2",
+  "status": "Literal synthetic identity examples; author schema checks only, no native/browser runs",
+  "cases": [
+    {
+      "id": "I01-valid",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "keypresses",
+        "databaseFamily": "keypresses-v1",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-attempt",
+        "originTicketId": null,
+        "versions": {
+          "specification": "keypresses_spec_v1_0_1",
+          "scoring": "keypresses_scoring_v1_0_1",
+          "event": "keypresses_event_v1",
+          "formVersion": null,
+          "formHashKind": "none",
+          "presentation": "keypresses_presentation_plan_v1",
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": null,
+          "formHash": null,
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": true,
+      "reason": "Synthetic coherent identity only; no source completion asserted"
+    },
+    {
+      "id": "I01-wrong-version",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "keypresses",
+        "databaseFamily": "keypresses-v1",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-attempt",
+        "originTicketId": null,
+        "versions": {
+          "specification": "keypresses_spec_v1_0_1",
+          "scoring": "invented-scoring",
+          "event": "keypresses_event_v1",
+          "formVersion": null,
+          "formHashKind": "none",
+          "presentation": "keypresses_presentation_plan_v1",
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": null,
+          "formHash": null,
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Unregistered scoring identity"
+    },
+    {
+      "id": "I01-absent-field",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "keypresses",
+        "databaseFamily": "keypresses-v1",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-attempt",
+        "originTicketId": null,
+        "versions": {
+          "scoring": "keypresses_scoring_v1_0_1",
+          "event": "keypresses_event_v1",
+          "formVersion": null,
+          "formHashKind": "none",
+          "presentation": "keypresses_presentation_plan_v1",
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": null,
+          "formHash": null,
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Null is deliberate; missing required key is invalid"
+    },
+    {
+      "id": "I01-wrong-digest",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "keypresses",
+        "databaseFamily": "keypresses-v1",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-attempt",
+        "originTicketId": null,
+        "versions": {
+          "specification": "keypresses_spec_v1_0_1",
+          "scoring": "keypresses_scoring_v1_0_1",
+          "event": "keypresses_event_v1",
+          "formVersion": null,
+          "formHashKind": "none",
+          "presentation": "keypresses_presentation_plan_v1",
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": null,
+          "formHash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Wrong exact form/hash tuple; Keypresses must have null hash"
+    },
+    {
+      "id": "I01-wrong-generation",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "keypresses",
+        "databaseFamily": "keypresses-v1",
+        "installationId": "synthetic-installation",
+        "generation": 9,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-attempt",
+        "originTicketId": null,
+        "versions": {
+          "specification": "keypresses_spec_v1_0_1",
+          "scoring": "keypresses_scoring_v1_0_1",
+          "event": "keypresses_event_v1",
+          "formVersion": null,
+          "formHashKind": "none",
+          "presentation": "keypresses_presentation_plan_v1",
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": null,
+          "formHash": null,
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Installation generation is not owner/run epoch; only Money2 and Faces store it"
+    },
+    {
+      "id": "I02-valid",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "stop",
+        "databaseFamily": "stop-v1",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-attempt",
+        "originTicketId": null,
+        "versions": {
+          "specification": "1.3",
+          "scoring": "stop_scoring_v13",
+          "event": "stop_engine_event_v1",
+          "formVersion": "2",
+          "formHashKind": "per_form",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "stop-v13-baseline-01",
+          "formHash": "0bbd49818785c1580ee7fed9b38016ab39909c26c57246bdeb7361558ea0d138",
+          "report": "stop_report_v13"
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": true,
+      "reason": "Synthetic coherent identity only; no source completion asserted"
+    },
+    {
+      "id": "I02-wrong-version",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "stop",
+        "databaseFamily": "stop-v1",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-attempt",
+        "originTicketId": null,
+        "versions": {
+          "specification": "1.3",
+          "scoring": "invented-scoring",
+          "event": "stop_engine_event_v1",
+          "formVersion": "2",
+          "formHashKind": "per_form",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "stop-v13-baseline-01",
+          "formHash": "0bbd49818785c1580ee7fed9b38016ab39909c26c57246bdeb7361558ea0d138",
+          "report": "stop_report_v13"
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Unregistered scoring identity"
+    },
+    {
+      "id": "I02-absent-field",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "stop",
+        "databaseFamily": "stop-v1",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-attempt",
+        "originTicketId": null,
+        "versions": {
+          "scoring": "stop_scoring_v13",
+          "event": "stop_engine_event_v1",
+          "formVersion": "2",
+          "formHashKind": "per_form",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "stop-v13-baseline-01",
+          "formHash": "0bbd49818785c1580ee7fed9b38016ab39909c26c57246bdeb7361558ea0d138",
+          "report": "stop_report_v13"
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Null is deliberate; missing required key is invalid"
+    },
+    {
+      "id": "I02-wrong-digest",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "stop",
+        "databaseFamily": "stop-v1",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-attempt",
+        "originTicketId": null,
+        "versions": {
+          "specification": "1.3",
+          "scoring": "stop_scoring_v13",
+          "event": "stop_engine_event_v1",
+          "formVersion": "2",
+          "formHashKind": "per_form",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "stop-v13-baseline-01",
+          "formHash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "report": "stop_report_v13"
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Wrong exact form/hash tuple; Keypresses must have null hash"
+    },
+    {
+      "id": "I02-wrong-generation",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "stop",
+        "databaseFamily": "stop-v1",
+        "installationId": "synthetic-installation",
+        "generation": 9,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-attempt",
+        "originTicketId": null,
+        "versions": {
+          "specification": "1.3",
+          "scoring": "stop_scoring_v13",
+          "event": "stop_engine_event_v1",
+          "formVersion": "2",
+          "formHashKind": "per_form",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "stop-v13-baseline-01",
+          "formHash": "0bbd49818785c1580ee7fed9b38016ab39909c26c57246bdeb7361558ea0d138",
+          "report": "stop_report_v13"
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Installation generation is not owner/run epoch; only Money2 and Faces store it"
+    },
+    {
+      "id": "I03-valid",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "digits",
+        "databaseFamily": "digits-v11",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": "digits_spec_v1_1",
+          "scoring": "digits_scoring_v1_1",
+          "event": "digits_event_v1_1",
+          "formVersion": "digits_forms_v1_1",
+          "formHashKind": "manifest_payload",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "DV1",
+          "formHash": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": true,
+      "reason": "Synthetic coherent identity only; no source completion asserted"
+    },
+    {
+      "id": "I03-wrong-version",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "digits",
+        "databaseFamily": "digits-v11",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": "digits_spec_v1_1",
+          "scoring": "invented-scoring",
+          "event": "digits_event_v1_1",
+          "formVersion": "digits_forms_v1_1",
+          "formHashKind": "manifest_payload",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "DV1",
+          "formHash": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Unregistered scoring identity"
+    },
+    {
+      "id": "I03-absent-field",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "digits",
+        "databaseFamily": "digits-v11",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "scoring": "digits_scoring_v1_1",
+          "event": "digits_event_v1_1",
+          "formVersion": "digits_forms_v1_1",
+          "formHashKind": "manifest_payload",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "DV1",
+          "formHash": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Null is deliberate; missing required key is invalid"
+    },
+    {
+      "id": "I03-wrong-digest",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "digits",
+        "databaseFamily": "digits-v11",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": "digits_spec_v1_1",
+          "scoring": "digits_scoring_v1_1",
+          "event": "digits_event_v1_1",
+          "formVersion": "digits_forms_v1_1",
+          "formHashKind": "manifest_payload",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "DV1",
+          "formHash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Wrong exact form/hash tuple; Keypresses must have null hash"
+    },
+    {
+      "id": "I03-wrong-generation",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "digits",
+        "databaseFamily": "digits-v11",
+        "installationId": "synthetic-installation",
+        "generation": 9,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": "digits_spec_v1_1",
+          "scoring": "digits_scoring_v1_1",
+          "event": "digits_event_v1_1",
+          "formVersion": "digits_forms_v1_1",
+          "formHashKind": "manifest_payload",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "DV1",
+          "formHash": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Installation generation is not owner/run epoch; only Money2 and Faces store it"
+    },
+    {
+      "id": "I04-valid",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "arrows",
+        "databaseFamily": "arrows-v11",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": "arrows_spec_v1_1",
+          "scoring": "arrows_scoring_v1_1",
+          "event": "arrows_event_v1_1",
+          "formVersion": "arrows_forms_v1_1",
+          "formHashKind": "manifest_payload",
+          "presentation": "arrows_presentation_v1_1",
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "AR11-1",
+          "formHash": "bedfa8c58fd9bde20cf7b9408b6ac5909c6bae45d025bff9c3de8041f8ae6855",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": true,
+      "reason": "Synthetic coherent identity only; no source completion asserted"
+    },
+    {
+      "id": "I04-wrong-version",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "arrows",
+        "databaseFamily": "arrows-v11",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": "arrows_spec_v1_1",
+          "scoring": "invented-scoring",
+          "event": "arrows_event_v1_1",
+          "formVersion": "arrows_forms_v1_1",
+          "formHashKind": "manifest_payload",
+          "presentation": "arrows_presentation_v1_1",
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "AR11-1",
+          "formHash": "bedfa8c58fd9bde20cf7b9408b6ac5909c6bae45d025bff9c3de8041f8ae6855",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Unregistered scoring identity"
+    },
+    {
+      "id": "I04-absent-field",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "arrows",
+        "databaseFamily": "arrows-v11",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "scoring": "arrows_scoring_v1_1",
+          "event": "arrows_event_v1_1",
+          "formVersion": "arrows_forms_v1_1",
+          "formHashKind": "manifest_payload",
+          "presentation": "arrows_presentation_v1_1",
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "AR11-1",
+          "formHash": "bedfa8c58fd9bde20cf7b9408b6ac5909c6bae45d025bff9c3de8041f8ae6855",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Null is deliberate; missing required key is invalid"
+    },
+    {
+      "id": "I04-wrong-digest",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "arrows",
+        "databaseFamily": "arrows-v11",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": "arrows_spec_v1_1",
+          "scoring": "arrows_scoring_v1_1",
+          "event": "arrows_event_v1_1",
+          "formVersion": "arrows_forms_v1_1",
+          "formHashKind": "manifest_payload",
+          "presentation": "arrows_presentation_v1_1",
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "AR11-1",
+          "formHash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Wrong exact form/hash tuple; Keypresses must have null hash"
+    },
+    {
+      "id": "I04-wrong-generation",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "arrows",
+        "databaseFamily": "arrows-v11",
+        "installationId": "synthetic-installation",
+        "generation": 9,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": "arrows_spec_v1_1",
+          "scoring": "arrows_scoring_v1_1",
+          "event": "arrows_event_v1_1",
+          "formVersion": "arrows_forms_v1_1",
+          "formHashKind": "manifest_payload",
+          "presentation": "arrows_presentation_v1_1",
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "AR11-1",
+          "formHash": "bedfa8c58fd9bde20cf7b9408b6ac5909c6bae45d025bff9c3de8041f8ae6855",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Installation generation is not owner/run epoch; only Money2 and Faces store it"
+    },
+    {
+      "id": "I05-valid",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "balloons",
+        "databaseFamily": "balloons-v1",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-attempt",
+        "originTicketId": null,
+        "versions": {
+          "specification": "balloons-v1.0",
+          "scoring": "balloons-scoring-v1",
+          "event": "balloons-event-v1",
+          "formVersion": "balloons-scored-v1",
+          "formHashKind": "per_form",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "RP1",
+          "formHash": "4425f093e748a4036184b72f3f9b17a68776a03ccc38ac5b05eef5fc49537621",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": true,
+      "reason": "Synthetic coherent identity only; no source completion asserted"
+    },
+    {
+      "id": "I05-wrong-version",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "balloons",
+        "databaseFamily": "balloons-v1",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-attempt",
+        "originTicketId": null,
+        "versions": {
+          "specification": "balloons-v1.0",
+          "scoring": "invented-scoring",
+          "event": "balloons-event-v1",
+          "formVersion": "balloons-scored-v1",
+          "formHashKind": "per_form",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "RP1",
+          "formHash": "4425f093e748a4036184b72f3f9b17a68776a03ccc38ac5b05eef5fc49537621",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Unregistered scoring identity"
+    },
+    {
+      "id": "I05-absent-field",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "balloons",
+        "databaseFamily": "balloons-v1",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-attempt",
+        "originTicketId": null,
+        "versions": {
+          "scoring": "balloons-scoring-v1",
+          "event": "balloons-event-v1",
+          "formVersion": "balloons-scored-v1",
+          "formHashKind": "per_form",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "RP1",
+          "formHash": "4425f093e748a4036184b72f3f9b17a68776a03ccc38ac5b05eef5fc49537621",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Null is deliberate; missing required key is invalid"
+    },
+    {
+      "id": "I05-wrong-digest",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "balloons",
+        "databaseFamily": "balloons-v1",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-attempt",
+        "originTicketId": null,
+        "versions": {
+          "specification": "balloons-v1.0",
+          "scoring": "balloons-scoring-v1",
+          "event": "balloons-event-v1",
+          "formVersion": "balloons-scored-v1",
+          "formHashKind": "per_form",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "RP1",
+          "formHash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Wrong exact form/hash tuple; Keypresses must have null hash"
+    },
+    {
+      "id": "I05-wrong-generation",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "balloons",
+        "databaseFamily": "balloons-v1",
+        "installationId": "synthetic-installation",
+        "generation": 9,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-attempt",
+        "originTicketId": null,
+        "versions": {
+          "specification": "balloons-v1.0",
+          "scoring": "balloons-scoring-v1",
+          "event": "balloons-event-v1",
+          "formVersion": "balloons-scored-v1",
+          "formHashKind": "per_form",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "RP1",
+          "formHash": "4425f093e748a4036184b72f3f9b17a68776a03ccc38ac5b05eef5fc49537621",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Installation generation is not owner/run epoch; only Money2 and Faces store it"
+    },
+    {
+      "id": "I06-valid",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "towers",
+        "databaseFamily": "towers-v1",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": null,
+          "scoring": null,
+          "event": "towers-events-v1.0-draft",
+          "formVersion": "towers-form-v1.0-draft",
+          "formHashKind": "per_form",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "TW1",
+          "formHash": "bfb13f60cf5383840bf2d45bc691d84c94488150ce64e76793d3a3f15e987014",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": true,
+      "reason": "Synthetic coherent identity only; no source completion asserted"
+    },
+    {
+      "id": "I06-wrong-version",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "towers",
+        "databaseFamily": "towers-v1",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": null,
+          "scoring": "invented-scoring",
+          "event": "towers-events-v1.0-draft",
+          "formVersion": "towers-form-v1.0-draft",
+          "formHashKind": "per_form",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "TW1",
+          "formHash": "bfb13f60cf5383840bf2d45bc691d84c94488150ce64e76793d3a3f15e987014",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Unregistered scoring identity"
+    },
+    {
+      "id": "I06-absent-field",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "towers",
+        "databaseFamily": "towers-v1",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "scoring": null,
+          "event": "towers-events-v1.0-draft",
+          "formVersion": "towers-form-v1.0-draft",
+          "formHashKind": "per_form",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "TW1",
+          "formHash": "bfb13f60cf5383840bf2d45bc691d84c94488150ce64e76793d3a3f15e987014",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Null is deliberate; missing required key is invalid"
+    },
+    {
+      "id": "I06-wrong-digest",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "towers",
+        "databaseFamily": "towers-v1",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": null,
+          "scoring": null,
+          "event": "towers-events-v1.0-draft",
+          "formVersion": "towers-form-v1.0-draft",
+          "formHashKind": "per_form",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "TW1",
+          "formHash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Wrong exact form/hash tuple; Keypresses must have null hash"
+    },
+    {
+      "id": "I06-wrong-generation",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "towers",
+        "databaseFamily": "towers-v1",
+        "installationId": "synthetic-installation",
+        "generation": 9,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": null,
+          "scoring": null,
+          "event": "towers-events-v1.0-draft",
+          "formVersion": "towers-form-v1.0-draft",
+          "formHashKind": "per_form",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "TW1",
+          "formHash": "bfb13f60cf5383840bf2d45bc691d84c94488150ce64e76793d3a3f15e987014",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Installation generation is not owner/run epoch; only Money2 and Faces store it"
+    },
+    {
+      "id": "I07-valid",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "lengths",
+        "databaseFamily": "lengths-mouth-v13",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": "lengths_mouth_spec_v1_3",
+          "scoring": "lengths_mouth_scoring_v2",
+          "event": "lengths_mouth_event_v2",
+          "formVersion": "lengths_mouth_forms_v1_3",
+          "formHashKind": "per_form",
+          "presentation": "lengths_mouth_presentation_v1_2",
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "LM13-1",
+          "formHash": "b048730ab2791c9fdbb7e4199db65a311910259ab8a72bdc55d9cbd257aa23b6",
+          "report": "lengths_mouth_report_v1_3"
+        },
+        "settingsRevision": 1,
+        "resultRevision": 3
+      },
+      "schemaValid": true,
+      "reason": "Synthetic coherent identity only; no source completion asserted"
+    },
+    {
+      "id": "I07-wrong-version",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "lengths",
+        "databaseFamily": "lengths-mouth-v13",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": "lengths_mouth_spec_v1_3",
+          "scoring": "invented-scoring",
+          "event": "lengths_mouth_event_v2",
+          "formVersion": "lengths_mouth_forms_v1_3",
+          "formHashKind": "per_form",
+          "presentation": "lengths_mouth_presentation_v1_2",
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "LM13-1",
+          "formHash": "b048730ab2791c9fdbb7e4199db65a311910259ab8a72bdc55d9cbd257aa23b6",
+          "report": "lengths_mouth_report_v1_3"
+        },
+        "settingsRevision": 1,
+        "resultRevision": 3
+      },
+      "schemaValid": false,
+      "reason": "Unregistered scoring identity"
+    },
+    {
+      "id": "I07-absent-field",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "lengths",
+        "databaseFamily": "lengths-mouth-v13",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "scoring": "lengths_mouth_scoring_v2",
+          "event": "lengths_mouth_event_v2",
+          "formVersion": "lengths_mouth_forms_v1_3",
+          "formHashKind": "per_form",
+          "presentation": "lengths_mouth_presentation_v1_2",
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "LM13-1",
+          "formHash": "b048730ab2791c9fdbb7e4199db65a311910259ab8a72bdc55d9cbd257aa23b6",
+          "report": "lengths_mouth_report_v1_3"
+        },
+        "settingsRevision": 1,
+        "resultRevision": 3
+      },
+      "schemaValid": false,
+      "reason": "Null is deliberate; missing required key is invalid"
+    },
+    {
+      "id": "I07-wrong-digest",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "lengths",
+        "databaseFamily": "lengths-mouth-v13",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": "lengths_mouth_spec_v1_3",
+          "scoring": "lengths_mouth_scoring_v2",
+          "event": "lengths_mouth_event_v2",
+          "formVersion": "lengths_mouth_forms_v1_3",
+          "formHashKind": "per_form",
+          "presentation": "lengths_mouth_presentation_v1_2",
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "LM13-1",
+          "formHash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "report": "lengths_mouth_report_v1_3"
+        },
+        "settingsRevision": 1,
+        "resultRevision": 3
+      },
+      "schemaValid": false,
+      "reason": "Wrong exact form/hash tuple; Keypresses must have null hash"
+    },
+    {
+      "id": "I07-wrong-generation",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "lengths",
+        "databaseFamily": "lengths-mouth-v13",
+        "installationId": "synthetic-installation",
+        "generation": 9,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": "lengths_mouth_spec_v1_3",
+          "scoring": "lengths_mouth_scoring_v2",
+          "event": "lengths_mouth_event_v2",
+          "formVersion": "lengths_mouth_forms_v1_3",
+          "formHashKind": "per_form",
+          "presentation": "lengths_mouth_presentation_v1_2",
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "LM13-1",
+          "formHash": "b048730ab2791c9fdbb7e4199db65a311910259ab8a72bdc55d9cbd257aa23b6",
+          "report": "lengths_mouth_report_v1_3"
+        },
+        "settingsRevision": 1,
+        "resultRevision": 3
+      },
+      "schemaValid": false,
+      "reason": "Installation generation is not owner/run epoch; only Money2 and Faces store it"
+    },
+    {
+      "id": "I08-valid",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "cards",
+        "databaseFamily": "cards-v11",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": "cards-rules/1.1.0",
+          "scoring": "cards-score/1.1.0",
+          "event": "cards-events/1.1.0",
+          "formVersion": "cards-forms/1.1.0",
+          "formHashKind": "per_form",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "CD1",
+          "formHash": "43cce8a820f3f2c37cfb3e2467e70aae2fff23db1845dba038f6baeaa4fead73",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": true,
+      "reason": "Synthetic coherent identity only; no source completion asserted"
+    },
+    {
+      "id": "I08-wrong-version",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "cards",
+        "databaseFamily": "cards-v11",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": "cards-rules/1.1.0",
+          "scoring": "invented-scoring",
+          "event": "cards-events/1.1.0",
+          "formVersion": "cards-forms/1.1.0",
+          "formHashKind": "per_form",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "CD1",
+          "formHash": "43cce8a820f3f2c37cfb3e2467e70aae2fff23db1845dba038f6baeaa4fead73",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Unregistered scoring identity"
+    },
+    {
+      "id": "I08-absent-field",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "cards",
+        "databaseFamily": "cards-v11",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "scoring": "cards-score/1.1.0",
+          "event": "cards-events/1.1.0",
+          "formVersion": "cards-forms/1.1.0",
+          "formHashKind": "per_form",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "CD1",
+          "formHash": "43cce8a820f3f2c37cfb3e2467e70aae2fff23db1845dba038f6baeaa4fead73",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Null is deliberate; missing required key is invalid"
+    },
+    {
+      "id": "I08-wrong-digest",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "cards",
+        "databaseFamily": "cards-v11",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": "cards-rules/1.1.0",
+          "scoring": "cards-score/1.1.0",
+          "event": "cards-events/1.1.0",
+          "formVersion": "cards-forms/1.1.0",
+          "formHashKind": "per_form",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "CD1",
+          "formHash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Wrong exact form/hash tuple; Keypresses must have null hash"
+    },
+    {
+      "id": "I08-wrong-generation",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "cards",
+        "databaseFamily": "cards-v11",
+        "installationId": "synthetic-installation",
+        "generation": 9,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": "cards-rules/1.1.0",
+          "scoring": "cards-score/1.1.0",
+          "event": "cards-events/1.1.0",
+          "formVersion": "cards-forms/1.1.0",
+          "formHashKind": "per_form",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "CD1",
+          "formHash": "43cce8a820f3f2c37cfb3e2467e70aae2fff23db1845dba038f6baeaa4fead73",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Installation generation is not owner/run epoch; only Money2 and Faces store it"
+    },
+    {
+      "id": "I09-valid",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "easy_hard",
+        "databaseFamily": "easy-hard-v1",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": null,
+          "scoring": null,
+          "event": "easy-hard-events-v1.0-draft",
+          "formVersion": "easy-hard-forms-v1.0-draft",
+          "formHashKind": "per_form",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "EH1",
+          "formHash": "5b846708ffef3600d07d7b11e75789d6acb598001ddf5b05d0848e7f5c931ad0",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": true,
+      "reason": "Synthetic coherent identity only; no source completion asserted"
+    },
+    {
+      "id": "I09-wrong-version",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "easy_hard",
+        "databaseFamily": "easy-hard-v1",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": null,
+          "scoring": "invented-scoring",
+          "event": "easy-hard-events-v1.0-draft",
+          "formVersion": "easy-hard-forms-v1.0-draft",
+          "formHashKind": "per_form",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "EH1",
+          "formHash": "5b846708ffef3600d07d7b11e75789d6acb598001ddf5b05d0848e7f5c931ad0",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Unregistered scoring identity"
+    },
+    {
+      "id": "I09-absent-field",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "easy_hard",
+        "databaseFamily": "easy-hard-v1",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "scoring": null,
+          "event": "easy-hard-events-v1.0-draft",
+          "formVersion": "easy-hard-forms-v1.0-draft",
+          "formHashKind": "per_form",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "EH1",
+          "formHash": "5b846708ffef3600d07d7b11e75789d6acb598001ddf5b05d0848e7f5c931ad0",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Null is deliberate; missing required key is invalid"
+    },
+    {
+      "id": "I09-wrong-digest",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "easy_hard",
+        "databaseFamily": "easy-hard-v1",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": null,
+          "scoring": null,
+          "event": "easy-hard-events-v1.0-draft",
+          "formVersion": "easy-hard-forms-v1.0-draft",
+          "formHashKind": "per_form",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "EH1",
+          "formHash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Wrong exact form/hash tuple; Keypresses must have null hash"
+    },
+    {
+      "id": "I09-wrong-generation",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "easy_hard",
+        "databaseFamily": "easy-hard-v1",
+        "installationId": "synthetic-installation",
+        "generation": 9,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": null,
+          "scoring": null,
+          "event": "easy-hard-events-v1.0-draft",
+          "formVersion": "easy-hard-forms-v1.0-draft",
+          "formHashKind": "per_form",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "EH1",
+          "formHash": "5b846708ffef3600d07d7b11e75789d6acb598001ddf5b05d0848e7f5c931ad0",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Installation generation is not owner/run epoch; only Money2 and Faces store it"
+    },
+    {
+      "id": "I10-valid",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "money_1",
+        "databaseFamily": "money1-v1",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": "money_exchange_1_spec_v1_0",
+          "scoring": null,
+          "event": "money_exchange_1_event_v1_0",
+          "formVersion": "money_exchange_1_forms_v1_0",
+          "formHashKind": "manifest_payload",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "ME1-1",
+          "formHash": "cf4c07b085e883bce0ddcaea98fd4a5e4571ebf968a9ad1f440d81da40461cb0",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": true,
+      "reason": "Synthetic coherent identity only; no source completion asserted"
+    },
+    {
+      "id": "I10-wrong-version",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "money_1",
+        "databaseFamily": "money1-v1",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": "money_exchange_1_spec_v1_0",
+          "scoring": "invented-scoring",
+          "event": "money_exchange_1_event_v1_0",
+          "formVersion": "money_exchange_1_forms_v1_0",
+          "formHashKind": "manifest_payload",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "ME1-1",
+          "formHash": "cf4c07b085e883bce0ddcaea98fd4a5e4571ebf968a9ad1f440d81da40461cb0",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Unregistered scoring identity"
+    },
+    {
+      "id": "I10-absent-field",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "money_1",
+        "databaseFamily": "money1-v1",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "scoring": null,
+          "event": "money_exchange_1_event_v1_0",
+          "formVersion": "money_exchange_1_forms_v1_0",
+          "formHashKind": "manifest_payload",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "ME1-1",
+          "formHash": "cf4c07b085e883bce0ddcaea98fd4a5e4571ebf968a9ad1f440d81da40461cb0",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Null is deliberate; missing required key is invalid"
+    },
+    {
+      "id": "I10-wrong-digest",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "money_1",
+        "databaseFamily": "money1-v1",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": "money_exchange_1_spec_v1_0",
+          "scoring": null,
+          "event": "money_exchange_1_event_v1_0",
+          "formVersion": "money_exchange_1_forms_v1_0",
+          "formHashKind": "manifest_payload",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "ME1-1",
+          "formHash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Wrong exact form/hash tuple; Keypresses must have null hash"
+    },
+    {
+      "id": "I10-wrong-generation",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "money_1",
+        "databaseFamily": "money1-v1",
+        "installationId": "synthetic-installation",
+        "generation": 9,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": "money_exchange_1_spec_v1_0",
+          "scoring": null,
+          "event": "money_exchange_1_event_v1_0",
+          "formVersion": "money_exchange_1_forms_v1_0",
+          "formHashKind": "manifest_payload",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "ME1-1",
+          "formHash": "cf4c07b085e883bce0ddcaea98fd4a5e4571ebf968a9ad1f440d81da40461cb0",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Installation generation is not owner/run epoch; only Money2 and Faces store it"
+    },
+    {
+      "id": "I11-valid",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "money_2",
+        "databaseFamily": "money2-v2",
+        "installationId": "synthetic-installation",
+        "generation": 1,
+        "attemptId": "A1.1",
+        "armRequestId": "synthetic-request",
+        "originTicketId": "T1.1",
+        "versions": {
+          "specification": null,
+          "scoring": null,
+          "event": "money_exchange_2_event_v1_0",
+          "formVersion": null,
+          "formHashKind": "per_form",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "ME2-1",
+          "formHash": "1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": true,
+      "reason": "Synthetic coherent identity only; no source completion asserted"
+    },
+    {
+      "id": "I11-wrong-version",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "money_2",
+        "databaseFamily": "money2-v2",
+        "installationId": "synthetic-installation",
+        "generation": 1,
+        "attemptId": "A1.1",
+        "armRequestId": "synthetic-request",
+        "originTicketId": "T1.1",
+        "versions": {
+          "specification": null,
+          "scoring": "invented-scoring",
+          "event": "money_exchange_2_event_v1_0",
+          "formVersion": null,
+          "formHashKind": "per_form",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "ME2-1",
+          "formHash": "1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Unregistered scoring identity"
+    },
+    {
+      "id": "I11-absent-field",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "money_2",
+        "databaseFamily": "money2-v2",
+        "installationId": "synthetic-installation",
+        "generation": 1,
+        "attemptId": "A1.1",
+        "armRequestId": "synthetic-request",
+        "originTicketId": "T1.1",
+        "versions": {
+          "scoring": null,
+          "event": "money_exchange_2_event_v1_0",
+          "formVersion": null,
+          "formHashKind": "per_form",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "ME2-1",
+          "formHash": "1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Null is deliberate; missing required key is invalid"
+    },
+    {
+      "id": "I11-wrong-digest",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "money_2",
+        "databaseFamily": "money2-v2",
+        "installationId": "synthetic-installation",
+        "generation": 1,
+        "attemptId": "A1.1",
+        "armRequestId": "synthetic-request",
+        "originTicketId": "T1.1",
+        "versions": {
+          "specification": null,
+          "scoring": null,
+          "event": "money_exchange_2_event_v1_0",
+          "formVersion": null,
+          "formHashKind": "per_form",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "ME2-1",
+          "formHash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Wrong exact form/hash tuple; Keypresses must have null hash"
+    },
+    {
+      "id": "I11-wrong-generation",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "money_2",
+        "databaseFamily": "money2-v2",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "A1.1",
+        "armRequestId": "synthetic-request",
+        "originTicketId": "T1.1",
+        "versions": {
+          "specification": null,
+          "scoring": null,
+          "event": "money_exchange_2_event_v1_0",
+          "formVersion": null,
+          "formHashKind": "per_form",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "ME2-1",
+          "formHash": "1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Installation generation is not owner/run epoch; only Money2 and Faces store it"
+    },
+    {
+      "id": "I12-valid",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "faces",
+        "databaseFamily": "faces-v3",
+        "installationId": "synthetic-installation",
+        "generation": 0,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": null,
+          "scoring": "faces-descriptive-v3",
+          "event": "faces-event-v2",
+          "formVersion": null,
+          "formHashKind": "per_form",
+          "presentation": "faces-report-presentation-v3",
+          "feedback": "faces-feedback-v3",
+          "assetBankHash": "7a7e835a3b1c5277eca45b19d82f2ba917305b886727b104a2ac7a94e95f4854",
+          "formId": "faces-bank-practice-v2",
+          "formHash": "75ff16a9eaf4f0cff8eda2e80f66b4d886c9fcc5f7eae364b3859ab4cb584e16",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": true,
+      "reason": "Synthetic coherent identity only; no source completion asserted"
+    },
+    {
+      "id": "I12-wrong-version",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "faces",
+        "databaseFamily": "faces-v3",
+        "installationId": "synthetic-installation",
+        "generation": 0,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": null,
+          "scoring": "invented-scoring",
+          "event": "faces-event-v2",
+          "formVersion": null,
+          "formHashKind": "per_form",
+          "presentation": "faces-report-presentation-v3",
+          "feedback": "faces-feedback-v3",
+          "assetBankHash": "7a7e835a3b1c5277eca45b19d82f2ba917305b886727b104a2ac7a94e95f4854",
+          "formId": "faces-bank-practice-v2",
+          "formHash": "75ff16a9eaf4f0cff8eda2e80f66b4d886c9fcc5f7eae364b3859ab4cb584e16",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Unregistered scoring identity"
+    },
+    {
+      "id": "I12-absent-field",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "faces",
+        "databaseFamily": "faces-v3",
+        "installationId": "synthetic-installation",
+        "generation": 0,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "scoring": "faces-descriptive-v3",
+          "event": "faces-event-v2",
+          "formVersion": null,
+          "formHashKind": "per_form",
+          "presentation": "faces-report-presentation-v3",
+          "feedback": "faces-feedback-v3",
+          "assetBankHash": "7a7e835a3b1c5277eca45b19d82f2ba917305b886727b104a2ac7a94e95f4854",
+          "formId": "faces-bank-practice-v2",
+          "formHash": "75ff16a9eaf4f0cff8eda2e80f66b4d886c9fcc5f7eae364b3859ab4cb584e16",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Null is deliberate; missing required key is invalid"
+    },
+    {
+      "id": "I12-wrong-digest",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "faces",
+        "databaseFamily": "faces-v3",
+        "installationId": "synthetic-installation",
+        "generation": 0,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": null,
+          "scoring": "faces-descriptive-v3",
+          "event": "faces-event-v2",
+          "formVersion": null,
+          "formHashKind": "per_form",
+          "presentation": "faces-report-presentation-v3",
+          "feedback": "faces-feedback-v3",
+          "assetBankHash": "7a7e835a3b1c5277eca45b19d82f2ba917305b886727b104a2ac7a94e95f4854",
+          "formId": "faces-bank-practice-v2",
+          "formHash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Wrong exact form/hash tuple; Keypresses must have null hash"
+    },
+    {
+      "id": "I12-wrong-generation",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "faces",
+        "databaseFamily": "faces-v3",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": null,
+          "scoring": "faces-descriptive-v3",
+          "event": "faces-event-v2",
+          "formVersion": null,
+          "formHashKind": "per_form",
+          "presentation": "faces-report-presentation-v3",
+          "feedback": "faces-feedback-v3",
+          "assetBankHash": "7a7e835a3b1c5277eca45b19d82f2ba917305b886727b104a2ac7a94e95f4854",
+          "formId": "faces-bank-practice-v2",
+          "formHash": "75ff16a9eaf4f0cff8eda2e80f66b4d886c9fcc5f7eae364b3859ab4cb584e16",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Installation generation is not owner/run epoch; only Money2 and Faces store it"
+    },
+    {
+      "id": "I13-legacy-faces",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "faces",
+        "databaseFamily": "faces-v3",
+        "installationId": "synthetic-installation",
+        "generation": 0,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": null,
+          "scoring": "faces-descriptive-v2",
+          "event": "faces-event-v2",
+          "formVersion": null,
+          "formHashKind": "per_form",
+          "presentation": "faces-report-presentation-v3",
+          "feedback": null,
+          "assetBankHash": "7a7e835a3b1c5277eca45b19d82f2ba917305b886727b104a2ac7a94e95f4854",
+          "formId": "faces-bank-discussion-v1",
+          "formHash": "cb12f328b155b79019e10ce38ab2c4b59ed806df3ae64f5f4ea3eeded26c9ff6",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": true,
+      "newMockArmAllowed": false,
+      "reason": "Historical native review only;12-eligible report remains byte-identical"
+    },
+    {
+      "id": "I07-bank-hash",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "lengths",
+        "databaseFamily": "lengths-mouth-v13",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": "lengths_mouth_spec_v1_3",
+          "scoring": "lengths_mouth_scoring_v2",
+          "event": "lengths_mouth_event_v2",
+          "formVersion": "lengths_mouth_forms_v1_3",
+          "formHashKind": "per_form",
+          "presentation": "lengths_mouth_presentation_v1_2",
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "LM13-1",
+          "formHash": "9a847ec1bf3fe17bbfed5144eb17ca4a21881dbeffc167defc084c8aa49d4634",
+          "report": "lengths_mouth_report_v1_3"
+        },
+        "settingsRevision": 1,
+        "resultRevision": 3
+      },
+      "schemaValid": false,
+      "reason": "V1.3 exact native tuple; no older family or bank-hash substitution"
+    },
+    {
+      "id": "I07-old-event",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "lengths",
+        "databaseFamily": "lengths-mouth-v13",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": "lengths_mouth_spec_v1_3",
+          "scoring": "lengths_mouth_scoring_v2",
+          "event": "lengths_mouth_event_v1",
+          "formVersion": "lengths_mouth_forms_v1_3",
+          "formHashKind": "per_form",
+          "presentation": "lengths_mouth_presentation_v1_2",
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "LM13-1",
+          "formHash": "b048730ab2791c9fdbb7e4199db65a311910259ab8a72bdc55d9cbd257aa23b6",
+          "report": "lengths_mouth_report_v1_3"
+        },
+        "settingsRevision": 1,
+        "resultRevision": 3
+      },
+      "schemaValid": false,
+      "reason": "V1.3 exact native tuple; no older family or bank-hash substitution"
+    },
+    {
+      "id": "I07-missing-report",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "lengths",
+        "databaseFamily": "lengths-mouth-v13",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": "lengths_mouth_spec_v1_3",
+          "scoring": "lengths_mouth_scoring_v2",
+          "event": "lengths_mouth_event_v2",
+          "formVersion": "lengths_mouth_forms_v1_3",
+          "formHashKind": "per_form",
+          "presentation": "lengths_mouth_presentation_v1_2",
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "LM13-1",
+          "formHash": "b048730ab2791c9fdbb7e4199db65a311910259ab8a72bdc55d9cbd257aa23b6",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": 3
+      },
+      "schemaValid": false,
+      "reason": "V1.3 exact native tuple; no older family or bank-hash substitution"
+    },
+    {
+      "id": "I07-old-form",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "lengths",
+        "databaseFamily": "lengths-mouth-v13",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": "lengths_mouth_spec_v1_3",
+          "scoring": "lengths_mouth_scoring_v2",
+          "event": "lengths_mouth_event_v2",
+          "formVersion": "lengths_mouth_forms_v1_3",
+          "formHashKind": "per_form",
+          "presentation": "lengths_mouth_presentation_v1_2",
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "LM1",
+          "formHash": "b048730ab2791c9fdbb7e4199db65a311910259ab8a72bdc55d9cbd257aa23b6",
+          "report": "lengths_mouth_report_v1_3"
+        },
+        "settingsRevision": 1,
+        "resultRevision": 3
+      },
+      "schemaValid": false,
+      "reason": "V1.3 exact native tuple; no older family or bank-hash substitution"
+    },
+    {
+      "id": "I07-arm-no-snapshot",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "lengths",
+        "databaseFamily": "lengths-mouth-v13",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": "lengths_mouth_spec_v1_3",
+          "scoring": "lengths_mouth_scoring_v2",
+          "event": "lengths_mouth_event_v2",
+          "formVersion": "lengths_mouth_forms_v1_3",
+          "formHashKind": "per_form",
+          "presentation": "lengths_mouth_presentation_v1_2",
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "LM13-1",
+          "formHash": "b048730ab2791c9fdbb7e4199db65a311910259ab8a72bdc55d9cbd257aa23b6",
+          "report": "lengths_mouth_report_v1_3"
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": true,
+      "terminalAcceptance": false,
+      "reason": "Arm identity before snapshot; cannot accept completion with null resultRevision"
+    },
+    {
+      "id": "I07-zero-revision",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "lengths",
+        "databaseFamily": "lengths-mouth-v13",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-request",
+        "originTicketId": null,
+        "versions": {
+          "specification": "lengths_mouth_spec_v1_3",
+          "scoring": "lengths_mouth_scoring_v2",
+          "event": "lengths_mouth_event_v2",
+          "formVersion": "lengths_mouth_forms_v1_3",
+          "formHashKind": "per_form",
+          "presentation": "lengths_mouth_presentation_v1_2",
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "LM13-1",
+          "formHash": "b048730ab2791c9fdbb7e4199db65a311910259ab8a72bdc55d9cbd257aa23b6",
+          "report": "lengths_mouth_report_v1_3"
+        },
+        "settingsRevision": 1,
+        "resultRevision": 0
+      },
+      "schemaValid": false,
+      "reason": "Snapshot revision positive; arm-only uses null"
+    },
+    {
+      "id": "I02-invalid-draft",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "stop",
+        "databaseFamily": "stop-v1",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-attempt",
+        "originTicketId": null,
+        "versions": {
+          "specification": "1.3",
+          "scoring": null,
+          "event": "stop_engine_event_v1",
+          "formVersion": "2",
+          "formHashKind": "per_form",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "stop-v13-baseline-01",
+          "formHash": "0bbd49818785c1580ee7fed9b38016ab39909c26c57246bdeb7361558ea0d138",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": true,
+      "terminalAcceptance": false,
+      "reason": "Stop assigned-form technical invalid draft has null native scoring and no independent reportVersion"
+    },
+    {
+      "id": "I02-mixed-draft-result",
+      "value": {
+        "adapterVersion": "ap-mock-adapter/2",
+        "game": "stop",
+        "databaseFamily": "stop-v1",
+        "installationId": "synthetic-installation",
+        "generation": null,
+        "attemptId": "synthetic-attempt",
+        "armRequestId": "synthetic-attempt",
+        "originTicketId": null,
+        "versions": {
+          "specification": "1.3",
+          "scoring": "stop_scoring_v13",
+          "event": "stop_engine_event_v1",
+          "formVersion": "2",
+          "formHashKind": "per_form",
+          "presentation": null,
+          "feedback": null,
+          "assetBankHash": null,
+          "formId": "stop-v13-baseline-01",
+          "formHash": "0bbd49818785c1580ee7fed9b38016ab39909c26c57246bdeb7361558ea0d138",
+          "report": null
+        },
+        "settingsRevision": 1,
+        "resultRevision": null
+      },
+      "schemaValid": false,
+      "reason": "Do not repair invalid draft into completed-result tuple"
+    }
+  ]
+}

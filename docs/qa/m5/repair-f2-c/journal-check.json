@@ -1,0 +1,704 @@
+[
+  {
+    "case": "unavailable/before-arm/drill",
+    "actualScoredEvents": 0,
+    "reservation": null,
+    "marker": null,
+    "eligible": false
+  },
+  {
+    "case": "unavailable/before-arm/all",
+    "actualScoredEvents": 0,
+    "reservation": null,
+    "marker": null,
+    "eligible": false
+  },
+  {
+    "case": "unavailable/before-arm/unrelated",
+    "actualScoredEvents": 1,
+    "reservation": null,
+    "marker": {
+      "formId": "stop-retest-03",
+      "exposedAtWall": "2026-10-01T02:36:52.057Z",
+      "visualProfile": "standard",
+      "deleted": false,
+      "sessionId": "0ffc267c-251b-49ba-864f-8edf513bbaf6",
+      "certainty": "confirmed"
+    },
+    "eligible": true
+  },
+  {
+    "case": "unavailable/fixation/drill",
+    "actualScoredEvents": 0,
+    "reservation": null,
+    "marker": null,
+    "eligible": false
+  },
+  {
+    "case": "unavailable/fixation/all",
+    "actualScoredEvents": 0,
+    "reservation": null,
+    "marker": null,
+    "eligible": false
+  },
+  {
+    "case": "unavailable/fixation/unrelated",
+    "actualScoredEvents": 1,
+    "reservation": null,
+    "marker": {
+      "formId": "stop-retest-04",
+      "exposedAtWall": "2026-10-01T02:37:56.958Z",
+      "visualProfile": "standard",
+      "deleted": false,
+      "sessionId": "e2ca6049-e28c-4c4a-b25a-ff1e7654bdbf",
+      "certainty": "confirmed"
+    },
+    "eligible": true
+  },
+  {
+    "case": "unavailable/delete-first/drill",
+    "actualScoredEvents": 0,
+    "reservation": null,
+    "marker": null,
+    "eligible": false
+  },
+  {
+    "case": "unavailable/delete-first/all",
+    "actualScoredEvents": 0,
+    "reservation": null,
+    "marker": null,
+    "eligible": false
+  },
+  {
+    "case": "unavailable/delete-first/unrelated",
+    "actualScoredEvents": 1,
+    "reservation": null,
+    "marker": {
+      "formId": "stop-retest-01",
+      "exposedAtWall": "2026-10-01T02:39:03.973Z",
+      "visualProfile": "standard",
+      "deleted": false,
+      "sessionId": "10ff87b2-fcf0-4b4a-91aa-fba5c77920e6",
+      "certainty": "confirmed"
+    },
+    "eligible": true
+  },
+  {
+    "case": "unavailable/present-first/drill",
+    "actualScoredEvents": 1,
+    "reservation": null,
+    "marker": {
+      "formId": "stop-retest-04",
+      "exposedAtWall": "2026-10-01T02:39:26.672Z",
+      "visualProfile": "standard",
+      "deleted": false,
+      "sessionId": "576d02c2-12de-460b-b8b3-5d9986083ad2",
+      "certainty": "confirmed"
+    },
+    "eligible": false
+  },
+  {
+    "case": "unavailable/present-first/all",
+    "actualScoredEvents": 1,
+    "reservation": null,
+    "marker": null,
+    "eligible": false
+  },
+  {
+    "case": "unavailable/present-first/unrelated",
+    "actualScoredEvents": 1,
+    "reservation": null,
+    "marker": {
+      "formId": "stop-retest-03",
+      "exposedAtWall": "2026-10-01T02:40:11.989Z",
+      "visualProfile": "standard",
+      "deleted": false,
+      "sessionId": "487ed135-6870-4822-be64-9bb5d3344566",
+      "certainty": "confirmed"
+    },
+    "eligible": true
+  },
+  {
+    "case": "unavailable/after/drill",
+    "actualScoredEvents": 1,
+    "reservation": null,
+    "marker": {
+      "formId": "stop-retest-04",
+      "exposedAtWall": "2026-10-01T02:40:34.689Z",
+      "visualProfile": "standard",
+      "deleted": false,
+      "sessionId": "de496b19-5b17-4260-b460-fb1f91dfdf4c",
+      "certainty": "confirmed"
+    },
+    "eligible": false
+  },
+  {
+    "case": "unavailable/after/all",
+    "actualScoredEvents": 1,
+    "reservation": null,
+    "marker": null,
+    "eligible": false
+  },
+  {
+    "case": "unavailable/after/unrelated",
+    "actualScoredEvents": 1,
+    "reservation": null,
+    "marker": {
+      "formId": "stop-retest-02",
+      "exposedAtWall": "2026-10-01T02:41:19.879Z",
+      "visualProfile": "standard",
+      "deleted": false,
+      "sessionId": "80e87ad9-9ab2-475e-a293-02892d89f87f",
+      "certainty": "confirmed"
+    },
+    "eligible": true
+  },
+  {
+    "case": "delivered/before-arm/drill",
+    "actualScoredEvents": 0,
+    "reservation": null,
+    "marker": null,
+    "eligible": false
+  },
+  {
+    "case": "delivered/before-arm/all",
+    "actualScoredEvents": 0,
+    "reservation": null,
+    "marker": null,
+    "eligible": false
+  },
+  {
+    "case": "delivered/before-arm/unrelated",
+    "actualScoredEvents": 1,
+    "reservation": null,
+    "marker": {
+      "formId": "stop-retest-04",
+      "exposedAtWall": "2026-10-01T02:36:52.057Z",
+      "visualProfile": "standard",
+      "deleted": false,
+      "sessionId": "855af670-2f0f-496b-b276-15d342577195",
+      "certainty": "confirmed"
+    },
+    "eligible": true
+  },
+  {
+    "case": "delivered/fixation/drill",
+    "actualScoredEvents": 0,
+    "reservation": null,
+    "marker": null,
+    "eligible": false
+  },
+  {
+    "case": "delivered/fixation/all",
+    "actualScoredEvents": 0,
+    "reservation": null,
+    "marker": null,
+    "eligible": false
+  },
+  {
+    "case": "delivered/fixation/unrelated",
+    "actualScoredEvents": 1,
+    "reservation": null,
+    "marker": {
+      "formId": "stop-retest-02",
+      "exposedAtWall": "2026-10-01T02:37:56.957Z",
+      "visualProfile": "standard",
+      "deleted": false,
+      "sessionId": "9dfe3a47-d958-4e34-a942-b47e345138b2",
+      "certainty": "confirmed"
+    },
+    "eligible": true
+  },
+  {
+    "case": "delivered/delete-first/drill",
+    "actualScoredEvents": 0,
+    "reservation": null,
+    "marker": null,
+    "eligible": false
+  },
+  {
+    "case": "delivered/delete-first/all",
+    "actualScoredEvents": 0,
+    "reservation": null,
+    "marker": null,
+    "eligible": false
+  },
+  {
+    "case": "delivered/delete-first/unrelated",
+    "actualScoredEvents": 1,
+    "reservation": null,
+    "marker": {
+      "formId": "stop-retest-04",
+      "exposedAtWall": "2026-10-01T02:39:03.951Z",
+      "visualProfile": "standard",
+      "deleted": false,
+      "sessionId": "1380c689-394b-450d-bc01-410779f27b6e",
+      "certainty": "confirmed"
+    },
+    "eligible": true
+  },
+  {
+    "case": "delivered/present-first/drill",
+    "actualScoredEvents": 1,
+    "reservation": null,
+    "marker": {
+      "formId": "stop-retest-04",
+      "exposedAtWall": "2026-10-01T02:39:26.689Z",
+      "visualProfile": "standard",
+      "deleted": false,
+      "sessionId": "61ca4896-af83-482f-95f0-cdcecf41d6ae",
+      "certainty": "confirmed"
+    },
+    "eligible": false
+  },
+  {
+    "case": "delivered/present-first/all",
+    "actualScoredEvents": 1,
+    "reservation": null,
+    "marker": null,
+    "eligible": false
+  },
+  {
+    "case": "delivered/present-first/unrelated",
+    "actualScoredEvents": 1,
+    "reservation": null,
+    "marker": {
+      "formId": "stop-retest-03",
+      "exposedAtWall": "2026-10-01T02:40:11.989Z",
+      "visualProfile": "standard",
+      "deleted": false,
+      "sessionId": "07013adf-a7ef-4f29-9802-76d0dd956fef",
+      "certainty": "confirmed"
+    },
+    "eligible": true
+  },
+  {
+    "case": "delivered/after/drill",
+    "actualScoredEvents": 1,
+    "reservation": null,
+    "marker": {
+      "formId": "stop-retest-02",
+      "exposedAtWall": "2026-10-01T02:40:34.605Z",
+      "visualProfile": "standard",
+      "deleted": false,
+      "sessionId": "a3a825c1-38d3-4ed3-815b-e55fcdfae374",
+      "certainty": "confirmed"
+    },
+    "eligible": false
+  },
+  {
+    "case": "delivered/after/all",
+    "actualScoredEvents": 1,
+    "reservation": null,
+    "marker": null,
+    "eligible": false
+  },
+  {
+    "case": "delivered/after/unrelated",
+    "actualScoredEvents": 1,
+    "reservation": null,
+    "marker": {
+      "formId": "stop-retest-03",
+      "exposedAtWall": "2026-10-01T02:41:19.796Z",
+      "visualProfile": "standard",
+      "deleted": false,
+      "sessionId": "e1abc2a6-78c0-47ca-bb9d-2a623887d8d7",
+      "certainty": "confirmed"
+    },
+    "eligible": true
+  },
+  {
+    "case": "delayed/before-arm/drill",
+    "actualScoredEvents": 0,
+    "reservation": null,
+    "marker": null,
+    "eligible": false
+  },
+  {
+    "case": "delayed/before-arm/all",
+    "actualScoredEvents": 0,
+    "reservation": null,
+    "marker": null,
+    "eligible": false
+  },
+  {
+    "case": "delayed/before-arm/unrelated",
+    "actualScoredEvents": 1,
+    "reservation": null,
+    "marker": {
+      "formId": "stop-retest-01",
+      "exposedAtWall": "2026-10-01T02:36:52.059Z",
+      "visualProfile": "standard",
+      "deleted": false,
+      "sessionId": "be8dbb2e-3b3e-4987-808d-a6013f44262a",
+      "certainty": "confirmed"
+    },
+    "eligible": true
+  },
+  {
+    "case": "delayed/fixation/drill",
+    "actualScoredEvents": 0,
+    "reservation": null,
+    "marker": null,
+    "eligible": false
+  },
+  {
+    "case": "delayed/fixation/all",
+    "actualScoredEvents": 0,
+    "reservation": null,
+    "marker": null,
+    "eligible": false
+  },
+  {
+    "case": "delayed/fixation/unrelated",
+    "actualScoredEvents": 1,
+    "reservation": null,
+    "marker": {
+      "formId": "stop-retest-02",
+      "exposedAtWall": "2026-10-01T02:37:56.958Z",
+      "visualProfile": "standard",
+      "deleted": false,
+      "sessionId": "cb5286c9-2fea-4256-9a36-b734cadb1cac",
+      "certainty": "confirmed"
+    },
+    "eligible": true
+  },
+  {
+    "case": "delayed/delete-first/drill",
+    "actualScoredEvents": 0,
+    "reservation": null,
+    "marker": null,
+    "eligible": false
+  },
+  {
+    "case": "delayed/delete-first/all",
+    "actualScoredEvents": 0,
+    "reservation": null,
+    "marker": null,
+    "eligible": false
+  },
+  {
+    "case": "delayed/delete-first/unrelated",
+    "actualScoredEvents": 1,
+    "reservation": null,
+    "marker": {
+      "formId": "stop-retest-02",
+      "exposedAtWall": "2026-10-01T02:39:03.964Z",
+      "visualProfile": "standard",
+      "deleted": false,
+      "sessionId": "291e427e-056c-4f2d-a0fc-36087cc71845",
+      "certainty": "confirmed"
+    },
+    "eligible": true
+  },
+  {
+    "case": "delayed/present-first/drill",
+    "actualScoredEvents": 1,
+    "reservation": null,
+    "marker": {
+      "formId": "stop-retest-01",
+      "exposedAtWall": "2026-10-01T02:39:26.681Z",
+      "visualProfile": "standard",
+      "deleted": false,
+      "sessionId": "d6983a3b-f3b9-40dc-b1ae-fa58fc6b3cac",
+      "certainty": "confirmed"
+    },
+    "eligible": false
+  },
+  {
+    "case": "delayed/present-first/all",
+    "actualScoredEvents": 1,
+    "reservation": null,
+    "marker": null,
+    "eligible": false
+  },
+  {
+    "case": "delayed/present-first/unrelated",
+    "actualScoredEvents": 1,
+    "reservation": null,
+    "marker": {
+      "formId": "stop-retest-04",
+      "exposedAtWall": "2026-10-01T02:40:11.997Z",
+      "visualProfile": "standard",
+      "deleted": false,
+      "sessionId": "68f239cd-e10c-452a-9029-0300c7cdbd51",
+      "certainty": "confirmed"
+    },
+    "eligible": true
+  },
+  {
+    "case": "delayed/after/drill",
+    "actualScoredEvents": 1,
+    "reservation": null,
+    "marker": {
+      "formId": "stop-retest-04",
+      "exposedAtWall": "2026-10-01T02:40:34.630Z",
+      "visualProfile": "standard",
+      "deleted": false,
+      "sessionId": "f8e63215-5fff-440c-9c3b-bee337e55c9f",
+      "certainty": "confirmed"
+    },
+    "eligible": false
+  },
+  {
+    "case": "delayed/after/all",
+    "actualScoredEvents": 1,
+    "reservation": null,
+    "marker": null,
+    "eligible": false
+  },
+  {
+    "case": "delayed/after/unrelated",
+    "actualScoredEvents": 1,
+    "reservation": null,
+    "marker": {
+      "formId": "stop-retest-02",
+      "exposedAtWall": "2026-10-01T02:41:19.796Z",
+      "visualProfile": "standard",
+      "deleted": false,
+      "sessionId": "575e84e2-6691-4d23-b0dc-990dcd6cda35",
+      "certainty": "confirmed"
+    },
+    "eligible": true
+  },
+  {
+    "case": "queued-back-drill",
+    "actualScoredEvents": 0,
+    "locksAfterDeletion": {
+      "held": [],
+      "pending": []
+    },
+    "originalEventsUnchanged": true,
+    "replacementBytesUnchanged": true
+  },
+  {
+    "case": "queued-back-all",
+    "actualScoredEvents": 0,
+    "locksAfterDeletion": {
+      "held": [],
+      "pending": []
+    },
+    "originalEventsUnchanged": true,
+    "replacementBytesUnchanged": true
+  },
+  {
+    "case": "queued-back-unrelated",
+    "actualScoredEvents": 0,
+    "locksAfterDeletion": {
+      "held": [],
+      "pending": []
+    },
+    "originalEventsUnchanged": true,
+    "replacementBytesUnchanged": true
+  },
+  {
+    "case": "queued-watchdog-drill",
+    "actualScoredEvents": 0,
+    "locksAfterDeletion": {
+      "held": [],
+      "pending": []
+    },
+    "originalEventsUnchanged": true,
+    "replacementBytesUnchanged": true
+  },
+  {
+    "case": "queued-watchdog-all",
+    "actualScoredEvents": 0,
+    "locksAfterDeletion": {
+      "held": [],
+      "pending": []
+    },
+    "originalEventsUnchanged": true,
+    "replacementBytesUnchanged": true
+  },
+  {
+    "case": "queued-watchdog-unrelated",
+    "actualScoredEvents": 0,
+    "locksAfterDeletion": {
+      "held": [],
+      "pending": []
+    },
+    "originalEventsUnchanged": true,
+    "replacementBytesUnchanged": true
+  },
+  {
+    "case": "read-back-drill",
+    "actualScoredEvents": 0,
+    "locksAfterDeletion": {
+      "held": [],
+      "pending": []
+    },
+    "originalEventsUnchanged": true,
+    "replacementBytesUnchanged": true
+  },
+  {
+    "case": "read-back-all",
+    "actualScoredEvents": 0,
+    "locksAfterDeletion": {
+      "held": [],
+      "pending": []
+    },
+    "originalEventsUnchanged": true,
+    "replacementBytesUnchanged": true
+  },
+  {
+    "case": "read-back-unrelated",
+    "actualScoredEvents": 0,
+    "locksAfterDeletion": {
+      "held": [],
+      "pending": []
+    },
+    "originalEventsUnchanged": true,
+    "replacementBytesUnchanged": true
+  },
+  {
+    "case": "read-watchdog-drill",
+    "actualScoredEvents": 0,
+    "locksAfterDeletion": {
+      "held": [],
+      "pending": []
+    },
+    "originalEventsUnchanged": true,
+    "replacementBytesUnchanged": true
+  },
+  {
+    "case": "read-watchdog-all",
+    "actualScoredEvents": 0,
+    "locksAfterDeletion": {
+      "held": [],
+      "pending": []
+    },
+    "originalEventsUnchanged": true,
+    "replacementBytesUnchanged": true
+  },
+  {
+    "case": "read-watchdog-unrelated",
+    "actualScoredEvents": 0,
+    "locksAfterDeletion": {
+      "held": [],
+      "pending": []
+    },
+    "originalEventsUnchanged": true,
+    "replacementBytesUnchanged": true
+  },
+  {
+    "case": "frame-back-drill",
+    "actualScoredEvents": 0,
+    "locksAfterDeletion": {
+      "held": [],
+      "pending": []
+    },
+    "originalEventsUnchanged": true,
+    "replacementBytesUnchanged": true
+  },
+  {
+    "case": "frame-back-all",
+    "actualScoredEvents": 0,
+    "locksAfterDeletion": {
+      "held": [],
+      "pending": []
+    },
+    "originalEventsUnchanged": true,
+    "replacementBytesUnchanged": true
+  },
+  {
+    "case": "frame-back-unrelated",
+    "actualScoredEvents": 0,
+    "locksAfterDeletion": {
+      "held": [],
+      "pending": []
+    },
+    "originalEventsUnchanged": true,
+    "replacementBytesUnchanged": true
+  },
+  {
+    "case": "frame-watchdog-drill",
+    "actualScoredEvents": 0,
+    "locksAfterDeletion": {
+      "held": [],
+      "pending": []
+    },
+    "originalEventsUnchanged": true,
+    "replacementBytesUnchanged": true
+  },
+  {
+    "case": "frame-watchdog-all",
+    "actualScoredEvents": 0,
+    "locksAfterDeletion": {
+      "held": [],
+      "pending": []
+    },
+    "originalEventsUnchanged": true,
+    "replacementBytesUnchanged": true
+  },
+  {
+    "case": "frame-watchdog-unrelated",
+    "actualScoredEvents": 0,
+    "locksAfterDeletion": {
+      "held": [],
+      "pending": []
+    },
+    "originalEventsUnchanged": true,
+    "replacementBytesUnchanged": true
+  },
+  {
+    "case": "confirm-before-back-drill",
+    "actualScoredEvents": 1,
+    "locksAfterDeletion": {
+      "held": [],
+      "pending": []
+    },
+    "originalEventsUnchanged": true,
+    "replacementBytesUnchanged": true
+  },
+  {
+    "case": "confirm-before-back-all",
+    "actualScoredEvents": 1,
+    "locksAfterDeletion": {
+      "held": [],
+      "pending": []
+    },
+    "originalEventsUnchanged": true,
+    "replacementBytesUnchanged": true
+  },
+  {
+    "case": "confirm-before-back-unrelated",
+    "actualScoredEvents": 1,
+    "locksAfterDeletion": {
+      "held": [],
+      "pending": []
+    },
+    "originalEventsUnchanged": true,
+    "replacementBytesUnchanged": true
+  },
+  {
+    "case": "confirm-after-back-drill",
+    "actualScoredEvents": 1,
+    "locksAfterDeletion": {
+      "held": [],
+      "pending": []
+    },
+    "originalEventsUnchanged": true,
+    "replacementBytesUnchanged": true
+  },
+  {
+    "case": "confirm-after-back-all",
+    "actualScoredEvents": 1,
+    "locksAfterDeletion": {
+      "held": [],
+      "pending": []
+    },
+    "originalEventsUnchanged": true,
+    "replacementBytesUnchanged": true
+  },
+  {
+    "case": "confirm-after-back-unrelated",
+    "actualScoredEvents": 1,
+    "locksAfterDeletion": {
+      "held": [],
+      "pending": []
+    },
+    "originalEventsUnchanged": true,
+    "replacementBytesUnchanged": true
+  }
+]

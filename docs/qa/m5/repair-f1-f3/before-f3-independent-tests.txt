@@ -1,0 +1,56 @@
+
+> assessment-practice@0.0.0 test
+> vitest run src/stop/run.test.ts
+
+
+ RUN  v4.1.11 /Users/renzo/Documents/Assessment Practice/App
+
+ ❯ src/stop/run.test.ts (61 tests | 2 failed) 2555ms
+     × counts distinct initial fixation inputs for baseline, excluding warm-up 90ms
+     × counts distinct initial fixation inputs for retest, excluding warm-up 81ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/stop/run.test.ts > F3: full scored initial fixation admission > counts distinct initial fixation inputs for baseline, excluding warm-up
+AssertionError: baseline fixation 3 warmup=false: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ src/stop/run.test.ts:651:93
+    649|       const changed = { ...r, events } as typeof original
+    650|       const bytes = JSON.stringify(changed), exposure = h.exposure.sna…
+    651|       expect(verifyCompletedResult(changed), `${mode} ${reason} ${coun…
+       |                                                                                             ^
+    652|       expect(JSON.stringify(changed)).toBe(bytes)
+    653|       expect(h.exposure.snapshot()).toEqual(exposure)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/stop/run.test.ts > F3: full scored initial fixation admission > counts distinct initial fixation inputs for retest, excluding warm-up
+AssertionError: retest fixation 3 warmup=false: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ src/stop/run.test.ts:651:93
+    649|       const changed = { ...r, events } as typeof original
+    650|       const bytes = JSON.stringify(changed), exposure = h.exposure.sna…
+    651|       expect(verifyCompletedResult(changed), `${mode} ${reason} ${coun…
+       |                                                                                             ^
+    652|       expect(JSON.stringify(changed)).toBe(bytes)
+    653|       expect(h.exposure.snapshot()).toEqual(exposure)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 59 passed (61)
+   Start at  16:24:33
+   Duration  2.72s (transform 67ms, setup 38ms, import 75ms, tests 2.56s, environment 0ms)

@@ -1,0 +1,305 @@
+[
+  {
+    "version": "money_exchange_2_storage_v2_0",
+    "activity": {},
+    "installationId": "c86d2cca-9a0c-4132-a908-891042ceebcb",
+    "generation": 1,
+    "revision": 7,
+    "lease": {
+      "ownerId": "owner",
+      "epoch": 2,
+      "live": true
+    },
+    "route": {
+      "stage": "library",
+      "epoch": 7,
+      "ownerId": "owner"
+    },
+    "ticketSerial": 2,
+    "currentTicketId": null,
+    "tickets": {
+      "T1.1": {
+        "id": "T1.1",
+        "generation": 1,
+        "ownerId": "owner",
+        "leaseEpoch": 2,
+        "state": "consumed",
+        "attemptId": "A1.1"
+      },
+      "T1.2": {
+        "id": "T1.2",
+        "generation": 1,
+        "ownerId": "owner",
+        "leaseEpoch": 2,
+        "state": "canceled",
+        "attemptId": null
+      }
+    },
+    "activeAttemptId": null,
+    "formCounter": 1,
+    "exposureHistory": [
+      {
+        "attemptId": "A1.1",
+        "formId": "ME2-1",
+        "formDigest": "1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea"
+      }
+    ],
+    "attempts": {},
+    "tombstones": {
+      "A1.1": true
+    },
+    "outcomes": {
+      "test/5": {
+        "payloadHash": "{\"kind\":\"exit\",\"requestId\":\"test/5\",\"installationId\":\"c86d2cca-9a0c-4132-a908-891042ceebcb\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":5,\"ticketId\":\"T1.1\",\"destination\":\"Restart\"}",
+        "command": {
+          "kind": "exit",
+          "requestId": "test/5",
+          "installationId": "c86d2cca-9a0c-4132-a908-891042ceebcb",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 5,
+          "ticketId": "T1.1",
+          "destination": "Restart"
+        },
+        "result": {
+          "destination": "Restart",
+          "attemptId": "A1.1",
+          "successorTicketId": "T1.2"
+        },
+        "route": {
+          "stage": "ready",
+          "epoch": 6,
+          "ownerId": "owner"
+        },
+        "revision": 5
+      },
+      "test/7": {
+        "payloadHash": "{\"kind\":\"deleteAttempt\",\"requestId\":\"test/7\",\"installationId\":\"c86d2cca-9a0c-4132-a908-891042ceebcb\",\"generation\":1,\"attemptId\":\"A1.1\"}",
+        "command": {
+          "kind": "deleteAttempt",
+          "requestId": "test/7",
+          "installationId": "c86d2cca-9a0c-4132-a908-891042ceebcb",
+          "generation": 1,
+          "attemptId": "A1.1"
+        },
+        "result": {
+          "deleted": "A1.1"
+        },
+        "route": {
+          "stage": "ready",
+          "epoch": 6,
+          "ownerId": "owner"
+        },
+        "revision": 6
+      },
+      "test/6": {
+        "payloadHash": "{\"kind\":\"exit\",\"requestId\":\"test/6\",\"installationId\":\"c86d2cca-9a0c-4132-a908-891042ceebcb\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":5,\"ticketId\":\"T1.1\",\"destination\":\"Close\",\"afterRestartRequestId\":\"test/5\"}",
+        "command": {
+          "kind": "exit",
+          "requestId": "test/6",
+          "installationId": "c86d2cca-9a0c-4132-a908-891042ceebcb",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 5,
+          "ticketId": "T1.1",
+          "destination": "Close",
+          "afterRestartRequestId": "test/5"
+        },
+        "result": {
+          "destination": "Close",
+          "attemptId": null,
+          "successorTicketId": null
+        },
+        "route": {
+          "stage": "library",
+          "epoch": 7,
+          "ownerId": "owner"
+        },
+        "revision": 7
+      }
+    },
+    "navigation": {
+      "destination": "Close",
+      "requestId": "test/6"
+    },
+    "proofs": {},
+    "retired": {
+      "test/1": {
+        "requestId": "test/1",
+        "deletionId": "test/7",
+        "attemptId": null,
+        "generation": 1
+      },
+      "test/2": {
+        "requestId": "test/2",
+        "deletionId": "test/7",
+        "attemptId": null,
+        "generation": 1
+      },
+      "test/3": {
+        "requestId": "test/3",
+        "deletionId": "test/7",
+        "attemptId": null,
+        "generation": 1
+      },
+      "test/4": {
+        "requestId": "test/4",
+        "deletionId": "test/7",
+        "attemptId": "A1.1",
+        "generation": 1
+      }
+    },
+    "resetReceipt": null,
+    "checkpoint": {
+      "version": "storage_v2_0",
+      "revision": 6,
+      "state": {
+        "version": "money_exchange_2_storage_v2_0",
+        "activity": {},
+        "installationId": "c86d2cca-9a0c-4132-a908-891042ceebcb",
+        "generation": 1,
+        "revision": 6,
+        "lease": {
+          "ownerId": "owner",
+          "epoch": 2,
+          "live": true
+        },
+        "route": {
+          "stage": "ready",
+          "epoch": 6,
+          "ownerId": "owner"
+        },
+        "ticketSerial": 2,
+        "currentTicketId": "T1.2",
+        "tickets": {
+          "T1.1": {
+            "id": "T1.1",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "state": "consumed",
+            "attemptId": "A1.1"
+          },
+          "T1.2": {
+            "id": "T1.2",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "state": "open",
+            "attemptId": null
+          }
+        },
+        "activeAttemptId": null,
+        "formCounter": 1,
+        "exposureHistory": [
+          {
+            "attemptId": "A1.1",
+            "formId": "ME2-1",
+            "formDigest": "1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea"
+          }
+        ],
+        "attempts": {},
+        "tombstones": {
+          "A1.1": true
+        },
+        "outcomes": {
+          "test/5": {
+            "payloadHash": "{\"kind\":\"exit\",\"requestId\":\"test/5\",\"installationId\":\"c86d2cca-9a0c-4132-a908-891042ceebcb\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":5,\"ticketId\":\"T1.1\",\"destination\":\"Restart\"}",
+            "command": {
+              "kind": "exit",
+              "requestId": "test/5",
+              "installationId": "c86d2cca-9a0c-4132-a908-891042ceebcb",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 5,
+              "ticketId": "T1.1",
+              "destination": "Restart"
+            },
+            "result": {
+              "destination": "Restart",
+              "attemptId": "A1.1",
+              "successorTicketId": "T1.2"
+            },
+            "route": {
+              "stage": "ready",
+              "epoch": 6,
+              "ownerId": "owner"
+            },
+            "revision": 5
+          },
+          "test/7": {
+            "payloadHash": "{\"kind\":\"deleteAttempt\",\"requestId\":\"test/7\",\"installationId\":\"c86d2cca-9a0c-4132-a908-891042ceebcb\",\"generation\":1,\"attemptId\":\"A1.1\"}",
+            "command": {
+              "kind": "deleteAttempt",
+              "requestId": "test/7",
+              "installationId": "c86d2cca-9a0c-4132-a908-891042ceebcb",
+              "generation": 1,
+              "attemptId": "A1.1"
+            },
+            "result": {
+              "deleted": "A1.1"
+            },
+            "route": {
+              "stage": "ready",
+              "epoch": 6,
+              "ownerId": "owner"
+            },
+            "revision": 6
+          }
+        },
+        "navigation": {
+          "destination": "Restart",
+          "requestId": "test/5"
+        },
+        "proofs": {},
+        "retired": {
+          "test/1": {
+            "requestId": "test/1",
+            "deletionId": "test/7",
+            "attemptId": null,
+            "generation": 1
+          },
+          "test/2": {
+            "requestId": "test/2",
+            "deletionId": "test/7",
+            "attemptId": null,
+            "generation": 1
+          },
+          "test/3": {
+            "requestId": "test/3",
+            "deletionId": "test/7",
+            "attemptId": null,
+            "generation": 1
+          },
+          "test/4": {
+            "requestId": "test/4",
+            "deletionId": "test/7",
+            "attemptId": "A1.1",
+            "generation": 1
+          }
+        },
+        "resetReceipt": null
+      }
+    },
+    "tail": [
+      {
+        "kind": "exit",
+        "requestId": "test/6",
+        "installationId": "c86d2cca-9a0c-4132-a908-891042ceebcb",
+        "generation": 1,
+        "ownerId": "owner",
+        "leaseEpoch": 2,
+        "routeEpoch": 5,
+        "ticketId": "T1.1",
+        "at": 6,
+        "stage": "award_1",
+        "expectedRevision": 1,
+        "destination": "Close",
+        "afterRestartRequestId": "test/5"
+      }
+    ]
+  }
+]

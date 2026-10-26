@@ -1,0 +1,58 @@
+{
+  "browser": "145.0.7632.6",
+  "cases": [
+    {
+      "container": "Map",
+      "admissionRejected": true,
+      "rejected": [
+        true,
+        true
+      ],
+      "count": 0,
+      "revision": 0,
+      "attemptsKind": "[object Map]",
+      "tombstonesKind": "[object Object]",
+      "tombstoneRetained": null
+    },
+    {
+      "container": "Set",
+      "admissionRejected": true,
+      "rejected": [
+        true,
+        true
+      ],
+      "count": 0,
+      "revision": 0,
+      "attemptsKind": "[object Set]",
+      "tombstonesKind": "[object Object]",
+      "tombstoneRetained": null
+    },
+    {
+      "container": "Date",
+      "admissionRejected": true,
+      "rejected": [
+        true,
+        true
+      ],
+      "count": 0,
+      "revision": 0,
+      "attemptsKind": "[object Date]",
+      "tombstonesKind": "[object Object]",
+      "tombstoneRetained": null
+    },
+    {
+      "container": "tombstone-map",
+      "admissionRejected": true,
+      "rejected": [
+        true,
+        true
+      ],
+      "count": 0,
+      "revision": 0,
+      "attemptsKind": "[object Object]",
+      "tombstonesKind": "[object Map]",
+      "tombstoneRetained": true
+    }
+  ],
+  "passed": true
+}

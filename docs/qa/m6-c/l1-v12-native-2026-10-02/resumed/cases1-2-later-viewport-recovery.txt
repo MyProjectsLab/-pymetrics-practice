@@ -1,0 +1,70 @@
+Window: "Assessment Practice", App: Google Chrome.
+0 standard window Assessment Practice - Google Chrome, URL: 127.0.0.1:5592/, Secondary Actions: Raise
+	1 container Assessment Practice - Google Chrome, URL: 127.0.0.1:5592/
+		2 container
+			3 toolbar
+				4 button Back
+				5 button Reload
+				6 container
+					7 pop up button View site information
+					8 text field (settable) Address and search bar, Value: 127.0.0.1:5592, Placeholder: Ask Google or type a URL
+					9 button Bookmark this tab
+				10 pop up button Extensions
+				11 button renzo
+				12 pop up button Hidden toolbar buttons
+				13 pop up button Chrome
+			14 toolbar Bookmarks
+				15 toolbar Saved Tab Groups
+					16 saved tab group button  🧪 Stop M6-C group - Closed
+					17 saved tab group button  🧪 Stop M3 QA group - Closed
+					18 button Tab groups
+				19 splitter Separator
+				20 bookmark button La Repubblica.it - News in tempo reale - Le notizie e i video di politica, cronaca, economia, sport
+				21 pop up button Menu containing hidden bookmarks
+			22 container
+				23 scroll area
+					24 HTML content Assessment Practice, URL: 127.0.0.1:5592/
+						25 container
+							26 link Skip to content, Value: 127.0.0.1:5592/#main-content
+							27 button Assessment Practice — game library
+							28 text Private preview
+							29 container
+								30 text Stop · Private preview
+								31 heading This run cannot continue as a valid session, Value: 1
+									32 text This run cannot continue as a valid session
+								33 text The timed task did not run in the supported physical-keyboard setup.  Your completed events are preserved locally for review. Restarting will use another available form. Not eligible for comparison Results and sequence-use records are saved in this browser. Clearing site data or browser eviction can remove them. These records cannot establish which sequences you started before that happened or in other browsers.
+								34 button Restart with a new form
+								35 button Return to the guide
+								36 button Review this attempt
+							37 text Original preparation exercises. Follow the instructions in your invitation.
+			38 container Infobar Container
+				39 container Infobar
+					40 container
+						41 text Google Chrome isn't your default browser
+						42 button Set as default
+					43 button Close
+			44 pop up button Tab search
+			45 container
+				46 tab group
+					47 tab (selected, settable, boolean) Assessment Practice - Memory usage - 104 MB, Value: on
+						48 button Close
+					49 tab (settable, boolean) Stop L1 local evidence export - Memory usage - 62.9 MB, Value: off
+						50 button Close
+			51 button New Tab
+			52 button Open Gemini in Chrome
+	53 close button
+	54 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	55 minimize button
+56 menu bar
+	57 Chrome
+	58 File
+	59 Edit
+	60 View
+	61 History
+	62 Bookmarks
+	63 Profiles
+	64 Tab
+	65 Window
+	66 Help
+
+The focused UI element is 31 heading This run cannot continue as a valid session, Value: 1

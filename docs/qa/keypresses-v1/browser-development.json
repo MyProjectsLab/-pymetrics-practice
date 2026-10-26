@@ -1,0 +1,138 @@
+{
+  "browser": "145.0.7632.6",
+  "preview": "http://127.0.0.1:4177/",
+  "results": [
+    {
+      "name": "40 Space presses, saved report, reload, deletion",
+      "status": "PASS",
+      "detail": {
+        "accepted": 40,
+        "savedAndReopened": true,
+        "liveAndHistoryViews": 2,
+        "journalEvents": 87,
+        "delayedHistoryReadMs": 600,
+        "viewAfterVisibleMs": 22,
+        "individuallyDeleted": true
+      }
+    },
+    {
+      "name": "modified key, two presses and deadline",
+      "status": "PASS",
+      "detail": {
+        "accepted": 2,
+        "targetReached": false,
+        "modifiedKeyLabeled": true,
+        "historyLabeled": true
+      }
+    },
+    {
+      "name": "early timer delivery still waits for actual deadline and late close",
+      "status": "PASS",
+      "detail": {
+        "accepted": 2,
+        "valid": true,
+        "injection": "relative timers delivered up to 2 ms early; monotonic clock unchanged"
+      }
+    },
+    {
+      "name": "input capture keeps Tab navigation and Escape cancellation",
+      "status": "PASS",
+      "detail": {
+        "tabNavigates": true,
+        "escapeCancels": true,
+        "focusReturns": true
+      }
+    },
+    {
+      "name": "held selected key blocks scored start until release",
+      "status": "PASS",
+      "detail": {
+        "heldBlocked": true,
+        "releaseAllowed": true
+      }
+    },
+    {
+      "name": "injected blur invalidates and saves review-only attempt",
+      "status": "PASS",
+      "detail": {
+        "invalid": true,
+        "retained": true,
+        "injection": "untrusted blur"
+      }
+    },
+    {
+      "name": "cross-tab browser owner lock blocks second run",
+      "status": "PASS",
+      "detail": {
+        "competingStartBlocked": true
+      }
+    },
+    {
+      "name": "cancel preparation before delayed owner acquisition releases lock",
+      "status": "PASS",
+      "detail": {
+        "canceledBeforeAcquisition": true,
+        "subsequentLockAvailable": true
+      }
+    },
+    {
+      "name": "cross-tab Delete all withdraws open report",
+      "status": "PASS",
+      "detail": {
+        "deletedReportWithdrawn": true
+      }
+    },
+    {
+      "name": "withheld GO frame invalidates without confirmed onset",
+      "status": "PASS",
+      "detail": {
+        "invalid": true,
+        "injection": "withheld GO animation-frame confirmation"
+      }
+    },
+    {
+      "name": "delayed END frame invalidates after actual 40th press",
+      "status": "PASS",
+      "detail": {
+        "invalid": true,
+        "targetReached": true,
+        "injection": "350 ms END confirmation delay"
+      }
+    },
+    {
+      "name": "early END watchdog does not preempt timely frame",
+      "status": "PASS",
+      "detail": {
+        "valid": true,
+        "injection": "watchdog timer 20 ms early; END frame delayed 180 ms with native timer"
+      }
+    },
+    {
+      "name": "withheld END frame times out and releases ownership",
+      "status": "PASS",
+      "detail": {
+        "invalid": true,
+        "factualTargetRetained": true,
+        "lockReleased": true,
+        "injection": "withheld END animation-frame callback"
+      }
+    },
+    {
+      "name": "lost completion callback reconciles committed result",
+      "status": "PASS",
+      "detail": {
+        "recoveredSavedClaim": true,
+        "injection": "withheld IndexedDB transaction completion callback"
+      }
+    },
+    {
+      "name": "failed completion write remains reviewable and one retry saves",
+      "status": "PASS",
+      "detail": {
+        "truthfulUnsaved": true,
+        "retrySaved": true,
+        "injection": "IndexedDB readwrite rejection"
+      }
+    }
+  ]
+}

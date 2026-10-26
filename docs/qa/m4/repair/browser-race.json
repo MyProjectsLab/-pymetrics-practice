@@ -1,0 +1,40 @@
+{
+  "browser": "145.0.7632.6",
+  "viewport": "1200x800",
+  "errors": [],
+  "injection": "Wall-clock expiry crosses after the successful production canvas guard and before confirmed paint.",
+  "run": {
+    "guards": [
+      {
+        "wall": 1799999,
+        "ok": true
+      }
+    ],
+    "wall": 1800001,
+    "screen": "invalid",
+    "state": "invalid",
+    "invalidRule": "stop_validity_v1.integrity",
+    "formId": "stop-retest-01",
+    "draftFormId": "stop-retest-01",
+    "realized": [
+      "GO"
+    ],
+    "result": null,
+    "exposure": [
+      {
+        "formId": "stop-retest-01",
+        "sessionId": "d78f406b-dbb4-4995-a2bd-6b769e034552",
+        "exposedAtMs": 19739.299999952316
+      }
+    ],
+    "presented": {
+      "sequenceNumber": 65,
+      "timestampMs": 19739.299999952316,
+      "stimulus": "GO",
+      "confirmedOnsetMs": 19739.299999952316
+    },
+    "invalidations": 1,
+    "completions": 0
+  },
+  "pass": true
+}

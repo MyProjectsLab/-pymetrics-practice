@@ -1,0 +1,288 @@
+[
+  {
+    "name": "D3-V21-native-false-A1.1-A1.2",
+    "pass": true,
+    "detail": {
+      "mode": "native",
+      "completed": false,
+      "order": [
+        "A1.1",
+        "A1.2"
+      ],
+      "survivorExact": true,
+      "proofExact": true,
+      "retiredExactConflict": true,
+      "laterDeletion": true,
+      "reload": true
+    }
+  },
+  {
+    "name": "D3-V21-native-false-A1.2-A1.1",
+    "pass": true,
+    "detail": {
+      "mode": "native",
+      "completed": false,
+      "order": [
+        "A1.2",
+        "A1.1"
+      ],
+      "survivorExact": true,
+      "proofExact": true,
+      "retiredExactConflict": true,
+      "laterDeletion": true,
+      "reload": true
+    }
+  },
+  {
+    "name": "D3-V21-native-true-A1.1-A1.2",
+    "pass": true,
+    "detail": {
+      "mode": "native",
+      "completed": true,
+      "order": [
+        "A1.1",
+        "A1.2"
+      ],
+      "survivorExact": true,
+      "proofExact": true,
+      "retiredExactConflict": true,
+      "laterDeletion": true,
+      "reload": true
+    }
+  },
+  {
+    "name": "D3-V21-native-true-A1.2-A1.1",
+    "pass": true,
+    "detail": {
+      "mode": "native",
+      "completed": true,
+      "order": [
+        "A1.2",
+        "A1.1"
+      ],
+      "survivorExact": true,
+      "proofExact": true,
+      "retiredExactConflict": true,
+      "laterDeletion": true,
+      "reload": true
+    }
+  },
+  {
+    "name": "D3-V21-migration-false-A1.1-A1.2",
+    "pass": true,
+    "detail": {
+      "mode": "migration",
+      "completed": false,
+      "order": [
+        "A1.1",
+        "A1.2"
+      ],
+      "survivorExact": true,
+      "proofExact": false,
+      "retiredExactConflict": true,
+      "laterDeletion": true,
+      "reload": true
+    }
+  },
+  {
+    "name": "D3-V21-migration-false-A1.2-A1.1",
+    "pass": true,
+    "detail": {
+      "mode": "migration",
+      "completed": false,
+      "order": [
+        "A1.2",
+        "A1.1"
+      ],
+      "survivorExact": true,
+      "proofExact": false,
+      "retiredExactConflict": true,
+      "laterDeletion": true,
+      "reload": true
+    }
+  },
+  {
+    "name": "D3-V21-migration-true-A1.1-A1.2",
+    "pass": true,
+    "detail": {
+      "mode": "migration",
+      "completed": true,
+      "order": [
+        "A1.1",
+        "A1.2"
+      ],
+      "survivorExact": true,
+      "proofExact": false,
+      "retiredExactConflict": true,
+      "laterDeletion": true,
+      "reload": true
+    }
+  },
+  {
+    "name": "D3-V21-migration-true-A1.2-A1.1",
+    "pass": true,
+    "detail": {
+      "mode": "migration",
+      "completed": true,
+      "order": [
+        "A1.2",
+        "A1.1"
+      ],
+      "survivorExact": true,
+      "proofExact": false,
+      "retiredExactConflict": true,
+      "laterDeletion": true,
+      "reload": true
+    }
+  },
+  {
+    "name": "D6-V21-failed-survivor-delete-atomic",
+    "pass": true,
+    "detail": {
+      "failed": true,
+      "atomic": true
+    }
+  },
+  {
+    "name": "D4-V21-held-obsolete-close-exact-conflict",
+    "pass": true,
+    "detail": {
+      "held": true,
+      "unknown": true,
+      "retiredExactConflict": true,
+      "nonmutating": true
+    }
+  },
+  {
+    "name": "V21-chained-origin-deleted-native",
+    "pass": true,
+    "detail": {
+      "mode": "native",
+      "chainedBinding": true,
+      "erasedOrigin": true,
+      "laterDeletion": true
+    }
+  },
+  {
+    "name": "V21-chained-origin-deleted-migration",
+    "pass": true,
+    "detail": {
+      "mode": "migration",
+      "chainedBinding": true,
+      "erasedOrigin": true,
+      "laterDeletion": true
+    }
+  },
+  {
+    "name": "D12-V21-lineage-owner",
+    "pass": true,
+    "detail": {
+      "rejected": true,
+      "unchanged": true
+    }
+  },
+  {
+    "name": "D12-V21-lineage-ticket",
+    "pass": true,
+    "detail": {
+      "rejected": true,
+      "unchanged": true
+    }
+  },
+  {
+    "name": "D12-V21-lineage-target",
+    "pass": true,
+    "detail": {
+      "rejected": true,
+      "unchanged": true
+    }
+  },
+  {
+    "name": "D12-V21-lineage-payload",
+    "pass": true,
+    "detail": {
+      "rejected": true,
+      "unchanged": true
+    }
+  },
+  {
+    "name": "D12-V21-lineage-request",
+    "pass": true,
+    "detail": {
+      "rejected": true,
+      "unchanged": true
+    }
+  },
+  {
+    "name": "D12-V21-lineage-unrecorded",
+    "pass": true,
+    "detail": {
+      "rejected": true,
+      "unchanged": true
+    }
+  },
+  {
+    "name": "D12-V21-missing-survivor",
+    "pass": true,
+    "detail": {
+      "rejected": true,
+      "unchanged": true
+    }
+  },
+  {
+    "name": "D12-V21-tombstoned-survivor",
+    "pass": true,
+    "detail": {
+      "rejected": true,
+      "unchanged": true
+    }
+  },
+  {
+    "name": "D12-V21-scored-navigation",
+    "pass": true,
+    "detail": {
+      "rejected": true,
+      "unchanged": true
+    }
+  },
+  {
+    "name": "D12-V21-duplicate-owner",
+    "pass": true,
+    "detail": {
+      "rejected": true,
+      "unchanged": true
+    }
+  },
+  {
+    "name": "D12-V21-forged-ticket",
+    "pass": true,
+    "detail": {
+      "rejected": true,
+      "unchanged": true
+    }
+  },
+  {
+    "name": "D12-V21-forged-retirement",
+    "pass": true,
+    "detail": {
+      "rejected": true,
+      "unchanged": true
+    }
+  },
+  {
+    "name": "D12-V21-deleted-payload",
+    "pass": true,
+    "detail": {
+      "rejected": true,
+      "unchanged": true
+    }
+  },
+  {
+    "name": "D12-V21-mixed-request",
+    "pass": true,
+    "detail": {
+      "rejected": true,
+      "unchanged": true
+    }
+  }
+]

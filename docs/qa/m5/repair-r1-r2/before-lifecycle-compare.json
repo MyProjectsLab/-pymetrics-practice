@@ -1,0 +1,19 @@
+{
+  "current": [
+    {
+      "type": "visibility_changed",
+      "valid": 1,
+      "chain": true
+    },
+    {
+      "type": "page_lifecycle_changed",
+      "valid": 1,
+      "chain": true
+    },
+    {
+      "type": "setting_changed",
+      "valid": 1,
+      "chain": true
+    }
+  ]
+}

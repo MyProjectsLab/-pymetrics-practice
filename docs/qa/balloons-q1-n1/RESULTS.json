@@ -1,0 +1,941 @@
+{
+  "base": "b71783abdcae163424e2e057150eb949a33586f2",
+  "q1": {
+    "browser": "154.0.8037.95",
+    "results": [
+      {
+        "name": "focus-remaining-Space",
+        "status": "PASS",
+        "focus": {
+          "tag": "H1",
+          "text": "Balloons history"
+        },
+        "focusVisible": {
+          "active": true,
+          "visible": true,
+          "outline": "solid",
+          "width": "3px"
+        },
+        "statusTexts": [
+          "Result deleted. Its sequence exposure and chain tombstone are retained."
+        ],
+        "rootUnchanged": null
+      },
+      {
+        "name": "focus-remaining-Enter",
+        "status": "PASS",
+        "focus": {
+          "tag": "H1",
+          "text": "Balloons history"
+        },
+        "focusVisible": {
+          "active": true,
+          "visible": true,
+          "outline": "solid",
+          "width": "3px"
+        },
+        "statusTexts": [
+          "Result deleted. Its sequence exposure and chain tombstone are retained."
+        ],
+        "rootUnchanged": null
+      },
+      {
+        "name": "focus-empty-Space",
+        "status": "PASS",
+        "focus": {
+          "tag": "H1",
+          "text": "Balloons history"
+        },
+        "focusVisible": {
+          "active": true,
+          "visible": true,
+          "outline": "solid",
+          "width": "3px"
+        },
+        "statusTexts": [
+          "Result deleted. Its sequence exposure and chain tombstone are retained."
+        ],
+        "rootUnchanged": null
+      },
+      {
+        "name": "focus-empty-Enter",
+        "status": "PASS",
+        "focus": {
+          "tag": "H1",
+          "text": "Balloons history"
+        },
+        "focusVisible": {
+          "active": true,
+          "visible": true,
+          "outline": "solid",
+          "width": "3px"
+        },
+        "statusTexts": [
+          "Result deleted. Its sequence exposure and chain tombstone are retained."
+        ],
+        "rootUnchanged": null
+      },
+      {
+        "name": "focus-all-Space",
+        "status": "PASS",
+        "focus": {
+          "tag": "H1",
+          "text": "Balloons history"
+        },
+        "focusVisible": {
+          "active": true,
+          "visible": true,
+          "outline": "solid",
+          "width": "3px"
+        },
+        "statusTexts": [
+          "All Balloons data deleted. Local sequence exposure has been cleared; earlier use can no longer be known."
+        ],
+        "rootUnchanged": null
+      },
+      {
+        "name": "focus-all-Enter",
+        "status": "PASS",
+        "focus": {
+          "tag": "H1",
+          "text": "Balloons history"
+        },
+        "focusVisible": {
+          "active": true,
+          "visible": true,
+          "outline": "solid",
+          "width": "3px"
+        },
+        "statusTexts": [
+          "All Balloons data deleted. Local sequence exposure has been cleared; earlier use can no longer be known."
+        ],
+        "rootUnchanged": null
+      },
+      {
+        "name": "focus-failed-individual-Space",
+        "status": "PASS",
+        "focus": {
+          "tag": "H1",
+          "text": "Balloons history"
+        },
+        "focusVisible": {
+          "active": true,
+          "visible": true,
+          "outline": "solid",
+          "width": "3px"
+        },
+        "statusTexts": [
+          "Deletion could not be confirmed. Check the saved history before trying again."
+        ],
+        "rootUnchanged": true
+      },
+      {
+        "name": "focus-failed-individual-Enter",
+        "status": "PASS",
+        "focus": {
+          "tag": "H1",
+          "text": "Balloons history"
+        },
+        "focusVisible": {
+          "active": true,
+          "visible": true,
+          "outline": "solid",
+          "width": "3px"
+        },
+        "statusTexts": [
+          "Deletion could not be confirmed. Check the saved history before trying again."
+        ],
+        "rootUnchanged": true
+      },
+      {
+        "name": "focus-failed-all-Space",
+        "status": "PASS",
+        "focus": {
+          "tag": "H1",
+          "text": "Balloons history"
+        },
+        "focusVisible": {
+          "active": true,
+          "visible": true,
+          "outline": "solid",
+          "width": "3px"
+        },
+        "statusTexts": [
+          "Deletion could not be confirmed. Check the saved history before trying again."
+        ],
+        "rootUnchanged": true
+      },
+      {
+        "name": "focus-failed-all-Enter",
+        "status": "PASS",
+        "focus": {
+          "tag": "H1",
+          "text": "Balloons history"
+        },
+        "focusVisible": {
+          "active": true,
+          "visible": true,
+          "outline": "solid",
+          "width": "3px"
+        },
+        "statusTexts": [
+          "Deletion could not be confirmed. Check the saved history before trying again."
+        ],
+        "rootUnchanged": true
+      }
+    ]
+  },
+  "n1": [
+    {
+      "name": "notification-delayed-assignment-individual-delete-first",
+      "pass": true,
+      "pendingNotices": 2,
+      "replacementVisible": true,
+      "oldResponseDeliveryUnchanged": true,
+      "replacementRootSHA256": "83da1e308d7093fe543f7ed4dbc1846a96cf167fb2d7904a7d2e7ef2d0ec86fe",
+      "afterOldCallbacksSHA256": "83da1e308d7093fe543f7ed4dbc1846a96cf167fb2d7904a7d2e7ef2d0ec86fe",
+      "afterStaleNoticesSHA256": "83da1e308d7093fe543f7ed4dbc1846a96cf167fb2d7904a7d2e7ef2d0ec86fe"
+    },
+    {
+      "name": "notification-delayed-assignment-individual-delivery-first",
+      "pass": true,
+      "pendingNotices": 2,
+      "replacementVisible": true,
+      "oldResponseDeliveryUnchanged": true,
+      "replacementRootSHA256": "72d4e42bee4d92cbfd28596baf2d257a53bd7b2eb1911c316751c563b85312ee",
+      "afterOldCallbacksSHA256": "72d4e42bee4d92cbfd28596baf2d257a53bd7b2eb1911c316751c563b85312ee",
+      "afterStaleNoticesSHA256": "72d4e42bee4d92cbfd28596baf2d257a53bd7b2eb1911c316751c563b85312ee"
+    },
+    {
+      "name": "notification-delayed-assignment-installation-delete-first",
+      "pass": true,
+      "pendingNotices": 2,
+      "replacementVisible": true,
+      "oldResponseDeliveryUnchanged": true,
+      "replacementRootSHA256": "3f3896bb05578db250a7e67aa133328acb8085b04fed55fb91f45903d17313d9",
+      "afterOldCallbacksSHA256": "3f3896bb05578db250a7e67aa133328acb8085b04fed55fb91f45903d17313d9",
+      "afterStaleNoticesSHA256": "3f3896bb05578db250a7e67aa133328acb8085b04fed55fb91f45903d17313d9"
+    },
+    {
+      "name": "notification-delayed-assignment-installation-delivery-first",
+      "pass": true,
+      "pendingNotices": 2,
+      "replacementVisible": true,
+      "oldResponseDeliveryUnchanged": true,
+      "replacementRootSHA256": "ab782c9c72d84fa1cfb554fb9070120c6c9cfa90f456d09f64ec868d43f30853",
+      "afterOldCallbacksSHA256": "ab782c9c72d84fa1cfb554fb9070120c6c9cfa90f456d09f64ec868d43f30853",
+      "afterStaleNoticesSHA256": "ab782c9c72d84fa1cfb554fb9070120c6c9cfa90f456d09f64ec868d43f30853"
+    },
+    {
+      "name": "notification-delayed-arm-individual-delete-first",
+      "pass": true,
+      "pendingNotices": 2,
+      "replacementVisible": true,
+      "oldResponseDeliveryUnchanged": true,
+      "replacementRootSHA256": "0170571a786d4cc0e0170d6f8ead333b75eb304be9a8c4e7923ac08a849b6da7",
+      "afterOldCallbacksSHA256": "0170571a786d4cc0e0170d6f8ead333b75eb304be9a8c4e7923ac08a849b6da7",
+      "afterStaleNoticesSHA256": "0170571a786d4cc0e0170d6f8ead333b75eb304be9a8c4e7923ac08a849b6da7"
+    },
+    {
+      "name": "notification-delayed-arm-individual-delivery-first",
+      "pass": true,
+      "pendingNotices": 2,
+      "replacementVisible": true,
+      "oldResponseDeliveryUnchanged": true,
+      "replacementRootSHA256": "91ce0134bc6eea0903966e5ac7a747d97f86e6abf21b22a8b69f61e0d97c65f8",
+      "afterOldCallbacksSHA256": "91ce0134bc6eea0903966e5ac7a747d97f86e6abf21b22a8b69f61e0d97c65f8",
+      "afterStaleNoticesSHA256": "91ce0134bc6eea0903966e5ac7a747d97f86e6abf21b22a8b69f61e0d97c65f8"
+    },
+    {
+      "name": "notification-delayed-arm-installation-delete-first",
+      "pass": true,
+      "pendingNotices": 2,
+      "replacementVisible": true,
+      "oldResponseDeliveryUnchanged": true,
+      "replacementRootSHA256": "162e6e603015a2a3fd3438219707f89dcc8e53a69f303b1bb33bbdefdd0841ef",
+      "afterOldCallbacksSHA256": "162e6e603015a2a3fd3438219707f89dcc8e53a69f303b1bb33bbdefdd0841ef",
+      "afterStaleNoticesSHA256": "162e6e603015a2a3fd3438219707f89dcc8e53a69f303b1bb33bbdefdd0841ef"
+    },
+    {
+      "name": "notification-delayed-arm-installation-delivery-first",
+      "pass": true,
+      "pendingNotices": 2,
+      "replacementVisible": true,
+      "oldResponseDeliveryUnchanged": true,
+      "replacementRootSHA256": "edf08dcdd51be578a9c18cb31566384af96e0731142d1e7e4570569a9c5b313c",
+      "afterOldCallbacksSHA256": "edf08dcdd51be578a9c18cb31566384af96e0731142d1e7e4570569a9c5b313c",
+      "afterStaleNoticesSHA256": "edf08dcdd51be578a9c18cb31566384af96e0731142d1e7e4570569a9c5b313c"
+    },
+    {
+      "name": "notification-delayed-confirm-individual-delete-first",
+      "pass": true,
+      "pendingNotices": 2,
+      "replacementVisible": true,
+      "oldResponseDeliveryUnchanged": true,
+      "replacementRootSHA256": "b6c9128b0be6298935f893303fb127f1d8fe0c01b71c75deef46232699c37f58",
+      "afterOldCallbacksSHA256": "b6c9128b0be6298935f893303fb127f1d8fe0c01b71c75deef46232699c37f58",
+      "afterStaleNoticesSHA256": "b6c9128b0be6298935f893303fb127f1d8fe0c01b71c75deef46232699c37f58"
+    },
+    {
+      "name": "notification-delayed-confirm-individual-delivery-first",
+      "pass": true,
+      "pendingNotices": 2,
+      "replacementVisible": true,
+      "oldResponseDeliveryUnchanged": true,
+      "replacementRootSHA256": "b3c02a662171e0b615dafabb203d246005d5f8ddc14509fb5f4129ca5df13d38",
+      "afterOldCallbacksSHA256": "b3c02a662171e0b615dafabb203d246005d5f8ddc14509fb5f4129ca5df13d38",
+      "afterStaleNoticesSHA256": "b3c02a662171e0b615dafabb203d246005d5f8ddc14509fb5f4129ca5df13d38"
+    },
+    {
+      "name": "notification-delayed-confirm-installation-delete-first",
+      "pass": true,
+      "pendingNotices": 2,
+      "replacementVisible": true,
+      "oldResponseDeliveryUnchanged": true,
+      "replacementRootSHA256": "befa2534ac62023dc998508d67f02259eb050fea6627a9a26acd59624dd3312a",
+      "afterOldCallbacksSHA256": "befa2534ac62023dc998508d67f02259eb050fea6627a9a26acd59624dd3312a",
+      "afterStaleNoticesSHA256": "befa2534ac62023dc998508d67f02259eb050fea6627a9a26acd59624dd3312a"
+    },
+    {
+      "name": "notification-delayed-confirm-installation-delivery-first",
+      "pass": true,
+      "pendingNotices": 2,
+      "replacementVisible": true,
+      "oldResponseDeliveryUnchanged": true,
+      "replacementRootSHA256": "9c53a360c6cdc36b87404e1cd3511ac5cd0f2f22ea77c5a6ec1082eddc78d15e",
+      "afterOldCallbacksSHA256": "9c53a360c6cdc36b87404e1cd3511ac5cd0f2f22ea77c5a6ec1082eddc78d15e",
+      "afterStaleNoticesSHA256": "9c53a360c6cdc36b87404e1cd3511ac5cd0f2f22ea77c5a6ec1082eddc78d15e"
+    },
+    {
+      "name": "notification-delayed-action-individual-delete-first",
+      "pass": true,
+      "pendingNotices": 2,
+      "replacementVisible": true,
+      "oldResponseDeliveryUnchanged": true,
+      "replacementRootSHA256": "e59be7dce57c22749b6f775995c6c615fd553ce0d09509c8bb6d60322bc2504f",
+      "afterOldCallbacksSHA256": "e59be7dce57c22749b6f775995c6c615fd553ce0d09509c8bb6d60322bc2504f",
+      "afterStaleNoticesSHA256": "e59be7dce57c22749b6f775995c6c615fd553ce0d09509c8bb6d60322bc2504f"
+    },
+    {
+      "name": "notification-delayed-action-individual-delivery-first",
+      "pass": true,
+      "pendingNotices": 2,
+      "replacementVisible": true,
+      "oldResponseDeliveryUnchanged": true,
+      "replacementRootSHA256": "afb39c4bf73e41bc49649f26635f8c85251d71c7c1b3b2a3ec00f24893961748",
+      "afterOldCallbacksSHA256": "afb39c4bf73e41bc49649f26635f8c85251d71c7c1b3b2a3ec00f24893961748",
+      "afterStaleNoticesSHA256": "afb39c4bf73e41bc49649f26635f8c85251d71c7c1b3b2a3ec00f24893961748"
+    },
+    {
+      "name": "notification-delayed-action-installation-delete-first",
+      "pass": true,
+      "pendingNotices": 2,
+      "replacementVisible": true,
+      "oldResponseDeliveryUnchanged": true,
+      "replacementRootSHA256": "13822debb16c7be32b45714f39f427e454f5d727000abbe48371a165e354f5b1",
+      "afterOldCallbacksSHA256": "13822debb16c7be32b45714f39f427e454f5d727000abbe48371a165e354f5b1",
+      "afterStaleNoticesSHA256": "13822debb16c7be32b45714f39f427e454f5d727000abbe48371a165e354f5b1"
+    },
+    {
+      "name": "notification-delayed-action-installation-delivery-first",
+      "pass": true,
+      "pendingNotices": 2,
+      "replacementVisible": true,
+      "oldResponseDeliveryUnchanged": true,
+      "replacementRootSHA256": "34fe19ef215365ef71b831cbb3f578b55007ba9e79ef4808a140c2ee21c83e0a",
+      "afterOldCallbacksSHA256": "34fe19ef215365ef71b831cbb3f578b55007ba9e79ef4808a140c2ee21c83e0a",
+      "afterStaleNoticesSHA256": "34fe19ef215365ef71b831cbb3f578b55007ba9e79ef4808a140c2ee21c83e0a"
+    }
+  ],
+  "controls": [
+    {
+      "name": "notification-native-assignment-individual-delete-first",
+      "pass": true,
+      "pendingNotices": 0,
+      "replacementVisible": true,
+      "oldResponseDeliveryUnchanged": true,
+      "replacementRootSHA256": "f5c8a27cd0d66433f9c7f2e12a1edc68506760e72af66263ae447bef2fa4ad8a",
+      "afterOldCallbacksSHA256": "f5c8a27cd0d66433f9c7f2e12a1edc68506760e72af66263ae447bef2fa4ad8a",
+      "afterStaleNoticesSHA256": "f5c8a27cd0d66433f9c7f2e12a1edc68506760e72af66263ae447bef2fa4ad8a"
+    },
+    {
+      "name": "notification-native-assignment-installation-delete-first",
+      "pass": true,
+      "pendingNotices": 0,
+      "replacementVisible": true,
+      "oldResponseDeliveryUnchanged": true,
+      "replacementRootSHA256": "fead2c8245651f24f636f30ad80bc8effcff0086a54a7bf53b8d44cdbb55362d",
+      "afterOldCallbacksSHA256": "fead2c8245651f24f636f30ad80bc8effcff0086a54a7bf53b8d44cdbb55362d",
+      "afterStaleNoticesSHA256": "fead2c8245651f24f636f30ad80bc8effcff0086a54a7bf53b8d44cdbb55362d"
+    },
+    {
+      "name": "notification-native-action-individual-delete-first",
+      "pass": true,
+      "pendingNotices": 0,
+      "replacementVisible": true,
+      "oldResponseDeliveryUnchanged": true,
+      "replacementRootSHA256": "afb554f09198a06fb052a8618f8d970e9579d0188d8a59e47926d68bebfa8649",
+      "afterOldCallbacksSHA256": "afb554f09198a06fb052a8618f8d970e9579d0188d8a59e47926d68bebfa8649",
+      "afterStaleNoticesSHA256": "afb554f09198a06fb052a8618f8d970e9579d0188d8a59e47926d68bebfa8649"
+    },
+    {
+      "name": "notification-native-action-installation-delete-first",
+      "pass": true,
+      "pendingNotices": 0,
+      "replacementVisible": true,
+      "oldResponseDeliveryUnchanged": true,
+      "replacementRootSHA256": "b45edae2b427261141d7c155e320bc00f283a21e47d7c9059d4f4e0d712dda5a",
+      "afterOldCallbacksSHA256": "b45edae2b427261141d7c155e320bc00f283a21e47d7c9059d4f4e0d712dda5a",
+      "afterStaleNoticesSHA256": "b45edae2b427261141d7c155e320bc00f283a21e47d7c9059d4f4e0d712dda5a"
+    },
+    {
+      "name": "notification-absent-assignment-individual-delete-first",
+      "pass": true,
+      "pendingNotices": 0,
+      "replacementVisible": true,
+      "oldResponseDeliveryUnchanged": true,
+      "replacementRootSHA256": "18749162782ee9170ec536b6d85c9c92a166a95f3f8d3eccde4985046e5a4daa",
+      "afterOldCallbacksSHA256": "18749162782ee9170ec536b6d85c9c92a166a95f3f8d3eccde4985046e5a4daa",
+      "afterStaleNoticesSHA256": "18749162782ee9170ec536b6d85c9c92a166a95f3f8d3eccde4985046e5a4daa"
+    },
+    {
+      "name": "notification-absent-assignment-installation-delete-first",
+      "pass": true,
+      "pendingNotices": 0,
+      "replacementVisible": true,
+      "oldResponseDeliveryUnchanged": true,
+      "replacementRootSHA256": "674a5b77ad8cc8ac0231502845cc982a4e5d4f617bde7bff027ea69880fb96bc",
+      "afterOldCallbacksSHA256": "674a5b77ad8cc8ac0231502845cc982a4e5d4f617bde7bff027ea69880fb96bc",
+      "afterStaleNoticesSHA256": "674a5b77ad8cc8ac0231502845cc982a4e5d4f617bde7bff027ea69880fb96bc"
+    },
+    {
+      "name": "notification-absent-action-individual-delete-first",
+      "pass": true,
+      "pendingNotices": 0,
+      "replacementVisible": true,
+      "oldResponseDeliveryUnchanged": true,
+      "replacementRootSHA256": "16442533dbac6ac7196286a3a050bfd9ca7fb4293c72e122300058e913725bdb",
+      "afterOldCallbacksSHA256": "16442533dbac6ac7196286a3a050bfd9ca7fb4293c72e122300058e913725bdb",
+      "afterStaleNoticesSHA256": "16442533dbac6ac7196286a3a050bfd9ca7fb4293c72e122300058e913725bdb"
+    },
+    {
+      "name": "notification-absent-action-installation-delete-first",
+      "pass": true,
+      "pendingNotices": 0,
+      "replacementVisible": true,
+      "oldResponseDeliveryUnchanged": true,
+      "replacementRootSHA256": "e212524da632c9e68b990fd481dbf44707ca0929f199986f56477fd217a2cc5a",
+      "afterOldCallbacksSHA256": "e212524da632c9e68b990fd481dbf44707ca0929f199986f56477fd217a2cc5a",
+      "afterStaleNoticesSHA256": "e212524da632c9e68b990fd481dbf44707ca0929f199986f56477fd217a2cc5a"
+    }
+  ],
+  "currentWithdrawal": [
+    {
+      "name": "current-practice-individual",
+      "pass": true,
+      "withdrawalMs": 2,
+      "observerDisabled": true
+    },
+    {
+      "name": "current-practice-installation",
+      "pass": true,
+      "withdrawalMs": 2,
+      "observerDisabled": true
+    },
+    {
+      "name": "current-training-individual",
+      "pass": true,
+      "withdrawalMs": 2,
+      "observerDisabled": true
+    },
+    {
+      "name": "current-training-installation",
+      "pass": true,
+      "withdrawalMs": 2,
+      "observerDisabled": true
+    }
+  ],
+  "trainingStale": [
+    {
+      "name": "old-training-individual",
+      "pass": true,
+      "pendingNotices": 4,
+      "rootSHA256": "f76a4135a3bb1ac782fd1a9cdbc8f754797df16b089e4c5cb0e9303c4c12c1d8"
+    },
+    {
+      "name": "old-training-installation",
+      "pass": true,
+      "pendingNotices": 4,
+      "rootSHA256": "851bb272032b9012299e06c0250613823a27a0dadb9cf28e4bb55b0d5b2e7182"
+    }
+  ],
+  "input": {
+    "browser": "154.0.8037.95",
+    "results": [
+      {
+        "name": "input-semantics",
+        "status": "PASS",
+        "events": [
+          {
+            "label": "initial",
+            "actionId": 1,
+            "phase": "active",
+            "round": 1,
+            "focus": "Pump",
+            "live": [
+              "Round 1. Type 1. Current 0 cents. Banked 0 cents."
+            ],
+            "last": {
+              "schemaVersion": "balloons-durable-v1",
+              "coreSchemaVersion": "balloons-event-v1",
+              "specificationVersion": "balloons-v1.0",
+              "formVersion": "balloons-scored-v1",
+              "scoringVersion": "balloons-scoring-v1",
+              "routerVersion": "balloons-router-v1",
+              "installationId": "fc73929f-ba22-4ae7-8d64-2a79ffb3ac3f",
+              "sessionId": "9f322204-91fc-4d9e-9ff1-1c232beeb4a9",
+              "chainId": "027d285a-ce5f-422f-9a91-e96570ce5f00",
+              "stage": "baseline",
+              "mapping": {
+                "Type 1": "A",
+                "Type 2": "B",
+                "Type 3": "C"
+              },
+              "ownershipGeneration": 1,
+              "exposureGeneration": 1,
+              "manifestId": "BL1",
+              "manifestSha256": "9e5744f3c65cdd60256787da63ab13628cb90eac9b926a792b01da01e949b97e",
+              "sequenceNumber": 3,
+              "round": 1,
+              "actionId": null,
+              "source": null,
+              "timeOriginMs": 1791174498173,
+              "clockEpochId": "d8c85813-0c20-4b9a-ba7d-cac2498c6e55",
+              "monotonicMs": 269.40000000596046,
+              "wallTimeMs": 1791174498442,
+              "pre": {
+                "attemptedPumps": 0,
+                "successfulPumps": 0,
+                "currentCents": 0,
+                "bankedCents": 0,
+                "lostCents": 0
+              },
+              "post": {
+                "attemptedPumps": 0,
+                "successfulPumps": 0,
+                "currentCents": 0,
+                "bankedCents": 0,
+                "lostCents": 0
+              },
+              "outcome": null,
+              "validityCode": "intact",
+              "type": "form_exposed",
+              "command": {
+                "kind": "confirm"
+              },
+              "coreEventStart": 1,
+              "coreEventEnd": 1
+            }
+          },
+          {
+            "label": "enter-collect",
+            "actionId": 2,
+            "phase": "resolved",
+            "round": 1,
+            "focus": "Next balloon",
+            "live": [
+              "Collected. 0 cents banked; 0 cents lost on this balloon. Banked total 0 cents."
+            ],
+            "last": {
+              "schemaVersion": "balloons-durable-v1",
+              "coreSchemaVersion": "balloons-event-v1",
+              "specificationVersion": "balloons-v1.0",
+              "formVersion": "balloons-scored-v1",
+              "scoringVersion": "balloons-scoring-v1",
+              "routerVersion": "balloons-router-v1",
+              "installationId": "fc73929f-ba22-4ae7-8d64-2a79ffb3ac3f",
+              "sessionId": "9f322204-91fc-4d9e-9ff1-1c232beeb4a9",
+              "chainId": "027d285a-ce5f-422f-9a91-e96570ce5f00",
+              "stage": "baseline",
+              "mapping": {
+                "Type 1": "A",
+                "Type 2": "B",
+                "Type 3": "C"
+              },
+              "ownershipGeneration": 1,
+              "exposureGeneration": 1,
+              "manifestId": "BL1",
+              "manifestSha256": "9e5744f3c65cdd60256787da63ab13628cb90eac9b926a792b01da01e949b97e",
+              "sequenceNumber": 5,
+              "round": 1,
+              "actionId": 1,
+              "source": "keyboard",
+              "timeOriginMs": 1791174498173,
+              "clockEpochId": "d8c85813-0c20-4b9a-ba7d-cac2498c6e55",
+              "monotonicMs": 400.80000001192093,
+              "wallTimeMs": 1791174498573,
+              "pre": {
+                "attemptedPumps": 0,
+                "successfulPumps": 0,
+                "currentCents": 0,
+                "bankedCents": 0,
+                "lostCents": 0
+              },
+              "post": {
+                "attemptedPumps": 0,
+                "successfulPumps": 0,
+                "currentCents": 0,
+                "bankedCents": 0,
+                "lostCents": 0
+              },
+              "outcome": "voluntary_collect",
+              "validityCode": "intact",
+              "type": "action_committed",
+              "command": {
+                "kind": "action",
+                "action": {
+                  "kind": "collect",
+                  "source": "keyboard",
+                  "expectedRound": 1,
+                  "expectedRevision": 0,
+                  "actionId": 1,
+                  "time": {
+                    "timeOriginMs": 1791174498173,
+                    "clockEpochId": "d8c85813-0c20-4b9a-ba7d-cac2498c6e55",
+                    "monotonicMs": 400.80000001192093,
+                    "wallTimeMs": 1791174498573
+                  }
+                }
+              },
+              "coreEventStart": 1,
+              "coreEventEnd": 3
+            }
+          },
+          {
+            "label": "held-space-focus-transfer",
+            "actionId": 3,
+            "phase": "active",
+            "round": 2,
+            "focus": "Pump",
+            "live": [
+              "Round 2. Type 2. Current 0 cents. Banked 0 cents."
+            ],
+            "last": {
+              "schemaVersion": "balloons-durable-v1",
+              "coreSchemaVersion": "balloons-event-v1",
+              "specificationVersion": "balloons-v1.0",
+              "formVersion": "balloons-scored-v1",
+              "scoringVersion": "balloons-scoring-v1",
+              "routerVersion": "balloons-router-v1",
+              "installationId": "fc73929f-ba22-4ae7-8d64-2a79ffb3ac3f",
+              "sessionId": "9f322204-91fc-4d9e-9ff1-1c232beeb4a9",
+              "chainId": "027d285a-ce5f-422f-9a91-e96570ce5f00",
+              "stage": "baseline",
+              "mapping": {
+                "Type 1": "A",
+                "Type 2": "B",
+                "Type 3": "C"
+              },
+              "ownershipGeneration": 1,
+              "exposureGeneration": 1,
+              "manifestId": "BL1",
+              "manifestSha256": "9e5744f3c65cdd60256787da63ab13628cb90eac9b926a792b01da01e949b97e",
+              "sequenceNumber": 9,
+              "round": 2,
+              "actionId": null,
+              "source": null,
+              "timeOriginMs": 1791174498173,
+              "clockEpochId": "d8c85813-0c20-4b9a-ba7d-cac2498c6e55",
+              "monotonicMs": 570.2000000178814,
+              "wallTimeMs": 1791174498743,
+              "pre": {
+                "attemptedPumps": 0,
+                "successfulPumps": 0,
+                "currentCents": 0,
+                "bankedCents": 0,
+                "lostCents": 0
+              },
+              "post": {
+                "attemptedPumps": 0,
+                "successfulPumps": 0,
+                "currentCents": 0,
+                "bankedCents": 0,
+                "lostCents": 0
+              },
+              "outcome": null,
+              "validityCode": "intact",
+              "type": "round_presented",
+              "command": {
+                "kind": "confirm"
+              },
+              "coreEventStart": 4,
+              "coreEventEnd": 4
+            }
+          },
+          {
+            "label": "touch-collect",
+            "actionId": 4,
+            "phase": "resolved",
+            "round": 2,
+            "focus": "Next balloon",
+            "live": [
+              "Collected. 0 cents banked; 0 cents lost on this balloon. Banked total 0 cents."
+            ],
+            "last": {
+              "schemaVersion": "balloons-durable-v1",
+              "coreSchemaVersion": "balloons-event-v1",
+              "specificationVersion": "balloons-v1.0",
+              "formVersion": "balloons-scored-v1",
+              "scoringVersion": "balloons-scoring-v1",
+              "routerVersion": "balloons-router-v1",
+              "installationId": "fc73929f-ba22-4ae7-8d64-2a79ffb3ac3f",
+              "sessionId": "9f322204-91fc-4d9e-9ff1-1c232beeb4a9",
+              "chainId": "027d285a-ce5f-422f-9a91-e96570ce5f00",
+              "stage": "baseline",
+              "mapping": {
+                "Type 1": "A",
+                "Type 2": "B",
+                "Type 3": "C"
+              },
+              "ownershipGeneration": 1,
+              "exposureGeneration": 1,
+              "manifestId": "BL1",
+              "manifestSha256": "9e5744f3c65cdd60256787da63ab13628cb90eac9b926a792b01da01e949b97e",
+              "sequenceNumber": 11,
+              "round": 2,
+              "actionId": 3,
+              "source": "touch_or_pen",
+              "timeOriginMs": 1791174498173,
+              "clockEpochId": "d8c85813-0c20-4b9a-ba7d-cac2498c6e55",
+              "monotonicMs": 721,
+              "wallTimeMs": 1791174498893,
+              "pre": {
+                "attemptedPumps": 0,
+                "successfulPumps": 0,
+                "currentCents": 0,
+                "bankedCents": 0,
+                "lostCents": 0
+              },
+              "post": {
+                "attemptedPumps": 0,
+                "successfulPumps": 0,
+                "currentCents": 0,
+                "bankedCents": 0,
+                "lostCents": 0
+              },
+              "outcome": "voluntary_collect",
+              "validityCode": "intact",
+              "type": "action_committed",
+              "command": {
+                "kind": "action",
+                "action": {
+                  "kind": "collect",
+                  "source": "touch_or_pen",
+                  "expectedRound": 2,
+                  "expectedRevision": 2,
+                  "actionId": 3,
+                  "time": {
+                    "timeOriginMs": 1791174498173,
+                    "clockEpochId": "d8c85813-0c20-4b9a-ba7d-cac2498c6e55",
+                    "monotonicMs": 721,
+                    "wallTimeMs": 1791174498893
+                  }
+                }
+              },
+              "coreEventStart": 4,
+              "coreEventEnd": 6
+            }
+          },
+          {
+            "label": "unclassified-collect",
+            "actionId": 6,
+            "phase": "resolved",
+            "round": 3,
+            "focus": "Next balloon",
+            "live": [
+              "Collected. 0 cents banked; 0 cents lost on this balloon. Banked total 0 cents."
+            ],
+            "last": {
+              "schemaVersion": "balloons-durable-v1",
+              "coreSchemaVersion": "balloons-event-v1",
+              "specificationVersion": "balloons-v1.0",
+              "formVersion": "balloons-scored-v1",
+              "scoringVersion": "balloons-scoring-v1",
+              "routerVersion": "balloons-router-v1",
+              "installationId": "fc73929f-ba22-4ae7-8d64-2a79ffb3ac3f",
+              "sessionId": "9f322204-91fc-4d9e-9ff1-1c232beeb4a9",
+              "chainId": "027d285a-ce5f-422f-9a91-e96570ce5f00",
+              "stage": "baseline",
+              "mapping": {
+                "Type 1": "A",
+                "Type 2": "B",
+                "Type 3": "C"
+              },
+              "ownershipGeneration": 1,
+              "exposureGeneration": 1,
+              "manifestId": "BL1",
+              "manifestSha256": "9e5744f3c65cdd60256787da63ab13628cb90eac9b926a792b01da01e949b97e",
+              "sequenceNumber": 17,
+              "round": 3,
+              "actionId": 5,
+              "source": "unknown_or_assistive",
+              "timeOriginMs": 1791174498173,
+              "clockEpochId": "d8c85813-0c20-4b9a-ba7d-cac2498c6e55",
+              "monotonicMs": 922.7000000178814,
+              "wallTimeMs": 1791174499095,
+              "pre": {
+                "attemptedPumps": 0,
+                "successfulPumps": 0,
+                "currentCents": 0,
+                "bankedCents": 0,
+                "lostCents": 0
+              },
+              "post": {
+                "attemptedPumps": 0,
+                "successfulPumps": 0,
+                "currentCents": 0,
+                "bankedCents": 0,
+                "lostCents": 0
+              },
+              "outcome": "voluntary_collect",
+              "validityCode": "intact",
+              "type": "action_committed",
+              "command": {
+                "kind": "action",
+                "action": {
+                  "kind": "collect",
+                  "source": "unknown_or_assistive",
+                  "expectedRound": 3,
+                  "expectedRevision": 4,
+                  "actionId": 5,
+                  "time": {
+                    "timeOriginMs": 1791174498173,
+                    "clockEpochId": "d8c85813-0c20-4b9a-ba7d-cac2498c6e55",
+                    "monotonicMs": 922.7000000178814,
+                    "wallTimeMs": 1791174499095
+                  }
+                }
+              },
+              "coreEventStart": 7,
+              "coreEventEnd": 9
+            }
+          },
+          {
+            "label": "held-enter-repeat-after-focus-transfer",
+            "actionId": 8,
+            "phase": "resolved",
+            "round": 4,
+            "focus": "Next balloon",
+            "live": [
+              "Collected. 0 cents banked; 0 cents lost on this balloon. Banked total 0 cents."
+            ],
+            "last": {
+              "schemaVersion": "balloons-durable-v1",
+              "coreSchemaVersion": "balloons-event-v1",
+              "specificationVersion": "balloons-v1.0",
+              "formVersion": "balloons-scored-v1",
+              "scoringVersion": "balloons-scoring-v1",
+              "routerVersion": "balloons-router-v1",
+              "installationId": "fc73929f-ba22-4ae7-8d64-2a79ffb3ac3f",
+              "sessionId": "9f322204-91fc-4d9e-9ff1-1c232beeb4a9",
+              "chainId": "027d285a-ce5f-422f-9a91-e96570ce5f00",
+              "stage": "baseline",
+              "mapping": {
+                "Type 1": "A",
+                "Type 2": "B",
+                "Type 3": "C"
+              },
+              "ownershipGeneration": 1,
+              "exposureGeneration": 1,
+              "manifestId": "BL1",
+              "manifestSha256": "9e5744f3c65cdd60256787da63ab13628cb90eac9b926a792b01da01e949b97e",
+              "sequenceNumber": 23,
+              "round": 4,
+              "actionId": 7,
+              "source": "keyboard",
+              "timeOriginMs": 1791174498173,
+              "clockEpochId": "d8c85813-0c20-4b9a-ba7d-cac2498c6e55",
+              "monotonicMs": 1104.7000000178814,
+              "wallTimeMs": 1791174499277,
+              "pre": {
+                "attemptedPumps": 0,
+                "successfulPumps": 0,
+                "currentCents": 0,
+                "bankedCents": 0,
+                "lostCents": 0
+              },
+              "post": {
+                "attemptedPumps": 0,
+                "successfulPumps": 0,
+                "currentCents": 0,
+                "bankedCents": 0,
+                "lostCents": 0
+              },
+              "outcome": "voluntary_collect",
+              "validityCode": "intact",
+              "type": "action_committed",
+              "command": {
+                "kind": "action",
+                "action": {
+                  "kind": "collect",
+                  "source": "keyboard",
+                  "expectedRound": 4,
+                  "expectedRevision": 6,
+                  "actionId": 7,
+                  "time": {
+                    "timeOriginMs": 1791174498173,
+                    "clockEpochId": "d8c85813-0c20-4b9a-ba7d-cac2498c6e55",
+                    "monotonicMs": 1104.7000000178814,
+                    "wallTimeMs": 1791174499277
+                  }
+                }
+              },
+              "coreEventStart": 10,
+              "coreEventEnd": 12
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "journey": {
+    "status": "PASS",
+    "browser": "145.0.7632.6",
+    "completeRounds": 39,
+    "drillRounds": 18,
+    "retestRounds": 39,
+    "comparisonAfterCompletion": true,
+    "historyAfterReload": true,
+    "crossTabDeletionWithdrawal": true,
+    "pageErrors": []
+  },
+  "arithmetic": [
+    {
+      "sessionId": "60865909-11ea-41e0-99c6-d4d4aa025aac",
+      "form": "BL1",
+      "rounds": 39,
+      "bankedCents": 0,
+      "lostCents": 0,
+      "actions": 77,
+      "evidence": "comparison-open.json"
+    },
+    {
+      "sessionId": "6f9997c4-42df-4565-8459-1e1408a42674",
+      "form": "RT1",
+      "rounds": 39,
+      "bankedCents": 110,
+      "lostCents": 5,
+      "actions": 100,
+      "evidence": "comparison-open.json"
+    }
+  ],
+  "q1FullRootReconciliation": "PASS: failed roots unchanged; retained records unchanged; exact individual exposure/chain/form tombstones; Delete all complete replacement root",
+  "repositoryChecks": {
+    "finalTests": "1099 tests / 53 files PASS",
+    "initialAggregate": "1098 pass / 1 FAIL: unchanged Stop Journey.test.tsx:25 OBS-1",
+    "isolatedOBS1": "2 tests PASS; cause unestablished",
+    "lint": "PASS; two inherited warnings",
+    "build": "PASS",
+    "formAndDrillChecks": "PASS"
+  }
+}

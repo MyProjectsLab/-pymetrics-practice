@@ -1,0 +1,9 @@
+// Original fixed practice schedules, unchanged from the reviewed numerical packet.
+export const forms = [
+  { id: 'ME2-1', rounds: [{ partner: 'Partner A', bonusRecipient: 'candidate' }, { partner: 'Partner B', bonusRecipient: 'candidate' }] },
+  { id: 'ME2-2', rounds: [{ partner: 'Partner C', bonusRecipient: 'candidate' }, { partner: 'Partner D', bonusRecipient: 'partner', partnerSignedGiveCents: -150 }] },
+  { id: 'ME2-3', rounds: [{ partner: 'Partner E', bonusRecipient: 'partner', partnerSignedGiveCents: 200 }, { partner: 'Partner F', bonusRecipient: 'candidate' }] },
+  { id: 'ME2-4', rounds: [{ partner: 'Partner G', bonusRecipient: 'partner', partnerSignedGiveCents: 100 }, { partner: 'Partner H', bonusRecipient: 'partner', partnerSignedGiveCents: -50 }] },
+  { id: 'ME2-5', rounds: [{ partner: 'Partner I', bonusRecipient: 'candidate' }, { partner: 'Partner J', bonusRecipient: 'partner', partnerSignedGiveCents: 300 }] },
+  { id: 'ME2-6', rounds: [{ partner: 'Partner K', bonusRecipient: 'partner', partnerSignedGiveCents: 0 }, { partner: 'Partner L', bonusRecipient: 'candidate' }] },
+];

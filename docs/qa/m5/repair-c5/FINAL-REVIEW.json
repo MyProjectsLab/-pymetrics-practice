@@ -1,0 +1,58 @@
+[
+  {
+    "capture": "final-full-after",
+    "saveCalls": 2,
+    "pass": true,
+    "id": "47f9025b-434c-4543-9321-dbccd5c2ad04",
+    "events": 643,
+    "counts": {
+      "hits": 0,
+      "misses": 60,
+      "withholds": 20,
+      "falseAlarms": 0
+    },
+    "visibility": [
+      201.09999990463257,
+      210.60000014305115
+    ],
+    "deadlineLateness": [
+      0.09999990463256836,
+      1.7000000476837158
+    ],
+    "finalInterval": 1200.7000000476837,
+    "journalSha256": "3fd4d8d487dd648dc1d292b5eab8574661f4fbeb6f991686963b4d51a373ef3e"
+  },
+  {
+    "capture": "final-c2-drill",
+    "saveCalls": 1,
+    "pass": true,
+    "id": "44ae81f0-c2c8-475c-830c-d7a4f176c6b5",
+    "events": 643,
+    "counts": {
+      "hits": 0,
+      "misses": 60,
+      "withholds": 20,
+      "falseAlarms": 0
+    },
+    "visibility": [
+      201.5,
+      210.59999990463257
+    ],
+    "deadlineLateness": [
+      0.09999990463256836,
+      6
+    ],
+    "finalInterval": 1200.6000001430511,
+    "journalSha256": "498b0266e0635570be59a08046d78ee1b752ee8df7eab76c6dc5db1e511e4ecc"
+  },
+  {
+    "capture": "resume-matrix",
+    "cases": 12,
+    "pass": true
+  },
+  {
+    "capture": "extra-boundaries",
+    "cases": 2,
+    "pass": true
+  }
+]

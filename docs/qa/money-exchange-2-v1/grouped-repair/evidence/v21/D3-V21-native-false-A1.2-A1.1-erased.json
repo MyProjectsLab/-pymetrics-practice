@@ -1,0 +1,303 @@
+{
+  "version": "money_exchange_2_storage_v2_0",
+  "activity": {},
+  "installationId": "e8f1b278-fcbc-4867-a4e3-a3075a00bc60",
+  "generation": 1,
+  "revision": 10,
+  "lease": {
+    "ownerId": "native-owner",
+    "epoch": 2,
+    "live": true
+  },
+  "route": {
+    "stage": "library",
+    "epoch": 10,
+    "ownerId": "native-owner"
+  },
+  "ticketSerial": 2,
+  "currentTicketId": null,
+  "tickets": {
+    "T1.1": {
+      "id": "T1.1",
+      "generation": 1,
+      "ownerId": "native-owner",
+      "leaseEpoch": 2,
+      "state": "consumed",
+      "attemptId": "A1.1"
+    },
+    "T1.2": {
+      "id": "T1.2",
+      "generation": 1,
+      "ownerId": "native-owner",
+      "leaseEpoch": 2,
+      "state": "canceled",
+      "attemptId": "A1.2"
+    }
+  },
+  "activeAttemptId": null,
+  "formCounter": 2,
+  "exposureHistory": [
+    {
+      "attemptId": "A1.1",
+      "formId": "ME2-1",
+      "formDigest": "1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea"
+    },
+    {
+      "attemptId": "A1.2",
+      "formId": "ME2-2",
+      "formDigest": "f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830"
+    }
+  ],
+  "attempts": {},
+  "tombstones": {
+    "A1.2": true,
+    "A1.1": true
+  },
+  "outcomes": {
+    "native/9": {
+      "payloadHash": "{\"kind\":\"deleteAttempt\",\"requestId\":\"native/9\",\"installationId\":\"e8f1b278-fcbc-4867-a4e3-a3075a00bc60\",\"generation\":1,\"attemptId\":\"A1.2\"}",
+      "command": {
+        "kind": "deleteAttempt",
+        "requestId": "native/9",
+        "installationId": "e8f1b278-fcbc-4867-a4e3-a3075a00bc60",
+        "generation": 1,
+        "attemptId": "A1.2"
+      },
+      "result": {
+        "deleted": "A1.2"
+      },
+      "route": {
+        "stage": "library",
+        "epoch": 10,
+        "ownerId": "native-owner"
+      },
+      "revision": 9
+    },
+    "native/10": {
+      "payloadHash": "{\"kind\":\"deleteAttempt\",\"requestId\":\"native/10\",\"installationId\":\"e8f1b278-fcbc-4867-a4e3-a3075a00bc60\",\"generation\":1,\"attemptId\":\"A1.1\"}",
+      "command": {
+        "kind": "deleteAttempt",
+        "requestId": "native/10",
+        "installationId": "e8f1b278-fcbc-4867-a4e3-a3075a00bc60",
+        "generation": 1,
+        "attemptId": "A1.1"
+      },
+      "result": {
+        "deleted": "A1.1"
+      },
+      "route": {
+        "stage": "library",
+        "epoch": 10,
+        "ownerId": "native-owner"
+      },
+      "revision": 10
+    }
+  },
+  "navigation": null,
+  "proofs": {},
+  "retired": {
+    "native/1": {
+      "requestId": "native/1",
+      "deletionId": "native/9",
+      "attemptId": null,
+      "generation": 1
+    },
+    "native/2": {
+      "requestId": "native/2",
+      "deletionId": "native/9",
+      "attemptId": null,
+      "generation": 1
+    },
+    "native/3": {
+      "requestId": "native/3",
+      "deletionId": "native/9",
+      "attemptId": null,
+      "generation": 1
+    },
+    "native/5": {
+      "requestId": "native/5",
+      "deletionId": "native/9",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "native/6": {
+      "requestId": "native/6",
+      "deletionId": "native/9",
+      "attemptId": null,
+      "generation": 1
+    },
+    "native/7": {
+      "requestId": "native/7",
+      "deletionId": "native/9",
+      "attemptId": null,
+      "generation": 1
+    },
+    "native/8": {
+      "requestId": "native/8",
+      "deletionId": "native/9",
+      "attemptId": "A1.2",
+      "generation": 1
+    },
+    "native/4": {
+      "requestId": "native/4",
+      "deletionId": "native/10",
+      "attemptId": "A1.1",
+      "generation": 1
+    }
+  },
+  "resetReceipt": null,
+  "checkpoint": {
+    "version": "storage_v2_0",
+    "revision": 10,
+    "state": {
+      "version": "money_exchange_2_storage_v2_0",
+      "activity": {},
+      "installationId": "e8f1b278-fcbc-4867-a4e3-a3075a00bc60",
+      "generation": 1,
+      "revision": 10,
+      "lease": {
+        "ownerId": "native-owner",
+        "epoch": 2,
+        "live": true
+      },
+      "route": {
+        "stage": "library",
+        "epoch": 10,
+        "ownerId": "native-owner"
+      },
+      "ticketSerial": 2,
+      "currentTicketId": null,
+      "tickets": {
+        "T1.1": {
+          "id": "T1.1",
+          "generation": 1,
+          "ownerId": "native-owner",
+          "leaseEpoch": 2,
+          "state": "consumed",
+          "attemptId": "A1.1"
+        },
+        "T1.2": {
+          "id": "T1.2",
+          "generation": 1,
+          "ownerId": "native-owner",
+          "leaseEpoch": 2,
+          "state": "canceled",
+          "attemptId": "A1.2"
+        }
+      },
+      "activeAttemptId": null,
+      "formCounter": 2,
+      "exposureHistory": [
+        {
+          "attemptId": "A1.1",
+          "formId": "ME2-1",
+          "formDigest": "1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea"
+        },
+        {
+          "attemptId": "A1.2",
+          "formId": "ME2-2",
+          "formDigest": "f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830"
+        }
+      ],
+      "attempts": {},
+      "tombstones": {
+        "A1.2": true,
+        "A1.1": true
+      },
+      "outcomes": {
+        "native/9": {
+          "payloadHash": "{\"kind\":\"deleteAttempt\",\"requestId\":\"native/9\",\"installationId\":\"e8f1b278-fcbc-4867-a4e3-a3075a00bc60\",\"generation\":1,\"attemptId\":\"A1.2\"}",
+          "command": {
+            "kind": "deleteAttempt",
+            "requestId": "native/9",
+            "installationId": "e8f1b278-fcbc-4867-a4e3-a3075a00bc60",
+            "generation": 1,
+            "attemptId": "A1.2"
+          },
+          "result": {
+            "deleted": "A1.2"
+          },
+          "route": {
+            "stage": "library",
+            "epoch": 10,
+            "ownerId": "native-owner"
+          },
+          "revision": 9
+        },
+        "native/10": {
+          "payloadHash": "{\"kind\":\"deleteAttempt\",\"requestId\":\"native/10\",\"installationId\":\"e8f1b278-fcbc-4867-a4e3-a3075a00bc60\",\"generation\":1,\"attemptId\":\"A1.1\"}",
+          "command": {
+            "kind": "deleteAttempt",
+            "requestId": "native/10",
+            "installationId": "e8f1b278-fcbc-4867-a4e3-a3075a00bc60",
+            "generation": 1,
+            "attemptId": "A1.1"
+          },
+          "result": {
+            "deleted": "A1.1"
+          },
+          "route": {
+            "stage": "library",
+            "epoch": 10,
+            "ownerId": "native-owner"
+          },
+          "revision": 10
+        }
+      },
+      "navigation": null,
+      "proofs": {},
+      "retired": {
+        "native/1": {
+          "requestId": "native/1",
+          "deletionId": "native/9",
+          "attemptId": null,
+          "generation": 1
+        },
+        "native/2": {
+          "requestId": "native/2",
+          "deletionId": "native/9",
+          "attemptId": null,
+          "generation": 1
+        },
+        "native/3": {
+          "requestId": "native/3",
+          "deletionId": "native/9",
+          "attemptId": null,
+          "generation": 1
+        },
+        "native/5": {
+          "requestId": "native/5",
+          "deletionId": "native/9",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "native/6": {
+          "requestId": "native/6",
+          "deletionId": "native/9",
+          "attemptId": null,
+          "generation": 1
+        },
+        "native/7": {
+          "requestId": "native/7",
+          "deletionId": "native/9",
+          "attemptId": null,
+          "generation": 1
+        },
+        "native/8": {
+          "requestId": "native/8",
+          "deletionId": "native/9",
+          "attemptId": "A1.2",
+          "generation": 1
+        },
+        "native/4": {
+          "requestId": "native/4",
+          "deletionId": "native/10",
+          "attemptId": "A1.1",
+          "generation": 1
+        }
+      },
+      "resetReceipt": null
+    }
+  },
+  "tail": []
+}

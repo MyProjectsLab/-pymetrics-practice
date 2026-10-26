@@ -1,0 +1,239 @@
+
+> assessment-practice@0.0.0 check
+> npm run lint && npm test && npm run forms:check && npm run drills:check && npm run arrows:check && npm run lengths:check && npm run digits:check && npm run build
+
+
+> assessment-practice@0.0.0 lint
+> oxlint
+
+docs/qa/digits-v11/repair-f4-f5/browser-unmount.mjs:104:16: warning eslint(no-unused-vars): Function 'deleteFromPeer' is declared but never used. help: Consider removing this declaration.
+docs/qa/digits-v11/repair-f4-f5/browser-adjacent.mjs:128:16: warning eslint(no-unused-vars): Function 'partialSaved' is declared but never used. help: Consider removing this declaration.
+docs/qa/m5/repair-f1-f3/cross-tab.mjs:47:49: warning eslint(no-unused-vars): Parameter 's' is declared but never used. Unused parameters should start with a '_'. help: Consider removing this parameter.
+src/App.tsx:77:57: warning react-hooks(exhaustive-deps): React Hook useEffect has a missing dependency: 'refreshHistory' help: Either include it or remove the dependency array.
+
+> assessment-practice@0.0.0 test
+> vitest run
+
+
+ RUN  v4.1.11 /private/tmp/digits-v11-impl
+
+(node:40880) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+ Test Files  88 passed (88)
+      Tests  1498 passed (1498)
+   Start at  15:13:59
+   Duration  90.41s (transform 3.63s, setup 2.67s, import 6.84s, tests 311.90s, environment 16.85s)
+
+
+> assessment-practice@0.0.0 forms:check
+> node scripts/generate-stop-forms.mjs --check
+
+14 stored Stop manifests match the deterministic generator.
+
+> assessment-practice@0.0.0 drills:check
+> node scripts/generate-stop-drills.mjs --check
+
+5 stored drill manifests match the deterministic generator.
+
+> assessment-practice@0.0.0 arrows:check
+> node scripts/generate-arrows-forms.mjs --check
+
+{
+  "sha256": "228b0e10405a80830c73e4b69e12950482967dec717f156c789e19fa11b1150b",
+  "attempts": [
+    {
+      "id": "AR1",
+      "seed": 2720006145,
+      "attempts": 10
+    },
+    {
+      "id": "AR2",
+      "seed": 2720006146,
+      "attempts": 11
+    },
+    {
+      "id": "AR3",
+      "seed": 2720006147,
+      "attempts": 10
+    },
+    {
+      "id": "AR4",
+      "seed": 2720006148,
+      "attempts": 2
+    },
+    {
+      "id": "AR5",
+      "seed": 2720006149,
+      "attempts": 5
+    },
+    {
+      "id": "AR6",
+      "seed": 2720006150,
+      "attempts": 5
+    }
+  ],
+  "distances": [
+    {
+      "first": "AR1",
+      "second": "AR2",
+      "different": 105
+    },
+    {
+      "first": "AR1",
+      "second": "AR3",
+      "different": 110
+    },
+    {
+      "first": "AR1",
+      "second": "AR4",
+      "different": 111
+    },
+    {
+      "first": "AR1",
+      "second": "AR5",
+      "different": 115
+    },
+    {
+      "first": "AR1",
+      "second": "AR6",
+      "different": 110
+    },
+    {
+      "first": "AR2",
+      "second": "AR3",
+      "different": 115
+    },
+    {
+      "first": "AR2",
+      "second": "AR4",
+      "different": 106
+    },
+    {
+      "first": "AR2",
+      "second": "AR5",
+      "different": 107
+    },
+    {
+      "first": "AR2",
+      "second": "AR6",
+      "different": 112
+    },
+    {
+      "first": "AR3",
+      "second": "AR4",
+      "different": 109
+    },
+    {
+      "first": "AR3",
+      "second": "AR5",
+      "different": 112
+    },
+    {
+      "first": "AR3",
+      "second": "AR6",
+      "different": 111
+    },
+    {
+      "first": "AR4",
+      "second": "AR5",
+      "different": 107
+    },
+    {
+      "first": "AR4",
+      "second": "AR6",
+      "different": 107
+    },
+    {
+      "first": "AR5",
+      "second": "AR6",
+      "different": 101
+    }
+  ],
+  "maxRuns": [
+    {
+      "id": "AR1",
+      "rule": 5,
+      "direction": 4
+    },
+    {
+      "id": "AR2",
+      "rule": 5,
+      "direction": 5
+    },
+    {
+      "id": "AR3",
+      "rule": 5,
+      "direction": 5
+    },
+    {
+      "id": "AR4",
+      "rule": 5,
+      "direction": 4
+    },
+    {
+      "id": "AR5",
+      "rule": 5,
+      "direction": 5
+    },
+    {
+      "id": "AR6",
+      "rule": 4,
+      "direction": 5
+    }
+  ]
+}
+
+> assessment-practice@0.0.0 lengths:check
+> node scripts/generate-lengths-forms.mjs --check
+
+{
+  "formsSha256": "671b48c20e32daa886ce79e25a6265f4577a5dc069af8d5417328fd1ae0b39e7",
+  "fixturesSha256": "84d38be93fa2a53674c1eb2ca0cfa2c40228a9f37a9892e7f12a84ee1794488d",
+  "orderAttempts": [
+    24,
+    58,
+    24,
+    22,
+    35,
+    28
+  ]
+}
+
+> assessment-practice@0.0.0 digits:check
+> node scripts/review-digits-v11-forms.mjs
+
+PASS 12 seed records, 6 paths/form, 1008 generated trials, 5 full paths, 3 deadline cases; 5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6
+
+> assessment-practice@0.0.0 build
+> tsc -b && vite build && node scripts/build-analytics.mjs
+
+vite v8.3.1 building client environment for production...
+transforming...
+✓ 143 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                     0.50 kB │ gzip:   0.30 kB
+dist/assets/index-BLHWi8ST.css     11.94 kB │ gzip:   3.21 kB
+dist/assets/index-CPQFmkcl.js   1,071.02 kB │ gzip: 269.30 kB
+
+[33m[INEFFECTIVE_DYNAMIC_IMPORT] [0msrc/arrows/presentation-order.ts is dynamically imported by src/arrows/storage.ts but also statically imported by src/arrows/entry.ts, src/arrows/report-publication.ts, src/arrows/storage.ts, dynamic import will not move module into another chunk.
+
+[plugin builtin:vite-reporter]
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[33m[INEFFECTIVE_DYNAMIC_IMPORT] [0msrc/lengths/order.ts is dynamically imported by src/lengths/storage.ts but also statically imported by src/lengths/entry.ts, src/lengths/report-publication.ts, src/lengths/storage.ts, dynamic import will not move module into another chunk.
+
+✓ built in 120ms
+vite v8.3.1 building client environment for production...
+transforming...
+✓ 6 modules transformed.
+rendering chunks...
+computing gzip size...
+dist-analytics/platform-B2bkFrLQ.js  0.62 kB │ gzip: 0.40 kB
+dist-analytics/purge.js              1.32 kB │ gzip: 0.64 kB
+dist-analytics/collector.js          5.18 kB │ gzip: 2.07 kB
+
+✓ built in 11ms

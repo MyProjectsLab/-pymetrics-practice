@@ -1,0 +1,34 @@
+[
+  {
+    "case": "read-pending",
+    "deletionBlockedWhilePromiseHeld": false,
+    "locksWhileHeld": {
+      "held": [],
+      "pending": []
+    },
+    "scoredOnsets": 0,
+    "invalidRule": "stop_validity_v1.lifecycle",
+    "reservation": null,
+    "exposure": null,
+    "locksAfterRelease": {
+      "held": [],
+      "pending": []
+    }
+  },
+  {
+    "case": "confirm-pending",
+    "deletionBlockedWhilePromiseHeld": false,
+    "locksWhileHeld": {
+      "held": [],
+      "pending": []
+    },
+    "scoredOnsets": 1,
+    "invalidRule": "stop_validity_v1.lifecycle",
+    "reservation": null,
+    "exposure": null,
+    "locksAfterRelease": {
+      "held": [],
+      "pending": []
+    }
+  }
+]

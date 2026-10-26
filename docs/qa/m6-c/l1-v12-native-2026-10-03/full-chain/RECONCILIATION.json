@@ -1,0 +1,451 @@
+{
+  "scope": "One native Mac Chrome tool-dispatched guide-baseline-drill-retest-comparison-history-reload journey",
+  "startingQaHead": "70c7286f0d8059b352d9a1ab9baecd476945fc92",
+  "productHead": "f6b8ae05ab024e603ebe3fc8e1a42f71dd4b14b1",
+  "installationId": "a3956012-2c59-4c31-a71a-3b1a5751ba41",
+  "baseline": {
+    "sessionId": "e6b1b50d-1162-464f-b6e4-7f6aadcd77e3",
+    "mode": "baseline",
+    "formId": "stop-baseline-03",
+    "validity": "valid",
+    "eventCount": 648,
+    "counts": {
+      "hits": 0,
+      "misses": 60,
+      "withholds": 20,
+      "falseAlarms": 0
+    },
+    "rates": {
+      "hit": 0.0,
+      "miss": 1.0,
+      "withhold": 1.0,
+      "falseAlarm": 0.0,
+      "overall": 0.25
+    },
+    "timing": {
+      "count": 0,
+      "q1": null,
+      "median": null,
+      "q3": null,
+      "iqr": null
+    },
+    "blocks": [
+      {
+        "number": 1,
+        "counts": {
+          "hits": 0,
+          "misses": 15,
+          "withholds": 5,
+          "falseAlarms": 0
+        },
+        "timing": {
+          "count": 0,
+          "q1": null,
+          "median": null,
+          "q3": null,
+          "iqr": null
+        }
+      },
+      {
+        "number": 2,
+        "counts": {
+          "hits": 0,
+          "misses": 15,
+          "withholds": 5,
+          "falseAlarms": 0
+        },
+        "timing": {
+          "count": 0,
+          "q1": null,
+          "median": null,
+          "q3": null,
+          "iqr": null
+        }
+      },
+      {
+        "number": 3,
+        "counts": {
+          "hits": 0,
+          "misses": 15,
+          "withholds": 5,
+          "falseAlarms": 0
+        },
+        "timing": {
+          "count": 0,
+          "q1": null,
+          "median": null,
+          "q3": null,
+          "iqr": null
+        }
+      },
+      {
+        "number": 4,
+        "counts": {
+          "hits": 0,
+          "misses": 15,
+          "withholds": 5,
+          "falseAlarms": 0
+        },
+        "timing": {
+          "count": 0,
+          "q1": null,
+          "median": null,
+          "q3": null,
+          "iqr": null
+        }
+      }
+    ],
+    "inputEvents": [
+      {
+        "sequenceNumber": 120,
+        "type": "response_ignored",
+        "payload": {
+          "trialIndex": 5,
+          "reason": "late",
+          "inputSequenceNumber": 119
+        }
+      },
+      {
+        "sequenceNumber": 263,
+        "type": "response_ignored",
+        "payload": {
+          "trialIndex": 25,
+          "reason": "late",
+          "inputSequenceNumber": 262
+        }
+      }
+    ],
+    "protectionStartMs": 218521.40000000596,
+    "completionMs": 395745.90000000596,
+    "recordSha256": "0d8a722e642dd5666f7fb3fe967995c30cfa3209beab3c6432f8163475207dfa",
+    "journalSha256": "006831e856b1500aa82c44aaea74c9a2d4f0f16c4ddf74f8886176ca8b1d3396"
+  },
+  "drill": {
+    "id": "c9f85a64-cdb7-4b75-a72b-507bcf9d2855",
+    "drillId": "detection",
+    "valid": true,
+    "eventCount": 530,
+    "blocks": [
+      {
+        "number": 1,
+        "counts": {
+          "hits": 1,
+          "misses": 17,
+          "withholds": 6,
+          "falseAlarms": 0
+        },
+        "timing": {
+          "count": 1,
+          "q1": 487.09999999403954,
+          "median": 487.09999999403954,
+          "q3": 487.09999999403954,
+          "iqr": 0.0
+        }
+      },
+      {
+        "number": 2,
+        "counts": {
+          "hits": 1,
+          "misses": 17,
+          "withholds": 6,
+          "falseAlarms": 0
+        },
+        "timing": {
+          "count": 1,
+          "q1": 504.19999998807907,
+          "median": 504.19999998807907,
+          "q3": 504.19999998807907,
+          "iqr": 0.0
+        }
+      },
+      {
+        "number": 3,
+        "counts": {
+          "hits": 0,
+          "misses": 18,
+          "withholds": 5,
+          "falseAlarms": 1
+        },
+        "timing": {
+          "count": 0,
+          "q1": null,
+          "median": null,
+          "q3": null,
+          "iqr": null
+        }
+      }
+    ],
+    "counts": {
+      "hits": 2,
+      "misses": 52,
+      "withholds": 17,
+      "falseAlarms": 1
+    },
+    "protectionStartMs": 494516.90000000596,
+    "completionMs": 671034,
+    "attemptSha256": "9bb08e3463584b39d3e05d2394b3c2430cfb452a7d67d0e5d7766e6900212af5",
+    "journalSha256": "1f01a62c25d26b1a4f2e32f6d039f1d34f7ef29278d7a7830e7d1a11f3a9f53e"
+  },
+  "retest": {
+    "sessionId": "4da6a9a7-c7fc-49de-b226-e817495bd130",
+    "mode": "retest",
+    "formId": "stop-retest-02",
+    "validity": "valid",
+    "eventCount": 634,
+    "counts": {
+      "hits": 1,
+      "misses": 59,
+      "withholds": 20,
+      "falseAlarms": 0
+    },
+    "rates": {
+      "hit": 0.016666666666666666,
+      "miss": 0.9833333333333333,
+      "withhold": 1.0,
+      "falseAlarm": 0.0,
+      "overall": 0.2625
+    },
+    "timing": {
+      "count": 1,
+      "q1": 469.09999999403954,
+      "median": 469.09999999403954,
+      "q3": 469.09999999403954,
+      "iqr": 0.0
+    },
+    "blocks": [
+      {
+        "number": 1,
+        "counts": {
+          "hits": 1,
+          "misses": 14,
+          "withholds": 5,
+          "falseAlarms": 0
+        },
+        "timing": {
+          "count": 1,
+          "q1": 469.09999999403954,
+          "median": 469.09999999403954,
+          "q3": 469.09999999403954,
+          "iqr": 0.0
+        }
+      },
+      {
+        "number": 2,
+        "counts": {
+          "hits": 0,
+          "misses": 15,
+          "withholds": 5,
+          "falseAlarms": 0
+        },
+        "timing": {
+          "count": 0,
+          "q1": null,
+          "median": null,
+          "q3": null,
+          "iqr": null
+        }
+      },
+      {
+        "number": 3,
+        "counts": {
+          "hits": 0,
+          "misses": 15,
+          "withholds": 5,
+          "falseAlarms": 0
+        },
+        "timing": {
+          "count": 0,
+          "q1": null,
+          "median": null,
+          "q3": null,
+          "iqr": null
+        }
+      },
+      {
+        "number": 4,
+        "counts": {
+          "hits": 0,
+          "misses": 15,
+          "withholds": 5,
+          "falseAlarms": 0
+        },
+        "timing": {
+          "count": 0,
+          "q1": null,
+          "median": null,
+          "q3": null,
+          "iqr": null
+        }
+      }
+    ],
+    "inputEvents": [
+      {
+        "sequenceNumber": 72,
+        "type": "response_accepted",
+        "payload": {
+          "trialIndex": 0,
+          "responseTimeMs": 469.09999999403954,
+          "anticipatory": false,
+          "inputSequenceNumber": 71
+        }
+      }
+    ],
+    "protectionStartMs": 806806.700000003,
+    "completionMs": 984640.6000000089,
+    "recordSha256": "3591b8cb3666119ef6e2c36b68bcea20d0aa0f72625b5120c77d37bc15db56af",
+    "journalSha256": "f61fb8ca78e472ad505deb9c02cf9dc4a0c8d88bceab1b77eb2fc34d3d07de49"
+  },
+  "chainId": "55a92c1d-7a51-4296-a07c-5d7238e48c92",
+  "recommendation": {
+    "version": "stop_drill_router_v2",
+    "drillId": "detection",
+    "severity": 10,
+    "candidates": [
+      {
+        "id": "withholding",
+        "eligible": true,
+        "triggered": false,
+        "severity": 0,
+        "metrics": {
+          "falseAlarmRate": 0,
+          "falseAlarms": 0
+        },
+        "exclusion": null
+      },
+      {
+        "id": "detection",
+        "eligible": true,
+        "triggered": true,
+        "severity": 10,
+        "metrics": {
+          "missRate": 1,
+          "misses": 60,
+          "falseAlarmRate": 0
+        },
+        "exclusion": null
+      },
+      {
+        "id": "consistency",
+        "eligible": true,
+        "triggered": false,
+        "severity": 0,
+        "metrics": {
+          "accuracyDrop": 0,
+          "hitDrop": 0,
+          "falseAlarmRise": 0,
+          "falseAlarmCountRise": 0,
+          "firstHits": 0,
+          "secondHits": 0,
+          "firstFalseAlarms": 0,
+          "secondFalseAlarms": 0
+        },
+        "exclusion": null
+      },
+      {
+        "id": "stability",
+        "eligible": false,
+        "triggered": false,
+        "severity": null,
+        "metrics": {
+          "timingCleanHits": 0,
+          "iqrMs": 0,
+          "hitRate": 0,
+          "falseAlarmRate": 0
+        },
+        "exclusion": "Timing or accuracy eligibility was insufficient."
+      },
+      {
+        "id": "maintenance",
+        "eligible": true,
+        "triggered": false,
+        "severity": 1,
+        "metrics": {},
+        "exclusion": null
+      }
+    ],
+    "tieBreak": false,
+    "observed": "60 of 60 GO trials were missed (100%); 0 of 20 NO-GO trials were false alarms (0%).",
+    "possibleAdvantage": "Withholding on NO-GO was maintained on this task.",
+    "possibleTradeoff": "Some GO responses were missed.",
+    "exclusionDisclosure": null
+  },
+  "reservationBeforeExposure": {
+    "sessionId": "4da6a9a7-c7fc-49de-b226-e817495bd130",
+    "formId": "stop-retest-02",
+    "family": "retest",
+    "expiresAtMs": 1791022416151,
+    "chainId": "55a92c1d-7a51-4296-a07c-5d7238e48c92",
+    "armed": false,
+    "ownerTabId": "4074cddb-b8ba-4d42-a15b-010432d5e29b"
+  },
+  "exposuresAfterCompletion": {
+    "stop-baseline-03": {
+      "formId": "stop-baseline-03",
+      "exposedAtWall": "2026-10-03T09:35:25.673Z",
+      "visualProfile": "standard",
+      "deleted": false,
+      "sessionId": "e6b1b50d-1162-464f-b6e4-7f6aadcd77e3",
+      "certainty": "confirmed"
+    },
+    "stop-retest-02": {
+      "formId": "stop-retest-02",
+      "exposedAtWall": "2026-10-03T09:45:13.980Z",
+      "visualProfile": "standard",
+      "deleted": false,
+      "sessionId": "4da6a9a7-c7fc-49de-b226-e817495bd130",
+      "certainty": "confirmed"
+    }
+  },
+  "comparison": {
+    "baselineOverallExact": 0.25,
+    "retestOverallExact": 0.2625,
+    "deltaPercentagePointsExact": 1.250000000000001,
+    "baselineHitRateExact": 0.0,
+    "retestHitRateExact": 0.016666666666666666,
+    "baselineWithholdRateExact": 1.0,
+    "retestWithholdRateExact": 1.0,
+    "visibleRounded": {
+      "overall": "25% to 26% (+1 percentage points)",
+      "go": "0% to 2%",
+      "noGo": "100% to 100%"
+    },
+    "timingComparisonSuppressed": true
+  },
+  "viewportObserved": {
+    "baseline": {
+      "sampleCount": 90,
+      "cssPixels": [
+        1512,
+        827
+      ],
+      "firstUtc": "2026-10-03T09:35:24.658Z",
+      "lastUtc": "2026-10-03T09:38:20.169Z"
+    },
+    "drill": {
+      "sampleCount": 104,
+      "cssPixels": [
+        1512,
+        827
+      ],
+      "firstUtc": "2026-10-03T09:40:00.652Z",
+      "lastUtc": "2026-10-03T09:42:56.167Z"
+    },
+    "retest": {
+      "sampleCount": 91,
+      "cssPixels": [
+        1512,
+        827
+      ],
+      "firstUtc": "2026-10-03T09:45:12.939Z",
+      "lastUtc": "2026-10-03T09:48:10.164Z"
+    }
+  },
+  "prePostReloadInstallationIdentical": true,
+  "installationSha256": "02cfdd7b80bf2626d08fe2ee148c9f97a43fcf8c51ac0f68483c5daccadeb9b7",
+  "limitations": [
+    "Tool-dispatched scored key input; no human physical-keyboard response attestation.",
+    "Browser/journal times do not measure physical input latency or display scanout.",
+    "One Chrome/Mac/display journey; no browser/device certification.",
+    "QA observer capture and localStorage overhead were not calibrated."
+  ]
+}

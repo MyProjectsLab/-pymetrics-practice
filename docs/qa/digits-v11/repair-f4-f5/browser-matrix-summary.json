@@ -1,0 +1,26 @@
+{
+  "build": "final frozen production build; exact artifacts in identity-and-hashes.json",
+  "matrix": {
+    "browser-navigation-final.json": {
+      "cases": 20,
+      "passed": 20
+    },
+    "browser-adjacent-final.json": {
+      "cases": 12,
+      "passed": 12
+    },
+    "browser-unmount-final.json": {
+      "cases": 2,
+      "passed": 2
+    },
+    "browser-development.json": {
+      "cases": 6,
+      "passed": 6
+    },
+    "browser-f1-f3-final.json": {
+      "cases": 11,
+      "passed": 11
+    }
+  },
+  "totalCases": 51
+}

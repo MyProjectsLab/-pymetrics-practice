@@ -1,0 +1,15 @@
+{
+  "browser": "145.0.7632.6",
+  "cases": [
+    {
+      "kind": "access",
+      "disclosure": true,
+      "timedBlocked": true,
+      "keyboardBackToRule": true,
+      "overflow": false
+    }
+  ],
+  "errors": [],
+  "pass": false,
+  "failure": "Error: page.evaluate: TypeError: Cannot read properties of null (reading 'read')\n    at eval (eval at evaluate (:311:30), <anonymous>:3:77)\n    at async <anonymous>:337:30"
+}

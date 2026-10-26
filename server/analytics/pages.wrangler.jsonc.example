@@ -1,0 +1,22 @@
+// Review template only. No account, project or database has been created.
+{
+  "name": "stop-analytics-candidate",
+  "pages_build_output_dir": "../../dist",
+  "compatibility_date": "2026-10-01",
+  "d1_databases": [{
+    "binding": "ANALYTICS_DB",
+    "database_name": "stop-analytics-candidate",
+    "database_id": "REQUIRES_SEPARATE_APPROVAL_AND_VERIFIED_BINDING",
+    "migrations_dir": "../../migrations/stop-analytics"
+  }],
+  "vars": {
+    "STOP_ANALYTICS_ENABLED": "false",
+    "ANALYTICS_ORIGIN": "",
+    "ANALYTICS_ACTIVATION_REVISION": "",
+    "CONSENT_PRIVACY_APPROVED": "unverified",
+    "PROVIDER_LOGGING_VERIFIED": "unverified",
+    "BACKUP_EXPORT_VERIFIED": "unverified",
+    "RATE_LIMITING_VERIFIED": "unverified",
+    "RETENTION_MONITORING_VERIFIED": "unverified"
+  }
+}

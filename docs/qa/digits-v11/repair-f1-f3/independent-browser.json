@@ -1,0 +1,44 @@
+[
+  {
+    "name": "independent: undeclared clipboard paste report label",
+    "status": "PASS",
+    "detail": {
+      "target": "3668",
+      "accepted": "3668",
+      "assisted": true,
+      "reportAssisted": true,
+      "visibleAssistedLabel": false,
+      "body": "Back to library\nDigits report\n\nSaved in this browser\n\nForm DV1 · visual presentation · standard entry · keyboard input · standard contrast · standard motion\n\nRun details\n\nMaximum correctly recalled length: 4.\n\n4 trials · 1 correct · 3 incorrect.\n\nThe run ended after three mistakes.\n\nSkipped: 3; timed out: 0.\n\nPresentation-quality notes: 0.\n\nAccuracy by length\n3 digits: 0/1 (0.0%)\n4 digits: 1/2 (50.0%)\n5 digits: 0/1 (0.0%)\nString differences\n\n0 substituted positions, 0 adjacent transposition pairs, 12 missing trailing positions. These describe entered strings, not why an error happened.\n\nPosition 1: 3/4 differed (75.0%)\nPosition 2: 3/4 differed (75.0%)\nPosition 3: 3/4 differed (75.0%)\nPosition 4: 2/3 differed (66.7%)\nPosition 5: 1/1 differed (100.0%)\n\nThese results describe the selected Assessment Practice form only. Auditory and accommodated runs are reported separately.\n\nThis shows recall of these Assessment Practice digit sequences in this browser. It is not an intelligence, memory-capacity, employer, or hiring score. Visual and auditory runs and timing accommodations are different experiences; their results are not calibrated equivalents.\n\nAdvanced Training is not available for Digits in this beta.\n\nReplay Digits\nLocal history\nLibrary"
+    }
+  },
+  {
+    "name": "independent: committed arm delivery then blur and retry",
+    "status": "PASS",
+    "detail": {
+      "beforeCounter": 1,
+      "afterCounter": 1,
+      "beforeSession": "58d4a153-7260-433f-be86-dc6d014356de",
+      "afterSessions": [
+        "58d4a153-7260-433f-be86-dc6d014356de"
+      ],
+      "state": "feedback",
+      "invalidations": []
+    }
+  },
+  {
+    "name": "independent: deletion after confirmed successor onset preserves review",
+    "status": "PASS",
+    "detail": {
+      "deletion": {
+        "type": "deletion_committed",
+        "wallMs": 1791483334469
+      },
+      "body": "Back to library\n\nThis saved attempt was deleted.\n\nDigits attempt removed\n\nReload Digits to start a new attempt. The removed report is no longer available.\n\nReload DigitsLibrary",
+      "observed": [
+        "9",
+        "0"
+      ],
+      "attempts": 0
+    }
+  }
+]

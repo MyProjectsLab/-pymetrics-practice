@@ -1,0 +1,223 @@
+{
+  "algorithm": "SHA-256",
+  "qaBase": "8f3c9736e8c34fedbc8c188fd0bfc310365820f1",
+  "productSha": "f6b8ae05ab024e603ebe3fc8e1a42f71dd4b14b1",
+  "scope": "Repository-relative paths; all recovery packet files plus the updated tracker. Manifest excludes itself. Original raw-download equality is recorded in CLEANUP.json.",
+  "files": [
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/CLEANUP.json",
+      "bytes": 2583,
+      "sha256": "37af3e84c925746c5bdee7f8f5d44d0dd16e28d9db8be1a834f143ca8269e09f"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/IDENTITY.json",
+      "bytes": 13410,
+      "sha256": "b2fcebd649504ebf928da290ec464a930aee2fda3e0a2e368a489ffb0644d7fa"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/README.md",
+      "bytes": 4107,
+      "sha256": "cd007d00c8738a2f32b2ee0a7cf541c40ba32b8b7dfca2365b74969bb3bc4c88"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/RECONCILIATION.json",
+      "bytes": 6361,
+      "sha256": "0dfa5a98acbf5c1692e2eecb9e023641886b175e2580ebed50f7707c3587f19d"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/RESULT.md",
+      "bytes": 8126,
+      "sha256": "a3eda8d15bb5924a3b113271f837be005ba11021020b6bf0feb62836b30b93f8"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/before.raw.json",
+      "bytes": 392018,
+      "sha256": "b776e2baa4f422cef717c099d0b255d264246e1bdfd3caf9af629538dc4f21f3"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/browser-events.json",
+      "bytes": 492293,
+      "sha256": "ef18fe90d4d5a583a82ec3764291d30823e24ebab22aa65e563f3e4e1bd2fa3b"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/build.log",
+      "bytes": 797,
+      "sha256": "753040a75aed81bbce842dcc62a0e050d1542d3549fb05a0b1eaa29ec88772e9"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/chrome-version.txt",
+      "bytes": 7717,
+      "sha256": "625a9abafea761c4de5e7827ed0a30418e0a07383f2bb131c604ac533a9d9458"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/completion.png",
+      "bytes": 286134,
+      "sha256": "91be85c0e2390be6c454ad80fcb1863b30af144d437087969bedb8cce1179863"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/completion.txt",
+      "bytes": 2886,
+      "sha256": "9497cfb81296681cae710eff806d382280741c130388b67656f6285d464d783d"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/export-helper.html",
+      "bytes": 3083,
+      "sha256": "355773a1fc79f3043f1c63883fc5d74aa28bef3dad79e56106c00d54494fce9c"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/exposure-state.json",
+      "bytes": 3369,
+      "sha256": "841d8415f62f3a88721183c43224ff9a7a97d85ebba31ec38893ba0abdfa0ce5"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/install-probe.py",
+      "bytes": 1254,
+      "sha256": "78f6b70398380ef9c68a3f9b561eb1ddfd5638af23eed597b8e1c86917845f9c"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/pause-return.png",
+      "bytes": 360249,
+      "sha256": "465483ed0aecfd84af79e640c11f5921de25b02c8c2882e439ddd69178a9b802"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/pause-return.txt",
+      "bytes": 4142,
+      "sha256": "202df61c3ac4c3a48d7b32e71f78c8dc7d23562839e339ce84419ae0b4fbc470"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/pause.raw.json",
+      "bytes": 737519,
+      "sha256": "23ef5c08a54311931a2e5049617390089c546e78b11907b48df0f496d590a733"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/preparation-resizes.json",
+      "bytes": 89643,
+      "sha256": "a985e5853f7dbdd4b03a300ba406c760cdc09de66eab5e2f4b064e91108acc68"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/readiness.png",
+      "bytes": 433562,
+      "sha256": "aca733814778e1afd56cf7f3005daf5adebff49567765069f096a119a5f3740e"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/readiness.txt",
+      "bytes": 1328,
+      "sha256": "9405de8cf258321d41c8ff2bff858be8add368800f0128c41df3ba764ceaaa8a"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/reconcile.py",
+      "bytes": 10446,
+      "sha256": "6ad0a3cf02b3f39cebbf4e98cb093446bddc0b242d9d6ab11029d67a8c004f60"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/reloaded-library.txt",
+      "bytes": 6406,
+      "sha256": "10e5f38e8f0db98ee6d017fb80dc720abc9cc6cc3b9d66be621edfdf8438c7a3"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/reloaded.raw.json",
+      "bytes": 1219237,
+      "sha256": "6767cb5ec1e837a3e48eb237c1ff931ae7fb60dd8a0bffacae5870e758407bba"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/reopened-record.json",
+      "bytes": 248954,
+      "sha256": "673c9b198058f69701a26ccbc9a707315c6c6bc92a55487074e5d5ca29baea99"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/report-after-reload.png",
+      "bytes": 484466,
+      "sha256": "1d990cca02961c8a12b2323c4db09d6acbed7103080de94aebdc6119cd5a6195"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/report-after-reload.txt",
+      "bytes": 7258,
+      "sha256": "a6da8448497ed1d017e2d5b71fc3b653a76320dc29285be04afe7b6110b2f547"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/report-before-reload.png",
+      "bytes": 435083,
+      "sha256": "b70dd843fce0835c4c6058f9a7c3ce7b724b9ad09c9d653a7bcdb317b9dfaea6"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/report-before-reload.txt",
+      "bytes": 7490,
+      "sha256": "add4130b678bd0607faf71778dc1be7e9e27a58efa1aaf2f35840f92bbc5d54d"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/saved-record.json",
+      "bytes": 248954,
+      "sha256": "673c9b198058f69701a26ccbc9a707315c6c6bc92a55487074e5d5ca29baea99"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/saved.raw.json",
+      "bytes": 1182834,
+      "sha256": "2be822b73247555ad3205c95f5d2a88b5c7983b39cf91ca75360de369a321f32"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/scored-later.png",
+      "bytes": 201409,
+      "sha256": "d9cfdf3f5cd966a3e1f44a624cdceaa16599318d0ca077dde4597740706ea752"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/scored-later.txt",
+      "bytes": 2486,
+      "sha256": "ed01b21ce6bae116c7a56fe95843e96929a337bbb7bb4049be6b6c86aca18e05"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/scored-midrun.png",
+      "bytes": 201405,
+      "sha256": "485af9922be8251503f2752b5a2643713deb233065fd02839b000a9a76949cc1"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/scored-midrun.txt",
+      "bytes": 2486,
+      "sha256": "ed01b21ce6bae116c7a56fe95843e96929a337bbb7bb4049be6b6c86aca18e05"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/scored-start.txt",
+      "bytes": 465,
+      "sha256": "aef4f4abfec305ca722e588582134c1c0d8711599d39664227e95ea44f7820ff"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/stop-journal.json",
+      "bytes": 226402,
+      "sha256": "4d760ca6c5c7278143add08037dc12f14ede82f1f160874035c9a9455805b4c5"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/viewport-during-run.json",
+      "bytes": 146802,
+      "sha256": "6b32219cf2e6b07e6a41f48a7e550cc0a8be9cd189ac97c1dc7083842a992920"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/viewport-recorder.js",
+      "bytes": 2129,
+      "sha256": "b0183912a81168e36ab9d65aa79bfb61f55f469f2945e37f535246a243308041"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/warmup-complete.png",
+      "bytes": 299970,
+      "sha256": "1854d33acc1299c6f34bc854640a7e225172670c5a0ace3fef5ac4e519ca5be7"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/warmup-complete.txt",
+      "bytes": 2944,
+      "sha256": "b9600e9a60c9add0227f4a1e75f8dc228d82d3c95087c2a9683384fdbbbe7e82"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/warmup-restart.png",
+      "bytes": 288044,
+      "sha256": "2dadc5f1408453afa816316c605db9698c1a898656374fb26fa47801c6e710b6"
+    },
+    {
+      "path": "docs/qa/m6-c/l1-v12-native-2026-10-02/recovery/warmup-restart.txt",
+      "bytes": 2904,
+      "sha256": "eb1fad661bfca22d665361cef243456f0322c4d76560677d290932cc0344ec4c"
+    },
+    {
+      "path": "IMPLEMENTATION_TRACKER.md",
+      "bytes": 89549,
+      "sha256": "a2dbfa9a9ef968c8762bf1bf4c91b5943a0c480c513bb214591151620cf0d113"
+    }
+  ]
+}

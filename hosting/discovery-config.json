@@ -1,0 +1,117 @@
+{
+  "version": 3,
+  "routes": [
+    {
+      "src": "^/.*$",
+      "headers": {
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Referrer-Policy": "no-referrer",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "X-Robots-Tag": "noindex, follow",
+        "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+        "Content-Security-Policy": "base-uri 'self'; object-src 'none'; frame-ancestors 'none'"
+      },
+      "continue": true
+    },
+    {
+      "src": "^/(?:pymetrics-practice\\.html|blackstone-pymetrics\\.html|robots\\.txt|sitemap\\.xml)?$",
+      "headers": {
+        "X-Robots-Tag": "index, follow"
+      },
+      "continue": true
+    },
+    {
+      "src": "^/$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^/practice$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^/mock$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^/mock/report$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^/practice/keypresses$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^/practice/stop$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^/practice/digits$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^/practice/balloons$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^/practice/towers$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^/practice/cards$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^/practice/easy-or-hard$",
+      "dest": "/index.html"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "^/.*$",
+      "status": 404
+    }
+  ],
+  "overrides": {
+    "index.html": {
+      "contentType": "text/html; charset=utf-8"
+    },
+    "arrows.html": {
+      "contentType": "text/html; charset=utf-8"
+    },
+    "faces.html": {
+      "contentType": "text/html; charset=utf-8"
+    },
+    "money.html": {
+      "contentType": "text/html; charset=utf-8"
+    },
+    "money2.html": {
+      "contentType": "text/html; charset=utf-8"
+    },
+    "mouth-v12.html": {
+      "contentType": "text/html; charset=utf-8"
+    },
+    "mouth-v13.html": {
+      "contentType": "text/html; charset=utf-8"
+    },
+    "THIRD_PARTY_NOTICES.txt": {
+      "contentType": "text/plain; charset=utf-8"
+    },
+    "pymetrics-practice.html": {
+      "contentType": "text/html; charset=utf-8"
+    },
+    "blackstone-pymetrics.html": {
+      "contentType": "text/html; charset=utf-8"
+    },
+    "privacy.html": {
+      "contentType": "text/html; charset=utf-8"
+    },
+    "robots.txt": {
+      "contentType": "text/plain; charset=utf-8"
+    },
+    "sitemap.xml": {
+      "contentType": "application/xml; charset=utf-8"
+    }
+  }
+}

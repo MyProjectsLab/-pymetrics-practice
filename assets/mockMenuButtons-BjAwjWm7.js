@@ -1,1 +1,0 @@
-var e=new Set([`Close`,`Library`,`Practice library`,`Back to mock`,`Return to mock`,`Main menu`]);function t(t,n){return n?[n,...t.filter(t=>!e.has(t.label))]:[...t]}export{t};

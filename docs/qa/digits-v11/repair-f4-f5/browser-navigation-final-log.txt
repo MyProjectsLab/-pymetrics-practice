@@ -1,0 +1,20 @@
+F4 retired one: pending history detached and fresh current installation PASS
+F4 retired all: pending history detached and fresh current installation PASS
+F5 retired one history hold_read then newer Replay PASS
+F5 retired all history hold_read then newer Replay PASS
+F5 retired one history hold_fail_read then newer Replay PASS
+F5 retired all history hold_fail_read then newer Replay PASS
+F5 openSaved hold_read then newer Replay PASS
+F5 openSaved hold_fail_read then newer Replay PASS
+report poll hold_read then newer Replay PASS
+report poll hold_fail_read then newer Replay PASS
+Replay current-store hold_read then newer History PASS
+Replay current-store hold_fail_read then newer History PASS
+stale delete one hold_other then newer Replay PASS
+stale delete one hold_fail_other then newer Replay PASS
+stale delete all hold_other then newer Replay PASS
+stale delete all hold_fail_other then newer Replay PASS
+history refresh hold_read then Library PASS
+history refresh hold_fail_read then Library PASS
+current delete one: current History or Replay usable PASS
+current delete all: current History or Replay usable PASS

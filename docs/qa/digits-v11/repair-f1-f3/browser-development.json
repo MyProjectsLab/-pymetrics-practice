@@ -1,0 +1,342 @@
+[
+  {
+    "name": "normal adaptive C W C W C W, native Enter, saved report and byte-identical reload/history",
+    "status": "PASS",
+    "detail": {
+      "lengths": [
+        4,
+        5,
+        4,
+        5,
+        4,
+        5
+      ],
+      "review": {
+        "status": "valid",
+        "scoringVersion": "digits_scoring_v1_1",
+        "formId": "DV1",
+        "mode": "visual",
+        "exactCorrect": 3,
+        "wrong": 3,
+        "skipped": 3,
+        "timedOut": 0,
+        "assistedEntry": false,
+        "maximumRecalledLength": 4,
+        "byLength": [
+          {
+            "length": 4,
+            "exact": 3,
+            "of": 3,
+            "percent": 100
+          },
+          {
+            "length": 5,
+            "exact": 0,
+            "of": 3,
+            "percent": 0
+          }
+        ],
+        "closedTrials": 6,
+        "completionReason": "three_mistakes",
+        "serialPositionErrors": [
+          {
+            "position": 1,
+            "errors": 3,
+            "opportunities": 6,
+            "percent": 50
+          },
+          {
+            "position": 2,
+            "errors": 3,
+            "opportunities": 6,
+            "percent": 50
+          },
+          {
+            "position": 3,
+            "errors": 3,
+            "opportunities": 6,
+            "percent": 50
+          },
+          {
+            "position": 4,
+            "errors": 3,
+            "opportunities": 6,
+            "percent": 50
+          },
+          {
+            "position": 5,
+            "errors": 3,
+            "opportunities": 3,
+            "percent": 100
+          }
+        ],
+        "positionMatches": 12,
+        "substitutions": 0,
+        "transpositionPairs": 0,
+        "missingSuffix": 15,
+        "fullMatchingTimeouts": 0
+      },
+      "events": 82,
+      "unchangedSnapshot": true
+    }
+  },
+  {
+    "name": "keypad trusted input and protected feedback blur",
+    "status": "PASS",
+    "detail": {
+      "closed": 1,
+      "reason": "blur",
+      "presented": 1
+    }
+  },
+  {
+    "name": "untrusted input rejected; held physical key repeat suppressed",
+    "status": "PASS",
+    "detail": {
+      "untrustedIgnored": true,
+      "heldKeySingleDigit": true
+    }
+  },
+  {
+    "name": "committed arm held delivery, same-request retry, and late callback cannot double rotate",
+    "status": "PASS",
+    "detail": {
+      "armCounter": 1,
+      "sameRequestRecovered": true
+    }
+  },
+  {
+    "name": "genuine checkpoint failure disables Next; one same-byte retry recovers",
+    "status": "PASS",
+    "detail": {
+      "samePrefixVerified": true,
+      "closed": 1
+    }
+  },
+  {
+    "name": "committed held checkpoint then feedback End reconciles before terminal; late callback fenced",
+    "status": "PASS",
+    "detail": {
+      "reason": "candidate_ended",
+      "closed": 1,
+      "lateCheckpointIgnored": true
+    }
+  },
+  {
+    "name": "terminal held delivery shows unsaved draft; retry confirms same bytes",
+    "status": "PASS",
+    "detail": {
+      "sameBytes": true,
+      "review": {
+        "status": "invalid",
+        "reason": "blur",
+        "presented": 1,
+        "closed": 0,
+        "unresolved": 1
+      }
+    }
+  },
+  {
+    "name": "individual deletion_first: shared Next/deletion boundary without notifications",
+    "status": "PASS",
+    "detail": {
+      "successorDigitsObserved": 0,
+      "attempts": 0,
+      "visualCounter": 1,
+      "orderTrace": [
+        {
+          "type": "data_lock_acquired",
+          "wallMs": 1791484266882,
+          "atMs": 4959.900000035763
+        },
+        {
+          "type": "data_lock_released",
+          "wallMs": 1791484266883,
+          "atMs": 4961
+        }
+      ],
+      "deletionObservation": {
+        "type": "deletion_committed",
+        "wallMs": 1791484266837
+      }
+    }
+  },
+  {
+    "name": "individual next_first: shared Next/deletion boundary without notifications",
+    "status": "PASS",
+    "detail": {
+      "successorDigitsObserved": 1,
+      "attempts": 0,
+      "visualCounter": 1,
+      "orderTrace": [
+        {
+          "type": "data_lock_acquired",
+          "wallMs": 1791484271897,
+          "atMs": 4950.900000035763
+        },
+        {
+          "type": "digit_dom_write",
+          "value": "9",
+          "wallMs": 1791484271914,
+          "atMs": 4967.400000035763
+        },
+        {
+          "type": "data_lock_released",
+          "wallMs": 1791484271931,
+          "atMs": 4984.5
+        },
+        {
+          "type": "data_lock_acquired",
+          "wallMs": 1791484272885,
+          "atMs": 5939.200000047684
+        },
+        {
+          "type": "data_lock_released",
+          "wallMs": 1791484272887,
+          "atMs": 5941.100000023842
+        }
+      ],
+      "deletionObservation": {
+        "type": "deletion_committed",
+        "wallMs": 1791484271933
+      }
+    }
+  },
+  {
+    "name": "all deletion_first: shared Next/deletion boundary without notifications",
+    "status": "PASS",
+    "detail": {
+      "successorDigitsObserved": 0,
+      "attempts": 0,
+      "visualCounter": 0,
+      "orderTrace": [
+        {
+          "type": "data_lock_acquired",
+          "wallMs": 1791484278230,
+          "atMs": 4946
+        },
+        {
+          "type": "data_lock_released",
+          "wallMs": 1791484278230,
+          "atMs": 4946.5
+        }
+      ],
+      "deletionObservation": {
+        "type": "deletion_committed",
+        "wallMs": 1791484278183
+      }
+    }
+  },
+  {
+    "name": "all next_first: shared Next/deletion boundary without notifications",
+    "status": "PASS",
+    "detail": {
+      "successorDigitsObserved": 1,
+      "attempts": 0,
+      "visualCounter": 0,
+      "orderTrace": [
+        {
+          "type": "data_lock_acquired",
+          "wallMs": 1791484283230,
+          "atMs": 4954.600000023842
+        },
+        {
+          "type": "digit_dom_write",
+          "value": "9",
+          "wallMs": 1791484283245,
+          "atMs": 4969.199999988079
+        },
+        {
+          "type": "data_lock_released",
+          "wallMs": 1791484283264,
+          "atMs": 4988.100000023842
+        },
+        {
+          "type": "data_lock_acquired",
+          "wallMs": 1791484284219,
+          "atMs": 5943.100000023842
+        },
+        {
+          "type": "data_lock_released",
+          "wallMs": 1791484284220,
+          "atMs": 5944.100000023842
+        }
+      ],
+      "deletionObservation": {
+        "type": "deletion_committed",
+        "wallMs": 1791484283266
+      }
+    }
+  },
+  {
+    "name": "eligible local-auditory full callback-injected journey, save and exact reload",
+    "status": "PASS",
+    "detail": {
+      "callbackInjection": true,
+      "physicalAudibility": "not established",
+      "speechStarts": 9,
+      "unchangedSnapshot": true
+    }
+  },
+  {
+    "name": "auditory unavailable disclosure with no voices, visual remains usable",
+    "status": "PASS",
+    "detail": {
+      "unavailableDeclared": true
+    }
+  },
+  {
+    "name": "200 percent CSS zoom keyboard entry, normal button Enter, and report focus",
+    "status": "PASS",
+    "detail": {
+      "method": "CSS zoom 2 at 1280x800, bounded reflow evidence",
+      "layout": {
+        "left": 74,
+        "right": 970,
+        "top": 331.015625,
+        "bottom": 606.984375,
+        "width": 1280,
+        "height": 800,
+        "scrollWidth": 1280,
+        "clientWidth": 1280,
+        "scrollY": 0,
+        "stimulus": {
+          "x": 74,
+          "y": 203.015625,
+          "width": 1132,
+          "height": 128,
+          "top": 203.015625,
+          "right": 1206,
+          "bottom": 331.015625,
+          "left": 74
+        }
+      }
+    }
+  },
+  {
+    "name": "required first frame missing, late callback fenced, saved Invalid with zero exposure",
+    "status": "PASS",
+    "detail": {
+      "presented": 0,
+      "reason": "visual_frame_watchdog",
+      "lateFrameIgnored": true
+    }
+  },
+  {
+    "name": "saved report held authority read hides numbers until current root is verified",
+    "status": "PASS",
+    "detail": {
+      "withheldDuringRead": true,
+      "restoredAfterCurrentAuthority": true
+    }
+  },
+  {
+    "name": "held terminal delivery plus other-tab deletion retires retry and late saved copy",
+    "status": "PASS",
+    "detail": {
+      "lateSavedCopySuppressed": true,
+      "attempts": 0,
+      "deletedRetryAbsent": true
+    }
+  }
+]

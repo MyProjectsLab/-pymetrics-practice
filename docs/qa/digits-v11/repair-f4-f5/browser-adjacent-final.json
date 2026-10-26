@@ -1,0 +1,137 @@
+[
+  {
+    "name": "openSaved one deletion between load and report publication",
+    "status": "PASS",
+    "detail": {
+      "pending": "Back to library\nOpening Digits review\n\nChecking current local storage.\n\nPractice againLocal historyLibrary",
+      "settled": "Back to library\n\nThis saved record was removed.\n\nDigits unavailable\n\nScored Practice requires working local storage and exclusive browser ownership. No temporary result is presented as saved.\n\nReload DigitsLibrary",
+      "durable": {
+        "version": "digits_storage_v1_1",
+        "installationId": "fbdbea14-d59d-4def-9bfb-a5df270a1542",
+        "revision": 8,
+        "counters": {
+          "visual": 1,
+          "auditory": 0
+        },
+        "attempts": {},
+        "tombstones": {
+          "cc264382-484e-4126-aebe-26aa4bf2e564": {
+            "requestId": "de196baa-8dc2-4035-ba22-44b232471f8a",
+            "mode": "visual",
+            "ordinal": 1,
+            "deletedAtWallMs": 1791486814403
+          }
+        },
+        "activity": {}
+      },
+      "unchangedRoot": true
+    }
+  },
+  {
+    "name": "openSaved all deletion between load and report publication",
+    "status": "PASS",
+    "detail": {
+      "pending": "Back to library\nOpening Digits review\n\nChecking current local storage.\n\nPractice againLocal historyLibrary",
+      "settled": "Back to library\n\nThis saved record was removed.\n\nDigits unavailable\n\nScored Practice requires working local storage and exclusive browser ownership. No temporary result is presented as saved.\n\nReload DigitsLibrary",
+      "durable": {
+        "version": "digits_storage_v1_1",
+        "installationId": "b1bb3884-3b72-4278-b314-63ad1a1ef480",
+        "revision": 0,
+        "counters": {
+          "visual": 0,
+          "auditory": 0
+        },
+        "attempts": {},
+        "tombstones": {},
+        "activity": {}
+      },
+      "unchangedRoot": true
+    }
+  },
+  {
+    "name": "report stage 2 held success then newer Replay",
+    "status": "PASS",
+    "detail": {
+      "guideRemains": true,
+      "unchangedRoot": true,
+      "heldStage": 2
+    }
+  },
+  {
+    "name": "report stage 2 held error then newer Replay",
+    "status": "PASS",
+    "detail": {
+      "guideRemains": true,
+      "unchangedRoot": true,
+      "heldStage": 2
+    }
+  },
+  {
+    "name": "report stage 3 held success then newer Replay",
+    "status": "PASS",
+    "detail": {
+      "guideRemains": true,
+      "unchangedRoot": true,
+      "heldStage": 3
+    }
+  },
+  {
+    "name": "report stage 3 held error then newer Replay",
+    "status": "PASS",
+    "detail": {
+      "guideRemains": true,
+      "unchangedRoot": true,
+      "heldStage": 3
+    }
+  },
+  {
+    "name": "report stage 5 held success then newer Replay",
+    "status": "PASS",
+    "detail": {
+      "guideRemains": true,
+      "unchangedRoot": true,
+      "heldStage": 5
+    }
+  },
+  {
+    "name": "report stage 5 held error then newer Replay",
+    "status": "PASS",
+    "detail": {
+      "guideRemains": true,
+      "unchangedRoot": true,
+      "heldStage": 5
+    }
+  },
+  {
+    "name": "initial open hold_read then unmount",
+    "status": "PASS",
+    "detail": {
+      "libraryRemains": true,
+      "newOpenWorks": true
+    }
+  },
+  {
+    "name": "initial open hold_fail_read then unmount",
+    "status": "PASS",
+    "detail": {
+      "libraryRemains": true,
+      "newOpenWorks": true
+    }
+  },
+  {
+    "name": "voice sample held success after visual switch",
+    "status": "PASS",
+    "detail": {
+      "visualRemains": true,
+      "staleSampleIgnored": true
+    }
+  },
+  {
+    "name": "voice sample held error after visual switch",
+    "status": "PASS",
+    "detail": {
+      "visualRemains": true,
+      "staleSampleIgnored": true
+    }
+  }
+]

@@ -1,0 +1,840 @@
+[
+  {
+    "name": "F1 committed-undelivered arm blur invalidation and fresh rotation",
+    "status": "PASS",
+    "detail": {
+      "invalid": {
+        "status": "invalid",
+        "reason": "blur",
+        "presented": 0,
+        "closed": 0,
+        "unresolved": 0
+      },
+      "invalidJournal": [
+        {
+          "schemaVersion": "digits_event_v1_1",
+          "installationId": "cdad419e-dfee-4c54-bff8-42f7119fd1d4",
+          "sessionId": "e7a48f71-e936-421e-b9ab-747a5af48541",
+          "formId": "DV1",
+          "clockDomainId": "9db1a5d9-1a98-4552-81b5-752df07642a6",
+          "sequenceNumber": 1,
+          "block": 0,
+          "trialIndex": 1,
+          "atMs": 934.6999999880791,
+          "type": "prepared",
+          "detail": {
+            "mode": "visual",
+            "entryWindow": 20000
+          }
+        },
+        {
+          "schemaVersion": "digits_event_v1_1",
+          "installationId": "cdad419e-dfee-4c54-bff8-42f7119fd1d4",
+          "sessionId": "e7a48f71-e936-421e-b9ab-747a5af48541",
+          "formId": "DV1",
+          "clockDomainId": "9db1a5d9-1a98-4552-81b5-752df07642a6",
+          "sequenceNumber": 2,
+          "block": 0,
+          "trialIndex": 1,
+          "atMs": 934.6999999880791,
+          "type": "form_assigned",
+          "detail": {
+            "formId": "DV1",
+            "formsVersion": "digits_forms_v1_1",
+            "generatorVersion": "digits_constructor_v1_1",
+            "manifestDigest": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+          }
+        },
+        {
+          "schemaVersion": "digits_event_v1_1",
+          "installationId": "cdad419e-dfee-4c54-bff8-42f7119fd1d4",
+          "sessionId": "e7a48f71-e936-421e-b9ab-747a5af48541",
+          "formId": "DV1",
+          "clockDomainId": "9db1a5d9-1a98-4552-81b5-752df07642a6",
+          "sequenceNumber": 3,
+          "block": 0,
+          "trialIndex": 1,
+          "atMs": 934.6999999880791,
+          "type": "armed",
+          "detail": {
+            "profile": "{\"mode\":\"visual\",\"entryWindow\":20000,\"highContrast\":false,\"reducedMotion\":false,\"entryMethod\":\"keyboard\",\"assistedEntryDeclared\":false,\"voice\":null,\"browserContext\":{\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36\",\"viewportWidth\":1280,\"viewportHeight\":800,\"devicePixelRatio\":1}}"
+          }
+        },
+        {
+          "schemaVersion": "digits_event_v1_1",
+          "installationId": "cdad419e-dfee-4c54-bff8-42f7119fd1d4",
+          "sessionId": "e7a48f71-e936-421e-b9ab-747a5af48541",
+          "formId": "DV1",
+          "clockDomainId": "9db1a5d9-1a98-4552-81b5-752df07642a6",
+          "sequenceNumber": 4,
+          "block": 0,
+          "trialIndex": 1,
+          "atMs": 954.3999999761581,
+          "type": "invalidated",
+          "detail": {
+            "reason": "blur"
+          }
+        }
+      ],
+      "freshForm": "DV2",
+      "freshOrdinal": 2,
+      "body": "Back to library\nDigits report\n\nReview-only record saved in this browser\n\nForm DV1 · visual presentation · standard entry · keyboard input · standard contrast · standard motion\n\nRun details\n\nInvalid: blur\n\n0 trials began presentation; 0 closed; 0 presented trials remain unresolved.\n\nNo aggregate accuracy or error table is shown. A reload may know only the last saved prefix; later presentation status can be unknown.\n\nThis shows recall of these Assessment Practice digit sequences in this browser. It is not an intelligence, memory-capacity, employer, or hiring score. Visual and auditory runs and timing accommodations are different experiences; their results are not calibrated equivalents.\n\nAdvanced Training is not available for Digits in this beta.\n\nReplay Digits\nLocal history\nLibrary"
+    }
+  },
+  {
+    "name": "F1 committed-undelivered arm freeze invalidation and fresh rotation",
+    "status": "PASS",
+    "detail": {
+      "invalid": {
+        "status": "invalid",
+        "reason": "freeze",
+        "presented": 0,
+        "closed": 0,
+        "unresolved": 0
+      },
+      "invalidJournal": [
+        {
+          "schemaVersion": "digits_event_v1_1",
+          "installationId": "814116bc-99e0-441a-b830-d231f9a41540",
+          "sessionId": "635a6287-e6cb-454d-9dfd-c1cd55dd26cd",
+          "formId": "DV1",
+          "clockDomainId": "a90a2144-b7a3-4535-bc76-b279377b0904",
+          "sequenceNumber": 1,
+          "block": 0,
+          "trialIndex": 1,
+          "atMs": 350.5,
+          "type": "prepared",
+          "detail": {
+            "mode": "visual",
+            "entryWindow": 20000
+          }
+        },
+        {
+          "schemaVersion": "digits_event_v1_1",
+          "installationId": "814116bc-99e0-441a-b830-d231f9a41540",
+          "sessionId": "635a6287-e6cb-454d-9dfd-c1cd55dd26cd",
+          "formId": "DV1",
+          "clockDomainId": "a90a2144-b7a3-4535-bc76-b279377b0904",
+          "sequenceNumber": 2,
+          "block": 0,
+          "trialIndex": 1,
+          "atMs": 350.5,
+          "type": "form_assigned",
+          "detail": {
+            "formId": "DV1",
+            "formsVersion": "digits_forms_v1_1",
+            "generatorVersion": "digits_constructor_v1_1",
+            "manifestDigest": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+          }
+        },
+        {
+          "schemaVersion": "digits_event_v1_1",
+          "installationId": "814116bc-99e0-441a-b830-d231f9a41540",
+          "sessionId": "635a6287-e6cb-454d-9dfd-c1cd55dd26cd",
+          "formId": "DV1",
+          "clockDomainId": "a90a2144-b7a3-4535-bc76-b279377b0904",
+          "sequenceNumber": 3,
+          "block": 0,
+          "trialIndex": 1,
+          "atMs": 350.5,
+          "type": "armed",
+          "detail": {
+            "profile": "{\"mode\":\"visual\",\"entryWindow\":20000,\"highContrast\":false,\"reducedMotion\":false,\"entryMethod\":\"keyboard\",\"assistedEntryDeclared\":false,\"voice\":null,\"browserContext\":{\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36\",\"viewportWidth\":1280,\"viewportHeight\":800,\"devicePixelRatio\":1}}"
+          }
+        },
+        {
+          "schemaVersion": "digits_event_v1_1",
+          "installationId": "814116bc-99e0-441a-b830-d231f9a41540",
+          "sessionId": "635a6287-e6cb-454d-9dfd-c1cd55dd26cd",
+          "formId": "DV1",
+          "clockDomainId": "a90a2144-b7a3-4535-bc76-b279377b0904",
+          "sequenceNumber": 4,
+          "block": 0,
+          "trialIndex": 1,
+          "atMs": 368.69999998807907,
+          "type": "invalidated",
+          "detail": {
+            "reason": "freeze"
+          }
+        }
+      ],
+      "freshForm": "DV2",
+      "freshOrdinal": 2,
+      "body": "Back to library\nDigits report\n\nReview-only record saved in this browser\n\nForm DV1 · visual presentation · standard entry · keyboard input · standard contrast · standard motion\n\nRun details\n\nInvalid: freeze\n\n0 trials began presentation; 0 closed; 0 presented trials remain unresolved.\n\nNo aggregate accuracy or error table is shown. A reload may know only the last saved prefix; later presentation status can be unknown.\n\nThis shows recall of these Assessment Practice digit sequences in this browser. It is not an intelligence, memory-capacity, employer, or hiring score. Visual and auditory runs and timing accommodations are different experiences; their results are not calibrated equivalents.\n\nAdvanced Training is not available for Digits in this beta.\n\nReplay Digits\nLocal history\nLibrary"
+    }
+  },
+  {
+    "name": "F1 committed-undelivered arm page_exit invalidation and fresh rotation",
+    "status": "PASS",
+    "detail": {
+      "invalid": {
+        "status": "invalid",
+        "reason": "page_exit",
+        "presented": 0,
+        "closed": 0,
+        "unresolved": 0
+      },
+      "invalidJournal": [
+        {
+          "schemaVersion": "digits_event_v1_1",
+          "installationId": "9e5ef230-e45c-4bd7-bd09-1143bed7170c",
+          "sessionId": "088c1bb7-ec58-4e16-a663-34719204be69",
+          "formId": "DV1",
+          "clockDomainId": "fc00dc9b-ff6a-48a1-8b93-207125d83b5d",
+          "sequenceNumber": 1,
+          "block": 0,
+          "trialIndex": 1,
+          "atMs": 352.80000001192093,
+          "type": "prepared",
+          "detail": {
+            "mode": "visual",
+            "entryWindow": 20000
+          }
+        },
+        {
+          "schemaVersion": "digits_event_v1_1",
+          "installationId": "9e5ef230-e45c-4bd7-bd09-1143bed7170c",
+          "sessionId": "088c1bb7-ec58-4e16-a663-34719204be69",
+          "formId": "DV1",
+          "clockDomainId": "fc00dc9b-ff6a-48a1-8b93-207125d83b5d",
+          "sequenceNumber": 2,
+          "block": 0,
+          "trialIndex": 1,
+          "atMs": 352.80000001192093,
+          "type": "form_assigned",
+          "detail": {
+            "formId": "DV1",
+            "formsVersion": "digits_forms_v1_1",
+            "generatorVersion": "digits_constructor_v1_1",
+            "manifestDigest": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+          }
+        },
+        {
+          "schemaVersion": "digits_event_v1_1",
+          "installationId": "9e5ef230-e45c-4bd7-bd09-1143bed7170c",
+          "sessionId": "088c1bb7-ec58-4e16-a663-34719204be69",
+          "formId": "DV1",
+          "clockDomainId": "fc00dc9b-ff6a-48a1-8b93-207125d83b5d",
+          "sequenceNumber": 3,
+          "block": 0,
+          "trialIndex": 1,
+          "atMs": 352.80000001192093,
+          "type": "armed",
+          "detail": {
+            "profile": "{\"mode\":\"visual\",\"entryWindow\":20000,\"highContrast\":false,\"reducedMotion\":false,\"entryMethod\":\"keyboard\",\"assistedEntryDeclared\":false,\"voice\":null,\"browserContext\":{\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36\",\"viewportWidth\":1280,\"viewportHeight\":800,\"devicePixelRatio\":1}}"
+          }
+        },
+        {
+          "schemaVersion": "digits_event_v1_1",
+          "installationId": "9e5ef230-e45c-4bd7-bd09-1143bed7170c",
+          "sessionId": "088c1bb7-ec58-4e16-a663-34719204be69",
+          "formId": "DV1",
+          "clockDomainId": "fc00dc9b-ff6a-48a1-8b93-207125d83b5d",
+          "sequenceNumber": 4,
+          "block": 0,
+          "trialIndex": 1,
+          "atMs": 371.9000000357628,
+          "type": "invalidated",
+          "detail": {
+            "reason": "page_exit"
+          }
+        }
+      ],
+      "freshForm": "DV2",
+      "freshOrdinal": 2,
+      "body": "Back to library\nDigits report\n\nReview-only record saved in this browser\n\nForm DV1 · visual presentation · standard entry · keyboard input · standard contrast · standard motion\n\nRun details\n\nInvalid: page exit\n\n0 trials began presentation; 0 closed; 0 presented trials remain unresolved.\n\nNo aggregate accuracy or error table is shown. A reload may know only the last saved prefix; later presentation status can be unknown.\n\nThis shows recall of these Assessment Practice digit sequences in this browser. It is not an intelligence, memory-capacity, employer, or hiring score. Visual and auditory runs and timing accommodations are different experiences; their results are not calibrated equivalents.\n\nAdvanced Training is not available for Digits in this beta.\n\nReplay Digits\nLocal history\nLibrary"
+    }
+  },
+  {
+    "name": "F1 committed-undelivered arm hidden invalidation and fresh rotation",
+    "status": "PASS",
+    "detail": {
+      "invalid": {
+        "status": "invalid",
+        "reason": "hidden",
+        "presented": 0,
+        "closed": 0,
+        "unresolved": 0
+      },
+      "invalidJournal": [
+        {
+          "schemaVersion": "digits_event_v1_1",
+          "installationId": "e5c194aa-b7b7-4a0d-85a9-89a387144f0f",
+          "sessionId": "9153b832-c370-4283-882a-8c8f93578a50",
+          "formId": "DV1",
+          "clockDomainId": "e457245c-a89d-437c-a9e4-350ba79a91de",
+          "sequenceNumber": 1,
+          "block": 0,
+          "trialIndex": 1,
+          "atMs": 355.19999998807907,
+          "type": "prepared",
+          "detail": {
+            "mode": "visual",
+            "entryWindow": 20000
+          }
+        },
+        {
+          "schemaVersion": "digits_event_v1_1",
+          "installationId": "e5c194aa-b7b7-4a0d-85a9-89a387144f0f",
+          "sessionId": "9153b832-c370-4283-882a-8c8f93578a50",
+          "formId": "DV1",
+          "clockDomainId": "e457245c-a89d-437c-a9e4-350ba79a91de",
+          "sequenceNumber": 2,
+          "block": 0,
+          "trialIndex": 1,
+          "atMs": 355.19999998807907,
+          "type": "form_assigned",
+          "detail": {
+            "formId": "DV1",
+            "formsVersion": "digits_forms_v1_1",
+            "generatorVersion": "digits_constructor_v1_1",
+            "manifestDigest": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+          }
+        },
+        {
+          "schemaVersion": "digits_event_v1_1",
+          "installationId": "e5c194aa-b7b7-4a0d-85a9-89a387144f0f",
+          "sessionId": "9153b832-c370-4283-882a-8c8f93578a50",
+          "formId": "DV1",
+          "clockDomainId": "e457245c-a89d-437c-a9e4-350ba79a91de",
+          "sequenceNumber": 3,
+          "block": 0,
+          "trialIndex": 1,
+          "atMs": 355.19999998807907,
+          "type": "armed",
+          "detail": {
+            "profile": "{\"mode\":\"visual\",\"entryWindow\":20000,\"highContrast\":false,\"reducedMotion\":false,\"entryMethod\":\"keyboard\",\"assistedEntryDeclared\":false,\"voice\":null,\"browserContext\":{\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36\",\"viewportWidth\":1280,\"viewportHeight\":800,\"devicePixelRatio\":1}}"
+          }
+        },
+        {
+          "schemaVersion": "digits_event_v1_1",
+          "installationId": "e5c194aa-b7b7-4a0d-85a9-89a387144f0f",
+          "sessionId": "9153b832-c370-4283-882a-8c8f93578a50",
+          "formId": "DV1",
+          "clockDomainId": "e457245c-a89d-437c-a9e4-350ba79a91de",
+          "sequenceNumber": 4,
+          "block": 0,
+          "trialIndex": 1,
+          "atMs": 373.39999997615814,
+          "type": "invalidated",
+          "detail": {
+            "reason": "hidden"
+          }
+        }
+      ],
+      "freshForm": "DV2",
+      "freshOrdinal": 2,
+      "body": "Back to library\nDigits report\n\nReview-only record saved in this browser\n\nForm DV1 · visual presentation · standard entry · keyboard input · standard contrast · standard motion\n\nRun details\n\nInvalid: hidden\n\n0 trials began presentation; 0 closed; 0 presented trials remain unresolved.\n\nNo aggregate accuracy or error table is shown. A reload may know only the last saved prefix; later presentation status can be unknown.\n\nThis shows recall of these Assessment Practice digit sequences in this browser. It is not an intelligence, memory-capacity, employer, or hiring score. Visual and auditory runs and timing accommodations are different experiences; their results are not calibrated equivalents.\n\nAdvanced Training is not available for Digits in this beta.\n\nReplay Digits\nLocal history\nLibrary"
+    }
+  },
+  {
+    "name": "F1 timeout-only same request then blur after timeout preserves observation",
+    "status": "PASS",
+    "detail": {
+      "counter": 1,
+      "phase": "invalid",
+      "body": "Back to library\nDigits report\n\nReview-only record saved in this browser\n\nForm DV1 · visual presentation · standard entry · keyboard input · standard contrast · standard motion\n\nRun details\n\nInvalid: blur\n\n0 trials began presentation; 0 closed; 0 presented trials remain unresolved.\n\nNo aggregate accuracy or error table is shown. A reload may know only the last saved prefix; later presentation status can be unknown.\n\nThis shows recall of these Assessment Practice digit sequences in this browser. It is not an intelligence, memory-capacity, employer, or hiring score. Visual and auditory runs and timing accommodations are different experiences; their results are not calibrated equivalents.\n\nAdvanced Training is not available for Digits in this beta.\n\nReplay Digits\nLocal history\nLibrary"
+    }
+  },
+  {
+    "name": "F1 uncommitted owner admission blur leaves no scored journal",
+    "status": "PASS",
+    "detail": {
+      "root": {
+        "version": "digits_storage_v1_1",
+        "installationId": "3195b1b9-49a7-4eb5-972a-92b397ddcf0c",
+        "revision": 0,
+        "counters": {
+          "visual": 0,
+          "auditory": 0
+        },
+        "attempts": {},
+        "tombstones": {},
+        "activity": {}
+      },
+      "body": "Back to library\n\nAnother Digits tab owns the exercise\n\nReady for Digits\n\nvisual presentation, 20-second standard entry, keyboard input.\n\nKeep this window visible and focused from Start until the run ends, including while waiting for Next. A tab switch, lost focus or browser timing failure invalidates the attempt.\n\nA rare long run ends at the Assessment Practice limit of 40 trials; sequence length is between 2 and 16 digits.\n\nStarting commits one form rotation position. A failed storage confirmation will not start a scored presentation.\n\nStart scored DigitsChange setup"
+    }
+  },
+  {
+    "name": "F1 one deletion before held-arm cancellation has no resurrection",
+    "status": "PASS",
+    "detail": {
+      "durable": {
+        "version": "digits_storage_v1_1",
+        "installationId": "fe4ed704-9c80-4018-81ec-bad5752f2fea",
+        "revision": 2,
+        "counters": {
+          "visual": 1,
+          "auditory": 0
+        },
+        "attempts": {},
+        "tombstones": {
+          "c9645f39-fa72-4627-9672-9f29158c5433": {
+            "requestId": "9ec9d367-9918-4608-ae72-a725efd9a1c1",
+            "mode": "visual",
+            "ordinal": 1,
+            "deletedAtWallMs": 1791483753564
+          }
+        },
+        "activity": {}
+      },
+      "body": "Back to library\n\nStart canceled before any retained result could be confirmed. Start a new attempt to continue.\n\nReady for Digits\n\nvisual presentation, 20-second standard entry, keyboard input.\n\nKeep this window visible and focused from Start until the run ends, including while waiting for Next. A tab switch, lost focus or browser timing failure invalidates the attempt.\n\nA rare long run ends at the Assessment Practice limit of 40 trials; sequence length is between 2 and 16 digits.\n\nStarting commits one form rotation position. A failed storage confirmation will not start a scored presentation.\n\nStart scored DigitsChange setup"
+    }
+  },
+  {
+    "name": "F1 all deletion before held-arm cancellation has no resurrection",
+    "status": "PASS",
+    "detail": {
+      "durable": {
+        "version": "digits_storage_v1_1",
+        "installationId": "ba303a8c-338a-4768-96cb-094911ce78f1",
+        "revision": 0,
+        "counters": {
+          "visual": 0,
+          "auditory": 0
+        },
+        "attempts": {},
+        "tombstones": {},
+        "activity": {}
+      },
+      "body": "Back to library\n\nLocal data was replaced.\n\nDigits attempt removed\n\nReload Digits to start a new attempt. The removed report is no longer available.\n\nReload DigitsLibrary"
+    }
+  },
+  {
+    "name": "F2 undeclared trusted paste labels live and reopened report without changing journal",
+    "status": "FAIL",
+    "error": "Error: history lost actual assistance",
+    "body": "Back to library\nDigits\n\nWatch one digit at a time, then enter the digits in order. Start with four digits. A correct answer adds one digit; a mistake removes one. Three mistakes end the run.\n\nTime varies with your answers. Allow at least five minutes. A rare long run can take more than 20 minutes, plus any time you spend before Next.\n\nOriginal forms rotate and may repeat after six starts or local data deletion.\n\nYour actual assessment invitation controls what to prepare. This is an independent practice exercise.\n\nThis shows recall of these Assessment Practice digit sequences in this browser. It is not an intelligence, memory-capacity, employer, or hiring score. Visual and auditory runs and timing accommodations are different experiences; their results are not calibrated equivalents.\n\nSee exampleLocal history"
+  },
+  {
+    "name": "F2 undeclared trusted paste then entry blur labels unresolved Invalid",
+    "status": "PASS",
+    "detail": {
+      "body": "Back to library\nDigits report\n\nReview-only record saved in this browser\n\nForm DV1 · visual presentation · standard entry · keyboard input · assisted entry used · standard contrast · standard motion\n\nRun details\n\nInvalid: blur\n\n1 trials began presentation; 0 closed; 1 presented trials remain unresolved.\n\nNo aggregate accuracy or error table is shown. A reload may know only the last saved prefix; later presentation status can be unknown.\n\nThis shows recall of these Assessment Practice digit sequences in this browser. It is not an intelligence, memory-capacity, employer, or hiring score. Visual and auditory runs and timing accommodations are different experiences; their results are not calibrated equivalents.\n\nAdvanced Training is not available for Digits in this beta.\n\nReplay Digits\nLocal history\nLibrary",
+      "state": {
+        "specificationVersion": "digits_spec_v1_1",
+        "scoringVersion": "digits_scoring_v1_1",
+        "form": {
+          "id": "DV1",
+          "mode": "visual",
+          "seed": 3512795137,
+          "version": "digits_forms_v1_1",
+          "generatorVersion": "digits_constructor_v1_1",
+          "manifestDigest": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+        },
+        "identity": {
+          "installationId": "10e1414c-4a14-4d1a-8d97-3dc3eabe9aa0",
+          "sessionId": "11c1b443-02fb-4324-a8c9-0739ae5c279e",
+          "requestId": "3ca419d6-3473-4a60-a092-b0b5aa006f65",
+          "clockDomainId": "6009e8e4-cf59-450b-b16b-615a686f7d72",
+          "route": "standalone"
+        },
+        "profile": {
+          "mode": "visual",
+          "entryWindow": 20000,
+          "highContrast": false,
+          "reducedMotion": false,
+          "entryMethod": "keyboard",
+          "assistedEntryDeclared": false,
+          "voice": null,
+          "browserContext": {
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36",
+            "viewportWidth": 1280,
+            "viewportHeight": 800,
+            "devicePixelRatio": 1
+          }
+        },
+        "armedAtMs": 363.60000002384186,
+        "phase": "invalid",
+        "trialIndex": 1,
+        "digitIndex": 4,
+        "length": 4,
+        "target": "3668",
+        "presentedTargets": [
+          "3668"
+        ],
+        "wrongCount": 0,
+        "completionReason": null,
+        "presentedTrials": 1,
+        "closed": [],
+        "entryOpenedMs": 4830.900000035763,
+        "entryDeadlineMs": 24830.900000035763,
+        "nextDueMs": null,
+        "digitOnsetMs": null,
+        "speechStartMs": null,
+        "lastFrameMs": 4830.900000035763,
+        "draft": "0",
+        "draftAssisted": true,
+        "invalidReason": "blur",
+        "commands": [
+          {
+            "kind": "start",
+            "atMs": 383.4000000357628
+          },
+          {
+            "kind": "visual_onset",
+            "dueMs": 383.4000000357628,
+            "atMs": 396.4000000357628
+          },
+          {
+            "kind": "visual_offset",
+            "dueMs": 1096.4000000357628,
+            "atMs": 1115.800000011921
+          },
+          {
+            "kind": "visual_onset",
+            "dueMs": 1365.800000011921,
+            "atMs": 1380.800000011921
+          },
+          {
+            "kind": "visual_offset",
+            "dueMs": 2080.800000011921,
+            "atMs": 2096.5
+          },
+          {
+            "kind": "visual_onset",
+            "dueMs": 2346.5,
+            "atMs": 2363.900000035763
+          },
+          {
+            "kind": "visual_offset",
+            "dueMs": 3063.900000035763,
+            "atMs": 3080.699999988079
+          },
+          {
+            "kind": "visual_onset",
+            "dueMs": 3330.699999988079,
+            "atMs": 3347
+          },
+          {
+            "kind": "visual_offset",
+            "dueMs": 4047,
+            "atMs": 4065.400000035763
+          },
+          {
+            "kind": "entry_opened",
+            "dueMs": 4815.400000035763,
+            "atMs": 4830.900000035763
+          },
+          {
+            "kind": "edit",
+            "atMs": 4839.900000035763,
+            "value": "0",
+            "assisted": true,
+            "source": "assisted"
+          },
+          {
+            "kind": "invalidate",
+            "atMs": 4841.5,
+            "reason": "blur"
+          }
+        ],
+        "events": [
+          {
+            "schemaVersion": "digits_event_v1_1",
+            "installationId": "10e1414c-4a14-4d1a-8d97-3dc3eabe9aa0",
+            "sessionId": "11c1b443-02fb-4324-a8c9-0739ae5c279e",
+            "formId": "DV1",
+            "clockDomainId": "6009e8e4-cf59-450b-b16b-615a686f7d72",
+            "sequenceNumber": 1,
+            "block": 0,
+            "trialIndex": 1,
+            "atMs": 363.60000002384186,
+            "type": "prepared",
+            "detail": {
+              "mode": "visual",
+              "entryWindow": 20000
+            }
+          },
+          {
+            "schemaVersion": "digits_event_v1_1",
+            "installationId": "10e1414c-4a14-4d1a-8d97-3dc3eabe9aa0",
+            "sessionId": "11c1b443-02fb-4324-a8c9-0739ae5c279e",
+            "formId": "DV1",
+            "clockDomainId": "6009e8e4-cf59-450b-b16b-615a686f7d72",
+            "sequenceNumber": 2,
+            "block": 0,
+            "trialIndex": 1,
+            "atMs": 363.60000002384186,
+            "type": "form_assigned",
+            "detail": {
+              "formId": "DV1",
+              "formsVersion": "digits_forms_v1_1",
+              "generatorVersion": "digits_constructor_v1_1",
+              "manifestDigest": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+            }
+          },
+          {
+            "schemaVersion": "digits_event_v1_1",
+            "installationId": "10e1414c-4a14-4d1a-8d97-3dc3eabe9aa0",
+            "sessionId": "11c1b443-02fb-4324-a8c9-0739ae5c279e",
+            "formId": "DV1",
+            "clockDomainId": "6009e8e4-cf59-450b-b16b-615a686f7d72",
+            "sequenceNumber": 3,
+            "block": 0,
+            "trialIndex": 1,
+            "atMs": 363.60000002384186,
+            "type": "armed",
+            "detail": {
+              "profile": "{\"mode\":\"visual\",\"entryWindow\":20000,\"highContrast\":false,\"reducedMotion\":false,\"entryMethod\":\"keyboard\",\"assistedEntryDeclared\":false,\"voice\":null,\"browserContext\":{\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36\",\"viewportWidth\":1280,\"viewportHeight\":800,\"devicePixelRatio\":1}}"
+            }
+          },
+          {
+            "schemaVersion": "digits_event_v1_1",
+            "installationId": "10e1414c-4a14-4d1a-8d97-3dc3eabe9aa0",
+            "sessionId": "11c1b443-02fb-4324-a8c9-0739ae5c279e",
+            "formId": "DV1",
+            "clockDomainId": "6009e8e4-cf59-450b-b16b-615a686f7d72",
+            "sequenceNumber": 4,
+            "block": 0,
+            "trialIndex": 1,
+            "atMs": 383.4000000357628,
+            "type": "trial_started",
+            "detail": {
+              "targetLength": 4,
+              "acceptedAtMs": 383.4000000357628,
+              "generatorVersion": "digits_constructor_v1_1",
+              "profile": "{\"mode\":\"visual\",\"entryWindow\":20000,\"highContrast\":false,\"reducedMotion\":false,\"entryMethod\":\"keyboard\",\"assistedEntryDeclared\":false,\"voice\":null,\"browserContext\":{\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36\",\"viewportWidth\":1280,\"viewportHeight\":800,\"devicePixelRatio\":1}}"
+            }
+          },
+          {
+            "schemaVersion": "digits_event_v1_1",
+            "installationId": "10e1414c-4a14-4d1a-8d97-3dc3eabe9aa0",
+            "sessionId": "11c1b443-02fb-4324-a8c9-0739ae5c279e",
+            "formId": "DV1",
+            "clockDomainId": "6009e8e4-cf59-450b-b16b-615a686f7d72",
+            "sequenceNumber": 5,
+            "block": 0,
+            "trialIndex": 1,
+            "atMs": 396.4000000357628,
+            "type": "digit_presented",
+            "detail": {
+              "digitIndex": 1,
+              "value": "3",
+              "dueMs": 383.4000000357628,
+              "actualMs": 396.4000000357628,
+              "latenessMs": 13
+            }
+          },
+          {
+            "schemaVersion": "digits_event_v1_1",
+            "installationId": "10e1414c-4a14-4d1a-8d97-3dc3eabe9aa0",
+            "sessionId": "11c1b443-02fb-4324-a8c9-0739ae5c279e",
+            "formId": "DV1",
+            "clockDomainId": "6009e8e4-cf59-450b-b16b-615a686f7d72",
+            "sequenceNumber": 6,
+            "block": 0,
+            "trialIndex": 1,
+            "atMs": 1115.800000011921,
+            "type": "digit_ended",
+            "detail": {
+              "digitIndex": 1,
+              "value": "3",
+              "dueMs": 1096.4000000357628,
+              "actualMs": 1115.800000011921,
+              "latenessMs": 19.399999976158142
+            }
+          },
+          {
+            "schemaVersion": "digits_event_v1_1",
+            "installationId": "10e1414c-4a14-4d1a-8d97-3dc3eabe9aa0",
+            "sessionId": "11c1b443-02fb-4324-a8c9-0739ae5c279e",
+            "formId": "DV1",
+            "clockDomainId": "6009e8e4-cf59-450b-b16b-615a686f7d72",
+            "sequenceNumber": 7,
+            "block": 0,
+            "trialIndex": 1,
+            "atMs": 1380.800000011921,
+            "type": "digit_presented",
+            "detail": {
+              "digitIndex": 2,
+              "value": "6",
+              "dueMs": 1365.800000011921,
+              "actualMs": 1380.800000011921,
+              "latenessMs": 15
+            }
+          },
+          {
+            "schemaVersion": "digits_event_v1_1",
+            "installationId": "10e1414c-4a14-4d1a-8d97-3dc3eabe9aa0",
+            "sessionId": "11c1b443-02fb-4324-a8c9-0739ae5c279e",
+            "formId": "DV1",
+            "clockDomainId": "6009e8e4-cf59-450b-b16b-615a686f7d72",
+            "sequenceNumber": 8,
+            "block": 0,
+            "trialIndex": 1,
+            "atMs": 2096.5,
+            "type": "digit_ended",
+            "detail": {
+              "digitIndex": 2,
+              "value": "6",
+              "dueMs": 2080.800000011921,
+              "actualMs": 2096.5,
+              "latenessMs": 15.699999988079071
+            }
+          },
+          {
+            "schemaVersion": "digits_event_v1_1",
+            "installationId": "10e1414c-4a14-4d1a-8d97-3dc3eabe9aa0",
+            "sessionId": "11c1b443-02fb-4324-a8c9-0739ae5c279e",
+            "formId": "DV1",
+            "clockDomainId": "6009e8e4-cf59-450b-b16b-615a686f7d72",
+            "sequenceNumber": 9,
+            "block": 0,
+            "trialIndex": 1,
+            "atMs": 2363.900000035763,
+            "type": "digit_presented",
+            "detail": {
+              "digitIndex": 3,
+              "value": "6",
+              "dueMs": 2346.5,
+              "actualMs": 2363.900000035763,
+              "latenessMs": 17.400000035762787
+            }
+          },
+          {
+            "schemaVersion": "digits_event_v1_1",
+            "installationId": "10e1414c-4a14-4d1a-8d97-3dc3eabe9aa0",
+            "sessionId": "11c1b443-02fb-4324-a8c9-0739ae5c279e",
+            "formId": "DV1",
+            "clockDomainId": "6009e8e4-cf59-450b-b16b-615a686f7d72",
+            "sequenceNumber": 10,
+            "block": 0,
+            "trialIndex": 1,
+            "atMs": 3080.699999988079,
+            "type": "digit_ended",
+            "detail": {
+              "digitIndex": 3,
+              "value": "6",
+              "dueMs": 3063.900000035763,
+              "actualMs": 3080.699999988079,
+              "latenessMs": 16.799999952316284
+            }
+          },
+          {
+            "schemaVersion": "digits_event_v1_1",
+            "installationId": "10e1414c-4a14-4d1a-8d97-3dc3eabe9aa0",
+            "sessionId": "11c1b443-02fb-4324-a8c9-0739ae5c279e",
+            "formId": "DV1",
+            "clockDomainId": "6009e8e4-cf59-450b-b16b-615a686f7d72",
+            "sequenceNumber": 11,
+            "block": 0,
+            "trialIndex": 1,
+            "atMs": 3347,
+            "type": "digit_presented",
+            "detail": {
+              "digitIndex": 4,
+              "value": "8",
+              "dueMs": 3330.699999988079,
+              "actualMs": 3347,
+              "latenessMs": 16.30000001192093
+            }
+          },
+          {
+            "schemaVersion": "digits_event_v1_1",
+            "installationId": "10e1414c-4a14-4d1a-8d97-3dc3eabe9aa0",
+            "sessionId": "11c1b443-02fb-4324-a8c9-0739ae5c279e",
+            "formId": "DV1",
+            "clockDomainId": "6009e8e4-cf59-450b-b16b-615a686f7d72",
+            "sequenceNumber": 12,
+            "block": 0,
+            "trialIndex": 1,
+            "atMs": 4065.400000035763,
+            "type": "digit_ended",
+            "detail": {
+              "digitIndex": 4,
+              "value": "8",
+              "dueMs": 4047,
+              "actualMs": 4065.400000035763,
+              "latenessMs": 18.400000035762787
+            }
+          },
+          {
+            "schemaVersion": "digits_event_v1_1",
+            "installationId": "10e1414c-4a14-4d1a-8d97-3dc3eabe9aa0",
+            "sessionId": "11c1b443-02fb-4324-a8c9-0739ae5c279e",
+            "formId": "DV1",
+            "clockDomainId": "6009e8e4-cf59-450b-b16b-615a686f7d72",
+            "sequenceNumber": 13,
+            "block": 0,
+            "trialIndex": 1,
+            "atMs": 4830.900000035763,
+            "type": "entry_opened",
+            "detail": {
+              "deadlineMs": 24830.900000035763,
+              "entryWindowVersion": "standard",
+              "dueMs": 4815.400000035763,
+              "actualMs": 4830.900000035763,
+              "latenessMs": 15.5
+            }
+          },
+          {
+            "schemaVersion": "digits_event_v1_1",
+            "installationId": "10e1414c-4a14-4d1a-8d97-3dc3eabe9aa0",
+            "sessionId": "11c1b443-02fb-4324-a8c9-0739ae5c279e",
+            "formId": "DV1",
+            "clockDomainId": "6009e8e4-cf59-450b-b16b-615a686f7d72",
+            "sequenceNumber": 14,
+            "block": 0,
+            "trialIndex": 1,
+            "atMs": 4841.5,
+            "type": "invalidated",
+            "detail": {
+              "reason": "blur"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "F3 one next_first factual review without durable authority",
+    "status": "PASS",
+    "detail": {
+      "body": "Back to library\n\nThis saved attempt was deleted.\n\nDigits attempt removed\nDigits report\n\nThis attempt was removed from local storage. Factual review is only available in this tab; it cannot be saved again.\n\nForm DV1 · visual presentation · standard entry · keyboard input · standard contrast · standard motion\n\nRun details\n\nIncomplete: saved attempt removed\n\n2 trials began presentation; 1 closed; 1 presented trials remain unresolved.\n\nNo aggregate accuracy or error table is shown. A reload may know only the last saved prefix; later presentation status can be unknown.\n\nObserved presentation in this tab\nTrial 1: 4 digits began presentation.\nTrial 2: 1 digits began presentation.\n\nKnown closed trials: 1. No later exposure is inferred and no removed result is eligible as a saved report.\n\nThis shows recall of these Assessment Practice digit sequences in this browser. It is not an intelligence, memory-capacity, employer, or hiring score. Visual and auditory runs and timing accommodations are different experiences; their results are not calibrated equivalents.\n\nAdvanced Training is not available for Digits in this beta.\n\nReplay Digits\nLocal history\nLibrary",
+      "observed": [
+        "9",
+        "0"
+      ],
+      "counter": 1,
+      "attempts": 0,
+      "lateRootUnchanged": true
+    }
+  },
+  {
+    "name": "F3 one delete_first factual review without durable authority",
+    "status": "PASS",
+    "detail": {
+      "body": "Back to library\n\nThis attempt was deleted or local data was replaced.\n\nDigits attempt removed\nDigits report\n\nThis attempt was removed from local storage. Factual review is only available in this tab; it cannot be saved again.\n\nForm DV1 · visual presentation · standard entry · keyboard input · standard contrast · standard motion\n\nRun details\n\nIncomplete: saved attempt removed\n\n1 trials began presentation; 1 closed; 0 presented trials remain unresolved.\n\nNo aggregate accuracy or error table is shown. A reload may know only the last saved prefix; later presentation status can be unknown.\n\nObserved presentation in this tab\nTrial 1: 4 digits began presentation.\n\nKnown closed trials: 1. No later exposure is inferred and no removed result is eligible as a saved report.\n\nThis shows recall of these Assessment Practice digit sequences in this browser. It is not an intelligence, memory-capacity, employer, or hiring score. Visual and auditory runs and timing accommodations are different experiences; their results are not calibrated equivalents.\n\nAdvanced Training is not available for Digits in this beta.\n\nReplay Digits\nLocal history\nLibrary",
+      "observed": [],
+      "counter": 1,
+      "attempts": 0,
+      "lateRootUnchanged": true
+    }
+  },
+  {
+    "name": "F3 all next_first factual review without durable authority",
+    "status": "PASS",
+    "detail": {
+      "body": "Back to library\n\nLocal data was replaced.\n\nDigits attempt removed\nDigits report\n\nThis attempt was removed from local storage. Factual review is only available in this tab; it cannot be saved again.\n\nForm DV1 · visual presentation · standard entry · keyboard input · standard contrast · standard motion\n\nRun details\n\nIncomplete: saved attempt removed\n\n2 trials began presentation; 1 closed; 1 presented trials remain unresolved.\n\nNo aggregate accuracy or error table is shown. A reload may know only the last saved prefix; later presentation status can be unknown.\n\nObserved presentation in this tab\nTrial 1: 4 digits began presentation.\nTrial 2: 2 digits began presentation.\n\nKnown closed trials: 1. No later exposure is inferred and no removed result is eligible as a saved report.\n\nThis shows recall of these Assessment Practice digit sequences in this browser. It is not an intelligence, memory-capacity, employer, or hiring score. Visual and auditory runs and timing accommodations are different experiences; their results are not calibrated equivalents.\n\nAdvanced Training is not available for Digits in this beta.\n\nReplay Digits\nLocal history\nLibrary",
+      "observed": [
+        "9",
+        "0"
+      ],
+      "counter": 0,
+      "attempts": 0,
+      "lateRootUnchanged": true
+    }
+  },
+  {
+    "name": "F3 all delete_first factual review without durable authority",
+    "status": "PASS",
+    "detail": {
+      "body": "Back to library\n\nThis attempt was deleted or local data was replaced.\n\nDigits attempt removed\nDigits report\n\nThis attempt was removed from local storage. Factual review is only available in this tab; it cannot be saved again.\n\nForm DV1 · visual presentation · standard entry · keyboard input · standard contrast · standard motion\n\nRun details\n\nIncomplete: saved attempt removed\n\n1 trials began presentation; 1 closed; 0 presented trials remain unresolved.\n\nNo aggregate accuracy or error table is shown. A reload may know only the last saved prefix; later presentation status can be unknown.\n\nObserved presentation in this tab\nTrial 1: 4 digits began presentation.\n\nKnown closed trials: 1. No later exposure is inferred and no removed result is eligible as a saved report.\n\nThis shows recall of these Assessment Practice digit sequences in this browser. It is not an intelligence, memory-capacity, employer, or hiring score. Visual and auditory runs and timing accommodations are different experiences; their results are not calibrated equivalents.\n\nAdvanced Training is not available for Digits in this beta.\n\nReplay Digits\nLocal history\nLibrary",
+      "observed": [],
+      "counter": 0,
+      "attempts": 0,
+      "lateRootUnchanged": true
+    }
+  }
+]

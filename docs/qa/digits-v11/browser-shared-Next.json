@@ -1,0 +1,134 @@
+[
+  {
+    "name": "individual deletion_first: shared Next/deletion boundary without notifications",
+    "status": "PASS",
+    "detail": {
+      "successorDigitsObserved": 0,
+      "attempts": 0,
+      "visualCounter": 1,
+      "orderTrace": [
+        {
+          "type": "data_lock_acquired",
+          "wallMs": 1791481630228,
+          "atMs": 5515.300000011921
+        },
+        {
+          "type": "data_lock_released",
+          "wallMs": 1791481630228,
+          "atMs": 5516.199999988079
+        }
+      ],
+      "deletionObservation": {
+        "type": "deletion_committed",
+        "wallMs": 1791481630181
+      }
+    }
+  },
+  {
+    "name": "individual next_first: shared Next/deletion boundary without notifications",
+    "status": "PASS",
+    "detail": {
+      "successorDigitsObserved": 1,
+      "attempts": 0,
+      "visualCounter": 1,
+      "orderTrace": [
+        {
+          "type": "data_lock_acquired",
+          "wallMs": 1791481635278,
+          "atMs": 4981.800000011921
+        },
+        {
+          "type": "digit_dom_write",
+          "value": "9",
+          "wallMs": 1791481635294,
+          "atMs": 4998.399999976158
+        },
+        {
+          "type": "data_lock_released",
+          "wallMs": 1791481635311,
+          "atMs": 5015.099999964237
+        },
+        {
+          "type": "data_lock_acquired",
+          "wallMs": 1791481636264,
+          "atMs": 5967.899999976158
+        },
+        {
+          "type": "data_lock_released",
+          "wallMs": 1791481636265,
+          "atMs": 5969.300000011921
+        }
+      ],
+      "deletionObservation": {
+        "type": "deletion_committed",
+        "wallMs": 1791481635312
+      }
+    }
+  },
+  {
+    "name": "all deletion_first: shared Next/deletion boundary without notifications",
+    "status": "PASS",
+    "detail": {
+      "successorDigitsObserved": 0,
+      "attempts": 0,
+      "visualCounter": 0,
+      "orderTrace": [
+        {
+          "type": "data_lock_acquired",
+          "wallMs": 1791481641611,
+          "atMs": 4957.700000047684
+        },
+        {
+          "type": "data_lock_released",
+          "wallMs": 1791481641612,
+          "atMs": 4958.400000035763
+        }
+      ],
+      "deletionObservation": {
+        "type": "deletion_committed",
+        "wallMs": 1791481641566
+      }
+    }
+  },
+  {
+    "name": "all next_first: shared Next/deletion boundary without notifications",
+    "status": "PASS",
+    "detail": {
+      "successorDigitsObserved": 1,
+      "attempts": 0,
+      "visualCounter": 0,
+      "orderTrace": [
+        {
+          "type": "data_lock_acquired",
+          "wallMs": 1791481646645,
+          "atMs": 4970.699999988079
+        },
+        {
+          "type": "digit_dom_write",
+          "value": "9",
+          "wallMs": 1791481646661,
+          "atMs": 4986.699999988079
+        },
+        {
+          "type": "data_lock_released",
+          "wallMs": 1791481646678,
+          "atMs": 5003.399999976158
+        },
+        {
+          "type": "data_lock_acquired",
+          "wallMs": 1791481647632,
+          "atMs": 5957.799999952316
+        },
+        {
+          "type": "data_lock_released",
+          "wallMs": 1791481647633,
+          "atMs": 5958.5
+        }
+      ],
+      "deletionObservation": {
+        "type": "deletion_committed",
+        "wallMs": 1791481646679
+      }
+    }
+  }
+]

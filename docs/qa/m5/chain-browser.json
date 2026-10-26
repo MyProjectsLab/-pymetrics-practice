@@ -1,0 +1,21 @@
+{
+  "browser": "145.0.7632.6",
+  "errors": [],
+  "pass": true,
+  "seed": {
+    "baseline": "ee4402c9-4a6d-47d3-b9ba-9a02ff660cd1",
+    "baselineForm": "stop-baseline-01",
+    "chainId": "b45c3245-4408-4ad1-a375-540b46398ae9",
+    "retestForm": "stop-retest-01"
+  },
+  "integrity": {
+    "original": true,
+    "rejectsMissingDrill": true,
+    "rejectsChangedRecommendation": true
+  },
+  "restoredExplanation": true,
+  "releasedOnExit": true,
+  "dependentChainRetired": true,
+  "otherAttemptRetained": true,
+  "markerRetained": true
+}

@@ -1,0 +1,7 @@
+# Arrows preparation clarity — presentation V1.0
+
+Founder requested one understandable keyboard check and actual previous-screen navigation on2026-10-26. One check accepts the two existing distinct selected direction bindings in either order, retaining real down/up admission and existing native proof recording. It keeps collecting after the first direction and shows each check status. Repeated use of one direction cannot satisfy both. Capture begins on keyboard setup entry when a check is needed; Escape cancels and Test arrow buttons restarts it. Existing modifiers/repeat/chord/source/settings restrictions remain; compatible cached proof is never manufactured or allowed to overwrite a newer check.
+
+A small view-only history records guide/examples/quiz/setup/readiness and example index through the existing preparation cancellation boundary. Back pops this UI history, clearing pending input and fencing old async reads. Examples step back individually, then return to their actual origin. It stores no configuration, quiz answers, input receipt or scored state. Main menu and guarded mock-return paths remain separate.
+
+No Back is offered during Start pending/uncertain or from scored run, break, history, report or recovery. Replay resets the UI history. All form reservation/exposure, timing, scoring, storage/schema/version, source publication and result semantics remain unchanged. No frozen specification rewrite or gameplay version bump. Component test/probe evidence does not establish native owned-document, physical-device or whole-product qualification.

@@ -1,0 +1,45 @@
+{
+  "qaHeadAtResumption": "75bf96d9ce602550dc93b2d83e6c8c6b96459df3",
+  "productHead": "f6b8ae05ab024e603ebe3fc8e1a42f71dd4b14b1",
+  "startingWorkingTree": "clean",
+  "origin": "http://127.0.0.1:5595/",
+  "browser": {
+    "name": "native Google Chrome",
+    "versionFromAppInfoPlist": "154.0.8037.95",
+    "control": "macOS native app accessibility bridge for preparation, observation and export; no scored key dispatched by the QA agent"
+  },
+  "os": {
+    "name": "macOS",
+    "version": "26.6.2",
+    "build": "25G83",
+    "machine": "MacBook Pro Mac17,2, Apple M5"
+  },
+  "display": {
+    "systemProfiler": "Internal built-in Liquid Retina XDR Color LCD, main, mirror off, 3024 x 1964 Retina",
+    "systemSettingsScaling": "1512 x 982 (Default)",
+    "systemSettingsRefreshRate": "60 Hertz",
+    "browserScreenCssPixels": [1512, 982],
+    "devicePixelRatio": 2,
+    "protectedViewportCssPixels": [1509, 827],
+    "physicalRefreshOrScanoutMeasured": false
+  },
+  "input": {
+    "humanAttestation": "MacBook Pro built-in physical keyboard; no assistive input or key remapping for scored responses",
+    "responseKey": "Space",
+    "visualProfile": "standard color-plus-marker",
+    "physicalInputLatencyMeasured": false,
+    "preparation": "untimed examples and comprehension operated through native app bridge",
+    "scoredResponses": "human physical-keyboard use self-attested; no tool-dispatched scored key"
+  },
+  "buildHashes": {
+    "originalDistIndexSha256": "cc294dfd86ea30ff845f452f0bc7d6e0ef2dbc2ed285d3ae2bcef03b185246c5",
+    "javascriptSha256": "883608dd9dd37db873b013259c93995870ef2995959ebe46e4e560aad5ef3acd",
+    "cssSha256": "632bae8949a5d7ad0be3116fac1bbea5bb4e797dc9eedb8a92f480e2cd98b7c9"
+  },
+  "observer": {
+    "source": "browser-observer.js",
+    "insertion": "ignored dist/index.html before unchanged production bundle",
+    "storage": "separate stop-physical-baseline-browser-events-v1 localStorage key",
+    "overhead": "not calibrated"
+  }
+}

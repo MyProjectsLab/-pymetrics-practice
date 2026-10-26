@@ -1,0 +1,10 @@
+{
+  "clock": "Playwright controlled browser clock; not physical timing certification",
+  "cases": [],
+  "failure": "TimeoutError: locator.waitFor: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('heading', { name: 'Stop complete', exact: true }) to be visible\u001b[22m\n",
+  "page": "Stop · Private preview\n\nGO: press Space · NO-GO: do nothing",
+  "kind": "decline",
+  "requests": [],
+  "errors": [],
+  "browser": "145.0.7632.6"
+}

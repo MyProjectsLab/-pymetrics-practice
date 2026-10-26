@@ -1,0 +1,18 @@
+# Lengths Mouth V1.2 source-to-design parity — working draft
+
+The native saved recording is 2268 × 1704. Scaled QuickTime display estimates below are **not** native pixels, provider CSS measurements or psychometric calibration. This face/fixation proposal uses original artwork; numerical differences remain open.
+
+| Visible item | Saved reference | Current V1.1 | Proposed V1.2 | Disposition |
+|---|---|---|---|---|
+| Scored sequence | One face per flash, with a cross between faces (video 00:16, 00:38–00:41) | One face per flash with fixation | Same sequence | Matches observed structure; timing remains the frozen independent design. |
+| Face body | Filled teal circle, about 239 **native-frame** pixels across at 00:16/00:20 | Dark outline, no fill; 192 CSS-pixel body | Original filled `#006153` body, 192 CSS pixels | Corrects fill/color. Original shade/size are approximations, not claimed provider pixels. |
+| Eyes | Large pale circles, about 55 native-frame pixels across | Dark circles, 16 CSS pixels across | White circles, about 46 CSS pixels across | Corrects major proportion mismatch. |
+| Mouth | Pale straight line; scaled QuickTime display suggested painted short/long widths near 85/96 pixels, with subtle difference | Dark 44/60 CSS-pixel lines | White 76/86 CSS-pixel **centerlines**, 82/92 painted widths after round caps | Corrects feature scale and subtlety; original approximate choices, to check in 180-ms flashes. |
+| Fixation | Large black cross, about 200 native-frame pixels across at 00:38–00:41 | Small text `+` in stage | Original geometric cross 160 CSS pixels across, 12-pixel arms; inverse palette reverses it | Presentation correction within frozen fixation duration. |
+| Teaching comparison | Two labeled faces shown together in instructions (video 00:00); guide practice uses one face and Short/Long controls | Two labeled examples together | Same, using V1.2 art | Teaching labels never appear in scored trial. |
+| Category count | Saved result 36/90 correct, short 22/46 and long 14/44 (video 02:23 and `download-1.png`) | Exactly 45 short and 45 long | Unchanged in this face-only addendum | **Retained inherited departure.** One 46/44 run does not establish a universal provider mix. Material revision needs founder-specific approval and a reviewed packet. |
+| Balance/reward | Running balance is visible; scored balance rises $1.60→$1.70 at 00:38–00:41, proving a 10¢ scored increment. Guide also mentions 10¢/50¢; hidden schedule unknown. | Running balance already exists; earned reward fixed at 50¢. | Unchanged in this face-only addendum. | **Retained inherited departure.** No invented reward schedule; change requires founder-specific approval and a reviewed packet. |
+| Result category | Saved result includes “Correct After Reward” 3/46 short and 2/44 long. | No matching category. | Unchanged in this face-only addendum. | **Retained inherited departure.** New category needs founder-specific approval and a reviewed report definition. |
+| Real-provider certainty | Patent confirms minimal perceptible difference and Left/Right mapping, not artwork or exact timing | Independent task, no exactness claim | Same | Pietro and online candidate feedback are experiential, not pixel-level proof. |
+
+Sources: local saved recording and screenshots in `private-research/Pymetric /Lengths /`, [Pymetrics patent Example 15](https://patents.google.com/patent/US11030554B2/en), and [Harver overview](https://harver.com/gamified-assessments/). Pietro's relayed experience is anecdotal. The previously cited Reddit link could not be retrieved and is excluded as unverified. Local reference files are read-only; no source artwork is copied.

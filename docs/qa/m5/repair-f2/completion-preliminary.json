@@ -1,0 +1,14 @@
+{
+  "browser": "145.0.7632.6",
+  "errors": [],
+  "checks": {
+    "completion": {
+      "count": 1,
+      "formId": "stop-baseline-04",
+      "eventCount": 644,
+      "exposure": "confirmed"
+    }
+  },
+  "pass": false,
+  "failure": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n1 !== 0\n"
+}

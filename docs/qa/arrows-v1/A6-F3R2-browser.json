@@ -1,0 +1,176 @@
+{
+  "browser": "145.0.7632.6",
+  "results": [
+    {
+      "name": "attribute_paint_overlay",
+      "before": {
+        "style": null,
+        "zIndex": "99",
+        "pointerEvents": "none",
+        "background": "rgb(0, 0, 0)",
+        "rect": {
+          "x": 100,
+          "y": 103,
+          "width": 302.71875,
+          "height": 18,
+          "top": 103,
+          "right": 402.71875,
+          "bottom": 121,
+          "left": 100
+        }
+      },
+      "ready": false,
+      "after": {
+        "style": null,
+        "zIndex": "99",
+        "pointerEvents": "none",
+        "background": "rgb(0, 0, 0)",
+        "rect": {
+          "x": 100,
+          "y": 103,
+          "width": 302.71875,
+          "height": 18,
+          "top": 103,
+          "right": 402.71875,
+          "bottom": 121,
+          "left": 100
+        }
+      },
+      "afterMonitor": {
+        "style": null,
+        "zIndex": "99",
+        "pointerEvents": "none",
+        "background": "rgb(0, 0, 0)",
+        "rect": {
+          "x": 100,
+          "y": 103,
+          "width": 302.71875,
+          "height": 18,
+          "top": 103,
+          "right": 402.71875,
+          "bottom": 121,
+          "left": 100
+        }
+      },
+      "sheetsRestored": true,
+      "observed": {
+        "phase": "invalid",
+        "reason": "viewport",
+        "protected": false,
+        "trial": 1,
+        "counts": {
+          "stimulus_presented": 1,
+          "response": 0,
+          "response_extra": 0,
+          "boundary_extra": 0,
+          "trial_closed": 0,
+          "invalidated": 1,
+          "block_started": 1,
+          "timing_note": 0
+        }
+      },
+      "ownerHeld": false,
+      "css": "#paint-candidate {position:fixed;left:100px;top:103px;width:302.71875px;height:18px;background:black;pointer-events:none;z-index:99} #paint-candidate[style] {z-index:0}",
+      "pass": true
+    },
+    {
+      "name": "attribute_paint_underlay",
+      "before": {
+        "style": null,
+        "zIndex": "0",
+        "pointerEvents": "none",
+        "background": "rgb(0, 0, 0)",
+        "rect": {
+          "x": 100,
+          "y": 103,
+          "width": 302.71875,
+          "height": 18,
+          "top": 103,
+          "right": 402.71875,
+          "bottom": 121,
+          "left": 100
+        }
+      },
+      "ready": true,
+      "after": {
+        "style": null,
+        "zIndex": "0",
+        "pointerEvents": "none",
+        "background": "rgb(0, 0, 0)",
+        "rect": {
+          "x": 100,
+          "y": 103,
+          "width": 302.71875,
+          "height": 18,
+          "top": 103,
+          "right": 402.71875,
+          "bottom": 121,
+          "left": 100
+        }
+      },
+      "afterMonitor": {
+        "style": null,
+        "zIndex": "0",
+        "pointerEvents": "none",
+        "background": "rgb(0, 0, 0)",
+        "rect": {
+          "x": 100,
+          "y": 103,
+          "width": 302.71875,
+          "height": 18,
+          "top": 103,
+          "right": 402.71875,
+          "bottom": 121,
+          "left": 100
+        }
+      },
+      "sheetsRestored": true,
+      "observed": {
+        "phase": "stimulus",
+        "reason": null,
+        "protected": true,
+        "trial": 1,
+        "counts": {
+          "stimulus_presented": 1,
+          "response": 0,
+          "response_extra": 0,
+          "boundary_extra": 0,
+          "trial_closed": 0,
+          "invalidated": 0,
+          "block_started": 1,
+          "timing_note": 0
+        }
+      },
+      "ownerHeld": true,
+      "css": "#paint-candidate {position:fixed;left:100px;top:103px;width:302.71875px;height:18px;background:black;pointer-events:none;z-index:0} #paint-candidate[style] {z-index:99}",
+      "pass": true
+    },
+    {
+      "name": "native_absent_style",
+      "before": null,
+      "ready": true,
+      "after": null,
+      "beforePointer": "none",
+      "afterPointer": "none",
+      "sheetsRestored": true,
+      "afterMonitor": null,
+      "observed": {
+        "phase": "stimulus",
+        "reason": null,
+        "protected": true,
+        "trial": 1,
+        "counts": {
+          "stimulus_presented": 1,
+          "response": 0,
+          "response_extra": 0,
+          "boundary_extra": 0,
+          "trial_closed": 0,
+          "invalidated": 0,
+          "block_started": 1,
+          "timing_note": 0
+        }
+      },
+      "pass": true
+    }
+  ]
+}

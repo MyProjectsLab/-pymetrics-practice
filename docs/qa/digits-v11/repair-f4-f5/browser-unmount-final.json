@@ -1,0 +1,407 @@
+[
+  {
+    "name": "independent committed arm unmount captures Invalid and no stale onset",
+    "status": "PASS",
+    "detail": {
+      "first": {
+        "version": "digits_storage_v1_1",
+        "installationId": "466a00fc-d879-4930-8658-db4cc607fc9e",
+        "revision": 1,
+        "counters": {
+          "visual": 1,
+          "auditory": 0
+        },
+        "attempts": {
+          "065abcb0-678b-4393-add0-da1f16a918ee": {
+            "requestId": "b35a6bf3-dcfa-44ad-b74a-8d19ff10ca09",
+            "sessionId": "065abcb0-678b-4393-add0-da1f16a918ee",
+            "mode": "visual",
+            "ordinal": 1,
+            "createdAtWallMs": 1791486829971,
+            "arm": {
+              "specificationVersion": "digits_spec_v1_1",
+              "scoringVersion": "digits_scoring_v1_1",
+              "form": {
+                "id": "DV1",
+                "mode": "visual",
+                "seed": 3512795137,
+                "version": "digits_forms_v1_1",
+                "generatorVersion": "digits_constructor_v1_1",
+                "manifestDigest": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+              },
+              "identity": {
+                "installationId": "466a00fc-d879-4930-8658-db4cc607fc9e",
+                "sessionId": "065abcb0-678b-4393-add0-da1f16a918ee",
+                "requestId": "b35a6bf3-dcfa-44ad-b74a-8d19ff10ca09",
+                "clockDomainId": "da0b8f38-5270-47c3-8dac-a535174c4113",
+                "route": "standalone"
+              },
+              "profile": {
+                "mode": "visual",
+                "entryWindow": 20000,
+                "highContrast": false,
+                "reducedMotion": false,
+                "entryMethod": "keyboard",
+                "assistedEntryDeclared": false,
+                "voice": null,
+                "browserContext": {
+                  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36",
+                  "viewportWidth": 1280,
+                  "viewportHeight": 800,
+                  "devicePixelRatio": 1
+                }
+              },
+              "armedAtMs": 932,
+              "phase": "armed",
+              "trialIndex": 1,
+              "digitIndex": 0,
+              "length": 4,
+              "target": null,
+              "presentedTargets": [],
+              "wrongCount": 0,
+              "completionReason": null,
+              "presentedTrials": 0,
+              "closed": [],
+              "entryOpenedMs": null,
+              "entryDeadlineMs": null,
+              "nextDueMs": null,
+              "digitOnsetMs": null,
+              "speechStartMs": null,
+              "lastFrameMs": null,
+              "draft": "",
+              "draftAssisted": false,
+              "invalidReason": null,
+              "commands": [],
+              "events": [
+                {
+                  "schemaVersion": "digits_event_v1_1",
+                  "installationId": "466a00fc-d879-4930-8658-db4cc607fc9e",
+                  "sessionId": "065abcb0-678b-4393-add0-da1f16a918ee",
+                  "formId": "DV1",
+                  "clockDomainId": "da0b8f38-5270-47c3-8dac-a535174c4113",
+                  "sequenceNumber": 1,
+                  "block": 0,
+                  "trialIndex": 1,
+                  "atMs": 932,
+                  "type": "prepared",
+                  "detail": {
+                    "mode": "visual",
+                    "entryWindow": 20000
+                  }
+                },
+                {
+                  "schemaVersion": "digits_event_v1_1",
+                  "installationId": "466a00fc-d879-4930-8658-db4cc607fc9e",
+                  "sessionId": "065abcb0-678b-4393-add0-da1f16a918ee",
+                  "formId": "DV1",
+                  "clockDomainId": "da0b8f38-5270-47c3-8dac-a535174c4113",
+                  "sequenceNumber": 2,
+                  "block": 0,
+                  "trialIndex": 1,
+                  "atMs": 932,
+                  "type": "form_assigned",
+                  "detail": {
+                    "formId": "DV1",
+                    "formsVersion": "digits_forms_v1_1",
+                    "generatorVersion": "digits_constructor_v1_1",
+                    "manifestDigest": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+                  }
+                },
+                {
+                  "schemaVersion": "digits_event_v1_1",
+                  "installationId": "466a00fc-d879-4930-8658-db4cc607fc9e",
+                  "sessionId": "065abcb0-678b-4393-add0-da1f16a918ee",
+                  "formId": "DV1",
+                  "clockDomainId": "da0b8f38-5270-47c3-8dac-a535174c4113",
+                  "sequenceNumber": 3,
+                  "block": 0,
+                  "trialIndex": 1,
+                  "atMs": 932,
+                  "type": "armed",
+                  "detail": {
+                    "profile": "{\"mode\":\"visual\",\"entryWindow\":20000,\"highContrast\":false,\"reducedMotion\":false,\"entryMethod\":\"keyboard\",\"assistedEntryDeclared\":false,\"voice\":null,\"browserContext\":{\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36\",\"viewportWidth\":1280,\"viewportHeight\":800,\"devicePixelRatio\":1}}"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "tombstones": {},
+        "activity": {}
+      },
+      "before": {
+        "version": "digits_storage_v1_1",
+        "installationId": "466a00fc-d879-4930-8658-db4cc607fc9e",
+        "revision": 2,
+        "counters": {
+          "visual": 1,
+          "auditory": 0
+        },
+        "attempts": {
+          "065abcb0-678b-4393-add0-da1f16a918ee": {
+            "requestId": "b35a6bf3-dcfa-44ad-b74a-8d19ff10ca09",
+            "sessionId": "065abcb0-678b-4393-add0-da1f16a918ee",
+            "mode": "visual",
+            "ordinal": 1,
+            "createdAtWallMs": 1791486829971,
+            "arm": {
+              "specificationVersion": "digits_spec_v1_1",
+              "scoringVersion": "digits_scoring_v1_1",
+              "form": {
+                "id": "DV1",
+                "mode": "visual",
+                "seed": 3512795137,
+                "version": "digits_forms_v1_1",
+                "generatorVersion": "digits_constructor_v1_1",
+                "manifestDigest": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+              },
+              "identity": {
+                "installationId": "466a00fc-d879-4930-8658-db4cc607fc9e",
+                "sessionId": "065abcb0-678b-4393-add0-da1f16a918ee",
+                "requestId": "b35a6bf3-dcfa-44ad-b74a-8d19ff10ca09",
+                "clockDomainId": "da0b8f38-5270-47c3-8dac-a535174c4113",
+                "route": "standalone"
+              },
+              "profile": {
+                "mode": "visual",
+                "entryWindow": 20000,
+                "highContrast": false,
+                "reducedMotion": false,
+                "entryMethod": "keyboard",
+                "assistedEntryDeclared": false,
+                "voice": null,
+                "browserContext": {
+                  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36",
+                  "viewportWidth": 1280,
+                  "viewportHeight": 800,
+                  "devicePixelRatio": 1
+                }
+              },
+              "armedAtMs": 932,
+              "phase": "armed",
+              "trialIndex": 1,
+              "digitIndex": 0,
+              "length": 4,
+              "target": null,
+              "presentedTargets": [],
+              "wrongCount": 0,
+              "completionReason": null,
+              "presentedTrials": 0,
+              "closed": [],
+              "entryOpenedMs": null,
+              "entryDeadlineMs": null,
+              "nextDueMs": null,
+              "digitOnsetMs": null,
+              "speechStartMs": null,
+              "lastFrameMs": null,
+              "draft": "",
+              "draftAssisted": false,
+              "invalidReason": null,
+              "commands": [],
+              "events": [
+                {
+                  "schemaVersion": "digits_event_v1_1",
+                  "installationId": "466a00fc-d879-4930-8658-db4cc607fc9e",
+                  "sessionId": "065abcb0-678b-4393-add0-da1f16a918ee",
+                  "formId": "DV1",
+                  "clockDomainId": "da0b8f38-5270-47c3-8dac-a535174c4113",
+                  "sequenceNumber": 1,
+                  "block": 0,
+                  "trialIndex": 1,
+                  "atMs": 932,
+                  "type": "prepared",
+                  "detail": {
+                    "mode": "visual",
+                    "entryWindow": 20000
+                  }
+                },
+                {
+                  "schemaVersion": "digits_event_v1_1",
+                  "installationId": "466a00fc-d879-4930-8658-db4cc607fc9e",
+                  "sessionId": "065abcb0-678b-4393-add0-da1f16a918ee",
+                  "formId": "DV1",
+                  "clockDomainId": "da0b8f38-5270-47c3-8dac-a535174c4113",
+                  "sequenceNumber": 2,
+                  "block": 0,
+                  "trialIndex": 1,
+                  "atMs": 932,
+                  "type": "form_assigned",
+                  "detail": {
+                    "formId": "DV1",
+                    "formsVersion": "digits_forms_v1_1",
+                    "generatorVersion": "digits_constructor_v1_1",
+                    "manifestDigest": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+                  }
+                },
+                {
+                  "schemaVersion": "digits_event_v1_1",
+                  "installationId": "466a00fc-d879-4930-8658-db4cc607fc9e",
+                  "sessionId": "065abcb0-678b-4393-add0-da1f16a918ee",
+                  "formId": "DV1",
+                  "clockDomainId": "da0b8f38-5270-47c3-8dac-a535174c4113",
+                  "sequenceNumber": 3,
+                  "block": 0,
+                  "trialIndex": 1,
+                  "atMs": 932,
+                  "type": "armed",
+                  "detail": {
+                    "profile": "{\"mode\":\"visual\",\"entryWindow\":20000,\"highContrast\":false,\"reducedMotion\":false,\"entryMethod\":\"keyboard\",\"assistedEntryDeclared\":false,\"voice\":null,\"browserContext\":{\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36\",\"viewportWidth\":1280,\"viewportHeight\":800,\"devicePixelRatio\":1}}"
+                  }
+                }
+              ]
+            },
+            "snapshot": {
+              "revision": 2,
+              "kind": "terminal",
+              "state": {
+                "specificationVersion": "digits_spec_v1_1",
+                "scoringVersion": "digits_scoring_v1_1",
+                "form": {
+                  "id": "DV1",
+                  "mode": "visual",
+                  "seed": 3512795137,
+                  "version": "digits_forms_v1_1",
+                  "generatorVersion": "digits_constructor_v1_1",
+                  "manifestDigest": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+                },
+                "identity": {
+                  "installationId": "466a00fc-d879-4930-8658-db4cc607fc9e",
+                  "sessionId": "065abcb0-678b-4393-add0-da1f16a918ee",
+                  "requestId": "b35a6bf3-dcfa-44ad-b74a-8d19ff10ca09",
+                  "clockDomainId": "da0b8f38-5270-47c3-8dac-a535174c4113",
+                  "route": "standalone"
+                },
+                "profile": {
+                  "mode": "visual",
+                  "entryWindow": 20000,
+                  "highContrast": false,
+                  "reducedMotion": false,
+                  "entryMethod": "keyboard",
+                  "assistedEntryDeclared": false,
+                  "voice": null,
+                  "browserContext": {
+                    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36",
+                    "viewportWidth": 1280,
+                    "viewportHeight": 800,
+                    "devicePixelRatio": 1
+                  }
+                },
+                "armedAtMs": 932,
+                "phase": "invalid",
+                "trialIndex": 1,
+                "digitIndex": 0,
+                "length": 4,
+                "target": null,
+                "presentedTargets": [],
+                "wrongCount": 0,
+                "completionReason": null,
+                "presentedTrials": 0,
+                "closed": [],
+                "entryOpenedMs": null,
+                "entryDeadlineMs": null,
+                "nextDueMs": null,
+                "digitOnsetMs": null,
+                "speechStartMs": null,
+                "lastFrameMs": null,
+                "draft": "",
+                "draftAssisted": false,
+                "invalidReason": "page_exit",
+                "commands": [
+                  {
+                    "kind": "invalidate",
+                    "atMs": 983,
+                    "reason": "page_exit"
+                  }
+                ],
+                "events": [
+                  {
+                    "schemaVersion": "digits_event_v1_1",
+                    "installationId": "466a00fc-d879-4930-8658-db4cc607fc9e",
+                    "sessionId": "065abcb0-678b-4393-add0-da1f16a918ee",
+                    "formId": "DV1",
+                    "clockDomainId": "da0b8f38-5270-47c3-8dac-a535174c4113",
+                    "sequenceNumber": 1,
+                    "block": 0,
+                    "trialIndex": 1,
+                    "atMs": 932,
+                    "type": "prepared",
+                    "detail": {
+                      "mode": "visual",
+                      "entryWindow": 20000
+                    }
+                  },
+                  {
+                    "schemaVersion": "digits_event_v1_1",
+                    "installationId": "466a00fc-d879-4930-8658-db4cc607fc9e",
+                    "sessionId": "065abcb0-678b-4393-add0-da1f16a918ee",
+                    "formId": "DV1",
+                    "clockDomainId": "da0b8f38-5270-47c3-8dac-a535174c4113",
+                    "sequenceNumber": 2,
+                    "block": 0,
+                    "trialIndex": 1,
+                    "atMs": 932,
+                    "type": "form_assigned",
+                    "detail": {
+                      "formId": "DV1",
+                      "formsVersion": "digits_forms_v1_1",
+                      "generatorVersion": "digits_constructor_v1_1",
+                      "manifestDigest": "5feb7ca195d7d7619c68904d79361b1a7e1ac2a25bab71a80bc4f437c1c48ee6"
+                    }
+                  },
+                  {
+                    "schemaVersion": "digits_event_v1_1",
+                    "installationId": "466a00fc-d879-4930-8658-db4cc607fc9e",
+                    "sessionId": "065abcb0-678b-4393-add0-da1f16a918ee",
+                    "formId": "DV1",
+                    "clockDomainId": "da0b8f38-5270-47c3-8dac-a535174c4113",
+                    "sequenceNumber": 3,
+                    "block": 0,
+                    "trialIndex": 1,
+                    "atMs": 932,
+                    "type": "armed",
+                    "detail": {
+                      "profile": "{\"mode\":\"visual\",\"entryWindow\":20000,\"highContrast\":false,\"reducedMotion\":false,\"entryMethod\":\"keyboard\",\"assistedEntryDeclared\":false,\"voice\":null,\"browserContext\":{\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36\",\"viewportWidth\":1280,\"viewportHeight\":800,\"devicePixelRatio\":1}}"
+                    }
+                  },
+                  {
+                    "schemaVersion": "digits_event_v1_1",
+                    "installationId": "466a00fc-d879-4930-8658-db4cc607fc9e",
+                    "sessionId": "065abcb0-678b-4393-add0-da1f16a918ee",
+                    "formId": "DV1",
+                    "clockDomainId": "da0b8f38-5270-47c3-8dac-a535174c4113",
+                    "sequenceNumber": 4,
+                    "block": 0,
+                    "trialIndex": 1,
+                    "atMs": 983,
+                    "type": "invalidated",
+                    "detail": {
+                      "reason": "page_exit"
+                    }
+                  }
+                ]
+              },
+              "review": {
+                "status": "invalid",
+                "reason": "page_exit",
+                "presented": 0,
+                "closed": 0,
+                "unresolved": 0
+              }
+            }
+          }
+        },
+        "tombstones": {},
+        "activity": {}
+      },
+      "body": "Skip to content\nap\nAssessment Practice\nPrivate preview\n\nYOUR PRACTICE LIBRARY\n\nLearn the task.\nPractise with clarity.\n\nLearn the rules and controls of original Assessment Practice exercises.\n\nExplore the games\n│\n—\n\nPRACTICE AND DESCRIPTIVE REPORT AVAILABLE\n\nStop\n\nRespond to GO. Withhold on NO-GO. Review your accuracy, response timing, and consistency on this Assessment Practice task.\n\nAbout 4 minutes · Physical keyboard recommended\n\nOpen Stop →\n\nNo intact completed Balloons result saved here yet.\n\nSTANDALONE PRACTICE AND LOCAL REPORTS AVAILABLE · ADVANCED TRAINING PLANNED\n\nBalloons\n\nPump or collect. Review your choices and outcomes across 39 balloons.\n\nUntimed · Keyboard, pointer, touch or assistive button activation · Type text and patterns\n\nOpen Balloons →\n⌨\n\nPRACTICE AND LOCAL REPORTS IN DEVELOPMENT\n\nKeypresses\n\nWait for GO, repeatedly press your chosen key, and review the browser-recorded timing and counts.\n\nAbout 30 seconds of timed play · Physical keyboard recommended\n\nOpen Keypresses →\n←\n→\n\nSTANDALONE PRACTICE AND LOCAL HISTORY IN DEVELOPMENT\n\nArrows\n\nFollow the CENTER or OUTER cue, choose Left or Right, and review what this browser observed.\n\nAbout 4½ minutes of timed play plus untimed breaks · Keyboard or pointer\n\nOpen Arrows →\n▰\n▬\n\nSTANDALONE PRACTICE AND LOCAL HISTORY IN DEVELOPMENT\n\nLengths\n\nChoose the longer of two bars, then review your choices and browser-observed response times.\n\nAbout 3¼ minutes of timed play plus untimed breaks · Keyboard or pointer\n\nOpen Lengths →\n3\n7\n\nSTANDALONE PRACTICE AND LOCAL HISTORY IN DEVELOPMENT\n\nDigits\n\nRecall short sequences of digits in order, then review accuracy by length and string differences.\n\nTime varies with your answers. Allow at least five minutes. A rare long run can take more than 20 minutes, plus any time you spend before Next.\n\nOpen Digits →\nOptional Stop analytics\n\nDevelopment candidate — proposed notice for founder and privacy review. Collection is disabled in the default build.\n\nMay we collect optional Stop usage analytics to understand which preparation steps are used and identify broad technical problems? We collect only guide, device-check, session, report, training, drill and retest events, broad technical outcomes, a random identifier for this page session, and the time the server receives each event. We do not collect answers, scores, response times, keys, accommodation choices, drill identities, local-history identifiers, names, contact details or employer information. Your task records stay in this browser. We use no analytics cookies or cross-site identifiers. Live analytics rows become eligible for deletion after 55 days and are purged hourly; verified backup and export expiry must keep total retention within 90 days of collection. You can decline or withdraw without losing any Stop feature. Your choice starts off on each page load.\n\nWithdraw to stop new analytics requests, discard unsent events and forget this page’s analytics identifier. A request already received cannot be recalled. Previously received rows remain subject to the retention policy; withdrawal and deleting local history do not delete those rows. After this page’s identifier is forgotten, we cannot use it to locate earlier rows. You can change your choice from the library. Closing or refreshing this page also turns consent off.\n\nAnalytics consent is off.\n\nAllow optional analyticsDecline analytics\nStop history\n\nResults and sequence-use records are saved in this browser. Clearing site data or browser eviction can remove them. These records cannot establish which sequences you started before that happened or in other browsers.\n\nOriginal preparation exercises. Follow the instructions in your invitation."
+    }
+  },
+  {
+    "name": "independent stale history read after Practice again cannot publish old report",
+    "status": "PASS",
+    "detail": {
+      "unchangedRoot": true,
+      "body": "Back to library\nDigits\n\nWatch one digit at a time, then enter the digits in order. Start with four digits. A correct answer adds one digit; a mistake removes one. Three mistakes end the run.\n\nTime varies with your answers. Allow at least five minutes. A rare long run can take more than 20 minutes, plus any time you spend before Next.\n\nOriginal forms rotate and may repeat after six starts or local data deletion.\n\nYour actual assessment invitation controls what to prepare. This is an independent practice exercise.\n\nThis shows recall of these Assessment Practice digit sequences in this browser. It is not an intelligence, memory-capacity, employer, or hiring score. Visual and auditory runs and timing accommodations are different experiences; their results are not calibrated equivalents.\n\nSee exampleLocal history"
+    }
+  }
+]

@@ -1,0 +1,545 @@
+{
+  "schemaVersion": "cards-fixtures/1.1.0",
+  "cases": [
+    {
+      "formId": "CD1",
+      "policy": "A",
+      "drawsByDeck": {
+        "A": 80,
+        "B": 0,
+        "C": 0,
+        "D": 0
+      },
+      "gains": 5600,
+      "losses": 2400,
+      "endingBalance": 5200,
+      "switches": 0,
+      "traceSha256": "dfe7b492e4e45d4fa21ba7d4e0935dc22c40ded6fde051039194040fefdb825d"
+    },
+    {
+      "formId": "CD1",
+      "policy": "B",
+      "drawsByDeck": {
+        "A": 0,
+        "B": 80,
+        "C": 0,
+        "D": 0
+      },
+      "gains": 7200,
+      "losses": 8800,
+      "endingBalance": 400,
+      "switches": 0,
+      "traceSha256": "699476850608a4edd8d1542a1cd773593a1c6c6718749b90e1056304c67d1eb7"
+    },
+    {
+      "formId": "CD1",
+      "policy": "C",
+      "drawsByDeck": {
+        "A": 0,
+        "B": 0,
+        "C": 80,
+        "D": 0
+      },
+      "gains": 1600,
+      "losses": 200,
+      "endingBalance": 3400,
+      "switches": 0,
+      "traceSha256": "34f4f8da237290b467d947b62d4fa88b160eee3d0aeda7fd81ae949b9c0e79c5"
+    },
+    {
+      "formId": "CD1",
+      "policy": "D",
+      "drawsByDeck": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 80
+      },
+      "gains": 3800,
+      "losses": 800,
+      "endingBalance": 5000,
+      "switches": 0,
+      "traceSha256": "517cd6c08b577ca1be54641617767f96ded5ff4c904f992e7af46c1077986cd3"
+    },
+    {
+      "formId": "CD1",
+      "policy": "ABCD_cycle",
+      "drawsByDeck": {
+        "A": 20,
+        "B": 20,
+        "C": 20,
+        "D": 20
+      },
+      "gains": 4550,
+      "losses": 3050,
+      "endingBalance": 3500,
+      "switches": 79,
+      "traceSha256": "7439a8349a1b70d3ba1453b49f6da5e69a5c3face1e2252e27a700f1deb6d661"
+    },
+    {
+      "formId": "CD1",
+      "policy": "switch_after_40",
+      "drawsByDeck": {
+        "A": 40,
+        "B": 0,
+        "C": 0,
+        "D": 40
+      },
+      "gains": 4700,
+      "losses": 1600,
+      "endingBalance": 5100,
+      "switches": 1,
+      "traceSha256": "1e0b99914eb56228b3f427613c1b9bd24dc290f191d483f772b6ee1a487a8789"
+    },
+    {
+      "formId": "CD2",
+      "policy": "A",
+      "drawsByDeck": {
+        "A": 80,
+        "B": 0,
+        "C": 0,
+        "D": 0
+      },
+      "gains": 5600,
+      "losses": 2400,
+      "endingBalance": 5200,
+      "switches": 0,
+      "traceSha256": "b6143fc837b6ff4aa0e760556b7b8ca5c8e9897010af1888c7f5f940232569ed"
+    },
+    {
+      "formId": "CD2",
+      "policy": "B",
+      "drawsByDeck": {
+        "A": 0,
+        "B": 80,
+        "C": 0,
+        "D": 0
+      },
+      "gains": 7200,
+      "losses": 8800,
+      "endingBalance": 400,
+      "switches": 0,
+      "traceSha256": "9296c3e2278f9c478f17ca5bc72657f448039c6cb88de89ef1468b52bbd9e373"
+    },
+    {
+      "formId": "CD2",
+      "policy": "C",
+      "drawsByDeck": {
+        "A": 0,
+        "B": 0,
+        "C": 80,
+        "D": 0
+      },
+      "gains": 1600,
+      "losses": 200,
+      "endingBalance": 3400,
+      "switches": 0,
+      "traceSha256": "439ea7abcd77b3a376cc2731a68347918ee5480e6807fb1ae2af75b4d27ae387"
+    },
+    {
+      "formId": "CD2",
+      "policy": "D",
+      "drawsByDeck": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 80
+      },
+      "gains": 3800,
+      "losses": 800,
+      "endingBalance": 5000,
+      "switches": 0,
+      "traceSha256": "ed679ab5b2ce5291d0464fed0f435599f6a243b1898462fd3173df2279d23e9b"
+    },
+    {
+      "formId": "CD2",
+      "policy": "ABCD_cycle",
+      "drawsByDeck": {
+        "A": 20,
+        "B": 20,
+        "C": 20,
+        "D": 20
+      },
+      "gains": 4550,
+      "losses": 3050,
+      "endingBalance": 3500,
+      "switches": 79,
+      "traceSha256": "010ea08343b46433ef94d5268fb01d1556e0bd6e5770b0676db7ed1e18797afc"
+    },
+    {
+      "formId": "CD2",
+      "policy": "switch_after_40",
+      "drawsByDeck": {
+        "A": 40,
+        "B": 0,
+        "C": 0,
+        "D": 40
+      },
+      "gains": 4700,
+      "losses": 1600,
+      "endingBalance": 5100,
+      "switches": 1,
+      "traceSha256": "02017dbb2d321405b1fce254e0e9e94037cae2250a6daf6e9a9566b005550c80"
+    },
+    {
+      "formId": "CD3",
+      "policy": "A",
+      "drawsByDeck": {
+        "A": 80,
+        "B": 0,
+        "C": 0,
+        "D": 0
+      },
+      "gains": 5600,
+      "losses": 2400,
+      "endingBalance": 5200,
+      "switches": 0,
+      "traceSha256": "09c2ae888e2940294ccc3099b03b87b7b0cacdafa11b8736403ebd7fa4a785c6"
+    },
+    {
+      "formId": "CD3",
+      "policy": "B",
+      "drawsByDeck": {
+        "A": 0,
+        "B": 80,
+        "C": 0,
+        "D": 0
+      },
+      "gains": 7200,
+      "losses": 8800,
+      "endingBalance": 400,
+      "switches": 0,
+      "traceSha256": "364b83064a70b43e4cf7d0bb92621917bb626216b23886f76aacb9385573a866"
+    },
+    {
+      "formId": "CD3",
+      "policy": "C",
+      "drawsByDeck": {
+        "A": 0,
+        "B": 0,
+        "C": 80,
+        "D": 0
+      },
+      "gains": 1600,
+      "losses": 200,
+      "endingBalance": 3400,
+      "switches": 0,
+      "traceSha256": "7fa86dbb590361c45b6bd53af575d85384f7c1e2d66826e0551f3a0f23944bca"
+    },
+    {
+      "formId": "CD3",
+      "policy": "D",
+      "drawsByDeck": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 80
+      },
+      "gains": 3800,
+      "losses": 800,
+      "endingBalance": 5000,
+      "switches": 0,
+      "traceSha256": "b3295f80aea2d7d256b9519046ac24faaa4f86540cb1640070ac793751121a95"
+    },
+    {
+      "formId": "CD3",
+      "policy": "ABCD_cycle",
+      "drawsByDeck": {
+        "A": 20,
+        "B": 20,
+        "C": 20,
+        "D": 20
+      },
+      "gains": 4550,
+      "losses": 3050,
+      "endingBalance": 3500,
+      "switches": 79,
+      "traceSha256": "f5c05894cfccc27482334fe4e907107164c1a437195a948a3b0ee4f377ceaa46"
+    },
+    {
+      "formId": "CD3",
+      "policy": "switch_after_40",
+      "drawsByDeck": {
+        "A": 40,
+        "B": 0,
+        "C": 0,
+        "D": 40
+      },
+      "gains": 4700,
+      "losses": 1600,
+      "endingBalance": 5100,
+      "switches": 1,
+      "traceSha256": "d3f37a219371783e6815c125b21cf958870b97761bef0dc739f4bea84c0594e0"
+    },
+    {
+      "formId": "CD4",
+      "policy": "A",
+      "drawsByDeck": {
+        "A": 80,
+        "B": 0,
+        "C": 0,
+        "D": 0
+      },
+      "gains": 5600,
+      "losses": 2400,
+      "endingBalance": 5200,
+      "switches": 0,
+      "traceSha256": "f7582a7f78bc2633ace0e3d3dd5676ed1e8f2ef691b104da0e6413411d445a4a"
+    },
+    {
+      "formId": "CD4",
+      "policy": "B",
+      "drawsByDeck": {
+        "A": 0,
+        "B": 80,
+        "C": 0,
+        "D": 0
+      },
+      "gains": 7200,
+      "losses": 8800,
+      "endingBalance": 400,
+      "switches": 0,
+      "traceSha256": "f24b4898a3bdada41fb6c9caf07739dc3dc71ea471029acee4776b5444c738f9"
+    },
+    {
+      "formId": "CD4",
+      "policy": "C",
+      "drawsByDeck": {
+        "A": 0,
+        "B": 0,
+        "C": 80,
+        "D": 0
+      },
+      "gains": 1600,
+      "losses": 200,
+      "endingBalance": 3400,
+      "switches": 0,
+      "traceSha256": "aa32c162bc17ba26ce5642a0e9e7201c2462e9b469d2512190adc680c395cdea"
+    },
+    {
+      "formId": "CD4",
+      "policy": "D",
+      "drawsByDeck": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 80
+      },
+      "gains": 3800,
+      "losses": 800,
+      "endingBalance": 5000,
+      "switches": 0,
+      "traceSha256": "80f48a7c1d9cc1735de9efd2c45d171edb45f631c6960c609e7d7a45922dab75"
+    },
+    {
+      "formId": "CD4",
+      "policy": "ABCD_cycle",
+      "drawsByDeck": {
+        "A": 20,
+        "B": 20,
+        "C": 20,
+        "D": 20
+      },
+      "gains": 4550,
+      "losses": 3050,
+      "endingBalance": 3500,
+      "switches": 79,
+      "traceSha256": "811f1682dc61495718df6870d097fd6127dcf76fcf7de0d7f98acb507cf31654"
+    },
+    {
+      "formId": "CD4",
+      "policy": "switch_after_40",
+      "drawsByDeck": {
+        "A": 40,
+        "B": 0,
+        "C": 0,
+        "D": 40
+      },
+      "gains": 4700,
+      "losses": 1600,
+      "endingBalance": 5100,
+      "switches": 1,
+      "traceSha256": "2dd23065caaf77334df2e2f2533f0dddbdc16e1fde630514892f1abbd9e4636b"
+    },
+    {
+      "formId": "CD5",
+      "policy": "A",
+      "drawsByDeck": {
+        "A": 80,
+        "B": 0,
+        "C": 0,
+        "D": 0
+      },
+      "gains": 5600,
+      "losses": 2400,
+      "endingBalance": 5200,
+      "switches": 0,
+      "traceSha256": "9f2d63ce36c349eeeb1f52a894cc5bdba01f26c200790fbb62e092de8d84c32b"
+    },
+    {
+      "formId": "CD5",
+      "policy": "B",
+      "drawsByDeck": {
+        "A": 0,
+        "B": 80,
+        "C": 0,
+        "D": 0
+      },
+      "gains": 7200,
+      "losses": 8800,
+      "endingBalance": 400,
+      "switches": 0,
+      "traceSha256": "451f0f68a5bb40e215e4e77be8c580d5f32e8fde40cbd6c0e7d727cd6e54af18"
+    },
+    {
+      "formId": "CD5",
+      "policy": "C",
+      "drawsByDeck": {
+        "A": 0,
+        "B": 0,
+        "C": 80,
+        "D": 0
+      },
+      "gains": 1600,
+      "losses": 200,
+      "endingBalance": 3400,
+      "switches": 0,
+      "traceSha256": "b73a2fc3ad1f3c7d4a29c5612eb9bb60c7a2e00c48be4c5125be23ea225b19bc"
+    },
+    {
+      "formId": "CD5",
+      "policy": "D",
+      "drawsByDeck": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 80
+      },
+      "gains": 3800,
+      "losses": 800,
+      "endingBalance": 5000,
+      "switches": 0,
+      "traceSha256": "f016a34a2fa8dbbac66218122d6deee4978442e83fef861e5ee5b141b917a259"
+    },
+    {
+      "formId": "CD5",
+      "policy": "ABCD_cycle",
+      "drawsByDeck": {
+        "A": 20,
+        "B": 20,
+        "C": 20,
+        "D": 20
+      },
+      "gains": 4550,
+      "losses": 3050,
+      "endingBalance": 3500,
+      "switches": 79,
+      "traceSha256": "3f13b3677bd844d0201d15812e900164ce27b8a7c2f244bae23a467865889fa4"
+    },
+    {
+      "formId": "CD5",
+      "policy": "switch_after_40",
+      "drawsByDeck": {
+        "A": 40,
+        "B": 0,
+        "C": 0,
+        "D": 40
+      },
+      "gains": 4700,
+      "losses": 1600,
+      "endingBalance": 5100,
+      "switches": 1,
+      "traceSha256": "e6771185cfe5f45b77d2e904fc835b352fd887cb29ad9e453cde4d108f10243f"
+    },
+    {
+      "formId": "CD6",
+      "policy": "A",
+      "drawsByDeck": {
+        "A": 80,
+        "B": 0,
+        "C": 0,
+        "D": 0
+      },
+      "gains": 5600,
+      "losses": 2400,
+      "endingBalance": 5200,
+      "switches": 0,
+      "traceSha256": "56197b18173d71b80d219f0e33c232c5f464a7818362cdf357246a0dd5c18e15"
+    },
+    {
+      "formId": "CD6",
+      "policy": "B",
+      "drawsByDeck": {
+        "A": 0,
+        "B": 80,
+        "C": 0,
+        "D": 0
+      },
+      "gains": 7200,
+      "losses": 8800,
+      "endingBalance": 400,
+      "switches": 0,
+      "traceSha256": "d10d4eb9bf3f5ab6020c6fb1ccc890bb39ecb6a3f04a401f7f8ab87c48c76181"
+    },
+    {
+      "formId": "CD6",
+      "policy": "C",
+      "drawsByDeck": {
+        "A": 0,
+        "B": 0,
+        "C": 80,
+        "D": 0
+      },
+      "gains": 1600,
+      "losses": 200,
+      "endingBalance": 3400,
+      "switches": 0,
+      "traceSha256": "4d5c784a8ab7d8ca5e49aea8b9ec9c8727391cfc56c7a4a9754ba2ce5ca6ec36"
+    },
+    {
+      "formId": "CD6",
+      "policy": "D",
+      "drawsByDeck": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 80
+      },
+      "gains": 3800,
+      "losses": 800,
+      "endingBalance": 5000,
+      "switches": 0,
+      "traceSha256": "be7cb99e1929c0427bca150cea3a0bba42ef858b58e784232ebb71ef9296ae7d"
+    },
+    {
+      "formId": "CD6",
+      "policy": "ABCD_cycle",
+      "drawsByDeck": {
+        "A": 20,
+        "B": 20,
+        "C": 20,
+        "D": 20
+      },
+      "gains": 4550,
+      "losses": 3050,
+      "endingBalance": 3500,
+      "switches": 79,
+      "traceSha256": "8704e394eea6f1d01142e72038c79914d6bc1e734f356e0f5df67ee028ce6fe5"
+    },
+    {
+      "formId": "CD6",
+      "policy": "switch_after_40",
+      "drawsByDeck": {
+        "A": 40,
+        "B": 0,
+        "C": 0,
+        "D": 40
+      },
+      "gains": 4700,
+      "losses": 1600,
+      "endingBalance": 5100,
+      "switches": 1,
+      "traceSha256": "ba7bb6cb62940cc308df66379ff4cf227f2e4b099f62d859422e788540e44743"
+    }
+  ]
+}

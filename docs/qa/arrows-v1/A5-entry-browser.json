@@ -1,0 +1,22 @@
+{
+  "browser": "145.0.7632.6",
+  "first": {
+    "ordinal": 1,
+    "form": "AR1",
+    "replayed": true,
+    "canAdvance": true
+  },
+  "blocked": true,
+  "second": {
+    "ordinal": 2,
+    "form": "AR2"
+  },
+  "canceled": true,
+  "afterCancel": {
+    "ordinal": 3,
+    "form": "AR3"
+  },
+  "count": 3,
+  "rehydrated": true,
+  "passed": true
+}

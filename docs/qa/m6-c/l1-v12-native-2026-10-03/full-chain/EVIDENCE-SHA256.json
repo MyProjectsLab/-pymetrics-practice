@@ -1,0 +1,105 @@
+{
+  "hashAlgorithm": "sha256",
+  "files": {
+    "IDENTITY.json": {
+      "bytes": 2761,
+      "sha256": "fb60aefb594a08f6a3018f3926dccb5cbcc7268655ee8975a0b0cdcb940b242e"
+    },
+    "README.md": {
+      "bytes": 3068,
+      "sha256": "8fdb437101407953866d8e1183661e2371525539f5b1bfd5d3e43cc34db216d9"
+    },
+    "RECONCILIATION.json": {
+      "bytes": 11166,
+      "sha256": "8d85ac618f80e5edb36bcebc99cf85d0e1bda0f5f881c5b5354782634569f5b5"
+    },
+    "RESULT.md": {
+      "bytes": 4833,
+      "sha256": "0f7382b1cf15f510ac52bf322c9bd266ac898d3fd492e53b24a607fb92cf287f"
+    },
+    "VISIBLE-SCREENS.md": {
+      "bytes": 3993,
+      "sha256": "c64e628115a0418a8f4248ba049605bf50c424c558c39c60ecc1685cb629c24c"
+    },
+    "baseline-journal.json": {
+      "bytes": 229605,
+      "sha256": "03ed4f164fb552dad86a8eca6ff0f1dae84ce2fe2ad65fa236e70d061c6b60ad"
+    },
+    "baseline-record.json": {
+      "bytes": 252372,
+      "sha256": "236b870d4d4fffb4c2acf4dd0a2a7adfed172f2b138ce6d283d2088f68aa3b8c"
+    },
+    "baseline.raw.json.gz": {
+      "bytes": 21427,
+      "sha256": "017fdf5540d911d1cc254da7d6f5b33655a9a47b0c13d5a93197316a4b0413c7",
+      "uncompressedBytes": 603291,
+      "uncompressedSha256": "ebd6b4cf01fffefac2f37b4e412458463b2a9ce9631200ed7389c4f1bd8dd6b4"
+    },
+    "before.raw.json.gz": {
+      "bytes": 908,
+      "sha256": "6d039ed339659c22e4ba71d01af3a7cca7e1175a1ed06753b535024033000355",
+      "uncompressedBytes": 6981,
+      "uncompressedSha256": "3f12460991e51cdf29b49ac79156f3cd970bb6abd82d848b19af0d4bbef75565"
+    },
+    "build.log": {
+      "bytes": 797,
+      "sha256": "c64121e7caddd1014bcfc88e3176f8881e5d5ae9b9f2de3e1909d0f4a5517ca0"
+    },
+    "drill-attempt.json": {
+      "bytes": 202077,
+      "sha256": "b2c41e36afb26a724b824135bf3b0136e721e0f00261fb9b03cff9a6195494c0"
+    },
+    "drill-journal.json": {
+      "bytes": 187599,
+      "sha256": "9930495e4df06d8e5108a84296c4c0873af2ebd5bcbdfdf4ebfa9c5bd12086ff"
+    },
+    "drill.raw.json.gz": {
+      "bytes": 49062,
+      "sha256": "cb6e89f4d2eb55be8df43456d5187456c055408714b6ea8b0f803b4c111717cd",
+      "uncompressedBytes": 1348922,
+      "uncompressedSha256": "8a11749b41d7a15f289d14c293c274a5803f391a942e811522689f92bdf3cc2b"
+    },
+    "pause.raw.json.gz": {
+      "bytes": 4623,
+      "sha256": "e5fe92bc97ae273045a9bde15d2ab06640aab888417fdcd229e8bfab9a5b23c0",
+      "uncompressedBytes": 151585,
+      "uncompressedSha256": "4371f2297052054bcbe1d00764b6dc80575a0750a7a60dc337bd5859795314b1"
+    },
+    "pre-reload.raw.json.gz": {
+      "bytes": 80551,
+      "sha256": "c9c36d6d2b15ffc8b6f9ff00b45d327622a0d0a2f91e8301adc024b2a6761f34",
+      "uncompressedBytes": 2220787,
+      "uncompressedSha256": "2ce919d07468e45185a5602d3a2c1cc4ab1157cac0b35811446cf0fb11c7b6bc"
+    },
+    "reconcile.py": {
+      "bytes": 14514,
+      "sha256": "dc47ff422f31e0f88348e3f55e820f02ff0447c06e41dc9adbbb3509cbb0ae5f"
+    },
+    "reloaded.raw.json.gz": {
+      "bytes": 81464,
+      "sha256": "2f0b671ac4e1fdccde8a0900d5e8d3d0d1cbcf097d95d75243e87dee0484573e",
+      "uncompressedBytes": 2259022,
+      "uncompressedSha256": "a004d3b3bc8124c3a80ec546412a10b08a4b0c2ae579c81c6fe041b961ef84f3"
+    },
+    "reserved.raw.json.gz": {
+      "bytes": 49711,
+      "sha256": "1b4441483930f6ae7f839681a1390b55f58d0d3a94cccc59ac34d3a8655464a2",
+      "uncompressedBytes": 1372574,
+      "uncompressedSha256": "fe54397ae04351d111d6d20d501df0d7ec0e3d7f6c5e0f9ea7076b607bdb6d52"
+    },
+    "retest-journal.json": {
+      "bytes": 224623,
+      "sha256": "b6c776cadac9dc7fee6ea7cfa7f9e65f273abfe44475bae110ee8a563c16e6dc"
+    },
+    "retest-record.json": {
+      "bytes": 247218,
+      "sha256": "d839aff1ffd2beb6f3752ccd3edf8ddc74797888e8309b68f1243fecb9705f61"
+    },
+    "retest.raw.json.gz": {
+      "bytes": 79795,
+      "sha256": "10669cad04e4be951a68ab82ee2107ea6730b60c9d81a3286bdd697d93f8433b",
+      "uncompressedBytes": 2185402,
+      "uncompressedSha256": "98a7f381ea73a39f1e78606d5939510cdb5a50c59acff356776e399d8c647021"
+    }
+  }
+}

@@ -1,0 +1,3101 @@
+{
+  "version": "money_exchange_2_storage_v2_0",
+  "activity": {
+    "A1.2": [
+      {
+        "id": "test/48",
+        "kind": "report_opened",
+        "at": 48
+      }
+    ]
+  },
+  "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+  "generation": 1,
+  "revision": 49,
+  "lease": {
+    "ownerId": "owner",
+    "epoch": 2,
+    "live": true
+  },
+  "route": {
+    "stage": "report",
+    "epoch": 49,
+    "ownerId": "owner"
+  },
+  "ticketSerial": 2,
+  "currentTicketId": "T1.2",
+  "tickets": {
+    "T1.1": {
+      "id": "T1.1",
+      "generation": 1,
+      "ownerId": "owner",
+      "leaseEpoch": 2,
+      "state": "consumed",
+      "attemptId": "A1.1"
+    },
+    "T1.2": {
+      "id": "T1.2",
+      "generation": 1,
+      "ownerId": "owner",
+      "leaseEpoch": 2,
+      "state": "consumed",
+      "attemptId": "A1.2"
+    }
+  },
+  "activeAttemptId": null,
+  "formCounter": 2,
+  "exposureHistory": [
+    {
+      "attemptId": "A1.1",
+      "formId": "ME2-1",
+      "formDigest": "1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea"
+    },
+    {
+      "attemptId": "A1.2",
+      "formId": "ME2-2",
+      "formDigest": "f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830"
+    }
+  ],
+  "attempts": {
+    "A1.2": {
+      "id": "A1.2",
+      "ordinal": 2,
+      "createdAt": 28,
+      "context": {
+        "input": "keyboard"
+      },
+      "events": [
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 1,
+          "requestId": "test/28",
+          "at": 28,
+          "kind": "attempt_armed"
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 2,
+          "requestId": "test/28",
+          "at": 28,
+          "kind": "round_intent",
+          "round": 1
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 3,
+          "requestId": "test/29",
+          "at": 29,
+          "kind": "stage_committed",
+          "data": {
+            "from": "award_1",
+            "to": "connecting_1"
+          }
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 4,
+          "requestId": "test/30",
+          "at": 30,
+          "kind": "stage_committed",
+          "data": {
+            "from": "connecting_1",
+            "to": "connected_1"
+          }
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 5,
+          "requestId": "test/31",
+          "at": 31,
+          "kind": "stage_committed",
+          "data": {
+            "from": "connected_1",
+            "to": "partner_rules_1"
+          }
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 6,
+          "requestId": "test/32",
+          "at": 32,
+          "kind": "stage_committed",
+          "data": {
+            "from": "partner_rules_1",
+            "to": "bonus_1"
+          }
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 7,
+          "requestId": "test/33",
+          "at": 33,
+          "kind": "bonus_presented",
+          "round": 1,
+          "data": {
+            "recipient": "candidate"
+          }
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 8,
+          "requestId": "test/33",
+          "at": 33,
+          "kind": "stage_committed",
+          "data": {
+            "from": "bonus_1",
+            "to": "choice_1"
+          }
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 9,
+          "requestId": "test/34",
+          "at": 34,
+          "kind": "decision_committed",
+          "round": 1,
+          "data": {
+            "signedGiveCents": 200,
+            "actor": "candidate",
+            "candidateFinalCents": 800,
+            "partnerFinalCents": 700
+          }
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 10,
+          "requestId": "test/34",
+          "at": 34,
+          "kind": "possibly_revealed",
+          "round": 1,
+          "data": {
+            "identity": "{\"generation\":1,\"attemptId\":\"A1.2\",\"formDigest\":\"f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830\",\"roundId\":\"A1.2/R1\",\"partner\":\"Partner C\",\"bonusRecipient\":\"candidate\",\"decision\":{\"signedGiveCents\":200,\"actor\":\"candidate\",\"candidateFinalCents\":800,\"partnerFinalCents\":700}}"
+          }
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 11,
+          "requestId": "test/34",
+          "at": 34,
+          "kind": "stage_committed",
+          "data": {
+            "from": "choice_1",
+            "to": "result_1"
+          }
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 12,
+          "requestId": "test/35",
+          "at": 35,
+          "kind": "result_receipt",
+          "round": 1,
+          "data": {
+            "identity": "{\"generation\":1,\"attemptId\":\"A1.2\",\"formDigest\":\"f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830\",\"roundId\":\"A1.2/R1\",\"partner\":\"Partner C\",\"bonusRecipient\":\"candidate\",\"decision\":{\"signedGiveCents\":200,\"actor\":\"candidate\",\"candidateFinalCents\":800,\"partnerFinalCents\":700}}"
+          }
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 13,
+          "requestId": "test/35",
+          "at": 35,
+          "kind": "stage_committed",
+          "data": {
+            "from": "result_1",
+            "to": "result_1"
+          }
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 14,
+          "requestId": "test/36",
+          "at": 36,
+          "kind": "stage_committed",
+          "data": {
+            "from": "result_1",
+            "to": "fairness_1"
+          }
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 15,
+          "requestId": "test/37",
+          "at": 37,
+          "kind": "fairness_committed",
+          "round": 1,
+          "data": {
+            "rating": 8
+          }
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 16,
+          "requestId": "test/37",
+          "at": 37,
+          "kind": "round_terminal",
+          "round": 1
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 17,
+          "requestId": "test/37",
+          "at": 37,
+          "kind": "stage_committed",
+          "data": {
+            "from": "fairness_1",
+            "to": "new_partner"
+          }
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 18,
+          "requestId": "test/38",
+          "at": 38,
+          "kind": "round_intent",
+          "round": 2
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 19,
+          "requestId": "test/38",
+          "at": 38,
+          "kind": "stage_committed",
+          "data": {
+            "from": "new_partner",
+            "to": "award_2"
+          }
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 20,
+          "requestId": "test/39",
+          "at": 39,
+          "kind": "stage_committed",
+          "data": {
+            "from": "award_2",
+            "to": "connecting_2"
+          }
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 21,
+          "requestId": "test/40",
+          "at": 40,
+          "kind": "stage_committed",
+          "data": {
+            "from": "connecting_2",
+            "to": "connected_2"
+          }
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 22,
+          "requestId": "test/41",
+          "at": 41,
+          "kind": "stage_committed",
+          "data": {
+            "from": "connected_2",
+            "to": "partner_rules_2"
+          }
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 23,
+          "requestId": "test/42",
+          "at": 42,
+          "kind": "stage_committed",
+          "data": {
+            "from": "partner_rules_2",
+            "to": "bonus_2"
+          }
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 24,
+          "requestId": "test/43",
+          "at": 43,
+          "kind": "bonus_presented",
+          "round": 2,
+          "data": {
+            "recipient": "partner"
+          }
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 25,
+          "requestId": "test/43",
+          "at": 43,
+          "kind": "stage_committed",
+          "data": {
+            "from": "bonus_2",
+            "to": "partner_choice_2"
+          }
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 26,
+          "requestId": "test/44",
+          "at": 44,
+          "kind": "decision_committed",
+          "round": 2,
+          "data": {
+            "signedGiveCents": -150,
+            "actor": "partner",
+            "candidateFinalCents": 350,
+            "partnerFinalCents": 1150
+          }
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 27,
+          "requestId": "test/44",
+          "at": 44,
+          "kind": "possibly_revealed",
+          "round": 2,
+          "data": {
+            "identity": "{\"generation\":1,\"attemptId\":\"A1.2\",\"formDigest\":\"f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830\",\"roundId\":\"A1.2/R2\",\"partner\":\"Partner D\",\"bonusRecipient\":\"partner\",\"decision\":{\"signedGiveCents\":-150,\"actor\":\"partner\",\"candidateFinalCents\":350,\"partnerFinalCents\":1150}}"
+          }
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 28,
+          "requestId": "test/44",
+          "at": 44,
+          "kind": "stage_committed",
+          "data": {
+            "from": "partner_choice_2",
+            "to": "result_2"
+          }
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 29,
+          "requestId": "test/45",
+          "at": 45,
+          "kind": "result_receipt",
+          "round": 2,
+          "data": {
+            "identity": "{\"generation\":1,\"attemptId\":\"A1.2\",\"formDigest\":\"f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830\",\"roundId\":\"A1.2/R2\",\"partner\":\"Partner D\",\"bonusRecipient\":\"partner\",\"decision\":{\"signedGiveCents\":-150,\"actor\":\"partner\",\"candidateFinalCents\":350,\"partnerFinalCents\":1150}}"
+          }
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 30,
+          "requestId": "test/45",
+          "at": 45,
+          "kind": "stage_committed",
+          "data": {
+            "from": "result_2",
+            "to": "result_2"
+          }
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 31,
+          "requestId": "test/46",
+          "at": 46,
+          "kind": "stage_committed",
+          "data": {
+            "from": "result_2",
+            "to": "fairness_2"
+          }
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 32,
+          "requestId": "test/47",
+          "at": 47,
+          "kind": "fairness_committed",
+          "round": 2,
+          "data": {
+            "rating": 8
+          }
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 33,
+          "requestId": "test/47",
+          "at": 47,
+          "kind": "round_terminal",
+          "round": 2
+        },
+        {
+          "version": "money_exchange_2_event_v1_0",
+          "seq": 34,
+          "requestId": "test/47",
+          "at": 47,
+          "kind": "completed"
+        }
+      ],
+      "revision": 20,
+      "generation": 1,
+      "ownerId": "owner",
+      "leaseEpoch": 2,
+      "originTicketId": "T1.2",
+      "formId": "ME2-2",
+      "formDigest": "f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830",
+      "status": "Completed",
+      "playCapability": false,
+      "stage": "test_complete",
+      "rounds": [
+        {
+          "id": "A1.2/R1",
+          "partner": "Partner C",
+          "bonusRecipient": "candidate",
+          "armed": true,
+          "decision": {
+            "signedGiveCents": 200,
+            "actor": "candidate",
+            "candidateFinalCents": 800,
+            "partnerFinalCents": 700
+          },
+          "exposure": "render_receipt",
+          "receiptIdentity": "{\"generation\":1,\"attemptId\":\"A1.2\",\"formDigest\":\"f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830\",\"roundId\":\"A1.2/R1\",\"partner\":\"Partner C\",\"bonusRecipient\":\"candidate\",\"decision\":{\"signedGiveCents\":200,\"actor\":\"candidate\",\"candidateFinalCents\":800,\"partnerFinalCents\":700}}",
+          "fairness": 8,
+          "terminal": true
+        },
+        {
+          "id": "A1.2/R2",
+          "partner": "Partner D",
+          "bonusRecipient": "partner",
+          "armed": true,
+          "decision": {
+            "signedGiveCents": -150,
+            "actor": "partner",
+            "candidateFinalCents": 350,
+            "partnerFinalCents": 1150
+          },
+          "exposure": "render_receipt",
+          "receiptIdentity": "{\"generation\":1,\"attemptId\":\"A1.2\",\"formDigest\":\"f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830\",\"roundId\":\"A1.2/R2\",\"partner\":\"Partner D\",\"bonusRecipient\":\"partner\",\"decision\":{\"signedGiveCents\":-150,\"actor\":\"partner\",\"candidateFinalCents\":350,\"partnerFinalCents\":1150}}",
+          "fairness": 8,
+          "terminal": true
+        }
+      ],
+      "reportSnapshot": [
+        {
+          "generation": 1,
+          "attemptId": "A1.2",
+          "formId": "ME2-2",
+          "formDigest": "f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830",
+          "round": 1,
+          "partner": "Partner C",
+          "bonusRecipient": "candidate",
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "signedGiveCents": 200,
+          "actor": "candidate",
+          "candidateFinalCents": 800,
+          "partnerFinalCents": 700,
+          "fairness": 8
+        },
+        {
+          "generation": 1,
+          "attemptId": "A1.2",
+          "formId": "ME2-2",
+          "formDigest": "f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830",
+          "round": 2,
+          "partner": "Partner D",
+          "bonusRecipient": "partner",
+          "candidateStartCents": 500,
+          "partnerStartCents": 500,
+          "signedGiveCents": -150,
+          "actor": "partner",
+          "candidateFinalCents": 350,
+          "partnerFinalCents": 1150,
+          "fairness": 8
+        }
+      ]
+    }
+  },
+  "tombstones": {
+    "A1.1": true
+  },
+  "outcomes": {
+    "test/27": {
+      "payloadHash": "{\"kind\":\"ready\",\"requestId\":\"test/27\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":27}",
+      "command": {
+        "kind": "ready",
+        "requestId": "test/27",
+        "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+        "generation": 1,
+        "ownerId": "owner",
+        "leaseEpoch": 2,
+        "routeEpoch": 27
+      },
+      "result": {
+        "ticketId": "T1.2",
+        "stage": "ready"
+      },
+      "route": {
+        "stage": "ready",
+        "epoch": 28,
+        "ownerId": "owner"
+      },
+      "revision": 27
+    },
+    "test/28": {
+      "payloadHash": "{\"kind\":\"arm\",\"requestId\":\"test/28\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":28,\"ticketId\":\"T1.2\",\"at\":28,\"context\":{\"input\":\"keyboard\"}}",
+      "command": {
+        "kind": "arm",
+        "requestId": "test/28",
+        "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+        "generation": 1,
+        "ownerId": "owner",
+        "leaseEpoch": 2,
+        "routeEpoch": 28,
+        "ticketId": "T1.2",
+        "at": 28,
+        "context": {
+          "input": "keyboard"
+        }
+      },
+      "result": {
+        "ticketId": "T1.2",
+        "attemptId": "A1.2",
+        "stage": "award_1"
+      },
+      "route": {
+        "stage": "active",
+        "epoch": 29,
+        "ownerId": "owner"
+      },
+      "revision": 28
+    },
+    "test/29": {
+      "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/29\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":29,\"ticketId\":\"T1.2\",\"at\":29,\"stage\":\"award_1\",\"expectedRevision\":1}",
+      "command": {
+        "kind": "step",
+        "requestId": "test/29",
+        "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+        "generation": 1,
+        "ownerId": "owner",
+        "leaseEpoch": 2,
+        "routeEpoch": 29,
+        "ticketId": "T1.2",
+        "at": 29,
+        "stage": "award_1",
+        "expectedRevision": 1
+      },
+      "result": {
+        "stage": "connecting_1",
+        "attemptId": "A1.2"
+      },
+      "route": {
+        "stage": "active",
+        "epoch": 30,
+        "ownerId": "owner"
+      },
+      "revision": 29
+    },
+    "test/30": {
+      "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/30\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":30,\"ticketId\":\"T1.2\",\"at\":30,\"stage\":\"connecting_1\",\"expectedRevision\":2,\"operation\":\"animation\"}",
+      "command": {
+        "kind": "step",
+        "requestId": "test/30",
+        "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+        "generation": 1,
+        "ownerId": "owner",
+        "leaseEpoch": 2,
+        "routeEpoch": 30,
+        "ticketId": "T1.2",
+        "at": 30,
+        "stage": "connecting_1",
+        "expectedRevision": 2,
+        "operation": "animation"
+      },
+      "result": {
+        "stage": "connected_1",
+        "attemptId": "A1.2"
+      },
+      "route": {
+        "stage": "active",
+        "epoch": 31,
+        "ownerId": "owner"
+      },
+      "revision": 30
+    },
+    "test/31": {
+      "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/31\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":31,\"ticketId\":\"T1.2\",\"at\":31,\"stage\":\"connected_1\",\"expectedRevision\":3}",
+      "command": {
+        "kind": "step",
+        "requestId": "test/31",
+        "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+        "generation": 1,
+        "ownerId": "owner",
+        "leaseEpoch": 2,
+        "routeEpoch": 31,
+        "ticketId": "T1.2",
+        "at": 31,
+        "stage": "connected_1",
+        "expectedRevision": 3
+      },
+      "result": {
+        "stage": "partner_rules_1",
+        "attemptId": "A1.2"
+      },
+      "route": {
+        "stage": "active",
+        "epoch": 32,
+        "ownerId": "owner"
+      },
+      "revision": 31
+    },
+    "test/32": {
+      "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/32\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":32,\"ticketId\":\"T1.2\",\"at\":32,\"stage\":\"partner_rules_1\",\"expectedRevision\":4}",
+      "command": {
+        "kind": "step",
+        "requestId": "test/32",
+        "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+        "generation": 1,
+        "ownerId": "owner",
+        "leaseEpoch": 2,
+        "routeEpoch": 32,
+        "ticketId": "T1.2",
+        "at": 32,
+        "stage": "partner_rules_1",
+        "expectedRevision": 4
+      },
+      "result": {
+        "stage": "bonus_1",
+        "attemptId": "A1.2"
+      },
+      "route": {
+        "stage": "active",
+        "epoch": 33,
+        "ownerId": "owner"
+      },
+      "revision": 32
+    },
+    "test/33": {
+      "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/33\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":33,\"ticketId\":\"T1.2\",\"at\":33,\"stage\":\"bonus_1\",\"expectedRevision\":5}",
+      "command": {
+        "kind": "step",
+        "requestId": "test/33",
+        "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+        "generation": 1,
+        "ownerId": "owner",
+        "leaseEpoch": 2,
+        "routeEpoch": 33,
+        "ticketId": "T1.2",
+        "at": 33,
+        "stage": "bonus_1",
+        "expectedRevision": 5
+      },
+      "result": {
+        "stage": "choice_1",
+        "attemptId": "A1.2"
+      },
+      "route": {
+        "stage": "active",
+        "epoch": 34,
+        "ownerId": "owner"
+      },
+      "revision": 33
+    },
+    "test/34": {
+      "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/34\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":34,\"ticketId\":\"T1.2\",\"at\":34,\"stage\":\"choice_1\",\"expectedRevision\":6,\"cents\":200}",
+      "command": {
+        "kind": "step",
+        "requestId": "test/34",
+        "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+        "generation": 1,
+        "ownerId": "owner",
+        "leaseEpoch": 2,
+        "routeEpoch": 34,
+        "ticketId": "T1.2",
+        "at": 34,
+        "stage": "choice_1",
+        "expectedRevision": 6,
+        "cents": 200
+      },
+      "result": {
+        "stage": "result_1",
+        "attemptId": "A1.2"
+      },
+      "route": {
+        "stage": "active",
+        "epoch": 35,
+        "ownerId": "owner"
+      },
+      "revision": 34
+    },
+    "test/35": {
+      "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/35\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":35,\"ticketId\":\"T1.2\",\"at\":35,\"stage\":\"result_1\",\"expectedRevision\":7,\"operation\":\"receipt\",\"receipt\":\"{\\\"generation\\\":1,\\\"attemptId\\\":\\\"A1.2\\\",\\\"formDigest\\\":\\\"f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830\\\",\\\"roundId\\\":\\\"A1.2/R1\\\",\\\"partner\\\":\\\"Partner C\\\",\\\"bonusRecipient\\\":\\\"candidate\\\",\\\"decision\\\":{\\\"signedGiveCents\\\":200,\\\"actor\\\":\\\"candidate\\\",\\\"candidateFinalCents\\\":800,\\\"partnerFinalCents\\\":700}}\"}",
+      "command": {
+        "kind": "step",
+        "requestId": "test/35",
+        "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+        "generation": 1,
+        "ownerId": "owner",
+        "leaseEpoch": 2,
+        "routeEpoch": 35,
+        "ticketId": "T1.2",
+        "at": 35,
+        "stage": "result_1",
+        "expectedRevision": 7,
+        "operation": "receipt",
+        "receipt": "{\"generation\":1,\"attemptId\":\"A1.2\",\"formDigest\":\"f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830\",\"roundId\":\"A1.2/R1\",\"partner\":\"Partner C\",\"bonusRecipient\":\"candidate\",\"decision\":{\"signedGiveCents\":200,\"actor\":\"candidate\",\"candidateFinalCents\":800,\"partnerFinalCents\":700}}"
+      },
+      "result": {
+        "stage": "result_1",
+        "attemptId": "A1.2"
+      },
+      "route": {
+        "stage": "active",
+        "epoch": 36,
+        "ownerId": "owner"
+      },
+      "revision": 35
+    },
+    "test/36": {
+      "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/36\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":36,\"ticketId\":\"T1.2\",\"at\":36,\"stage\":\"result_1\",\"expectedRevision\":8}",
+      "command": {
+        "kind": "step",
+        "requestId": "test/36",
+        "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+        "generation": 1,
+        "ownerId": "owner",
+        "leaseEpoch": 2,
+        "routeEpoch": 36,
+        "ticketId": "T1.2",
+        "at": 36,
+        "stage": "result_1",
+        "expectedRevision": 8
+      },
+      "result": {
+        "stage": "fairness_1",
+        "attemptId": "A1.2"
+      },
+      "route": {
+        "stage": "active",
+        "epoch": 37,
+        "ownerId": "owner"
+      },
+      "revision": 36
+    },
+    "test/37": {
+      "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/37\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":37,\"ticketId\":\"T1.2\",\"at\":37,\"stage\":\"fairness_1\",\"expectedRevision\":9,\"rating\":8}",
+      "command": {
+        "kind": "step",
+        "requestId": "test/37",
+        "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+        "generation": 1,
+        "ownerId": "owner",
+        "leaseEpoch": 2,
+        "routeEpoch": 37,
+        "ticketId": "T1.2",
+        "at": 37,
+        "stage": "fairness_1",
+        "expectedRevision": 9,
+        "rating": 8
+      },
+      "result": {
+        "stage": "new_partner",
+        "attemptId": "A1.2"
+      },
+      "route": {
+        "stage": "active",
+        "epoch": 38,
+        "ownerId": "owner"
+      },
+      "revision": 37
+    },
+    "test/38": {
+      "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/38\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":38,\"ticketId\":\"T1.2\",\"at\":38,\"stage\":\"new_partner\",\"expectedRevision\":10}",
+      "command": {
+        "kind": "step",
+        "requestId": "test/38",
+        "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+        "generation": 1,
+        "ownerId": "owner",
+        "leaseEpoch": 2,
+        "routeEpoch": 38,
+        "ticketId": "T1.2",
+        "at": 38,
+        "stage": "new_partner",
+        "expectedRevision": 10
+      },
+      "result": {
+        "stage": "award_2",
+        "attemptId": "A1.2"
+      },
+      "route": {
+        "stage": "active",
+        "epoch": 39,
+        "ownerId": "owner"
+      },
+      "revision": 38
+    },
+    "test/39": {
+      "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/39\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":39,\"ticketId\":\"T1.2\",\"at\":39,\"stage\":\"award_2\",\"expectedRevision\":11}",
+      "command": {
+        "kind": "step",
+        "requestId": "test/39",
+        "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+        "generation": 1,
+        "ownerId": "owner",
+        "leaseEpoch": 2,
+        "routeEpoch": 39,
+        "ticketId": "T1.2",
+        "at": 39,
+        "stage": "award_2",
+        "expectedRevision": 11
+      },
+      "result": {
+        "stage": "connecting_2",
+        "attemptId": "A1.2"
+      },
+      "route": {
+        "stage": "active",
+        "epoch": 40,
+        "ownerId": "owner"
+      },
+      "revision": 39
+    },
+    "test/40": {
+      "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/40\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":40,\"ticketId\":\"T1.2\",\"at\":40,\"stage\":\"connecting_2\",\"expectedRevision\":12,\"operation\":\"animation\"}",
+      "command": {
+        "kind": "step",
+        "requestId": "test/40",
+        "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+        "generation": 1,
+        "ownerId": "owner",
+        "leaseEpoch": 2,
+        "routeEpoch": 40,
+        "ticketId": "T1.2",
+        "at": 40,
+        "stage": "connecting_2",
+        "expectedRevision": 12,
+        "operation": "animation"
+      },
+      "result": {
+        "stage": "connected_2",
+        "attemptId": "A1.2"
+      },
+      "route": {
+        "stage": "active",
+        "epoch": 41,
+        "ownerId": "owner"
+      },
+      "revision": 40
+    },
+    "test/41": {
+      "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/41\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":41,\"ticketId\":\"T1.2\",\"at\":41,\"stage\":\"connected_2\",\"expectedRevision\":13}",
+      "command": {
+        "kind": "step",
+        "requestId": "test/41",
+        "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+        "generation": 1,
+        "ownerId": "owner",
+        "leaseEpoch": 2,
+        "routeEpoch": 41,
+        "ticketId": "T1.2",
+        "at": 41,
+        "stage": "connected_2",
+        "expectedRevision": 13
+      },
+      "result": {
+        "stage": "partner_rules_2",
+        "attemptId": "A1.2"
+      },
+      "route": {
+        "stage": "active",
+        "epoch": 42,
+        "ownerId": "owner"
+      },
+      "revision": 41
+    },
+    "test/42": {
+      "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/42\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":42,\"ticketId\":\"T1.2\",\"at\":42,\"stage\":\"partner_rules_2\",\"expectedRevision\":14}",
+      "command": {
+        "kind": "step",
+        "requestId": "test/42",
+        "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+        "generation": 1,
+        "ownerId": "owner",
+        "leaseEpoch": 2,
+        "routeEpoch": 42,
+        "ticketId": "T1.2",
+        "at": 42,
+        "stage": "partner_rules_2",
+        "expectedRevision": 14
+      },
+      "result": {
+        "stage": "bonus_2",
+        "attemptId": "A1.2"
+      },
+      "route": {
+        "stage": "active",
+        "epoch": 43,
+        "ownerId": "owner"
+      },
+      "revision": 42
+    },
+    "test/43": {
+      "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/43\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":43,\"ticketId\":\"T1.2\",\"at\":43,\"stage\":\"bonus_2\",\"expectedRevision\":15}",
+      "command": {
+        "kind": "step",
+        "requestId": "test/43",
+        "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+        "generation": 1,
+        "ownerId": "owner",
+        "leaseEpoch": 2,
+        "routeEpoch": 43,
+        "ticketId": "T1.2",
+        "at": 43,
+        "stage": "bonus_2",
+        "expectedRevision": 15
+      },
+      "result": {
+        "stage": "partner_choice_2",
+        "attemptId": "A1.2"
+      },
+      "route": {
+        "stage": "active",
+        "epoch": 44,
+        "ownerId": "owner"
+      },
+      "revision": 43
+    },
+    "test/44": {
+      "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/44\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":44,\"ticketId\":\"T1.2\",\"at\":44,\"stage\":\"partner_choice_2\",\"expectedRevision\":16,\"cents\":-150}",
+      "command": {
+        "kind": "step",
+        "requestId": "test/44",
+        "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+        "generation": 1,
+        "ownerId": "owner",
+        "leaseEpoch": 2,
+        "routeEpoch": 44,
+        "ticketId": "T1.2",
+        "at": 44,
+        "stage": "partner_choice_2",
+        "expectedRevision": 16,
+        "cents": -150
+      },
+      "result": {
+        "stage": "result_2",
+        "attemptId": "A1.2"
+      },
+      "route": {
+        "stage": "active",
+        "epoch": 45,
+        "ownerId": "owner"
+      },
+      "revision": 44
+    },
+    "test/45": {
+      "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/45\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":45,\"ticketId\":\"T1.2\",\"at\":45,\"stage\":\"result_2\",\"expectedRevision\":17,\"operation\":\"receipt\",\"receipt\":\"{\\\"generation\\\":1,\\\"attemptId\\\":\\\"A1.2\\\",\\\"formDigest\\\":\\\"f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830\\\",\\\"roundId\\\":\\\"A1.2/R2\\\",\\\"partner\\\":\\\"Partner D\\\",\\\"bonusRecipient\\\":\\\"partner\\\",\\\"decision\\\":{\\\"signedGiveCents\\\":-150,\\\"actor\\\":\\\"partner\\\",\\\"candidateFinalCents\\\":350,\\\"partnerFinalCents\\\":1150}}\"}",
+      "command": {
+        "kind": "step",
+        "requestId": "test/45",
+        "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+        "generation": 1,
+        "ownerId": "owner",
+        "leaseEpoch": 2,
+        "routeEpoch": 45,
+        "ticketId": "T1.2",
+        "at": 45,
+        "stage": "result_2",
+        "expectedRevision": 17,
+        "operation": "receipt",
+        "receipt": "{\"generation\":1,\"attemptId\":\"A1.2\",\"formDigest\":\"f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830\",\"roundId\":\"A1.2/R2\",\"partner\":\"Partner D\",\"bonusRecipient\":\"partner\",\"decision\":{\"signedGiveCents\":-150,\"actor\":\"partner\",\"candidateFinalCents\":350,\"partnerFinalCents\":1150}}"
+      },
+      "result": {
+        "stage": "result_2",
+        "attemptId": "A1.2"
+      },
+      "route": {
+        "stage": "active",
+        "epoch": 46,
+        "ownerId": "owner"
+      },
+      "revision": 45
+    },
+    "test/46": {
+      "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/46\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":46,\"ticketId\":\"T1.2\",\"at\":46,\"stage\":\"result_2\",\"expectedRevision\":18}",
+      "command": {
+        "kind": "step",
+        "requestId": "test/46",
+        "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+        "generation": 1,
+        "ownerId": "owner",
+        "leaseEpoch": 2,
+        "routeEpoch": 46,
+        "ticketId": "T1.2",
+        "at": 46,
+        "stage": "result_2",
+        "expectedRevision": 18
+      },
+      "result": {
+        "stage": "fairness_2",
+        "attemptId": "A1.2"
+      },
+      "route": {
+        "stage": "active",
+        "epoch": 47,
+        "ownerId": "owner"
+      },
+      "revision": 46
+    },
+    "test/47": {
+      "payloadHash": "{\"kind\":\"terminal\",\"requestId\":\"test/47\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":47,\"ticketId\":\"T1.2\",\"at\":47,\"stage\":\"fairness_2\",\"expectedRevision\":19,\"rating\":8}",
+      "command": {
+        "kind": "terminal",
+        "requestId": "test/47",
+        "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+        "generation": 1,
+        "ownerId": "owner",
+        "leaseEpoch": 2,
+        "routeEpoch": 47,
+        "ticketId": "T1.2",
+        "at": 47,
+        "stage": "fairness_2",
+        "expectedRevision": 19,
+        "rating": 8
+      },
+      "result": {
+        "stage": "test_complete",
+        "attemptId": "A1.2"
+      },
+      "route": {
+        "stage": "test_complete",
+        "epoch": 48,
+        "ownerId": "owner"
+      },
+      "revision": 47
+    },
+    "test/48": {
+      "payloadHash": "{\"kind\":\"report\",\"requestId\":\"test/48\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":48,\"ticketId\":\"T1.2\",\"at\":48}",
+      "command": {
+        "kind": "report",
+        "requestId": "test/48",
+        "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+        "generation": 1,
+        "ownerId": "owner",
+        "leaseEpoch": 2,
+        "routeEpoch": 48,
+        "ticketId": "T1.2",
+        "at": 48
+      },
+      "result": {
+        "stage": "report_1",
+        "attemptId": "A1.2"
+      },
+      "route": {
+        "stage": "report",
+        "epoch": 49,
+        "ownerId": "owner"
+      },
+      "revision": 48
+    },
+    "test/49": {
+      "payloadHash": "{\"kind\":\"deleteAttempt\",\"requestId\":\"test/49\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"attemptId\":\"A1.1\"}",
+      "command": {
+        "kind": "deleteAttempt",
+        "requestId": "test/49",
+        "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+        "generation": 1,
+        "attemptId": "A1.1"
+      },
+      "result": {
+        "deleted": "A1.1"
+      },
+      "route": {
+        "stage": "report",
+        "epoch": 49,
+        "ownerId": "owner"
+      },
+      "revision": 49
+    }
+  },
+  "navigation": null,
+  "proofs": {
+    "A1.2": {
+      "commands": [
+        {
+          "kind": "arm",
+          "requestId": "test/28",
+          "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 28,
+          "ticketId": "T1.2",
+          "at": 28,
+          "context": {
+            "input": "keyboard"
+          }
+        },
+        {
+          "kind": "step",
+          "requestId": "test/29",
+          "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 29,
+          "ticketId": "T1.2",
+          "at": 29,
+          "stage": "award_1",
+          "expectedRevision": 1
+        },
+        {
+          "kind": "step",
+          "requestId": "test/30",
+          "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 30,
+          "ticketId": "T1.2",
+          "at": 30,
+          "stage": "connecting_1",
+          "expectedRevision": 2,
+          "operation": "animation"
+        },
+        {
+          "kind": "step",
+          "requestId": "test/31",
+          "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 31,
+          "ticketId": "T1.2",
+          "at": 31,
+          "stage": "connected_1",
+          "expectedRevision": 3
+        },
+        {
+          "kind": "step",
+          "requestId": "test/32",
+          "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 32,
+          "ticketId": "T1.2",
+          "at": 32,
+          "stage": "partner_rules_1",
+          "expectedRevision": 4
+        },
+        {
+          "kind": "step",
+          "requestId": "test/33",
+          "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 33,
+          "ticketId": "T1.2",
+          "at": 33,
+          "stage": "bonus_1",
+          "expectedRevision": 5
+        },
+        {
+          "kind": "step",
+          "requestId": "test/34",
+          "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 34,
+          "ticketId": "T1.2",
+          "at": 34,
+          "stage": "choice_1",
+          "expectedRevision": 6,
+          "cents": 200
+        },
+        {
+          "kind": "step",
+          "requestId": "test/35",
+          "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 35,
+          "ticketId": "T1.2",
+          "at": 35,
+          "stage": "result_1",
+          "expectedRevision": 7,
+          "operation": "receipt",
+          "receipt": "{\"generation\":1,\"attemptId\":\"A1.2\",\"formDigest\":\"f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830\",\"roundId\":\"A1.2/R1\",\"partner\":\"Partner C\",\"bonusRecipient\":\"candidate\",\"decision\":{\"signedGiveCents\":200,\"actor\":\"candidate\",\"candidateFinalCents\":800,\"partnerFinalCents\":700}}"
+        },
+        {
+          "kind": "step",
+          "requestId": "test/36",
+          "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 36,
+          "ticketId": "T1.2",
+          "at": 36,
+          "stage": "result_1",
+          "expectedRevision": 8
+        },
+        {
+          "kind": "step",
+          "requestId": "test/37",
+          "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 37,
+          "ticketId": "T1.2",
+          "at": 37,
+          "stage": "fairness_1",
+          "expectedRevision": 9,
+          "rating": 8
+        },
+        {
+          "kind": "step",
+          "requestId": "test/38",
+          "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 38,
+          "ticketId": "T1.2",
+          "at": 38,
+          "stage": "new_partner",
+          "expectedRevision": 10
+        },
+        {
+          "kind": "step",
+          "requestId": "test/39",
+          "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 39,
+          "ticketId": "T1.2",
+          "at": 39,
+          "stage": "award_2",
+          "expectedRevision": 11
+        },
+        {
+          "kind": "step",
+          "requestId": "test/40",
+          "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 40,
+          "ticketId": "T1.2",
+          "at": 40,
+          "stage": "connecting_2",
+          "expectedRevision": 12,
+          "operation": "animation"
+        },
+        {
+          "kind": "step",
+          "requestId": "test/41",
+          "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 41,
+          "ticketId": "T1.2",
+          "at": 41,
+          "stage": "connected_2",
+          "expectedRevision": 13
+        },
+        {
+          "kind": "step",
+          "requestId": "test/42",
+          "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 42,
+          "ticketId": "T1.2",
+          "at": 42,
+          "stage": "partner_rules_2",
+          "expectedRevision": 14
+        },
+        {
+          "kind": "step",
+          "requestId": "test/43",
+          "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 43,
+          "ticketId": "T1.2",
+          "at": 43,
+          "stage": "bonus_2",
+          "expectedRevision": 15
+        },
+        {
+          "kind": "step",
+          "requestId": "test/44",
+          "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 44,
+          "ticketId": "T1.2",
+          "at": 44,
+          "stage": "partner_choice_2",
+          "expectedRevision": 16,
+          "cents": -150
+        },
+        {
+          "kind": "step",
+          "requestId": "test/45",
+          "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 45,
+          "ticketId": "T1.2",
+          "at": 45,
+          "stage": "result_2",
+          "expectedRevision": 17,
+          "operation": "receipt",
+          "receipt": "{\"generation\":1,\"attemptId\":\"A1.2\",\"formDigest\":\"f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830\",\"roundId\":\"A1.2/R2\",\"partner\":\"Partner D\",\"bonusRecipient\":\"partner\",\"decision\":{\"signedGiveCents\":-150,\"actor\":\"partner\",\"candidateFinalCents\":350,\"partnerFinalCents\":1150}}"
+        },
+        {
+          "kind": "step",
+          "requestId": "test/46",
+          "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 46,
+          "ticketId": "T1.2",
+          "at": 46,
+          "stage": "result_2",
+          "expectedRevision": 18
+        },
+        {
+          "kind": "terminal",
+          "requestId": "test/47",
+          "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "routeEpoch": 47,
+          "ticketId": "T1.2",
+          "at": 47,
+          "stage": "fairness_2",
+          "expectedRevision": 19,
+          "rating": 8
+        }
+      ]
+    }
+  },
+  "retired": {
+    "test/1": {
+      "requestId": "test/1",
+      "deletionId": "test/49",
+      "attemptId": null,
+      "generation": 1
+    },
+    "test/2": {
+      "requestId": "test/2",
+      "deletionId": "test/49",
+      "attemptId": null,
+      "generation": 1
+    },
+    "test/3": {
+      "requestId": "test/3",
+      "deletionId": "test/49",
+      "attemptId": null,
+      "generation": 1
+    },
+    "test/4": {
+      "requestId": "test/4",
+      "deletionId": "test/49",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "test/5": {
+      "requestId": "test/5",
+      "deletionId": "test/49",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "test/6": {
+      "requestId": "test/6",
+      "deletionId": "test/49",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "test/7": {
+      "requestId": "test/7",
+      "deletionId": "test/49",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "test/8": {
+      "requestId": "test/8",
+      "deletionId": "test/49",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "test/9": {
+      "requestId": "test/9",
+      "deletionId": "test/49",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "test/10": {
+      "requestId": "test/10",
+      "deletionId": "test/49",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "test/11": {
+      "requestId": "test/11",
+      "deletionId": "test/49",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "test/12": {
+      "requestId": "test/12",
+      "deletionId": "test/49",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "test/13": {
+      "requestId": "test/13",
+      "deletionId": "test/49",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "test/14": {
+      "requestId": "test/14",
+      "deletionId": "test/49",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "test/15": {
+      "requestId": "test/15",
+      "deletionId": "test/49",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "test/16": {
+      "requestId": "test/16",
+      "deletionId": "test/49",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "test/17": {
+      "requestId": "test/17",
+      "deletionId": "test/49",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "test/18": {
+      "requestId": "test/18",
+      "deletionId": "test/49",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "test/19": {
+      "requestId": "test/19",
+      "deletionId": "test/49",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "test/20": {
+      "requestId": "test/20",
+      "deletionId": "test/49",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "test/21": {
+      "requestId": "test/21",
+      "deletionId": "test/49",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "test/22": {
+      "requestId": "test/22",
+      "deletionId": "test/49",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "test/23": {
+      "requestId": "test/23",
+      "deletionId": "test/49",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "test/24": {
+      "requestId": "test/24",
+      "deletionId": "test/49",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "test/25": {
+      "requestId": "test/25",
+      "deletionId": "test/49",
+      "attemptId": "A1.1",
+      "generation": 1
+    },
+    "test/26": {
+      "requestId": "test/26",
+      "deletionId": "test/49",
+      "attemptId": null,
+      "generation": 1
+    }
+  },
+  "resetReceipt": null,
+  "checkpoint": {
+    "version": "storage_v2_0",
+    "revision": 49,
+    "state": {
+      "version": "money_exchange_2_storage_v2_0",
+      "activity": {
+        "A1.2": [
+          {
+            "id": "test/48",
+            "kind": "report_opened",
+            "at": 48
+          }
+        ]
+      },
+      "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+      "generation": 1,
+      "revision": 49,
+      "lease": {
+        "ownerId": "owner",
+        "epoch": 2,
+        "live": true
+      },
+      "route": {
+        "stage": "report",
+        "epoch": 49,
+        "ownerId": "owner"
+      },
+      "ticketSerial": 2,
+      "currentTicketId": "T1.2",
+      "tickets": {
+        "T1.1": {
+          "id": "T1.1",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "state": "consumed",
+          "attemptId": "A1.1"
+        },
+        "T1.2": {
+          "id": "T1.2",
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "state": "consumed",
+          "attemptId": "A1.2"
+        }
+      },
+      "activeAttemptId": null,
+      "formCounter": 2,
+      "exposureHistory": [
+        {
+          "attemptId": "A1.1",
+          "formId": "ME2-1",
+          "formDigest": "1b56a2afee5c0893dbabb6169bf6077d9fa8a697545fe53e4ee52c495205e0ea"
+        },
+        {
+          "attemptId": "A1.2",
+          "formId": "ME2-2",
+          "formDigest": "f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830"
+        }
+      ],
+      "attempts": {
+        "A1.2": {
+          "id": "A1.2",
+          "ordinal": 2,
+          "createdAt": 28,
+          "context": {
+            "input": "keyboard"
+          },
+          "events": [
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 1,
+              "requestId": "test/28",
+              "at": 28,
+              "kind": "attempt_armed"
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 2,
+              "requestId": "test/28",
+              "at": 28,
+              "kind": "round_intent",
+              "round": 1
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 3,
+              "requestId": "test/29",
+              "at": 29,
+              "kind": "stage_committed",
+              "data": {
+                "from": "award_1",
+                "to": "connecting_1"
+              }
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 4,
+              "requestId": "test/30",
+              "at": 30,
+              "kind": "stage_committed",
+              "data": {
+                "from": "connecting_1",
+                "to": "connected_1"
+              }
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 5,
+              "requestId": "test/31",
+              "at": 31,
+              "kind": "stage_committed",
+              "data": {
+                "from": "connected_1",
+                "to": "partner_rules_1"
+              }
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 6,
+              "requestId": "test/32",
+              "at": 32,
+              "kind": "stage_committed",
+              "data": {
+                "from": "partner_rules_1",
+                "to": "bonus_1"
+              }
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 7,
+              "requestId": "test/33",
+              "at": 33,
+              "kind": "bonus_presented",
+              "round": 1,
+              "data": {
+                "recipient": "candidate"
+              }
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 8,
+              "requestId": "test/33",
+              "at": 33,
+              "kind": "stage_committed",
+              "data": {
+                "from": "bonus_1",
+                "to": "choice_1"
+              }
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 9,
+              "requestId": "test/34",
+              "at": 34,
+              "kind": "decision_committed",
+              "round": 1,
+              "data": {
+                "signedGiveCents": 200,
+                "actor": "candidate",
+                "candidateFinalCents": 800,
+                "partnerFinalCents": 700
+              }
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 10,
+              "requestId": "test/34",
+              "at": 34,
+              "kind": "possibly_revealed",
+              "round": 1,
+              "data": {
+                "identity": "{\"generation\":1,\"attemptId\":\"A1.2\",\"formDigest\":\"f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830\",\"roundId\":\"A1.2/R1\",\"partner\":\"Partner C\",\"bonusRecipient\":\"candidate\",\"decision\":{\"signedGiveCents\":200,\"actor\":\"candidate\",\"candidateFinalCents\":800,\"partnerFinalCents\":700}}"
+              }
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 11,
+              "requestId": "test/34",
+              "at": 34,
+              "kind": "stage_committed",
+              "data": {
+                "from": "choice_1",
+                "to": "result_1"
+              }
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 12,
+              "requestId": "test/35",
+              "at": 35,
+              "kind": "result_receipt",
+              "round": 1,
+              "data": {
+                "identity": "{\"generation\":1,\"attemptId\":\"A1.2\",\"formDigest\":\"f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830\",\"roundId\":\"A1.2/R1\",\"partner\":\"Partner C\",\"bonusRecipient\":\"candidate\",\"decision\":{\"signedGiveCents\":200,\"actor\":\"candidate\",\"candidateFinalCents\":800,\"partnerFinalCents\":700}}"
+              }
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 13,
+              "requestId": "test/35",
+              "at": 35,
+              "kind": "stage_committed",
+              "data": {
+                "from": "result_1",
+                "to": "result_1"
+              }
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 14,
+              "requestId": "test/36",
+              "at": 36,
+              "kind": "stage_committed",
+              "data": {
+                "from": "result_1",
+                "to": "fairness_1"
+              }
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 15,
+              "requestId": "test/37",
+              "at": 37,
+              "kind": "fairness_committed",
+              "round": 1,
+              "data": {
+                "rating": 8
+              }
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 16,
+              "requestId": "test/37",
+              "at": 37,
+              "kind": "round_terminal",
+              "round": 1
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 17,
+              "requestId": "test/37",
+              "at": 37,
+              "kind": "stage_committed",
+              "data": {
+                "from": "fairness_1",
+                "to": "new_partner"
+              }
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 18,
+              "requestId": "test/38",
+              "at": 38,
+              "kind": "round_intent",
+              "round": 2
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 19,
+              "requestId": "test/38",
+              "at": 38,
+              "kind": "stage_committed",
+              "data": {
+                "from": "new_partner",
+                "to": "award_2"
+              }
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 20,
+              "requestId": "test/39",
+              "at": 39,
+              "kind": "stage_committed",
+              "data": {
+                "from": "award_2",
+                "to": "connecting_2"
+              }
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 21,
+              "requestId": "test/40",
+              "at": 40,
+              "kind": "stage_committed",
+              "data": {
+                "from": "connecting_2",
+                "to": "connected_2"
+              }
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 22,
+              "requestId": "test/41",
+              "at": 41,
+              "kind": "stage_committed",
+              "data": {
+                "from": "connected_2",
+                "to": "partner_rules_2"
+              }
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 23,
+              "requestId": "test/42",
+              "at": 42,
+              "kind": "stage_committed",
+              "data": {
+                "from": "partner_rules_2",
+                "to": "bonus_2"
+              }
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 24,
+              "requestId": "test/43",
+              "at": 43,
+              "kind": "bonus_presented",
+              "round": 2,
+              "data": {
+                "recipient": "partner"
+              }
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 25,
+              "requestId": "test/43",
+              "at": 43,
+              "kind": "stage_committed",
+              "data": {
+                "from": "bonus_2",
+                "to": "partner_choice_2"
+              }
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 26,
+              "requestId": "test/44",
+              "at": 44,
+              "kind": "decision_committed",
+              "round": 2,
+              "data": {
+                "signedGiveCents": -150,
+                "actor": "partner",
+                "candidateFinalCents": 350,
+                "partnerFinalCents": 1150
+              }
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 27,
+              "requestId": "test/44",
+              "at": 44,
+              "kind": "possibly_revealed",
+              "round": 2,
+              "data": {
+                "identity": "{\"generation\":1,\"attemptId\":\"A1.2\",\"formDigest\":\"f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830\",\"roundId\":\"A1.2/R2\",\"partner\":\"Partner D\",\"bonusRecipient\":\"partner\",\"decision\":{\"signedGiveCents\":-150,\"actor\":\"partner\",\"candidateFinalCents\":350,\"partnerFinalCents\":1150}}"
+              }
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 28,
+              "requestId": "test/44",
+              "at": 44,
+              "kind": "stage_committed",
+              "data": {
+                "from": "partner_choice_2",
+                "to": "result_2"
+              }
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 29,
+              "requestId": "test/45",
+              "at": 45,
+              "kind": "result_receipt",
+              "round": 2,
+              "data": {
+                "identity": "{\"generation\":1,\"attemptId\":\"A1.2\",\"formDigest\":\"f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830\",\"roundId\":\"A1.2/R2\",\"partner\":\"Partner D\",\"bonusRecipient\":\"partner\",\"decision\":{\"signedGiveCents\":-150,\"actor\":\"partner\",\"candidateFinalCents\":350,\"partnerFinalCents\":1150}}"
+              }
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 30,
+              "requestId": "test/45",
+              "at": 45,
+              "kind": "stage_committed",
+              "data": {
+                "from": "result_2",
+                "to": "result_2"
+              }
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 31,
+              "requestId": "test/46",
+              "at": 46,
+              "kind": "stage_committed",
+              "data": {
+                "from": "result_2",
+                "to": "fairness_2"
+              }
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 32,
+              "requestId": "test/47",
+              "at": 47,
+              "kind": "fairness_committed",
+              "round": 2,
+              "data": {
+                "rating": 8
+              }
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 33,
+              "requestId": "test/47",
+              "at": 47,
+              "kind": "round_terminal",
+              "round": 2
+            },
+            {
+              "version": "money_exchange_2_event_v1_0",
+              "seq": 34,
+              "requestId": "test/47",
+              "at": 47,
+              "kind": "completed"
+            }
+          ],
+          "revision": 20,
+          "generation": 1,
+          "ownerId": "owner",
+          "leaseEpoch": 2,
+          "originTicketId": "T1.2",
+          "formId": "ME2-2",
+          "formDigest": "f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830",
+          "status": "Completed",
+          "playCapability": false,
+          "stage": "test_complete",
+          "rounds": [
+            {
+              "id": "A1.2/R1",
+              "partner": "Partner C",
+              "bonusRecipient": "candidate",
+              "armed": true,
+              "decision": {
+                "signedGiveCents": 200,
+                "actor": "candidate",
+                "candidateFinalCents": 800,
+                "partnerFinalCents": 700
+              },
+              "exposure": "render_receipt",
+              "receiptIdentity": "{\"generation\":1,\"attemptId\":\"A1.2\",\"formDigest\":\"f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830\",\"roundId\":\"A1.2/R1\",\"partner\":\"Partner C\",\"bonusRecipient\":\"candidate\",\"decision\":{\"signedGiveCents\":200,\"actor\":\"candidate\",\"candidateFinalCents\":800,\"partnerFinalCents\":700}}",
+              "fairness": 8,
+              "terminal": true
+            },
+            {
+              "id": "A1.2/R2",
+              "partner": "Partner D",
+              "bonusRecipient": "partner",
+              "armed": true,
+              "decision": {
+                "signedGiveCents": -150,
+                "actor": "partner",
+                "candidateFinalCents": 350,
+                "partnerFinalCents": 1150
+              },
+              "exposure": "render_receipt",
+              "receiptIdentity": "{\"generation\":1,\"attemptId\":\"A1.2\",\"formDigest\":\"f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830\",\"roundId\":\"A1.2/R2\",\"partner\":\"Partner D\",\"bonusRecipient\":\"partner\",\"decision\":{\"signedGiveCents\":-150,\"actor\":\"partner\",\"candidateFinalCents\":350,\"partnerFinalCents\":1150}}",
+              "fairness": 8,
+              "terminal": true
+            }
+          ],
+          "reportSnapshot": [
+            {
+              "generation": 1,
+              "attemptId": "A1.2",
+              "formId": "ME2-2",
+              "formDigest": "f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830",
+              "round": 1,
+              "partner": "Partner C",
+              "bonusRecipient": "candidate",
+              "candidateStartCents": 500,
+              "partnerStartCents": 500,
+              "signedGiveCents": 200,
+              "actor": "candidate",
+              "candidateFinalCents": 800,
+              "partnerFinalCents": 700,
+              "fairness": 8
+            },
+            {
+              "generation": 1,
+              "attemptId": "A1.2",
+              "formId": "ME2-2",
+              "formDigest": "f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830",
+              "round": 2,
+              "partner": "Partner D",
+              "bonusRecipient": "partner",
+              "candidateStartCents": 500,
+              "partnerStartCents": 500,
+              "signedGiveCents": -150,
+              "actor": "partner",
+              "candidateFinalCents": 350,
+              "partnerFinalCents": 1150,
+              "fairness": 8
+            }
+          ]
+        }
+      },
+      "tombstones": {
+        "A1.1": true
+      },
+      "outcomes": {
+        "test/27": {
+          "payloadHash": "{\"kind\":\"ready\",\"requestId\":\"test/27\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":27}",
+          "command": {
+            "kind": "ready",
+            "requestId": "test/27",
+            "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 27
+          },
+          "result": {
+            "ticketId": "T1.2",
+            "stage": "ready"
+          },
+          "route": {
+            "stage": "ready",
+            "epoch": 28,
+            "ownerId": "owner"
+          },
+          "revision": 27
+        },
+        "test/28": {
+          "payloadHash": "{\"kind\":\"arm\",\"requestId\":\"test/28\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":28,\"ticketId\":\"T1.2\",\"at\":28,\"context\":{\"input\":\"keyboard\"}}",
+          "command": {
+            "kind": "arm",
+            "requestId": "test/28",
+            "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 28,
+            "ticketId": "T1.2",
+            "at": 28,
+            "context": {
+              "input": "keyboard"
+            }
+          },
+          "result": {
+            "ticketId": "T1.2",
+            "attemptId": "A1.2",
+            "stage": "award_1"
+          },
+          "route": {
+            "stage": "active",
+            "epoch": 29,
+            "ownerId": "owner"
+          },
+          "revision": 28
+        },
+        "test/29": {
+          "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/29\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":29,\"ticketId\":\"T1.2\",\"at\":29,\"stage\":\"award_1\",\"expectedRevision\":1}",
+          "command": {
+            "kind": "step",
+            "requestId": "test/29",
+            "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 29,
+            "ticketId": "T1.2",
+            "at": 29,
+            "stage": "award_1",
+            "expectedRevision": 1
+          },
+          "result": {
+            "stage": "connecting_1",
+            "attemptId": "A1.2"
+          },
+          "route": {
+            "stage": "active",
+            "epoch": 30,
+            "ownerId": "owner"
+          },
+          "revision": 29
+        },
+        "test/30": {
+          "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/30\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":30,\"ticketId\":\"T1.2\",\"at\":30,\"stage\":\"connecting_1\",\"expectedRevision\":2,\"operation\":\"animation\"}",
+          "command": {
+            "kind": "step",
+            "requestId": "test/30",
+            "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 30,
+            "ticketId": "T1.2",
+            "at": 30,
+            "stage": "connecting_1",
+            "expectedRevision": 2,
+            "operation": "animation"
+          },
+          "result": {
+            "stage": "connected_1",
+            "attemptId": "A1.2"
+          },
+          "route": {
+            "stage": "active",
+            "epoch": 31,
+            "ownerId": "owner"
+          },
+          "revision": 30
+        },
+        "test/31": {
+          "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/31\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":31,\"ticketId\":\"T1.2\",\"at\":31,\"stage\":\"connected_1\",\"expectedRevision\":3}",
+          "command": {
+            "kind": "step",
+            "requestId": "test/31",
+            "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 31,
+            "ticketId": "T1.2",
+            "at": 31,
+            "stage": "connected_1",
+            "expectedRevision": 3
+          },
+          "result": {
+            "stage": "partner_rules_1",
+            "attemptId": "A1.2"
+          },
+          "route": {
+            "stage": "active",
+            "epoch": 32,
+            "ownerId": "owner"
+          },
+          "revision": 31
+        },
+        "test/32": {
+          "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/32\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":32,\"ticketId\":\"T1.2\",\"at\":32,\"stage\":\"partner_rules_1\",\"expectedRevision\":4}",
+          "command": {
+            "kind": "step",
+            "requestId": "test/32",
+            "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 32,
+            "ticketId": "T1.2",
+            "at": 32,
+            "stage": "partner_rules_1",
+            "expectedRevision": 4
+          },
+          "result": {
+            "stage": "bonus_1",
+            "attemptId": "A1.2"
+          },
+          "route": {
+            "stage": "active",
+            "epoch": 33,
+            "ownerId": "owner"
+          },
+          "revision": 32
+        },
+        "test/33": {
+          "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/33\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":33,\"ticketId\":\"T1.2\",\"at\":33,\"stage\":\"bonus_1\",\"expectedRevision\":5}",
+          "command": {
+            "kind": "step",
+            "requestId": "test/33",
+            "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 33,
+            "ticketId": "T1.2",
+            "at": 33,
+            "stage": "bonus_1",
+            "expectedRevision": 5
+          },
+          "result": {
+            "stage": "choice_1",
+            "attemptId": "A1.2"
+          },
+          "route": {
+            "stage": "active",
+            "epoch": 34,
+            "ownerId": "owner"
+          },
+          "revision": 33
+        },
+        "test/34": {
+          "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/34\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":34,\"ticketId\":\"T1.2\",\"at\":34,\"stage\":\"choice_1\",\"expectedRevision\":6,\"cents\":200}",
+          "command": {
+            "kind": "step",
+            "requestId": "test/34",
+            "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 34,
+            "ticketId": "T1.2",
+            "at": 34,
+            "stage": "choice_1",
+            "expectedRevision": 6,
+            "cents": 200
+          },
+          "result": {
+            "stage": "result_1",
+            "attemptId": "A1.2"
+          },
+          "route": {
+            "stage": "active",
+            "epoch": 35,
+            "ownerId": "owner"
+          },
+          "revision": 34
+        },
+        "test/35": {
+          "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/35\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":35,\"ticketId\":\"T1.2\",\"at\":35,\"stage\":\"result_1\",\"expectedRevision\":7,\"operation\":\"receipt\",\"receipt\":\"{\\\"generation\\\":1,\\\"attemptId\\\":\\\"A1.2\\\",\\\"formDigest\\\":\\\"f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830\\\",\\\"roundId\\\":\\\"A1.2/R1\\\",\\\"partner\\\":\\\"Partner C\\\",\\\"bonusRecipient\\\":\\\"candidate\\\",\\\"decision\\\":{\\\"signedGiveCents\\\":200,\\\"actor\\\":\\\"candidate\\\",\\\"candidateFinalCents\\\":800,\\\"partnerFinalCents\\\":700}}\"}",
+          "command": {
+            "kind": "step",
+            "requestId": "test/35",
+            "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 35,
+            "ticketId": "T1.2",
+            "at": 35,
+            "stage": "result_1",
+            "expectedRevision": 7,
+            "operation": "receipt",
+            "receipt": "{\"generation\":1,\"attemptId\":\"A1.2\",\"formDigest\":\"f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830\",\"roundId\":\"A1.2/R1\",\"partner\":\"Partner C\",\"bonusRecipient\":\"candidate\",\"decision\":{\"signedGiveCents\":200,\"actor\":\"candidate\",\"candidateFinalCents\":800,\"partnerFinalCents\":700}}"
+          },
+          "result": {
+            "stage": "result_1",
+            "attemptId": "A1.2"
+          },
+          "route": {
+            "stage": "active",
+            "epoch": 36,
+            "ownerId": "owner"
+          },
+          "revision": 35
+        },
+        "test/36": {
+          "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/36\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":36,\"ticketId\":\"T1.2\",\"at\":36,\"stage\":\"result_1\",\"expectedRevision\":8}",
+          "command": {
+            "kind": "step",
+            "requestId": "test/36",
+            "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 36,
+            "ticketId": "T1.2",
+            "at": 36,
+            "stage": "result_1",
+            "expectedRevision": 8
+          },
+          "result": {
+            "stage": "fairness_1",
+            "attemptId": "A1.2"
+          },
+          "route": {
+            "stage": "active",
+            "epoch": 37,
+            "ownerId": "owner"
+          },
+          "revision": 36
+        },
+        "test/37": {
+          "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/37\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":37,\"ticketId\":\"T1.2\",\"at\":37,\"stage\":\"fairness_1\",\"expectedRevision\":9,\"rating\":8}",
+          "command": {
+            "kind": "step",
+            "requestId": "test/37",
+            "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 37,
+            "ticketId": "T1.2",
+            "at": 37,
+            "stage": "fairness_1",
+            "expectedRevision": 9,
+            "rating": 8
+          },
+          "result": {
+            "stage": "new_partner",
+            "attemptId": "A1.2"
+          },
+          "route": {
+            "stage": "active",
+            "epoch": 38,
+            "ownerId": "owner"
+          },
+          "revision": 37
+        },
+        "test/38": {
+          "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/38\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":38,\"ticketId\":\"T1.2\",\"at\":38,\"stage\":\"new_partner\",\"expectedRevision\":10}",
+          "command": {
+            "kind": "step",
+            "requestId": "test/38",
+            "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 38,
+            "ticketId": "T1.2",
+            "at": 38,
+            "stage": "new_partner",
+            "expectedRevision": 10
+          },
+          "result": {
+            "stage": "award_2",
+            "attemptId": "A1.2"
+          },
+          "route": {
+            "stage": "active",
+            "epoch": 39,
+            "ownerId": "owner"
+          },
+          "revision": 38
+        },
+        "test/39": {
+          "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/39\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":39,\"ticketId\":\"T1.2\",\"at\":39,\"stage\":\"award_2\",\"expectedRevision\":11}",
+          "command": {
+            "kind": "step",
+            "requestId": "test/39",
+            "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 39,
+            "ticketId": "T1.2",
+            "at": 39,
+            "stage": "award_2",
+            "expectedRevision": 11
+          },
+          "result": {
+            "stage": "connecting_2",
+            "attemptId": "A1.2"
+          },
+          "route": {
+            "stage": "active",
+            "epoch": 40,
+            "ownerId": "owner"
+          },
+          "revision": 39
+        },
+        "test/40": {
+          "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/40\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":40,\"ticketId\":\"T1.2\",\"at\":40,\"stage\":\"connecting_2\",\"expectedRevision\":12,\"operation\":\"animation\"}",
+          "command": {
+            "kind": "step",
+            "requestId": "test/40",
+            "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 40,
+            "ticketId": "T1.2",
+            "at": 40,
+            "stage": "connecting_2",
+            "expectedRevision": 12,
+            "operation": "animation"
+          },
+          "result": {
+            "stage": "connected_2",
+            "attemptId": "A1.2"
+          },
+          "route": {
+            "stage": "active",
+            "epoch": 41,
+            "ownerId": "owner"
+          },
+          "revision": 40
+        },
+        "test/41": {
+          "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/41\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":41,\"ticketId\":\"T1.2\",\"at\":41,\"stage\":\"connected_2\",\"expectedRevision\":13}",
+          "command": {
+            "kind": "step",
+            "requestId": "test/41",
+            "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 41,
+            "ticketId": "T1.2",
+            "at": 41,
+            "stage": "connected_2",
+            "expectedRevision": 13
+          },
+          "result": {
+            "stage": "partner_rules_2",
+            "attemptId": "A1.2"
+          },
+          "route": {
+            "stage": "active",
+            "epoch": 42,
+            "ownerId": "owner"
+          },
+          "revision": 41
+        },
+        "test/42": {
+          "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/42\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":42,\"ticketId\":\"T1.2\",\"at\":42,\"stage\":\"partner_rules_2\",\"expectedRevision\":14}",
+          "command": {
+            "kind": "step",
+            "requestId": "test/42",
+            "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 42,
+            "ticketId": "T1.2",
+            "at": 42,
+            "stage": "partner_rules_2",
+            "expectedRevision": 14
+          },
+          "result": {
+            "stage": "bonus_2",
+            "attemptId": "A1.2"
+          },
+          "route": {
+            "stage": "active",
+            "epoch": 43,
+            "ownerId": "owner"
+          },
+          "revision": 42
+        },
+        "test/43": {
+          "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/43\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":43,\"ticketId\":\"T1.2\",\"at\":43,\"stage\":\"bonus_2\",\"expectedRevision\":15}",
+          "command": {
+            "kind": "step",
+            "requestId": "test/43",
+            "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 43,
+            "ticketId": "T1.2",
+            "at": 43,
+            "stage": "bonus_2",
+            "expectedRevision": 15
+          },
+          "result": {
+            "stage": "partner_choice_2",
+            "attemptId": "A1.2"
+          },
+          "route": {
+            "stage": "active",
+            "epoch": 44,
+            "ownerId": "owner"
+          },
+          "revision": 43
+        },
+        "test/44": {
+          "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/44\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":44,\"ticketId\":\"T1.2\",\"at\":44,\"stage\":\"partner_choice_2\",\"expectedRevision\":16,\"cents\":-150}",
+          "command": {
+            "kind": "step",
+            "requestId": "test/44",
+            "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 44,
+            "ticketId": "T1.2",
+            "at": 44,
+            "stage": "partner_choice_2",
+            "expectedRevision": 16,
+            "cents": -150
+          },
+          "result": {
+            "stage": "result_2",
+            "attemptId": "A1.2"
+          },
+          "route": {
+            "stage": "active",
+            "epoch": 45,
+            "ownerId": "owner"
+          },
+          "revision": 44
+        },
+        "test/45": {
+          "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/45\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":45,\"ticketId\":\"T1.2\",\"at\":45,\"stage\":\"result_2\",\"expectedRevision\":17,\"operation\":\"receipt\",\"receipt\":\"{\\\"generation\\\":1,\\\"attemptId\\\":\\\"A1.2\\\",\\\"formDigest\\\":\\\"f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830\\\",\\\"roundId\\\":\\\"A1.2/R2\\\",\\\"partner\\\":\\\"Partner D\\\",\\\"bonusRecipient\\\":\\\"partner\\\",\\\"decision\\\":{\\\"signedGiveCents\\\":-150,\\\"actor\\\":\\\"partner\\\",\\\"candidateFinalCents\\\":350,\\\"partnerFinalCents\\\":1150}}\"}",
+          "command": {
+            "kind": "step",
+            "requestId": "test/45",
+            "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 45,
+            "ticketId": "T1.2",
+            "at": 45,
+            "stage": "result_2",
+            "expectedRevision": 17,
+            "operation": "receipt",
+            "receipt": "{\"generation\":1,\"attemptId\":\"A1.2\",\"formDigest\":\"f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830\",\"roundId\":\"A1.2/R2\",\"partner\":\"Partner D\",\"bonusRecipient\":\"partner\",\"decision\":{\"signedGiveCents\":-150,\"actor\":\"partner\",\"candidateFinalCents\":350,\"partnerFinalCents\":1150}}"
+          },
+          "result": {
+            "stage": "result_2",
+            "attemptId": "A1.2"
+          },
+          "route": {
+            "stage": "active",
+            "epoch": 46,
+            "ownerId": "owner"
+          },
+          "revision": 45
+        },
+        "test/46": {
+          "payloadHash": "{\"kind\":\"step\",\"requestId\":\"test/46\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":46,\"ticketId\":\"T1.2\",\"at\":46,\"stage\":\"result_2\",\"expectedRevision\":18}",
+          "command": {
+            "kind": "step",
+            "requestId": "test/46",
+            "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 46,
+            "ticketId": "T1.2",
+            "at": 46,
+            "stage": "result_2",
+            "expectedRevision": 18
+          },
+          "result": {
+            "stage": "fairness_2",
+            "attemptId": "A1.2"
+          },
+          "route": {
+            "stage": "active",
+            "epoch": 47,
+            "ownerId": "owner"
+          },
+          "revision": 46
+        },
+        "test/47": {
+          "payloadHash": "{\"kind\":\"terminal\",\"requestId\":\"test/47\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":47,\"ticketId\":\"T1.2\",\"at\":47,\"stage\":\"fairness_2\",\"expectedRevision\":19,\"rating\":8}",
+          "command": {
+            "kind": "terminal",
+            "requestId": "test/47",
+            "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 47,
+            "ticketId": "T1.2",
+            "at": 47,
+            "stage": "fairness_2",
+            "expectedRevision": 19,
+            "rating": 8
+          },
+          "result": {
+            "stage": "test_complete",
+            "attemptId": "A1.2"
+          },
+          "route": {
+            "stage": "test_complete",
+            "epoch": 48,
+            "ownerId": "owner"
+          },
+          "revision": 47
+        },
+        "test/48": {
+          "payloadHash": "{\"kind\":\"report\",\"requestId\":\"test/48\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"ownerId\":\"owner\",\"leaseEpoch\":2,\"routeEpoch\":48,\"ticketId\":\"T1.2\",\"at\":48}",
+          "command": {
+            "kind": "report",
+            "requestId": "test/48",
+            "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+            "generation": 1,
+            "ownerId": "owner",
+            "leaseEpoch": 2,
+            "routeEpoch": 48,
+            "ticketId": "T1.2",
+            "at": 48
+          },
+          "result": {
+            "stage": "report_1",
+            "attemptId": "A1.2"
+          },
+          "route": {
+            "stage": "report",
+            "epoch": 49,
+            "ownerId": "owner"
+          },
+          "revision": 48
+        },
+        "test/49": {
+          "payloadHash": "{\"kind\":\"deleteAttempt\",\"requestId\":\"test/49\",\"installationId\":\"5b7f83ab-ba61-4329-9576-2b87ab91bb6c\",\"generation\":1,\"attemptId\":\"A1.1\"}",
+          "command": {
+            "kind": "deleteAttempt",
+            "requestId": "test/49",
+            "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+            "generation": 1,
+            "attemptId": "A1.1"
+          },
+          "result": {
+            "deleted": "A1.1"
+          },
+          "route": {
+            "stage": "report",
+            "epoch": 49,
+            "ownerId": "owner"
+          },
+          "revision": 49
+        }
+      },
+      "navigation": null,
+      "proofs": {
+        "A1.2": {
+          "commands": [
+            {
+              "kind": "arm",
+              "requestId": "test/28",
+              "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 28,
+              "ticketId": "T1.2",
+              "at": 28,
+              "context": {
+                "input": "keyboard"
+              }
+            },
+            {
+              "kind": "step",
+              "requestId": "test/29",
+              "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 29,
+              "ticketId": "T1.2",
+              "at": 29,
+              "stage": "award_1",
+              "expectedRevision": 1
+            },
+            {
+              "kind": "step",
+              "requestId": "test/30",
+              "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 30,
+              "ticketId": "T1.2",
+              "at": 30,
+              "stage": "connecting_1",
+              "expectedRevision": 2,
+              "operation": "animation"
+            },
+            {
+              "kind": "step",
+              "requestId": "test/31",
+              "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 31,
+              "ticketId": "T1.2",
+              "at": 31,
+              "stage": "connected_1",
+              "expectedRevision": 3
+            },
+            {
+              "kind": "step",
+              "requestId": "test/32",
+              "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 32,
+              "ticketId": "T1.2",
+              "at": 32,
+              "stage": "partner_rules_1",
+              "expectedRevision": 4
+            },
+            {
+              "kind": "step",
+              "requestId": "test/33",
+              "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 33,
+              "ticketId": "T1.2",
+              "at": 33,
+              "stage": "bonus_1",
+              "expectedRevision": 5
+            },
+            {
+              "kind": "step",
+              "requestId": "test/34",
+              "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 34,
+              "ticketId": "T1.2",
+              "at": 34,
+              "stage": "choice_1",
+              "expectedRevision": 6,
+              "cents": 200
+            },
+            {
+              "kind": "step",
+              "requestId": "test/35",
+              "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 35,
+              "ticketId": "T1.2",
+              "at": 35,
+              "stage": "result_1",
+              "expectedRevision": 7,
+              "operation": "receipt",
+              "receipt": "{\"generation\":1,\"attemptId\":\"A1.2\",\"formDigest\":\"f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830\",\"roundId\":\"A1.2/R1\",\"partner\":\"Partner C\",\"bonusRecipient\":\"candidate\",\"decision\":{\"signedGiveCents\":200,\"actor\":\"candidate\",\"candidateFinalCents\":800,\"partnerFinalCents\":700}}"
+            },
+            {
+              "kind": "step",
+              "requestId": "test/36",
+              "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 36,
+              "ticketId": "T1.2",
+              "at": 36,
+              "stage": "result_1",
+              "expectedRevision": 8
+            },
+            {
+              "kind": "step",
+              "requestId": "test/37",
+              "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 37,
+              "ticketId": "T1.2",
+              "at": 37,
+              "stage": "fairness_1",
+              "expectedRevision": 9,
+              "rating": 8
+            },
+            {
+              "kind": "step",
+              "requestId": "test/38",
+              "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 38,
+              "ticketId": "T1.2",
+              "at": 38,
+              "stage": "new_partner",
+              "expectedRevision": 10
+            },
+            {
+              "kind": "step",
+              "requestId": "test/39",
+              "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 39,
+              "ticketId": "T1.2",
+              "at": 39,
+              "stage": "award_2",
+              "expectedRevision": 11
+            },
+            {
+              "kind": "step",
+              "requestId": "test/40",
+              "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 40,
+              "ticketId": "T1.2",
+              "at": 40,
+              "stage": "connecting_2",
+              "expectedRevision": 12,
+              "operation": "animation"
+            },
+            {
+              "kind": "step",
+              "requestId": "test/41",
+              "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 41,
+              "ticketId": "T1.2",
+              "at": 41,
+              "stage": "connected_2",
+              "expectedRevision": 13
+            },
+            {
+              "kind": "step",
+              "requestId": "test/42",
+              "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 42,
+              "ticketId": "T1.2",
+              "at": 42,
+              "stage": "partner_rules_2",
+              "expectedRevision": 14
+            },
+            {
+              "kind": "step",
+              "requestId": "test/43",
+              "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 43,
+              "ticketId": "T1.2",
+              "at": 43,
+              "stage": "bonus_2",
+              "expectedRevision": 15
+            },
+            {
+              "kind": "step",
+              "requestId": "test/44",
+              "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 44,
+              "ticketId": "T1.2",
+              "at": 44,
+              "stage": "partner_choice_2",
+              "expectedRevision": 16,
+              "cents": -150
+            },
+            {
+              "kind": "step",
+              "requestId": "test/45",
+              "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 45,
+              "ticketId": "T1.2",
+              "at": 45,
+              "stage": "result_2",
+              "expectedRevision": 17,
+              "operation": "receipt",
+              "receipt": "{\"generation\":1,\"attemptId\":\"A1.2\",\"formDigest\":\"f31c156eeea11799e2b53e247161e251713c3f48031a8f81d92ccf9bc2a67830\",\"roundId\":\"A1.2/R2\",\"partner\":\"Partner D\",\"bonusRecipient\":\"partner\",\"decision\":{\"signedGiveCents\":-150,\"actor\":\"partner\",\"candidateFinalCents\":350,\"partnerFinalCents\":1150}}"
+            },
+            {
+              "kind": "step",
+              "requestId": "test/46",
+              "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 46,
+              "ticketId": "T1.2",
+              "at": 46,
+              "stage": "result_2",
+              "expectedRevision": 18
+            },
+            {
+              "kind": "terminal",
+              "requestId": "test/47",
+              "installationId": "5b7f83ab-ba61-4329-9576-2b87ab91bb6c",
+              "generation": 1,
+              "ownerId": "owner",
+              "leaseEpoch": 2,
+              "routeEpoch": 47,
+              "ticketId": "T1.2",
+              "at": 47,
+              "stage": "fairness_2",
+              "expectedRevision": 19,
+              "rating": 8
+            }
+          ]
+        }
+      },
+      "retired": {
+        "test/1": {
+          "requestId": "test/1",
+          "deletionId": "test/49",
+          "attemptId": null,
+          "generation": 1
+        },
+        "test/2": {
+          "requestId": "test/2",
+          "deletionId": "test/49",
+          "attemptId": null,
+          "generation": 1
+        },
+        "test/3": {
+          "requestId": "test/3",
+          "deletionId": "test/49",
+          "attemptId": null,
+          "generation": 1
+        },
+        "test/4": {
+          "requestId": "test/4",
+          "deletionId": "test/49",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "test/5": {
+          "requestId": "test/5",
+          "deletionId": "test/49",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "test/6": {
+          "requestId": "test/6",
+          "deletionId": "test/49",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "test/7": {
+          "requestId": "test/7",
+          "deletionId": "test/49",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "test/8": {
+          "requestId": "test/8",
+          "deletionId": "test/49",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "test/9": {
+          "requestId": "test/9",
+          "deletionId": "test/49",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "test/10": {
+          "requestId": "test/10",
+          "deletionId": "test/49",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "test/11": {
+          "requestId": "test/11",
+          "deletionId": "test/49",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "test/12": {
+          "requestId": "test/12",
+          "deletionId": "test/49",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "test/13": {
+          "requestId": "test/13",
+          "deletionId": "test/49",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "test/14": {
+          "requestId": "test/14",
+          "deletionId": "test/49",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "test/15": {
+          "requestId": "test/15",
+          "deletionId": "test/49",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "test/16": {
+          "requestId": "test/16",
+          "deletionId": "test/49",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "test/17": {
+          "requestId": "test/17",
+          "deletionId": "test/49",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "test/18": {
+          "requestId": "test/18",
+          "deletionId": "test/49",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "test/19": {
+          "requestId": "test/19",
+          "deletionId": "test/49",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "test/20": {
+          "requestId": "test/20",
+          "deletionId": "test/49",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "test/21": {
+          "requestId": "test/21",
+          "deletionId": "test/49",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "test/22": {
+          "requestId": "test/22",
+          "deletionId": "test/49",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "test/23": {
+          "requestId": "test/23",
+          "deletionId": "test/49",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "test/24": {
+          "requestId": "test/24",
+          "deletionId": "test/49",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "test/25": {
+          "requestId": "test/25",
+          "deletionId": "test/49",
+          "attemptId": "A1.1",
+          "generation": 1
+        },
+        "test/26": {
+          "requestId": "test/26",
+          "deletionId": "test/49",
+          "attemptId": null,
+          "generation": 1
+        }
+      },
+      "resetReceipt": null
+    }
+  },
+  "tail": []
+}

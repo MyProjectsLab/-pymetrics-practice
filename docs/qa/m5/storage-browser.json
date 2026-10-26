@@ -1,0 +1,35 @@
+{
+  "browser": "145.0.7632.6",
+  "url": "http://127.0.0.1:5195/",
+  "errors": [],
+  "checks": {
+    "crossTab": {
+      "first": "stop-baseline-01",
+      "second": "stop-baseline-02",
+      "third": "stop-baseline-02",
+      "uncertainAfterReload": "uncertain",
+      "ownUnarmedReleasedAfterReload": true
+    },
+    "activity": [
+      {
+        "type": "retest_reserved",
+        "sequenceNumber": 1
+      },
+      {
+        "type": "retest_exposed",
+        "sequenceNumber": 2
+      },
+      {
+        "type": "report_viewed",
+        "sequenceNumber": 3
+      }
+    ],
+    "deleteAll": {
+      "exposures": 0,
+      "activity": 0
+    },
+    "temporaryPreflight": true,
+    "unknownSchemaPreserved": true
+  },
+  "pass": true
+}

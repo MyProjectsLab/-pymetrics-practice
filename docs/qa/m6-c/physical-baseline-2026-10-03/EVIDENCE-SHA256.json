@@ -1,0 +1,73 @@
+{
+  "hashAlgorithm": "sha256",
+  "files": {
+    "COPY-ISSUE.md": {
+      "bytes": 596,
+      "sha256": "e9089d80ec235800fe7d475fc89f1e5f1aff0dab2f6aae8669ea827091346cec"
+    },
+    "IDENTITY.json": {
+      "bytes": 1973,
+      "sha256": "884a209c184d1c376783599fc64e520f63702799296339b9cd2c21455484b444"
+    },
+    "README.md": {
+      "bytes": 1532,
+      "sha256": "cec134bf2d349e5dd64c97a484d84665033223c42b273aaef04151ce40604d23"
+    },
+    "RECONCILIATION.json": {
+      "bytes": 4570,
+      "sha256": "b05dce4b6c522d87615cdddf237c09b8c5b6be33fe316976fbe56bb4aa3ec043"
+    },
+    "RESULT.md": {
+      "bytes": 5216,
+      "sha256": "dfd088d20bf062e7937b92e4b9cebf8f581fe60a6b200fd32fefcb68164468df"
+    },
+    "VISIBLE-SCREENS.md": {
+      "bytes": 2201,
+      "sha256": "eb3bfda554d7e75126d74c06e6ef14c9fdf50a3faaee82e1298a8ab5b4bb127d"
+    },
+    "baseline-journal.json": {
+      "bytes": 266656,
+      "sha256": "83ef9ba2ed059356e2e28b041793ef17de04c84f29846aa409170d14cb5ba809"
+    },
+    "baseline-record.json": {
+      "bytes": 292632,
+      "sha256": "2cb31894be2f5a8f61e65a1ae6607416427c15a63b30939aa711f3c5cafd3060"
+    },
+    "before.raw.json.gz": {
+      "bytes": 985,
+      "sha256": "3afc8a8e95fde55167ffeda18ed7802bf3664e134aa383e5c311899de6bd1eaf",
+      "uncompressedBytes": 9518,
+      "uncompressedSha256": "7eee3001f42219ca2b300c1b4619b2c3de1ca62e0311774c1662fba121ca7704"
+    },
+    "browser-observer.js": {
+      "bytes": 1928,
+      "sha256": "cdd4ec527fe21c8881cf79affc949f821d7dc9c73eefb17c298139636bcc28db"
+    },
+    "complete.raw.json.gz": {
+      "bytes": 39746,
+      "sha256": "f11a43d9d7c56f79908b4298b2df2b11da33665aa51dc6c41ab68776e070715a",
+      "uncompressedBytes": 1099158,
+      "uncompressedSha256": "b7161282672e9c30244d77aa8b63a086e07b5ea73e9b98807302f9a7c71d89d1"
+    },
+    "export.html": {
+      "bytes": 1837,
+      "sha256": "cd972c744ea5208cf571d70719d2a6c7c091df8789df0d042fa800520c729a3d"
+    },
+    "interrupted.raw.json.gz": {
+      "bytes": 12584,
+      "sha256": "8adb11576f2c0e87f464da74b24118e66abaf157e4eccea602c51073e08988a0",
+      "uncompressedBytes": 373704,
+      "uncompressedSha256": "4b7aeeaec38ea2235c27cc92c41cc19ccf6ce743336624c18d2a5eaafb03b68e"
+    },
+    "reconcile.py": {
+      "bytes": 14727,
+      "sha256": "e787f335e26ca95f3d09dd98acddfe8152ba19a8fe34ec2d6bbc1fe2fc396e12"
+    },
+    "reloaded.raw.json.gz": {
+      "bytes": 40553,
+      "sha256": "54fb0579e1061c0d5619bd5ef026a2d6cb43ca79ce87f6b19857116dc0cfc7d4",
+      "uncompressedBytes": 1124034,
+      "uncompressedSha256": "cb4844aeee96409a59fc91bf6af220ed0c6e04f6a2e1a7757218c658f7dfb630"
+    }
+  }
+}

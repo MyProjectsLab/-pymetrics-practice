@@ -1,0 +1,185 @@
+{
+  "qaHeadAtResumption": "75bf96d9ce602550dc93b2d83e6c8c6b96459df3",
+  "productHead": "f6b8ae05ab024e603ebe3fc8e1a42f71dd4b14b1",
+  "installationId": "06536883-b864-4798-a739-e7402c45c961",
+  "sessionId": "a6d2091f-ad50-444b-af29-5232389551f4",
+  "formId": "stop-baseline-04",
+  "validity": "valid",
+  "eventCount": 766,
+  "warmupTrials": 8,
+  "scoredTrials": 80,
+  "counts": {
+    "hits": 60,
+    "misses": 0,
+    "withholds": 19,
+    "falseAlarms": 1
+  },
+  "rates": {
+    "hit": 1.0,
+    "miss": 0.0,
+    "withhold": 0.95,
+    "falseAlarm": 0.05,
+    "overall": 0.9875
+  },
+  "timing": {
+    "count": 60,
+    "q1": 296.2749999985099,
+    "median": 328.8999999985099,
+    "q3": 354.625,
+    "iqr": 58.350000001490116
+  },
+  "blocks": [
+    {
+      "number": 1,
+      "counts": {
+        "hits": 15,
+        "misses": 0,
+        "withholds": 5,
+        "falseAlarms": 0
+      },
+      "timing": {
+        "count": 15,
+        "q1": 277.7500000074506,
+        "median": 297.0,
+        "q3": 348.44999999552965,
+        "iqr": 70.69999998807907
+      }
+    },
+    {
+      "number": 2,
+      "counts": {
+        "hits": 15,
+        "misses": 0,
+        "withholds": 5,
+        "falseAlarms": 0
+      },
+      "timing": {
+        "count": 15,
+        "q1": 295.8999999985099,
+        "median": 327.19999998807907,
+        "q3": 346.45000000298023,
+        "iqr": 50.55000000447035
+      }
+    },
+    {
+      "number": 3,
+      "counts": {
+        "hits": 15,
+        "misses": 0,
+        "withholds": 4,
+        "falseAlarms": 1
+      },
+      "timing": {
+        "count": 15,
+        "q1": 308.1499999985099,
+        "median": 341.29999999701977,
+        "q3": 373.69999999552965,
+        "iqr": 65.54999999701977
+      }
+    },
+    {
+      "number": 4,
+      "counts": {
+        "hits": 15,
+        "misses": 0,
+        "withholds": 5,
+        "falseAlarms": 0
+      },
+      "timing": {
+        "count": 15,
+        "q1": 316.5,
+        "median": 342.3999999910593,
+        "q3": 363.75,
+        "iqr": 47.25
+      }
+    }
+  ],
+  "halves": [
+    {
+      "hits": 30,
+      "misses": 0,
+      "withholds": 10,
+      "falseAlarms": 0
+    },
+    {
+      "hits": 30,
+      "misses": 0,
+      "withholds": 9,
+      "falseAlarms": 1
+    }
+  ],
+  "postError": {
+    "selected": 1,
+    "comparison": 57,
+    "postAccuracy": 1.0,
+    "comparisonAccuracy": 0.987012987012987,
+    "differencePoints": 1.2987012987012991,
+    "timingNarrativeSuppressed": true
+  },
+  "sequenceContexts": {
+    "longRunNoGo": 10,
+    "otherNoGo": 10,
+    "longRunFalseAlarms": 0,
+    "otherFalseAlarms": 1
+  },
+  "inputQuality": {
+    "scoredReceived": 61,
+    "scoredAccepted": 61,
+    "scoredIgnored": 0,
+    "scoredKeyReleases": 61,
+    "anticipatoryAccepted": 0,
+    "timingAnomalies": 0,
+    "browserTrustedScoredSpaceDowns": 61,
+    "browserTrustedScoredSpaceUps": 61,
+    "browserRepeatKeydowns": 0,
+    "observerVsJournalHandlerClockDifferenceMs": {
+      "minimum": -0.29999999701976776,
+      "maximum": 0
+    }
+  },
+  "protectedBrowserObservations": {
+    "count": 193,
+    "viewportCssPixels": [
+      1509,
+      827
+    ],
+    "screenCssPixels": [
+      1512,
+      982
+    ],
+    "devicePixelRatio": 2,
+    "visibleAndFocused": true,
+    "noObservedResizeHidePagehideFreeze": true,
+    "browserBlurFocusAtStart": [
+      "blur",
+      "focus"
+    ],
+    "firstUtc": "2026-10-03T10:47:29.084Z",
+    "lastUtc": "2026-10-03T10:49:45.426Z"
+  },
+  "preScoredRefresh": {
+    "browserEventCountAtInterruptedExport": 634,
+    "savedResults": 0,
+    "drafts": 0,
+    "exposures": 0,
+    "preparationEvidenceRetained": true
+  },
+  "exposure": {
+    "formId": "stop-baseline-04",
+    "exposedAtWall": "2026-10-03T10:47:30.100Z",
+    "visualProfile": "standard",
+    "deleted": false,
+    "sessionId": "a6d2091f-ad50-444b-af29-5232389551f4",
+    "certainty": "confirmed"
+  },
+  "prePostReloadInstallationIdentical": true,
+  "installationSha256": "e1adeb208f4c27e4e2ebe49536deb4ae017944ba794437a73b32e1407ed36a1a",
+  "recordSha256": "deb23a9960ea32449b87f0ca16aba8a6d20688f797a0a0a1b99733d5f0bdd2dd",
+  "journalSha256": "81db18072f85bc15bc5ab964d56629efcccb5ace7f026a79ed6eee5c2c8e6d32",
+  "limits": [
+    "Human built-in-keyboard use is self-attested; isTrusted does not sense hardware.",
+    "Browser and journal timestamps do not measure physical input latency or display scanout.",
+    "One valid native Mac Chrome baseline does not certify the Chrome support row.",
+    "QA observer overhead was not calibrated; the 60 Hertz OS setting is not a physical refresh or scanout measurement."
+  ]
+}

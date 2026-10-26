@@ -1,0 +1,181 @@
+[
+  {
+    "name": "round-two-interruption",
+    "status": "PASS"
+  },
+  {
+    "name": "prearm-release-and-reopen",
+    "status": "PASS"
+  },
+  {
+    "name": "postarm-expiry",
+    "status": "PASS"
+  },
+  {
+    "name": "explanation-exclusive-owner",
+    "status": "PASS"
+  },
+  {
+    "name": "failed-action-recovery",
+    "status": "PASS"
+  },
+  {
+    "name": "full-browser-RT1",
+    "status": "PASS",
+    "detail": {
+      "rounds": 39,
+      "form": "RT1",
+      "actions": 77
+    }
+  },
+  {
+    "name": "full-browser-RT2",
+    "status": "PASS",
+    "detail": {
+      "rounds": 39,
+      "form": "RT2",
+      "actions": 77
+    }
+  },
+  {
+    "name": "full-browser-RT3",
+    "status": "PASS",
+    "detail": {
+      "rounds": 39,
+      "form": "RT3",
+      "actions": 77
+    }
+  },
+  {
+    "name": "late-owner-after-exit",
+    "status": "PASS"
+  },
+  {
+    "name": "confirmed-pause-resume",
+    "status": "PASS"
+  },
+  {
+    "name": "late-confirm-delete-all",
+    "status": "PASS"
+  },
+  {
+    "name": "final-delivery-uncertain",
+    "status": "PASS"
+  },
+  {
+    "name": "retest-exhaustion",
+    "status": "PASS"
+  },
+  {
+    "name": "fresh-baseline-drill",
+    "status": "PASS"
+  },
+  {
+    "name": "repair-round-1-before",
+    "status": "PASS"
+  },
+  {
+    "name": "repair-round-1-one-frame",
+    "status": "PASS"
+  },
+  {
+    "name": "repair-round-1-onset",
+    "status": "PASS"
+  },
+  {
+    "name": "repair-round-1-saved",
+    "status": "PASS"
+  },
+  {
+    "name": "repair-round-1-pause-failed",
+    "status": "PASS"
+  },
+  {
+    "name": "repair-round-1-saved-pause-failed",
+    "status": "PASS"
+  },
+  {
+    "name": "repair-round-2-before",
+    "status": "PASS"
+  },
+  {
+    "name": "repair-round-2-one-frame",
+    "status": "PASS"
+  },
+  {
+    "name": "repair-round-2-onset",
+    "status": "PASS"
+  },
+  {
+    "name": "repair-round-2-saved",
+    "status": "PASS"
+  },
+  {
+    "name": "repair-round-2-pause-failed",
+    "status": "PASS"
+  },
+  {
+    "name": "repair-round-2-saved-pause-failed",
+    "status": "PASS"
+  },
+  {
+    "name": "repair-round-39-before",
+    "status": "PASS"
+  },
+  {
+    "name": "repair-round-39-one-frame",
+    "status": "PASS"
+  },
+  {
+    "name": "repair-round-39-onset",
+    "status": "PASS"
+  },
+  {
+    "name": "repair-round-39-saved",
+    "status": "PASS"
+  },
+  {
+    "name": "repair-round-39-pause-failed",
+    "status": "PASS"
+  },
+  {
+    "name": "repair-round-39-saved-pause-failed",
+    "status": "PASS"
+  },
+  {
+    "name": "repair-owner-practice-owner",
+    "status": "PASS"
+  },
+  {
+    "name": "repair-owner-practice-gate",
+    "status": "PASS"
+  },
+  {
+    "name": "repair-owner-practice-reserve",
+    "status": "PASS"
+  },
+  {
+    "name": "repair-owner-practice-arm",
+    "status": "PASS"
+  },
+  {
+    "name": "repair-owner-retest-owner",
+    "status": "PASS"
+  },
+  {
+    "name": "repair-owner-retest-gate",
+    "status": "PASS"
+  },
+  {
+    "name": "repair-owner-retest-reserve",
+    "status": "PASS"
+  },
+  {
+    "name": "repair-owner-retest-arm",
+    "status": "PASS"
+  },
+  {
+    "name": "repair-onset-cleanup-deadline",
+    "status": "PASS"
+  }
+]

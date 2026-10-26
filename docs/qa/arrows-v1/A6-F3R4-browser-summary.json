@@ -1,0 +1,346 @@
+{
+  "base": "a432ec042f9b00054ecc8a9d9cc7cfbd2cbc4699",
+  "browser": "145.0.7632.6",
+  "source": "Independent audit challenge harness and prior underlay/style harnesses, copied to external /private/tmp directories; native-clock Chromium; full raw results retained there.",
+  "groups": {
+    "challenges": [
+      {
+        "name": "nested-popover_admission",
+        "pass": true,
+        "ready": false,
+        "paintedFront": true,
+        "admitted": false,
+        "ownerHeld": false,
+        "exactStyle": true,
+        "error": "Error: The Arrows display is not fully visible. Resize or zoom out before starting."
+      },
+      {
+        "name": "nested-popover_play",
+        "pass": true,
+        "ready": false,
+        "paintedFront": true,
+        "admitted": true,
+        "phase": "invalid",
+        "reason": "viewport",
+        "ownerHeld": false,
+        "exactStyle": true
+      },
+      {
+        "name": "direct-popover_admission",
+        "pass": true,
+        "ready": false,
+        "paintedFront": true,
+        "admitted": false,
+        "ownerHeld": false,
+        "exactStyle": true,
+        "error": "Error: The Arrows display is not fully visible. Resize or zoom out before starting."
+      },
+      {
+        "name": "direct-popover_play",
+        "pass": true,
+        "ready": false,
+        "paintedFront": true,
+        "admitted": true,
+        "phase": "invalid",
+        "reason": "viewport",
+        "ownerHeld": false,
+        "exactStyle": true
+      },
+      {
+        "name": "host-scale_admission",
+        "pass": true,
+        "ready": false,
+        "paintedFront": true,
+        "admitted": false,
+        "ownerHeld": false,
+        "exactStyle": true,
+        "error": "Error: The Arrows display is not fully visible. Resize or zoom out before starting."
+      },
+      {
+        "name": "host-scale_play",
+        "pass": true,
+        "ready": false,
+        "paintedFront": true,
+        "admitted": true,
+        "phase": "invalid",
+        "reason": "viewport",
+        "ownerHeld": false,
+        "exactStyle": true
+      },
+      {
+        "name": "host-rotate_admission",
+        "pass": true,
+        "ready": false,
+        "paintedFront": true,
+        "admitted": false,
+        "ownerHeld": false,
+        "exactStyle": true,
+        "error": "Error: The Arrows display is not fully visible. Resize or zoom out before starting."
+      },
+      {
+        "name": "host-rotate_play",
+        "pass": true,
+        "ready": false,
+        "paintedFront": true,
+        "admitted": true,
+        "phase": "invalid",
+        "reason": "viewport",
+        "ownerHeld": false,
+        "exactStyle": true
+      },
+      {
+        "name": "host-translate_admission",
+        "pass": true,
+        "ready": false,
+        "paintedFront": true,
+        "admitted": false,
+        "ownerHeld": false,
+        "exactStyle": true,
+        "error": "Error: The Arrows display is not fully visible. Resize or zoom out before starting."
+      },
+      {
+        "name": "host-translate_play",
+        "pass": true,
+        "ready": false,
+        "paintedFront": true,
+        "admitted": true,
+        "phase": "invalid",
+        "reason": "viewport",
+        "ownerHeld": false,
+        "exactStyle": true
+      },
+      {
+        "name": "host-contain-layout_admission",
+        "pass": true,
+        "ready": false,
+        "paintedFront": true,
+        "admitted": false,
+        "ownerHeld": false,
+        "exactStyle": true,
+        "error": "Error: The Arrows display is not fully visible. Resize or zoom out before starting."
+      },
+      {
+        "name": "host-contain-layout_play",
+        "pass": true,
+        "ready": false,
+        "paintedFront": true,
+        "admitted": true,
+        "phase": "invalid",
+        "reason": "viewport",
+        "ownerHeld": false,
+        "exactStyle": true
+      },
+      {
+        "name": "host-contain-content_admission",
+        "pass": true,
+        "ready": false,
+        "paintedFront": true,
+        "admitted": false,
+        "ownerHeld": false,
+        "exactStyle": true,
+        "error": "Error: The Arrows display is not fully visible. Resize or zoom out before starting."
+      },
+      {
+        "name": "host-contain-content_play",
+        "pass": true,
+        "ready": false,
+        "paintedFront": true,
+        "admitted": true,
+        "phase": "invalid",
+        "reason": "viewport",
+        "ownerHeld": false,
+        "exactStyle": true
+      },
+      {
+        "name": "host-contain-strict_admission",
+        "pass": true,
+        "ready": false,
+        "paintedFront": true,
+        "admitted": false,
+        "ownerHeld": false,
+        "exactStyle": true,
+        "error": "Error: The Arrows display is not fully visible. Resize or zoom out before starting."
+      },
+      {
+        "name": "host-contain-strict_play",
+        "pass": true,
+        "ready": false,
+        "paintedFront": true,
+        "admitted": true,
+        "phase": "invalid",
+        "reason": "viewport",
+        "ownerHeld": false,
+        "exactStyle": true
+      },
+      {
+        "name": "host-will-opacity_admission",
+        "pass": true,
+        "ready": false,
+        "paintedFront": true,
+        "admitted": false,
+        "ownerHeld": false,
+        "exactStyle": true,
+        "error": "Error: The Arrows display is not fully visible. Resize or zoom out before starting."
+      },
+      {
+        "name": "host-will-opacity_play",
+        "pass": true,
+        "ready": false,
+        "paintedFront": true,
+        "admitted": true,
+        "phase": "invalid",
+        "reason": "viewport",
+        "ownerHeld": false,
+        "exactStyle": true
+      },
+      {
+        "name": "host-will-filter_admission",
+        "pass": true,
+        "ready": false,
+        "paintedFront": true,
+        "admitted": false,
+        "ownerHeld": false,
+        "exactStyle": true,
+        "error": "Error: The Arrows display is not fully visible. Resize or zoom out before starting."
+      },
+      {
+        "name": "host-will-filter_play",
+        "pass": true,
+        "ready": false,
+        "paintedFront": true,
+        "admitted": true,
+        "phase": "invalid",
+        "reason": "viewport",
+        "ownerHeld": false,
+        "exactStyle": true
+      },
+      {
+        "name": "host-transform-control_admission",
+        "pass": true,
+        "ready": false,
+        "paintedFront": true,
+        "admitted": false,
+        "ownerHeld": false,
+        "exactStyle": true,
+        "error": "Error: The Arrows display is not fully visible. Resize or zoom out before starting."
+      },
+      {
+        "name": "host-transform-control_play",
+        "pass": true,
+        "ready": false,
+        "paintedFront": true,
+        "admitted": true,
+        "phase": "invalid",
+        "reason": "viewport",
+        "ownerHeld": false,
+        "exactStyle": true
+      }
+    ],
+    "importantUnderlays": [
+      {
+        "name": "underlay_play_none",
+        "pass": true,
+        "ready": true,
+        "phase": "stimulus",
+        "reason": null,
+        "ownerHeld": true,
+        "exactStyle": true
+      },
+      {
+        "name": "underlay_play_auto",
+        "pass": true,
+        "ready": true,
+        "phase": "stimulus",
+        "reason": null,
+        "ownerHeld": true,
+        "exactStyle": true
+      },
+      {
+        "name": "underlay_admission_none",
+        "pass": true,
+        "ready": true,
+        "admitted": true,
+        "exactStyle": true
+      },
+      {
+        "name": "underlay_admission_auto",
+        "pass": true,
+        "ready": true,
+        "admitted": true,
+        "exactStyle": true
+      },
+      {
+        "name": "nested_behind_play",
+        "pass": true,
+        "ready": true,
+        "phase": "stimulus",
+        "reason": null,
+        "ownerHeld": true,
+        "exactStyle": true
+      },
+      {
+        "name": "nested_behind_admission",
+        "pass": true,
+        "ready": true,
+        "admitted": true,
+        "exactStyle": true
+      },
+      {
+        "name": "nested_above_play",
+        "pass": true,
+        "ready": false,
+        "phase": "invalid",
+        "reason": "viewport",
+        "ownerHeld": false,
+        "exactStyle": true
+      },
+      {
+        "name": "nested_above_admission",
+        "pass": true,
+        "ready": false,
+        "admitted": false,
+        "exactStyle": true,
+        "error": "Error: The Arrows display is not fully visible. Resize or zoom out before starting."
+      },
+      {
+        "name": "healthy_app_underlay_keyboard",
+        "pass": true,
+        "phase": "stimulus",
+        "reason": null,
+        "exactStyle": true
+      },
+      {
+        "name": "healthy_app_underlay_pointer",
+        "pass": true,
+        "phase": "stimulus",
+        "reason": null,
+        "exactStyle": true
+      }
+    ],
+    "styleSensitive": [
+      {
+        "name": "attribute_paint_overlay",
+        "pass": true,
+        "ready": false,
+        "phase": "invalid",
+        "reason": "viewport",
+        "ownerHeld": false
+      },
+      {
+        "name": "attribute_paint_underlay",
+        "pass": true,
+        "ready": true,
+        "phase": "stimulus",
+        "reason": null,
+        "ownerHeld": true
+      },
+      {
+        "name": "native_absent_style",
+        "pass": true,
+        "ready": true,
+        "phase": "stimulus",
+        "reason": null
+      }
+    ]
+  }
+}

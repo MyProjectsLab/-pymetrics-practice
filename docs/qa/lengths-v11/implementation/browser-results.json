@@ -1,0 +1,41 @@
+[
+  {
+    "name": "production 90 actual timed trials, 16 rewards, report-view byte identity, reload",
+    "status": "PASS",
+    "detail": {
+      "onsets": 90,
+      "closed": 90,
+      "correct": 90,
+      "rewards": 16,
+      "bankedCents": 800,
+      "bytesUnchanged": true,
+      "context": {
+        "layoutWidthCssPx": 1280,
+        "layoutHeightCssPx": 900,
+        "visualWidthCssPx": 1280,
+        "visualHeightCssPx": 900,
+        "taskHostWidthCssPx": 512,
+        "devicePixelRatio": 1,
+        "browserFamily": "chromium",
+        "visibility": "visible",
+        "focused": true
+      }
+    }
+  },
+  {
+    "name": "production protected blur stores invalid review and no aggregate accuracy",
+    "status": "PASS",
+    "detail": {
+      "phase": "invalid",
+      "reason": "blur",
+      "presented": 1
+    }
+  },
+  {
+    "name": "production narrow layout blocks timed admission, guide/history still usable",
+    "status": "PASS",
+    "detail": {
+      "blocked": true
+    }
+  }
+]

@@ -1,0 +1,1831 @@
+{
+  "browserVersion": "145.0.7632.6",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36",
+  "sessionId": "f9ec572b-bb29-4f86-9607-3cd592df9f2a",
+  "formId": "stop-baseline-03",
+  "eventCount": 784,
+  "trials": 88,
+  "warmupTrials": 8,
+  "scoredTrials": 80,
+  "visibilityMs": {
+    "min": 200.69999980926514,
+    "max": 209,
+    "mean": 204.87159089879557
+  },
+  "onsetDelayMs": {
+    "min": 1.4000000953674316,
+    "max": 8.5,
+    "mean": 2.457954553040591
+  },
+  "transitionIntervalMs": {
+    "min": 1200.5,
+    "max": 1203.3999998569489,
+    "mean": 1202.3352272808552
+  },
+  "initial": [
+    {
+      "startedAtMs": 416.59999990463257,
+      "phase": "warmup",
+      "durationMs": 1003.5
+    },
+    {
+      "startedAtMs": 15300.200000047684,
+      "phase": "scored",
+      "durationMs": 1008.5
+    }
+  ],
+  "finalIntervals": [
+    {
+      "phase": "warmup",
+      "index": 7,
+      "responseTimeMs": 351.5,
+      "anchorMs": 13950.399999856949,
+      "intervalMs": 1200.5,
+      "final": true
+    },
+    {
+      "phase": "scored",
+      "index": 79,
+      "responseTimeMs": 352,
+      "anchorMs": 152905.59999990463,
+      "intervalMs": 1200.7000000476837,
+      "final": true
+    }
+  ],
+  "earlyExample": {
+    "phase": "scored",
+    "index": 0,
+    "responseTimeMs": 150.59999990463257,
+    "anchorMs": 16516.89999985695,
+    "intervalMs": 1202.2000000476837,
+    "final": false
+  },
+  "postOffsetExample": {
+    "phase": "scored",
+    "index": 3,
+    "responseTimeMs": 350.7999999523163,
+    "anchorMs": 22474.599999904633,
+    "intervalMs": 1202.2000000476837,
+    "final": false
+  },
+  "timeoutExample": {
+    "phase": "scored",
+    "index": 1,
+    "responseTimeMs": null,
+    "anchorMs": 18719.099999904633,
+    "intervalMs": 1202,
+    "final": false
+  },
+  "anomalies": [],
+  "ignoredInputReasons": [
+    "wrong_key",
+    "repeat",
+    "extra",
+    "late"
+  ],
+  "defaultPreventionFailures": 0,
+  "scrollPositions": [
+    "{\"x\":0,\"y\":0}"
+  ],
+  "trialsDetail": [
+    {
+      "phase": "warmup",
+      "index": 0,
+      "stimulus": "GO",
+      "eligibleAtMs": 1416.5999999046326,
+      "onsetMs": 1420.0999999046326,
+      "offsetMs": 1625.5,
+      "visibilityMs": 205.40000009536743,
+      "responseTimeMs": 352.60000014305115,
+      "resolvedMs": 1772.7000000476837,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "warmup",
+      "index": 1,
+      "stimulus": "GO",
+      "eligibleAtMs": 2972.7000000476837,
+      "onsetMs": 2976.0999999046326,
+      "offsetMs": 3183.399999856949,
+      "visibilityMs": 207.29999995231628,
+      "responseTimeMs": 351.5,
+      "resolvedMs": 3327.5999999046326,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "warmup",
+      "index": 2,
+      "stimulus": "NO_GO",
+      "eligibleAtMs": 4527.599999904633,
+      "onsetMs": 4530.599999904633,
+      "offsetMs": 4734.5,
+      "visibilityMs": 203.90000009536743,
+      "resolvedMs": 5530.599999904633,
+      "resolutionSource": "timeout"
+    },
+    {
+      "phase": "warmup",
+      "index": 3,
+      "stimulus": "GO",
+      "eligibleAtMs": 6730.599999904633,
+      "onsetMs": 6732.599999904633,
+      "offsetMs": 6933.599999904633,
+      "visibilityMs": 201,
+      "responseTimeMs": 352.2000000476837,
+      "resolvedMs": 7084.799999952316,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "warmup",
+      "index": 4,
+      "stimulus": "GO",
+      "eligibleAtMs": 8284.799999952316,
+      "onsetMs": 8288,
+      "offsetMs": 8492.099999904633,
+      "visibilityMs": 204.09999990463257,
+      "responseTimeMs": 352.5,
+      "resolvedMs": 8640.5,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "warmup",
+      "index": 5,
+      "stimulus": "GO",
+      "eligibleAtMs": 9840.5,
+      "onsetMs": 9842.799999952316,
+      "offsetMs": 10050.299999952316,
+      "visibilityMs": 207.5,
+      "responseTimeMs": 352.2000000476837,
+      "resolvedMs": 10195,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "warmup",
+      "index": 6,
+      "stimulus": "NO_GO",
+      "eligibleAtMs": 11395,
+      "onsetMs": 11396.5,
+      "offsetMs": 11600.099999904633,
+      "visibilityMs": 203.59999990463257,
+      "resolvedMs": 12396.5,
+      "resolutionSource": "timeout"
+    },
+    {
+      "phase": "warmup",
+      "index": 7,
+      "stimulus": "GO",
+      "eligibleAtMs": 13596.5,
+      "onsetMs": 13598.899999856949,
+      "offsetMs": 13799.899999856949,
+      "visibilityMs": 201,
+      "responseTimeMs": 351.5,
+      "resolvedMs": 13950.399999856949,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 0,
+      "stimulus": "GO",
+      "eligibleAtMs": 16300.200000047684,
+      "onsetMs": 16308.700000047684,
+      "responseTimeMs": 150.59999990463257,
+      "resolvedMs": 16459.299999952316,
+      "resolutionSource": "response",
+      "offsetMs": 16516.89999985695,
+      "visibilityMs": 208.19999980926514
+    },
+    {
+      "phase": "scored",
+      "index": 1,
+      "stimulus": "NO_GO",
+      "eligibleAtMs": 17716.89999985695,
+      "onsetMs": 17719.099999904633,
+      "offsetMs": 17925.299999952316,
+      "visibilityMs": 206.20000004768372,
+      "resolvedMs": 18719.099999904633,
+      "resolutionSource": "timeout"
+    },
+    {
+      "phase": "scored",
+      "index": 2,
+      "stimulus": "GO",
+      "eligibleAtMs": 19919.099999904633,
+      "onsetMs": 19921.099999904633,
+      "offsetMs": 20125.39999985695,
+      "visibilityMs": 204.29999995231628,
+      "resolvedMs": 20921.099999904633,
+      "resolutionSource": "timeout"
+    },
+    {
+      "phase": "scored",
+      "index": 3,
+      "stimulus": "GO",
+      "eligibleAtMs": 22121.099999904633,
+      "onsetMs": 22123.799999952316,
+      "offsetMs": 22326.200000047684,
+      "visibilityMs": 202.40000009536743,
+      "responseTimeMs": 350.7999999523163,
+      "resolvedMs": 22474.599999904633,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 4,
+      "stimulus": "GO",
+      "eligibleAtMs": 23674.599999904633,
+      "onsetMs": 23676.799999952316,
+      "offsetMs": 23883.39999985695,
+      "visibilityMs": 206.59999990463257,
+      "responseTimeMs": 351.7000000476837,
+      "resolvedMs": 24028.5,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 5,
+      "stimulus": "NO_GO",
+      "eligibleAtMs": 25228.5,
+      "onsetMs": 25230.39999985695,
+      "offsetMs": 25434.299999952316,
+      "visibilityMs": 203.90000009536743,
+      "resolvedMs": 26230.39999985695,
+      "resolutionSource": "timeout"
+    },
+    {
+      "phase": "scored",
+      "index": 6,
+      "stimulus": "GO",
+      "eligibleAtMs": 27430.39999985695,
+      "onsetMs": 27432.5,
+      "offsetMs": 27633.599999904633,
+      "visibilityMs": 201.09999990463257,
+      "responseTimeMs": 352.2999999523163,
+      "resolvedMs": 27784.799999952316,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 7,
+      "stimulus": "GO",
+      "eligibleAtMs": 28984.799999952316,
+      "onsetMs": 28987.099999904633,
+      "offsetMs": 29192,
+      "visibilityMs": 204.90000009536743,
+      "responseTimeMs": 351.5,
+      "resolvedMs": 29338.599999904633,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 8,
+      "stimulus": "NO_GO",
+      "eligibleAtMs": 30538.599999904633,
+      "onsetMs": 30540.39999985695,
+      "offsetMs": 30741.799999952316,
+      "visibilityMs": 201.40000009536743,
+      "resolvedMs": 31540.39999985695,
+      "resolutionSource": "timeout"
+    },
+    {
+      "phase": "scored",
+      "index": 9,
+      "stimulus": "GO",
+      "eligibleAtMs": 32740.39999985695,
+      "onsetMs": 32742.89999985695,
+      "offsetMs": 32950.09999990463,
+      "visibilityMs": 207.20000004768372,
+      "responseTimeMs": 351.90000009536743,
+      "resolvedMs": 33094.799999952316,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 10,
+      "stimulus": "GO",
+      "eligibleAtMs": 34294.799999952316,
+      "onsetMs": 34297.200000047684,
+      "offsetMs": 34499.89999985695,
+      "visibilityMs": 202.69999980926514,
+      "responseTimeMs": 351.89999985694885,
+      "resolvedMs": 34649.09999990463,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 11,
+      "stimulus": "GO",
+      "eligibleAtMs": 35849.09999990463,
+      "onsetMs": 35852.200000047684,
+      "offsetMs": 36058.59999990463,
+      "visibilityMs": 206.39999985694885,
+      "responseTimeMs": 352.19999980926514,
+      "resolvedMs": 36204.39999985695,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 12,
+      "stimulus": "NO_GO",
+      "eligibleAtMs": 37404.39999985695,
+      "onsetMs": 37407,
+      "offsetMs": 37608.39999985695,
+      "visibilityMs": 201.39999985694885,
+      "resolvedMs": 38407,
+      "resolutionSource": "timeout"
+    },
+    {
+      "phase": "scored",
+      "index": 13,
+      "stimulus": "NO_GO",
+      "eligibleAtMs": 39607,
+      "onsetMs": 39610.299999952316,
+      "offsetMs": 39816.5,
+      "visibilityMs": 206.20000004768372,
+      "resolvedMs": 40610.299999952316,
+      "resolutionSource": "timeout"
+    },
+    {
+      "phase": "scored",
+      "index": 14,
+      "stimulus": "GO",
+      "eligibleAtMs": 41810.299999952316,
+      "onsetMs": 41813.09999990463,
+      "offsetMs": 42016.799999952316,
+      "visibilityMs": 203.70000004768372,
+      "responseTimeMs": 352.2000000476837,
+      "resolvedMs": 42165.299999952316,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 15,
+      "stimulus": "GO",
+      "eligibleAtMs": 43365.299999952316,
+      "onsetMs": 43368.299999952316,
+      "offsetMs": 43575.09999990463,
+      "visibilityMs": 206.79999995231628,
+      "responseTimeMs": 351.7000000476837,
+      "resolvedMs": 43720,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 16,
+      "stimulus": "GO",
+      "eligibleAtMs": 44920,
+      "onsetMs": 44922.299999952316,
+      "offsetMs": 45125.200000047684,
+      "visibilityMs": 202.90000009536743,
+      "responseTimeMs": 352.2000000476837,
+      "resolvedMs": 45274.5,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 17,
+      "stimulus": "GO",
+      "eligibleAtMs": 46474.5,
+      "onsetMs": 46477,
+      "offsetMs": 46683.39999985695,
+      "visibilityMs": 206.39999985694885,
+      "responseTimeMs": 352,
+      "resolvedMs": 46829,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 18,
+      "stimulus": "GO",
+      "eligibleAtMs": 48029,
+      "onsetMs": 48031.39999985695,
+      "offsetMs": 48233.39999985695,
+      "visibilityMs": 202,
+      "responseTimeMs": 351.5,
+      "resolvedMs": 48382.89999985695,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 19,
+      "stimulus": "GO",
+      "eligibleAtMs": 49582.89999985695,
+      "onsetMs": 49585.5,
+      "offsetMs": 49791.89999985695,
+      "visibilityMs": 206.39999985694885,
+      "responseTimeMs": 351.5,
+      "resolvedMs": 49937,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 20,
+      "stimulus": "NO_GO",
+      "eligibleAtMs": 51137,
+      "onsetMs": 51138.799999952316,
+      "offsetMs": 51341.59999990463,
+      "visibilityMs": 202.79999995231628,
+      "resolvedMs": 52138.799999952316,
+      "resolutionSource": "timeout"
+    },
+    {
+      "phase": "scored",
+      "index": 21,
+      "stimulus": "GO",
+      "eligibleAtMs": 53338.799999952316,
+      "onsetMs": 53341.59999990463,
+      "offsetMs": 53550.09999990463,
+      "visibilityMs": 208.5,
+      "responseTimeMs": 351.5,
+      "resolvedMs": 53693.09999990463,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 22,
+      "stimulus": "NO_GO",
+      "eligibleAtMs": 54893.09999990463,
+      "onsetMs": 54894.89999985695,
+      "offsetMs": 55099.59999990463,
+      "visibilityMs": 204.70000004768372,
+      "resolvedMs": 55894.89999985695,
+      "resolutionSource": "timeout"
+    },
+    {
+      "phase": "scored",
+      "index": 23,
+      "stimulus": "GO",
+      "eligibleAtMs": 57094.89999985695,
+      "onsetMs": 57097.39999985695,
+      "offsetMs": 57300.09999990463,
+      "visibilityMs": 202.70000004768372,
+      "responseTimeMs": 351.10000014305115,
+      "resolvedMs": 57448.5,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 24,
+      "stimulus": "NO_GO",
+      "eligibleAtMs": 58648.5,
+      "onsetMs": 58651.09999990463,
+      "offsetMs": 58858.799999952316,
+      "visibilityMs": 207.70000004768372,
+      "resolvedMs": 59651.09999990463,
+      "resolutionSource": "timeout"
+    },
+    {
+      "phase": "scored",
+      "index": 25,
+      "stimulus": "GO",
+      "eligibleAtMs": 60851.09999990463,
+      "onsetMs": 60854.39999985695,
+      "offsetMs": 61058.5,
+      "visibilityMs": 204.10000014305115,
+      "responseTimeMs": 350.7000000476837,
+      "resolvedMs": 61205.09999990463,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 26,
+      "stimulus": "GO",
+      "eligibleAtMs": 62405.09999990463,
+      "onsetMs": 62407.89999985695,
+      "offsetMs": 62616.59999990463,
+      "visibilityMs": 208.70000004768372,
+      "responseTimeMs": 351.90000009536743,
+      "resolvedMs": 62759.799999952316,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 27,
+      "stimulus": "NO_GO",
+      "eligibleAtMs": 63959.799999952316,
+      "onsetMs": 63961.59999990463,
+      "offsetMs": 64166.700000047684,
+      "visibilityMs": 205.10000014305115,
+      "resolvedMs": 64961.59999990463,
+      "resolutionSource": "timeout"
+    },
+    {
+      "phase": "scored",
+      "index": 28,
+      "stimulus": "GO",
+      "eligibleAtMs": 66161.59999990463,
+      "onsetMs": 66164.79999995232,
+      "offsetMs": 66367.70000004768,
+      "visibilityMs": 202.90000009536743,
+      "responseTimeMs": 351.2999999523163,
+      "resolvedMs": 66516.09999990463,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 29,
+      "stimulus": "GO",
+      "eligibleAtMs": 67716.09999990463,
+      "onsetMs": 67718.70000004768,
+      "offsetMs": 67920.59999990463,
+      "visibilityMs": 201.89999985694885,
+      "responseTimeMs": 352.2999999523163,
+      "resolvedMs": 68071,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 30,
+      "stimulus": "GO",
+      "eligibleAtMs": 69271,
+      "onsetMs": 69273.29999995232,
+      "offsetMs": 69475,
+      "visibilityMs": 201.70000004768372,
+      "responseTimeMs": 352.09999990463257,
+      "resolvedMs": 69625.39999985695,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 31,
+      "stimulus": "GO",
+      "eligibleAtMs": 70825.39999985695,
+      "onsetMs": 70828.20000004768,
+      "offsetMs": 71033.5,
+      "visibilityMs": 205.29999995231628,
+      "responseTimeMs": 352.19999980926514,
+      "resolvedMs": 71180.39999985695,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 32,
+      "stimulus": "GO",
+      "eligibleAtMs": 72380.39999985695,
+      "onsetMs": 72382.20000004768,
+      "offsetMs": 72583.29999995232,
+      "visibilityMs": 201.09999990463257,
+      "responseTimeMs": 351.5,
+      "resolvedMs": 72733.70000004768,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 33,
+      "stimulus": "NO_GO",
+      "eligibleAtMs": 73933.70000004768,
+      "onsetMs": 73936.39999985695,
+      "offsetMs": 74141.70000004768,
+      "visibilityMs": 205.30000019073486,
+      "resolvedMs": 74936.39999985695,
+      "resolutionSource": "timeout"
+    },
+    {
+      "phase": "scored",
+      "index": 34,
+      "stimulus": "GO",
+      "eligibleAtMs": 76136.39999985695,
+      "onsetMs": 76139,
+      "offsetMs": 76341.59999990463,
+      "visibilityMs": 202.59999990463257,
+      "responseTimeMs": 351.59999990463257,
+      "resolvedMs": 76490.59999990463,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 35,
+      "stimulus": "GO",
+      "eligibleAtMs": 77690.59999990463,
+      "onsetMs": 77692.39999985695,
+      "offsetMs": 77900.09999990463,
+      "visibilityMs": 207.70000004768372,
+      "responseTimeMs": 352,
+      "resolvedMs": 78044.39999985695,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 36,
+      "stimulus": "GO",
+      "eligibleAtMs": 79244.39999985695,
+      "onsetMs": 79247.09999990463,
+      "offsetMs": 79450,
+      "visibilityMs": 202.90000009536743,
+      "responseTimeMs": 351.90000009536743,
+      "resolvedMs": 79599,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 37,
+      "stimulus": "GO",
+      "eligibleAtMs": 80799,
+      "onsetMs": 80800.70000004768,
+      "offsetMs": 81009.29999995232,
+      "visibilityMs": 208.59999990463257,
+      "responseTimeMs": 351.39999985694885,
+      "resolvedMs": 81152.09999990463,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 38,
+      "stimulus": "GO",
+      "eligibleAtMs": 82352.09999990463,
+      "onsetMs": 82354.79999995232,
+      "offsetMs": 82558.5,
+      "visibilityMs": 203.70000004768372,
+      "responseTimeMs": 351.90000009536743,
+      "resolvedMs": 82706.70000004768,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 39,
+      "stimulus": "GO",
+      "eligibleAtMs": 83906.70000004768,
+      "onsetMs": 83909,
+      "offsetMs": 84116.59999990463,
+      "visibilityMs": 207.59999990463257,
+      "responseTimeMs": 351.7000000476837,
+      "resolvedMs": 84260.70000004768,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 40,
+      "stimulus": "NO_GO",
+      "eligibleAtMs": 85460.70000004768,
+      "onsetMs": 85462.59999990463,
+      "offsetMs": 85666.20000004768,
+      "visibilityMs": 203.60000014305115,
+      "resolvedMs": 86462.59999990463,
+      "resolutionSource": "timeout"
+    },
+    {
+      "phase": "scored",
+      "index": 41,
+      "stimulus": "GO",
+      "eligibleAtMs": 87662.59999990463,
+      "onsetMs": 87665.09999990463,
+      "offsetMs": 87866.59999990463,
+      "visibilityMs": 201.5,
+      "responseTimeMs": 350.90000009536743,
+      "resolvedMs": 88016,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 42,
+      "stimulus": "GO",
+      "eligibleAtMs": 89216,
+      "onsetMs": 89217.89999985695,
+      "offsetMs": 89425.89999985695,
+      "visibilityMs": 208,
+      "responseTimeMs": 352.2000000476837,
+      "resolvedMs": 89570.09999990463,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 43,
+      "stimulus": "NO_GO",
+      "eligibleAtMs": 90770.09999990463,
+      "onsetMs": 90772.59999990463,
+      "offsetMs": 90975,
+      "visibilityMs": 202.40000009536743,
+      "resolvedMs": 91772.59999990463,
+      "resolutionSource": "timeout"
+    },
+    {
+      "phase": "scored",
+      "index": 44,
+      "stimulus": "GO",
+      "eligibleAtMs": 92972.59999990463,
+      "onsetMs": 92975.5,
+      "offsetMs": 93182.79999995232,
+      "visibilityMs": 207.29999995231628,
+      "responseTimeMs": 351.59999990463257,
+      "resolvedMs": 93327.09999990463,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 45,
+      "stimulus": "GO",
+      "eligibleAtMs": 94527.09999990463,
+      "onsetMs": 94528.89999985695,
+      "offsetMs": 94733.29999995232,
+      "visibilityMs": 204.40000009536743,
+      "responseTimeMs": 351.60000014305115,
+      "resolvedMs": 94880.5,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 46,
+      "stimulus": "GO",
+      "eligibleAtMs": 96080.5,
+      "onsetMs": 96082.70000004768,
+      "offsetMs": 96291.70000004768,
+      "visibilityMs": 209,
+      "responseTimeMs": 351.89999985694885,
+      "resolvedMs": 96434.59999990463,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 47,
+      "stimulus": "GO",
+      "eligibleAtMs": 97634.59999990463,
+      "onsetMs": 97636.79999995232,
+      "offsetMs": 97841.59999990463,
+      "visibilityMs": 204.79999995231628,
+      "responseTimeMs": 351.90000009536743,
+      "resolvedMs": 97988.70000004768,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 48,
+      "stimulus": "GO",
+      "eligibleAtMs": 99188.70000004768,
+      "onsetMs": 99191.20000004768,
+      "offsetMs": 99399.89999985695,
+      "visibilityMs": 208.69999980926514,
+      "responseTimeMs": 351.69999980926514,
+      "resolvedMs": 99542.89999985695,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 49,
+      "stimulus": "GO",
+      "eligibleAtMs": 100742.89999985695,
+      "onsetMs": 100745,
+      "offsetMs": 100949.89999985695,
+      "visibilityMs": 204.89999985694885,
+      "responseTimeMs": 351.59999990463257,
+      "resolvedMs": 101096.59999990463,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 50,
+      "stimulus": "GO",
+      "eligibleAtMs": 102296.59999990463,
+      "onsetMs": 102299.20000004768,
+      "offsetMs": 102499.89999985695,
+      "visibilityMs": 200.69999980926514,
+      "responseTimeMs": 352.09999990463257,
+      "resolvedMs": 102651.29999995232,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 51,
+      "stimulus": "GO",
+      "eligibleAtMs": 103851.29999995232,
+      "onsetMs": 103853.09999990463,
+      "offsetMs": 104058.39999985695,
+      "visibilityMs": 205.29999995231628,
+      "responseTimeMs": 352,
+      "resolvedMs": 104205.09999990463,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 52,
+      "stimulus": "NO_GO",
+      "eligibleAtMs": 105405.09999990463,
+      "onsetMs": 105408,
+      "offsetMs": 105616.59999990463,
+      "visibilityMs": 208.59999990463257,
+      "resolvedMs": 106408,
+      "resolutionSource": "timeout"
+    },
+    {
+      "phase": "scored",
+      "index": 53,
+      "stimulus": "GO",
+      "eligibleAtMs": 107608,
+      "onsetMs": 107610.59999990463,
+      "offsetMs": 107816.39999985695,
+      "visibilityMs": 205.79999995231628,
+      "responseTimeMs": 352,
+      "resolvedMs": 107962.59999990463,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 54,
+      "stimulus": "GO",
+      "eligibleAtMs": 109162.59999990463,
+      "onsetMs": 109164.70000004768,
+      "offsetMs": 109366.59999990463,
+      "visibilityMs": 201.89999985694885,
+      "responseTimeMs": 351.89999985694885,
+      "resolvedMs": 109516.59999990463,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 55,
+      "stimulus": "NO_GO",
+      "eligibleAtMs": 110716.59999990463,
+      "onsetMs": 110719,
+      "offsetMs": 110925,
+      "visibilityMs": 206,
+      "resolvedMs": 111719,
+      "resolutionSource": "timeout"
+    },
+    {
+      "phase": "scored",
+      "index": 56,
+      "stimulus": "GO",
+      "eligibleAtMs": 112919,
+      "onsetMs": 112921.09999990463,
+      "offsetMs": 113125,
+      "visibilityMs": 203.90000009536743,
+      "responseTimeMs": 352.2999999523163,
+      "resolvedMs": 113273.39999985695,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 57,
+      "stimulus": "NO_GO",
+      "eligibleAtMs": 114473.39999985695,
+      "onsetMs": 114475.5,
+      "offsetMs": 114683.20000004768,
+      "visibilityMs": 207.70000004768372,
+      "resolvedMs": 115475.5,
+      "resolutionSource": "timeout"
+    },
+    {
+      "phase": "scored",
+      "index": 58,
+      "stimulus": "GO",
+      "eligibleAtMs": 116675.5,
+      "onsetMs": 116677.70000004768,
+      "offsetMs": 116883.09999990463,
+      "visibilityMs": 205.39999985694885,
+      "responseTimeMs": 351.59999990463257,
+      "resolvedMs": 117029.29999995232,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 59,
+      "stimulus": "GO",
+      "eligibleAtMs": 118229.29999995232,
+      "onsetMs": 118231.89999985695,
+      "offsetMs": 118433.20000004768,
+      "visibilityMs": 201.30000019073486,
+      "responseTimeMs": 351.60000014305115,
+      "resolvedMs": 118583.5,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 60,
+      "stimulus": "GO",
+      "eligibleAtMs": 119783.5,
+      "onsetMs": 119785.79999995232,
+      "offsetMs": 119991.09999990463,
+      "visibilityMs": 205.29999995231628,
+      "responseTimeMs": 352.2999999523163,
+      "resolvedMs": 120138.09999990463,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 61,
+      "stimulus": "GO",
+      "eligibleAtMs": 121338.09999990463,
+      "onsetMs": 121340,
+      "offsetMs": 121541.5,
+      "visibilityMs": 201.5,
+      "responseTimeMs": 352.09999990463257,
+      "resolvedMs": 121692.09999990463,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 62,
+      "stimulus": "GO",
+      "eligibleAtMs": 122892.09999990463,
+      "onsetMs": 122893.79999995232,
+      "offsetMs": 123099.70000004768,
+      "visibilityMs": 205.90000009536743,
+      "responseTimeMs": 352,
+      "resolvedMs": 123245.79999995232,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 63,
+      "stimulus": "GO",
+      "eligibleAtMs": 124445.79999995232,
+      "onsetMs": 124447.59999990463,
+      "offsetMs": 124649.79999995232,
+      "visibilityMs": 202.20000004768372,
+      "responseTimeMs": 351.60000014305115,
+      "resolvedMs": 124799.20000004768,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 64,
+      "stimulus": "GO",
+      "eligibleAtMs": 125999.20000004768,
+      "onsetMs": 126001.79999995232,
+      "offsetMs": 126208.20000004768,
+      "visibilityMs": 206.40000009536743,
+      "responseTimeMs": 351.2000000476837,
+      "resolvedMs": 126353,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 65,
+      "stimulus": "NO_GO",
+      "eligibleAtMs": 127553,
+      "onsetMs": 127555.20000004768,
+      "offsetMs": 127758.39999985695,
+      "visibilityMs": 203.19999980926514,
+      "resolvedMs": 128555.20000004768,
+      "resolutionSource": "timeout"
+    },
+    {
+      "phase": "scored",
+      "index": 66,
+      "stimulus": "NO_GO",
+      "eligibleAtMs": 129755.20000004768,
+      "onsetMs": 129757.79999995232,
+      "offsetMs": 129962.5,
+      "visibilityMs": 204.70000004768372,
+      "resolvedMs": 130757.79999995232,
+      "resolutionSource": "timeout"
+    },
+    {
+      "phase": "scored",
+      "index": 67,
+      "stimulus": "GO",
+      "eligibleAtMs": 131957.79999995232,
+      "onsetMs": 131959.79999995232,
+      "offsetMs": 132162.5,
+      "visibilityMs": 202.70000004768372,
+      "responseTimeMs": 351.7999999523163,
+      "resolvedMs": 132311.59999990463,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 68,
+      "stimulus": "GO",
+      "eligibleAtMs": 133511.59999990463,
+      "onsetMs": 133513,
+      "offsetMs": 133720.5,
+      "visibilityMs": 207.5,
+      "responseTimeMs": 350.89999985694885,
+      "resolvedMs": 133863.89999985695,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 69,
+      "stimulus": "GO",
+      "eligibleAtMs": 135063.89999985695,
+      "onsetMs": 135066.59999990463,
+      "offsetMs": 135270.59999990463,
+      "visibilityMs": 204,
+      "responseTimeMs": 352,
+      "resolvedMs": 135418.59999990463,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 70,
+      "stimulus": "NO_GO",
+      "eligibleAtMs": 136618.59999990463,
+      "onsetMs": 136621.29999995232,
+      "offsetMs": 136829.09999990463,
+      "visibilityMs": 207.79999995231628,
+      "resolvedMs": 137621.29999995232,
+      "resolutionSource": "timeout"
+    },
+    {
+      "phase": "scored",
+      "index": 71,
+      "stimulus": "GO",
+      "eligibleAtMs": 138821.29999995232,
+      "onsetMs": 138824.29999995232,
+      "offsetMs": 139029.09999990463,
+      "visibilityMs": 204.79999995231628,
+      "responseTimeMs": 352.09999990463257,
+      "resolvedMs": 139176.39999985695,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 72,
+      "stimulus": "GO",
+      "eligibleAtMs": 140376.39999985695,
+      "onsetMs": 140379,
+      "offsetMs": 140587.29999995232,
+      "visibilityMs": 208.29999995231628,
+      "responseTimeMs": 352.2000000476837,
+      "resolvedMs": 140731.20000004768,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 73,
+      "stimulus": "GO",
+      "eligibleAtMs": 141931.20000004768,
+      "onsetMs": 141933.59999990463,
+      "offsetMs": 142137.29999995232,
+      "visibilityMs": 203.70000004768372,
+      "responseTimeMs": 351.40000009536743,
+      "resolvedMs": 142285,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 74,
+      "stimulus": "NO_GO",
+      "eligibleAtMs": 143485,
+      "onsetMs": 143487.70000004768,
+      "offsetMs": 143695.70000004768,
+      "visibilityMs": 208,
+      "resolvedMs": 144487.70000004768,
+      "resolutionSource": "timeout"
+    },
+    {
+      "phase": "scored",
+      "index": 75,
+      "stimulus": "GO",
+      "eligibleAtMs": 145687.70000004768,
+      "onsetMs": 145689.20000004768,
+      "offsetMs": 145895.70000004768,
+      "visibilityMs": 206.5,
+      "responseTimeMs": 351.59999990463257,
+      "resolvedMs": 146040.79999995232,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 76,
+      "stimulus": "NO_GO",
+      "eligibleAtMs": 147240.79999995232,
+      "onsetMs": 147243.39999985695,
+      "offsetMs": 147445.59999990463,
+      "visibilityMs": 202.20000004768372,
+      "resolvedMs": 148243.39999985695,
+      "resolutionSource": "timeout"
+    },
+    {
+      "phase": "scored",
+      "index": 77,
+      "stimulus": "GO",
+      "eligibleAtMs": 149443.39999985695,
+      "onsetMs": 149445.5,
+      "offsetMs": 149653.89999985695,
+      "visibilityMs": 208.39999985694885,
+      "responseTimeMs": 351.5,
+      "resolvedMs": 149797,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 78,
+      "stimulus": "GO",
+      "eligibleAtMs": 150997,
+      "onsetMs": 150998.79999995232,
+      "offsetMs": 151203.89999985695,
+      "visibilityMs": 205.09999990463257,
+      "responseTimeMs": 352.09999990463257,
+      "resolvedMs": 151350.89999985695,
+      "resolutionSource": "response"
+    },
+    {
+      "phase": "scored",
+      "index": 79,
+      "stimulus": "GO",
+      "eligibleAtMs": 152550.89999985695,
+      "onsetMs": 152553.59999990463,
+      "offsetMs": 152762.39999985695,
+      "visibilityMs": 208.79999995231628,
+      "responseTimeMs": 352,
+      "resolvedMs": 152905.59999990463,
+      "resolutionSource": "response"
+    }
+  ],
+  "transitions": [
+    {
+      "phase": "warmup",
+      "index": 0,
+      "responseTimeMs": 352.60000014305115,
+      "anchorMs": 1772.7000000476837,
+      "intervalMs": 1203.3999998569489,
+      "final": false
+    },
+    {
+      "phase": "warmup",
+      "index": 1,
+      "responseTimeMs": 351.5,
+      "anchorMs": 3327.5999999046326,
+      "intervalMs": 1203,
+      "final": false
+    },
+    {
+      "phase": "warmup",
+      "index": 2,
+      "responseTimeMs": null,
+      "anchorMs": 5530.599999904633,
+      "intervalMs": 1202,
+      "final": false
+    },
+    {
+      "phase": "warmup",
+      "index": 3,
+      "responseTimeMs": 352.2000000476837,
+      "anchorMs": 7084.799999952316,
+      "intervalMs": 1203.2000000476837,
+      "final": false
+    },
+    {
+      "phase": "warmup",
+      "index": 4,
+      "responseTimeMs": 352.5,
+      "anchorMs": 8640.5,
+      "intervalMs": 1202.2999999523163,
+      "final": false
+    },
+    {
+      "phase": "warmup",
+      "index": 5,
+      "responseTimeMs": 352.2000000476837,
+      "anchorMs": 10195,
+      "intervalMs": 1201.5,
+      "final": false
+    },
+    {
+      "phase": "warmup",
+      "index": 6,
+      "responseTimeMs": null,
+      "anchorMs": 12396.5,
+      "intervalMs": 1202.3999998569489,
+      "final": false
+    },
+    {
+      "phase": "warmup",
+      "index": 7,
+      "responseTimeMs": 351.5,
+      "anchorMs": 13950.399999856949,
+      "intervalMs": 1200.5,
+      "final": true
+    },
+    {
+      "phase": "scored",
+      "index": 0,
+      "responseTimeMs": 150.59999990463257,
+      "anchorMs": 16516.89999985695,
+      "intervalMs": 1202.2000000476837,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 1,
+      "responseTimeMs": null,
+      "anchorMs": 18719.099999904633,
+      "intervalMs": 1202,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 2,
+      "responseTimeMs": null,
+      "anchorMs": 20921.099999904633,
+      "intervalMs": 1202.7000000476837,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 3,
+      "responseTimeMs": 350.7999999523163,
+      "anchorMs": 22474.599999904633,
+      "intervalMs": 1202.2000000476837,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 4,
+      "responseTimeMs": 351.7000000476837,
+      "anchorMs": 24028.5,
+      "intervalMs": 1201.8999998569489,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 5,
+      "responseTimeMs": null,
+      "anchorMs": 26230.39999985695,
+      "intervalMs": 1202.1000001430511,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 6,
+      "responseTimeMs": 352.2999999523163,
+      "anchorMs": 27784.799999952316,
+      "intervalMs": 1202.2999999523163,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 7,
+      "responseTimeMs": 351.5,
+      "anchorMs": 29338.599999904633,
+      "intervalMs": 1201.7999999523163,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 8,
+      "responseTimeMs": null,
+      "anchorMs": 31540.39999985695,
+      "intervalMs": 1202.5,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 9,
+      "responseTimeMs": 351.90000009536743,
+      "anchorMs": 33094.799999952316,
+      "intervalMs": 1202.4000000953674,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 10,
+      "responseTimeMs": 351.89999985694885,
+      "anchorMs": 34649.09999990463,
+      "intervalMs": 1203.1000001430511,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 11,
+      "responseTimeMs": 352.19999980926514,
+      "anchorMs": 36204.39999985695,
+      "intervalMs": 1202.6000001430511,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 12,
+      "responseTimeMs": null,
+      "anchorMs": 38407,
+      "intervalMs": 1203.2999999523163,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 13,
+      "responseTimeMs": null,
+      "anchorMs": 40610.299999952316,
+      "intervalMs": 1202.7999999523163,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 14,
+      "responseTimeMs": 352.2000000476837,
+      "anchorMs": 42165.299999952316,
+      "intervalMs": 1203,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 15,
+      "responseTimeMs": 351.7000000476837,
+      "anchorMs": 43720,
+      "intervalMs": 1202.2999999523163,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 16,
+      "responseTimeMs": 352.2000000476837,
+      "anchorMs": 45274.5,
+      "intervalMs": 1202.5,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 17,
+      "responseTimeMs": 352,
+      "anchorMs": 46829,
+      "intervalMs": 1202.3999998569489,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 18,
+      "responseTimeMs": 351.5,
+      "anchorMs": 48382.89999985695,
+      "intervalMs": 1202.6000001430511,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 19,
+      "responseTimeMs": 351.5,
+      "anchorMs": 49937,
+      "intervalMs": 1201.7999999523163,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 20,
+      "responseTimeMs": null,
+      "anchorMs": 52138.799999952316,
+      "intervalMs": 1202.7999999523163,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 21,
+      "responseTimeMs": 351.5,
+      "anchorMs": 53693.09999990463,
+      "intervalMs": 1201.7999999523163,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 22,
+      "responseTimeMs": null,
+      "anchorMs": 55894.89999985695,
+      "intervalMs": 1202.5,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 23,
+      "responseTimeMs": 351.10000014305115,
+      "anchorMs": 57448.5,
+      "intervalMs": 1202.5999999046326,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 24,
+      "responseTimeMs": null,
+      "anchorMs": 59651.09999990463,
+      "intervalMs": 1203.2999999523163,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 25,
+      "responseTimeMs": 350.7000000476837,
+      "anchorMs": 61205.09999990463,
+      "intervalMs": 1202.7999999523163,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 26,
+      "responseTimeMs": 351.90000009536743,
+      "anchorMs": 62759.799999952316,
+      "intervalMs": 1201.7999999523163,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 27,
+      "responseTimeMs": null,
+      "anchorMs": 64961.59999990463,
+      "intervalMs": 1203.2000000476837,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 28,
+      "responseTimeMs": 351.2999999523163,
+      "anchorMs": 66516.09999990463,
+      "intervalMs": 1202.6000001430511,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 29,
+      "responseTimeMs": 352.2999999523163,
+      "anchorMs": 68071,
+      "intervalMs": 1202.2999999523163,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 30,
+      "responseTimeMs": 352.09999990463257,
+      "anchorMs": 69625.39999985695,
+      "intervalMs": 1202.8000001907349,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 31,
+      "responseTimeMs": 352.19999980926514,
+      "anchorMs": 71180.39999985695,
+      "intervalMs": 1201.8000001907349,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 32,
+      "responseTimeMs": 351.5,
+      "anchorMs": 72733.70000004768,
+      "intervalMs": 1202.6999998092651,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 33,
+      "responseTimeMs": null,
+      "anchorMs": 74936.39999985695,
+      "intervalMs": 1202.6000001430511,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 34,
+      "responseTimeMs": 351.59999990463257,
+      "anchorMs": 76490.59999990463,
+      "intervalMs": 1201.7999999523163,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 35,
+      "responseTimeMs": 352,
+      "anchorMs": 78044.39999985695,
+      "intervalMs": 1202.7000000476837,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 36,
+      "responseTimeMs": 351.90000009536743,
+      "anchorMs": 79599,
+      "intervalMs": 1201.7000000476837,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 37,
+      "responseTimeMs": 351.39999985694885,
+      "anchorMs": 81152.09999990463,
+      "intervalMs": 1202.7000000476837,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 38,
+      "responseTimeMs": 351.90000009536743,
+      "anchorMs": 82706.70000004768,
+      "intervalMs": 1202.2999999523163,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 39,
+      "responseTimeMs": 351.7000000476837,
+      "anchorMs": 84260.70000004768,
+      "intervalMs": 1201.8999998569489,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 40,
+      "responseTimeMs": null,
+      "anchorMs": 86462.59999990463,
+      "intervalMs": 1202.5,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 41,
+      "responseTimeMs": 350.90000009536743,
+      "anchorMs": 88016,
+      "intervalMs": 1201.8999998569489,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 42,
+      "responseTimeMs": 352.2000000476837,
+      "anchorMs": 89570.09999990463,
+      "intervalMs": 1202.5,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 43,
+      "responseTimeMs": null,
+      "anchorMs": 91772.59999990463,
+      "intervalMs": 1202.9000000953674,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 44,
+      "responseTimeMs": 351.59999990463257,
+      "anchorMs": 93327.09999990463,
+      "intervalMs": 1201.7999999523163,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 45,
+      "responseTimeMs": 351.60000014305115,
+      "anchorMs": 94880.5,
+      "intervalMs": 1202.2000000476837,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 46,
+      "responseTimeMs": 351.89999985694885,
+      "anchorMs": 96434.59999990463,
+      "intervalMs": 1202.2000000476837,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 47,
+      "responseTimeMs": 351.90000009536743,
+      "anchorMs": 97988.70000004768,
+      "intervalMs": 1202.5,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 48,
+      "responseTimeMs": 351.69999980926514,
+      "anchorMs": 99542.89999985695,
+      "intervalMs": 1202.1000001430511,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 49,
+      "responseTimeMs": 351.59999990463257,
+      "anchorMs": 101096.59999990463,
+      "intervalMs": 1202.6000001430511,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 50,
+      "responseTimeMs": 352.09999990463257,
+      "anchorMs": 102651.29999995232,
+      "intervalMs": 1201.7999999523163,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 51,
+      "responseTimeMs": 352,
+      "anchorMs": 104205.09999990463,
+      "intervalMs": 1202.9000000953674,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 52,
+      "responseTimeMs": null,
+      "anchorMs": 106408,
+      "intervalMs": 1202.5999999046326,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 53,
+      "responseTimeMs": 352,
+      "anchorMs": 107962.59999990463,
+      "intervalMs": 1202.1000001430511,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 54,
+      "responseTimeMs": 351.89999985694885,
+      "anchorMs": 109516.59999990463,
+      "intervalMs": 1202.4000000953674,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 55,
+      "responseTimeMs": null,
+      "anchorMs": 111719,
+      "intervalMs": 1202.0999999046326,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 56,
+      "responseTimeMs": 352.2999999523163,
+      "anchorMs": 113273.39999985695,
+      "intervalMs": 1202.1000001430511,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 57,
+      "responseTimeMs": null,
+      "anchorMs": 115475.5,
+      "intervalMs": 1202.2000000476837,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 58,
+      "responseTimeMs": 351.59999990463257,
+      "anchorMs": 117029.29999995232,
+      "intervalMs": 1202.5999999046326,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 59,
+      "responseTimeMs": 351.60000014305115,
+      "anchorMs": 118583.5,
+      "intervalMs": 1202.2999999523163,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 60,
+      "responseTimeMs": 352.2999999523163,
+      "anchorMs": 120138.09999990463,
+      "intervalMs": 1201.9000000953674,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 61,
+      "responseTimeMs": 352.09999990463257,
+      "anchorMs": 121692.09999990463,
+      "intervalMs": 1201.7000000476837,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 62,
+      "responseTimeMs": 352,
+      "anchorMs": 123245.79999995232,
+      "intervalMs": 1201.7999999523163,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 63,
+      "responseTimeMs": 351.60000014305115,
+      "anchorMs": 124799.20000004768,
+      "intervalMs": 1202.5999999046326,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 64,
+      "responseTimeMs": 351.2000000476837,
+      "anchorMs": 126353,
+      "intervalMs": 1202.2000000476837,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 65,
+      "responseTimeMs": null,
+      "anchorMs": 128555.20000004768,
+      "intervalMs": 1202.5999999046326,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 66,
+      "responseTimeMs": null,
+      "anchorMs": 130757.79999995232,
+      "intervalMs": 1202,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 67,
+      "responseTimeMs": 351.7999999523163,
+      "anchorMs": 132311.59999990463,
+      "intervalMs": 1201.4000000953674,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 68,
+      "responseTimeMs": 350.89999985694885,
+      "anchorMs": 133863.89999985695,
+      "intervalMs": 1202.7000000476837,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 69,
+      "responseTimeMs": 352,
+      "anchorMs": 135418.59999990463,
+      "intervalMs": 1202.7000000476837,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 70,
+      "responseTimeMs": null,
+      "anchorMs": 137621.29999995232,
+      "intervalMs": 1203,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 71,
+      "responseTimeMs": 352.09999990463257,
+      "anchorMs": 139176.39999985695,
+      "intervalMs": 1202.6000001430511,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 72,
+      "responseTimeMs": 352.2000000476837,
+      "anchorMs": 140731.20000004768,
+      "intervalMs": 1202.3999998569489,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 73,
+      "responseTimeMs": 351.40000009536743,
+      "anchorMs": 142285,
+      "intervalMs": 1202.7000000476837,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 74,
+      "responseTimeMs": null,
+      "anchorMs": 144487.70000004768,
+      "intervalMs": 1201.5,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 75,
+      "responseTimeMs": 351.59999990463257,
+      "anchorMs": 146040.79999995232,
+      "intervalMs": 1202.5999999046326,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 76,
+      "responseTimeMs": null,
+      "anchorMs": 148243.39999985695,
+      "intervalMs": 1202.1000001430511,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 77,
+      "responseTimeMs": 351.5,
+      "anchorMs": 149797,
+      "intervalMs": 1201.7999999523163,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 78,
+      "responseTimeMs": 352.09999990463257,
+      "anchorMs": 151350.89999985695,
+      "intervalMs": 1202.7000000476837,
+      "final": false
+    },
+    {
+      "phase": "scored",
+      "index": 79,
+      "responseTimeMs": 352,
+      "anchorMs": 152905.59999990463,
+      "intervalMs": 1200.7000000476837,
+      "final": true
+    }
+  ]
+}
