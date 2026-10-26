@@ -37,10 +37,10 @@ h3 { font-size: 1.7rem; margin: .5rem 0; }
 .card-symbols { display: flex; gap: .7rem; margin-bottom: 1.5rem; }
 .card-symbols span { display: grid; place-items: center; width: 2.8rem; height: 2.8rem; border-radius: 50%; background: #b42334; color: white; font-weight: 900; }
 .card-symbols span + span { background: #147d4f; }
-.journey { max-width: 49rem; margin: 0 auto; }
+.journey { max-width: 784px; margin: 0 auto; }
 .journey-top { display: flex; flex-wrap: wrap; gap: .8rem; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
 .journey-top p { margin: 0; color: #4a5368; font-size: .9rem; }
-.panel { padding: clamp(1rem, 3.5vw, 2.4rem); border: 1px solid #e4e7ef; background: #fff; border-radius: 1rem; }
+.panel { width:100%; max-width:784px; margin-inline:auto; padding: clamp(1rem, 3.5vw, 2.4rem); border: 1px solid #e4e7ef; background: #fff; border-radius: 1rem; }
 .panel h1 { font-size: clamp(1.8rem, 4vw, 2.55rem); }
 .actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; margin-top: 1.7rem; }
 .note { background: transparent; color: #4a5368; padding: .25rem 0; font-size: .9rem; }
@@ -99,4 +99,27 @@ body:has(.mock-return-bar) .stop-live:not([hidden]) .stop-reminder { top: 5rem; 
 .assessment-usage-notice a { color:inherit; }
 
 :host { font-family: 'AP Inter',Arial,sans-serif; }
-.journey-top { max-width:49rem; margin-inline:auto; }
+.journey-top { width:100%; max-width:784px; margin-inline:auto; }
+.journey-top .journey-meta { order:1; margin-left:auto; display:flex; flex-wrap:wrap; align-items:center; justify-content:flex-end; gap:1rem; }
+.journey-meta p { margin:0; }
+
+/* Guide rhythm: 24px from the action block to examples and then privacy. */
+.journey .panel details.start-options, .panel details.start-options { margin:24px 0 0; }
+.panel > .actions:has(+ details.start-options),
+.panel .simple-stop-guide > button:has(+ details.start-options),
+.panel > button:has(+ details.start-options) { margin-bottom:0; }
+.panel > details.start-options + .assessment-usage-notice,
+.panel > .assessment-usage-notice { margin-top:24px; }
+.panel .quick-rules { max-width:none; }
+@media(max-width:520px) {
+  .panel > button:not(.secondary),
+  .panel > form > button:not(.secondary),
+  .panel > .actions > button:not(.secondary),
+  .panel .simple-stop-guide > button:not(.secondary),
+  .panel .arrows-setup > button:not(.secondary) { width:100%; margin-inline:0; }
+  .balloons-actions button[data-control="pump"] { flex:0 0 100%; width:100%; max-width:none; }
+}
+
+.panel > .actions:has(+ details.start-options) > button { margin-bottom:0; }
+
+.journey .journey-top button { margin:0; }

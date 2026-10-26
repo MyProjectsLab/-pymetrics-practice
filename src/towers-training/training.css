@@ -1,5 +1,4 @@
 @import '../towers/towers.css';
-.towers-training .panel { max-width: 100%; }
 .towers-training .towers-board { overflow-x: auto; }
 .towers-training .towers-disk { width: min(100%, 96px); }
 .towers-training .towers-target .towers-disk { width: min(100%, 72px); }

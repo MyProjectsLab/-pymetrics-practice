@@ -51,7 +51,7 @@ button.secondary:hover:not(:disabled){background:transparent;border-color:transp
 
 /* Untimed content follows the shared shell; live stimulus layout stays separate. */
 main:has(> .journey){width:min(70rem,calc(100% - 3rem));min-height:72vh;padding:0 0 3rem}
-.journey > .panel{max-width:49rem;margin:3rem auto 0;padding:clamp(1rem,3.5vw,2.4rem);border:1px solid #e4e7ef;background:#fff;border-radius:1rem}
+.journey > .panel{max-width:784px;margin:3rem auto 0;padding:clamp(1rem,3.5vw,2.4rem);border:1px solid #e4e7ef;background:#fff;border-radius:1rem}
 .panel h1{font-size:clamp(1.8rem,4vw,2.55rem)}
 .site-header{margin-bottom:0}
 .site-header nav a.ap-wordmark{font-weight:600}
@@ -60,4 +60,17 @@ h1:focus{outline:none}
 .assessment-usage-notice{color:#4a5368;font-size:.8rem;line-height:1.6;margin:1.5rem 0 0}
 @media(max-width:520px){main:has(> .journey){width:calc(100% - 2rem)}.journey > .panel{margin-top:1.8rem}}
 
-.journey-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.8rem;max-width:49rem;margin:1.5rem auto 0}.journey-top p{margin:0 0 0 auto;font-size:.9rem;color:#4a5368;text-align:right}.journey:has(.journey-top) > .panel{margin-top:1.5rem}
+.journey-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.8rem;max-width:784px;margin:1.5rem auto 0}.journey-top p{margin:0 0 0 auto;font-size:.9rem;color:#4a5368;text-align:right}.journey:has(.journey-top) > .panel{margin-top:1.5rem}
+
+a{color:#0e7490}
+.journey > .panel,.journey-top{width:100%;max-width:784px}
+.panel .eyebrow{font-weight:600;font-size:.75rem;letter-spacing:.09em;text-transform:uppercase;color:#0e7490;margin:0 0 .8rem}
+.site-footer{padding-block:1.5rem;border-top:1px solid #e4e7ef;font-size:.85rem;color:#4a5368;margin-top:3rem}
+.panel > .actions{margin-bottom:0}
+.panel > .assessment-usage-notice{margin-top:24px}
+@media(max-width:520px){.panel > .actions > button:not(.secondary){width:100%;margin-inline:0}}
+
+.panel details.start-options{margin:24px 0 0}
+.start-options > summary{cursor:pointer;min-height:44px;display:list-item;padding:.65rem 0;font-weight:600}
+.start-options .actions{margin:0}
+.start-options button{background:transparent;border-color:transparent;color:#0e7490;text-decoration:underline}

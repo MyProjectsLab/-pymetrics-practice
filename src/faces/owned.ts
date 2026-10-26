@@ -1,3 +1,4 @@
+import { SITE_FOOTER_TEXT } from '../design/siteFooter'
 import facesCss from './style.css?inline'
 import headerCss from '../design/site-header.css?inline'
 import { loadGameFonts } from '../design/gameFonts'
@@ -6,7 +7,7 @@ const css = `${headerCss}\n${facesCss}`
 import {invariant} from './model'
 import {Ownership,wipe} from './ownership'
 
-type View={privateData?:object;title:string;paragraphs?:string[];notice?:string;content?:(mount:HTMLElement,add:(node:Node)=>void)=>void;actions?:{label:string;run:(event:MouseEvent)=>void;secondary?:boolean;disabled?:boolean}[];question?:boolean}
+type View={privateData?:object;title:string;eyebrow?:string;paragraphs?:string[];notice?:string;content?:(mount:HTMLElement,add:(node:Node)=>void)=>void;actions?:{label:string;run:(event:MouseEvent)=>void;secondary?:boolean;disabled?:boolean}[];question?:boolean}
 type Snapshot={node:Node;children:Node[];data:{attrs:string|null;text:string|null}}
 const attrs=(node:Element)=>JSON.stringify([...node.attributes].map(a=>[a.name,a.value]).sort(([a],[b])=>a.localeCompare(b)))
 const snapshot=(node:Node):Snapshot[]=>{
@@ -95,13 +96,13 @@ export class OwnedStage {
   if(this.mockReturn){const back=document.createElement('button');back.type='button';back.textContent='Return to mock';this.on(back,'click',this.mockReturn);header.append(back)}
   const heading=document.createElement('h1');heading.tabIndex=-1;heading.textContent=view.title
   const panel=view.question?frame:document.createElement('section');if(!view.question)panel.className='panel'
-  frame.append(header);panel.append(heading)
+  frame.append(header);if(view.eyebrow){const eyebrow=document.createElement('p');eyebrow.className='eyebrow';eyebrow.textContent=view.eyebrow;panel.append(eyebrow)}panel.append(heading)
   const privacy:HTMLElement[]=[]
   for(const line of view.paragraphs??[]){const p=document.createElement('p');p.textContent=line;if(!view.question&&line.includes('Privacy')){p.className='assessment-usage-notice';const parts=line.split('Privacy');const link=document.createElement('a');link.href='/privacy.html';link.textContent='Privacy';p.replaceChildren(document.createTextNode(parts[0]),link,document.createTextNode(parts.slice(1).join('Privacy')));privacy.push(p)}else panel.append(p)}
   if(view.notice){const note=document.createElement('p');note.className='notice';note.textContent=view.notice;panel.append(note)}
   view.content?.(panel,n=>panel.append(n))
-  if(view.actions?.length){const nav=document.createElement('nav');nav.className='actions';for(const action of view.actions){const button=document.createElement('button');button.type='button';button.textContent=this.mockReturn&&['Close','Back to library','Back to mock'].includes(action.label)?'Return to mock':action.label;button.disabled=!!action.disabled;if(action.secondary)button.className='secondary';this.on(button,'click',action.run);if(!view.question&&action.label==='Main menu'){const top=document.createElement('div');top.className='journey-top';const arrow=document.createElement('span');arrow.setAttribute('aria-hidden','true');arrow.textContent='← ';button.prepend(arrow);const label=document.createElement('p');label.textContent='Faces · Practice';top.append(button,label);frame.append(top)}else nav.append(button)}panel.append(nav)}
-  if(!view.question){panel.append(...privacy);frame.append(panel)}
+  if(view.actions?.length){const nav=document.createElement('nav'),extras=document.createElement('nav');nav.className='actions';extras.className='actions';for(const action of view.actions){const button=document.createElement('button');button.type='button';button.textContent=this.mockReturn&&['Close','Back to library','Back to mock'].includes(action.label)?'Return to mock':action.label;button.disabled=!!action.disabled;if(action.secondary)button.className='secondary';this.on(button,'click',action.run);if(!view.question&&action.label==='Main menu'){const top=document.createElement('div');top.className='journey-top';const arrow=document.createElement('span');arrow.setAttribute('aria-hidden','true');arrow.textContent='← ';button.prepend(arrow);const label=document.createElement('p');label.textContent='Faces · Practice';top.append(button,label);frame.append(top)}else if(view.eyebrow&&action.label!=='Continue')extras.append(button);else nav.append(button)}panel.append(nav);if(extras.childNodes.length){const details=document.createElement('details'),summary=document.createElement('summary');details.className='start-options';summary.textContent='Examples and saved results';details.append(summary,extras);panel.append(details)}}
+  if(!view.question){panel.append(...privacy);frame.append(panel);const footer=document.createElement('footer');footer.className='site-footer';footer.textContent=SITE_FOOTER_TEXT;frame.append(footer)}
   this.register(frame);view.content=undefined
   this.mount.replaceChildren(frame)
   this.capture()

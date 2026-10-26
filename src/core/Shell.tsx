@@ -1,3 +1,4 @@
+import { SITE_FOOTER_TEXT } from '../design/siteFooter'
 import type { ReactNode } from 'react'
 import { Wordmark } from '../design/Wordmark'
 import '../design/tokens.css'
@@ -13,7 +14,7 @@ export function Shell({ children, onLibrary }: { children: ReactNode; onLibrary:
       {mockContext&&<button data-mock-return-intent onClick={onLibrary}>Return to mock</button>}
     </header>
     <main id="main-content" tabIndex={-1}>{children}</main>
-    <footer className="site-footer">Original preparation exercises. Follow the instructions in your invitation.</footer>
+    <footer className="site-footer">{SITE_FOOTER_TEXT}</footer>
   </>
 }
 
