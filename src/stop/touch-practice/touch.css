@@ -1,11 +1,11 @@
 .touch-example-response { min-height: 72px; min-width: 160px; touch-action: manipulation; }
-.touch-practice { position: fixed; inset: 0; z-index: 30; height: 100dvh; box-sizing: border-box; background: #f6f7f3; display: grid; grid-template-rows: auto auto minmax(128px, 1fr) auto; gap: 12px; padding: max(8px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(8px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left)); overflow: hidden; }
+.touch-practice { position: fixed; inset: 0; z-index: 30; height: 100dvh; box-sizing: border-box; background: #ffffff; display: grid; grid-template-rows: auto auto minmax(128px, 1fr) auto; gap: 12px; padding: max(8px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(8px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left)); overflow: hidden; }
 .touch-practice-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 48px; }
 .touch-practice-header span { font-weight: 700; font-size: .9rem; }
 .touch-exit { min-height: 44px; min-width: 100px; padding: 7px 12px; }
 .touch-practice-reminder { text-align: center; margin: 0; font-size: .95rem; }
 .touch-practice-board { width: 128px; height: 128px; place-self: center; }
-.touch-practice[data-phase="ready"] .touch-practice-board::before { content: "Symbol appears here"; box-sizing: border-box; width: 128px; height: 128px; border: 1px dashed #82978a; border-radius: 12px; display: grid; place-items: center; padding: 12px; text-align: center; color: #52645e; }
+.touch-practice[data-phase="ready"] .touch-practice-board::before { content: "Symbol appears here"; box-sizing: border-box; width: 128px; height: 128px; border: 1px dashed #c9cfdd; border-radius: 12px; display: grid; place-items: center; padding: 12px; text-align: center; color: #4a5368; }
 .touch-practice-board svg { display: block; width: 128px; height: 128px; }
 .touch-practice-actions { display: grid; justify-items: center; gap: 8px; padding-bottom: 4px; }
 .touch-response { width: min(100%, 440px); min-height: 88px; font-size: 1.35rem; font-weight: 700; touch-action: manipulation; }

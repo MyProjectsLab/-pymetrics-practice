@@ -41,7 +41,7 @@ function toStartableSetup() {
     fireEvent.keyDown(capture, { code, key: direction })
     fireEvent.keyUp(capture, { code, key: direction })
   }
-  expect(screen.getByRole('button', { name: 'Start Block 1' })).toBeEnabled()
+  expect(screen.getByRole('button', { name: 'Start practice' })).toBeEnabled()
 }
 function inertExclusive() {
   return { presentationHost: document.createElement('fieldset'), enter: () => {}, leave: () => {} } as unknown as ExclusiveArrowsDocument
@@ -132,7 +132,7 @@ it('reuses an uncertain committed Start request instead of consuming the next fo
   render(<ArrowsJourney onLibrary={() => {}} exclusive={inertExclusive()} />)
   await savedResults()
   toStartableSetup()
-  fireEvent.click(screen.getByRole('button', { name: 'Start Block 1' }))
+  fireEvent.click(screen.getByRole('button', { name: 'Start practice' }))
   await screen.findByText('Start could not be confirmed. Injected arm readback failure')
   expect(screen.getByText(/A form may already be reserved/)).toBeInTheDocument()
   expect(backend.root.scoredStartCountV11).toBe(1)
@@ -157,7 +157,7 @@ it('does not carry an uncertain Start request into a changed input profile', asy
   render(<ArrowsJourney onLibrary={() => {}} exclusive={inertExclusive()} />)
   await savedResults()
   toStartableSetup()
-  fireEvent.click(screen.getByRole('button', { name: 'Start Block 1' }))
+  fireEvent.click(screen.getByRole('button', { name: 'Start practice' }))
   await screen.findByText('Start could not be confirmed. Injected readback failure')
 
   fireEvent.click(screen.getByRole('button', { name: 'Review setup' }))
@@ -297,7 +297,7 @@ it('cancels held entry preparation in place and restores the same checked React 
   render(<ArrowsJourney onLibrary={onLibrary} exclusive={exclusive} />, { container })
   await savedResults()
   toStartableSetup()
-  fireEvent.click(screen.getByRole('button', { name: 'Start Block 1' }))
+  fireEvent.click(screen.getByRole('button', { name: 'Start practice' }))
   await waitFor(() => expect(begin).toHaveBeenCalledOnce())
   expect(container.isConnected).toBe(false)
   act(() => exit())
@@ -382,7 +382,7 @@ it('keeps the exclusive document protected when Continue republishes a break aft
   } as unknown as ExclusiveArrowsDocument
   render(<ArrowsJourney onLibrary={() => {}} exclusive={exclusive} />, { container })
   await savedResults(); toStartableSetup()
-  await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Start Block 1' })) })
+  await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Start practice' })) })
   await waitFor(() => expect(state).toBeDefined())
   const finishBlock = () => {
     for (let index = 0; index < 27; index++) {

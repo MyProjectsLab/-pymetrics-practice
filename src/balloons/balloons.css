@@ -2,15 +2,15 @@
 .balloons-journey button { min-height: 48px; margin: .35rem .5rem .35rem 0; }
 .balloons-journey fieldset { margin-block: 1rem; }
 .balloons-journey label { display: block; margin-block: .8rem; }
-.balloons-journey :focus-visible { outline: 3px solid #173f86; outline-offset: 4px; }
+.balloons-journey :focus-visible { outline: 3px solid #0891b2; outline-offset: 4px; }
 .balloons-types { display: flex; flex-wrap: wrap; gap: 2rem; }
 /* Balloon geometry follows committed successes only; the stage reserves space for its largest size. */
 .balloons-identity { display: grid; justify-items: center; gap: .35rem; margin: 0 auto 1rem; width: min(100%, 300px); }
 .balloons-identity-compact { width: 145px; margin: 0; }
 .balloon-art { display: block; width: 100%; aspect-ratio: 1; overflow: hidden; pointer-events: none; }
 .balloon-inflatable { transform-origin: 160px 266px; transition: transform 150ms ease-out; }
-.balloons-identity-label { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: .45rem; font-size: .85rem; line-height: 1.5; color: #52665b; }
-.balloons-identity-label strong { font-weight: 650; color: #203f36; }
+.balloons-identity-label { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: .45rem; font-size: .85rem; line-height: 1.5; color: #4a5368; }
+.balloons-identity-label strong { font-weight: 650; color: #14213d; }
 .balloons-identity-label span::before { content: '·'; padding-right: .45rem; }
 .balloon-shard { transform: translate(var(--shard-x), var(--shard-y)) rotate(var(--shard-angle)); animation: balloon-break-apart 260ms ease-out both; }
 @keyframes balloon-break-apart { from { transform: translate(0, 0) rotate(0deg); opacity: .45; } to { transform: translate(var(--shard-x), var(--shard-y)) rotate(var(--shard-angle)); opacity: 1; } }
@@ -26,9 +26,11 @@
 @media (max-width: 480px) { .balloons-play .balloons-identity { width: min(100%, 250px); } .balloons-types { gap: 1rem; } }
 .balloons-table { max-width: 100%; overflow-x: auto; margin-block: 1rem; }
 .balloons-table table { border-collapse: collapse; width: 100%; font-size: .9rem; }
-.balloons-table th, .balloons-table td { padding: .65rem; border-bottom: 1px solid #bbcbd3; text-align: left; }
+.balloons-table th, .balloons-table td { padding: .65rem; border-bottom: 1px solid #e4e7ef; text-align: left; }
 .balloons-table th { font-weight: 650; }
-.balloons-history-item { padding-block: 1rem; border-block-end: 1px solid #bbcbd3; }
+.balloons-history-item { padding-block: 1rem; border-block-end: 1px solid #e4e7ef; }
 @media (prefers-reduced-motion: reduce) { .balloons-journey * { animation: none !important; transition: none !important; } }
 .journey.balloons-journey { max-width: 70rem; }
 .balloons-journey .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+
+.balloons-actions button[data-control="collect"], .balloons-journey .panel:has(> .balloons-types) > button:not(:last-child), .balloons-journey .panel:has(> .balloons-identity) > button:not(:last-child) { background: transparent; border-color: transparent; color: #14213d; text-decoration: underline; text-underline-offset: 4px; }

@@ -54,7 +54,7 @@ async function setup() {
     return arm.state
   })
   const mounted = render(<ArrowsJourney onLibrary={() => {}} exclusive={inertExclusive()} />); await act(async () => {}); ready()
-  fireEvent.click(screen.getByRole('button', { name: 'Start Block 1' })); await waitFor(() => expect(runner).toBeDefined())
+  fireEvent.click(screen.getByRole('button', { name: 'Start practice' })); await waitFor(() => expect(runner).toBeDefined())
   await act(async () => (runner as unknown as { publish: (state: State) => void }).publish(state))
   await screen.findByRole('heading', { name: 'Block complete' })
   return { store, backend, arm, state, runner, mounted }
@@ -143,7 +143,7 @@ it('old retirement cannot erase a replacement controller with a reused session I
     terminal.terminalState = state; terminal.captureTerminal()
     return arm.state
   })
-  ready(); fireEvent.click(screen.getByRole('button', { name: 'Start Block 1' }))
+  ready(); fireEvent.click(screen.getByRole('button', { name: 'Start practice' }))
   await waitFor(() => expect(newer).toBeDefined())
   await act(async () => (newer as unknown as { publish: (state: State) => void }).publish(state))
   await waitFor(() => expect(document.querySelector('[data-arrows-published-session]')).not.toBeNull())

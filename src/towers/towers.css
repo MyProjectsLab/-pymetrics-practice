@@ -15,9 +15,9 @@
   min-height: 175px; border: 2px solid transparent; border-radius: 8px;
   background: transparent; color: inherit; padding: .2rem; }
 button.towers-tower { margin: 0; cursor: pointer; }
-button.towers-tower:hover:not(:disabled), .towers-picked { border-color: #234e66; }
+button.towers-tower:hover:not(:disabled), .towers-picked { border-color: #0e7490; }
 .towers-picked .towers-disk:last-child { transform: translateY(-10px); box-shadow: 0 5px 7px #18314855; }
-button.towers-tower:focus-visible { outline: 4px solid #ba5e0f; outline-offset: 3px; }
+button.towers-tower:focus-visible { outline: 4px solid #0891b2; outline-offset: 3px; }
 .towers-target .towers-tower { min-height: 80px; }
 .towers-stack { display: flex; flex-direction: column-reverse; align-items: stretch;
   justify-content: end; min-height: 160px; gap: 3px; }
@@ -41,7 +41,7 @@ button.towers-tower:focus-visible { outline: 4px solid #ba5e0f; outline-offset: 
 .towers-key-controls p { margin: .3rem 0; }
 .towers-key-controls summary { cursor: pointer; min-height: 36px; }
 .towers-example { display: flex; justify-content: space-between; gap: 1rem; margin: 1rem 0;
-  padding: 1rem; background: #f1f5f6; }
+  padding: 1rem; background: #f2fafc; }
 .towers-journey li { margin: .8rem 0; }
 @media (max-width: 520px) {
   .towers-target { width: 100%; }

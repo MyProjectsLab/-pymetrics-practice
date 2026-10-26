@@ -10,11 +10,11 @@
 .easy-hard-options { display: flex; align-items: center; justify-content: center; gap: clamp(1rem, 5vw, 3rem); flex-wrap: wrap; margin: 2rem auto; }
 .easy-hard-options button { min-width: 135px; min-height: 130px; border-radius: 14px; line-height: 1.6; }
 .easy-hard-options button:disabled { opacity: .68; }
-.easy-hard-options button.easy-hard-selected { outline: 4px solid #5b2e91; outline-offset: 3px; }
+.easy-hard-options button.easy-hard-selected { outline: 4px solid #0891b2; outline-offset: 3px; }
 .easy-hard-task { outline: none; display: grid; justify-items: center; gap: .7rem; }
-.easy-hard-task:focus-visible { outline: 4px solid #dc871e; outline-offset: 3px; }
+.easy-hard-task:focus-visible { outline: 4px solid #0891b2; outline-offset: 3px; }
 .easy-hard-bar { width: min(150px, 30vw); height: min(230px, 34vh); border: 3px solid #46566d; border-radius: 28px; overflow: hidden; display: flex; flex-direction: column-reverse; background: #fff; }
-.easy-hard-bar div { width: 100%; background: #13a9a0; transition: height 100ms linear; }
+.easy-hard-bar div { width: 100%; background: #0891b2; transition: height 100ms linear; }
 .easy-hard-table { overflow-x: auto; }
 .easy-hard-table table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
 .easy-hard-table th, .easy-hard-table td { text-align: left; border-bottom: 1px solid #c8d4db; padding: .6rem; }
@@ -22,3 +22,6 @@
 @media (max-width: 520px) { .easy-hard-options { gap: .5rem; } .easy-hard-options button { min-width: 126px; } }
 @media (prefers-reduced-motion: reduce) { .easy-hard-journey *, .easy-hard-journey *::before, .easy-hard-journey *::after { animation: none !important; transition: none !important; } }
 .easy-hard-reduced-motion *, .easy-hard-reduced-motion *::before, .easy-hard-reduced-motion *::after { animation: none !important; transition: none !important; }
+
+.easy-hard-options button { background: #fff; color: #14213d; border-color: #e4e7ef; }
+.easy-hard-options button:hover:not(:disabled) { background: #e3f6fa; border-color: #0891b2; }

@@ -993,7 +993,7 @@ export function ArrowsJourney({ onLibrary, exclusive, mock, reportTarget }: { on
   if(reportTarget&&step!=='report')return <Shell onLibrary={onLibrary}><section className="journey panel"><h1>Saved Arrows report</h1><p role={error||storageError?'alert':'status'}>{error||storageError||'Checking the exact retained result…'}</p><button onClick={onLibrary}>Return to mock</button></section></Shell>
   return <Shell onLibrary={mock?returnToMock:leave}>
     <div ref={journey} className="journey arrows-journey">
-      <div className="journey-top"><p>Arrows · Standalone Practice</p><button className="secondary" onClick={mock?returnToMock:leave}>{mock?'Return to mock':'Main menu'}</button></div>
+      <div className="journey-top"><p>Arrows · Practice</p><button className="secondary" onClick={mock?returnToMock:leave}>{mock?'Return to mock':'Main menu'}</button></div>
       {!preparationStarted.current&&!starting&&!startUncertain&&!uncertainStart.current&&isPreparationStep(step)&&(preparationBack.current.length>0||step==='examples'&&example>0)&&<button className="secondary" onClick={backPreparation}>Back</button>}
       {error && <p role="alert" className="feedback">{error}</p>}
       {mockError && step!=='report' && <p role="alert" className="feedback">{mockError} <button onClick={()=>leaveMockUnconfirmed()}>Leave with result unconfirmed</button></p>}
@@ -1043,7 +1043,7 @@ export function ArrowsJourney({ onLibrary, exclusive, mock, reportTarget }: { on
         </> : <><p>Press Left and Right below with the same primary pointer type.</p>
           <div className="actions"><button onPointerDown={event => pointerCheck(event, 'left')} onPointerUp={event => pointerRelease(event, 'left')} onPointerCancel={() => setPointerPending(null)}>Check Left</button><button onPointerDown={event => pointerCheck(event, 'right')} onPointerUp={event => pointerRelease(event, 'right')} onPointerCancel={() => setPointerPending(null)}>Check Right</button></div>
           <p role="status">{pointerSource ? `Detected ${pointerSource}. ` : ''}Left {checked.left ? 'passed' : 'needed'}; Right {checked.right ? 'passed' : 'needed'}.</p></>}
-        <div className="actions"><button disabled={!checked.left || !checked.right || spoken || !store || !orderedReportsAvailable || starting} onClick={() => void begin()}>{starting ? 'Checking Start' : retrySameStart ? 'Verify or retry same Start' : startUncertain ? 'Start with changed setup' : mode === 'keyboard' && checked.left && checked.right ? 'Start Block 1' : 'Start'}</button></div>
+        <div className="actions"><button disabled={!checked.left || !checked.right || spoken || !store || !orderedReportsAvailable || starting} onClick={() => void begin()}>{starting ? 'Checking Start' : retrySameStart ? 'Verify or retry same Start' : startUncertain ? 'Start with changed setup' : mode === 'keyboard' && checked.left && checked.right ? 'Start practice' : 'Start'}</button></div>
         <div className="arrows-setup-links">
           {mode === 'keyboard' && <><button className="arrows-setup-link" aria-expanded={setupPanel === 'keys'} aria-controls="arrows-key-options" onClick={() => setSetupPanel(setupPanel === 'keys' ? null : 'keys')}>Use other keys</button><span aria-hidden="true">·</span></>}
           <button className="arrows-setup-link" aria-expanded={setupPanel === 'controls'} aria-controls="arrows-control-options" onClick={() => setSetupPanel(setupPanel === 'controls' ? null : 'controls')}>{mode === 'keyboard' ? 'Use mouse or touch' : 'Use keyboard'}</button><span aria-hidden="true">·</span>

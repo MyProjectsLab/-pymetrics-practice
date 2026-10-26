@@ -16,9 +16,9 @@
 .cards-face-revealed { background: #fff; color: #173754; border-color: #bdcbd8; display: flex; flex-direction: column; }
 .cards-face-revealed strong { font-size: 1.4rem; }
 .cards-decks { display: grid; grid-template-columns: repeat(4, minmax(100px, 1fr)); gap: clamp(.5rem, 2vw, 1.5rem); max-width: 700px; margin: .75rem auto 1rem; }
-.cards-deck { min-height: 160px; border: 3px solid #d9e4e9; border-radius: 12px; background: #fff; color: #173754; box-shadow: 0 4px 12px #14253d24; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .5rem; font-size: 1.1rem; font-weight: 750; cursor: pointer; }
+.cards-deck { min-height: 160px; border: 3px solid #e4e7ef; border-radius: 12px; background: #fff; color: #173754; box-shadow: 0 4px 12px #14253d24; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .5rem; font-size: 1.1rem; font-weight: 750; cursor: pointer; }
 .cards-deck:disabled { opacity: .68; cursor: wait; }
-.cards-deck:focus-visible { outline: 4px solid #ed8c2d; outline-offset: 3px; }
+.cards-deck:focus-visible { outline: 4px solid #0891b2; outline-offset: 3px; }
 .cards-deck-art { width: 70%; min-height: 90px; border-radius: 8px; display: grid; place-items: center; background: repeating-linear-gradient(140deg, #203f67 0 11px, #295177 11px 18px); color: white; font-size: 2.1rem; }
 .cards-totals { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem 1rem; }
 .cards-totals p { margin: 0; padding: .9rem; background: #eff6f5; border-radius: 8px; }

@@ -7,7 +7,7 @@
 .lengths-display [data-lengths-owned] { width: min(100%, 34rem); gap: .3rem; }
 .lengths-display button[data-direction] { margin-inline: .45rem; min-width: 7rem; }
 .lengths-example { display: flex; justify-content: center; gap: clamp(.5rem, 4vw, 2rem);
-  padding: 1.5rem .5rem; background: #f6f7f3; border-radius: .7rem; }
+  padding: 1.5rem .5rem; background: #f2fafc; border-radius: .7rem; }
 .lengths-example-bar { display: grid; place-items: center; height: 2rem;
   border-top: .75rem solid #111; font-size: .8rem; font-weight: 700; box-sizing: border-box; }
 .lengths-visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0;

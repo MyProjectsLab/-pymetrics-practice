@@ -53,7 +53,7 @@ async function setup() {
     return arm.state
   })
   const mounted = render(<ArrowsJourney onLibrary={() => {}} exclusive={inertExclusive()} />); await act(async () => {}); ready()
-  fireEvent.click(screen.getByRole('button', { name: 'Start Block 1' })); await waitFor(() => expect(runner).toBeDefined())
+  fireEvent.click(screen.getByRole('button', { name: 'Start practice' })); await waitFor(() => expect(runner).toBeDefined())
   await act(async () => (runner as unknown as { publish: (state: State) => void }).publish(state))
   await screen.findByRole('heading', { name: 'Block complete' })
   return { store, backend, arm, state, runner, mounted }

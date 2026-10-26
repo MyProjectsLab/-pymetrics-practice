@@ -14,7 +14,7 @@ afterEach(()=>{cleanup();vi.restoreAllMocks();if(locks)Object.defineProperty(nav
 async function mount(attempts?:readonly ArmedAttempt[]){const backend=new RegisterBackend(),store=new ArrowsStore(backend,backend.root.installationId);vi.spyOn(ArrowsStore,'open').mockResolvedValue(store);if(attempts)vi.spyOn(store,'listAttempts').mockResolvedValue(attempts);const menu=vi.fn();const exclusive={presentationHost:document.createElement('div'),enter:vi.fn(),leave:vi.fn()}as unknown as ExclusiveArrowsDocument;render(<ArrowsJourney onLibrary={menu} exclusive={exclusive}/>);await screen.findByRole('heading',{name:/^Arrows$/});await act(async()=>{});return{store,menu,backend}}
 function toSetup(){fireEvent.click(screen.getByRole('button',{name:/^Continue$/}));fireEvent.click(screen.getByLabelText('Follow the four side arrows and use my first eligible response before the deadline'));fireEvent.click(screen.getByRole('button',{name:'Check answers'}))}
 function pair(code:string,extra={}){const group=screen.getByRole('group',{name:'Arrows physical key capture'});fireEvent.keyDown(group,{code,...extra});fireEvent.keyUp(group,{code,...extra})}
-const start=()=>screen.getByRole('button',{name:/^Start(?: Block 1)?$/})
+const start=()=>screen.getByRole('button',{name:/^Start(?: practice)?$/})
 it.each([['ArrowLeft','ArrowRight'],['ArrowRight','ArrowLeft']])('checks both directions in either order: %s then %s',async(first,second)=>{await mount();toSetup();expect(screen.getByRole('group',{name:'Arrows physical key capture'})).toHaveFocus();pair(first);expect(start()).toBeDisabled();pair(second);await waitFor(()=>expect(start()).toBeEnabled());expect(screen.getByText('Left: checked · Right: checked')).toBeInTheDocument()})
 it('one direction repeated cannot satisfy both',async()=>{await mount();toSetup();pair('ArrowLeft');pair('ArrowLeft');expect(start()).toBeDisabled();expect(screen.getByText('Left: checked · Right: waiting')).toBeInTheDocument()})
 it.each([{repeat:true},{shiftKey:true},{ctrlKey:true},{altKey:true},{metaKey:true}])('rejects a repeated or modified pair %j',async extra=>{await mount();toSetup();pair('ArrowLeft',extra);pair('ArrowRight');expect(start()).toBeDisabled()})
@@ -43,7 +43,7 @@ it('arriving at setup accepts both arrows on document.body without a click', asy
  }
  expect(screen.getByRole('heading',{name:'Both keys work.'})).toBeInTheDocument()
  expect(screen.getAllByText('✓ CHECKED')).toHaveLength(2)
- expect(screen.getByRole('button',{name:'Start Block 1'})).toBeEnabled()
+ expect(screen.getByRole('button',{name:'Start practice'})).toBeEnabled()
 })
 it('arrows focused on the mode radio check the keys without changing mode', async () => {
  await mount();toSetup();fireEvent.click(screen.getByRole('button',{name:'Use mouse or touch'}))
@@ -56,7 +56,7 @@ it('arrows focused on the mode radio check the keys without changing mode', asyn
  expect(keyboard).toBeChecked()
  expect(screen.getByRole('radio',{name:'Mouse, touch or pen buttons'})).not.toBeChecked()
  expect(screen.getAllByText('✓ CHECKED')).toHaveLength(2)
- expect(screen.getByRole('button',{name:'Start Block 1'})).toBeEnabled()
+ expect(screen.getByRole('button',{name:'Start practice'})).toBeEnabled()
 })
 it('Check again refocuses capture even while the same check is active', async () => {
  await mount();toSetup();const retry=screen.getByRole('button',{name:'Check again'})

@@ -1,6 +1,6 @@
 .arrows-journey { max-width: 54rem; }
 .arrows-display { width: 100%; min-height: 15rem; margin-block: 1rem; padding: 1rem;
-  border: 2px solid #587568; border-radius: .8rem; background: #fff; box-sizing: border-box;
+  border: 1px solid #e4e7ef; border-radius: .8rem; background: #fff; box-sizing: border-box;
   display: grid; place-items: center; text-align: center; }
 .arrows-display [data-arrows-stage] { width: 100%; display: grid; gap: 1.3rem; justify-items: center; }
 .arrows-display [data-arrows-cue] { display: block; font-size: clamp(1.15rem, 3vw, 1.6rem); }
@@ -9,7 +9,7 @@
   width: clamp(2rem, 8vw, 3.5rem); height: clamp(2rem, 8vw, 3.5rem); font-weight: 700; }
 .arrows-display button[data-direction] { margin-inline: .45rem; min-width: 7rem; }
 .arrows-example { display: flex; justify-content: center; gap: clamp(.25rem, 2vw, 1rem);
-  padding: 1.5rem .5rem; background: #f6f7f3; border-radius: .7rem; }
+  padding: 1.5rem .5rem; background: #f2fafc; border-radius: .7rem; }
 .arrows-example span { display: grid; place-items: center; width: clamp(2rem, 10vw, 3.5rem);
   height: clamp(2rem, 10vw, 3.5rem); font-size: clamp(1.4rem, 6vw, 2.5rem); }
 .arrows-example .target { outline: 2px solid currentColor; }
@@ -30,5 +30,5 @@
 .arrows-key-tile.is-checked { background: #e0f7fa; border-color: #008ba3; color: #005e6e; }
 .arrows-setup-links { display: flex; align-items: baseline; flex-wrap: wrap; gap: .35rem .65rem; margin-block: .5rem 1rem; }
 .arrows-journey .arrows-setup-link { display: inline; border: 0; border-radius: 0; padding: .25rem 0;
-  min-height: 0; background: transparent; color: #52635d; font: inherit; font-size: .9rem; text-decoration: underline; }
-.arrows-journey .arrows-setup-link:hover { color: #123e42; background: transparent; }
+  min-height: 0; background: transparent; color: #4a5368; font: inherit; font-size: .9rem; text-decoration: underline; }
+.arrows-journey .arrows-setup-link:hover { color: #0e7490; background: transparent; }
