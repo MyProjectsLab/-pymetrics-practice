@@ -11,18 +11,26 @@ import { reconcileHeadless } from './versions'
 import { ArrowsStore, freshArrowsRoot } from './storage'
 import type { ArrowsBackend, ArmedAttempt, ArrowsRoot, StartRequest } from './storage'
 
+async function savedResults(ui: Pick<typeof screen, 'queryByText' | 'getByRole'> = screen) {
+  await act(async () => {})
+  const details = ui.queryByText('Examples and saved results')?.closest('details')
+  if (details && !details.open) fireEvent.click(details.querySelector('summary')!)
+  return ui.getByRole('button', { name: 'Saved results' })
+}
 const originalLocks = Object.getOwnPropertyDescriptor(navigator, 'locks')
-beforeEach(() => Object.defineProperty(navigator, 'locks', {
+beforeEach(() => { vi.spyOn(document, 'hasFocus').mockReturnValue(true); Object.defineProperty(navigator, 'locks', {
   configurable: true,
   value: { request: <T,>(_name: string, _options: object, callback: (lock: object) => Promise<T>) =>
     Promise.resolve().then(() => callback({})) },
-}))
+}) })
 afterEach(() => { cleanup(); vi.restoreAllMocks(); Reflect.deleteProperty(Element.prototype, 'scrollIntoView')
   if (originalLocks) Object.defineProperty(navigator, 'locks', originalLocks)
   else Reflect.deleteProperty(navigator, 'locks') })
 
 function toStartableSetup() {
-  fireEvent.click(screen.getByRole('button', { name: 'Try more examples' }))
+  const options=screen.getByText('Examples and saved results').closest('details')!
+  if(!options.open)fireEvent.click(options.querySelector('summary')!)
+  fireEvent.click(screen.getByRole('button', { name: 'See an example' }))
   fireEvent.click(screen.getByRole('button', { name: 'Next example' }))
   fireEvent.click(screen.getByRole('button', { name: 'Next example' }))
   fireEvent.click(screen.getByRole('button', { name: 'Check understanding' }))
@@ -30,11 +38,10 @@ function toStartableSetup() {
   fireEvent.click(screen.getByRole('button', { name: 'Check answers' }))
   const capture = screen.getByRole('group', { name: 'Arrows physical key capture' })
   for (const [direction, code] of [['Left', 'ArrowLeft'], ['Right', 'ArrowRight']] as const) {
-    fireEvent.click(screen.getByRole('button', { name: `Check ${direction} key` }))
     fireEvent.keyDown(capture, { code, key: direction })
     fireEvent.keyUp(capture, { code, key: direction })
   }
-  expect(screen.getByRole('button', { name: 'Start' })).toBeEnabled()
+  expect(screen.getByRole('button', { name: 'Start Block 1' })).toBeEnabled()
 }
 function inertExclusive() {
   return { presentationHost: document.createElement('fieldset'), enter: () => {}, leave: () => {} } as unknown as ExclusiveArrowsDocument
@@ -46,10 +53,10 @@ it('keeps the newer example screen when a held history read finishes late', asyn
   vi.spyOn(ArrowsStore, 'open').mockResolvedValue(store)
   const listing = vi.spyOn(store, 'listAttempts').mockReturnValue(
     new Promise(resolve => { deliver = resolve }))
-  render(<ArrowsJourney onLibrary={() => {}} />)
-  fireEvent.click(await screen.findByRole('button', { name: 'Arrows history' }))
+  render(<ArrowsJourney onLibrary={() => {}} exclusive={inertExclusive()} />)
+  fireEvent.click(await savedResults())
   await waitFor(() => expect(listing).toHaveBeenCalledOnce())
-  fireEvent.click(screen.getByRole('button', { name: 'Try more examples' }))
+  fireEvent.click(screen.getByRole('button', { name: 'See an example' }))
   await act(async () => { deliver([]) })
   expect(screen.getByRole('heading', { name: 'Worked example 1 of 3' })).toBeInTheDocument()
   expect(screen.queryByRole('heading', { name: 'Arrows history' })).not.toBeInTheDocument()
@@ -75,8 +82,8 @@ it('does not open a report from a read delivered after page exit', async () => {
   const reading = vi.spyOn(store, 'loadArmed').mockReturnValue(new Promise(resolve => { deliver = resolve }))
   vi.spyOn(store, 'appendReportView').mockResolvedValue({} as never)
   vi.spyOn(store, 'subscribeDeletion').mockReturnValue(() => {})
-  render(<ArrowsJourney onLibrary={() => {}} />)
-  fireEvent.click(await screen.findByRole('button', { name: 'Arrows history' }))
+  render(<ArrowsJourney onLibrary={() => {}} exclusive={inertExclusive()} />)
+  fireEvent.click(await savedResults())
   fireEvent.click(await screen.findByRole('button', { name: 'Review saved trials' }))
   await waitFor(() => expect(reading).toHaveBeenCalledOnce())
   fireEvent(window, new Event('pagehide'))
@@ -88,8 +95,8 @@ it('does not open a report from a read delivered after page exit', async () => {
 it('fails closed for saved history when browser lock support is unavailable', async () => {
   Object.defineProperty(navigator, 'locks', { configurable: true, value: undefined })
   vi.spyOn(ArrowsStore, 'open').mockResolvedValue(Object.assign(Object.create(ArrowsStore.prototype), { installationId: 'installation', authority: new ArrowsAuthority('installation') }) as ArrowsStore)
-  render(<ArrowsJourney onLibrary={() => {}} />)
-  const history = await screen.findByRole('button', { name: 'Arrows history' })
+  render(<ArrowsJourney onLibrary={() => {}} exclusive={inertExclusive()} />)
+  const history = await savedResults()
   expect(history).toBeDisabled()
   expect(screen.getByText(/cannot verify saved Arrows reports/)).toBeInTheDocument()
   expect(screen.getByRole('button', { name: 'Delete all Arrows data' })).toBeInTheDocument()
@@ -123,9 +130,9 @@ it('reuses an uncertain committed Start request instead of consuming the next fo
   })
 
   render(<ArrowsJourney onLibrary={() => {}} exclusive={inertExclusive()} />)
-  await screen.findByRole('button', { name: 'Arrows history' })
+  await savedResults()
   toStartableSetup()
-  fireEvent.click(screen.getByRole('button', { name: 'Start' }))
+  fireEvent.click(screen.getByRole('button', { name: 'Start Block 1' }))
   await screen.findByText('Start could not be confirmed. Injected arm readback failure')
   expect(screen.getByText(/A form may already be reserved/)).toBeInTheDocument()
   expect(backend.root.scoredStartCountV11).toBe(1)
@@ -148,16 +155,16 @@ it('does not carry an uncertain Start request into a changed input profile', asy
     throw Error('Injected readback failure')
   })
   render(<ArrowsJourney onLibrary={() => {}} exclusive={inertExclusive()} />)
-  await screen.findByRole('button', { name: 'Arrows history' })
+  await savedResults()
   toStartableSetup()
-  fireEvent.click(screen.getByRole('button', { name: 'Start' }))
+  fireEvent.click(screen.getByRole('button', { name: 'Start Block 1' }))
   await screen.findByText('Start could not be confirmed. Injected readback failure')
 
   fireEvent.click(screen.getByRole('button', { name: 'Review setup' }))
+  fireEvent.click(screen.getByRole('button', { name: 'Accessibility' }))
   fireEvent.click(screen.getByRole('checkbox', { name: /alternative or assistive input method/ }))
   const capture = screen.getByRole('group', { name: 'Arrows physical key capture' })
   for (const [direction, code] of [['Left', 'ArrowLeft'], ['Right', 'ArrowRight']] as const) {
-    fireEvent.click(screen.getByRole('button', { name: `Check ${direction} key` }))
     fireEvent.keyDown(capture, { code, key: direction })
     fireEvent.keyUp(capture, { code, key: direction })
   }
@@ -195,8 +202,8 @@ it('shows the observed direction in an invalid attempt event review', async () =
   vi.spyOn(store, 'appendReportView').mockResolvedValue({} as never)
   vi.spyOn(store, 'subscribeDeletion').mockReturnValue(() => {})
 
-  render(<ArrowsJourney onLibrary={() => {}} />)
-  fireEvent.click(await screen.findByRole('button', { name: 'Arrows history' }))
+  render(<ArrowsJourney onLibrary={() => {}} exclusive={inertExclusive()} />)
+  fireEvent.click(await savedResults())
   fireEvent.click(await screen.findByRole('button', { name: 'Open report' }))
   await screen.findByRole('heading', { name: 'Arrows report' })
   fireEvent.click(await screen.findByText('Detailed numbers'))
@@ -239,8 +246,8 @@ it('shows the form version, one-decimal percentages and a positive signed contra
   vi.spyOn(store, 'appendReportView').mockResolvedValue({} as never)
   vi.spyOn(store, 'subscribeDeletion').mockReturnValue(() => {})
 
-  render(<ArrowsJourney onLibrary={() => {}} />)
-  fireEvent.click(await screen.findByRole('button', { name: 'Arrows history' }))
+  render(<ArrowsJourney onLibrary={() => {}} exclusive={inertExclusive()} />)
+  fireEvent.click(await savedResults())
   fireEvent.click(await screen.findByRole('button', { name: 'Open report' }))
   await screen.findByRole('heading', { name: 'Arrows report' })
   fireEvent.click(await screen.findByText('Detailed numbers'))
@@ -258,17 +265,17 @@ it('does not adopt an obsolete Delete all completion after navigation changes', 
   const replacementHistory = vi.spyOn(replacement, 'listAttempts').mockResolvedValue([])
   vi.spyOn(first, 'deleteAll').mockReturnValue(new Promise(resolve => { finishDeletion = resolve }))
 
-  render(<ArrowsJourney onLibrary={() => {}} />)
-  fireEvent.click(await screen.findByRole('button', { name: 'Arrows history' }))
+  render(<ArrowsJourney onLibrary={() => {}} exclusive={inertExclusive()} />)
+  fireEvent.click(await savedResults())
   await screen.findByRole('heading', { name: 'Arrows history' })
   fireEvent.click(screen.getByRole('button', { name: 'Delete all Arrows data' }))
   fireEvent.click(screen.getByRole('button', { name: 'Delete all Arrows data' }))
   fireEvent.click(screen.getByRole('button', { name: 'Start a new practice' }))
   await act(async () => { finishDeletion(replacement) })
 
-  expect(screen.getByRole('heading', { name: 'Follow the cue' })).toBeInTheDocument()
+  expect(screen.getByRole('heading', { name: 'Arrows' })).toBeInTheDocument()
   expect(screen.queryByText('All local Arrows data were deleted.')).not.toBeInTheDocument()
-  fireEvent.click(screen.getByRole('button', { name: 'Arrows history' }))
+  fireEvent.click(await savedResults())
   await screen.findByRole('heading', { name: 'Arrows history' })
   expect(replacementHistory).not.toHaveBeenCalled()
 })
@@ -288,9 +295,9 @@ it('cancels held entry preparation in place and restores the same checked React 
     leave: () => { if (!container.isConnected) document.body.append(container) },
   } as unknown as ExclusiveArrowsDocument
   render(<ArrowsJourney onLibrary={onLibrary} exclusive={exclusive} />, { container })
-  await screen.findByRole('button', { name: 'Arrows history' })
+  await savedResults()
   toStartableSetup()
-  fireEvent.click(screen.getByRole('button', { name: 'Start' }))
+  fireEvent.click(screen.getByRole('button', { name: 'Start Block 1' }))
   await waitFor(() => expect(begin).toHaveBeenCalledOnce())
   expect(container.isConnected).toBe(false)
   act(() => exit())
@@ -306,13 +313,13 @@ it('cancels held entry preparation in place and restores the same checked React 
 it('requires fresh input checks when readiness returns from the browser page cache', async () => {
   const store = Object.assign(Object.create(ArrowsStore.prototype), { installationId: 'installation', authority: new ArrowsAuthority('installation') }) as ArrowsStore
   vi.spyOn(ArrowsStore, 'open').mockResolvedValue(store)
-  render(<ArrowsJourney onLibrary={() => {}} />)
-  await screen.findByRole('button', { name: 'Arrows history' })
+  render(<ArrowsJourney onLibrary={() => {}} exclusive={inertExclusive()} />)
+  await savedResults()
   toStartableSetup()
   fireEvent(window, new PageTransitionEvent('pageshow', { persisted: true }))
-  expect(screen.getByRole('heading', { name: 'Ready for Arrows' })).toBeInTheDocument()
+  expect(screen.getByRole('heading', { name: 'Press ← then → on your keyboard.' })).toBeInTheDocument()
   expect(screen.getByRole('button', { name: 'Start' })).toBeDisabled()
-  expect(screen.getByRole('group', { name: 'Arrows physical key capture' })).toHaveTextContent('Left needed; Right needed')
+  expect(screen.getByRole('group', { name: 'Arrows physical key capture' })).toHaveTextContent('Left: waiting · Right: waiting')
 })
 
 it('confirms history publication inside the retained closed-root journey', async () => {
@@ -324,9 +331,9 @@ it('confirms history publication inside the retained closed-root journey', async
   const shadow = host.attachShadow({ mode: 'closed' })
   const container = document.createElement('div')
   shadow.append(container)
-  render(<ArrowsJourney onLibrary={() => {}} />, { container })
+  render(<ArrowsJourney onLibrary={() => {}} exclusive={inertExclusive()} />, { container })
   const ui = within(container)
-  fireEvent.click(await ui.findByRole('button', { name: 'Arrows history' }))
+  fireEvent.click(await savedResults(ui))
   await ui.findByRole('heading', { name: 'Arrows history' })
   expect(document.querySelector('[data-arrows-history-installation]')).toBeNull()
   expect(ui.getByText('No retained Arrows attempts in this browser.')).toBeInTheDocument()
@@ -374,8 +381,8 @@ it('keeps the exclusive document protected when Continue republishes a break aft
     enter: () => { active = true; container.remove() }, leave,
   } as unknown as ExclusiveArrowsDocument
   render(<ArrowsJourney onLibrary={() => {}} exclusive={exclusive} />, { container })
-  await screen.findByRole('button', { name: 'Arrows history' }); toStartableSetup()
-  await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Start' })) })
+  await savedResults(); toStartableSetup()
+  await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Start Block 1' })) })
   await waitFor(() => expect(state).toBeDefined())
   const finishBlock = () => {
     for (let index = 0; index < 27; index++) {

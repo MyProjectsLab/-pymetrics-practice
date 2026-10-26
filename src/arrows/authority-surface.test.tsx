@@ -1,26 +1,35 @@
 import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react'
-import { afterEach, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, expect, it, vi } from 'vitest'
 import { ArrowsJourney } from './Journey'
 import { ArrowsBrowserRun } from './browser'
 import { advance } from './versions'
 import type { State } from './versions'
 import { ArrowsStore, freshArrowsRoot } from './storage'
 import type { ArrowsBackend, ArrowsRoot, ArmedAttempt } from './storage'
+async function savedResults(ui: Pick<typeof screen, 'queryByText' | 'getByRole'> = screen) {
+  await act(async () => {})
+  const details = ui.queryByText('Examples and saved results')?.closest('details')
+  if (details && !details.open) fireEvent.click(details.querySelector('summary')!)
+  return ui.getByRole('button', { name: 'Saved results' })
+}
+beforeEach(() => vi.spyOn(document, 'hasFocus').mockReturnValue(true))
+function inertExclusive() { return { presentationHost: document.createElement('div'), enter: () => {}, leave: () => {} } as unknown as import('./exclusive-document').ExclusiveArrowsDocument }
 const originalLocks = Object.getOwnPropertyDescriptor(navigator, 'locks')
 afterEach(() => { cleanup(); vi.restoreAllMocks(); vi.unstubAllGlobals(); Reflect.deleteProperty(Element.prototype, 'scrollIntoView')
   if (originalLocks) Object.defineProperty(navigator, 'locks', originalLocks); else Reflect.deleteProperty(navigator, 'locks') })
 function barrier<T>() { let release!: (value: T) => void; const promise = new Promise<T>(done => { release = done }); return { release, promise } }
 function ready() {
-  for (const name of ['See examples', 'Next example', 'Next example', 'Check understanding']) { const button = screen.queryByRole('button', { name }); if (button) fireEvent.click(button) }
-  fireEvent.click(screen.getByLabelText('The four arrows at positions 1, 2, 4 and 5'))
-  fireEvent.click(screen.getByLabelText('The first eligible Left or Right response before the deadline'))
-  fireEvent.click(screen.getByLabelText('On blue and black rows I follow the middle arrow.'))
-  fireEvent.click(screen.getByRole('button', { name: 'Check answers' })); fireEvent.click(screen.getByRole('button', { name: 'Set up input' }))
+  const options=screen.getByText('Examples and saved results').closest('details')!
+  if(!options.open)fireEvent.click(options.querySelector('summary')!)
+  for (const name of ['See an example', 'Next example', 'Next example', 'Check understanding']) { const button=screen.queryByRole('button', { name }); if(button)fireEvent.click(button) }
+  fireEvent.click(screen.getByLabelText('Follow the four side arrows and use my first eligible response before the deadline'))
+  fireEvent.click(screen.getByRole('button', { name: 'Check answers' }))
   const capture = screen.getByRole('group', { name: 'Arrows physical key capture' })
-  for (const dir of ['Left', 'Right']) { fireEvent.click(screen.getByRole('button', { name: `Check ${dir} key` }))
-    fireEvent.keyDown(capture, { code: 'Arrow' + dir }); fireEvent.keyUp(capture, { code: 'Arrow' + dir }) }
-  fireEvent.click(screen.getByRole('button', { name: 'Continue to readiness' }))
+  for (const dir of ['Left', 'Right']) {
+    fireEvent.keyDown(capture, { code: 'Arrow' + dir }); fireEvent.keyUp(capture, { code: 'Arrow' + dir })
+  }
 }
+
 async function setup() {
   Object.defineProperty(navigator, 'locks', { configurable: true, value: { request: (_name: string, _options: object, work: () => Promise<unknown>) => Promise.resolve().then(work) } })
   Object.defineProperty(Element.prototype, 'scrollIntoView', { configurable: true, value: () => {} })
@@ -44,8 +53,8 @@ async function setup() {
     internal.state = state; internal.attempt = arm; internal.checkpointRevision = snapshot.revision
     return arm.state
   })
-  const mounted = render(<ArrowsJourney onLibrary={() => {}} />); await act(async () => {}); ready()
-  fireEvent.click(screen.getByRole('button', { name: 'Start Arrows' })); await waitFor(() => expect(runner).toBeDefined())
+  const mounted = render(<ArrowsJourney onLibrary={() => {}} exclusive={inertExclusive()} />); await act(async () => {}); ready()
+  fireEvent.click(screen.getByRole('button', { name: 'Start Block 1' })); await waitFor(() => expect(runner).toBeDefined())
   await act(async () => (runner as unknown as { publish: (state: State) => void }).publish(state))
   await screen.findByRole('heading', { name: 'Block complete' })
   return { store, backend, arm, state, runner, mounted }
@@ -58,8 +67,8 @@ for (const surface of ['live', 'history'] as const) for (const deletion of ['ind
     const append = x.store.appendReportView.bind(x.store)
     vi.spyOn(x.store, 'appendReportView').mockImplementation(async (...args) => { await delivery.promise; return append(...args) })
     if (surface === 'live') fireEvent.click(screen.getByRole('button', { name: 'End attempt and review saved trials' }))
-    else { fireEvent.click(screen.getByRole('button', { name: 'Back to library' })); x.mounted.unmount()
-      render(<ArrowsJourney onLibrary={() => {}} />); fireEvent.click(await screen.findByRole('button', { name: 'Arrows history' }))
+    else { fireEvent.click(screen.getByRole('button', { name: 'Main menu' })); x.mounted.unmount()
+      render(<ArrowsJourney onLibrary={() => {}} exclusive={inertExclusive()} />); fireEvent.click(await savedResults())
       fireEvent.click(await screen.findByRole('button', { name: 'Review saved trials' })) }
     await waitFor(() => expect(document.querySelector('[data-arrows-published-session]')).not.toBeNull())
     await waitFor(() => expect(x.store.appendReportView).toHaveBeenCalled())
@@ -110,7 +119,7 @@ for (const outcome of ['success', 'operational', 'negative'] as const)
     await waitFor(() => expect(document.querySelector('[data-arrows-published-session]')).not.toBeNull())
     const handle = x.runner.recovery()!.authority!
     fireEvent.click(screen.getByRole('button', { name: 'Replay from guide' }))
-    fireEvent.click(screen.getByRole('button', { name: 'See examples' }))
+    fireEvent.click(screen.getByRole('button', { name: 'See an example' }))
     const heading = screen.getByRole('heading', { name: 'Worked example 3 of 3' }); heading.focus()
     if (outcome === 'negative') { const remote = new ArrowsStore({ read: () => x.backend.read(), change: work => x.backend.change(work) }, x.backend.root.installationId); await remote.deleteAttempt('session') }
     await act(async () => { held.release() })
@@ -128,8 +137,8 @@ it('history reattachment receives previously recorded retirement before publicat
   await x.store.deleteAttempt('session')
   vi.spyOn(x.store, 'listAttempts').mockResolvedValue([retained!])
   const reading = vi.spyOn(x.store, 'loadArmed'), writing = vi.spyOn(x.store, 'saveSnapshot')
-  render(<ArrowsJourney onLibrary={() => {}} />)
-  fireEvent.click(await screen.findByRole('button', { name: 'Arrows history' }))
+  render(<ArrowsJourney onLibrary={() => {}} exclusive={inertExclusive()} />)
+  fireEvent.click(await savedResults())
   fireEvent.click(await screen.findByRole('button', { name: 'Review saved trials' }))
   await screen.findByText('This attempt is no longer available. No numbers are shown.')
   expect(document.querySelector('[data-arrows-authority-handle]')?.getAttribute('data-arrows-authority-handle')).toBe(handle.id)
@@ -197,8 +206,8 @@ it('late original-Store activity negative reaches the identical report attached 
   const reopened = new ArrowsStore(x.backend, x.backend.root.installationId)
   vi.spyOn(ArrowsStore, 'open').mockResolvedValue(reopened)
   vi.spyOn(reopened, 'appendReportView').mockReturnValue(new Promise(() => {}))
-  render(<ArrowsJourney onLibrary={() => {}} />)
-  fireEvent.click(await screen.findByRole('button', { name: 'Arrows history' }))
+  render(<ArrowsJourney onLibrary={() => {}} exclusive={inertExclusive()} />)
+  fireEvent.click(await savedResults())
   fireEvent.click(await screen.findByRole('button', { name: 'Review saved trials' }))
   await waitFor(() => expect(document.querySelector('[data-arrows-published-session]')).not.toBeNull())
   expect(document.querySelector('[data-arrows-authority-handle]')?.getAttribute('data-arrows-authority-handle')).toBe(handle.id)
@@ -306,7 +315,7 @@ for (const kind of ['same revision', 'higher history'] as const) it(`blocked rep
   expect(await screen.findByText('All local Arrows data were deleted.')).toBeInTheDocument()
   expect(handle.status()).toMatchObject({ kind: 'retired', evidence: 'installation_replaced' })
   expect(x.backend.root).toEqual({ ...freshArrowsRoot(), installationId: replacement.installationId })
-  expect(screen.getByRole('button', { name: 'See examples' })).toBeInTheDocument()
+  expect(screen.getByRole('button', { name: 'See an example' })).toBeInTheDocument()
   await expect(x.store.deleteAll()).rejects.toThrow('installation replaced')
   expect(x.backend.root).toEqual(replacement)
 })

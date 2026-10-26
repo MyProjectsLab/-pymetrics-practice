@@ -117,6 +117,7 @@ export function ArrowsJourney({ onLibrary, exclusive, mock, reportTarget }: { on
   const [rightCode, setRightCode] = useState('ArrowRight')
   const [checked, setChecked] = useState({ left: false, right: false })
   const [capture, setCapture] = useState<Capture>(null)
+  const [setupPanel, setSetupPanel] = useState<'keys' | 'controls' | 'accessibility' | null>(null)
   const [capturedDown, setCapturedDown] = useState<string | null>(null)
   const observedDown = useRef<KeyboardEvent | null>(null)
   const [pointerSource, setPointerSource] = useState<PointerSource | null>(null)
@@ -541,6 +542,7 @@ export function ArrowsJourney({ onLibrary, exclusive, mock, reportTarget }: { on
     retireSetupChoice();setCapturedDown(null);observedDown.current=null
     if(next==='check-both')setChecked({left:false,right:false})
     setCapture(next);setError('')
+    requestAnimationFrame(() => captureTarget.current?.focus())
   }
   function captureDown(event: ReactKeyboardEvent<HTMLDivElement>) {
     if (event.code === 'Tab' || !capture) return
@@ -580,6 +582,24 @@ export function ArrowsJourney({ onLibrary, exclusive, mock, reportTarget }: { on
     observedDown.current=null;setCapturedDown(null);setError('')
     if(nextChecked.left&&nextChecked.right)setCapture(null)
   }
+  useEffect(() => {
+    if (step === 'setup' && mode === 'keyboard') startCapture('check-both')
+  }, [step, mode])
+  const captureHandlers = useRef({ down: captureDown, up: captureUp })
+  captureHandlers.current = { down: captureDown, up: captureUp }
+  useEffect(() => {
+    if (step !== 'setup' || mode !== 'keyboard' || capture !== 'check-both') return
+    const wrap = (e: KeyboardEvent) => ({ code: e.code, repeat: e.repeat, altKey: e.altKey, ctrlKey: e.ctrlKey,
+      metaKey: e.metaKey, shiftKey: e.shiftKey, nativeEvent: e,
+      preventDefault: () => e.preventDefault(), stopPropagation: () => e.stopPropagation()
+    }) as unknown as ReactKeyboardEvent<HTMLDivElement>
+    const ours = (e: KeyboardEvent) => e.code === leftCode || e.code === rightCode
+    const outside = (e: KeyboardEvent) => !captureTarget.current?.contains(e.target as Node)
+    const down = (e: KeyboardEvent) => { if (!ours(e) || !outside(e)) return; captureHandlers.current.down(wrap(e)); captureTarget.current?.focus() }
+    const up = (e: KeyboardEvent) => { if (ours(e) && outside(e)) captureHandlers.current.up(wrap(e)) }
+    window.addEventListener('keydown', down, true); window.addEventListener('keyup', up, true)
+    return () => { window.removeEventListener('keydown', down, true); window.removeEventListener('keyup', up, true) }
+  }, [step, mode, capture, leftCode, rightCode])
   function pointerCheck(event: ReactPointerEvent<HTMLButtonElement>, direction: 'left' | 'right') {
     if (!event.isPrimary || event.button !== 0 || !['mouse', 'touch', 'pen'].includes(event.pointerType)) return
     const source = event.pointerType as PointerSource
@@ -1005,27 +1025,42 @@ export function ArrowsJourney({ onLibrary, exclusive, mock, reportTarget }: { on
         <label className="choice"><input type="radio" name="arrow-quiz" checked={quiz === 'center'} onChange={() => {setQuiz('center');setFirstResponseRule('last')}} />Follow the middle arrow and use my last response</label>
         <label className="choice"><input type="radio" name="arrow-quiz" checked={quiz === 'outer'} onChange={() => {setQuiz('outer');setFirstResponseRule('first')}} />Follow the four side arrows and use my first eligible response before the deadline</label></fieldset>
         <div className="actions"><button onClick={() => { if (quiz === 'outer' && firstResponseRule === 'first') { skipSource.current=null;setError(''); prepare('setup') } else setError('On red rows follow the four side arrows; your first eligible response before the deadline counts. Try again.') }}>Check answers</button></div></section>}
-      {step === 'setup' && <section className="panel"><h1 ref={heading} tabIndex={-1}>Ready for Arrows</h1>
-        <p>Press and release each arrow button once, then select Start.</p>
+      {step === 'setup' && <section className="panel"><h1 ref={heading} tabIndex={-1}>{mode === 'keyboard'
+        ? checked.left && checked.right ? 'Both keys work.' : checked.left ? `Good. Now press ${rightCode === 'ArrowRight' ? '→' : keyLabel(rightCode)}.` : checked.right ? `Good. Now press ${leftCode === 'ArrowLeft' ? '←' : keyLabel(leftCode)}.` : leftCode === 'ArrowLeft' && rightCode === 'ArrowRight' ? 'Press ← then → on your keyboard.' : `Press ${keyLabel(leftCode)} then ${keyLabel(rightCode)}.`
+        : 'Ready for Arrows'}</h1>
         {startUncertain && <p role="status">The earlier Start may already have reserved a form. Keep this input setup to verify or retry that same request. Changing input settings requires a new Start request and may use the next form.</p>}
-        <details className="start-options"><summary>Choose controls</summary>        <label className="choice"><input type="radio" name="arrow-mode" checked={mode === 'keyboard'} onChange={() => { retireSetupChoice();setMode('keyboard'); setChecked({ left: false, right: false });setCapture('check-both') }} />Keyboard</label>
-        <label className="choice"><input type="radio" name="arrow-mode" checked={mode === 'pointer'} onChange={() => { retireSetupChoice();setMode('pointer'); setChecked({ left: false, right: false });setCapture(null);setPointerSource(null) }} />Mouse, touch or pen buttons</label>
-</details>
-        <p className="current-controls">{mode==='keyboard'?`Using ${keyLabel(leftCode)} for Left and ${keyLabel(rightCode)} for Right`:`Using ${pointerSource??'mouse, touch or pen'} buttons`}</p>
-        {mode === 'keyboard' ? <><details className="start-options"><summary>Use different keyboard buttons</summary>
-          <div className="actions"><button className="secondary" onClick={() => startCapture('left')}>Change Left button</button><button className="secondary" onClick={() => startCapture('right')}>Change Right button</button></div></details><div className="actions"><button onClick={() => startCapture('check-both')}>Test arrow buttons</button></div>
-          <div ref={captureTarget} className="key-capture" tabIndex={0} role="group" aria-label="Arrows physical key capture" onKeyDown={captureDown} onKeyUp={captureUp}>
-            {capture==='left'||capture==='right'?<p>Press and release the new {capture==='left'?'Left':'Right'} button. Escape cancels.</p>:<><p>{capture?`Press and release ${keyLabel(leftCode)} and ${keyLabel(rightCode)}, one at a time.`:checked.left&&checked.right?'Both buttons checked.':'Select Test arrow buttons to check again.'}</p><p role="status">Left: {checked.left?'checked':'waiting'} · Right: {checked.right?'checked':'waiting'}</p>{capture&&<p>Escape cancels.</p>}</>}
-
-          </div></> : <><p>Press Left and Right below with the same primary pointer type.</p>
+        {mode === 'keyboard' ? <>
+          <div ref={captureTarget} className="key-capture arrows-key-capture" tabIndex={0} role="group" aria-label="Arrows physical key capture" onKeyDown={captureDown} onKeyUp={captureUp}>
+            <div className="arrows-key-tiles">{(['left', 'right'] as const).map(direction => <div key={direction} className={`arrows-key-tile${checked[direction] ? ' is-checked' : ''}`}>
+              <span className="arrows-key-symbol" aria-hidden="true">{direction === 'left' ? '←' : '→'}</span>
+              <span>{checked[direction] ? '✓ CHECKED' : 'PRESS IT'}</span>
+            </div>)}</div>
+            {(leftCode !== 'ArrowLeft' || rightCode !== 'ArrowRight') && <p className="current-controls">Using {keyLabel(leftCode)} for Left and {keyLabel(rightCode)} for Right</p>}
+            {(capture === 'left' || capture === 'right') && <p>Press and release the new {capture === 'left' ? 'Left' : 'Right'} button. Escape cancels.</p>}
+            <p role="status" className="arrows-visually-hidden">Left: {checked.left ? 'checked' : 'waiting'} · Right: {checked.right ? 'checked' : 'waiting'}</p>
+          </div>
+          <button className="arrows-setup-link" onClick={() => startCapture('check-both')}>Check again</button>
+        </> : <><p>Press Left and Right below with the same primary pointer type.</p>
           <div className="actions"><button onPointerDown={event => pointerCheck(event, 'left')} onPointerUp={event => pointerRelease(event, 'left')} onPointerCancel={() => setPointerPending(null)}>Check Left</button><button onPointerDown={event => pointerCheck(event, 'right')} onPointerUp={event => pointerRelease(event, 'right')} onPointerCancel={() => setPointerPending(null)}>Check Right</button></div>
           <p role="status">{pointerSource ? `Detected ${pointerSource}. ` : ''}Left {checked.left ? 'passed' : 'needed'}; Right {checked.right ? 'passed' : 'needed'}.</p></>}
-        <details className="start-options"><summary>Accessibility settings</summary><label className="choice"><input type="checkbox" checked={alternative} onChange={event => { retireSetupChoice();setAlternative(event.target.checked); setChecked({ left: false, right: false }) }} />I use an alternative or assistive input method; it may change response timing.</label>
-        <label className="choice"><input type="checkbox" checked={spoken} onChange={event => {retireSetupChoice();setSpoken(event.target.checked)}} />I need spoken interpretation of the arrows during timed play.</label>
-        <label className="choice"><input type="checkbox" checked={reducedMotion} onChange={event => {retireSetupChoice();setReducedMotion(event.target.checked)}} />Reduce nonessential motion.</label>
-        </details>{(spoken||alternative)&&<p role="alert">{spoken?disclosure:'Alternative controls selected; timing is reported separately.'}</p>}
-        <div className="actions"><button disabled={!checked.left || !checked.right || spoken || !store || !orderedReportsAvailable || starting} onClick={() => void begin()}>{starting ? 'Checking Start' : retrySameStart ? 'Verify or retry same Start' : startUncertain ? 'Start with changed setup' : 'Start'}</button></div>
-        {(!checked.left || !checked.right) && <p>Test both directions to enable Start.</p>}</section>}
+        <div className="actions"><button disabled={!checked.left || !checked.right || spoken || !store || !orderedReportsAvailable || starting} onClick={() => void begin()}>{starting ? 'Checking Start' : retrySameStart ? 'Verify or retry same Start' : startUncertain ? 'Start with changed setup' : mode === 'keyboard' && checked.left && checked.right ? 'Start Block 1' : 'Start'}</button></div>
+        <div className="arrows-setup-links">
+          {mode === 'keyboard' && <><button className="arrows-setup-link" aria-expanded={setupPanel === 'keys'} aria-controls="arrows-key-options" onClick={() => setSetupPanel(setupPanel === 'keys' ? null : 'keys')}>Use other keys</button><span aria-hidden="true">·</span></>}
+          <button className="arrows-setup-link" aria-expanded={setupPanel === 'controls'} aria-controls="arrows-control-options" onClick={() => setSetupPanel(setupPanel === 'controls' ? null : 'controls')}>{mode === 'keyboard' ? 'Use mouse or touch' : 'Use keyboard'}</button><span aria-hidden="true">·</span>
+          <button className="arrows-setup-link" aria-expanded={setupPanel === 'accessibility'} aria-controls="arrows-accessibility-options" onClick={() => setSetupPanel(setupPanel === 'accessibility' ? null : 'accessibility')}>Accessibility</button>
+        </div>
+        {setupPanel === 'keys' && mode === 'keyboard' && <div id="arrows-key-options" className="start-options">
+          <div className="actions"><button className="secondary" onClick={() => startCapture('left')}>Change Left button</button><button className="secondary" onClick={() => startCapture('right')}>Change Right button</button></div>
+        </div>}
+        {setupPanel === 'controls' && <div id="arrows-control-options" className="start-options">
+          <label className="choice"><input type="radio" name="arrow-mode" checked={mode === 'keyboard'} onChange={() => { retireSetupChoice();setMode('keyboard'); setChecked({ left: false, right: false });setCapture('check-both') }} />Keyboard</label>
+          <label className="choice"><input type="radio" name="arrow-mode" checked={mode === 'pointer'} onChange={() => { retireSetupChoice();setMode('pointer'); setChecked({ left: false, right: false });setCapture(null);setPointerSource(null) }} />Mouse, touch or pen buttons</label>
+        </div>}
+        {setupPanel === 'accessibility' && <div id="arrows-accessibility-options" className="start-options"><label className="choice"><input type="checkbox" checked={alternative} onChange={event => { retireSetupChoice();setAlternative(event.target.checked); setChecked({ left: false, right: false }) }} />I use an alternative or assistive input method; it may change response timing.</label>
+          <label className="choice"><input type="checkbox" checked={spoken} onChange={event => {retireSetupChoice();setSpoken(event.target.checked)}} />I need spoken interpretation of the arrows during timed play.</label>
+          <label className="choice"><input type="checkbox" checked={reducedMotion} onChange={event => {retireSetupChoice();setReducedMotion(event.target.checked)}} />Reduce nonessential motion.</label>
+        </div>}{(spoken||alternative)&&<p role="alert">{spoken?disclosure:'Alternative controls selected; timing is reported separately.'}</p>}
+      </section>}
       {step === 'ready' && <section className="panel"><h1 ref={heading} tabIndex={-1}>Ready for Block 1?</h1>
         <p>Keep this tab visible and focused once you start. A hidden, blurred or interrupted scored block becomes review-only. The breaks after each block are untimed.</p>
         <p>Input: {mode === 'keyboard' ? `${leftCode} = Left; ${rightCode} = Right` : `${pointerSource} controls`} {alternative ? '(alternative input declared)' : ''}.</p>

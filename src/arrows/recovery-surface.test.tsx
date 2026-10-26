@@ -1,26 +1,35 @@
 import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react'
-import { afterEach, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, expect, it, vi } from 'vitest'
 import { ArrowsJourney } from './Journey'
 import { ArrowsBrowserRun } from './browser'
 import { advance } from './versions'
 import type { State } from './versions'
 import { ArrowsStore, freshArrowsRoot } from './storage'
 import type { ArrowsBackend, ArrowsRoot, ArmedAttempt } from './storage'
+async function savedResults(ui: Pick<typeof screen, 'queryByText' | 'getByRole'> = screen) {
+  await act(async () => {})
+  const details = ui.queryByText('Examples and saved results')?.closest('details')
+  if (details && !details.open) fireEvent.click(details.querySelector('summary')!)
+  return ui.getByRole('button', { name: 'Saved results' })
+}
+beforeEach(() => vi.spyOn(document, 'hasFocus').mockReturnValue(true))
+function inertExclusive() { return { presentationHost: document.createElement('div'), enter: () => {}, leave: () => {} } as unknown as import('./exclusive-document').ExclusiveArrowsDocument }
 const originalLocks = Object.getOwnPropertyDescriptor(navigator, 'locks')
 afterEach(() => { cleanup(); vi.restoreAllMocks(); Reflect.deleteProperty(Element.prototype, 'scrollIntoView')
   if (originalLocks) Object.defineProperty(navigator, 'locks', originalLocks); else Reflect.deleteProperty(navigator, 'locks') })
 function barrier<T>() { let release!: (value: T) => void; const promise = new Promise<T>(done => { release = done }); return { release, promise } }
 function ready() {
-  for (const name of ['See examples', 'Next example', 'Next example', 'Check understanding']) { const button = screen.queryByRole('button', { name }); if (button) fireEvent.click(button) }
-  fireEvent.click(screen.getByLabelText('The four arrows at positions 1, 2, 4 and 5'))
-  fireEvent.click(screen.getByLabelText('The first eligible Left or Right response before the deadline'))
-  fireEvent.click(screen.getByLabelText('On blue and black rows I follow the middle arrow.'))
-  fireEvent.click(screen.getByRole('button', { name: 'Check answers' })); fireEvent.click(screen.getByRole('button', { name: 'Set up input' }))
+  const options=screen.getByText('Examples and saved results').closest('details')!
+  if(!options.open)fireEvent.click(options.querySelector('summary')!)
+  for (const name of ['See an example', 'Next example', 'Next example', 'Check understanding']) { const button=screen.queryByRole('button', { name }); if(button)fireEvent.click(button) }
+  fireEvent.click(screen.getByLabelText('Follow the four side arrows and use my first eligible response before the deadline'))
+  fireEvent.click(screen.getByRole('button', { name: 'Check answers' }))
   const capture = screen.getByRole('group', { name: 'Arrows physical key capture' })
-  for (const dir of ['Left', 'Right']) { fireEvent.click(screen.getByRole('button', { name: `Check ${dir} key` }))
-    fireEvent.keyDown(capture, { code: 'Arrow' + dir }); fireEvent.keyUp(capture, { code: 'Arrow' + dir }) }
-  fireEvent.click(screen.getByRole('button', { name: 'Continue to readiness' }))
+  for (const dir of ['Left', 'Right']) {
+    fireEvent.keyDown(capture, { code: 'Arrow' + dir }); fireEvent.keyUp(capture, { code: 'Arrow' + dir })
+  }
 }
+
 async function setup() {
   Object.defineProperty(navigator, 'locks', { configurable: true, value: { request: (_name: string, _options: object, work: () => Promise<unknown>) => Promise.resolve().then(work) } })
   Object.defineProperty(Element.prototype, 'scrollIntoView', { configurable: true, value: () => {} })
@@ -44,8 +53,8 @@ async function setup() {
     internal.state = state; internal.attempt = arm; internal.checkpointRevision = snapshot.revision
     return arm.state
   })
-  const mounted = render(<ArrowsJourney onLibrary={() => {}} />); await act(async () => {}); ready()
-  fireEvent.click(screen.getByRole('button', { name: 'Start Arrows' })); await waitFor(() => expect(runner).toBeDefined())
+  const mounted = render(<ArrowsJourney onLibrary={() => {}} exclusive={inertExclusive()} />); await act(async () => {}); ready()
+  fireEvent.click(screen.getByRole('button', { name: 'Start Block 1' })); await waitFor(() => expect(runner).toBeDefined())
   await act(async () => (runner as unknown as { publish: (state: State) => void }).publish(state))
   await screen.findByRole('heading', { name: 'Block complete' })
   return { store, backend, arm, state, runner, mounted }
@@ -68,7 +77,7 @@ for (const deletion of ['individual', 'all'] as const) for (const readFirst of [
       if (failure) throw failure
       return value
     })
-    fireEvent.click(screen.getByRole('button', { name: 'End attempt and review known prefix' }))
+    fireEvent.click(screen.getByRole('button', { name: 'End attempt and review saved trials' }))
     await waitFor(() => expect(calls).toBe(1))
     // The initial request and a queued retry coalesce; deadline permits a new operation.
     fireEvent.click(screen.getByRole('button', { name: 'Verify or retry saved prefix' }))
@@ -97,10 +106,10 @@ for (const deletion of ['individual', 'all'] as const) for (const readFirst of [
   }, 6000)
 it('a detached confirmed controller retirement cannot replace a newer preparatory surface or steal focus', async () => {
   const x = await setup()
-  fireEvent.click(screen.getByRole('button', { name: 'End attempt and review known prefix' }))
+  fireEvent.click(screen.getByRole('button', { name: 'End attempt and review saved trials' }))
   await waitFor(() => expect(document.querySelector('[data-arrows-published-session]')).not.toBeNull())
   fireEvent.click(screen.getByRole('button', { name: 'Replay from guide' }))
-  fireEvent.click(screen.getByRole('button', { name: 'See examples' }))
+  fireEvent.click(screen.getByRole('button', { name: 'See an example' }))
   const heading = screen.getByRole('heading', { name: 'Worked example 3 of 3' }); heading.focus()
   await act(async () => { x.backend.root.attempts = {}; x.backend.root.tombstones.session = 1001; x.backend.root.revision++; x.store.authority.observe(x.backend.root, x.store.authority.provenance('read')) })
   expect(screen.getByRole('heading', { name: 'Worked example 3 of 3' })).toBe(heading)
@@ -108,12 +117,12 @@ it('a detached confirmed controller retirement cannot replace a newer preparator
 })
 it('old retirement cannot erase a replacement controller with a reused session ID', async () => {
   const x = await setup(), held = barrier<ArmedAttempt | null>()
-  fireEvent.click(screen.getByRole('button', { name: 'End attempt and review known prefix' }))
+  fireEvent.click(screen.getByRole('button', { name: 'End attempt and review saved trials' }))
   await waitFor(() => expect(document.querySelector('[data-arrows-published-session]')).not.toBeNull())
   const reading = vi.spyOn(x.store, 'loadArmed').mockReturnValue(held.promise)
   const old = x.runner.recovery()!
   fireEvent.click(screen.getByRole('button', { name: 'Replay from guide' }))
-  fireEvent.click(screen.getByRole('button', { name: 'Arrows history' }))
+  fireEvent.click(await savedResults())
   await screen.findByRole('heading', { name: 'Arrows history' })
   fireEvent.click(screen.getByRole('button', { name: 'Delete all Arrows data' }))
   fireEvent.click(screen.getByRole('button', { name: 'Delete all Arrows data' }))
@@ -134,7 +143,7 @@ it('old retirement cannot erase a replacement controller with a reused session I
     terminal.terminalState = state; terminal.captureTerminal()
     return arm.state
   })
-  ready(); fireEvent.click(screen.getByRole('button', { name: 'Start Arrows' }))
+  ready(); fireEvent.click(screen.getByRole('button', { name: 'Start Block 1' }))
   await waitFor(() => expect(newer).toBeDefined())
   await act(async () => (newer as unknown as { publish: (state: State) => void }).publish(state))
   await waitFor(() => expect(document.querySelector('[data-arrows-published-session]')).not.toBeNull())
@@ -150,16 +159,16 @@ it('old retirement cannot erase a replacement controller with a reused session I
 it('unmount detaches publication while a late negative retires only its original controller', async () => {
   const x = await setup(), held = barrier<ArmedAttempt | null>()
   vi.spyOn(x.store, 'loadArmed').mockReturnValue(held.promise)
-  fireEvent.click(screen.getByRole('button', { name: 'End attempt and review known prefix' }))
+  fireEvent.click(screen.getByRole('button', { name: 'End attempt and review saved trials' }))
   const old = x.runner.recovery()!
   x.mounted.unmount()
   await x.store.deleteAttempt('session')
-  render(<ArrowsJourney onLibrary={() => {}} />)
-  await screen.findByRole('heading', { name: 'Follow the cue' })
-  const heading = screen.getByRole('heading', { name: 'Follow the cue' }); heading.focus()
+  render(<ArrowsJourney onLibrary={() => {}} exclusive={inertExclusive()} />)
+  await screen.findByRole('heading', { name: 'Arrows' })
+  const heading = screen.getByRole('heading', { name: 'Arrows' }); heading.focus()
   await act(async () => { held.release(null) })
   expect(old.outcome().kind).toBe('retired')
-  expect(screen.getByRole('heading', { name: 'Follow the cue' })).toBe(heading)
+  expect(screen.getByRole('heading', { name: 'Arrows' })).toBe(heading)
   expect(document.activeElement).toBe(heading)
   expect(document.querySelector('[data-arrows-published-session]')).toBeNull()
 })
@@ -168,7 +177,7 @@ it('unmount detaches publication while a late negative retires only its original
 it('retains an unconfirmed prefix on explicit Back and Replay until its save is verified', async () => {
   const x = await setup(), held = barrier<ArmedAttempt | null>()
   const reading = vi.spyOn(x.store, 'loadArmed').mockReturnValue(held.promise)
-  fireEvent.click(screen.getByRole('button', { name: 'End attempt and review known prefix' }))
+  fireEvent.click(screen.getByRole('button', { name: 'End attempt and review saved trials' }))
   const report = await screen.findByRole('heading', { name: 'Arrows report' })
   for (const label of ['Back to library', 'Replay from guide']) {
     fireEvent.click(screen.getAllByRole('button', { name: label }).at(-1)!)
@@ -180,7 +189,7 @@ it('retains an unconfirmed prefix on explicit Back and Replay until its save is 
   await act(async () => { held.release(await x.store.loadArmed(x.arm.sessionId)) })
   await waitFor(() => expect(document.querySelector('[data-arrows-published-session]')).not.toBeNull())
   fireEvent.click(screen.getByRole('button', { name: 'Replay from guide' }))
-  expect(screen.getByRole('heading', { name: 'Follow the cue' })).toBeInTheDocument()
+  expect(screen.getByRole('heading', { name: 'Arrows' })).toBeInTheDocument()
 })
 
 it('retains an unsaved terminal draft on explicit Back and Replay until retry confirms it', async () => {
@@ -202,5 +211,5 @@ it('retains an unsaved terminal draft on explicit Back and Replay until retry co
   await waitFor(() => expect(document.querySelector('[data-arrows-published-session]')).not.toBeNull())
   expect((await x.store.loadSnapshot(x.arm.sessionId))?.state).toEqual(draft)
   fireEvent.click(screen.getByRole('button', { name: 'Replay from guide' }))
-  expect(screen.getByRole('heading', { name: 'Follow the cue' })).toBeInTheDocument()
+  expect(screen.getByRole('heading', { name: 'Arrows' })).toBeInTheDocument()
 })

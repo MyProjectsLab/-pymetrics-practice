@@ -19,3 +19,16 @@
 @media (prefers-reduced-motion: reduce) {
   .arrows-journey *, .arrows-journey *::before, .arrows-journey *::after { animation: none !important; transition: none !important; }
 }
+
+/* Keyboard setup only: keep the response check prominent and options secondary. */
+.arrows-journey .arrows-key-capture { border: 0; padding: .5rem 0; margin: 1rem 0 .25rem; background: transparent; }
+.arrows-key-tiles { display: flex; gap: 1rem; }
+.arrows-key-tile { box-sizing: border-box; width: 96px; min-height: 84px; display: grid;
+  justify-items: center; align-content: center; gap: .25rem; border: 2px solid #aab3b5;
+  border-radius: .6rem; background: #fff; color: #26363b; font-size: .7rem; font-weight: 700; }
+.arrows-key-symbol { font-size: 2.3rem; line-height: 1; }
+.arrows-key-tile.is-checked { background: #e0f7fa; border-color: #008ba3; color: #005e6e; }
+.arrows-setup-links { display: flex; align-items: baseline; flex-wrap: wrap; gap: .35rem .65rem; margin-block: .5rem 1rem; }
+.arrows-journey .arrows-setup-link { display: inline; border: 0; border-radius: 0; padding: .25rem 0;
+  min-height: 0; background: transparent; color: #52635d; font: inherit; font-size: .9rem; text-decoration: underline; }
+.arrows-journey .arrows-setup-link:hover { color: #123e42; background: transparent; }
