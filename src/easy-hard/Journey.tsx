@@ -652,7 +652,7 @@ export function EasyHardJourney({ onLibrary, mock, reportTarget }: { onLibrary: 
   const taskTime = Math.max(0, (run?.events.findLast(event => event.kind === 'task_onset')?.taskDeadlineMs ?? 0) - now)
   if(reportTarget&&(step!=='report'||!report||!run))return <Shell onLibrary={onLibrary}><section className="journey panel"><h1>Saved Easy or Hard report</h1><p role={error?'alert':'status'}>{error||'Checking the exact retained result…'}</p><button onClick={onLibrary}>Return to mock</button></section></Shell>
   return <Shell onLibrary={leave}><div className={`journey easy-hard-journey${reduceMotion ? ' easy-hard-reduced-motion' : ''}`}>
-    <div className="journey-top"><p>Easy or Hard · Standalone Practice</p>
+    <div className="journey-top"><p>Easy or Hard · Practice</p>
       <button className="secondary" data-mock-return-intent={mock ? "" : undefined} onClick={leave}>{mock?'Return to mock':'Main menu'}</button></div>
     {error && <p role="alert">{error}</p>}
     {step === 'guide' && <AssessmentUsageNotice />}
