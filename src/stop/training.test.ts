@@ -1,5 +1,5 @@
 // @vitest-environment node
-import { describe, expect, it, vi } from 'vitest'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 import { routeStop, beginTrainingChain, updateTrainingChain, retainDrillAttempt, restoreTrainingChain, currentTrainingChain, recordDrillStarted, retryTrainingSave, trainingSaveStatus, storageDisclosure, TEMPORARY_DISCLOSURE } from './training'
 import type { StopResult } from './run'
 import type { DrillAttempt, TrainingChain } from './training'
@@ -7,6 +7,9 @@ import type { Counts } from './scoring'
 import { createMemoryExposureRepository } from './exposure'
 import { setStopLocalStore } from './storage'
 import type { LocalActivity, StopLocalStore } from './storage'
+
+// A failed assertion must not leave its active chain or persistence adapter for the next test.
+afterEach(() => { setStopLocalStore(null); restoreTrainingChain(null, true) })
 
 const half = (hits: number, falseAlarms: number): Counts => ({ hits, misses: 30 - hits, withholds: 10 - falseAlarms, falseAlarms })
 function baseline(first = half(28, 1), second = half(28, 1), values: {
