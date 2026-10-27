@@ -18,7 +18,8 @@
     "lengths:check": "node scripts/generate-lengths-forms.mjs --check",
     "typecheck": "tsc -b",
     "check": "npm run lint && npm test && npm run forms:check && npm run forms:v13:check && npm run drills:check && npm run arrows:check && npm run lengths:check && npm run digits:check && npm run build",
-    "digits:check": "node scripts/review-digits-v11-forms.mjs"
+    "digits:check": "node scripts/review-digits-v11-forms.mjs",
+    "test:e2e": "npm run build && node --test e2e/stop-trusted-key.test.mjs"
   },
   "dependencies": {
     "@fontsource-variable/inter": "5.3.0",
@@ -36,6 +37,7 @@
     "@vitejs/plugin-react": "^6.1.1",
     "jsdom": "^27.0.0",
     "oxlint": "^1.81.0",
+    "playwright": "1.58.0",
     "typescript": "~6.0.2",
     "vite": "^8.3.0",
     "vitest": "^4.0.18"
