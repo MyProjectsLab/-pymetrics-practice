@@ -121,3 +121,38 @@ it.each([training.TEMPORARY_DISCLOSURE,training.CHAIN_SAVE_FAILURE,'Training cha
  render(<StopJourney recorder={createPreparationRecorder('visible-storage-warning')} specificationVersion="1.3" onLibrary={vi.fn()} onRestart={vi.fn()} onReplay={vi.fn()}/>);
  expect(screen.getByText(notice)).toBeVisible();expect(screen.getByText(notice).closest('details')).toBeNull();expect(screen.getByText('Examples and previous practice').closest('details')).not.toHaveAttribute('open')
 })
+
+it('preserves the chosen latency restriction when a cached key proof is found after returning to the guide', async () => {
+  const proof: inputReceipt.KeyProof = { code: 'Space', trustedDown: true, trustedUp: true, sameCode: true,
+    unmodifiedDownAndUp: true, downWasNotRepeat: true, upWasNotRepeat: true }
+  const cached: inputReceipt.InputCheckReceipt = { schema: 'traitgame_input_check/1',
+    receiptId: '11111111-1111-4111-8111-111111111111', tabNonce: '22222222-2222-4222-8222-222222222222', originGame: 'stop',
+    controlProfile: { kind: 'physical_keyboard', physicalKeyboardDeclared: true, latencyAffectedInput: false,
+      timingProfile: 'standard', modifierPolicy: 'none', visualProfile: 'standard' }, entries: [proof], observedAtWallMs: 1 }
+  const read = vi.spyOn(inputReceipt, 'readInputReceipt').mockResolvedValue(cached).mockResolvedValueOnce(null)
+  const recorder = createPreparationRecorder('latency-cache-regression')
+  render(<StopJourney recorder={recorder} specificationVersion="1.3" mode="baseline"
+    onLibrary={vi.fn()} onRestart={vi.fn()} onReplay={vi.fn()} />)
+  const answer = () => {
+    fireEvent.click(screen.getByRole('button', { name: 'Continue' }))
+    fireEvent.click(screen.getByRole('radio', { name: 'Press Space once.' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Check' }))
+  }
+  answer()
+  await screen.findByRole('heading', { name: 'Test your keyboard' })
+  fireEvent.click(screen.getByText('Accessibility settings'))
+  fireEvent.click(screen.getByRole('checkbox', { name: 'My response method adds delay.' }))
+  expect(screen.getByRole('button', { name: 'Test my keyboard' })).toBeDisabled()
+  fireEvent.click(screen.getByRole('button', { name: 'Back' }))
+  answer()
+  await waitFor(() => expect(read).toHaveBeenCalledTimes(2))
+  // Inspect the retained setting even on the buggy path that incorrectly reaches readiness.
+  const incorrectlyReady = screen.queryByRole('heading', { name: 'Ready to begin?' })
+  if (incorrectlyReady) fireEvent.click(screen.getByRole('button', { name: 'Options' }))
+  await screen.findByRole('heading', { name: 'Test your keyboard' })
+  fireEvent.click(screen.getByText('Accessibility settings'))
+  expect(screen.getByRole('checkbox', { name: 'My response method adds delay.' })).toBeChecked()
+  expect(screen.getByRole('button', { name: 'Test my keyboard' })).toBeDisabled()
+  expect(incorrectlyReady).toBeNull()
+  expect(recorder.snapshot().some(event => event.type === 'input_check_v13' || event.type === 'readiness_confirmed')).toBe(false)
+})
