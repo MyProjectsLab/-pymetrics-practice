@@ -61,3 +61,23 @@
   .balloons-play>button[data-next]{margin:0}
   .balloons-journey .panel:has(> .balloons-play)>.assessment-usage-notice{margin-top:.75rem}
 }
+
+/* Fit the complete small-phone play screen without clipping or resizing balloon artwork. */
+@media(max-width:480px){
+  body:has(.balloons-play) .site-header{flex-direction:row;flex-wrap:wrap;align-items:center;gap:.5rem;padding-block:.5rem}
+  body:has(.balloons-play) .site-header .ap-wordmark{gap:.35rem;min-height:44px}
+  body:has(.balloons-play) .site-header .ap-wordmark svg{width:24px;height:24px}
+  body:has(.balloons-play) .site-header .ap-wordmark>span{font-size:.875rem}
+  body:has(.balloons-play) .site-header nav{gap:.4rem;flex-wrap:nowrap;font-size:.75rem}
+  body:has(.balloons-play) .site-header nav a{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;white-space:nowrap}
+  body:has(.balloons-play) main{padding-block:.25rem}
+  body:has(.balloons-play) .site-footer{padding-block:.25rem;font-size:.75rem;line-height:1.4}
+  .balloons-journey:has(.balloons-play) .journey-top{margin-bottom:.25rem}
+  .balloons-journey .panel:has(>.balloons-play){padding:.5rem}
+  .balloons-journey .panel:has(>.balloons-play)>h1{margin-bottom:0}
+  .balloons-play .balloons-balances{margin:.25rem auto}
+  .balloons-play .balloons-balances span{line-height:1.2}
+  .balloons-play .balloons-balances strong{margin-top:.125rem}
+  .balloons-play>p{margin:.25rem 0}
+  .balloons-journey .panel:has(>.balloons-play)>.assessment-usage-notice{margin-top:.5rem;font-size:.75rem;line-height:1.4}
+}
