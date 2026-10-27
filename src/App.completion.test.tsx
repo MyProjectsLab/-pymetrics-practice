@@ -1,6 +1,5 @@
-import { renderDocument } from './test/documentNavigation'
-import { act, cleanup, fireEvent, screen } from '@testing-library/react'
-import { afterEach, describe, expect, it, vi } from 'vitest'
+import { act, cleanup, render, fireEvent, screen } from '@testing-library/react'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import App from './App'
 import { currentTrainingChain, restoreTrainingChain } from './stop/training'
 import type { TrainingChain } from './stop/training'
@@ -22,10 +21,11 @@ const baseline = { sessionId: 'baseline', form: { id: 'baseline-form' } } as Sto
 const result = { sessionId: 'retest-session', form: { id: 'retest-form' } } as StopResult
 const chain = { id: 'original-chain', baseline, retest: null, retestAttempts: [], drillAttempts: [],
   recommendation: {}, status: 'drill_complete' } as unknown as TrainingChain
+beforeEach(() => { window.history.replaceState(null, "", "/practice") })
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); restoreTrainingChain(null, true); setStopLocalStore(null) })
 async function pendingCompletion() {
   setStopLocalStore(null); restoreTrainingChain(chain)
-  renderDocument(<App storagePolicy="temporary" />)
+  render(<App storagePolicy="temporary" />)
   fireEvent.click(screen.getByRole('button', { name: 'Resume Stop training' }))
   fireEvent.click(await screen.findByRole('button', { name: 'Controlled retest start' }))
   const complete = handoff.complete!
@@ -65,7 +65,7 @@ it('does not reopen training after the candidate navigates away from a delayed e
   let deliver!: (ok: boolean) => void
   const check = vi.spyOn(training, 'checkTrainingChain').mockImplementationOnce(() => new Promise(resolve => { deliver = resolve }))
   try {
-    renderDocument(<App storagePolicy="temporary" />)
+    render(<App storagePolicy="temporary" />)
     fireEvent.click(screen.getByRole('button', { name: 'Resume Stop training' }))
     fireEvent.click(screen.getByRole('link', { name: /Open Stop/ }))
     await act(async () => deliver(true))

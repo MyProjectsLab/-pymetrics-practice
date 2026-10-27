@@ -89,6 +89,7 @@ export default function App({ createSession = createPreparationRecorder, storage
   const [reviewTemporary, setReviewTemporary] = useState(false)
   const [failedRetest, setFailedRetest] = useState<string | null>(null)
   useCoarseEvent(storageStatus === 'blocked' ? { event: 'stop_storage_failure', error_class: 'unavailable' } : chainSaveStatus === 'failed' ? { event: 'stop_storage_failure', error_class: 'write_failed' } : null)
+  const [libraryOverlay, setLibraryOverlay] = useState(false)
   const navigation = useRef(0)
   const [initialEntry, setInitialEntry] = useState(() => parseInitialEntry(window.location.pathname, window.location.search))
   const entryHandled = useRef(false)
@@ -154,9 +155,10 @@ export default function App({ createSession = createPreparationRecorder, storage
   }
   function open(id: string, nextMode: 'baseline' | 'replay' = 'baseline') {
     retireInitialEntry()
+    setLibraryOverlay(false)
     if (id !== 'stop') {
       navigation.current++
-      if (session || viewHistory || viewTraining || reviewTemporary) leaveToLibrary()
+      if (session || viewHistory || viewTraining || reviewTemporary) clearStopView()
     }
     if (id === 'full-mock') { window.location.assign('/mock'); return }
     if (id === 'balloons') { setBalloonsOpen(true); return }
@@ -197,6 +199,7 @@ export default function App({ createSession = createPreparationRecorder, storage
     open(practice!)
   }, [storageStatus, initialEntry])
   function startTraining(result: StopResult) {
+    setLibraryOverlay(false)
     if (!verifyCompletedResult(result)) return
     try { setChain(beginTrainingChain(result)) }
     catch { setChain(currentTrainingChain()) }
@@ -236,16 +239,14 @@ export default function App({ createSession = createPreparationRecorder, storage
     const ok = await checkTrainingChain(selected)
     if (request !== navigation.current) return
     if (!ok) { setComparisonUnavailable(true); return }
-    setReviewTemporary(false); setSession(null); setReservedFormId(undefined); setViewTraining(true)
+    setLibraryOverlay(false); setReviewTemporary(false); setSession(null); setReservedFormId(undefined); setViewTraining(true)
   }
   function retestInvalid(draft: DevelopmentDraft) {
     if (!currentTrainingChain() || !chain || !draft.form || chain.retestAttempts.some(item => item.sessionId === draft.sessionId)) return
     setChain(updateTrainingChain({ retestAttempts: Object.freeze([...chain.retestAttempts,
       { sessionId: draft.sessionId, formId: draft.form.id, valid: false }]), status: 'drill_complete' }))
   }
-  function leaveToLibrary() {
-    retireInitialEntry()
-    if (cleanPracticeRoutes[window.location.pathname] && !window.location.search) { window.location.assign('/practice'); return }
+  function clearStopView() {
     navigation.current++; setReviewTemporary(false); setComparisonUnavailable(false)
     if (session && mode === 'retest') {
       stopExposure.release(session.sessionId)
@@ -257,6 +258,52 @@ export default function App({ createSession = createPreparationRecorder, storage
     setViewHistory(false)
     setRestoredReservation(null)
   }
+  function pushPracticeURL(path: string) {
+    if (window.location.pathname + window.location.search !== path) window.history.pushState(null, '', path)
+  }
+  function closeOtherPractice() {
+    setBalloonsOpen(false); setBalloonsSeparateBaseline(false); setKeypressesOpen(false)
+    setDigitsOpen(false); setCardsOpen(false); setEasyHardOpen(false); setTowersOpen(false); setTowersTrainingOpen(false)
+  }
+  function leaveToLibrary() {
+    retireInitialEntry()
+    pushPracticeURL('/practice')
+    closeOtherPractice()
+    // Keep the completed view mounted for Back, including an unsaved tab-only result.
+    if (session && activeTabResults().some(result => result.sessionId === session.sessionId)) {
+      navigation.current++; setLibraryOverlay(true)
+    } else { setLibraryOverlay(false); clearStopView() }
+  }
+  useEffect(() => {
+    const follow = (event: MouseEvent) => {
+      const link = event.target instanceof Element ? event.target.closest('a[href]') : null
+      if (event.defaultPrevented || !(link instanceof HTMLAnchorElement) || event.button !== 0 ||
+        event.metaKey || event.ctrlKey || event.shiftKey || event.altKey ||
+        link.hasAttribute('download') || link.target && link.target !== '_self') return
+      const destination = new URL(link.href)
+      if (destination.origin !== window.location.origin || destination.hash || destination.search) return
+      const game = cleanPracticeRoutes[destination.pathname]
+      if (destination.pathname !== '/practice' && !game) return
+      event.preventDefault()
+      if (game) { closeOtherPractice(); pushPracticeURL(destination.pathname); open(game) }
+      else leaveToLibrary()
+    }
+    const back = () => {
+      const game = cleanPracticeRoutes[window.location.pathname]
+      if (!window.location.search && game === 'stop' && libraryOverlay && session &&
+        activeTabResults().some(result => result.sessionId === session.sessionId)) {
+        closeOtherPractice(); setLibraryOverlay(false)
+      } else if (!window.location.search && window.location.pathname === '/practice') leaveToLibrary()
+      else if (game || window.location.search) {
+        closeOtherPractice(); clearStopView(); setLibraryOverlay(false)
+        entryHandled.current = false
+        setInitialEntry(parseInitialEntry(window.location.pathname, window.location.search))
+      }
+    }
+    document.addEventListener('click', follow)
+    window.addEventListener('popstate', back)
+    return () => { document.removeEventListener('click', follow); window.removeEventListener('popstate', back) }
+  })
   async function deleteAll() {
     if (!store) return
     navigation.current++
@@ -267,16 +314,26 @@ export default function App({ createSession = createPreparationRecorder, storage
     await refreshHistory(store)
   }
   const towersTrainingEntry = <button className="secondary" onClick={() => open('towers-training')}>Open Towers Advanced Training</button>
-  if (balloonsOpen) return <BalloonsJourney separateBaseline={balloonsSeparateBaseline} onLibrary={() => { if (cleanPracticeRoutes[window.location.pathname] && !window.location.search) window.location.assign('/practice'); else {setBalloonsOpen(false);setBalloonsSeparateBaseline(false)} }} />
-  if (keypressesOpen) return <KeypressesJourney onLibrary={() => { if (cleanPracticeRoutes[window.location.pathname] && !window.location.search) window.location.assign('/practice'); else setKeypressesOpen(false) }} />
-  if (digitsOpen) return <DigitsJourney onLibrary={() => { if (cleanPracticeRoutes[window.location.pathname] && !window.location.search) window.location.assign('/practice'); else setDigitsOpen(false) }} />
-  if (cardsOpen) return <CardsJourney onLibrary={() => { if (cleanPracticeRoutes[window.location.pathname] && !window.location.search) window.location.assign('/practice'); else setCardsOpen(false) }} />
-  if (easyHardOpen) return <EasyHardJourney onLibrary={() => { if (cleanPracticeRoutes[window.location.pathname] && !window.location.search) window.location.assign('/practice'); else setEasyHardOpen(false) }} />
-  if (towersOpen) return <TowersJourney runtime={towersRuntime} onLibrary={() => { if (cleanPracticeRoutes[window.location.pathname] && !window.location.search) window.location.assign('/practice'); else setTowersOpen(false) }} />
+  if (balloonsOpen) return <BalloonsJourney separateBaseline={balloonsSeparateBaseline} onLibrary={leaveToLibrary} />
+  if (keypressesOpen) return <KeypressesJourney onLibrary={leaveToLibrary} />
+  if (digitsOpen) return <DigitsJourney onLibrary={leaveToLibrary} />
+  if (cardsOpen) return <CardsJourney onLibrary={leaveToLibrary} />
+  if (easyHardOpen) return <EasyHardJourney onLibrary={leaveToLibrary} />
+  if (towersOpen) return <TowersJourney runtime={towersRuntime} onLibrary={leaveToLibrary} />
   if (towersTrainingOpen) return <TowersTrainingJourney onLibrary={() => setTowersTrainingOpen(false)} />
   const pendingStopRoute = !entryHandled.current && (initialEntry?.stopHistory || initialEntry?.practice === 'stop')
   const stopView = Boolean(session || viewHistory || viewTraining || reviewTemporary || pendingStopRoute)
+  const libraryContent = <>
+      <GameLibrary entries={library} />
+      {towersTrainingEntry}
+      {candidateAnalyticsAvailable && <AnalyticsConsent />}
+      {(storageStatus === 'persistent' || storageStatus === 'temporary') && chain && <button onClick={() => { void resumeTraining(chain) }}>Resume Stop training</button>}
+      {(storageStatus === 'persistent' || storageStatus === 'temporary') && temporaryRetest && <button className="secondary" onClick={() => { setLibraryOverlay(false); navigation.current++; setReviewTemporary(true) }}>Review temporary retest</button>}
+      {store && <button className="secondary" onClick={() => { setLibraryOverlay(false); clearStopView(); void refreshHistory(store); setViewHistory(true) }}>Stop history</button>}
+      {storageStatus === 'temporary' && <p className="note">{storageDisclosure()}</p>}
+    </>
   return <Shell onLibrary={leaveToLibrary}>
+    <div hidden={libraryOverlay}>
     {comparisonUnavailable && <p role="alert">Comparison unavailable. The saved training dependencies or original installation could not be confirmed. Any retained temporary retest can still be reviewed in this tab.</p>}
     {chainSaveStatus === 'failed' && <div className="panel" role="alert"><p>{CHAIN_SAVE_FAILURE}</p>
       <p>The current training changes are temporary. Reloading restores only the last successfully saved state.</p>
@@ -298,14 +355,8 @@ export default function App({ createSession = createPreparationRecorder, storage
         onRetest={reservation => { if (pendingRetestCompletion() || currentTrainingChain()?.retest) return; setRestoredReservation(null); setChain(updateTrainingChain({ status: 'retesting' })); setMode('retest'); setReservedFormId(reservation.formId); setSession(reservation.recorder) }}
         onNewBaseline={() => open('stop', 'baseline')} /> : chain && viewTraining && chain.status === 'complete' ?
       <TrainingFlow key={chain.id} chain={chain} onChain={setChain} onLibrary={() => setViewTraining(false)}
-        onRetest={() => {}} onNewBaseline={() => open('stop', 'baseline')} /> : <>
-      <GameLibrary entries={library} />
-      {towersTrainingEntry}
-      {candidateAnalyticsAvailable && <AnalyticsConsent />}
-      {(storageStatus === 'persistent' || storageStatus === 'temporary') && chain && <button onClick={() => { void resumeTraining(chain) }}>Resume Stop training</button>}
-      {(storageStatus === 'persistent' || storageStatus === 'temporary') && temporaryRetest && <button className="secondary" onClick={() => { navigation.current++; setReviewTemporary(true) }}>Review temporary retest</button>}
-      {store && <button className="secondary" onClick={() => { void refreshHistory(store); setViewHistory(true) }}>Stop history</button>}
-      {storageStatus === 'temporary' && <p className="note">{storageDisclosure()}</p>}
-    </>}
+        onRetest={() => {}} onNewBaseline={() => open('stop', 'baseline')} /> : libraryContent}
+    </div>
+    {libraryOverlay && libraryContent}
   </Shell>
 }

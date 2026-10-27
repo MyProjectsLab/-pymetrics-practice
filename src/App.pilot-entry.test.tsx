@@ -1,4 +1,3 @@
-import { renderDocument } from './test/documentNavigation'
 import { act, cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import App from './App'
@@ -66,7 +65,7 @@ describe('bounded pilot shared entry', () => {
   it('keeps all game choices during a held Stop check and a late rejection after another game', async () => {
     const opening = deferred<StopLocalStore>()
     const probe = vi.spyOn(StopLocalStore, 'open').mockReturnValue(opening.promise)
-    renderDocument(<App />)
+    render(<App />)
     await waitFor(() => expect(probe).toHaveBeenCalledTimes(1))
     library()
     fireEvent.click(screen.getByRole('link', { name: 'Open Stop' }))
@@ -80,18 +79,18 @@ describe('bounded pilot shared entry', () => {
     expect(screen.queryByRole('heading', { name: 'Results cannot be saved in this browser' })).not.toBeInTheDocument()
     expect(screen.queryByRole('button', { name: 'See the rule' })).not.toBeInTheDocument()
     fireEvent.click(screen.getByRole('link', { name: 'Open Stop' }))
-    expect(screen.getByRole('heading', { name: 'Results cannot be saved in this browser' })).toBeVisible()
+    expect(await screen.findByRole('heading', { name: 'Results cannot be saved in this browser' })).toBeVisible()
     library()
   })
 
   it('preserves the Stop-only rejection, explicit temporary choice and retry gate', async () => {
     const probe = vi.spyOn(StopLocalStore, 'open').mockRejectedValueOnce(new Error('synthetic failure'))
       .mockResolvedValueOnce(fakeStore())
-    renderDocument(<App />)
+    render(<App />)
     await waitFor(() => expect(probe).toHaveBeenCalledTimes(1))
     await waitFor(() => expect(screen.getAllByRole('article')).toHaveLength(13))
     fireEvent.click(screen.getByRole('link', { name: 'Open Stop' }))
-    expect(screen.getByRole('heading', { name: 'Results cannot be saved in this browser' })).toBeVisible()
+    expect(await screen.findByRole('heading', { name: 'Results cannot be saved in this browser' })).toBeVisible()
     expect(screen.queryByRole('button', { name: 'See the rule' })).not.toBeInTheDocument()
     fireEvent.click(screen.getByRole('button', { name: 'Try storage check again' }))
     expect(screen.getByRole('heading', { name: 'Checking Stop local storage' })).toBeVisible()
@@ -101,7 +100,7 @@ describe('bounded pilot shared entry', () => {
 
   it('allows an explicit temporary Stop guide after rejection without claiming saved history', async () => {
     vi.spyOn(StopLocalStore, 'open').mockRejectedValue(new Error('synthetic failure'))
-    renderDocument(<App />)
+    render(<App />)
     fireEvent.click(screen.getByRole('link', { name: 'Open Stop' }))
     await screen.findByRole('heading', { name: 'Results cannot be saved in this browser' })
     fireEvent.click(screen.getByRole('button', { name: 'Continue without saving' }))
@@ -115,7 +114,7 @@ describe('bounded pilot shared entry', () => {
     window.history.replaceState(null, '', '/practice?practiceGame=stop')
     const opening = deferred<StopLocalStore>()
     const probe = vi.spyOn(StopLocalStore, 'open').mockReturnValue(opening.promise)
-    renderDocument(<App />)
+    render(<App />)
     await waitFor(() => expect(probe).toHaveBeenCalledTimes(1))
     expect(screen.getByRole('heading', { name: 'Checking Stop local storage' })).toBeVisible()
     fireEvent.click(screen.getByRole('link', { name: 'Open Keypresses' }))
@@ -129,7 +128,7 @@ describe('bounded pilot shared entry', () => {
   it('keeps a late Stop storage check from replacing separate Towers training', async () => {
     const opening = deferred<StopLocalStore>()
     const probe = vi.spyOn(StopLocalStore, 'open').mockReturnValue(opening.promise)
-    renderDocument(<App />)
+    render(<App />)
     await waitFor(() => expect(probe).toHaveBeenCalledTimes(1))
     library()
     fireEvent.click(screen.getByRole('button', { name: 'Open Towers Advanced Training' }))
@@ -146,7 +145,7 @@ describe('bounded pilot shared entry', () => {
         window.history.replaceState(null, '', '/practice' + query)
         const opening = deferred<StopLocalStore>()
         const probe = vi.spyOn(StopLocalStore, 'open').mockReturnValue(opening.promise)
-        renderDocument(<App />)
+        render(<App />)
         await waitFor(() => expect(probe).toHaveBeenCalledTimes(1))
         expect(screen.getByRole('heading', { name: 'Checking Stop local storage' })).toBeVisible()
         headerLibrary()
@@ -160,14 +159,14 @@ describe('bounded pilot shared entry', () => {
         expect(screen.queryByRole('heading', { name: 'Controlled Stop guide' })).not.toBeInTheDocument()
         expect(screen.queryByRole('heading', { name: 'Results cannot be saved in this browser' })).not.toBeInTheDocument()
         fireEvent.click(screen.getByRole('link', { name: 'Open Stop' }))
-        expect(screen.getByRole('heading', { name: outcome === 'success' ? 'Controlled Stop guide' : 'Results cannot be saved in this browser' })).toBeVisible()
+        expect(await screen.findByRole('heading', { name: outcome === 'success' ? 'Controlled Stop guide' : 'Results cannot be saved in this browser' })).toBeVisible()
       })
     }
     it(`retires ${query} when another game is selected during a held check`, async () => {
       window.history.replaceState(null, '', '/practice' + query)
       const opening = deferred<StopLocalStore>()
       const probe = vi.spyOn(StopLocalStore, 'open').mockReturnValue(opening.promise)
-      renderDocument(<App />)
+      render(<App />)
       await waitFor(() => expect(probe).toHaveBeenCalledTimes(1))
       fireEvent.click(screen.getByRole('link', { name: 'Open Keypresses' }))
       expect(window.location.search).toBe('')
@@ -198,7 +197,7 @@ describe('bounded pilot shared entry', () => {
     vi.spyOn(StopLocalStore, 'open').mockImplementation(async () => fakeStore())
     for (const { query, expected } of cases) {
       window.history.replaceState(null, '', '/practice' + query)
-      const view = renderDocument(<App />)
+      const view = render(<App />)
       if (expected === 'stop') await screen.findByRole('heading', { name: 'Controlled Stop guide' })
       else if (expected === 'history') await screen.findByRole('heading', { name: 'Stop history' })
       else {
@@ -218,7 +217,7 @@ describe('bounded pilot shared entry', () => {
       ['?practiceGame=balloons&balloonsBaseline=1&extra=1', 'false'],
     ]) {
       window.history.replaceState(null, '', '/practice' + query)
-      const view = renderDocument(<App storagePolicy="temporary" />)
+      const view = render(<App storagePolicy="temporary" />)
       await screen.findByRole('heading', { name: 'Controlled Balloons guide' })
       expect(screen.getByText('Separate baseline: ' + expected)).toBeVisible()
       view.unmount()
@@ -229,7 +228,7 @@ describe('bounded pilot shared entry', () => {
     window.history.replaceState(null, '', '/practice?practiceGame=balloons&balloonsBaseline=1')
     const opening = deferred<StopLocalStore>()
     const probe = vi.spyOn(StopLocalStore, 'open').mockReturnValue(opening.promise)
-    renderDocument(<App />)
+    render(<App />)
     await screen.findByRole('heading', { name: 'Controlled Balloons guide' })
     expect(screen.getByText('Separate baseline: true')).toBeVisible()
     expect(window.location.search).toBe('')
@@ -243,7 +242,7 @@ describe('bounded pilot shared entry', () => {
     const retry = deferred<StopLocalStore>()
     vi.spyOn(StopLocalStore, 'open').mockRejectedValueOnce(new Error('synthetic failure'))
       .mockReturnValueOnce(retry.promise)
-    renderDocument(<App />)
+    render(<App />)
     fireEvent.click(screen.getByRole('link', { name: 'Open Stop' }))
     await screen.findByRole('heading', { name: 'Results cannot be saved in this browser' })
     fireEvent.click(screen.getByRole('button', { name: 'Try storage check again' }))
@@ -258,16 +257,16 @@ describe('bounded pilot shared entry', () => {
     restoreTrainingChain({ id:'synthetic-chain', baseline:{ storageMode:'temporary_memory' },
       status:'assigned' } as TrainingChain)
     vi.spyOn(StopLocalStore, 'open').mockRejectedValue(new Error('synthetic failure'))
-    renderDocument(<App />)
+    render(<App />)
     expect(screen.queryByRole('button', { name: 'Resume Stop training' })).not.toBeInTheDocument()
     await waitFor(() => expect(screen.getAllByRole('article')).toHaveLength(13))
     expect(screen.queryByRole('button', { name: 'Resume Stop training' })).not.toBeInTheDocument()
     fireEvent.click(screen.getByRole('link', { name: 'Open Stop' }))
-    expect(screen.getByRole('heading', { name: 'Results cannot be saved in this browser' })).toBeVisible()
+    expect(await screen.findByRole('heading', { name: 'Results cannot be saved in this browser' })).toBeVisible()
   })
 
   it('labels the twelve-game pilot inventory and separate Towers training entry', () => {
-    renderDocument(<App storagePolicy="temporary" />)
+    render(<App storagePolicy="temporary" />)
     library()
     const towers = screen.getByRole('heading', { name: 'Towers' }).closest('article')!
     expect(within(towers).getByText(/separate Towers Advanced Training available/)).toBeVisible()
