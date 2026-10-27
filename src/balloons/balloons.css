@@ -35,8 +35,8 @@
 
 /* Play artwork projects committed pumps; no threshold or control rule enters this view. */
 .balloons-round{font:500 .8rem/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;color:#4a5368}
-.balloons-stage{display:flex;align-items:flex-end;justify-content:center;width:100%;min-height:320px}
-.balloons-stage .balloons-identity{width:320px;max-width:100%;margin:0}
+.balloons-stage{--balloons-stage-size:320px;display:flex;align-items:flex-end;justify-content:center;width:100%;height:var(--balloons-stage-size);min-height:var(--balloons-stage-size);flex:none}
+.balloons-stage .balloons-identity{width:var(--balloons-stage-size);height:var(--balloons-stage-size);max-width:100%;margin:0}
 .balloons-stage .balloon-inflatable{transform-origin:160px 264px;translate:0 56px}
 .balloons-stage .balloons-identity-label{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .balloons-balances{display:grid;grid-template-columns:1fr 1fr;width:100%;max-width:360px;gap:12px;margin:1rem auto;text-align:center}
@@ -44,4 +44,20 @@
 .balloons-balances strong{display:block;font:400 32px/1.2 'AP Newsreader',Georgia,serif;color:#14213d;margin-top:.4rem}
 .balloons-play .balloons-actions{display:grid;grid-template-columns:1fr 1fr;max-width:360px;gap:12px;margin-inline:auto}
 .balloons-play .balloons-actions button{width:100%;max-width:none;min-width:0;margin:0}
-@media(max-width:520px){.balloons-stage{min-height:240px}.balloons-stage .balloons-identity{width:240px}.balloons-journey .journey-top .balloons-practice-label{display:none}.balloons-play .balloons-actions{gap:12px}}
+@media(max-width:520px){.balloons-stage{--balloons-stage-size:240px}}
+/* Keep the active balloon and next-round control within a small phone viewport. */
+@media(max-width:480px){
+  .balloons-journey .journey-top .balloons-practice-label{display:none}
+  body:has(.balloons-play) main{padding-block:.5rem}
+  .balloons-journey:has(.balloons-play) .journey-top{flex-wrap:nowrap;gap:.25rem;margin-bottom:.5rem}
+  .balloons-journey:has(.balloons-play) .journey-meta{flex-wrap:nowrap;gap:.5rem;white-space:nowrap}
+  .balloons-journey .panel:has(> .balloons-play){padding:.75rem}
+  .balloons-journey .panel:has(> .balloons-play)>h1{font-size:1.75rem;margin-bottom:.25rem}
+  .balloons-journey .panel:has(> .balloons-play)>p:empty{margin:0}
+  .balloons-stage{--balloons-stage-size:clamp(120px,calc(100svh - 480px),240px)}
+  .balloons-play .balloons-balances{gap:8px;margin:.5rem auto .375rem}
+  .balloons-play .balloons-actions{gap:8px}
+  .balloons-play>p{font-size:.8rem;line-height:1.4;margin:.5rem 0 .375rem}
+  .balloons-play>button[data-next]{margin:0}
+  .balloons-journey .panel:has(> .balloons-play)>.assessment-usage-notice{margin-top:.75rem}
+}
