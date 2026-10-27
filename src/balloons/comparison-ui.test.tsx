@@ -41,6 +41,14 @@ class Channel {
   static send(phase: 'begin' | 'end') { for (const channel of Channel.instances) channel.onmessage?.({ data: { phase, id: 'cross-tab-delete' } } as MessageEvent) }
 }
 
+async function openGuideHistory() {
+  await act(async () => {
+    const summary = screen.getByText('Examples and saved results')
+    if (!summary.closest('details')?.open) fireEvent.click(summary)
+    fireEvent.click(screen.getByRole('button', { name: 'Saved results' }))
+  })
+}
+
 it.each(['baseline', 'retest', 'replacement'])('history and reload access withdraw %s comparison during a delayed cross-tab read', async fault => {
   Channel.instances = []
   let { root, id } = savedPair()
@@ -51,7 +59,7 @@ it.each(['baseline', 'retest', 'replacement'])('history and reload access withdr
   Object.defineProperty(navigator, 'locks', { configurable: true, value: { request: (_n: string, _o: unknown, callback: () => unknown) => Promise.resolve(callback()) } })
   vi.stubGlobal('BroadcastChannel', Channel)
   await act(async () => { render(<BalloonsJourney onLibrary={() => {}} />) })
-  await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Balloons history' })) })
+  await openGuideHistory()
   const open = screen.getByRole('button', { name: 'Open saved comparison' })
   open.focus(); expect(open).toHaveFocus(); expect(open.tagName).toBe('BUTTON')
   await act(async () => { open.click() })
@@ -71,6 +79,6 @@ it.each(['baseline', 'retest', 'replacement'])('history and reload access withdr
   expect(screen.getByRole('alert')).toHaveTextContent(fault === 'baseline' ? 'baseline was deleted' : fault === 'retest' ? 'retest was deleted' : 'missing or unsaved')
   cleanup()
   await act(async () => { render(<BalloonsJourney onLibrary={() => {}} />) })
-  await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Balloons history' })) })
+  await openGuideHistory()
   expect(document.querySelector('.balloons-comparison')).toBeNull()
 }, 30000)

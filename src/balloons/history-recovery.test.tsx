@@ -19,6 +19,14 @@ function savedRoot(sessionId = 'selected', root = freshRoot()) {
   }
   root.records[sessionId] = r; return root
 }
+async function openGuideHistory() {
+  await act(async () => {
+    const summary = screen.getByText('Examples and saved results')
+    if (!summary.closest('details')?.open) fireEvent.click(summary)
+    fireEvent.click(screen.getByRole('button', { name: 'Saved results' }))
+  })
+}
+
 it.each(['healthy', 'deleted', 'replaced', 'navigation', 'fast', 'timeout'])('selected report authority: %s read preserves only the current selection', async kind => {
   let root = savedRoot(), frames: FrameRequestCallback[] = [], deliver: ((r: Root) => void) | undefined
   const read = vi.fn(async () => structuredClone(root))
@@ -28,14 +36,14 @@ it.each(['healthy', 'deleted', 'replaced', 'navigation', 'fast', 'timeout'])('se
   vi.stubGlobal('requestAnimationFrame', (cb: FrameRequestCallback) => { frames.push(cb); return frames.length })
   vi.stubGlobal('cancelAnimationFrame', () => {})
   await act(async () => { render(<BalloonsJourney onLibrary={() => {}} />) })
-  await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Balloons history' })) })
+  await openGuideHistory()
   await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Open saved report' })) })
   const report = document.querySelector('.balloons-report'), bytes = JSON.stringify(root)
   expect(report).not.toBeNull()
   vi.useFakeTimers({ toFake: ['setInterval', 'clearInterval', 'setTimeout', 'clearTimeout'] })
   // Re-enter history to install its interval with the test clock.
   await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Practise again' })) })
-  await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Balloons history' })) })
+  await openGuideHistory()
   await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Open saved report' })) })
   const visible = document.querySelector('.balloons-report')
   if (kind !== 'fast') read.mockImplementationOnce(() => new Promise<Root>(r => { deliver = r }))
@@ -59,7 +67,7 @@ it.each(['healthy', 'deleted', 'replaced', 'navigation', 'fast', 'timeout'])('se
   expect(!!document.querySelector('.balloons-report')).toBe(kind === 'healthy')
   if (kind === 'healthy') { expect(screen.getByText(/Form BL1/)).toBeInTheDocument(); expect(JSON.stringify(root)).toBe(bytes) }
   // Late navigation response cannot re-open a report on returning to history.
-  if (kind === 'navigation') { await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Balloons history' })) }); expect(document.querySelector('.balloons-report')).toBeNull() }
+  if (kind === 'navigation') { await openGuideHistory(); expect(document.querySelector('.balloons-report')).toBeNull() }
 })
 
 it.each(['remaining', 'empty', 'all', 'failed-one', 'failed-all', 'leave'])('deletion focus waits for committed replacement history: %s', async kind => {
@@ -78,7 +86,7 @@ it.each(['remaining', 'empty', 'all', 'failed-one', 'failed-all', 'leave'])('del
   vi.stubGlobal('BroadcastChannel', undefined)
   Object.defineProperty(navigator, 'locks', { configurable: true, value: { request: (_n: string, _o: unknown, cb: () => unknown) => Promise.resolve(cb()) } })
   await act(async () => { render(<BalloonsJourney onLibrary={() => {}} />) })
-  await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Balloons history' })) })
+  await openGuideHistory()
   const heading = screen.getByRole('heading', { name: 'Balloons history' })
   const control = kind.endsWith('all') ? screen.getByRole('button', { name: 'Delete all Balloons data' }) : screen.getAllByRole('button', { name: 'Delete this result' })[0]
   control.focus()
@@ -91,7 +99,7 @@ it.each(['remaining', 'empty', 'all', 'failed-one', 'failed-all', 'leave'])('del
   expect(screen.getByText('Checking saved history…')).toBeInTheDocument()
   if (kind === 'leave') await act(async () => { fireEvent.click(screen.getByRole('button', { name: 'Practise again' })) })
   await act(async () => { publish() })
-  if (kind === 'leave') { expect(screen.getByRole('heading', { name: 'Build, collect, or burst' })).toHaveFocus(); return }
+  if (kind === 'leave') { expect(screen.getByRole('heading', { name: 'Balloons' })).toHaveFocus(); return }
   expect(heading).toHaveFocus()
   expect(screen.getByRole('status')).toHaveTextContent(kind.startsWith('failed') ? 'Deletion could not be confirmed' : kind === 'all' ? 'All Balloons data deleted' : 'Result deleted')
   expect(screen.getAllByRole('button', { name: 'Delete all Balloons data' })).toHaveLength(1)
