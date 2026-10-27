@@ -179,13 +179,13 @@ export function StopJourney({ recorder, mode = 'baseline', specificationVersion 
     }
     const cached = await readInputReceipt([bindingCode], visualProfile)
     if (!newActionCurrent(token, fromStep, bindingCode, visualProfile)) return
-    if (cached) {
+    if (cached && !newSetup.current.latencyAffectedInput) {
       const proof = cached.entries.find(entry => entry.code === bindingCode)!
-      setSetup(value => ({ ...value, physicalKeyboard: true, latencyAffectedInput: false }))
+      setSetup(value => ({ ...value, physicalKeyboard: true }))
       setNewInput({ origin: 'reused', code: bindingCode, visualProfile, proof,
         receiptId: cached.receiptId, tabNonce: cached.tabNonce }); moveNewStep('readiness')
     }
-    else moveNewStep('new-device')
+    else { setNewInput(null); moveNewStep('new-device') }
   }
   async function skipNewIntroduction() {
     if (newActionPending.current || newView.current !== 'new-guide') return
