@@ -1,3 +1,4 @@
+import { renderDocument } from '../test/documentNavigation'
 import { StrictMode } from 'react'
 import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { afterEach, beforeEach, expect, it, vi } from 'vitest'
@@ -11,18 +12,18 @@ vi.mock('./client', async original => {
   return { ...actual, candidateAnalyticsAvailable: true, stopAnalytics: actual.createAnalyticsClient({ available: true, send: network.send }) }
 })
 beforeEach(() => { vi.useFakeTimers(); stopAnalytics.setConsent(false); network.send.mockClear() })
-afterEach(() => { cleanup(); stopAnalytics.setConsent(false); vi.useRealTimers() })
+afterEach(() => { cleanup(); stopAnalytics.setConsent(false); vi.useRealTimers(); vi.unstubAllGlobals() })
 async function flush() { await act(() => vi.advanceTimersByTimeAsync(100)) }
 const rows = () => network.send.mock.calls.map(call => JSON.parse((call as unknown as [string, RequestInit])[1].body as string))
 function Session({ mode = 'baseline', status = null, pending = false }: Parameters<typeof useSessionAnalytics> extends [infer M, infer S, boolean] ? { mode?: M; status?: S; pending?: boolean } : never) {
   useSessionAnalytics(mode, status, pending); return <p>Game remains available</p>
 }
 it('proposal notice is separate, consent starts off, decline and withdrawal keep the library and guide usable', async () => {
-  render(<App storagePolicy="temporary" />)
-  expect(screen.getByRole('button', { name: 'Open Stop' })).toBeEnabled()
+  renderDocument(<App storagePolicy="temporary" />)
+  expect(screen.getByRole('link', { name: 'Open Stop' })).toBeEnabled()
   expect(screen.getByText('Analytics consent is off.')).toBeInTheDocument()
   fireEvent.click(screen.getByRole('button', { name: 'Decline analytics' }))
-  fireEvent.click(screen.getByRole('button', { name: 'Open Stop' })); await flush()
+  fireEvent.click(screen.getByRole('link', { name: 'Open Stop' })); await flush()
   expect(screen.getByRole('heading', { name: 'Learn the Stop task' })).toBeInTheDocument(); expect(network.send).not.toHaveBeenCalled()
 })
 it('withdrawal updates UI, cancels future transport and remains off after remount', async () => {
@@ -56,8 +57,8 @@ it('coarse drill and recommendation observations never send a standard session s
 })
 it('failures and decline never prevent committed UI observations or navigation', async () => {
   network.send.mockRejectedValueOnce(new Error('network unavailable'))
-  stopAnalytics.setConsent(true); render(<App storagePolicy="temporary" />)
-  fireEvent.click(screen.getByRole('button', { name: 'Open Stop' })); await flush()
+  stopAnalytics.setConsent(true); renderDocument(<App storagePolicy="temporary" />)
+  fireEvent.click(screen.getByRole('link', { name: 'Open Stop' })); await flush()
   fireEvent.click(screen.getByRole('button', { name: 'See the rule' }))
   expect(screen.getByRole('heading', { name: 'One rule, two actions' })).toBeInTheDocument()
 })
