@@ -102,7 +102,7 @@ describe('S45–S47 router and temporary-chain boundary', () => {
     expect(() => beginTrainingChain(first)).toThrow('new valid baseline')
     const second = beginTrainingChain(baseline())
     expect(second.id).not.toBe(chain.id)
-    expect(TEMPORARY_DISCLOSURE).toContain('earlier visits or in other tabs')
+    expect(TEMPORARY_DISCLOSURE).toContain('Earlier practice in another tab or visit may not be known here.')
     updateTrainingChain({ status: 'complete' })
   })
   it('retains same-page exposure records across completed sequential chains', () => {
