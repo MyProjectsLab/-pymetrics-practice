@@ -13,6 +13,7 @@ import { compatibilityKey } from './comparison'
 
 const percent = (rate: number) => round(rate * 100)
 const memoryCopy = TEMPORARY_DISCLOSURE
+const responseDefinitions = 'A miss means not responding to GO; a false alarm means responding to NO-GO.'
 
 export function StopReport({ result, onReplay, onLibrary, onTraining, onComparison, trainingPending = false, returnToMock = false }: {
   result: StopResult; onReplay: () => void; onLibrary: () => void; onTraining?: (result: StopResult) => void; onComparison?: (result: StopResult) => void
@@ -66,6 +67,7 @@ export function StopReport({ result, onReplay, onLibrary, onTraining, onComparis
     <p>{comparisonText}</p><p>Form {form.id}.</p>
     <p>Scoring version: {result.scoringVersion}. Response key: {result.setup.binding.label}. Physical keyboard self-confirmed; standard timing.</p>
     <h2>Your responses</h2>
+    <p>{responseDefinitions}</p>
     {v13 ? <>
       <p>Correct on {s.counts.hits + s.counts.withholds} of 80 trials ({percent(s.rates.overall)}%).</p>
       <p>GO: you responded to {s.counts.hits} of {goTotal} ({percent(s.rates.hit)}%); {s.counts.misses} misses.</p>
@@ -129,6 +131,7 @@ export function InvalidReport({ draft, onRestart, onGuide, onMockReturn }: {
     <h2>Available evidence</h2>
     <p>{presented} scored stimuli were presented; {outcomes.length} scored trials resolved.</p>
     <p>Of those resolved trials: {outcomes.filter(x => x === 'hit').length} hits, {outcomes.filter(x => x === 'miss').length} misses, {outcomes.filter(x => x === 'correct_withhold').length} correct withholds, and {outcomes.filter(x => x === 'false_alarm').length} false alarms.</p>
+    <p>{responseDefinitions}</p>
     <p>Available counts may help you review the task, but timing and change conclusions are suppressed.</p>
     </details>
     <p>{draft?.storageMode === 'persistent_local' ? PERSISTENT_DISCLOSURE : memoryCopy}</p>

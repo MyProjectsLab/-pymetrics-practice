@@ -94,7 +94,9 @@ it('ignores a late input-cache read after Back from the new check', async () => 
   fireEvent.click(screen.getByRole('button', { name: 'Continue' }))
   fireEvent.click(screen.getByRole('radio', { name: 'Press Space once.' }))
   fireEvent.click(screen.getByRole('button', { name: 'Check' }))
-  expect(recorder.snapshot().filter(event => event.type === 'onboarding_v13_answered')).toHaveLength(1)
+  fireEvent.click(screen.getByRole('radio', { name: 'Do nothing.' }))
+  fireEvent.click(screen.getByRole('button', { name: 'Check' }))
+  expect(recorder.snapshot().filter(event => event.type === 'onboarding_v13_answered')).toHaveLength(2)
   fireEvent.click(screen.getByRole('button', { name: 'Back' }))
   release(null)
   expect(await screen.findByRole('heading', { name: /^Stop$/ })).toBeInTheDocument()
@@ -110,8 +112,10 @@ it('does not count duplicate correct Check activation while its read is pending'
   fireEvent.click(screen.getByRole('button', { name: 'Continue' }))
   fireEvent.click(screen.getByRole('radio', { name: 'Press Space once.' }))
   fireEvent.click(screen.getByRole('button', { name: 'Check' }))
+  fireEvent.click(screen.getByRole('radio', { name: 'Do nothing.' }))
   fireEvent.click(screen.getByRole('button', { name: 'Check' }))
-  expect(recorder.snapshot().filter(event => event.type === 'onboarding_v13_answered')).toHaveLength(1)
+  fireEvent.click(screen.getByRole('button', { name: 'Check' }))
+  expect(recorder.snapshot().filter(event => event.type === 'onboarding_v13_answered')).toHaveLength(2)
   release(null)
   expect(await screen.findByRole('heading', { name: 'Test your keyboard' })).toBeInTheDocument()
 })
@@ -136,6 +140,8 @@ it('preserves the chosen latency restriction when a cached key proof is found af
   const answer = () => {
     fireEvent.click(screen.getByRole('button', { name: 'Continue' }))
     fireEvent.click(screen.getByRole('radio', { name: 'Press Space once.' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Check' }))
+    fireEvent.click(screen.getByRole('radio', { name: 'Do nothing.' }))
     fireEvent.click(screen.getByRole('button', { name: 'Check' }))
   }
   answer()
@@ -171,11 +177,48 @@ it('requires a correct current GO answer and genuine keyboard proof before timed
   expect(screen.queryByRole('heading', { name: 'Test your keyboard' })).not.toBeInTheDocument()
   fireEvent.click(screen.getByRole('radio', { name: 'Press Space once.' }))
   fireEvent.click(screen.getByRole('button', { name: 'Check' }))
+  expect(screen.getByRole('heading', { name: 'A NO-GO symbol appears. What do you do?' })).toBeVisible()
+  expect(screen.getByRole('button', { name: 'Check' })).toBeDisabled()
+  fireEvent.click(screen.getByRole('radio', { name: 'Do nothing.' }))
+  fireEvent.click(screen.getByRole('button', { name: 'Check' }))
   await screen.findByRole('heading', { name: 'Test your keyboard' })
   fireEvent.click(screen.getByRole('button', { name: 'Test my keyboard' }))
   const target = screen.getByRole('group', { name: 'Keyboard test' })
   fireEvent.keyDown(target, { key: ' ', code: 'Space' }); fireEvent.keyUp(target, { key: ' ', code: 'Space' })
   expect(screen.queryByRole('heading', { name: 'Ready to begin?' })).not.toBeInTheDocument()
-  expect(recorder.snapshot().filter(event => event.type === 'onboarding_v13_answered').map(event => event.payload.correct)).toEqual([false, true])
+  expect(recorder.snapshot().filter(event => event.type === 'onboarding_v13_answered').map(event => event.payload.correct)).toEqual([false, true, true])
   expect(recorder.snapshot().some(event => event.type === 'input_check_v13' || event.type === 'readiness_confirmed')).toBe(false)
+})
+
+it('blocks both wrong NO-GO answers and only reads keyboard proof after the correct answer', async () => {
+  const read = vi.spyOn(inputReceipt, 'readInputReceipt').mockResolvedValue(null)
+  const recorder = createPreparationRecorder('two-question-gate')
+  render(<StopJourney recorder={recorder} specificationVersion="1.3" mode="baseline"
+    onLibrary={vi.fn()} onRestart={vi.fn()} onReplay={vi.fn()} />)
+  fireEvent.click(screen.getByRole('button', { name: 'Continue' }))
+  fireEvent.click(screen.getByRole('radio', { name: 'Press Space once.' }))
+  fireEvent.click(screen.getByRole('button', { name: 'Check' }))
+  const heading = screen.getByRole('heading', { name: 'A NO-GO symbol appears. What do you do?' })
+  expect(heading).toHaveFocus()
+  expect(screen.getByRole('button', { name: 'Check' })).toBeDisabled()
+  for (const answer of ['Press Space once.', 'Press repeatedly.']) {
+    fireEvent.click(screen.getByRole('radio', { name: answer }))
+    fireEvent.click(screen.getByRole('button', { name: 'Check' }))
+    expect(heading).toBeVisible()
+    expect(read).not.toHaveBeenCalled()
+    expect(screen.queryByRole('heading', { name: 'Test your keyboard' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('heading', { name: 'Ready to begin?' })).not.toBeInTheDocument()
+    expect(screen.getByRole('status')).toHaveTextContent('For NO-GO, do nothing. Choose again.')
+  }
+  fireEvent.click(screen.getByRole('radio', { name: 'Do nothing.' }))
+  fireEvent.click(screen.getByRole('button', { name: 'Check' }))
+  await screen.findByRole('heading', { name: 'Test your keyboard' })
+  expect(read).toHaveBeenCalledOnce()
+  expect(recorder.snapshot().filter(event => event.type === 'onboarding_v13_answered').map(event => event.payload))
+    .toEqual([
+      { questionId: 'go', answerId: 'press', correct: true, attempt: 1 },
+      { questionId: 'no-go', answerId: 'press', correct: false, attempt: 2 },
+      { questionId: 'no-go', answerId: 'repeat', correct: false, attempt: 3 },
+      { questionId: 'no-go', answerId: 'wait', correct: true, attempt: 4 },
+    ])
 })

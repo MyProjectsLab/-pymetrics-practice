@@ -40,6 +40,7 @@ export function StopJourney({ recorder, mode = 'baseline', specificationVersion 
     if (!recorder.snapshot().some(event => event.type === 'guide_opened')) recorder.record('guide_opened', { source: mode === 'retest' ? 'training' : 'library' })
   }, [recorder, mode])
   const [evidence, setEvidence] = useState<UnderstandingEvidence | null>(null)
+  const [newQuestion, setNewQuestion] = useState<'go' | 'no-go'>('go')
   const [newAnswer, setNewAnswer] = useState('')
   const [newFeedback, setNewFeedback] = useState('')
   const newAttempt = useRef(0)
@@ -66,7 +67,7 @@ export function StopJourney({ recorder, mode = 'baseline', specificationVersion 
   useEffect(() => {
     if (!newExperience || openedNew.current) return
     openedNew.current = true
-    recorder.record('onboarding_v13_opened', { ruleVersion: STOP_RULE_VERSION, visualProfile: setup.visualProfile })
+    recorder.record('onboarding_v13_opened', { ruleVersion: STOP_RULE_VERSION, visualProfile: setup.visualProfile, questionCount: 2 })
   }, [newExperience, recorder, setup.visualProfile])
   const qualifyingBaseline = useCallback(async () => {
     try {
@@ -121,7 +122,7 @@ export function StopJourney({ recorder, mode = 'baseline', specificationVersion 
   }, [])
   const content = useRef<HTMLElement>(null)
   const viewportOkay = input.viewport.width >= 768 && input.viewport.height >= 600
-  useEffect(() => { content.current?.querySelector<HTMLElement>('h1')?.focus() }, [step])
+  useEffect(() => { content.current?.querySelector<HTMLElement>('h1')?.focus() }, [step, newQuestion])
   useEffect(() => {
     if (step !== 'readiness') return
     const prevent = (event: KeyboardEvent) => {
@@ -203,10 +204,11 @@ export function StopJourney({ recorder, mode = 'baseline', specificationVersion 
     if (!newAnswer || newActionPending.current || newView.current !== 'new-question') return
     newActionPending.current = true
     const token = ++newActionEpoch.current, bindingCode = setup.binding.code, visualProfile = setup.visualProfile
-    const answerId = newAnswer, correct = answerId === 'press'
+    const questionId = newQuestion, answerId = newAnswer, correct = answerId === (questionId === 'go' ? 'press' : 'wait')
     try {
-      recorder.record('onboarding_v13_answered', { questionId: 'go', answerId, correct, attempt: ++newAttempt.current })
-      if (!correct) { setNewFeedback('For red GO, press once. Green NO-GO means wait. Choose again.'); return }
+      recorder.record('onboarding_v13_answered', { questionId, answerId, correct, attempt: ++newAttempt.current })
+      if (!correct) { setNewFeedback(questionId === 'go' ? 'For red GO, press once. Green NO-GO means wait. Choose again.' : 'For NO-GO, do nothing. Choose again.'); return }
+      if (questionId === 'go') { setNewQuestion('no-go'); setNewAnswer(''); setNewFeedback(''); return }
       setNewFeedback(''); await afterNewUnderstanding(token, 'new-question', bindingCode, visualProfile)
     } finally { if (newActionEpoch.current === token) newActionPending.current = false }
   }
@@ -309,7 +311,7 @@ export function StopJourney({ recorder, mode = 'baseline', specificationVersion 
       {step === 'new-guide' && <div className="simple-stop-guide">
         <p className="eyebrow">How it works</p><h1 tabIndex={-1}>Stop</h1>
         <div className="rule-grid"><div><Stimulus kind="GO" profile={setup.visualProfile}/><p>GO — press {setup.binding.label} once</p></div><div><Stimulus kind="NO_GO" profile={setup.visualProfile}/><p>NO-GO — wait</p></div></div>
-        <p>You can respond after the signal disappears, until its response window closes.</p><button onClick={()=>{retireNewAction();moveNewStep('new-question')}}>Continue</button>
+        <p>You can respond after the signal disappears, until its response window closes.</p><button onClick={()=>{retireNewAction();setNewQuestion('go');setNewAnswer('');setNewFeedback('');moveNewStep('new-question')}}>Continue</button>
         <details className="start-options"><summary>Examples and previous practice</summary>
           {!mock&&<button className="secondary" onClick={()=>{retireNewAction();moveNewStep('touch_examples')}}>Try an untimed example</button>}
           {skipAvailable&&<button className="secondary" onClick={()=>{void skipNewIntroduction()}}>Skip instructions</button>}
@@ -317,7 +319,7 @@ export function StopJourney({ recorder, mode = 'baseline', specificationVersion 
         </details>
       </div>}
       {step === 'new-question' && <>
-        <p className="eyebrow">Stop · Try the rule</p><h1 tabIndex={-1}>What do you do for GO?</h1>
+        <p className="eyebrow">Stop · Try the rule</p><h1 tabIndex={-1}>{newQuestion === 'go' ? 'What do you do for GO?' : 'A NO-GO symbol appears. What do you do?'}</h1>
         <fieldset><legend>Choose one answer</legend>
           <label className="choice"><input type="radio" name="stop-new-check" checked={newAnswer === 'press'} onChange={() => { retireNewAction(); setNewAnswer('press') }} />Press {setup.binding.label} once.</label>
           <label className="choice"><input type="radio" name="stop-new-check" checked={newAnswer === 'wait'} onChange={() => { retireNewAction(); setNewAnswer('wait') }} />Do nothing.</label>

@@ -136,3 +136,13 @@ it('renders actual V1.3 category and block denominators without a mixed block-ac
   expect(screen.queryByText(/From Block 1 to Block 4, overall accuracy/)).not.toBeInTheDocument()
   expect(within(screen.getByRole('table')).getAllByText('7 of 7 (100%)')).toHaveLength(4)
 })
+
+it.each(['completed', 'invalid'] as const)('defines miss and false alarm alongside the %s detailed counts', kind => {
+  const r = result()
+  render(kind === 'completed' ? <StopReport result={r} onReplay={() => {}} onLibrary={() => {}} /> :
+    <InvalidReport draft={{ invalidRule: 'stop_validity_v1.hidden', events: r.events } as DevelopmentDraft} onRestart={() => {}} onGuide={() => {}} />)
+  fireEvent.click(screen.getByText('Detailed numbers'))
+  const definition = screen.getByText('A miss means not responding to GO; a false alarm means responding to NO-GO.')
+  expect(definition).toBeVisible()
+  expect(definition.closest('details')).toHaveAttribute('open')
+})

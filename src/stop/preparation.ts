@@ -114,15 +114,26 @@ export function currentNewPreparationBranch(events: readonly Readonly<{ type: st
   if (opened.length !== 1) return null
   const opening = opened[0].payload as StopEventPayloads['onboarding_v13_opened']
   if (opening?.ruleVersion !== STOP_RULE_VERSION || !['standard', 'shape_accommodation_v1'].includes(opening.visualProfile)) return null
+  if (opening.questionCount !== undefined && opening.questionCount !== 2) return null
+  const twoQuestions = opening.questionCount === 2
+  let goPassed = false
   let answers = 0
   let current: NewPreparationBranch | null = null
   for (const event of events) {
     if (event.type === 'onboarding_v13_answered') {
       const answer = event.payload as StopEventPayloads['onboarding_v13_answered']
-      if (event.sequenceNumber <= opened[0].sequenceNumber || answer?.questionId !== 'go' ||
-        !['press', 'wait', 'repeat'].includes(answer.answerId) || answer.correct !== (answer.answerId === 'press') ||
+      if (event.sequenceNumber <= opened[0].sequenceNumber ||
+        (answer?.questionId !== 'go' && !(twoQuestions && answer?.questionId === 'no-go')) ||
+        !['press', 'wait', 'repeat'].includes(answer.answerId) ||
+        answer.correct !== (answer.answerId === (answer.questionId === 'go' ? 'press' : 'wait')) ||
         answer.attempt !== ++answers) return null
-      current = answer.correct ? { kind: 'answer', sequenceNumber: event.sequenceNumber } : null
+      if (answer.questionId === 'go') {
+        goPassed = answer.correct
+        current = !twoQuestions && answer.correct ? { kind: 'answer', sequenceNumber: event.sequenceNumber } : null
+      } else {
+        if (!goPassed) return null
+        current = answer.correct ? { kind: 'answer', sequenceNumber: event.sequenceNumber } : null
+      }
     } else if (event.type === 'onboarding_v13_skip_verified') {
       const source = event.payload as StopEventPayloads['onboarding_v13_skip_verified']
       if (event.sequenceNumber <= opened[0].sequenceNumber || source?.sourceReadOutcome !== 'verified_complete' ||

@@ -86,8 +86,8 @@ export interface StopEventPayloads {
   comprehension_answered: Readonly<{ itemId: string; answerId: string; correct: boolean; attempt: number }>
   shortcut_chosen: Readonly<{ sourceSessionId: string; ruleVersion: 'stop_rule_v1'; experienceVersion: '1.2'; skipped: readonly ['rule', 'examples', 'comprehension'] }>
   device_check_completed: Readonly<{ inputBinding: string; inputDeviceClass: string; visualProfile: StopVisualProfile; timingProfile: StopTimingProfile }>
-  onboarding_v13_opened: Readonly<{ ruleVersion: 'stop_rule_v1'; visualProfile: StopVisualProfile }>
-  onboarding_v13_answered: Readonly<{ questionId: 'go'; answerId: string; correct: boolean; attempt: number }>
+  onboarding_v13_opened: Readonly<{ ruleVersion: 'stop_rule_v1'; visualProfile: StopVisualProfile; questionCount?: 2 }>
+  onboarding_v13_answered: Readonly<{ questionId: 'go' | 'no-go'; answerId: string; correct: boolean; attempt: number }>
   onboarding_v13_skip_verified: Readonly<{ installationId: string; sourceSessionId: string; formId: string; formChecksum: string; specificationVersion: '1.3'; scoringVersion: string; ruleVersion: 'stop_rule_v1'; visualProfile: StopVisualProfile; sourceReadOutcome: 'verified_complete' }>
   input_check_v13: Readonly<{ origin: 'fresh' | 'reused'; code: string; proof: Readonly<{ code: string; trustedDown: true; trustedUp: true; sameCode: true; unmodifiedDownAndUp: true; downWasNotRepeat: true; upWasNotRepeat: true }>; receiptId: string | null; tabNonce: string | null; inputDeviceClass: 'physical_keyboard'; physicalKeyboardDeclared: true; latencyAffectedInput: false; timingProfile: 'standard'; visualProfile: StopVisualProfile }>
   readiness_confirmed: Readonly<{ focused: boolean; visible: boolean }>
