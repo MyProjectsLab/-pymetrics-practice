@@ -266,15 +266,19 @@ describe('bounded pilot shared entry', () => {
   })
 
   it('labels the twelve-game pilot inventory and separate Towers training entry', () => {
-    render(<App storagePolicy="temporary" />)
+    const view = render(<App storagePolicy="temporary" />)
     library()
     const towers = screen.getByRole('heading', { name: 'Towers' }).closest('article')!
-    expect(within(towers).getByText(/separate Towers Advanced Training available/)).toBeVisible()
+    expect(within(towers).getByRole('link', { name: 'Open Towers' })).toHaveAttribute('href', '/practice/towers')
     expect(screen.getByRole('button', { name: 'Open Towers Advanced Training' })).toBeVisible()
-    expect(screen.getByText('Practice, local reports and Advanced Training available')).toBeVisible()
-    expect(screen.getByText('Practice, local reports and separate-baseline Advanced Training available')).toBeVisible()
-    expect(screen.getByText(/An actual assessment may differ/)).toBeVisible()
-    expect(screen.getByText(/There is no account or cross-device sync/)).toBeVisible()
+    fireEvent.click(screen.getByText('About your practice and results'))
+    expect(screen.getByText('This is independent preparation, not an employer score. Follow the instructions in your actual assessment invitation.')).toBeVisible()
+    expect(screen.getByText(/Results stay in this browser. Clearing site data removes them/)).toBeVisible()
+    view.unmount()
+    // The redesign moved the combined training statement and account explanation to the homepage.
+    render(<Landing />)
+    expect(screen.getByText('Separate Advanced Training is available for Stop, Balloons and Towers.')).toBeVisible()
+    expect(screen.getByText(/There is no account or device sync/)).toBeVisible()
   })
 
   it('keeps twelve landing rows clearly featured and states mock and training availability', () => {
