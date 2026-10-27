@@ -1,6 +1,9 @@
 import { render, screen, fireEvent, cleanup } from '@testing-library/react'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { LiveRun } from './LiveRun'
+import { StopJourney } from './Journey'
+import { TEMPORARY_DISCLOSURE } from './training'
+import { setStopLocalStore } from './storage'
 import { createStopRun } from './run'
 import { createPreparationRecorder, spaceBinding } from './preparation'
 import { createMemoryExposureRepository } from './exposure'
@@ -45,10 +48,16 @@ describe('M2B-2 live and recovery screens', () => {
     [RULE.viewport, 'The timed task did not run in the supported physical-keyboard setup.'],
     [RULE.wrong, 'The input record did not meet the session-quality rules.'],
   ])('shows the approved reason for %s and active-tab limitation', (rule, sentence) => {
+    setStopLocalStore(null)
+    const preparation = render(<StopJourney recorder={createPreparationRecorder()} specificationVersion="1.3"
+      onLibrary={vi.fn()} onRestart={vi.fn()} onReplay={vi.fn()} />)
+    const warning = screen.getByText(TEMPORARY_DISCLOSURE)
+    expect(warning).toBeVisible()
+    expect(warning.closest('details')).toBeNull()
+    preparation.unmount()
     const callbacks = show('invalid', rule)
     expect(screen.getByRole('heading', { name: 'This run cannot continue as a valid session' })).toHaveFocus()
     expect(screen.getByText(`${sentence} Your completed events are preserved locally for review. Restarting will use another available form.`)).toBeInTheDocument()
-    expect(screen.getByText(/Results and sequence-use records are kept only while this page remains open/)).toBeInTheDocument()
     fireEvent.click(screen.getByRole('button', { name: 'Restart with a new form' })); expect(callbacks.onRestart).toHaveBeenCalledOnce()
     fireEvent.click(screen.getByRole('button', { name: 'Return to the guide' })); expect(callbacks.onGuide).toHaveBeenCalledOnce()
   })
