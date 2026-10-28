@@ -20,12 +20,14 @@ function locks() {
     request: (_name: string, _options: unknown, callback: (lock: object) => Promise<unknown>) => callback({}),
   } })
 }
-async function openHistory(store: CardsStore) {
+async function openHistory(store: CardsStore, beforeHistoryRead?: () => void) {
   vi.spyOn(CardsStore, 'open').mockResolvedValue(store)
-  render(<CardsJourney onLibrary={() => undefined} />)
+  await act(async () => { render(<CardsJourney onLibrary={() => undefined} />) })
   fireEvent.click(screen.getByText('Examples and saved results'))
-  await screen.findByRole('button', { name: 'Saved results' })
-  fireEvent.click(screen.getByRole('button', { name: 'Saved results' }))
+  const historyButton = await screen.findByRole('button', { name: 'Saved results' })
+  // Bootstrap also reads history for guide shortcuts; inject view faults only after it settles.
+  beforeHistoryRead?.()
+  fireEvent.click(historyButton)
 }
 afterEach(() => { cleanup(); vi.restoreAllMocks() })
 
@@ -48,9 +50,9 @@ describe('Cards recovery claims', () => {
     locks()
     const store = await CardsStore.open(new MemoryBackend())
     await store.start({ id: 'start', runId: 'run', documentId: 'doc', wallMs: 1 })
-    vi.spyOn(store, 'list').mockRejectedValueOnce(Error('injected history read failure'))
-    await openHistory(store)
+    await openHistory(store, () => { vi.spyOn(store, 'list').mockRejectedValueOnce(Error('injected history read failure')) })
     await screen.findByText('injected history read failure')
+    expect(store.list).toHaveBeenCalledOnce()
     expect(screen.getByText('History is hidden until this tab rechecks saved data.')).toBeInTheDocument()
     expect(screen.queryByText('No saved Cards attempts.')).not.toBeInTheDocument()
   })
