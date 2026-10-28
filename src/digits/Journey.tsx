@@ -927,12 +927,24 @@ export function DigitsJourney({ onLibrary, mock, reportTarget }: { onLibrary: ()
       <p>Keep this window in front until the run ends.</p>
       <button disabled={starting} onClick={() => void start()}>{starting ? 'Starting…' : retryCanceledStart ? 'Retry saving' : 'Start'}</button>
       <button className="secondary" disabled={starting || pendingStart} onClick={() => go('setup')}>Change setup</button></section>}
-    {(screen === 'playing' || screen === 'feedback') && <section className="panel digits-play">
-      <h1 tabIndex={-1}>Digits</h1>
-      {screen === 'playing' && <><p>Trial {state?.trialIndex ?? 1} · {currentLength} digits · Mistakes {state?.wrongCount ?? 0}/3</p>
-        <div ref={stimulusRef} className="digits-stimulus" aria-hidden="true" />
-        <div className="digits-entry" aria-label="Digits entry">
-          <label htmlFor="digits-response">Enter the digits in order</label>
+    {(screen === 'playing' || screen === 'feedback') && <section className="panel digits-play" data-phase={state?.phase}>
+      <div className="digits-trial-top">
+        <p>Trial {state?.trialIndex ?? 1} · {screen === 'feedback' ? state?.closed.at(-1)?.target.length ?? currentLength : currentLength} digits</p>
+        <h1 tabIndex={-1}>Digits</h1>
+        <span className="digits-mistakes" aria-hidden="true">{[0, 1, 2].map(index => <span key={index} className={index < (state?.wrongCount ?? 0) ? 'used' : ''} />)}</span>
+      </div>
+      <p className="digits-sr-only">Trial {state?.trialIndex ?? 1} · {currentLength} digits · Mistakes {state?.wrongCount ?? 0}/3</p>
+      <div className="digits-entry-progress" aria-hidden="true">{entryActive && state?.entryDeadlineMs && <span key={state.entryDeadlineMs} style={{ animationDuration: `${state.entryDeadlineMs - (state.entryOpenedMs ?? state.entryDeadlineMs)}ms` }} />}</div>
+      {screen === 'playing' && <>
+        <div className="digits-stage">
+          <div ref={stimulusRef} className="digits-stimulus" aria-hidden="true" />
+          {mode === 'auditory' && state?.phase === 'presentation' && <span className="digits-listen" aria-hidden="true">Listen</span>}
+          <div className="digits-position-ticks" aria-hidden="true">{Array.from({ length: currentLength }, (_, index) => <span key={index} className={index <= (state?.digitIndex ?? 0) ? 'shown' : ''} />)}</div>
+        </div>
+        <div className="digits-entry" aria-label="Digits entry" style={{ visibility: state?.phase === 'presentation' && !entryActive ? 'hidden' : undefined }}>
+          <label className="digits-sr-only" htmlFor="digits-response">Enter the digits in order</label>
+          <div className="digits-answer" onClick={() => inputRef.current?.focus({ preventScroll: true })}>
+          <div className="digits-answer-boxes" aria-hidden="true">{Array.from({ length: currentLength }, (_, index) => <span key={index} className={index === entryValue.length ? 'next' : ''}>{entryValue[index] ?? ''}</span>)}</div>
           <input ref={inputRef} id="digits-response" type="text" inputMode="numeric"
             autoComplete="off" spellCheck={false} maxLength={currentLength}
             disabled={!entryActive || state?.profile.entryMethod === 'keypad'} value={entryValue}
@@ -952,23 +964,24 @@ export function DigitsJourney({ onLibrary, mock, reportTarget }: { onLibrary: ()
             onCompositionEnd={e => { if (!e.isTrusted) { setEntryValue(runnerRef.current?.state.draft ?? ''); return }
               const accepted = runnerRef.current?.edit(e.currentTarget.value, true) ?? ''
               setEntryValue(accepted) }} />
+          </div>
+          <p role="status">{entryMessage}</p>
+          <div className="digits-entry-actions"><button disabled={!entryActive} onKeyDown={e => { if (e.repeat) e.preventDefault() }} onClick={e => { if (e.isTrusted) runnerRef.current?.resolve('submit') }}>Submit</button>
+          <button className="secondary" disabled={!entryActive} onKeyDown={e => { if (e.repeat) e.preventDefault() }} onClick={e => { if (e.isTrusted) runnerRef.current?.resolve('skip') }}>Skip</button></div>
+          <p className="digits-countdown" aria-live="polite">{countdown.replace('seconds remaining', 's left')}</p>
           {entryActive && state?.profile.entryMethod === 'keypad' && <div className="digits-keypad" aria-label="Numeric keypad">
             {'0123456789'.split('').map(digit => <button key={digit} type="button" onKeyDown={e => { if (e.repeat) e.preventDefault() }}
               onClick={e => { if (!e.isTrusted) return; const accepted = runnerRef.current?.edit(entryValue + digit, false) ?? entryValue
                 setEntryValue(accepted) }}>{digit}</button>)}
             <button type="button" onKeyDown={e => { if (e.repeat) e.preventDefault() }} onClick={e => { if (!e.isTrusted) return; const accepted = runnerRef.current?.edit(entryValue.slice(0, -1), false) ?? ''
               setEntryValue(accepted) }}>Delete last digit</button></div>}
-          <p role="status">{entryMessage}</p><p aria-live="polite">{countdown}</p>
-          <div className="digits-entry-actions"><button disabled={!entryActive} onKeyDown={e => { if (e.repeat) e.preventDefault() }} onClick={e => { if (e.isTrusted) runnerRef.current?.resolve('submit') }}>Submit</button>
-          <button className="secondary" disabled={!entryActive} onKeyDown={e => { if (e.repeat) e.preventDefault() }} onClick={e => { if (e.isTrusted) runnerRef.current?.resolve('skip') }}>Skip</button></div>
         </div></>}
       {screen === 'feedback' && state && <>
-        <p role="status">{state.closed.at(-1)?.exactCorrect ? 'Correct' : 'Incorrect'}. Next: {state.length} digits.</p>
-        <p>Mistakes {state.wrongCount}/3</p>
+        <div className="digits-feedback" role="status"><h2>{state.closed.at(-1)?.exactCorrect ? 'Correct' : 'Incorrect'}</h2><p>Next: {state.length} digits</p></div>
         {!saved && <p>{saveIssue ? 'Save unconfirmed. Next is unavailable.' : 'Saving…'}</p>}
         <button disabled={!saved || !!saveIssue || starting} onClick={() => void nextTrial()}>Next</button>
         {saveIssue && !retryUsedState && <button onClick={() => void retrySave()}>Retry saving</button>}
-        <button className="secondary" onClick={endAtFeedback}>End and review</button>
+        <button className="secondary" onClick={endAtFeedback}>End and see results</button>
       </>}
 
     </section>}
