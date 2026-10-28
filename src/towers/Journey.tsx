@@ -52,7 +52,7 @@ function describe(board: Board, form: Form) {
 function Disk({ form, id, small = false }: { form: Form; id: number; small?: boolean }) {
   const disk = form.disks[id - 1]
   return <span className={`towers-disk towers-pattern-${disk.pattern}${small ? ' towers-small' : ''}`}
-    style={{ backgroundColor: disk.color }} aria-label={disk.name}>{disk.name}</span>
+    style={{ backgroundColor: disk.color }} aria-label={disk.name}><span className="towers-sr-only">{disk.name}</span></span>
 }
 function BoardView({ board, form, selected, onTower, admitClick, onActivationKey, disabled, target = false }: {
   board: Board; form: Form; selected?: number | null; onTower?: (index: number, source: InputSource) => void
@@ -909,12 +909,23 @@ export function TowersJourney({ onLibrary, runtime, mock, reportTarget }: { onLi
     {step === 'play' && form && activeBoard && <div className="panel towers-play" ref={playBoard}>
       <div className="towers-top"><h1 ref={playTitle} tabIndex={-1}>Match the target</h1>
         <strong aria-label={`Time remaining ${mmss(msLeft)}`}>{mmss(msLeft)}</strong></div>
+      <div className="towers-time-progress" aria-hidden="true"><span style={{ transform: `scaleX(${msLeft / 120000})` }} /></div>
       {mock && run && <p>Local form {run.formId}. This label identifies the saved puzzle form.</p>}
       {run?.familiar && <p>Familiar puzzle · {run.formId}</p>}
-      <p>Target</p><BoardView board={form.target} form={form} target />
-      <p>Your board</p><BoardView board={activeBoard} form={form} selected={selected}
-        disabled={busy || pending || !!displayRevoked.current || run?.status !== 'active'}
-        onTower={tower} admitClick={admitClick} onActivationKey={onActivationKey} />
+      <div className="towers-workspace">
+        <div className="towers-target-column"><p className="towers-board-label">Target</p><BoardView board={form.target} form={form} target /></div>
+        <div className="towers-live-column"><p className="towers-board-label">Your board</p><BoardView board={activeBoard} form={form} selected={selected}
+          disabled={busy || pending || !!displayRevoked.current || run?.status !== 'active'}
+          onTower={tower} admitClick={admitClick} onActivationKey={onActivationKey} /></div>
+      </div>
+      <div className="towers-move-row"><p className="towers-moves">Moves <strong>{state?.movesMade ?? 0}</strong></p>
+      <div className="towers-actions"><button disabled={!state?.undoStack.length || busy || pending || !!displayRevoked.current}
+          onKeyDown={onActivationKey} onClick={event => { if (admitClick(event))
+            void act('undo', { refActionId: state!.undoStack.at(-1)!.actionId }) }}>Undo</button>
+        <button disabled={busy || pending || !!displayRevoked.current}
+          onKeyDown={onActivationKey} onClick={event => { if (admitClick(event)) void act('reset') }}>Clear All</button>
+        <button disabled={busy || pending || !!displayRevoked.current}
+          onKeyDown={onActivationKey} onClick={event => { if (admitClick(event)) setConfirmRestart(true) }}>Restart</button></div></div>
       <details className="towers-key-controls">
         <summary>Keyboard source and destination controls</summary>
         <p>Choose source, then destination. Escape cancels selection.</p>
@@ -925,22 +936,15 @@ export function TowersJourney({ onLibrary, runtime, mock, reportTarget }: { onLi
         {[0, 1, 2].map(i => <button key={`d${i}`} disabled={selected === null || busy || pending ||
           !!displayRevoked.current || run?.status !== 'active'} onKeyDown={onActivationKey}
           onClick={event => { const source = admitClick(event); if (source) tower(i, source) }}>Destination {i + 1}</button>)}
+        <button disabled={selected === null} onClick={clearSelection}>Cancel selection</button>
       </details>
-      <div className="towers-actions"><button disabled={selected === null} onClick={clearSelection}>Cancel selection</button>
-        <button disabled={!state?.undoStack.length || busy || pending || !!displayRevoked.current}
-          onKeyDown={onActivationKey} onClick={event => { if (admitClick(event))
-            void act('undo', { refActionId: state!.undoStack.at(-1)!.actionId }) }}>Undo</button>
-        <button disabled={busy || pending || !!displayRevoked.current}
-          onKeyDown={onActivationKey} onClick={event => { if (admitClick(event)) void act('reset') }}>Clear All</button>
-        <button disabled={busy || pending || !!displayRevoked.current}
-          onKeyDown={onActivationKey} onClick={event => { if (admitClick(event)) setConfirmRestart(true) }}>Restart</button></div>
       {confirmRestart && <div className="panel"><p>End this attempt and start again from the guide?</p>
         <button onClick={() => setConfirmRestart(false)}>Cancel</button>
         <button onClick={() => { setConfirmRestart(false); void endAttempt('restart') }}>Restart</button></div>}
       {pending && <button disabled={busy} onClick={() => void retrySave()}>Check saved move and retry</button>}
       {pendingOnsetResolution.current && <button disabled={busy}
         onClick={() => void retryOnsetResolution()}>Check saved board outcome</button>}
-      <p role="status" aria-live="polite">{announcement}</p>
+      <p className="towers-sr-only" role="status" aria-live="polite">{announcement}</p>
       <p className="note">{LIMIT}</p></div>}
     {step === 'completion' && run && form && <div className="panel"><h1 tabIndex={-1}>
       {run.status === 'complete' ? 'Puzzle complete' : 'Time is up'}</h1>
