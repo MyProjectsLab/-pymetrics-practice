@@ -1,5 +1,5 @@
 import { QuickRules } from '../onboarding/QuickRules'
-import { ReportSummary } from '../reports/Summary'
+import '../reports/summary.css'
 import { cardsFeedback } from '../reports/feedback'
 import { AssessmentUsageNotice } from '../assessment-usage/Notice'
 /* oxlint-disable react/immutability, react/purity, react-hooks/exhaustive-deps */
@@ -22,10 +22,22 @@ const deckSymbol: Record<Deck, string> = { A: '◆', B: '●', C: '▲', D: '■
 function money(value: number) { return `${value < 0 ? '-' : ''}$${Math.abs(value).toLocaleString('en-US')}` }
 function outcomeText(value: number) { return `${value > 0 ? '+' : ''}${money(value)}` }
 function formattedCardsFeedback(report: Report) {
-  const feedback = cardsFeedback(report)
-  const amounts: Record<string, number> = { 'Final balance': report.endingBalance, 'Total gains': report.gains, 'Total losses': report.losses }
-  return { ...feedback, metrics: feedback.metrics.map(metric => Object.hasOwn(amounts, metric.label) ?
-    { ...metric, value: money(amounts[metric.label]) } : metric) }
+  return { ...cardsFeedback(report), metrics: [
+    { label: 'Net change', value: outcomeText(report.endingBalance - report.startingBalance) },
+    { label: 'Total gains', value: money(report.gains) },
+    { label: 'Total losses', value: money(report.losses) },
+    { label: 'Deck switches', value: String(report.switches) },
+  ] }
+}
+function CardsSummary({ report }: { report: Report }) {
+  const feedback = formattedCardsFeedback(report)
+  return <section className="report-summary cards-summary" aria-label="Result summary">
+    <dl className="report-summary-metrics">{feedback.metrics.map(metric => <div key={metric.label}><dt>{metric.label}</dt><dd>{metric.value}</dd></div>)}</dl>
+    <dl className="cards-by-deck" aria-label="Results by deck">{DECKS.map(deck => <div key={deck}>
+      <dt>Deck {deck}</dt><dd>{report.byDeck[deck].count} cards</dd><dd className="cards-deck-net">{outcomeText(report.byDeck[deck].gains - report.byDeck[deck].losses)}</dd>
+    </div>)}</dl>
+    <div className="report-next-step"><h2>{report.endingBalance >= report.startingBalance ? 'How it went' : 'What to work on'}</h2><p>{feedback.observation}</p><h3>Try next</h3><p>{feedback.tip}</p></div>
+  </section>
 }
 function nextFrame() { return new Promise<void>(resolve => requestAnimationFrame(() => resolve())) }
 function delivered<T>(operation: Promise<T>, controller: AbortController): Promise<T> {
@@ -51,9 +63,8 @@ function ReportPanel({ report, run, comparison, onHistory, onReplay, onLibrary, 
 }) {
   return <section className="panel cards-report" aria-labelledby="cards-report-title">
     <h2 id="cards-report-title" tabIndex={-1}>{report.status === 'complete_valid' ? `Ended with ${money(report.endingBalance)}` : `Stopped after ${report.committedDrawCount} cards`}</h2>
-    <p role="status">{report.status === 'complete_valid' ? 'Completed and saved in this browser' :
-      `Incomplete review, through draw ${report.committedDrawCount} of 80`}</p>
-    {report.status === 'complete_valid' && <ReportSummary feedback={formattedCardsFeedback(report)} />}
+    {report.status !== 'complete_valid' && <p role="status">Incomplete review, through draw {report.committedDrawCount} of 80</p>}
+    {report.status === 'complete_valid' && <CardsSummary report={report} />}
     <details><summary>Detailed numbers</summary>
     <p>{comparison}</p>
     {run.status === 'active' && <p>This attempt may still be in progress in another tab, or its closure save is unconfirmed. It cannot resume from this review.</p>}
@@ -648,7 +659,7 @@ export function CardsJourney({ onLibrary, mock, reportTarget }: { onLibrary: () 
       <button className="secondary cards-exit" onClick={() => {
         const closing = retire('run_exited', 'candidate_exit'); newStep('history')
         void Promise.resolve(closing).finally(() => refreshHistory())
-      }}>← Exit</button><p>{choices} / 80</p></div>
+      }}>← Exit</button><strong className="cards-game-name">Cards</strong><p>{choices} / 80</p></div>
       <div className="cards-progress" aria-hidden="true"><span style={{ transform: `scaleX(${choices / 80})` }} /></div>
       <div className="cards-balance"><span>Balance</span><strong>{money(display?.balance ?? report?.endingBalance ?? 2000)}</strong></div>
       <p className="cards-gain-loss">Gains {money(shownGains)} · Losses {money(shownLosses)}</p>
