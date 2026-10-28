@@ -930,7 +930,7 @@ export function DigitsJourney({ onLibrary, mock, reportTarget }: { onLibrary: ()
         <h1 tabIndex={-1}>Digits</h1>
         <span className="digits-mistakes" aria-hidden="true">{[0, 1, 2].map(index => <span key={index} className={index < (state?.wrongCount ?? 0) ? 'used' : ''} />)}</span>
       </div>
-      <p className="digits-sr-only">Trial {state?.trialIndex ?? 1} · {currentLength} digits · Mistakes {state?.wrongCount ?? 0}/3</p>
+      <p className="digits-sr-only">Trial {state?.trialIndex ?? 1} · {screen === 'feedback' ? state?.closed.at(-1)?.target.length ?? currentLength : currentLength} digits · Mistakes {state?.wrongCount ?? 0}/3</p>
       <div className="digits-entry-progress" aria-hidden="true">{entryActive && state?.entryDeadlineMs && <span key={state.entryDeadlineMs} style={{ animationDuration: `${state.entryDeadlineMs - (state.entryOpenedMs ?? state.entryDeadlineMs)}ms` }} />}</div>
       {screen === 'playing' && <>
         <div className="digits-stage">
