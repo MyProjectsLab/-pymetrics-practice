@@ -950,8 +950,7 @@ export function TowersJourney({ onLibrary, runtime, mock, reportTarget }: { onLi
       {run.status === 'complete' ? 'Puzzle complete' : 'Time is up'}</h1>
       <p>{run.status === 'complete' ? 'Your saved puzzle is ready to review.' : 'This attempt is saved as incomplete.'}</p>
       <button onClick={() => void openReport(run)}>Next</button></div>}
-    {step === 'report' && report && run && <div className="panel"><h1 ref={reportTitle} tabIndex={-1}>Towers report</h1>
-      <p role="status"><strong>{report.status === 'solved' ? 'Solved and saved' : 'Incomplete or review-only attempt'}.</strong></p>
+    {step === 'report' && report && run && <div className="panel"><h1 ref={reportTitle} tabIndex={-1}>{report.status === 'solved' ? `Solved in ${report.movesMade} moves` : report.status === 'incomplete timeout' ? 'Time ran out' : 'Attempt interrupted'}</h1>
       {report.status === 'solved' ? <ReportSummary feedback={towersFeedback(report)} /> : <p>You made {report.movesMade} moves before this attempt ended. The puzzle was not solved.</p>}
       {report.interruptionReason && <p>Interruption: {report.interruptionReason}</p>}
       <details><summary>Detailed numbers</summary><p>{comparison}</p><p>Moves: {report.movesMade}</p>
@@ -966,7 +965,6 @@ export function TowersJourney({ onLibrary, runtime, mock, reportTarget }: { onLi
         report.inputSources.join(', ') : 'no placements recorded'}</p>
       {run.familiar && <p>Familiar puzzle</p>}
       </details>
-      <p className="note">Browser controls include text, patterns and keyboard choices.</p>
       {mockError && <p role="alert">{mockError}</p>}{mockReady && mock && <button data-mock-return-intent onClick={() => void mock.continue().catch(cause => setMockError(message(cause)))}>Continue mock</button>}
       {reportTarget?<button onClick={onLibrary}>Return to mock</button>:<><button onClick={() => { void (mock?mock.retry():Promise.resolve()).then(()=>{token.current++;putRun(null);setReport(null);putForm(null);
         preferredForm.current=null;setError('');goStep('guide')}).catch(cause=>setMockError(message(cause))) }}>Try Again</button>
