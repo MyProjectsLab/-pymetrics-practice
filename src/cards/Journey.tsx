@@ -19,8 +19,14 @@ type Step = 'guide' | 'example' | 'quiz' | 'preflight' | 'ready' | 'play' | 'rep
 type Phase = 'preparing' | 'ready' | 'saving' | 'feedback' | 'uncertain'
 const LIMITATION = 'These amounts describe only this TraitGame form. They do not reproduce a provider score, predict a hiring result or establish a personality trait.'
 const deckSymbol: Record<Deck, string> = { A: '◆', B: '●', C: '▲', D: '■' }
-function outcomeText(value: number) { return value > 0 ? `Gain +$${value}` : value < 0 ? `Loss -$${-value}` : 'No change $0' }
-function money(value: number) { return value < 0 ? `-$${-value}` : `$${value}` }
+function money(value: number) { return `${value < 0 ? '-' : ''}$${Math.abs(value).toLocaleString('en-US')}` }
+function outcomeText(value: number) { return `${value > 0 ? '+' : ''}${money(value)}` }
+function formattedCardsFeedback(report: Report) {
+  const feedback = cardsFeedback(report)
+  const amounts: Record<string, number> = { 'Final balance': report.endingBalance, 'Total gains': report.gains, 'Total losses': report.losses }
+  return { ...feedback, metrics: feedback.metrics.map(metric => Object.hasOwn(amounts, metric.label) ?
+    { ...metric, value: money(amounts[metric.label]) } : metric) }
+}
 function nextFrame() { return new Promise<void>(resolve => requestAnimationFrame(() => resolve())) }
 function delivered<T>(operation: Promise<T>, controller: AbortController): Promise<T> {
   return new Promise((resolve, reject) => {
@@ -47,20 +53,20 @@ function ReportPanel({ report, run, comparison, onHistory, onReplay, onLibrary, 
     <h2 id="cards-report-title" tabIndex={-1}>Cards result</h2>
     <p role="status">{report.status === 'complete_valid' ? 'Completed and saved in this browser' :
       `Incomplete review, through draw ${report.committedDrawCount} of 80`}</p>
-    {report.status === 'complete_valid' && <ReportSummary feedback={cardsFeedback(report)} />}
+    {report.status === 'complete_valid' && <ReportSummary feedback={formattedCardsFeedback(report)} />}
     <details><summary>Detailed numbers</summary>
     <p>{comparison}</p>
     <p>Form {report.formId}{report.ordinal > 6 ? ' · repeated form' : ''}.</p>
     <p>{report.committedDrawCount} committed draws; {report.feedbackSeenCount} feedback displays confirmed during play.
       {report.committedDrawCount > report.feedbackSeenCount ? ' The last saved outcome may not have been confirmed visible during play.' : ''}</p>
     {run.status === 'active' && <p>This attempt may still be in progress in another tab, or its closure save is unconfirmed. It cannot resume from this review.</p>}
-    <div className="cards-totals"><p>Starting balance <strong>${report.startingBalance}</strong></p>
-      <p>Total gains <strong>${report.gains}</strong></p><p>Total losses <strong>${report.losses}</strong></p>
+    <div className="cards-totals"><p>Starting balance <strong>{money(report.startingBalance)}</strong></p>
+      <p>Total gains <strong>{money(report.gains)}</strong></p><p>Total losses <strong>{money(report.losses)}</strong></p>
       <p>{report.status === 'complete_valid' ? 'Ending balance' : 'Saved prefix balance'} <strong>{money(report.endingBalance)}</strong></p></div>
     <p>Deck switches: {report.switches}{report.status === 'complete_valid' ? ' of 79 adjacent draw pairs' : ' in the saved prefix'}.</p>
     <div className="cards-table"><table><caption>Chosen outcomes by deck</caption><thead><tr><th>Deck</th><th>Draws</th><th>Gains</th><th>Losses</th></tr></thead>
       <tbody>{DECKS.map(deck => <tr key={deck}><th scope="row">Deck {deck}</th><td>{report.byDeck[deck].count}</td>
-        <td>${report.byDeck[deck].gains}</td><td>${report.byDeck[deck].losses}</td></tr>)}</tbody></table></div>
+        <td>{money(report.byDeck[deck].gains)}</td><td>{money(report.byDeck[deck].losses)}</td></tr>)}</tbody></table></div>
     <details><summary>Selected draw trace</summary><ol>{report.trace.map(draw => <li key={draw.turn}>
       Draw {draw.turn}: Deck {draw.deck}, its card {draw.deckDraw}; {outcomeText(draw.value)}; balance {money(draw.balance)}
       {!draw.feedbackSeen ? ' · display not confirmed' : ''}.</li>)}</ol></details>
@@ -626,7 +632,7 @@ export function CardsJourney({ onLibrary, mock, reportTarget }: { onLibrary: () 
     {error && <p role="alert">{error}</p>}
     {step === 'guide' && <div className="panel"><p className="eyebrow">How it works</p><h1 ref={heading} tabIndex={-1}>Cards</h1><QuickRules rules={['Choose from four decks. Each card adds to or subtracts from your balance.', 'You can switch decks after any card. There are 80 draws and no timer.', 'Watch the gains and losses as you choose.']} note={'Start with $2,000 in simulated money. No real money is involved.'}/><div className="actions"><button onClick={() => newStep('quiz')}>Continue</button></div><details className="start-options"><summary>Examples and saved results</summary><div className="actions"><button className="secondary" onClick={() => newStep('example')}>See an example</button><button className="secondary" onClick={openHistory}>Saved results</button>{skipAvailable&&<button className="secondary" onClick={()=>{void skipTutorial()}}>Skip instructions</button>}</div></details><AssessmentUsageNotice /></div>}
     {step === 'example' && <div className="panel"><h2>Four sample draws</h2>
-      <ol><li>Deck A: gain $100.</li><li>Deck A: lose $50.</li><li>Deck C: no change.</li><li>Switch to Deck D: gain $25.</li></ol>
+      <ol><li>Deck A: gain {outcomeText(100)}.</li><li>Deck A: lose {outcomeText(-50)}.</li><li>Deck C: no change {outcomeText(0)}.</li><li>Switch to Deck D: gain {outcomeText(25)}.</li></ol>
       <p>These coached examples are not scored and do not use a saved form.</p><button onClick={() => newStep('quiz')}>Check the rules</button></div>}
     {step === 'quiz' && <div className="panel"><h2>Check the rules</h2>
       <fieldset><legend>Can a draw lose money, and when does the game end?</legend>
