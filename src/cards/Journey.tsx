@@ -671,7 +671,7 @@ export function CardsJourney({ onLibrary, mock, reportTarget }: { onLibrary: () 
           if (event.key === 'Enter' || event.key === ' ') lastInput.current = { kind: 'keyboard', deck, at: performance.now() } }}
         onPointerDown={event => { lastInput.current = { kind: event.pointerType === 'touch' ? 'touch' : 'pointer', deck, at: performance.now() } }}
         onPointerCancel={() => { lastInput.current = null }}
-        onBlur={() => { lastInput.current = null }}
+        onBlur={() => { if (lastInput.current?.deck === deck) lastInput.current = null }}
         onClick={event => void draw(deck, event.nativeEvent.isTrusted, event.altKey || event.ctrlKey || event.metaKey || event.shiftKey)}>
           <span className="cards-deck-art" aria-hidden="true">{deckSymbol[deck]}</span><span className="cards-deck-label">Deck {deck}</span></button>)}</div>
       {phase === 'uncertain' ? <div role="alert"><p>{pendingLabel}</p>
