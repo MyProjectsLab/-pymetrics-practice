@@ -702,7 +702,8 @@ export function DigitsJourney({ onLibrary, mock, reportTarget }: { onLibrary: ()
     const ticket = navigation.current.capture(), arm = attemptRef.current, candidate = frozenSave.current
     if (!admitted(ticket) || !arm || ticket.target !== digitsTarget(arm) || retryUsed.current) return
     markRetry(true)
-    if (candidate) await saveCurrent(candidate, ticket)
+    if (candidate?.phase === 'completed' && screen === 'report') await publishReport(arm, 'live', ticket)
+    else if (candidate) await saveCurrent(candidate, ticket)
     else await publishReport(arm, 'history', ticket)
   }
   function retire(key: string, message: string) {

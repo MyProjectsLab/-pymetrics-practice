@@ -31,7 +31,7 @@ for (const inMock of [false, true]) for (const failure of ['terminal save', 'rep
       request: (_name: string, _options: unknown, work: (lock: object) => unknown) => work({}),
     } })
     // This is a mounted coordinator test. The native browser suite exercises actual presentation/input.
-    vi.spyOn(DigitsBrowserRun.prototype, 'runTrial').mockImplementation(async function () {
+    vi.spyOn(DigitsBrowserRun.prototype, 'runTrial').mockImplementation(async function (this: DigitsBrowserRun) {
       let state = advanceDigits(this.arm.arm, { kind: 'start', atMs: this.arm.arm.events[0].atMs })
       for (let index = 0; index < 3; index++) {
         state = closeTrial(state, false)
@@ -52,15 +52,15 @@ for (const inMock of [false, true]) for (const failure of ['terminal save', 'rep
       continue: continueMock, retry: async () => {}, leave() {},
     } : undefined
     render(<DigitsJourney onLibrary={vi.fn()} mock={mock} />)
-    fireEvent.click(await screen.findByRole('button', { name: 'Continue', exact: true }))
+    fireEvent.click(await screen.findByRole('button', { name: 'Continue' }))
     fireEvent.click(screen.getByLabelText('Same digits, same order'))
     fireEvent.click(screen.getByRole('button', { name: 'Check answer' }))
     fireEvent.change(screen.getByLabelText(/Try entering 4270/), { target: { value: '4270' } })
-    fireEvent.click(screen.getByRole('button', { name: 'Start', exact: true }))
-    const next = await screen.findByRole('button', { name: 'Next', exact: true })
+    fireEvent.click(screen.getByRole('button', { name: 'Start' }))
+    const next = await screen.findByRole('button', { name: 'Next' })
     if (failure === 'terminal save') {
       expect(next).toBeDisabled()
-      fireEvent.click(await screen.findByRole('button', { name: 'Retry saving', exact: true }))
+      fireEvent.click(await screen.findByRole('button', { name: 'Retry saving' }))
     }
     await waitFor(() => expect(next).toBeEnabled())
     expect(append).not.toHaveBeenCalled()

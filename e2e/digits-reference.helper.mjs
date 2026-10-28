@@ -12,12 +12,22 @@ export async function readDigitsRoot(page) {
     }
   }))
 }
-export async function exerciseDigitsReference(page, { origin, method = 'keyboard', contrast = false, waitMs = 0, screenshots } = {}) {
+export async function exerciseDigitsReference(page, { origin, method = 'keyboard', contrast = false, waitMs = 0, screenshots, failReportOnce = false } = {}) {
   const errors = []
   page.on('pageerror', error => errors.push(String(error)))
   await page.addInitScript(() => {
     Object.defineProperty(navigator, 'doNotTrack', { value: '1', configurable: true })
     window.digitsReferenceProbe = []
+    const put = IDBObjectStore.prototype.put
+    IDBObjectStore.prototype.put = function (value, ...args) {
+      if (window.failDigitsReportOnce && this.name === 'installation' &&
+          Object.values(value?.activity ?? {}).some(events => events.length)) {
+        window.failDigitsReportOnce = false
+        window.digitsReportFailures = (window.digitsReportFailures ?? 0) + 1
+        throw new DOMException('Controlled report write failure', 'UnknownError')
+      }
+      return put.call(this, value, ...args)
+    }
     let previous = ''
     new MutationObserver(() => {
       const el = document.querySelector('.digits-stimulus'), text = el?.textContent ?? ''
@@ -101,8 +111,17 @@ export async function exerciseDigitsReference(page, { origin, method = 'keyboard
       assert.equal(attempt.snapshot.state.phase, 'completed')
       assert.equal((root.activity[attempt.sessionId] ?? []).length, 0, 'No report receipt before final Next')
       assert.equal(await page.locator('.digits-report').count(), 0)
+      if (failReportOnce) await page.evaluate(() => { window.failDigitsReportOnce = true })
     }
     await page.getByRole('button', { name: 'Next', exact: true }).click()
+    if (trial === 3 && failReportOnce) {
+      const retry = page.getByRole('button', { name: 'Retry saving or verifying this result', exact: true })
+      await retry.waitFor()
+      const failedRoot = await readDigitsRoot(page)
+      assert.equal(Object.values(failedRoot.activity).flat().length, 0)
+      assert.equal(await page.evaluate(() => window.digitsReportFailures), 1)
+      await retry.click()
+    }
   }
   await page.getByRole('heading', { name: 'Longest sequence: 4 digits', exact: true }).waitFor()
   assert.deepEqual(await page.locator('.report-summary-metrics dd').allTextContents(), ['1', '3', '0', '0'])

@@ -30,3 +30,8 @@ for (const viewport of [{ width: 1280, height: 800 }, { width: 375, height: 667 
     try { await exerciseDigitsReference(await context.newPage(), { origin }) } finally { await context.close() }
   })
 }
+
+test('Digits final Next retries a failed native report write once, retaining all answers', { timeout: 45000 }, async () => {
+  const context = await browser.newContext({ viewport: { width: 1280, height: 800 } })
+  try { await exerciseDigitsReference(await context.newPage(), { origin, failReportOnce: true }) } finally { await context.close() }
+})
