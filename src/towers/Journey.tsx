@@ -64,7 +64,7 @@ function BoardView({ board, form, selected, onTower, admitClick, onActivationKey
     {board.map((stack, index) => {
       const content = <><span className="towers-stack">{stack.map((id, i) =>
         <Disk key={`${id}-${i}`} id={id} form={form} small={target} />)}</span>
-        <span className="towers-pad">Tower {index + 1}</span></>
+        <span className="towers-pad">{index + 1}</span></>
       return target ? <div className="towers-tower" key={index}>{content}</div> :
         <button type="button" className={`towers-tower${selected === index ? ' towers-picked' : ''}`}
           data-tower={index + 1} key={index} disabled={disabled}
@@ -870,8 +870,8 @@ export function TowersJourney({ onLibrary, runtime, mock, reportTarget }: { onLi
   if(reportTarget&&(step!=='report'||!report||!run))return <Shell onLibrary={onLibrary}><section className="journey panel"><h1>Saved Towers report</h1><p role={error?'alert':'status'}>{error||'Checking the exact retained result…'}</p><button onClick={onLibrary}>Return to mock</button></section></Shell>
   return <Shell onLibrary={() => void endAttempt('library')}><section ref={section} className="journey towers-journey">
     {step === 'guide' && <div className="journey-top"><button className="secondary" onClick={() => void endAttempt('library')}><span aria-hidden="true">← </span>{mock?'Return to mock':'Main menu'}</button><p>Towers · Practice</p></div>}
-    {settlementNotice && <p role="status" className="panel">{settlementNotice}</p>}
-    {error && <p role="alert" className="panel">{error}</p>}
+    {settlementNotice && <p role="status" className="towers-notice">{settlementNotice}</p>}
+    {error && <p role="alert" className="towers-notice">{error}</p>}
     {!store && <button onClick={() => void retryStorage()}>Try local storage again</button>}
     {runtime.unsettled && runtime.current?.retryable && <div className="panel">
       <button onClick={() => runtime.retry()}>Check saved attempt again</button>
@@ -882,7 +882,7 @@ export function TowersJourney({ onLibrary, runtime, mock, reportTarget }: { onLi
     {displayRevoked.current && pendingOnsetResolution.current && <div className="panel">
       <button disabled={busy} onClick={() => void retryOnsetResolution()}>Check saved board outcome</button>
     </div>}
-    {step === 'guide' && <div className="panel"><p className="eyebrow">How it works</p><h1 tabIndex={-1}>Towers</h1><QuickRules rules={['Move only the top disk of a tower.', 'Select its tower, then the destination tower.', 'Match the target board within two minutes. Aim to use few moves.']} note={'Undo reverses a move. Clear All resets the board; the clock keeps running.'}/><div className="actions"><button onClick={() => goStep('check')}>Continue</button></div><details className="start-options"><summary>Examples and saved results</summary><div className="actions"><button className="secondary" onClick={() => goStep('example')}>See an example</button><button className="secondary" onClick={() => void loadHistory()}>Saved results</button>{skipAvailable&&<button className="secondary" onClick={()=>{void skipTutorial()}}>Skip instructions</button>}</div></details><AssessmentUsageNotice /></div>}
+    {step === 'guide' && <div className="panel"><p className="eyebrow">How it works</p><h1 tabIndex={-1}>Towers</h1><QuickRules rules={['Move only the top disk of a tower.', 'Select its tower, then the destination tower.', 'Match the target board within two minutes. Aim to use few moves.']} note={'Undo reverses a move. Clear all resets the board; the clock keeps running.'}/><div className="actions"><button onClick={() => goStep('check')}>Continue</button></div><details className="start-options"><summary>Examples and saved results</summary><div className="actions"><button className="secondary" onClick={() => goStep('example')}>See an example</button><button className="secondary" onClick={() => void loadHistory()}>Saved results</button>{skipAvailable&&<button className="secondary" onClick={()=>{void skipTutorial()}}>Skip instructions</button>}</div></details><AssessmentUsageNotice /></div>}
     {step === 'example' && <div className="panel"><h1 tabIndex={-1}>Try one move</h1>
       <p>This untimed example is separate from your scored puzzle. Disks are listed from bottom to top.</p>
       <div className="towers-example"><span>{exampleMoved ? 'Tower 1: Gold, Leaf' :
@@ -910,8 +910,8 @@ export function TowersJourney({ onLibrary, runtime, mock, reportTarget }: { onLi
       <div className="towers-top"><h1 ref={playTitle} tabIndex={-1}>Match the target</h1>
         <strong aria-label={`Time remaining ${mmss(msLeft)}`}>{mmss(msLeft)}</strong></div>
       <div className="towers-time-progress" aria-hidden="true"><span style={{ transform: `scaleX(${msLeft / 120000})` }} /></div>
-      {mock && run && <p>Local form {run.formId}. This label identifies the saved puzzle form.</p>}
-      {run?.familiar && <p>Familiar puzzle · {run.formId}</p>}
+      {mock && run && <p className="towers-sr-only">Local form {run.formId}. This label identifies the saved puzzle form.</p>}
+      {run?.familiar && <p>Familiar puzzle</p>}
       <div className="towers-workspace">
         <div className="towers-target-column"><p className="towers-board-label">Target</p><BoardView board={form.target} form={form} target /></div>
         <div className="towers-live-column"><p className="towers-board-label">Your board</p><BoardView board={activeBoard} form={form} selected={selected}
@@ -923,7 +923,7 @@ export function TowersJourney({ onLibrary, runtime, mock, reportTarget }: { onLi
           onKeyDown={onActivationKey} onClick={event => { if (admitClick(event))
             void act('undo', { refActionId: state!.undoStack.at(-1)!.actionId }) }}>Undo</button>
         <button disabled={busy || pending || !!displayRevoked.current}
-          onKeyDown={onActivationKey} onClick={event => { if (admitClick(event)) void act('reset') }}>Clear All</button>
+          onKeyDown={onActivationKey} onClick={event => { if (admitClick(event)) void act('reset') }}>Clear all</button>
         <button disabled={busy || pending || !!displayRevoked.current}
           onKeyDown={onActivationKey} onClick={event => { if (admitClick(event)) setConfirmRestart(true) }}>Restart</button></div></div>
       <details className="towers-key-controls">
@@ -945,7 +945,7 @@ export function TowersJourney({ onLibrary, runtime, mock, reportTarget }: { onLi
       {pendingOnsetResolution.current && <button disabled={busy}
         onClick={() => void retryOnsetResolution()}>Check saved board outcome</button>}
       <p className="towers-sr-only" role="status" aria-live="polite">{announcement}</p>
-      <p className="note">{LIMIT}</p></div>}
+      </div>}
     {step === 'completion' && run && form && <div className="panel"><h1 tabIndex={-1}>
       {run.status === 'complete' ? 'Puzzle complete' : 'Time is up'}</h1>
       <p>{run.status === 'complete' ? 'Your saved puzzle is ready to review.' : 'This attempt is saved as incomplete.'}</p>
@@ -961,7 +961,7 @@ export function TowersJourney({ onLibrary, runtime, mock, reportTarget }: { onLi
       <p>Time to solve: {report.solutionMs === null ? 'Unavailable' : mmss(report.solutionMs)}</p>
       {report.solutionMs === null && report.timeUsedMs !== null &&
         <p>Time used: {mmss(report.timeUsedMs)} (this is not a solve time)</p>}
-      <p>Undo: {report.undoCount} · Clear All: {report.resetCount}</p><p>{LIMIT}</p>
+      <p>Undo: {report.undoCount} · Clear all: {report.resetCount}</p><p>{LIMIT}</p>
       <p>Form: {report.formId} · Input used: {report.inputSources.length ?
         report.inputSources.join(', ') : 'no placements recorded'}</p>
       {run.familiar && <p>Familiar puzzle</p>}
