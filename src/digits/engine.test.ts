@@ -36,13 +36,13 @@ describe('Digits adaptive ordered run', () => {
   })
   it('counts confirmed partial exposure and suppresses aggregates', async () => {
     const state = await initialRun()
-    const first = advanceDigits(state, { kind: 'visual_onset', dueMs: 0, atMs: 0 })
-    const invalid = advanceDigits(first, { kind: 'invalidate', atMs: 1, reason: 'blur' })
+    const first = advanceDigits(state, { kind: 'visual_onset', dueMs: state.nextDueMs!, atMs: state.nextDueMs! })
+    const invalid = advanceDigits(first, { kind: 'invalidate', atMs: state.nextDueMs! + 1, reason: 'blur' })
     expect(scoreDigits(invalid)).toEqual({ status: 'invalid', reason: 'blur', presented: 1, closed: 0, unresolved: 1 })
     expect(verifyDigitsRun(invalid)).toBe(true)
   })
-  it('closes matching draft at exact deadline as wrong; cannot close twice', async () => {
-    let state = openEntry(await initialRun())
+  it('preserves legacy exact-deadline closure and rejects duplicate closure', async () => {
+    let state = openEntry(await initialRun(true))
     const deadline = state.entryDeadlineMs!
     state = advanceDigits(state, { kind: 'edit', atMs: deadline - 1,
       value: state.target!, assisted: false, source: 'keyboard' })
@@ -52,14 +52,15 @@ describe('Digits adaptive ordered run', () => {
     expect(state.wrongCount).toBe(1)
     expect(() => advanceDigits(state, { kind: 'submit', atMs: deadline + 1 })).toThrow()
   })
-  it.each(['skip', 'timeout'] as const)('%s descends and contributes one cumulative mistake', async kind => {
-    const state = closeTrial(await initialRun(), true, kind)
+  it.each(['skip', 'timeout'] as const)('legacy %s descends and contributes one cumulative mistake', async kind => {
+    const state = closeTrial(await initialRun(true), true, kind)
     expect(state.wrongCount).toBe(1)
     expect(state.length).toBe(3)
     expect(state.phase).toBe('feedback')
   })
   it.each([50, 50.001, 250, 250.001])('preserves exposure and timing boundary at %s', async lateness => {
-    const state = advanceDigits(await initialRun(), { kind: 'visual_onset', dueMs: 0, atMs: lateness })
+    const armed = await initialRun()
+    const state = advanceDigits(armed, { kind: 'visual_onset', dueMs: armed.nextDueMs!, atMs: armed.nextDueMs! + lateness })
     expect(state.presentedTrials).toBe(1)
     expect(state.phase).toBe(lateness > 250 ? 'invalid' : 'presentation')
     expect(state.events.filter(e => e.type === 'quality_note')).toHaveLength(lateness > 50 && lateness <= 250 ? 1 : 0)

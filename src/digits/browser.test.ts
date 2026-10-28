@@ -62,10 +62,20 @@ describe('Digits browser controller ordered observation boundaries', () => {
     expect(run.state.events.at(-1)?.type).toBe('invalidated')
     await store.save(arm, run.state)
   })
+  it.each([20000, 35000] as const)('keeps a new answer open beyond the old %sms limit', async entryWindow => {
+    const { run } = await setup({ ...visual, entryWindow })
+    const { result } = await toEntry(run)
+    await vi.advanceTimersByTimeAsync(40000)
+    expect(run.state.phase).toBe('entry')
+    expect(run.state.entryDeadlineMs).toBeNull()
+    expect(run.state.closed).toHaveLength(0)
+    run.edit(run.state.target!, false); run.resolve('submit'); await result
+    expect(run.state.closed[0]).toMatchObject({ exactCorrect: true, timedOut: false, skipped: false })
+  })
   it('an unverified checkpoint cannot present a successor target', async () => {
     const { run } = await setup()
     const { result } = await toEntry(run)
-    run.resolve('skip'); await result
+    run.resolve('submit'); await result
     await run.runTrial()
     expect(run.state.phase).toBe('invalid')
     expect(run.state.presentedTrials).toBe(1)
@@ -77,7 +87,7 @@ describe('Digits browser controller ordered observation boundaries', () => {
     run.edit(run.state.target!, false); run.resolve('submit'); await result
     await store.save(arm, run.state)
     const next = run.runTrial()
-    await vi.advanceTimersByTimeAsync(50)
+    await vi.advanceTimersByTimeAsync(600)
     expect(run.state.trialIndex).toBe(2)
     expect(run.state.presentedTrials).toBe(2)
     expect(stimulus.textContent).toHaveLength(1)
@@ -95,10 +105,10 @@ describe('Digits browser controller ordered observation boundaries', () => {
   it('Next first confirms first onset before ordered deletion; deletion first blocks Next', async () => {
     const { run, store, arm } = await setup()
     const { result } = await toEntry(run)
-    run.resolve('skip'); await result; await store.save(arm, run.state)
+    run.resolve('submit'); await result; await store.save(arm, run.state)
     const next = run.runTrial()
     const deletion = store.deleteAttempt(arm.sessionId)
-    await vi.advanceTimersByTimeAsync(40)
+    await vi.advanceTimersByTimeAsync(600)
     await deletion
     expect(run.state.presentedTrials).toBe(2)
     expect(await store.load(arm.sessionId)).toBeNull()
@@ -151,7 +161,7 @@ describe('Digits browser controller ordered observation boundaries', () => {
       current.forEach(callback => callback(performance.now()))
       await Promise.resolve(); await Promise.resolve(); await Promise.resolve()
     }
-    for (let i = 0; i < 47; i++) await draw(16)
+    for (let i = 0; i < 83; i++) await draw(16)
     expect(run.state.phase).toBe('presentation')
     expect(run.state.digitIndex).toBe(1)
     expect(run.state.digitOnsetMs).toBeNull()
@@ -176,7 +186,7 @@ describe('Digits browser controller ordered observation boundaries', () => {
         speak: (value: SpeechSynthesisUtterance) => { utterance = value } })
       const { run } = await setup({ ...visual, mode: 'auditory', voice: { ...voice, localService: true } })
       const pending = run.runTrial()
-      await vi.advanceTimersByTimeAsync(40)
+      await vi.advanceTimersByTimeAsync(600)
       expect(utterance).not.toBeNull()
       const spoken = utterance! as SpeechSynthesisUtterance
       const startCallback = spoken.onstart!, endCallback = spoken.onend!

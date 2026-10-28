@@ -1,7 +1,7 @@
 import { DIGITS_SCORING_VERSION } from './contracts'
 import type { ClosedTrial, RunState } from './contracts'
 import { isVerifiedDigitsForm } from './forms'
-import { verifyDigitsRun } from './engine'
+import { verifyDigitsRun, isReferenceDigits } from './engine'
 
 export interface PositionClassification {
   readonly exact: boolean
@@ -15,9 +15,9 @@ export interface PositionClassification {
 function assert(condition: unknown, reason: string): asserts condition {
   if (!condition) throw Error(`Digits report: ${reason}`)
 }
-export function classifyPositions(target: string, response: string): PositionClassification {
+export function classifyPositions(target: string, response: string, allowLonger = false): PositionClassification {
   assert(/^[0-9]{2,16}$/.test(target) &&
-    /^[0-9]{0,16}$/.test(response) && response.length <= target.length, 'invalid target or response')
+    (allowLonger ? /^[0-9]{0,64}$/.test(response) : /^[0-9]{0,16}$/.test(response) && response.length <= target.length), 'invalid target or response')
   let matches = 0, substitutions = 0, transpositions = 0, missingSuffix = 0
   const errors: number[] = []
   const full = response.length === target.length
@@ -76,15 +76,15 @@ export interface PartialReview {
 }
 export type DigitsReview = ValidReport | PartialReview
 
-function inspectClosed(item: ClosedTrial) {
-  return classifyPositions(item.target, item.answer)
+function inspectClosed(item: ClosedTrial, reference: boolean) {
+  return classifyPositions(item.target, item.answer, reference)
 }
 
 /** Recalculate all candidate-facing numbers from verified form and closed facts. */
 export function scoreDigits(state: RunState): DigitsReview {
   assert(isVerifiedDigitsForm(state.form) && verifyDigitsRun(state), 'journal reconciliation failed')
   assert(state.scoringVersion === DIGITS_SCORING_VERSION, 'mixed scoring version')
-  const classified = state.closed.map(inspectClosed)
+  const classified = state.closed.map(item => inspectClosed(item, isReferenceDigits(state)))
   if (state.phase !== 'completed' || state.invalidReason !== null) {
     return { status: state.phase === 'invalid' ? 'invalid' : 'incomplete',
       reason: state.invalidReason, presented: state.presentedTrials,

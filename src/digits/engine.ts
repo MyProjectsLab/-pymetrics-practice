@@ -3,6 +3,11 @@ import type { ClosedTrial, Command, DigitsEvent, EventType, Form, Identity, Prof
 import { isVerifiedDigitsForm, digitsTarget } from './forms'
 import { classifyPositions } from './scoring'
 
+export const DIGITS_REFERENCE_RULES = 'digits_reference_2026_10_28'
+export function isReferenceDigits(state: RunState): boolean {
+  return state.events[0]?.detail.referenceRules === DIGITS_REFERENCE_RULES
+}
+
 function assert(condition: unknown, reason: string): asserts condition {
   if (!condition) throw Error(`Digits engine: ${reason}`)
 }
@@ -38,10 +43,12 @@ function frame(state: RunState, dueMs: number, atMs: number, type: 'digit_presen
   return next
 }
 function close(state: RunState, atMs: number, kind: 'submit' | 'skip' | 'timeout'): RunState {
+  const reference = isReferenceDigits(state)
   assert(state.phase === 'entry' && state.entryOpenedMs !== null &&
-    state.entryDeadlineMs !== null && atMs >= state.entryOpenedMs, 'entry not open')
-  const timedOut = kind === 'timeout' || atMs >= state.entryDeadlineMs
-  assert(!timedOut || atMs >= state.entryDeadlineMs, 'early timeout')
+    (reference || state.entryDeadlineMs !== null) && atMs >= state.entryOpenedMs, 'entry not open')
+  if (reference) assert(kind === 'submit', 'untimed entry requires an answer')
+  const timedOut = !reference && (kind === 'timeout' || atMs >= state.entryDeadlineMs!)
+  assert(!timedOut || atMs >= state.entryDeadlineMs!, 'early timeout')
   const skipped = kind === 'skip' && !timedOut
   const target = currentDigitsTrial(state).digits
   const answer = skipped ? '' : state.draft
@@ -51,7 +58,7 @@ function close(state: RunState, atMs: number, kind: 'submit' | 'skip' | 'timeout
   const item: ClosedTrial = { index: state.trialIndex, target, answer, skipped,
     timedOut, assistedEntry: state.draftAssisted, source,
     exactCorrect: !skipped && !timedOut && answer === target }
-  const classification = classifyPositions(target, answer)
+  const classification = classifyPositions(target, answer, reference)
   let next = append(state, 'answer_committed', atMs, { answer, skipped, timedOut,
     assistedEntry: item.assistedEntry, source })
   const wrongCount = state.wrongCount + (item.exactCorrect ? 0 : 1)
@@ -72,7 +79,7 @@ function close(state: RunState, atMs: number, kind: 'submit' | 'skip' | 'timeout
   return next
 }
 
-export function armDigits(form: Form, identity: Identity, profile: Profile, atMs: number): RunState {
+export function armDigits(form: Form, identity: Identity, profile: Profile, atMs: number, referenceRules = true): RunState {
   assert(isVerifiedDigitsForm(form), 'unverified form')
   time(atMs)
   assert(form.mode === profile.mode &&
@@ -96,7 +103,8 @@ export function armDigits(form: Form, identity: Identity, profile: Profile, atMs
     presentedTrials: 0, closed: [], entryOpenedMs: null, entryDeadlineMs: null,
     nextDueMs: null, digitOnsetMs: null, speechStartMs: null, lastFrameMs: null,
     draft: '', draftAssisted: false, invalidReason: null, commands: [], events: [] }
-  state = append(state, 'prepared', atMs, { mode: form.mode, entryWindow: profile.entryWindow })
+  state = append(state, 'prepared', atMs, { mode: form.mode, entryWindow: profile.entryWindow,
+    ...(referenceRules ? { referenceRules: DIGITS_REFERENCE_RULES } : {}) })
   state = append(state, 'form_assigned', atMs, { formId: form.id, formsVersion: form.version, generatorVersion: form.generatorVersion,
     manifestDigest: form.manifestDigest })
   return append(state, 'armed', atMs, { profile: JSON.stringify(profile) })
@@ -118,7 +126,7 @@ function reduce(state: RunState, command: Command): RunState {
       try { target = digitsTarget(state.form.seed, index, state.length, state.presentedTargets) }
       catch { return invalid(state, command.atMs, 'target_generation_failed') }
       const next = { ...state, phase: 'presentation' as const, trialIndex: index, target,
-        digitIndex: 0, nextDueMs: command.atMs, digitOnsetMs: null,
+        digitIndex: 0, nextDueMs: command.atMs + (isReferenceDigits(state) ? 500 : 0), digitOnsetMs: null,
         speechStartMs: null, entryOpenedMs: null, entryDeadlineMs: null,
         draft: '', draftAssisted: false }
       return append(next, 'trial_started', command.atMs,
@@ -132,7 +140,7 @@ function reduce(state: RunState, command: Command): RunState {
       let next = frame(state, command.dueMs, command.atMs, 'digit_presented',
         { digitIndex: index, value: trial!.digits[index - 1] })
       next = { ...next, digitIndex: index, digitOnsetMs: command.atMs,
-        nextDueMs: next.phase === 'invalid' ? null : command.atMs + 700,
+        nextDueMs: next.phase === 'invalid' ? null : command.atMs + (isReferenceDigits(state) ? 500 : 700),
         presentedTrials: state.presentedTrials + (index === 1 ? 1 : 0),
         presentedTargets: index === 1 ? [...state.presentedTargets, trial!.digits] : state.presentedTargets }
       return next
@@ -144,7 +152,7 @@ function reduce(state: RunState, command: Command): RunState {
         { digitIndex: state.digitIndex, value: trial!.digits[state.digitIndex - 1] })
       next = { ...next, digitOnsetMs: null,
         nextDueMs: next.phase === 'invalid' ? null :
-          command.atMs + (state.digitIndex === trial!.length ? 750 : 250) }
+          command.atMs + (isReferenceDigits(state) ? 500 : state.digitIndex === trial!.length ? 750 : 250) }
       return next
     }
     case 'speech_start': {
@@ -172,25 +180,25 @@ function reduce(state: RunState, command: Command): RunState {
           startMs: state.speechStartMs, voiceURI: command.voiceURI,
           lang: command.lang, localService: true })
       return { ...next, speechStartMs: null,
-        nextDueMs: command.atMs + (state.digitIndex === trial!.length ? 750 : 250) }
+        nextDueMs: command.atMs + (isReferenceDigits(state) ? 500 : state.digitIndex === trial!.length ? 750 : 250) }
     }
     case 'entry_opened': {
       assert(state.phase === 'presentation' && state.digitIndex === trial!.length &&
         state.digitOnsetMs === null && state.speechStartMs === null, 'entry phase')
       const next = frame(state, command.dueMs, command.atMs, 'entry_opened',
-        { deadlineMs: command.atMs + state.profile.entryWindow,
-          entryWindowVersion: state.profile.entryWindow === 20000 ? 'standard' : 'extended' })
+        { deadlineMs: isReferenceDigits(state) ? null : command.atMs + state.profile.entryWindow,
+          entryWindowVersion: isReferenceDigits(state) ? 'untimed' : state.profile.entryWindow === 20000 ? 'standard' : 'extended' })
       return { ...next, phase: next.phase === 'invalid' ? 'invalid' : 'entry',
-        entryOpenedMs: command.atMs, entryDeadlineMs: command.atMs + state.profile.entryWindow,
+        entryOpenedMs: command.atMs, entryDeadlineMs: isReferenceDigits(state) ? null : command.atMs + state.profile.entryWindow,
         nextDueMs: null }
     }
     case 'edit': {
       assert(state.phase === 'entry' && state.entryOpenedMs !== null &&
-        state.entryDeadlineMs !== null &&
+        (isReferenceDigits(state) || state.entryDeadlineMs !== null) &&
         command.source === (command.assisted ? 'assisted' : state.profile.entryMethod) &&
-        /^[0-9]*$/.test(command.value) && command.value.length <= trial!.length,
+        /^[0-9]*$/.test(command.value) && command.value.length <= (isReferenceDigits(state) ? 64 : trial!.length),
       'entry edit')
-      if (command.atMs >= state.entryDeadlineMs) return state
+      if (state.entryDeadlineMs !== null && command.atMs >= state.entryDeadlineMs) return state
       return { ...state, draft: command.value,
         draftAssisted: state.draftAssisted || command.assisted }
     }
@@ -213,7 +221,9 @@ export function advanceDigits(state: RunState, command: Command): RunState {
 export function verifyDigitsRun(state: RunState): boolean {
   try {
     if (!isVerifiedDigitsForm(state.form)) return false
-    let replay = armDigits(state.form, state.identity, state.profile, state.armedAtMs)
+    const revision = state.events[0]?.detail.referenceRules
+    if (revision !== undefined && revision !== DIGITS_REFERENCE_RULES) return false
+    let replay = armDigits(state.form, state.identity, state.profile, state.armedAtMs, revision === DIGITS_REFERENCE_RULES)
     for (const command of state.commands) replay = advanceDigits(replay, command)
     return same(replay, state)
   } catch { return false }

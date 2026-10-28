@@ -1,4 +1,4 @@
-import { advanceDigits, currentDigitsTrial } from './engine'
+import { advanceDigits, currentDigitsTrial, isReferenceDigits } from './engine'
 import type { Command, RunState, VoiceIdentity } from './contracts'
 import { sameDigitsVoice, selectDigitsVoice } from './voice'
 import type { DigitsAttempt, DigitsStore } from './storage'
@@ -255,7 +255,7 @@ export class DigitsBrowserRun {
     else this.hooks.entry()?.focus({ preventScroll: true })
     await new Promise<void>(resolve => {
       this.entryResolver = resolve
-      this.entryTimer = window.setTimeout(() => this.resolve('timeout'),
+      if (!isReferenceDigits(this.current)) this.entryTimer = window.setTimeout(() => this.resolve('timeout'),
         Math.max(0, this.current.entryDeadlineMs! - performance.now()))
     })
     this.entryResolver = null
@@ -263,7 +263,7 @@ export class DigitsBrowserRun {
   edit(value: string, assisted: boolean) {
     if (this.current.phase !== 'entry') return this.current.draft
     const trial = currentDigitsTrial(this.current)
-    if (!/^[0-9]*$/.test(value) || value.length > trial.length) return this.current.draft
+    if (!/^[0-9]*$/.test(value) || value.length > (isReferenceDigits(this.current) ? 64 : trial.length)) return this.current.draft
     this.advance({ kind: 'edit', atMs: performance.now(), value, assisted,
       source: assisted ? 'assisted' : this.current.profile.entryMethod })
     return this.current.draft

@@ -1,5 +1,5 @@
 import { QuickRules } from '../onboarding/QuickRules'
-import { ReportSummary } from '../reports/Summary'
+import '../reports/summary.css'
 import { digitsFeedback } from '../reports/feedback'
 import { AssessmentUsageNotice } from '../assessment-usage/Notice'
 // Event/effect handlers share an imperative coordinator; function declarations are hoisted.
@@ -8,6 +8,7 @@ import { standardDigits, unassistedDigitsMetrics } from '../assessment-usage/bou
 import { Attempt } from '../assessment-usage/client'
 import { useEffect, useRef, useState } from 'react'
 import { flushSync } from 'react-dom'
+import { isReferenceDigits } from './engine'
 import { DIGITS_SPEC_VERSION } from './contracts'
 import type { Mode, Profile, RunState, VoiceIdentity } from './contracts'
 import { DigitsBrowserRun, sampleDigitsVoice } from './browser'
@@ -42,7 +43,8 @@ function conciseReason(reason: string | null) {
 }
 function comparableDigits(a: DigitsAttempt, b: DigitsAttempt) {
   const x = a.arm.profile, y = b.arm.profile
-  return a.arm.specificationVersion === b.arm.specificationVersion &&
+  return isReferenceDigits(a.arm) === isReferenceDigits(b.arm) &&
+    a.arm.specificationVersion === b.arm.specificationVersion &&
     a.arm.scoringVersion === b.arm.scoringVersion && a.arm.form.version === b.arm.form.version &&
     x.mode === y.mode && x.entryWindow === y.entryWindow && x.entryMethod === y.entryMethod &&
     x.assistedEntryDeclared === y.assistedEntryDeclared && x.highContrast === y.highContrast &&
@@ -87,20 +89,24 @@ function DigitsReport({ review, attempt, facts, retired, saved, authorityPending
   laterUnknown: boolean; comparison: string | null;
   onReplay: () => void; onHistory: () => void; onLibrary: () => void; readOnly?: boolean; returnToMock?: boolean }) {
   const profile = attempt.arm.profile
+  const reference = isReferenceDigits(facts)
+  const feedback = review.status === 'valid' ? digitsFeedback(review) : null
   return <section className="panel digits-report" aria-labelledby="digits-report-heading">
     <h2 id="digits-report-heading" tabIndex={-1}>{review.status === 'valid' && !authorityPending && !retired && saved ? review.maximumRecalledLength === null ? 'No sequence recalled exactly' : `Longest sequence: ${review.maximumRecalledLength} digits` : 'Digits report'}</h2>
     <p role="status">{retired ? 'This attempt was removed from local storage. Factual review is only available in this tab; it cannot be saved again.' : authorityPending ? 'Saved status cannot be confirmed while the authority check is pending.' :
       saved && !attempt.snapshot ? 'Start record saved; no completed result was saved.' :
         savedStatus(saved, review.status)}</p>
-    {!authorityPending && !retired && saved && review.status === 'valid' && <ReportSummary feedback={{ ...digitsFeedback(review), metrics: [
-      { label: 'Correct', value: String(review.exactCorrect) }, { label: 'Mistakes', value: String(review.wrong) },
-      { label: 'Timed out', value: String(review.timedOut) }, { label: 'Skipped', value: String(review.skipped) },
-    ] }} />}
+    {!authorityPending && !retired && saved && review.status === 'valid' && feedback && <section className="report-summary" aria-label="Result summary">
+      <dl className="report-summary-metrics">{[
+        ['Correct', review.exactCorrect], ['Mistakes', review.wrong], ['Timed out', review.timedOut], ['Skipped', review.skipped],
+      ].map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
+      <div className="report-next-step"><h2>What to work on</h2><p>{feedback.observation}</p><h3>Try next</h3><p>{feedback.tip}</p></div>
+    </section>}
     {review.status !== 'valid' && !authorityPending && <p role="alert">{review.status === 'invalid' ? 'Invalid' : 'Incomplete'}: {conciseReason(review.reason)}</p>}
     <details><summary>Detailed numbers</summary>
     {!authorityPending && !retired && saved && comparison && <p>{comparison}</p>}
-    <p>{profile.mode} presentation · {profile.entryWindow === 35000 ?
-      'extended entry' : 'standard entry'} · {profile.entryMethod} input
+    <p>{profile.mode} presentation · {reference ? 'untimed entry' : profile.entryWindow === 35000 ?
+      'extended entry (35 seconds)' : 'standard entry (20 seconds)'} · {profile.entryMethod} input
       {actualDigitsAssistance(facts) ? ' · assisted entry used' : ''}{profile.assistedEntryDeclared ? ' · assisted entry declared' : ''} · {profile.highContrast ? 'high contrast' : 'standard contrast'} · {profile.reducedMotion ? 'reduced motion' : 'standard motion'}</p>
     {authorityPending ? <p role="status">Checking whether this saved report is still available. Numbers are hidden until the check finishes.</p> :
       review.status === 'valid' ? <>
@@ -114,7 +120,6 @@ function DigitsReport({ review, attempt, facts, retired, saved, authorityPending
         <h3>String differences</h3>
         <p>Wrong digit {review.substitutions} · Swapped neighbours {review.transpositionPairs} · Missing at end {review.missingSuffix}.</p>
         <ul>{review.serialPositionErrors.map(row => <li key={row.position}>Position {row.position}: {row.errors}/{row.opportunities} differed ({row.percent.toFixed(1)}%)</li>)}</ul>
-        <p>These results describe the selected TraitGame form only. Auditory and accommodated runs are reported separately.</p>
       </> : <>
         <p><strong>{review.status === 'invalid' ? 'Invalid' : 'Incomplete'}</strong>: {conciseReason(review.reason)}</p>
         {laterUnknown ? <p>The saved prefix records {review.presented} presentation starts and {review.closed} closed trials. Later presentation status is unknown; missing events do not prove that the remaining trials were unseen.</p> :
@@ -155,7 +160,6 @@ export function DigitsJourney({ onLibrary, mock, reportTarget }: { onLibrary: ()
   const [entryActive, setEntryActive] = useState(false)
   const [entryValue, setEntryValue] = useState('')
   const [entryMessage, setEntryMessage] = useState('')
-  const [countdown, setCountdown] = useState('')
   const [state, setState] = useState<RunState | null>(null)
   const [attempt, setAttempt] = useState<DigitsAttempt | null>(null)
   const [snapshot, setSnapshot] = useState<DigitsSnapshot | null>(null)
@@ -196,7 +200,7 @@ export function DigitsJourney({ onLibrary, mock, reportTarget }: { onLibrary: ()
   const skipProfile = () => JSON.stringify({ mode, entryMethod, entryWindow: extended ? 35000 : 20000,
     highContrast, reducedMotion, assistedDeclared, voice: mode === 'auditory' ? voice?.voiceURI ?? null : null })
   const completedForSkip = (item: DigitsAttempt) => item.snapshot?.kind === 'terminal' &&
-    item.snapshot.review.status === 'valid' && item.snapshot.state.specificationVersion === DIGITS_SPEC_VERSION &&
+    item.snapshot.review.status === 'valid' && isReferenceDigits(item.arm) && item.snapshot.state.specificationVersion === DIGITS_SPEC_VERSION &&
     JSON.stringify({ mode: item.arm.profile.mode, entryMethod: item.arm.profile.entryMethod,
       entryWindow: item.arm.profile.entryWindow, highContrast: item.arm.profile.highContrast,
       reducedMotion: item.arm.profile.reducedMotion, assistedDeclared: item.arm.profile.assistedEntryDeclared,
@@ -419,19 +423,6 @@ export function DigitsJourney({ onLibrary, mock, reportTarget }: { onLibrary: ()
       window.visualViewport?.removeEventListener('scroll', layout) }
   }, [liveScreen])
   useEffect(() => {
-    if (screen !== 'playing' || !entryActive || !state?.entryDeadlineMs) return
-    const ticket = navigation.current.capture()
-    const announced = new Set<number>()
-    const timer = window.setInterval(() => {
-      if (!admitted(ticket)) return
-      const remain = Math.max(0, Math.ceil((state.entryDeadlineMs! - performance.now()) / 1000))
-      if ([10, 5, 0].includes(remain) && !announced.has(remain)) {
-        announced.add(remain); setCountdown(`${remain} seconds remaining`)
-      }
-    }, 100)
-    return () => clearInterval(timer)
-  }, [screen, entryActive, state?.entryDeadlineMs])
-  useEffect(() => {
     if (screen === 'playing' && entryActive) return
     document.querySelector<HTMLElement>('.journey.digits h1[tabindex], .journey.digits h2[tabindex]')?.focus({ preventScroll: true })
   }, [screen, entryActive])
@@ -639,8 +630,8 @@ export function DigitsJourney({ onLibrary, mock, reportTarget }: { onLibrary: ()
         entry: () => admitted(live) ? inputRef.current : null,
         controls: () => admitted(live) ? inputRef.current?.closest<HTMLElement>('.digits-entry') ?? null : null,
         keypad: () => admitted(live) ? document.querySelector<HTMLElement>('.digits-keypad') : null,
-        showEntry: () => { if (admitted(live)) flushSync(() => { setEntryActive(true); setEntryValue(''); setCountdown('') }) },
-        hideEntry: () => { if (admitted(live)) flushSync(() => { setEntryActive(false); setEntryValue(''); setCountdown('') }) },
+        showEntry: () => { if (admitted(live)) flushSync(() => { setEntryActive(true); setEntryValue('') }) },
+        hideEntry: () => { if (admitted(live)) flushSync(() => { setEntryActive(false); setEntryValue('') }) },
         onState: next => setRunState(next, live),
         onRetired: message => { if (admitted(live)) retire(digitsTarget(arm), message) } })
       runnerRef.current = runner
@@ -670,12 +661,13 @@ export function DigitsJourney({ onLibrary, mock, reportTarget }: { onLibrary: ()
       })])
       if (!admitted(ticket) || stateRef.current !== current) return
       setSnapshot(savedSnapshot)
-      if (current.phase === 'completed' || current.phase === 'invalid') await publishReport(arm, 'live', ticket)
+      if (current.phase === 'invalid') await publishReport(arm, 'live', ticket)
       else { setSaved(true); markRetry(false) }
     } catch (failure) {
       if (!admitted(ticket) || stateRef.current !== current) return
       setSaved(false); setSaveIssue(failure instanceof Error ? failure.message : 'Save unconfirmed')
-      if (current.phase === 'completed' || current.phase === 'invalid') show(ticket, 'report')
+      if (current.phase === 'invalid') show(ticket, 'report')
+      else if (current.phase === 'completed') show(ticket, 'feedback')
       void checkTargetAuthority(navigation.current.capture('authority'), store, arm)
     } finally { if (timer !== null) clearTimeout(timer) }
   }
@@ -684,7 +676,7 @@ export function DigitsJourney({ onLibrary, mock, reportTarget }: { onLibrary: ()
       const next = await runner.runTrial()
       if (!admitted(ticket) || runnerRef.current !== runner) return
       stateRef.current = next
-      if (next.phase === 'completed' || next.phase === 'invalid') { releaseOwner(); show(ticket, 'report') }
+      if (next.phase === 'completed' || next.phase === 'invalid') { releaseOwner(); show(ticket, next.phase === 'completed' ? 'feedback' : 'report') }
       if (next.phase === 'feedback') show(ticket, 'feedback')
       if (next.phase === 'completed' || next.phase === 'feedback') { markRetry(false); await saveCurrent(next, ticket) }
     } catch (failure) { if (admitted(ticket)) {
@@ -695,13 +687,17 @@ export function DigitsJourney({ onLibrary, mock, reportTarget }: { onLibrary: ()
   }
   async function nextTrial() {
     const runner = runnerRef.current, current = stateRef.current
-    if (!runner || !current || current.phase !== 'feedback' || !saved || !snapshot) return
+    if (!runner || !current || (current.phase !== 'feedback' && current.phase !== 'completed') || !saved || !snapshot) return
     const ticket = navigation.current.capture()
     if (!admitted(ticket)) return
+    if (current.phase === 'completed') {
+      const finished = attemptRef.current
+      if (finished) await publishReport(finished, 'live', ticket)
+      return
+    }
     setError(null); setSaved(false); setSnapshot(null); flushSync(() => show(ticket, 'playing'))
     await runTrial(runner, ticket)
   }
-  function endAtFeedback() { runnerRef.current?.invalidate('candidate_ended') }
   async function retrySave() {
     const ticket = navigation.current.capture(), arm = attemptRef.current, candidate = frozenSave.current
     if (!admitted(ticket) || !arm || ticket.target !== digitsTarget(arm) || retryUsed.current) return
@@ -861,7 +857,6 @@ export function DigitsJourney({ onLibrary, mock, reportTarget }: { onLibrary: ()
   }
   const auditoryAvailable = voice !== null
   const review = retired && state ? removedDigitsReview(state) : snapshot?.review ?? (screen === 'report' && state ? scoreDigits(state) : null)
-  const currentLength = state?.length ?? 4
   if(reportTarget&&(screen!=='report'||!attempt||!review))return <Shell onLibrary={onLibrary}><section className="journey digits"><h1>Saved Digits report</h1><p role={error?'alert':'status'}>{error||'Checking the exact retained result…'}</p><button onClick={onLibrary}>Return to mock</button></section></Shell>
   return <Shell onLibrary={library}><div className={`journey digits ${highContrast ? 'digits-contrast' : ''} ${reducedMotion ? 'digits-reduced-motion' : ''}`}>
     {screen !== 'playing' && screen !== 'feedback' && <div className="journey-top"><button className="secondary" data-mock-return-intent={mock ? "" : undefined} onClick={library}><span aria-hidden="true">← </span>{mock?'Return to mock':'Main menu'}</button><p>Digits · Practice</p></div>}
@@ -876,19 +871,19 @@ export function DigitsJourney({ onLibrary, mock, reportTarget }: { onLibrary: ()
       <p>{error?.includes('deleted') || error?.includes('replaced') ? 'Reload Digits to start a new attempt. The removed report is no longer available.' : 'Scored Practice requires working local storage and exclusive browser ownership. No temporary result is presented as saved.'}</p>
       <button onClick={() => location.reload()}>Reload Digits</button>
       <button className="secondary" data-mock-return-intent={mock ? "" : undefined} onClick={library}>{mock?'Return to mock':'Main menu'}</button></section>}
-    {screen === 'guide' && <section className="panel"><p className="eyebrow">How it works</p><h1 tabIndex={-1}>Digits</h1><QuickRules rules={['Watch the digits, then enter them in the same order.', `Select Submit within ${extended ? 35 : 20} seconds.`, 'Start with four digits. Correct answers add one digit; a mistake shortens the next sequence. Three mistakes end the run.']} note={'Skipping or running out of time counts as a mistake. Takes about 5 minutes.'}/><div className="actions"><button onClick={() => go('quiz')}>Continue</button></div><details className="start-options"><summary>Examples and saved results</summary><div className="actions"><button className="secondary" onClick={() => go('examples')}>See an example</button><button className="secondary" onClick={() => void openHistory()}>Saved results</button>{skipAvailable&&<button className="secondary" onClick={()=>{void skipTutorial()}}>Skip instructions</button>}<p>A long run can take over 20 minutes. Results stay in this browser.</p><p>{SOURCE_NOTE}</p><p>{LIMITATION}</p>{quizFeedback&&<p role="alert">{quizFeedback}</p>}</div></details><AssessmentUsageNotice /></section>}
+    {screen === 'guide' && <section className="panel"><p className="eyebrow">How it works</p><h1 tabIndex={-1}>Digits</h1><QuickRules rules={['Watch the digits, then enter them in the same order.', 'Type the numbers that appeared and press Enter.', 'Start with four digits. Correct answers add one digit; a mistake shortens the next sequence. Three mistakes end the run.']} note={'Takes about 3 minutes.'}/><div className="actions"><button onClick={() => go('quiz')}>Continue</button></div><details className="start-options"><summary>Examples and saved results</summary><div className="actions"><button className="secondary" onClick={() => go('examples')}>See an example</button><button className="secondary" onClick={() => void openHistory()}>Saved results</button>{skipAvailable&&<button className="secondary" onClick={()=>{void skipTutorial()}}>Skip instructions</button>}<p>A long run can take over 20 minutes. Results stay in this browser.</p><p>{SOURCE_NOTE}</p><p>{LIMITATION}</p>{quizFeedback&&<p role="alert">{quizFeedback}</p>}</div></details><AssessmentUsageNotice /></section>}
     {screen === 'examples' && <section className="panel"><h1 tabIndex={-1}>One example</h1>
-      <p>See <strong>4</strong>, then <strong>2</strong>, then <strong>7</strong>, then <strong>0</strong>. Enter <strong>4270</strong> and select Submit. This example is untimed.</p>
+      <p>See <strong>4</strong>, then <strong>2</strong>, then <strong>7</strong>, then <strong>0</strong>. Enter <strong>4270</strong> and press Enter. This example is untimed.</p>
       <button onClick={() => { setQuizFeedback(''); go('quiz') }}>Check understanding</button>
     </section>}
     {screen === 'quiz' && <section className="panel"><h1 tabIndex={-1}>Check understanding</h1>
       <fieldset><legend>What counts as correct?</legend>
-        <label><input type="radio" name="digits-rule" checked={quizOrder === 'yes'} onChange={() => setQuizOrder('yes')} /> Same digits, same order, before time runs out</label>
-        <label><input type="radio" name="digits-rule" checked={quizOrder === 'no'} onChange={() => setQuizOrder('no')} /> Same digits, any order, even after time runs out</label></fieldset>
+        <label><input type="radio" name="digits-rule" checked={quizOrder === 'yes'} onChange={() => setQuizOrder('yes')} /> Same digits, same order</label>
+        <label><input type="radio" name="digits-rule" checked={quizOrder === 'no'} onChange={() => setQuizOrder('no')} /> Same digits, any order</label></fieldset>
       {quizFeedback && <p role="status">{quizFeedback}</p>}
       <button onClick={() => { if (quizOrder === 'yes') {
           setQuizFeedback(''); go('setup'); void refreshVoices()
-        } else setQuizFeedback('Keep the original order and submit before the deadline. Try again.')
+        } else setQuizFeedback('Keep the original order. Try again.')
       }}>Check answer</button></section>}
     {screen === 'setup' && <section className="panel"><h1 tabIndex={-1}>Ready?</h1>
       <label>Try entering 4270 (untimed) <input inputMode="numeric" autoComplete="off" value={inputCheck}
@@ -912,7 +907,7 @@ export function DigitsJourney({ onLibrary, mock, reportTarget }: { onLibrary: ()
           onChange={() => {changedSetup();setEntryMethod('keyboard')}} /> Keyboard text entry</label>
         <label><input type="radio" name="digits-entry" checked={entryMethod === 'keypad'}
           onChange={() => {changedSetup();setEntryMethod('keypad')}} /> On-screen numeric keypad</label></fieldset>
-      <label><input type="checkbox" checked={extended} onChange={e => {changedSetup();setExtended(e.target.checked)}} /> Extended entry: 35 seconds instead of 20; separately labeled</label>
+      <label><input type="checkbox" disabled checked={extended} onChange={e => {changedSetup();setExtended(e.target.checked)}} /> Extended answer time (35 seconds)</label><p>Answers are untimed, so extended time is not needed. This setting is kept for older saved results.</p>
       <label><input type="checkbox" checked={highContrast} onChange={e => {changedSetup();setHighContrast(e.target.checked)}} /> High contrast</label>
       <label><input type="checkbox" checked={reducedMotion} onChange={e => {changedSetup();setReducedMotion(e.target.checked)}} /> Reduced motion</label>
       <label><input type="checkbox" checked={assistedDeclared} onChange={e => {changedSetup();setAssistedDeclared(e.target.checked)}} /> I plan to use assisted text entry; label this result separately</label>
@@ -920,31 +915,26 @@ export function DigitsJourney({ onLibrary, mock, reportTarget }: { onLibrary: ()
       <p>Visual scored digits are hidden from screen-reader text. This visual task does not have an equivalent nonvisual form here. The entry field and reports remain accessible.</p>
       <button disabled={inputCheck !== '4270' || mode === 'auditory' && (!samplePassed || !audibleConfirmed) || starting} onClick={() => void start()}>{starting ? 'Starting…' : retryCanceledStart ? 'Retry saving' : 'Start'}</button></section>}
     {screen === 'ready' && <section className="panel"><h1 tabIndex={-1}>Ready for Digits</h1>
-      <p>{mode === 'visual' ? 'Visual digits' : 'Spoken digits'} · {extended ? '35-second' : '20-second'} entry · {entryMethod}</p>
+      <p>{mode === 'visual' ? 'Visual digits' : 'Spoken digits'} · Untimed answer · {entryMethod}</p>
       <p>Keep this window in front until the run ends.</p>
       <button disabled={starting} onClick={() => void start()}>{starting ? 'Starting…' : retryCanceledStart ? 'Retry saving' : 'Start'}</button>
       <button className="secondary" disabled={starting || pendingStart} onClick={() => go('setup')}>Change setup</button></section>}
-    {(screen === 'playing' || screen === 'feedback') && <section className="panel digits-play" data-phase={state?.phase}>
+    {(screen === 'playing' || screen === 'feedback') && <section className="panel digits-play" data-phase={state?.phase} data-screen={screen}>
       <div className="digits-trial-top">
-        <p>Trial {state?.trialIndex ?? 1} · {screen === 'feedback' ? state?.closed.at(-1)?.target.length ?? currentLength : currentLength} digits</p>
+        <span aria-hidden="true" />
         <h1 tabIndex={-1}>Digits</h1>
-        <span className="digits-mistakes" aria-hidden="true">{[0, 1, 2].map(index => <span key={index} className={index < (state?.wrongCount ?? 0) ? 'used' : ''} />)}</span>
+        {state && state.wrongCount > 0 ? <span className="digits-error-count" role="status" aria-label={`${state.wrongCount} mistakes`}>✕ {state.wrongCount}</span> : <span aria-hidden="true" />}
       </div>
-      <p className="digits-sr-only">Trial {state?.trialIndex ?? 1} · {screen === 'feedback' ? state?.closed.at(-1)?.target.length ?? currentLength : currentLength} digits · Mistakes {state?.wrongCount ?? 0}/3</p>
-      <div className="digits-entry-progress" aria-hidden="true">{entryActive && state?.entryDeadlineMs && <span key={state.entryDeadlineMs} style={{ animationDuration: `${state.entryDeadlineMs - (state.entryOpenedMs ?? state.entryDeadlineMs)}ms` }} />}</div>
-      {screen === 'playing' && <>
-        <div className="digits-stage">
-          <div ref={stimulusRef} className="digits-stimulus" aria-hidden="true" />
-          {mode === 'auditory' && state?.phase === 'presentation' && <span className="digits-listen" aria-hidden="true">Listen</span>}
-          <div className="digits-position-ticks" aria-hidden="true">{Array.from({ length: currentLength }, (_, index) => <span key={index} className={index <= (state?.digitIndex ?? 0) ? 'shown' : ''} />)}</div>
-        </div>
-        <div className="digits-entry" aria-label="Digits entry" style={{ visibility: state?.phase === 'presentation' && !entryActive ? 'hidden' : undefined }}>
-          <label className="digits-sr-only" htmlFor="digits-response">Enter the digits in order</label>
-          <div className="digits-answer" onClick={() => inputRef.current?.focus({ preventScroll: true })}>
-          <div className="digits-answer-boxes" aria-hidden="true">{Array.from({ length: currentLength }, (_, index) => <span key={index} className={index === entryValue.length ? 'next' : ''}>{entryValue[index] ?? ''}</span>)}</div>
+      <div className="digits-stage"><div ref={stimulusRef} className="digits-stimulus" aria-hidden="true" />
+        {mode === 'auditory' && state?.phase === 'presentation' && <span className="digits-listen" aria-hidden="true">Listen</span>}
+      </div>
+      <div className="digits-entry" aria-label="Digits entry" data-result={screen === 'feedback' ? state?.closed.at(-1)?.exactCorrect ? 'correct' : 'wrong' : undefined}
+        style={{ visibility: state?.phase === 'presentation' && !entryActive ? 'hidden' : undefined }}>
+        <label htmlFor="digits-response">Type the numbers that appeared and press Enter</label>
           <input ref={inputRef} id="digits-response" type="text" inputMode="numeric"
-            autoComplete="off" spellCheck={false} maxLength={currentLength}
-            disabled={!entryActive || state?.profile.entryMethod === 'keypad'} value={entryValue}
+            autoComplete="off" spellCheck={false} maxLength={64} readOnly={screen === 'feedback'}
+            disabled={screen === 'playing' && (!entryActive || state?.profile.entryMethod === 'keypad')} value={screen === 'feedback' ? state?.closed.at(-1)?.answer ?? '' : entryValue}
+            aria-invalid={screen === 'feedback' && !state?.closed.at(-1)?.exactCorrect}
             onChange={e => { if (!e.isTrusted) { setEntryValue(runnerRef.current?.state.draft ?? ''); return }
               if (e.nativeEvent instanceof InputEvent && e.nativeEvent.isComposing) {
                 setEntryValue(e.target.value); return
@@ -952,7 +942,7 @@ export function DigitsJourney({ onLibrary, mock, reportTarget }: { onLibrary: ()
               const assisted = e.nativeEvent instanceof InputEvent &&
               /insertFromPaste|insertFromDrop|insertReplacementText/i.test(e.nativeEvent.inputType)
               const accepted = runnerRef.current?.edit(e.target.value, assisted) ?? ''
-              if (accepted !== e.target.value) setEntryMessage('Only ASCII digits up to the shown length are accepted.')
+              if (accepted !== e.target.value) setEntryMessage('Use numbers 0–9 only.')
               else setEntryMessage('')
               setEntryValue(accepted) }}
             onKeyDown={e => { if (e.repeat) { e.preventDefault(); return }
@@ -961,26 +951,22 @@ export function DigitsJourney({ onLibrary, mock, reportTarget }: { onLibrary: ()
             onCompositionEnd={e => { if (!e.isTrusted) { setEntryValue(runnerRef.current?.state.draft ?? ''); return }
               const accepted = runnerRef.current?.edit(e.currentTarget.value, true) ?? ''
               setEntryValue(accepted) }} />
-          </div>
-          <p role="status">{entryMessage}</p>
-          <div className="digits-entry-actions"><button disabled={!entryActive} onKeyDown={e => { if (e.repeat) e.preventDefault() }} onClick={e => { if (e.isTrusted) runnerRef.current?.resolve('submit') }}>Submit</button>
-          <button className="secondary" disabled={!entryActive} onKeyDown={e => { if (e.repeat) e.preventDefault() }} onClick={e => { if (e.isTrusted) runnerRef.current?.resolve('skip') }}>Skip</button></div>
-          <p className="digits-countdown" aria-live="polite">{countdown.replace('seconds remaining', 's left')}</p>
-          {entryActive && state?.profile.entryMethod === 'keypad' && <div className="digits-keypad" aria-label="Numeric keypad">
-            {'0123456789'.split('').map(digit => <button key={digit} type="button" onKeyDown={e => { if (e.repeat) e.preventDefault() }}
-              onClick={e => { if (!e.isTrusted) return; const accepted = runnerRef.current?.edit(entryValue + digit, false) ?? entryValue
-                setEntryValue(accepted) }}>{digit}</button>)}
-            <button type="button" onKeyDown={e => { if (e.repeat) e.preventDefault() }} onClick={e => { if (!e.isTrusted) return; const accepted = runnerRef.current?.edit(entryValue.slice(0, -1), false) ?? ''
-              setEntryValue(accepted) }}>Delete last digit</button></div>}
-        </div></>}
-      {screen === 'feedback' && state && <>
-        <div className="digits-feedback" role="status"><h2>{state.closed.at(-1)?.exactCorrect ? 'Correct' : 'Incorrect'}</h2><p>Next: {state.length} digits</p></div>
-        {!saved && <p>{saveIssue ? 'Save unconfirmed. Next is unavailable.' : 'Saving…'}</p>}
-        <button disabled={!saved || !!saveIssue || starting} onClick={() => void nextTrial()}>Next</button>
-        {saveIssue && !retryUsedState && <button onClick={() => void retrySave()}>Retry saving</button>}
-        <button className="secondary" onClick={endAtFeedback}>End and see results</button>
-      </>}
-
+        <p role="status">{entryMessage}</p>
+        {entryActive && screen === 'playing' && state?.profile.entryMethod === 'keypad' && <div className="digits-keypad" aria-label="Numeric keypad">
+          {'0123456789'.split('').map(digit => <button key={digit} className="secondary" type="button" onKeyDown={e => { if (e.repeat) e.preventDefault() }}
+            onClick={e => { if (!e.isTrusted) return; const accepted = runnerRef.current?.edit(entryValue + digit, false) ?? entryValue
+              setEntryValue(accepted) }}>{digit}</button>)}
+          <button className="secondary" type="button" aria-label="Delete last digit" onKeyDown={e => { if (e.repeat) e.preventDefault() }} onClick={e => { if (!e.isTrusted) return; const accepted = runnerRef.current?.edit(entryValue.slice(0, -1), false) ?? ''
+            setEntryValue(accepted) }}>⌫</button>
+          <button type="button" onKeyDown={e => { if (e.repeat) e.preventDefault() }} onClick={e => { if (e.isTrusted) runnerRef.current?.resolve('submit') }}>Enter</button>
+        </div>}
+        {screen === 'feedback' && state && <>
+          <div className="digits-result-mark" role="status"><span aria-hidden="true">{state.closed.at(-1)?.exactCorrect ? '✓' : '✕'}</span><span className="digits-sr-only">{state.closed.at(-1)?.exactCorrect ? 'Correct' : 'Incorrect'}</span></div>
+          {!saved && <p>{saveIssue ? 'Save unconfirmed. Next is unavailable.' : 'Saving…'}</p>}
+          <div className="digits-entry-actions"><button disabled={!saved || !!saveIssue || starting} onClick={() => void nextTrial()}>Next</button>
+          {saveIssue && !retryUsedState && <button onClick={() => void retrySave()}>Retry saving</button>}</div>
+        </>}
+      </div>
     </section>}
     {screen === 'report' && attempt && review && <>
       {retired && <h1 tabIndex={-1}>Digits attempt removed</h1>}
@@ -994,7 +980,7 @@ export function DigitsJourney({ onLibrary, mock, reportTarget }: { onLibrary: ()
     {screen === 'history' && <section className="panel"><h1 tabIndex={-1}>Digits history</h1>
       <p>Clearing local data also clears form-exposure and rotation history; a form may repeat afterward.</p>
       {history.length === 0 ? <p>No saved Digits attempts in this browser.</p> : <ul>{history.map(item => <li key={item.sessionId}>
-        {item.arm.form.id} · {item.mode} · {item.arm.profile.entryWindow === 35000 ? 'extended entry' : 'standard entry'} · {item.arm.profile.entryMethod} · {(item.arm.profile.assistedEntryDeclared || actualDigitsAssistance(item.snapshot?.state ?? item.arm)) ? 'assisted entry · ' : ''}attempt {item.ordinal} · {item.snapshot?.review.status ?? 'Incomplete'} · {new Date(item.createdAtWallMs).toLocaleString()} · {item.snapshot?.kind === 'terminal' ? 'saved result' : item.snapshot ? 'Some trials saved; later activity could not be confirmed' : 'Start saved; no answers saved. Later activity could not be confirmed'}
+        {item.arm.form.id} · {item.mode} · {isReferenceDigits(item.arm) ? 'untimed entry' : item.arm.profile.entryWindow === 35000 ? 'extended entry (35 seconds)' : 'standard entry (20 seconds)'} · {item.arm.profile.entryMethod} · {(item.arm.profile.assistedEntryDeclared || actualDigitsAssistance(item.snapshot?.state ?? item.arm)) ? 'assisted entry · ' : ''}attempt {item.ordinal} · {item.snapshot?.review.status ?? 'Incomplete'} · {new Date(item.createdAtWallMs).toLocaleString()} · {item.snapshot?.kind === 'terminal' ? 'saved result' : item.snapshot ? 'Some trials saved; later activity could not be confirmed' : 'Start saved; no answers saved. Later activity could not be confirmed'}
         <button onClick={() => void openSaved(item)}>Review</button>
         <button className="secondary" onClick={() => void deleteOne(item)}>Delete</button>
       </li>)}</ul>}

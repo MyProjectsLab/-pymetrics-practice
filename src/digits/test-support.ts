@@ -6,8 +6,8 @@ export const identity: Identity = { installationId: 'install_1', sessionId: 'ses
 export const visual: Profile = { mode: 'visual', entryWindow: 20000, highContrast: false,
   reducedMotion: true, entryMethod: 'keyboard', assistedEntryDeclared: false, voice: null,
   browserContext: { userAgent: 'test', viewportWidth: 1280, viewportHeight: 720, devicePixelRatio: 1 } }
-export async function initialRun() {
-  return advanceDigits(armDigits((await loadDigitsForms()).get('DV1')!, identity, visual, 0),
+export async function initialRun(legacy = false) {
+  return advanceDigits(armDigits((await loadDigitsForms()).get('DV1')!, identity, visual, 0, !legacy),
     { kind: 'start', atMs: 0 })
 }
 export function openEntry(state: RunState) {
