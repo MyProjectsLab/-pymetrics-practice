@@ -57,14 +57,22 @@ button.towers-tower:focus-visible { outline: 4px solid #0891b2; outline-offset: 
 .towers-move-row .towers-actions { display: flex; gap: .75rem; margin: 0 0 0 auto; }
 .towers-move-row .towers-actions button { background: transparent; color: #0e7490; border: 0;
   border-radius: 0; padding: .5rem .25rem; margin: 0; text-decoration: underline; text-underline-offset: 3px; }
-.towers-move-row .towers-actions button:disabled { color: #687282; cursor: not-allowed; }
+.towers-move-row .towers-actions button:disabled { color: #687282; cursor: default; text-decoration: none; }
 .towers-picked .towers-disk:last-child { border-color: #0891b2; }
 .towers-key-controls, .towers-actions { text-align: center; margin: .4rem 0; }
+.towers-key-controls { text-align: left; }
 .towers-key-controls p { margin: .3rem 0; }
 .towers-key-controls summary { cursor: pointer; min-height: 36px; }
 .towers-example { display: flex; justify-content: space-between; gap: 1rem; margin: 1rem 0;
   padding: 1rem; background: #f2fafc; }
 .towers-journey li { margin: .8rem 0; }
+@media (min-width: 521px) {
+  .towers-workspace { align-items: stretch; }
+  .towers-target-column, .towers-live-column { display: flex; flex-direction: column; }
+  .towers-workspace .towers-board { flex: 1; margin-bottom: .7rem; }
+  .towers-workspace .towers-board:not(.towers-target) { padding-block: calc(.4rem + 2px); }
+  .towers-workspace .towers-disk { width: min(80%, 120px); }
+}
 @media (max-width: 520px) {
   body:has(.towers-play) .site-header { flex-direction: row; align-items: center; gap: .5rem; padding-block: .5rem; }
   body:has(.towers-play) .site-header .ap-wordmark { gap: .35rem; min-height: 44px; }
