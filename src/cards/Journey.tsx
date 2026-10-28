@@ -627,10 +627,10 @@ export function CardsJourney({ onLibrary, mock, reportTarget }: { onLibrary: () 
   if(reportTarget&&(step!=='report'||!report||!run))return <Shell onLibrary={onLibrary}><section className="journey panel"><h1>Saved Cards report</h1><p role={error?'alert':'status'}>{error||'Checking the exact retained result…'}</p><button onClick={onLibrary}>Return to mock</button></section></Shell>
   return <Shell onLibrary={library}><section className="journey cards-journey">
     {step === 'guide' && <div className="journey-top"><button className="secondary" onClick={library}><span aria-hidden="true">← </span>{mock?'Return to mock':'Main menu'}</button><p>Cards · Practice</p></div>}
-    {step !== 'guide' && <h1 ref={heading} tabIndex={-1}>Cards practice</h1>}
+    <h1 className="cards-sr-only" ref={heading} tabIndex={-1}>Cards practice</h1>
     {storageError && <p role="alert">{storageError} Saved history and scored play are unavailable.</p>}
     {error && <p role="alert">{error}</p>}
-    {step === 'guide' && <div className="panel"><p className="eyebrow">How it works</p><h1 ref={heading} tabIndex={-1}>Cards</h1><QuickRules rules={['Choose from four decks. Each card adds to or subtracts from your balance.', 'You can switch decks after any card. There are 80 draws and no timer.', 'Watch the gains and losses as you choose.']} note={'Start with $2,000 in simulated money. No real money is involved.'}/><div className="actions"><button onClick={() => newStep('quiz')}>Continue</button></div><details className="start-options"><summary>Examples and saved results</summary><div className="actions"><button className="secondary" onClick={() => newStep('example')}>See an example</button><button className="secondary" onClick={openHistory}>Saved results</button>{skipAvailable&&<button className="secondary" onClick={()=>{void skipTutorial()}}>Skip instructions</button>}</div></details><AssessmentUsageNotice /></div>}
+    {step === 'guide' && <div className="panel"><p className="eyebrow">How it works</p><h1>Cards</h1><QuickRules rules={['Choose from four decks. Each card adds to or subtracts from your balance.', 'You can switch decks after any card. There are 80 draws and no timer.', 'Watch the gains and losses as you choose.']} note={'Start with $2,000 in simulated money. No real money is involved.'}/><div className="actions"><button onClick={() => newStep('quiz')}>Continue</button></div><details className="start-options"><summary>Examples and saved results</summary><div className="actions"><button className="secondary" onClick={() => newStep('example')}>See an example</button><button className="secondary" onClick={openHistory}>Saved results</button>{skipAvailable&&<button className="secondary" onClick={()=>{void skipTutorial()}}>Skip instructions</button>}</div></details><AssessmentUsageNotice /></div>}
     {step === 'example' && <div className="panel"><h2>Four sample draws</h2>
       <ol><li>Deck A: gain {outcomeText(100)}.</li><li>Deck A: lose {outcomeText(-50)}.</li><li>Deck C: no change {outcomeText(0)}.</li><li>Switch to Deck D: gain {outcomeText(25)}.</li></ol>
       <p>These coached examples are not scored and do not use a saved form.</p><button onClick={() => newStep('quiz')}>Check the rules</button></div>}
@@ -641,12 +641,10 @@ export function CardsJourney({ onLibrary, mock, reportTarget }: { onLibrary: () 
       {quizError && <p role="alert">{quizError}</p>}
       <button onClick={() => { if (quiz.loss === 'Yes' && quiz.draws === '80')
         { skipSource.current=null;setQuizError(''); newStep('preflight') } else setQuizError('A draw can lose money, and the game ends after 80 draws. Try again.') }}>Check answers</button></div>}
-    {step === 'preflight' && <div className="panel"><h2>Ready for Cards</h2>
-      <p>Use the four deck buttons. Keep this tab open during play; leaving ends this attempt.</p>
-      <p>Results are saved in this browser.</p>
-      <p>{store ? 'Local storage is available.' : 'Checking local storage…'}</p>
-      <button disabled={!store || busy.current} onClick={() => void start()}>Start</button></div>}
-    {step === 'ready' && <div className="panel cards-ready"><h2>Cards</h2><p>Start with $2,000. Pick from four decks for 80 draws. You may switch at any time.</p>
+    {(step === 'preflight' || step === 'ready') && <div className="panel cards-ready"><h2>Ready?</h2>
+      <p>Start with {money(2000)}. Pick from four decks for 80 cards. Keep this tab open; leaving ends the attempt.</p>
+      <p className="note">Results stay in your browser.</p>
+      {!store && <p role="status">Checking local storage…</p>}
       <button disabled={!store || busy.current} onClick={() => void start()}>Start</button>
       {pendingLabel && <p role="status">{pendingLabel}</p>}{retry.current && <button className="secondary" onClick={() => void retry.current?.()}>Check saved start</button>}</div>}
     {step === 'play' && <div className="panel cards-board"><div className="cards-board-top"><p>Draw {Math.min(choices + 1, 80)} of 80</p>
