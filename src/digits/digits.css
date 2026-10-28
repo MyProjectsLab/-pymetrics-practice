@@ -63,3 +63,8 @@
   .digits-keypad { grid-template-columns: repeat(6, minmax(44px, 1fr)); gap: .3rem; }
   .digits-keypad button:last-child { grid-column: span 2; font-size: .75rem; }
 }
+
+.digits-report #digits-report-heading { font-size: clamp(1.8rem, 4vw, 2.55rem); margin: 0 0 1.25rem; }
+.digits-report .report-summary-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.digits .digits-limitation { color: #4a5368; font-size: .85rem; margin-block: 1.25rem; }
+.digits-contrast .digits-limitation { color: #fff; }

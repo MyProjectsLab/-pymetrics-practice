@@ -31,7 +31,7 @@ import './digits.css'
 
 type Screen = 'loading' | 'guide' | 'examples' | 'quiz' | 'setup' | 'ready' |
   'playing' | 'feedback' | 'report' | 'history' | 'error' | 'pending'
-const LIMITATION = 'This shows recall of these TraitGame digit sequences in this browser. It is not an intelligence, memory-capacity, employer, or hiring score. Visual and auditory runs and timing accommodations are different experiences; their results are not calibrated equivalents.'
+const LIMITATION = "Practice only. Not a memory or hiring score. Visual, spoken and extended-time runs aren't comparable."
 const SOURCE_NOTE = 'Your actual assessment invitation controls what to prepare. This is an independent practice exercise.'
 function savedStatus(saved: boolean, status: DigitsReview['status']) {
   return saved ? status === 'valid' ? 'Saved in this browser' :
@@ -88,22 +88,20 @@ function DigitsReport({ review, attempt, facts, retired, saved, authorityPending
   onReplay: () => void; onHistory: () => void; onLibrary: () => void; readOnly?: boolean; returnToMock?: boolean }) {
   const profile = attempt.arm.profile
   return <section className="panel digits-report" aria-labelledby="digits-report-heading">
-    <h2 id="digits-report-heading" tabIndex={-1}>Digits report</h2>
+    <h2 id="digits-report-heading" tabIndex={-1}>{review.status === 'valid' && !authorityPending && !retired && saved ? review.maximumRecalledLength === null ? 'No sequence recalled exactly' : `Longest sequence: ${review.maximumRecalledLength} digits` : 'Digits report'}</h2>
     <p role="status">{retired ? 'This attempt was removed from local storage. Factual review is only available in this tab; it cannot be saved again.' : authorityPending ? 'Saved status cannot be confirmed while the authority check is pending.' :
       saved && !attempt.snapshot ? 'Start record saved; no completed result was saved.' :
         savedStatus(saved, review.status)}</p>
-    {!authorityPending && !retired && saved && review.status === 'valid' && <ReportSummary feedback={digitsFeedback(review)} />}
+    {!authorityPending && !retired && saved && review.status === 'valid' && <ReportSummary feedback={{ ...digitsFeedback(review), metrics: [
+      { label: 'Correct', value: String(review.exactCorrect) }, { label: 'Mistakes', value: String(review.wrong) },
+      { label: 'Timed out', value: String(review.timedOut) }, { label: 'Skipped', value: String(review.skipped) },
+    ] }} />}
     {review.status !== 'valid' && !authorityPending && <p role="alert">{review.status === 'invalid' ? 'Invalid' : 'Incomplete'}: {conciseReason(review.reason)}</p>}
     <details><summary>Detailed numbers</summary>
     {!authorityPending && !retired && saved && comparison && <p>{comparison}</p>}
-    <p>Form {attempt.arm.form.id}{attempt.ordinal > 6 ? ' · previously used form in this presentation mode' : ''} · {profile.mode} presentation · {profile.entryWindow === 35000 ?
+    <p>{profile.mode} presentation · {profile.entryWindow === 35000 ?
       'extended entry' : 'standard entry'} · {profile.entryMethod} input
       {actualDigitsAssistance(facts) ? ' · assisted entry used' : ''}{profile.assistedEntryDeclared ? ' · assisted entry declared' : ''} · {profile.highContrast ? 'high contrast' : 'standard contrast'} · {profile.reducedMotion ? 'reduced motion' : 'standard motion'}</p>
-    <details><summary>Run details</summary>
-    <p>Form family {attempt.arm.form.version}; scoring {attempt.arm.scoringVersion}.</p>
-    <p>Browser at start: {profile.browserContext.userAgent}; viewport {profile.browserContext.viewportWidth} × {profile.browserContext.viewportHeight}; pixel ratio {profile.browserContext.devicePixelRatio}.</p>
-    {profile.voice && <p>Browser voice: {profile.voice.voiceURI} ({profile.voice.lang}, local voice).</p>}
-    </details>
     {authorityPending ? <p role="status">Checking whether this saved report is still available. Numbers are hidden until the check finishes.</p> :
       review.status === 'valid' ? <>
         <p>Maximum correctly recalled length: <strong>{review.maximumRecalledLength ?? 'No sequence recalled exactly'}</strong>.</p>
@@ -111,11 +109,10 @@ function DigitsReport({ review, attempt, facts, retired, saved, authorityPending
         <p>{review.completionReason === 'three_mistakes' ? 'The run ended after three mistakes.' : 'The TraitGame limit of 40 trials was reached. The three-mistake ending was not reached.'}</p>
         <p>Skipped: {review.skipped}; timed out: {review.timedOut}
           {review.fullMatchingTimeouts > 0 ? `; ${review.fullMatchingTimeouts} full matching entries reached the deadline and were not scored correct` : ''}.</p>
-        <p>Presentation-quality notes: {attempt.snapshot?.state.events.filter(event => event.type === 'quality_note').length ?? 0}.</p>
         <h3>Accuracy by length</h3>
         <ul>{review.byLength.map(row => <li key={row.length}>{row.length} digits: {row.exact}/{row.of} ({row.percent.toFixed(1)}%)</li>)}</ul>
         <h3>String differences</h3>
-        <p>{review.substitutions} substituted positions, {review.transpositionPairs} adjacent transposition pairs, {review.missingSuffix} missing trailing positions. These describe entered strings, not why an error happened.</p>
+        <p>Wrong digit {review.substitutions} · Swapped neighbours {review.transpositionPairs} · Missing at end {review.missingSuffix}.</p>
         <ul>{review.serialPositionErrors.map(row => <li key={row.position}>Position {row.position}: {row.errors}/{row.opportunities} differed ({row.percent.toFixed(1)}%)</li>)}</ul>
         <p>These results describe the selected TraitGame form only. Auditory and accommodated runs are reported separately.</p>
       </> : <>
@@ -128,10 +125,10 @@ function DigitsReport({ review, attempt, facts, retired, saved, authorityPending
       <ul>{observedDigitsOnsets(facts).map(row => <li key={row.trial}>Trial {row.trial}: {row.digits} digits began presentation.</li>)}</ul>
       <p>Known closed trials: {facts.closed.length}. No later exposure is inferred and no removed result is eligible as a saved report.</p></>}
     </details>
-    <p>{LIMITATION}</p>
-    <div className="digits-actions">{!readOnly&&<><button onClick={onReplay}>Replay Digits</button>
-      <button className="secondary" onClick={onHistory}>Local history</button></>}
-      <button className="secondary" data-mock-return-intent={returnToMock ? "" : undefined} onClick={onLibrary}>{returnToMock?'Return to mock':'Library'}</button></div>
+    <p className="note digits-limitation">{LIMITATION}</p>
+    <div className="digits-actions">{!readOnly&&<><button onClick={onReplay}>Try again</button>
+      <button className="secondary" onClick={onHistory}>History</button></>}
+      <button className="secondary" data-mock-return-intent={returnToMock ? "" : undefined} onClick={onLibrary}>{returnToMock?'Return to mock':'Main menu'}</button></div>
   </section>
 }
 
@@ -873,12 +870,12 @@ export function DigitsJourney({ onLibrary, mock, reportTarget }: { onLibrary: ()
     {screen === 'pending' && <section className="panel"><h1 tabIndex={-1}>{destination === 'history' ? 'Loading Digits local history' : destination === 'review' ? 'Opening Digits review' : 'Preparing Digits'}</h1>
       <p role="status">Checking current local storage.</p>
       <button onClick={() => void replay()}>Practice again</button>
-      <button className="secondary" onClick={() => void openHistory()}>Local history</button>
-      <button className="secondary" data-mock-return-intent={mock ? "" : undefined} onClick={library}>{mock?'Return to mock':'Library'}</button></section>}
+      <button className="secondary" onClick={() => void openHistory()}>History</button>
+      <button className="secondary" data-mock-return-intent={mock ? "" : undefined} onClick={library}>{mock?'Return to mock':'Main menu'}</button></section>}
     {screen === 'error' && <section className="panel"><h1 tabIndex={-1}>{error?.includes('deleted') || error?.includes('replaced') ? 'Digits attempt removed' : 'Digits unavailable'}</h1>
       <p>{error?.includes('deleted') || error?.includes('replaced') ? 'Reload Digits to start a new attempt. The removed report is no longer available.' : 'Scored Practice requires working local storage and exclusive browser ownership. No temporary result is presented as saved.'}</p>
       <button onClick={() => location.reload()}>Reload Digits</button>
-      <button className="secondary" data-mock-return-intent={mock ? "" : undefined} onClick={library}>{mock?'Return to mock':'Library'}</button></section>}
+      <button className="secondary" data-mock-return-intent={mock ? "" : undefined} onClick={library}>{mock?'Return to mock':'Main menu'}</button></section>}
     {screen === 'guide' && <section className="panel"><p className="eyebrow">How it works</p><h1 tabIndex={-1}>Digits</h1><QuickRules rules={['Watch the digits, then enter them in the same order.', `Select Submit within ${extended ? 35 : 20} seconds.`, 'Start with four digits. Correct answers add one digit; a mistake shortens the next sequence. Three mistakes end the run.']} note={'Skipping or running out of time counts as a mistake. Takes about 5 minutes.'}/><div className="actions"><button onClick={() => go('quiz')}>Continue</button></div><details className="start-options"><summary>Examples and saved results</summary><div className="actions"><button className="secondary" onClick={() => go('examples')}>See an example</button><button className="secondary" onClick={() => void openHistory()}>Saved results</button>{skipAvailable&&<button className="secondary" onClick={()=>{void skipTutorial()}}>Skip instructions</button>}<p>A long run can take over 20 minutes. Results stay in this browser.</p><p>{SOURCE_NOTE}</p><p>{LIMITATION}</p>{quizFeedback&&<p role="alert">{quizFeedback}</p>}</div></details><AssessmentUsageNotice /></section>}
     {screen === 'examples' && <section className="panel"><h1 tabIndex={-1}>One example</h1>
       <p>See <strong>4</strong>, then <strong>2</strong>, then <strong>7</strong>, then <strong>0</strong>. Enter <strong>4270</strong> and select Submit. This example is untimed.</p>
@@ -994,12 +991,12 @@ export function DigitsJourney({ onLibrary, mock, reportTarget }: { onLibrary: ()
         onReplay={() => { void (mock?mock.retry():Promise.resolve()).then(replay).catch(cause=>setMockError(cause instanceof Error?cause.message:'The old Digits attempt needs checking.')) }} onHistory={() => void openHistory()} onLibrary={library} readOnly={!!reportTarget} returnToMock={!!mock||!!reportTarget} />
       {mockError && <p role="alert">{mockError}</p>}{mockReady && mock && !retired && saved && snapshot?.kind === 'terminal' &&
         <button data-mock-return-intent onClick={() => void mock.continue().catch(cause => setMockError(cause instanceof Error ? cause.message : 'Continue could not be confirmed.'))}>Continue mock</button>}</>}
-    {screen === 'history' && <section className="panel"><h1 tabIndex={-1}>Digits local history</h1>
+    {screen === 'history' && <section className="panel"><h1 tabIndex={-1}>Digits history</h1>
       <p>Clearing local data also clears form-exposure and rotation history; a form may repeat afterward.</p>
       {history.length === 0 ? <p>No saved Digits attempts in this browser.</p> : <ul>{history.map(item => <li key={item.sessionId}>
         {item.arm.form.id} · {item.mode} · {item.arm.profile.entryWindow === 35000 ? 'extended entry' : 'standard entry'} · {item.arm.profile.entryMethod} · {(item.arm.profile.assistedEntryDeclared || actualDigitsAssistance(item.snapshot?.state ?? item.arm)) ? 'assisted entry · ' : ''}attempt {item.ordinal} · {item.snapshot?.review.status ?? 'Incomplete'} · {new Date(item.createdAtWallMs).toLocaleString()} · {item.snapshot?.kind === 'terminal' ? 'saved result' : item.snapshot ? 'Some trials saved; later activity could not be confirmed' : 'Start saved; no answers saved. Later activity could not be confirmed'}
-        <button onClick={() => void openSaved(item)}>Open review</button>
-        <button className="secondary" onClick={() => void deleteOne(item)}>Delete this attempt</button>
+        <button onClick={() => void openSaved(item)}>Review</button>
+        <button className="secondary" onClick={() => void deleteOne(item)}>Delete</button>
       </li>)}</ul>}
       <button className="secondary" onClick={() => void deleteAll()}>Delete all Digits data</button>
       <button onClick={replay}>Practice again</button></section>}
