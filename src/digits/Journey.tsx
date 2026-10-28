@@ -879,21 +879,21 @@ export function DigitsJourney({ onLibrary, mock, reportTarget }: { onLibrary: ()
       <p>{error?.includes('deleted') || error?.includes('replaced') ? 'Reload Digits to start a new attempt. The removed report is no longer available.' : 'Scored Practice requires working local storage and exclusive browser ownership. No temporary result is presented as saved.'}</p>
       <button onClick={() => location.reload()}>Reload Digits</button>
       <button className="secondary" data-mock-return-intent={mock ? "" : undefined} onClick={library}>{mock?'Return to mock':'Library'}</button></section>}
-    {screen === 'guide' && <section className="panel"><p className="eyebrow">How it works</p><h1 tabIndex={-1}>Digits</h1><QuickRules rules={['Watch the digits, then enter them in the same order.', `Select Submit within ${extended ? 35 : 20} seconds.`, 'Start with four digits. Correct answers add one digit; a mistake shortens the next sequence. Three mistakes end the run.']} note={'Skip and timeout also count as mistakes. Correct answers do not reset the mistake count. Allow at least five minutes.'}/><div className="actions"><button onClick={() => go('quiz')}>Continue</button></div><details className="start-options"><summary>Examples and saved results</summary><div className="actions"><button className="secondary" onClick={() => go('examples')}>See an example</button><button className="secondary" onClick={() => void openHistory()}>Saved results</button>{skipAvailable&&<button className="secondary" onClick={()=>{void skipTutorial()}}>Skip instructions</button>}<p>A long run can take over 20 minutes. Results stay in this browser.</p><p>{SOURCE_NOTE}</p><p>{LIMITATION}</p>{quizFeedback&&<p role="alert">{quizFeedback}</p>}</div></details><AssessmentUsageNotice /></section>}
+    {screen === 'guide' && <section className="panel"><p className="eyebrow">How it works</p><h1 tabIndex={-1}>Digits</h1><QuickRules rules={['Watch the digits, then enter them in the same order.', `Select Submit within ${extended ? 35 : 20} seconds.`, 'Start with four digits. Correct answers add one digit; a mistake shortens the next sequence. Three mistakes end the run.']} note={'Skipping or running out of time counts as a mistake. Takes about 5 minutes.'}/><div className="actions"><button onClick={() => go('quiz')}>Continue</button></div><details className="start-options"><summary>Examples and saved results</summary><div className="actions"><button className="secondary" onClick={() => go('examples')}>See an example</button><button className="secondary" onClick={() => void openHistory()}>Saved results</button>{skipAvailable&&<button className="secondary" onClick={()=>{void skipTutorial()}}>Skip instructions</button>}<p>A long run can take over 20 minutes. Results stay in this browser.</p><p>{SOURCE_NOTE}</p><p>{LIMITATION}</p>{quizFeedback&&<p role="alert">{quizFeedback}</p>}</div></details><AssessmentUsageNotice /></section>}
     {screen === 'examples' && <section className="panel"><h1 tabIndex={-1}>One example</h1>
       <p>See <strong>4</strong>, then <strong>2</strong>, then <strong>7</strong>, then <strong>0</strong>. Enter <strong>4270</strong> and select Submit. This example is untimed.</p>
       <button onClick={() => { setQuizFeedback(''); go('quiz') }}>Check understanding</button>
     </section>}
     {screen === 'quiz' && <section className="panel"><h1 tabIndex={-1}>Check understanding</h1>
       <fieldset><legend>What counts as correct?</legend>
-        <label><input type="radio" name="digits-rule" checked={quizOrder === 'yes'} onChange={() => setQuizOrder('yes')} /> The exact digits in order, submitted before time runs out</label>
-        <label><input type="radio" name="digits-rule" checked={quizOrder === 'no'} onChange={() => setQuizOrder('no')} /> Any order, even after time runs out</label></fieldset>
+        <label><input type="radio" name="digits-rule" checked={quizOrder === 'yes'} onChange={() => setQuizOrder('yes')} /> Same digits, same order, before time runs out</label>
+        <label><input type="radio" name="digits-rule" checked={quizOrder === 'no'} onChange={() => setQuizOrder('no')} /> Same digits, any order, even after time runs out</label></fieldset>
       {quizFeedback && <p role="status">{quizFeedback}</p>}
       <button onClick={() => { if (quizOrder === 'yes') {
           setQuizFeedback(''); go('setup'); void refreshVoices()
         } else setQuizFeedback('Keep the original order and submit before the deadline. Try again.')
       }}>Check answer</button></section>}
-    {screen === 'setup' && <section className="panel"><h1 tabIndex={-1}>Ready · check Digits entry</h1>
+    {screen === 'setup' && <section className="panel"><h1 tabIndex={-1}>Ready?</h1>
       <label>Try entering 4270 (untimed) <input inputMode="numeric" autoComplete="off" value={inputCheck}
         onChange={e => { if (/^[0-9]{0,4}$/.test(e.target.value)){changedSetup();setInputCheck(e.target.value)} }} /></label>
       {entryMethod === 'keypad' && <div className="digits-keypad" aria-label="Untimed input check keypad">
@@ -906,7 +906,7 @@ export function DigitsJourney({ onLibrary, mock, reportTarget }: { onLibrary: ()
           onChange={() => { changedSetup(); setSamplePassed(false); setAudibleConfirmed(false); setMode('auditory') }} /> Auditory digits with a verified local English browser voice</label></fieldset>
       {!auditoryAvailable && <p>Auditory Practice is unavailable: no eligible unique local English browser voice was found. Visual Practice remains available.</p>}
       <button className="secondary" onClick={() => void refreshVoices()}>Recheck local voices</button>
-      {mode === 'auditory' && voice && <div className="panel"><p>Selected local voice: {voice.voiceURI} ({voice.lang}). Browser speech callbacks do not prove what was audible on your device.</p>
+      {mode === 'auditory' && voice && <div className="panel"><p>English voice</p>
         <button onClick={() => void playSamples()}>Play two sample digits</button>
         {samplePassed && <label><input type="checkbox" checked={audibleConfirmed}
           onChange={e => {changedSetup();setAudibleConfirmed(e.target.checked)}} /> I heard both sample digits clearly</label>}</div>}
@@ -921,13 +921,11 @@ export function DigitsJourney({ onLibrary, mock, reportTarget }: { onLibrary: ()
       <label><input type="checkbox" checked={assistedDeclared} onChange={e => {changedSetup();setAssistedDeclared(e.target.checked)}} /> I plan to use assisted text entry; label this result separately</label>
       </details>
       <p>Visual scored digits are hidden from screen-reader text. This visual task does not have an equivalent nonvisual form here. The entry field and reports remain accessible.</p>
-      <button disabled={inputCheck !== '4270' || mode === 'auditory' && (!samplePassed || !audibleConfirmed) || starting} onClick={() => void start()}>{retryCanceledStart ? 'Retry saving' : 'Start'}</button></section>}
+      <button disabled={inputCheck !== '4270' || mode === 'auditory' && (!samplePassed || !audibleConfirmed) || starting} onClick={() => void start()}>{starting ? 'Starting…' : retryCanceledStart ? 'Retry saving' : 'Start'}</button></section>}
     {screen === 'ready' && <section className="panel"><h1 tabIndex={-1}>Ready for Digits</h1>
-      <p>{mode} presentation, {extended ? '35-second extended' : '20-second standard'} entry, {entryMethod} input.</p>
-      <p>Keep this window visible and focused from Start until the run ends, including while waiting for Next. A tab switch, lost focus or browser timing failure invalidates the attempt.</p>
-      <p>A rare long run ends at the TraitGame limit of 40 trials; sequence length is between 2 and 16 digits.</p>
-      <p>The game will wait until your start is saved before showing the first sequence.</p>
-      <button disabled={starting} onClick={() => void start()}>{starting ? 'Checking storage and ownership…' : retryCanceledStart ? 'Retry saving' : 'Start scored Digits'}</button>
+      <p>{mode === 'visual' ? 'Visual digits' : 'Spoken digits'} · {extended ? '35-second' : '20-second'} entry · {entryMethod}</p>
+      <p>Keep this window in front until the run ends.</p>
+      <button disabled={starting} onClick={() => void start()}>{starting ? 'Starting…' : retryCanceledStart ? 'Retry saving' : 'Start'}</button>
       <button className="secondary" disabled={starting || pendingStart} onClick={() => go('setup')}>Change setup</button></section>}
     {(screen === 'playing' || screen === 'feedback') && <section className="panel digits-play">
       <h1 tabIndex={-1}>Digits</h1>

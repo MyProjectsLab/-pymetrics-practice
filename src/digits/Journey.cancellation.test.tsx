@@ -43,7 +43,7 @@ it('retains Journey cancellation custody through a failed save and one same-requ
   } })
   const view = render(<DigitsJourney onLibrary={vi.fn()} />)
   fireEvent.click(await screen.findByRole('button', { name: 'Continue' }))
-  fireEvent.click(screen.getByLabelText(/The exact digits in order/))
+  fireEvent.click(screen.getByLabelText(/Same digits, same order/))
   fireEvent.click(screen.getByRole('button', { name: 'Check answer' }))
   fireEvent.change(screen.getByLabelText(/Try entering 4270/), { target: { value: '4270' } })
   fireEvent.click(screen.getByRole('button', { name: 'Start' }))
