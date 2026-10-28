@@ -82,7 +82,7 @@ describe('Cards recovery claims', () => {
     fireEvent.click(screen.getByLabelText(/A draw can lose money; the game ends after 80 draws/))
     fireEvent.click(screen.getByRole('button', { name: 'Check answers' }))
     fireEvent.click(await screen.findByRole('button', { name: 'Start' }))
-    fireEvent.click(await screen.findByRole('button', { name: 'Exit run' }))
+    fireEvent.click(await screen.findByRole('button', { name: '← Exit' }))
     await screen.findByText(/Exit or interruption save unconfirmed: injected close failure/)
     fireEvent.click(screen.getByRole('button', { name: 'Check closure save' }))
     await waitFor(() => expect(screen.queryByText(/Exit or interruption save unconfirmed/)).not.toBeInTheDocument())
@@ -105,7 +105,7 @@ describe('Cards recovery claims', () => {
     fireEvent.click(screen.getByLabelText(/A draw can lose money; the game ends after 80 draws/))
     fireEvent.click(screen.getByRole('button', { name: 'Check answers' }))
     fireEvent.click(await screen.findByRole('button', { name: 'Start' }))
-    fireEvent.click(await screen.findByRole('button', { name: 'Exit run' }))
+    fireEvent.click(await screen.findByRole('button', { name: '← Exit' }))
     await screen.findByText(/Exit or interruption save unconfirmed: Save delivery unconfirmed/, {}, { timeout: 4000 })
     const runId = Object.keys((await store.read()).runs)[0]
     const before = (await store.inspect(runId)).run.events.length

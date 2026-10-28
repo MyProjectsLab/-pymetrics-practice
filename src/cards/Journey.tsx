@@ -647,28 +647,28 @@ export function CardsJourney({ onLibrary, mock, reportTarget }: { onLibrary: () 
       {!store && <p role="status">Checking local storage…</p>}
       <button disabled={!store || busy.current} onClick={() => void start()}>Start</button>
       {pendingLabel && <p role="status">{pendingLabel}</p>}{retry.current && <button className="secondary" onClick={() => void retry.current?.()}>Check saved start</button>}</div>}
-    {step === 'play' && <div className="panel cards-board"><div className="cards-board-top"><p>Draw {Math.min(choices + 1, 80)} of 80</p>
-      <p className="cards-balance">Balance <strong>{money(display?.balance ?? report?.endingBalance ?? 2000)}</strong></p></div>
-      <div className="cards-bars"><label>Gains {money(shownGains)}<progress max="10000" value={Math.min(shownGains, 10000)} /></label>
-        <label>Losses {money(shownLosses)}<progress max="10000" value={Math.min(shownLosses, 10000)} /></label></div>
-      <div className="cards-reveal"><div className={`cards-face ${display ? 'cards-face-revealed' : ''}`} aria-hidden="true">
-        {display ? <><span>{deckSymbol[display.deck]}</span><strong>{display.value > 0 ? '+' : ''}{display.value}</strong></> : <span>◇</span>}</div>
-        <p ref={feedbackRef} tabIndex={-1} aria-live="polite">{display ? `Deck ${display.deck}: ${outcomeText(display.value)}. Balance ${money(display.balance)}.` : 'Choose any deck to draw.'}</p></div>
-      <div className="cards-decks" ref={deckHost}>{visibleOrder.map(deck => <button key={deck} type="button" className="cards-deck"
+    {step === 'play' && <div className="panel cards-board"><div className="cards-board-top">
+      <button className="secondary cards-exit" onClick={() => {
+        const closing = retire('run_exited', 'candidate_exit'); newStep('history')
+        void Promise.resolve(closing).finally(() => refreshHistory())
+      }}>← Exit</button><p>{choices} / 80</p></div>
+      <div className="cards-progress" aria-hidden="true"><span style={{ transform: `scaleX(${choices / 80})` }} /></div>
+      <div className="cards-balance"><span>Balance</span><strong>{money(display?.balance ?? report?.endingBalance ?? 2000)}</strong></div>
+      <p className="cards-gain-loss">Gains {money(shownGains)} · Losses {money(shownLosses)}</p>
+      <p className="cards-feedback" ref={feedbackRef} tabIndex={-1} aria-live="polite">
+        <span aria-hidden="true">{display ? <><strong className={`cards-outcome ${display.value > 0 ? 'cards-outcome-gain' : display.value < 0 ? 'cards-outcome-loss' : ''}`}>{outcomeText(display.value)}</strong> from Deck {display.deck}</> : 'Choose a deck'}</span>
+        <span className="cards-sr-only">{display ? `Deck ${display.deck}: ${outcomeText(display.value)}. Balance ${money(display.balance)}.` : 'Choose a deck'}</span></p>
+      <div className="cards-decks" ref={deckHost}>{visibleOrder.map(deck => <button key={deck} type="button" className={`cards-deck${display?.deck === deck ? ' cards-deck-chosen' : ''}`}
         disabled={phase !== 'ready'} onKeyDown={event => { if (event.repeat || event.altKey || event.ctrlKey || event.metaKey || event.nativeEvent.isComposing) { event.preventDefault(); return }
           if (event.key === 'Enter' || event.key === ' ') lastInput.current = { kind: 'keyboard', deck, at: performance.now() } }}
         onPointerDown={event => { lastInput.current = { kind: event.pointerType === 'touch' ? 'touch' : 'pointer', deck, at: performance.now() } }}
         onPointerCancel={() => { lastInput.current = null }}
         onBlur={() => { lastInput.current = null }}
         onClick={event => void draw(deck, event.nativeEvent.isTrusted, event.altKey || event.ctrlKey || event.metaKey || event.shiftKey)}>
-          <span className="cards-deck-art" aria-hidden="true">{deckSymbol[deck]}</span><span>Deck {deck}</span></button>)}</div>
+          <span className="cards-deck-art" aria-hidden="true">{deckSymbol[deck]}</span><span className="cards-deck-label">Deck {deck}</span></button>)}</div>
       {phase === 'uncertain' ? <div role="alert"><p>{pendingLabel}</p>
         {retry.current && <button onClick={() => void retry.current?.()}>Check saved action</button>}</div> :
-        phase === 'saving' ? <p role="status">{pendingLabel}</p> : null}
-      <button className="secondary" onClick={() => {
-        const closing = retire('run_exited', 'candidate_exit'); newStep('history')
-        void Promise.resolve(closing).finally(() => refreshHistory())
-      }}>Exit run</button></div>}
+        phase === 'saving' ? <p role="status">{pendingLabel}</p> : null}</div>}
     {step === 'report' && report && run && <ReportPanel report={report} run={run} comparison={comparison}
       onHistory={openHistory} onReplay={() => { void (mock?mock.retry():Promise.resolve()).then(()=>newStep('guide')).catch(cause=>setMockError(safeError(cause))) }} onLibrary={library} readOnly={!!reportTarget} returnToMock={!!mock||!!reportTarget} />}
     {step === 'report' && mockError && <p role="alert">{mockError}</p>}
