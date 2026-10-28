@@ -37,6 +37,7 @@
 .cards-table table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
 .cards-table th,.cards-table td { text-align: left; padding: .65rem; border-bottom: 1px solid #c8d4db; }
 .cards-actions { display: flex; gap: .65rem; flex-wrap: wrap; }
+.cards-limitation { color: #4a5368; font-size: .8rem; }
 @media (max-width: 520px) {
   .cards-decks { gap: .5rem; }
   .cards-deck { font-size: .8rem; }

@@ -50,30 +50,27 @@ function ReportPanel({ report, run, comparison, onHistory, onReplay, onLibrary, 
   report: Report; run: Run; comparison: string; onHistory: () => void; onReplay: () => void; onLibrary: () => void; readOnly?: boolean; returnToMock?: boolean
 }) {
   return <section className="panel cards-report" aria-labelledby="cards-report-title">
-    <h2 id="cards-report-title" tabIndex={-1}>Cards result</h2>
+    <h2 id="cards-report-title" tabIndex={-1}>{report.status === 'complete_valid' ? `Ended with ${money(report.endingBalance)}` : `Stopped after ${report.committedDrawCount} cards`}</h2>
     <p role="status">{report.status === 'complete_valid' ? 'Completed and saved in this browser' :
       `Incomplete review, through draw ${report.committedDrawCount} of 80`}</p>
     {report.status === 'complete_valid' && <ReportSummary feedback={formattedCardsFeedback(report)} />}
     <details><summary>Detailed numbers</summary>
     <p>{comparison}</p>
-    <p>Form {report.formId}{report.ordinal > 6 ? ' · repeated form' : ''}.</p>
-    <p>{report.committedDrawCount} committed draws; {report.feedbackSeenCount} feedback displays confirmed during play.
-      {report.committedDrawCount > report.feedbackSeenCount ? ' The last saved outcome may not have been confirmed visible during play.' : ''}</p>
     {run.status === 'active' && <p>This attempt may still be in progress in another tab, or its closure save is unconfirmed. It cannot resume from this review.</p>}
     <div className="cards-totals"><p>Starting balance <strong>{money(report.startingBalance)}</strong></p>
       <p>Total gains <strong>{money(report.gains)}</strong></p><p>Total losses <strong>{money(report.losses)}</strong></p>
-      <p>{report.status === 'complete_valid' ? 'Ending balance' : 'Saved prefix balance'} <strong>{money(report.endingBalance)}</strong></p></div>
-    <p>Deck switches: {report.switches}{report.status === 'complete_valid' ? ' of 79 adjacent draw pairs' : ' in the saved prefix'}.</p>
+      <p>{report.status === 'complete_valid' ? 'Ending balance' : 'Balance when it stopped'} <strong>{money(report.endingBalance)}</strong></p></div>
+    <p>You switched decks {report.switches} times.</p>
     <div className="cards-table"><table><caption>Chosen outcomes by deck</caption><thead><tr><th>Deck</th><th>Draws</th><th>Gains</th><th>Losses</th></tr></thead>
       <tbody>{DECKS.map(deck => <tr key={deck}><th scope="row">Deck {deck}</th><td>{report.byDeck[deck].count}</td>
         <td>{money(report.byDeck[deck].gains)}</td><td>{money(report.byDeck[deck].losses)}</td></tr>)}</tbody></table></div>
     <details><summary>Selected draw trace</summary><ol>{report.trace.map(draw => <li key={draw.turn}>
       Draw {draw.turn}: Deck {draw.deck}, its card {draw.deckDraw}; {outcomeText(draw.value)}; balance {money(draw.balance)}
-      {!draw.feedbackSeen ? ' · display not confirmed' : ''}.</li>)}</ol></details>
+      {!draw.feedbackSeen ? ' · not shown' : ''}.</li>)}</ol></details>
     </details>
-    <p>{LIMITATION}</p>
-    <div className="cards-actions">{!readOnly&&<><button onClick={onReplay}>Play again</button><button className="secondary" onClick={onHistory}>Local history</button></>}
-      <button className="secondary" data-mock-return-intent={returnToMock ? "" : undefined} onClick={onLibrary}>{returnToMock?'Return to mock':'Library'}</button></div>
+    <p className="note cards-limitation">{LIMITATION}</p>
+    <div className="cards-actions">{!readOnly&&<><button onClick={onReplay}>Play again</button><button className="secondary" onClick={onHistory}>History</button></>}
+      <button className="secondary" data-mock-return-intent={returnToMock ? "" : undefined} onClick={onLibrary}>{returnToMock?'Return to mock':'Main menu'}</button></div>
   </section>
 }
 export function CardsJourney({ onLibrary, mock, reportTarget }: { onLibrary: () => void; mock?: MockJourneyContext; reportTarget?: ReportTarget }) {
@@ -675,7 +672,7 @@ export function CardsJourney({ onLibrary, mock, reportTarget }: { onLibrary: () 
     {step === 'report' && mockReady && mock && <button data-mock-return-intent onClick={() => void mock.continue().catch(cause => setMockError(safeError(cause)))}>Continue mock</button>}
     {step === 'report' && !report && <div className="panel"><h2>Report unavailable</h2>
       <p>The saved result could not be confirmed or was removed.</p>
-      <button onClick={openHistory}>Local history</button><button className="secondary" data-mock-return-intent={mock ? "" : undefined} onClick={library}>{mock?'Return to mock':'Library'}</button></div>}
+      <button onClick={openHistory}>History</button><button className="secondary" data-mock-return-intent={mock ? "" : undefined} onClick={library}>{mock?'Return to mock':'Main menu'}</button></div>}
     {step === 'history' && <div className="panel"><h2>Cards history</h2>
       <p>Saved only in this browser. Removing a run also removes its outcome trace.</p>
       {closurePending && <p role="alert">Exit or interruption save is unconfirmed. This attempt cannot resume.
@@ -685,15 +682,15 @@ export function CardsJourney({ onLibrary, mock, reportTarget }: { onLibrary: () 
         historyEvidence !== 'confirmed' ? <p>{historyEvidence === 'checking' ?
           'Checking saved Cards attempts…' : 'History is hidden until this tab rechecks saved data.'}</p> :
           history.length === 0 ? <p>No saved Cards attempts.</p> : <ul>{history.map(({ run: item, report: summary }) => {
-        return <li key={item.id}>{new Date(item.createdAtWallMs).toLocaleString()} · Form {item.formId} · {item.status === 'complete' ? 'Complete' : item.status === 'active' ? 'In progress or closure unconfirmed' : 'Incomplete'} · {summary.committedDrawCount}/80 draws
+        return <li key={item.id}>{new Date(item.createdAtWallMs).toLocaleString()} · {item.status === 'complete' ? 'Complete' : 'Not finished'} · {summary.committedDrawCount}/80 draws
           {summary.feedbackSeenCount !== summary.committedDrawCount ? ` · ${summary.feedbackSeenCount} feedback displays confirmed` : ''}
           {` · ${item.status === 'complete' ? 'Ending' : 'Prefix'} balance ${money(summary.endingBalance)}`}
           <button onClick={() => void showReport(item.id, 'history')}>Review</button>
           <button className="secondary" onClick={() => void deleteRun(item.id)}>Delete</button></li>
       })}</ul>}
-      {confirmAll ? <p>Remove all local Cards history and restart form allocation? <button onClick={() => void deleteAll()}>Confirm Delete all</button>
+      {confirmAll ? <p>Remove all local Cards history and restart form allocation? <button onClick={() => void deleteAll()}>Delete all</button>
         <button className="secondary" onClick={() => setConfirmAll(false)}>Cancel</button></p> :
         <button className="secondary" onClick={() => setConfirmAll(true)}>Delete all Cards data</button>}
-      <button onClick={() => newStep('guide')}>Back to Cards</button></div>}
+      <button onClick={() => newStep('guide')}>Practice again</button></div>}
   </section></Shell>
 }

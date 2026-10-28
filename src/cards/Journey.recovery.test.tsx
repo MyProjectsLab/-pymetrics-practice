@@ -39,12 +39,12 @@ describe('Cards recovery claims', () => {
     await store.closeRun({ id: 'exit', runId: run.id, documentId: run.documentId,
       epoch: run.epoch, type: 'run_exited', reason: 'candidate_exit' })
     await openHistory(store)
-    await screen.findByText(/Form CD1 · Incomplete · 0\/80 draws/)
+    await screen.findByText(/Not finished · 0\/80 draws/)
     act(() => fireEvent.blur(window))
     expect(screen.queryByText('No saved Cards attempts.')).not.toBeInTheDocument()
     expect(screen.getByText('History is hidden until this tab rechecks saved data.')).toBeInTheDocument()
     act(() => fireEvent.focus(window))
-    await screen.findByText(/Form CD1 · Incomplete · 0\/80 draws/)
+    await screen.findByText(/Not finished · 0\/80 draws/)
   })
   it('does not claim zero attempts after a failed authoritative history read', async () => {
     locks()
@@ -63,7 +63,7 @@ describe('Cards recovery claims', () => {
     await store.closeRun({ id: 'exit', runId: run.id, documentId: run.documentId,
       epoch: run.epoch, type: 'run_exited', reason: 'candidate_exit' })
     await openHistory(store)
-    await screen.findByText(/Form CD1 · Incomplete · 0\/80 draws/)
+    await screen.findByText(/Not finished · 0\/80 draws/)
     act(() => fireEvent.blur(window))
     await store.delete(run.id)
     expect(screen.queryByText('No saved Cards attempts.')).not.toBeInTheDocument()
@@ -86,7 +86,7 @@ describe('Cards recovery claims', () => {
     await screen.findByText(/Exit or interruption save unconfirmed: injected close failure/)
     fireEvent.click(screen.getByRole('button', { name: 'Check closure save' }))
     await waitFor(() => expect(screen.queryByText(/Exit or interruption save unconfirmed/)).not.toBeInTheDocument())
-    expect(screen.getByText(/Form CD1 · Incomplete · 0\/80 draws/)).toBeInTheDocument()
+    expect(screen.getByText(/Not finished · 0\/80 draws/)).toBeInTheDocument()
     expect((await store.inspect(Object.keys((await store.read()).runs)[0])).run.status).toBe('exited')
   })
   it('clears a lost closure callback after readback proves the run already exited', async () => {
