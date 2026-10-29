@@ -45,7 +45,7 @@ export async function exerciseDigitsReference(page, { origin, method = 'keyboard
   await page.getByRole('button', { name: 'Check answer', exact: true }).click()
   await page.getByRole('heading', { name: 'Ready?', exact: true }).waitFor()
   await page.getByText('Presentation and accessibility options', { exact: true }).click()
-  assert.ok(await page.getByRole('checkbox', { name: 'Extended answer time (35 seconds)', exact: true }).isDisabled())
+  assert.equal(await page.getByRole('checkbox', { name: 'Extended answer time (35 seconds)', exact: true }).count(), 0)
   if (method === 'keypad') await page.getByRole('radio', { name: 'On-screen numeric keypad', exact: true }).check()
   if (contrast) await page.getByRole('checkbox', { name: 'High contrast', exact: true }).check()
   await page.getByText('Presentation and accessibility options', { exact: true }).click()
@@ -56,6 +56,8 @@ export async function exerciseDigitsReference(page, { origin, method = 'keyboard
   for (let trial = 0; trial < 4; trial++) {
     await page.waitForFunction(() => /^\d$/.test(document.querySelector('.digits-stimulus')?.textContent ?? ''))
     assert.equal(await page.locator('.digits-entry').evaluate(e => getComputedStyle(e).visibility), 'hidden')
+    assert.equal(await page.locator('header nav[aria-label="Main navigation"]').isVisible(), false)
+    assert.ok(await page.getByRole('button', { name: 'Exit', exact: true }).isVisible())
     if (screenshots && trial === 0) await page.screenshot({ path: `${screenshots}-digit.png` })
     await page.waitForFunction(() => document.querySelector('.digits-play')?.dataset.phase === 'entry')
     await page.waitForFunction(keypad => document.activeElement === document.querySelector(keypad ? '.digits-keypad button' : '#digits-response'), method === 'keypad')
@@ -83,6 +85,15 @@ export async function exerciseDigitsReference(page, { origin, method = 'keyboard
       for (const digit of answer) await page.locator('.digits-keypad').getByRole('button', { name: digit, exact: true }).tap()
     } else await input.pressSequentially(answer, { delay: 15 })
     assert.equal(await input.inputValue(), answer)
+    if (method === 'keyboard') {
+      const focus = await input.evaluate(e => { const s = getComputedStyle(e); return { active: document.activeElement === e, visible: e.matches(':focus-visible'), outline: s.outlineStyle, shadow: s.boxShadow, width: s.borderBottomWidth, color: s.borderBottomColor } })
+      assert.ok(focus.active && focus.visible, JSON.stringify(focus))
+      assert.equal(focus.outline, 'none')
+      assert.equal(focus.shadow, 'none')
+      assert.equal(focus.width, '3px')
+      assert.equal(focus.color, contrast ? 'rgb(103, 232, 249)' : 'rgb(14, 116, 144)')
+    }
+    assert.equal(await page.locator('header nav[aria-label="Main navigation"]').isVisible(), false)
     if (screenshots && trial === 0) await page.screenshot({ path: `${screenshots}-answer.png` })
     // Untrusted Enter must not commit, even with a fully populated answer.
     await input.dispatchEvent('keydown', { key: 'Enter', code: 'Enter', bubbles: true })
@@ -100,6 +111,8 @@ export async function exerciseDigitsReference(page, { origin, method = 'keyboard
     if (trial === 0) assert.equal(await page.locator('.digits-error-count').count(), 0)
     else assert.equal(await page.locator('.digits-error-count').innerText(), `✕ ${trial}`)
     await page.waitForFunction(() => [...document.querySelectorAll('button')].some(e => e.textContent === 'Next' && !e.disabled))
+    assert.equal(await page.locator('header nav[aria-label="Main navigation"]').isVisible(), false)
+    assert.ok(await page.getByRole('button', { name: 'Exit', exact: true }).isVisible())
     if (screenshots && trial <= 1) await page.screenshot({ path: `${screenshots}-${expected}.png` })
     const fit = await page.locator('.digits-play').evaluate(e => ({ top: e.getBoundingClientRect().top, bottom: e.getBoundingClientRect().bottom, viewport: innerHeight, scrollWidth: document.documentElement.scrollWidth, width: innerWidth }))
     assert.ok(fit.top >= 0 && fit.bottom <= fit.viewport && fit.scrollWidth <= fit.width, JSON.stringify(fit))
@@ -123,8 +136,13 @@ export async function exerciseDigitsReference(page, { origin, method = 'keyboard
       await retry.click()
     }
   }
-  await page.getByRole('heading', { name: 'Longest sequence: 4 digits', exact: true }).waitFor()
-  assert.deepEqual(await page.locator('.report-summary-metrics dd').allTextContents(), ['1', '3', '0', '0'])
+  await page.getByRole('heading', { name: 'Most digits you remembered correctly', exact: true }).waitFor()
+  assert.equal(await page.locator('.digits-recall-number').innerText(), '4')
+  assert.deepEqual(await page.locator('.report-summary-metrics dt').allTextContents(), ['Correct', 'Mistakes'])
+  assert.deepEqual(await page.locator('.report-summary-metrics dd').allTextContents(), ['1', '3'])
+  assert.equal(await page.getByRole('heading', { name: 'What to work on', exact: true }).count(), 0)
+  assert.equal(await page.locator('.digits-report .digits-limitation').count(), 1)
+  assert.ok(await page.locator('header nav[aria-label="Main navigation"]').isVisible())
   if (screenshots) await page.screenshot({ path: `${screenshots}-report.png`, fullPage: true })
   const root = await readDigitsRoot(page), attempt = Object.values(root.attempts)[0], state = attempt.snapshot.state
   assert.equal(attempt.arm.events[0].detail.referenceRules, 'digits_reference_2026_10_28')

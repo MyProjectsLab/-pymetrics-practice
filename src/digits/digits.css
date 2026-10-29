@@ -16,9 +16,9 @@
 .digits-play:has(.digits-stimulus:not(:empty)) .digits-entry { visibility: hidden; }
 .digits-entry label { margin: 0; color: #4a5368; font-size: .85rem; line-height: 1.5; }
 .digits-entry input { width: 100%; min-width: 0; min-height: 52px; padding: .4rem; border: 0; border-bottom: 2px solid #8993a3; border-radius: 0; background: transparent; color: #14213d; -webkit-text-fill-color: currentColor; opacity: 1; text-align: center; font: 500 1.5rem/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: .12em; font-variant-numeric: tabular-nums; }
-.digits-entry input:focus-visible { outline: 2px solid #0891b2; outline-offset: 4px; }
 .digits-entry[data-result="correct"] input { color: #12935a; border-color: #12935a; }
 .digits-entry[data-result="wrong"] input { color: #d6283b; border-color: #d6283b; }
+.digits-entry input:focus { outline: none; box-shadow: none; border-bottom: 3px solid #0e7490; }
 .digits-entry-actions { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .75rem; }
 .digits-entry-actions button { margin: 0; }
 .digits-entry p { margin: 0; }
@@ -32,14 +32,17 @@
 .digits-contrast, .digits-contrast .panel { color: #fff; background: #050505; }
 .digits-contrast .digits-stimulus, .digits-contrast .digits-listen, .digits-contrast .digits-entry label, .digits-contrast .digits-entry input { color: #fff; }
 .digits-contrast .digits-entry input { border-color: #fff; }
-.digits-contrast .digits-entry input:focus-visible { outline-color: #67e8f9; }
+.digits-contrast .digits-entry input:focus { border-bottom-color: #67e8f9; }
 .digits-contrast .digits-error-count, .digits-contrast .digits-result-mark, .digits-contrast .digits-entry[data-result="wrong"] input { color: #ff6574; }
 .digits-contrast .digits-entry[data-result="correct"] input, .digits-contrast .digits-entry[data-result="correct"] .digits-result-mark { color: #82f0b2; }
 .digits-contrast button.secondary { color: #fff; }
 .digits-contrast .digits-keypad button.secondary, .digits-contrast .report-summary-metrics > div { background: #050505; color: #fff; border-color: #fff; }
 .digits-contrast .report-summary-metrics dt, .digits-contrast .report-summary-metrics dd { color: #fff; }
 .digits-reduced-motion *, .digits-reduced-motion *::before, .digits-reduced-motion *::after { animation: none !important; transition: none !important; }
-.digits-report #digits-report-heading { font-size: clamp(1.8rem, 4vw, 2.55rem); margin: 0 0 1.25rem; }
+.digits-report #digits-report-heading { margin: 0; text-align: center; font: 500 .95rem/1.5 'AP Inter', Arial, sans-serif; letter-spacing: 0; }
+.digits-report .digits-recall-number { margin: .5rem 0; text-align: center; font: 400 5rem/1 'AP Newsreader', Georgia, serif; font-variant-numeric: tabular-nums; }
+.digits-report > [role="status"] { text-align: center; font-size: .85rem; }
+.digits-report .report-summary-metrics > div { text-align: center; }
 .digits-report .report-summary-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .digits .digits-limitation { color: #4a5368; font-size: .85rem; margin-block: 1.25rem; }
 .digits-contrast .digits-limitation { color: #fff; }
@@ -54,3 +57,7 @@
   .digits-keypad { gap: .3rem; }
   .digits-keypad button:last-child { font-size: .75rem; }
 }
+
+/* Keep only the in-run exit; the normal menu returns when the report is rendered. */
+body:has(.digits-play) .site-header nav { display: none; }
+.digits-play .digits-exit { justify-self: start; padding: .25rem 0; margin: 0; min-height: 44px; font-size: .85rem; }

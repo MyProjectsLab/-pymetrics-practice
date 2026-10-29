@@ -92,15 +92,16 @@ function DigitsReport({ review, attempt, facts, retired, saved, authorityPending
   const reference = isReferenceDigits(facts)
   const feedback = review.status === 'valid' ? digitsFeedback(review) : null
   return <section className="panel digits-report" aria-labelledby="digits-report-heading">
-    <h2 id="digits-report-heading" tabIndex={-1}>{review.status === 'valid' && !authorityPending && !retired && saved ? review.maximumRecalledLength === null ? 'No sequence recalled exactly' : `Longest sequence: ${review.maximumRecalledLength} digits` : 'Digits report'}</h2>
+    <h2 id="digits-report-heading" tabIndex={-1}>{review.status === 'valid' && !authorityPending && !retired && saved ? 'Most digits you remembered correctly' : 'Digits report'}</h2>
+    {review.status === 'valid' && !authorityPending && !retired && saved && <p className="digits-recall-number">{review.maximumRecalledLength ?? 0}</p>}
     <p role="status">{retired ? 'This attempt was removed from local storage. Factual review is only available in this tab; it cannot be saved again.' : authorityPending ? 'Saved status cannot be confirmed while the authority check is pending.' :
       saved && !attempt.snapshot ? 'Start record saved; no completed result was saved.' :
         savedStatus(saved, review.status)}</p>
     {!authorityPending && !retired && saved && review.status === 'valid' && feedback && <section className="report-summary" aria-label="Result summary">
       <dl className="report-summary-metrics">{[
-        ['Correct', review.exactCorrect], ['Mistakes', review.wrong], ['Timed out', review.timedOut], ['Skipped', review.skipped],
+        ['Correct', review.exactCorrect], ['Mistakes', review.wrong],
       ].map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
-      <div className="report-next-step"><h2>What to work on</h2><p>{feedback.observation}</p><h3>Try next</h3><p>{feedback.tip}</p></div>
+      <div className="report-next-step"><h3>Try next</h3><p>{feedback.tip}</p></div>
     </section>}
     {review.status !== 'valid' && !authorityPending && <p role="alert">{review.status === 'invalid' ? 'Invalid' : 'Incomplete'}: {conciseReason(review.reason)}</p>}
     <details><summary>Detailed numbers</summary>
@@ -130,10 +131,10 @@ function DigitsReport({ review, attempt, facts, retired, saved, authorityPending
       <ul>{observedDigitsOnsets(facts).map(row => <li key={row.trial}>Trial {row.trial}: {row.digits} digits began presentation.</li>)}</ul>
       <p>Known closed trials: {facts.closed.length}. No later exposure is inferred and no removed result is eligible as a saved report.</p></>}
     </details>
-    <p className="note digits-limitation">{LIMITATION}</p>
     <div className="digits-actions">{!readOnly&&<><button onClick={onReplay}>Try again</button>
       <button className="secondary" onClick={onHistory}>History</button></>}
       <button className="secondary" data-mock-return-intent={returnToMock ? "" : undefined} onClick={onLibrary}>{returnToMock?'Return to mock':'Main menu'}</button></div>
+    <p className="note digits-limitation">{LIMITATION}</p>
   </section>
 }
 
@@ -144,7 +145,7 @@ export function DigitsJourney({ onLibrary, mock, reportTarget }: { onLibrary: ()
   const [error, setError] = useState<string | null>(null)
   const [mode, setMode] = useState<Mode>(mock?.preferences.digitsMode ?? 'visual')
   const [entryMethod, setEntryMethod] = useState<Profile['entryMethod']>(mock?.preferences.controls === 'alternative' ? 'keypad' : 'keyboard')
-  const [extended, setExtended] = useState(mock?.preferences.digitsEntryMs === 35000)
+  const [extended] = useState(mock?.preferences.digitsEntryMs === 35000)
   const [highContrast, setHighContrast] = useState(false)
   const [reducedMotion, setReducedMotion] = useState(mock?.preferences.reducedMotion ?? false)
   const [assistedDeclared, setAssistedDeclared] = useState(false)
@@ -908,7 +909,6 @@ export function DigitsJourney({ onLibrary, mock, reportTarget }: { onLibrary: ()
           onChange={() => {changedSetup();setEntryMethod('keyboard')}} /> Keyboard text entry</label>
         <label><input type="radio" name="digits-entry" checked={entryMethod === 'keypad'}
           onChange={() => {changedSetup();setEntryMethod('keypad')}} /> On-screen numeric keypad</label></fieldset>
-      <label><input type="checkbox" disabled checked={extended} onChange={e => {changedSetup();setExtended(e.target.checked)}} /> Extended answer time (35 seconds)</label><p>Answers are untimed, so extended time is not needed. This setting is kept for older saved results.</p>
       <label><input type="checkbox" checked={highContrast} onChange={e => {changedSetup();setHighContrast(e.target.checked)}} /> High contrast</label>
       <label><input type="checkbox" checked={reducedMotion} onChange={e => {changedSetup();setReducedMotion(e.target.checked)}} /> Reduced motion</label>
       <label><input type="checkbox" checked={assistedDeclared} onChange={e => {changedSetup();setAssistedDeclared(e.target.checked)}} /> I plan to use assisted text entry; label this result separately</label>
@@ -922,7 +922,7 @@ export function DigitsJourney({ onLibrary, mock, reportTarget }: { onLibrary: ()
       <button className="secondary" disabled={starting || pendingStart} onClick={() => go('setup')}>Change setup</button></section>}
     {(screen === 'playing' || screen === 'feedback') && <section className="panel digits-play" data-phase={state?.phase} data-screen={screen}>
       <div className="digits-trial-top">
-        <span aria-hidden="true" />
+        <button className="secondary digits-exit" data-mock-return-intent={mock ? "" : undefined} onClick={library}><span aria-hidden="true">← </span>Exit</button>
         <h1 tabIndex={-1}>Digits</h1>
         {state && state.wrongCount > 0 ? <span className="digits-error-count" role="status" aria-label={`${state.wrongCount} mistakes`}>✕ {state.wrongCount}</span> : <span aria-hidden="true" />}
       </div>
