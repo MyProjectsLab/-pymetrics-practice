@@ -31,7 +31,7 @@
 @media (prefers-reduced-motion: reduce) { .balloons-journey * { animation: none !important; transition: none !important; } }
 .balloons-journey .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
 
-.balloons-actions button[data-control="collect"], .balloons-journey .panel:has(> .balloons-types) > button:not(:last-child), .balloons-journey .panel:has(> .balloons-identity) > button:not(:last-child) { background: transparent; border-color: transparent; color: #14213d; text-decoration: underline; text-underline-offset: 4px; }
+.balloons-journey .panel:has(> .balloons-types) > button:not(:last-child), .balloons-journey .panel:has(> .balloons-identity) > button:not(:last-child) { background: transparent; border-color: transparent; color: #14213d; text-decoration: underline; text-underline-offset: 4px; }
 
 /* Play artwork projects committed pumps; no threshold or control rule enters this view. */
 .balloons-round{font:500 .8rem/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;color:#4a5368}
@@ -80,4 +80,11 @@
   .balloons-play .balloons-balances strong{margin-top:.125rem}
   .balloons-play>p{margin:.25rem 0}
   .balloons-journey .panel:has(>.balloons-play)>.assessment-usage-notice{margin-top:.5rem;font-size:.75rem;line-height:1.4}
+}
+
+/* Keep both native round actions visually equal; disabled state still follows saved game state. */
+.balloons-play .balloons-actions button { background:#0e7490; border-color:#0e7490; color:#fff; text-decoration:none; cursor:pointer; }
+.balloons-play .balloons-actions button:disabled { background:#eef1f5; border-color:#d5dae4; color:#6b7386; cursor:not-allowed; }
+@media(max-width:520px) {
+  body:has(.balloons-play) .site-header nav { display:none; }
 }

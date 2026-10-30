@@ -35,9 +35,9 @@ it('keeps the actual History control reachable during a playing round, outside g
   const store = { installationId: root.installationId, read: async () => structuredClone(root) } as BalloonsStore
   vi.spyOn(BalloonsStore, 'open').mockResolvedValue(store)
   await act(async () => { render(<BalloonsJourney onLibrary={vi.fn()} />) })
-  expect(screen.getByText('Pump to add 5 cents, or Collect to keep this balloon’s amount.')).toBeVisible()
+  expect(screen.getByText('Pump to add $0.05, or Collect to keep this balloon’s amount.')).toBeVisible()
   fireEvent.click(screen.getByRole('button', { name: 'Continue' }))
-  fireEvent.click(screen.getByLabelText(/Only this balloon’s 10 cents/))
+  fireEvent.click(screen.getByLabelText(/Only this balloon’s \$0.10/))
   fireEvent.click(screen.getByRole('button', { name: 'Check answer' }))
   fireEvent.click(screen.getByRole('button', { name: 'Pump' }))
   fireEvent.click(screen.getByRole('button', { name: 'Collect' }))

@@ -45,7 +45,7 @@ it.each(['navigation', 'controller', 'unmount'])('old notification lifetime cann
   fireEvent.click(screen.getByText('Examples and saved results'))
   const fromGuide = Channel.instances.at(-1)!.onmessage!
   for (const name of ['See an example', 'Pump example', 'Pump example', 'Collect example', 'Check my understanding']) await click(name)
-  fireEvent.click(screen.getByLabelText(/Only this balloon’s 10 cents/))
+  fireEvent.click(screen.getByLabelText(/Only this balloon’s \$0.10/))
   for (const name of ['Check answer', 'Pump', 'Collect', 'Start']) await click(name)
   const fromFirstController = Channel.instances.at(-1)!.onmessage!
   if (boundary === 'controller') await click('Check and resume saved session')
