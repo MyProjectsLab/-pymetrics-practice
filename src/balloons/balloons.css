@@ -103,3 +103,12 @@ body:has(.balloons-play) main { padding-block:var(--ap-space-3); }
 @media(min-width:768px) { .balloons-balances, .balloons-play .balloons-actions { max-width:calc(2 * var(--ap-button-width) + var(--ap-control-gap)); } }
 
 .balloons-journey .panel:has(>.balloons-play)>h1 { margin-bottom:0; }
+
+/* The setup uses the same native filled actions without the old quiet-link selector. */
+.balloons-ready .balloons-actions { display:grid; grid-template-columns:1fr 1fr; max-width:var(--ap-balloons-ready-width); margin-inline:auto; gap:var(--ap-control-gap); }
+.balloons-ready .balloons-actions button { width:100%; max-width:none; min-width:0; margin:0; background:#0e7490; border-color:#0e7490; color:white; text-decoration:none; }
+.balloons-ready .balloons-types { justify-content:center; flex-wrap:nowrap; gap:var(--ap-space-3); }
+.balloons-ready .balloons-identity-compact { width:var(--ap-balloon-ready-size); }
+.balloons-ready { padding-block:var(--ap-space-3); }
+.balloons-ready h1 { margin-bottom:var(--ap-space-2); }
+.balloons-ready > p, .balloons-ready .start-options { margin-block:var(--ap-space-2); }

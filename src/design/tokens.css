@@ -20,7 +20,9 @@
   --ap-button-width: 0px;
   --ap-radio-size: 22px;
   --ap-option-padding: 14px;
-  --ap-stage-size: calc(var(--ap-balloon-start) / .6);
+  --ap-stage-size: calc(var(--ap-balloon-start) * 7 / 3);
+  --ap-balloon-ready-size: 72px;
+  --ap-balloons-ready-width: 372px;
   --ap-balloon-start: 90px;
   --ap-outcome-message-height: 72px;
   --ap-outcome-gap: 8px;
@@ -34,6 +36,7 @@
     --ap-font-number: 56px;
     --ap-button-width: 180px;
     --ap-balloon-start: 120px;
+    --ap-balloon-ready-size: 90px;
     --ap-outcome-message-height: 54px;
   }
 }
