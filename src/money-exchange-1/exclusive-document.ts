@@ -1,3 +1,4 @@
+import sizeTokens from '../design/tokens.css?inline'
 import { decorateSiteBrand } from '../design/siteBrand'
 import { loadGameFonts } from '../design/gameFonts'
 import indexCss from '../index.css?inline'
@@ -6,24 +7,33 @@ import moneyCss from './money-exchange-1.css?inline'
 import type { MoneyResultArt } from './result-art'
 
 const css = `${indexCss.replace(':root', ':host')}\n${appCss}\n${moneyCss}\n:host{display:block}`
-const protectedCss = `
+const protectedCss = `${sizeTokens}
+
 :host{all:initial;display:block;min-height:100vh;background:#fafbf9;color:#172d30;font:16px system-ui;direction:ltr;writing-mode:horizontal-tb}
 fieldset[data-money-stage]{all:initial;box-sizing:border-box;display:block;max-width:760px;min-height:340px;margin:24px auto;padding:24px;border:2px solid #276251;border-radius:12px;background:#fff;color:#172d30;font:16px system-ui;direction:ltr;writing-mode:horizontal-tb}
 legend{font-size:1.5rem;font-weight:700;color:#172d30}
 output{display:block;margin:12px 0;line-height:1.5;color:#172d30}
 label{display:block;margin:12px 0;color:#172d30}
 input{box-sizing:border-box;max-width:100%;padding:10px;font:inherit}
-button{box-sizing:border-box;min-height:44px;margin:10px 10px 0 0;padding:9px 16px;border:2px solid #18594f;border-radius:6px;background:#fff;color:#18594f;font:inherit;cursor:pointer}
+button{box-sizing:border-box;min-height:var(--ap-button-height);margin:10px 10px 0 0;padding:9px 16px;border:2px solid #18594f;border-radius:6px;background:#fff;color:#18594f;font:inherit;cursor:pointer}
 button:focus-visible,input:focus-visible{outline:3px solid #995500;outline-offset:3px}
 img[data-money-result]{display:block;width:100%;max-width:700px;height:auto;object-fit:contain;background:#fff}
 img[data-money-pair]{display:block;width:100%;max-width:700px;height:auto;object-fit:contain;background:#fff}
 output[data-money-semantics]{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-.assessment-usage-notice{display:block;color:#4a5368;font-size:.8rem;line-height:1.6;text-align:left;margin:1.5rem 0 0}
+.assessment-usage-notice{display:block;color:#4a5368;font-size:var(--ap-font-small);line-height:1.6;text-align:left;margin:1.5rem 0 0}
 nav[data-site-nav]{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:0 0 22px}
-nav[data-site-nav] a{color:#18594f;min-height:44px;display:inline-flex;align-items:center}
+nav[data-site-nav] a{color:#18594f;min-height:var(--ap-button-height);display:inline-flex;align-items:center}
 nav[data-site-nav] a.ap-wordmark{gap:1rem;font:600 1rem/1.1 'AP Inter',Arial,sans-serif;color:#14213d;text-decoration:none}nav[data-site-nav] .ap-wordmark svg{width:40px;height:40px;flex-shrink:0;color:#0891b2}
 nav[data-site-nav] a:focus-visible{outline:3px solid #995500;outline-offset:3px}
 @media(max-width:600px){fieldset[data-money-stage]{margin:8px;padding:16px}}
+:host, fieldset[data-money-stage] { font-size:var(--ap-font-body); line-height:var(--ap-line-height); }
+fieldset[data-money-stage] { max-width:var(--ap-panel-width); }
+button { min-height:var(--ap-button-height); font-size:var(--ap-font-button); }
+@media(min-width:768px) { button { min-width:var(--ap-button-width); } }
+
+label:has(input[name="money-comprehension"]) { box-sizing:border-box;display:flex;flex-direction:row;align-items:flex-start;gap:var(--ap-space-3);width:100%;padding:var(--ap-option-padding);border:1px solid #d5dae4;border-radius:var(--ap-radius);font-size:var(--ap-font-option);line-height:var(--ap-line-height); }
+input[name="money-comprehension"] { width:var(--ap-radio-size);height:var(--ap-radio-size);flex:none; }
+
 `
 const attrs = (node: Element) => JSON.stringify([...node.attributes].map(a => [a.name, a.value]).sort(([a], [b]) => a.localeCompare(b)))
 const children = (node: Node, expected: Node[]) => node.childNodes.length === expected.length && expected.every((item, index) => node.childNodes[index] === item)

@@ -1,18 +1,18 @@
 .touch-example-response { min-height: 72px; min-width: 160px; touch-action: manipulation; }
 .touch-practice { position: fixed; inset: 0; z-index: 30; height: 100dvh; box-sizing: border-box; background: #ffffff; display: grid; grid-template-rows: auto auto minmax(128px, 1fr) auto; gap: 12px; padding: max(8px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(8px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left)); overflow: hidden; }
-.touch-practice-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 48px; }
-.touch-practice-header span { font-weight: 700; font-size: .9rem; }
-.touch-exit { min-height: 44px; min-width: 100px; padding: 7px 12px; }
-.touch-practice-reminder { text-align: center; margin: 0; font-size: .95rem; }
+.touch-practice-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height:var(--ap-button-height); }
+.touch-practice-header span { font-weight: 700; font-size:var(--ap-font-small); }
+.touch-exit { min-height:var(--ap-button-height); min-width: 100px; padding: 7px 12px; }
+.touch-practice-reminder { text-align: center; margin: 0; font-size:.95rem; }
 .touch-practice-board { width: 128px; height: 128px; place-self: center; }
 .touch-practice[data-phase="ready"] .touch-practice-board::before { content: "Symbol appears here"; box-sizing: border-box; width: 128px; height: 128px; border: 1px dashed #c9cfdd; border-radius: 12px; display: grid; place-items: center; padding: 12px; text-align: center; color: #4a5368; }
 .touch-practice-board svg { display: block; width: 128px; height: 128px; }
 .touch-practice-actions { display: grid; justify-items: center; gap: 8px; padding-bottom: 4px; }
-.touch-response { width: min(100%, 440px); min-height: 88px; font-size: 1.35rem; font-weight: 700; touch-action: manipulation; }
+.touch-response { width: min(100%, 440px); min-height: 88px; font-size:1.35rem; font-weight: 700; touch-action: manipulation; }
 .touch-practice button.touch-response:is(:active, .is-pressed) { background: #e2b44a; border-color: #8a651c; color: #173f37; }
-.touch-start { width: min(100%, 440px); min-height: 88px; font-size: 1.1rem; }
+.touch-start { width: min(100%, 440px); min-height: 88px; font-size:1.1rem; }
 .touch-practice-actions p { margin: 0; text-align: center; }
 .touch-report { grid-row: 2 / -1; overflow: auto; padding: 12px; max-width: 48rem; margin: 0 auto; }
 body:has(.touch-practice) { overflow: hidden; }
 body:has(.touch-practice) .site-header, body:has(.touch-practice) .site-footer, body:has(.touch-practice) .skip-link { visibility: hidden; }
-@media (max-height: 430px) { .touch-practice { gap: 4px; } .touch-response, .touch-start { min-height: 72px; } .touch-practice-reminder { font-size: .8rem; } }
+@media (max-height: 430px) { .touch-practice { gap: 4px; } .touch-response, .touch-start { min-height: 72px; } .touch-practice-reminder { font-size:var(--ap-font-small); } }

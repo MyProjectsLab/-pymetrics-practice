@@ -1,6 +1,6 @@
 .keypresses-live { position: fixed; inset: 0; z-index: 20; display: grid; place-items: center; background: #ffffff; }
 .keypresses-live[hidden] { display: none; }
-.keypresses-signal { min-width: min(80vw, 22rem); padding: 2rem; border: 3px dashed #c9cfdd; border-radius: 1rem; background: white; color: #6b7386; font-size: clamp(2.5rem, 11vw, 5.5rem); font-weight: 800; text-align: center; }
+.keypresses-signal { min-width: min(80vw, 22rem); padding: 2rem; border: 3px dashed #c9cfdd; border-radius: 1rem; background: white; color: #6b7386; font-size:clamp(2.5rem, 11vw, 5.5rem); font-weight: 800; text-align: center; }
 .keypresses-signal[data-phase="go"] { border: 3px solid #0e7490; background: #0e7490; color: #fff; }
 .keypresses-signal[data-phase="end"] { border: 3px solid #14213d; color: #14213d; }
 body:has(.keypresses-live:not([hidden])) { overflow: hidden; }
@@ -13,7 +13,7 @@ body:has(.keypresses-live:not([hidden])) .skip-link { visibility: hidden; }
 .keypresses-metrics dd { margin: .4rem 0 0; font-weight: 700; }
 
 .keypresses-prompt { position: relative; }
-.keypresses-action { position: absolute; top: calc(100% + 1rem); left: 50%; transform: translateX(-50%); width: min(88vw, 38rem); margin: 0; color: #14213d; font-size: clamp(1rem, 2.2vw, 1.5rem); font-weight: 600; line-height: 1.4; text-align: center; visibility: hidden; }
+.keypresses-action { position: absolute; top: calc(100% + 1rem); left: 50%; transform: translateX(-50%); width: min(88vw, 38rem); margin: 0; color: #14213d; font-size:clamp(var(--ap-font-body), 2.2vw, 1.5rem); font-weight: 600; line-height: 1.4; text-align: center; visibility: hidden; }
 .keypresses-signal[data-phase="go"] + .keypresses-action { visibility: visible; }
 /* Once Start is available, the repeatable setup check is a secondary action. */
 .journey .panel:has(> p > kbd):has(> button:not(:disabled)) > .actions > button:not(.secondary) { background: transparent; border-color: transparent; color: #14213d; text-decoration: underline; text-underline-offset: 4px; }
@@ -24,8 +24,12 @@ body:has(.keypresses-live:not([hidden])) .skip-link { visibility: hidden; }
 .keypresses-prompt{display:grid;grid-template-columns:minmax(7rem,1fr) auto minmax(7rem,1fr);gap:1.5rem;align-items:center}
 .keypresses-signal-group{position:relative}
 .keypresses-stat{text-align:center;visibility:hidden}
-.keypresses-stat > span{display:block;font-size:12px;letter-spacing:.08em;color:#4a5368}
+.keypresses-stat > span{display:block;font-size:var(--ap-font-small);letter-spacing:.08em;color:#4a5368}
 .keypresses-stat strong{display:block;font:400 36px/1.2 'AP Newsreader',Georgia,serif;margin-top:.5rem;color:#14213d}
 .keypresses-left strong{color:#0e7490}
 .keypresses-prompt:has(.keypresses-signal[data-phase="go"]) .keypresses-stat{visibility:visible}
 @media(max-width:520px){.keypresses-prompt{grid-template-columns:1fr 1fr;gap:1.5rem}.keypresses-taps{grid-column:1;grid-row:1}.keypresses-left{grid-column:2;grid-row:1}.keypresses-signal-group{grid-column:1 / -1;grid-row:2;justify-self:center}.keypresses-signal{min-width:0;width:min(80vw,22rem)}}
+
+/* Shared size scale. */
+.keypresses-stat strong { font-size:var(--ap-font-number); }
+.keypresses-stat > span { font-size:var(--ap-font-label); }

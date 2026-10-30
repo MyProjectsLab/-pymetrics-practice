@@ -105,12 +105,12 @@ it.each(['release', 'fail'] as const)('keeps the old balloon during a held real-
   } finally { controller.dispose() }
 })
 
-it('uses 30–90 percent of the play stage while retaining the native type marker', () => {
+it('uses 40–90 percent of the play stage while retaining the native type marker', () => {
   const view = render(<BalloonIdentity type="Type 1" playStage />)
   const fraction = () => Number(view.container.querySelector<SVGGElement>('[data-balloon-body]')!.style.transform.match(/scale\((.*)\)/)![1]) * 222 / 320
-  expect(fraction()).toBeCloseTo(.3)
+  expect(fraction()).toBeCloseTo(.4)
   view.rerender(<BalloonIdentity type="Type 1" successfulPumps={10} playStage />)
-  expect(fraction()).toBeCloseTo(.4875)
+  expect(fraction()).toBeCloseTo(.55625)
   view.rerender(<BalloonIdentity type="Type 1" successfulPumps={32} playStage />)
   expect(fraction()).toBeCloseTo(.9)
   expect(view.container.querySelector('[data-balloon-type]')?.textContent).toBe('Type 1')

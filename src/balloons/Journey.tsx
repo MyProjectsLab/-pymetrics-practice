@@ -88,7 +88,7 @@ export function BalloonsJourney({ onLibrary, mock, reportTarget, separateBaselin
   }, [])
   useEffect(() => {
     if (trainingActive) { input.current = null; return }
-    const installed = installButtonInput(root.current!, () => controller.current?.view.mode === 'saving' || controller.current?.view.mode === 'mounting')
+    const installed = installButtonInput(root.current!, () => (controller.current?.view.mode === 'saving' && !controller.current?.acceptsRoundActions?.()) || controller.current?.view.mode === 'mounting')
     input.current = installed
     return () => installed.dispose()
   }, [trainingActive])
@@ -124,7 +124,7 @@ export function BalloonsJourney({ onLibrary, mock, reportTarget, separateBaselin
     if (history) { restoreHistoryFocus.current = null; target.focus() }
   }, [history, deletionStatus])
   useEffect(() => {
-    if (view.mode !== 'playing' || !view.record) return
+    if (view.mode !== 'playing' || controller.current?.hasPendingActions || !view.record) return
     const c = view.record.snapshot.core
     const key = `${view.record.header.identity.sessionId}:${c.revision}:${view.record.journal.at(-1)?.sequenceNumber}`
     if (key === lastAnnounced.current) return
@@ -294,7 +294,9 @@ export function BalloonsJourney({ onLibrary, mock, reportTarget, separateBaselin
     catch (e) { await refreshHistory(); setError(e instanceof Error ? e.message : 'Deletion failed'); restoreHistoryFocus.current = target; setDeletionStatus('Deletion could not be confirmed. Check the saved history before trying again.') }
     finally { completeChange() }
   }
-  const c = view.record?.snapshot.core, interactive = view.mode === 'playing'
+  const c = view.record?.snapshot.core, interactive = view.mode === 'playing' && !controller.current?.hasPendingActions
+  const roundActionsEnabled = interactive || !!controller.current?.acceptsRoundActions?.()
+  const burstResult = c?.status !== 'active' && c?.results.at(-1)?.outcome === 'burst' ? c.results.at(-1)! : null
   if(reportTarget&&(step!=='history'||!selected))return <Shell onLibrary={onLibrary}><div ref={root} className="journey balloons-journey"><section className="panel"><h1>Saved Balloons report</h1><p role={error?'alert':'status'}>{error||'Checking the exact retained result…'}</p><button onClick={onLibrary}>Return to mock</button></section></div></Shell>
   return <Shell onLibrary={() => {startNavigation.current++;controller.current?.dispose(); onLibrary() }}><div ref={root} className="journey balloons-journey">
     {(step === 'guide' || step === 'run' && view.mode !== 'report') && <div className="journey-top"><button className="secondary" onClick={() => {startNavigation.current++;controller.current?.dispose(); onLibrary() }}><span aria-hidden="true">← </span>{mock?'Return to mock':'Main menu'}</button><div className="journey-meta"><p className="balloons-practice-label">Balloons · Practice</p>{step === 'run' && c && <span className="balloons-round">Round {c.round} / 39</span>}{step === 'run' && <button className="secondary" onClick={historyView}>History</button>}</div></div>}
@@ -323,7 +325,7 @@ export function BalloonsJourney({ onLibrary, mock, reportTarget, separateBaselin
       {view.mode === 'report' && view.record ? <><BalloonsReport record={view.record} comparisonText={reportComparisonText} onReplay={() => { void (mock?mock.retry():Promise.resolve()).then(()=>replay()).catch(cause=>setMockError(cause instanceof Error?cause.message:'The old Balloons attempt needs checking.')) }} onHistory={historyView} onTraining={() => trainingView(view.record!)} onComparison={() => openComparison(view.record!)} readOnly={!!reportTarget} onBack={onLibrary} />
         {mockError && <p role="alert">{mockError}</p>}{mockReady && mock && <button data-mock-return-intent onClick={() => void mock.continue().catch(cause => setMockError(cause instanceof Error ? cause.message : 'Continue could not be confirmed.'))}>Continue mock</button>}</> : <section className="panel">
         <h1 tabIndex={-1}>Balloons</h1>
-        <p role={['unsaved', 'write_failed', 'uncertain', 'error'].includes(view.mode) ? 'alert' : 'status'}>{view.message}</p>
+        <p className={c && ['playing', 'saving', 'mounting'].includes(view.mode) ? 'sr-only' : undefined} role={['unsaved', 'write_failed', 'uncertain', 'error'].includes(view.mode) ? 'alert' : 'status'}>{view.message}</p>
         {view.mode === 'explanation' && view.record?.header.retest && <>
           <p>This is a new 39-round TraitGame sequence with the same rules, Type mapping and settings as your baseline. Each successful pump adds $0.05 in simulated money. Collect secures this balloon’s amount; a burst loses only its uncollected amount. After 32 successful pumps, collection is automatic.</p>
           <p>Form {view.record.header.formId} is reserved for 30 minutes from opening this explanation, until {new Date(view.record.header.retest.expiresAtMs).toLocaleTimeString()}. Leaving before display is armed releases it. Once display may have occurred, it cannot be treated as unseen.</p>
@@ -333,9 +335,9 @@ export function BalloonsJourney({ onLibrary, mock, reportTarget, separateBaselin
         {['uncertain', 'write_failed'].includes(view.mode) && <button onClick={() => void controller.current?.checkSaveStatus()}>Check save status</button>}
         {view.mode === 'verified_completion' && <button onClick={historyView}>Review saved completion in history</button>}
         {c && ['playing', 'mounting', 'saving'].includes(view.mode) && view.record && ['presentation_armed', 'active', 'resolved', 'completed', 'committing_action'].includes(view.record.snapshot.phase) && <div ref={display} className="balloons-play" aria-busy={!interactive}>
-          <div className="balloons-stage"><BalloonIdentity key={`${view.record.header.identity.sessionId}:${c.round}`} type={typeFor(view.record!)} successfulPumps={c.current.successfulPumps} outcome={c.status === 'active' ? null : c.results.at(-1)!.outcome} reducedMotion={view.record.header.settings.reducedMotion} playStage /></div><div className="balloons-balances"><div><span>This balloon</span><strong>{money(c.current.currentCents)}</strong></div><div><span>Banked</span><strong>{money(c.bankedCents)}</strong></div></div>
-          <div className="balloons-actions"><button data-control="pump" disabled={!interactive || c.status !== 'active'} onClick={e => click('pump', e)}>Pump</button><button data-control="collect" disabled={!interactive || c.status !== 'active'} onClick={e => click('collect', e)}>Collect</button></div>
-          {c.status !== 'active' && <><p>{outcomeText(view.record!)}</p>{c.status === 'completed' ? <button data-next disabled={!interactive} onClick={() => void controller.current?.report()}>View report</button> : <button data-next disabled={!interactive} onClick={e => click('next', e)}>Next balloon</button>}</>}
+          <div className="balloons-stage"><BalloonIdentity key={`${view.record.header.identity.sessionId}:${c.round}`} type={typeFor(view.record!)} successfulPumps={c.current.successfulPumps} outcome={c.status === 'active' ? null : c.results.at(-1)!.outcome} reducedMotion={view.record.header.settings.reducedMotion} playStage /></div><div className="balloons-balances"><div><span>This balloon</span><strong className={burstResult ? `balloons-loss${burstResult.lostCents === 0 ? ' balloons-no-loss' : ''}` : undefined}>{burstResult ? burstResult.lostCents === 0 ? 'No money lost' : money(burstResult.lostCents) : money(c.current.currentCents)}</strong></div><div><span>Banked</span><strong>{money(c.bankedCents)}</strong></div></div>
+          <div className="balloons-actions"><button data-control="pump" disabled={!roundActionsEnabled || c.status !== 'active'} onClick={e => click('pump', e)}>Pump</button><button data-control="collect" disabled={!roundActionsEnabled || c.status !== 'active'} onClick={e => click('collect', e)}>Collect</button></div>
+          <div className="balloons-outcome"><p aria-hidden={c.status === 'active' ? true : undefined}>{c.status !== 'active' ? outcomeText(view.record!) : '\u00a0'}</p>{c.status !== 'active' && (c.status === 'completed' ? <button data-next disabled={!interactive} onClick={() => void controller.current?.report()}>View report</button> : <button data-next disabled={!interactive} onClick={e => click('next', e)}>Next balloon</button>)}</div>
         </div>}
         {['paused', 'unsaved'].includes(view.mode) && view.record && <><p>Last visible committed state: round {view.record.snapshot.core.round}, {view.record.snapshot.core.current.successfulPumps} successful pumps, {money(view.record.snapshot.core.bankedCents)} banked. {view.record.header.retest ? 'Unconfirmed or unsaved work cannot complete this training chain.' : 'Unconfirmed or unsaved work cannot establish a baseline.'}</p>{mock ? <button data-mock-return-intent onClick={onLibrary}>Return to mock</button> : view.record.snapshot.phase === 'released' && view.record.header.retest ? <button onClick={() => retest(view.record!.header.retest!.baselineSessionId)}>Reopen retest explanation</button> : view.record.snapshot.core.status === 'completed' ? <button onClick={historyView}>Review saved completion in history</button> : <button onClick={() => resume(view.record!)}>Check and resume saved session</button>}</>}
         {['paused', 'unsaved'].includes(view.mode) && view.record?.header.retest && !view.record.snapshot.comparisonEligible && view.record.snapshot.exposure !== 'released_unseen' && <button onClick={() => retest(view.record!.header.retest!.baselineSessionId, undefined, true)}>Open explanation for a fresh retest attempt</button>}
@@ -358,5 +360,5 @@ export function BalloonsJourney({ onLibrary, mock, reportTarget, separateBaselin
   </div></Shell>
 }
 function typeFor(record: DurableRecord): VisibleType { const c = record.snapshot.core; return (Object.keys(c.identity.mapping) as VisibleType[]).find(t => c.identity.mapping[t] === c.manifest.rounds[c.round - 1].profile)! }
-function outcomeText(record: DurableRecord) { const r = record.snapshot.core.results.at(-1)!; return r.outcome === 'burst' ? `Burst. ${money(r.lostCents)} lost on this balloon; earlier banked money remains.` : `${r.outcome === 'cap_collect' ? 'Automatic cap collection' : 'Collected'}: ${money(r.bankedCents)}.` }
+function outcomeText(record: DurableRecord) { const r = record.snapshot.core.results.at(-1)!; return r.outcome === 'burst' ? `Burst. ${r.lostCents === 0 ? 'No money lost' : `${money(r.lostCents)} lost`} on this balloon; earlier banked money remains.` : `${r.outcome === 'cap_collect' ? 'Automatic cap collection' : 'Collected'}: ${money(r.bankedCents)}.` }
 function historyLabel(r: DurableRecord) { if (r.snapshot.phase === 'completed') return `Saved · 39/39 rounds · ${durableBaseline(r) ? 'valid standalone baseline' : r.snapshot.comparisonEligible ? 'intact practice result' : 'review only'}`; return `${r.snapshot.core.results.length}/39 resolved · ${r.snapshot.exposure === 'pending_exposure' || r.snapshot.exposure === 'released_unseen' ? 'No scored display armed' : r.snapshot.exposure === 'exposure_uncertain' ? 'Exposure uncertain; never treated as unseen' : 'Sequence exposed'} · ${r.snapshot.phase}` }

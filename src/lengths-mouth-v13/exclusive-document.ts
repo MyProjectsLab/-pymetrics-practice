@@ -1,7 +1,9 @@
+import sizeTokens from '../design/tokens.css?inline'
 import { loadGameFonts } from '../design/gameFonts'
 /** Owns the complete scored display. The ordinary React document is detached
  * during play so unrelated app styling cannot change what a trial paints. */
-const TASK_CSS = `
+const TASK_CSS = `${sizeTokens}
+
 :host { all:initial; display:block; background:#fff; color:#111; font:16px system-ui; direction:ltr; writing-mode:horizontal-tb; }
 .mouth-host { box-sizing:border-box; display:block; width:min(32rem,calc(100vw - 32px)); margin:16px auto; padding:12px; border:2px solid #162a20; border-radius:16px; background:#fff; color:#111; }
 .mouth-host.mouth-inverted { background:#111; color:#fff; border-color:#fff; }
@@ -14,6 +16,12 @@ const TASK_CSS = `
 .mouth-stage output { display:block; color:inherit; font:32px system-ui; }
 button:focus-visible { outline:3px solid #005fcc; outline-offset:4px; }
 button[data-mouth-exit] { box-sizing:border-box; display:block; width:160px; height:48px; margin:12px auto; border:2px solid #162a20; border-radius:6px; background:#fff; color:#111; font:16px system-ui; cursor:pointer; }
+:host { font-size:var(--ap-font-body); line-height:var(--ap-line-height); }
+button { height:var(--ap-button-height); min-height:var(--ap-button-height); font-size:var(--ap-font-button); line-height:var(--ap-line-height); }
+button[data-mouth-exit] { width:max(160px,var(--ap-button-width)); height:var(--ap-button-height); font-size:var(--ap-font-button); }
+.mouth-responses button { height:var(--ap-button-height); font-size:var(--ap-font-button); }
+@media(min-width:768px) { button { min-width:var(--ap-button-width); } .mouth-responses { width:calc(2 * var(--ap-button-width) + var(--ap-control-gap)); gap:var(--ap-control-gap); } }
+
 `
 
 const attrs = (node: Element) => JSON.stringify([...node.attributes].map(a => [a.name, a.value]).sort(([a], [b]) => a.localeCompare(b)))

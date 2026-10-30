@@ -1,3 +1,44 @@
+/* Shared UI size scale. Keep the document rem unit unchanged so stimulus geometry is stable. */
+:root, :host {
+  --ap-space-1: 4px;
+  --ap-space-2: 8px;
+  --ap-space-3: 16px;
+  --ap-space-4: 32px;
+  --ap-space-5: 64px;
+  --ap-radius: 8px;
+  --ap-font-body: 17px;
+  --ap-font-small: 15px;
+  --ap-font-label: 16px;
+  --ap-font-option: 18px;
+  --ap-font-button: 18px;
+  --ap-font-heading: 32px;
+  --ap-font-section: 28px;
+  --ap-font-number: 40px;
+  --ap-line-height: 1.5;
+  --ap-panel-width: 960px;
+  --ap-button-height: 56px;
+  --ap-button-width: 0px;
+  --ap-radio-size: 22px;
+  --ap-option-padding: 14px;
+  --ap-stage-size: calc(var(--ap-balloon-start) / .4);
+  --ap-balloon-start: 90px;
+  --ap-outcome-message-height: 72px;
+  --ap-outcome-gap: 8px;
+  --ap-control-gap: 12px;
+}
+@media(min-width:768px) {
+  :root, :host {
+    --ap-font-body: 18px;
+    --ap-font-heading: 48px;
+    --ap-font-section: 36px;
+    --ap-font-number: 56px;
+    --ap-button-width: 180px;
+    --ap-balloon-start: 120px;
+    --ap-outcome-message-height: 54px;
+  }
+}
+body, :host { font-size:var(--ap-font-body); line-height:var(--ap-line-height); }
+
 /* Landing-only adoption. Font aliases prevent changing legacy Inter resolution. */
 @font-face {
   font-family: 'AP Newsreader'; font-style: normal; font-weight: 200 800;
@@ -29,32 +70,32 @@
   --ap-content: 1280px;
   color: var(--ap-ink);
   background: var(--ap-paper);
-  font: 400 16px/1.6 var(--ap-body);
+  font:400 16px/1.6 var(--ap-body);
   min-height: 100vh;
 }
 .ap-theme :is(h1, h2, h3, p, figure, dl, dd) { margin: 0; }
 .ap-theme :is(h1, h2, h3) { font-weight: 400; }
 .ap-theme :is(h1, h2) { font-family: var(--ap-display); font-optical-sizing: auto; }
-.ap-theme h1 { font-size: clamp(56px, 5.9vw, 88px); line-height: .99; letter-spacing: -.055em; }
-.ap-theme h2 { font-size: clamp(40px, 4vw, 56px); line-height: 1.08; letter-spacing: -.04em; }
+.ap-theme h1 { font-size:clamp(56px, 5.9vw, 88px); line-height: .99; letter-spacing: -.055em; }
+.ap-theme h2 { font-size:clamp(40px, 4vw, 56px); line-height: 1.08; letter-spacing: -.04em; }
 .ap-theme a { color: inherit; text-underline-offset: 4px; }
 .ap-theme a:hover { text-decoration-thickness: 2px; }
 .ap-theme :focus-visible { outline: 2px solid var(--ap-accent); outline-offset: 4px; }
 .ap-theme :is(main, h1, h2)[tabindex='-1']:focus { outline: none; }
 .ap-theme .ap-icon { width: 20px; height: 20px; flex-shrink: 0; stroke-width: 1.5; }
 .ap-container { width: min(var(--ap-content), calc(100% - 2 * var(--ap-space-5))); margin-inline: auto; }
-.ap-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+.ap-eyebrow { font-size:var(--ap-font-small); font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
 .ap-theme .ap-button {
   display: inline-flex; align-items: center; justify-content: center; gap: var(--ap-space-3);
-  min-height: 48px; padding: var(--ap-space-3) var(--ap-space-4);
+  min-height:var(--ap-button-height); padding: var(--ap-space-3) var(--ap-space-4);
   border: 1px solid var(--ap-accent); border-radius: var(--ap-radius);
   background: var(--ap-accent); color: var(--ap-white); text-decoration: none;
-  font-size: 14px; font-weight: 500; line-height: 1.25;
+  font-size:var(--ap-font-button); font-weight: 500; line-height: 1.25;
 }
 .ap-theme .ap-button:hover { background: var(--ap-accent-hover); border-color: var(--ap-accent-hover); }
-.ap-theme .ap-text-link { display: inline-flex; align-items: center; gap: var(--ap-space-2); min-height: 44px; font-size: 14px; font-weight: 500; }
+.ap-theme .ap-text-link { display: inline-flex; align-items: center; gap: var(--ap-space-2); min-height:var(--ap-button-height); font-size:var(--ap-font-small); font-weight: 500; }
 .ap-wordmark { display: inline-flex; align-items: center; gap: var(--ap-space-3); text-decoration: none; }
-.ap-wordmark > span { font-size: 15px; font-weight: 600; line-height: 1.15; letter-spacing: -.04em; }
+.ap-wordmark > span { font-size:15px; font-weight: 600; line-height: 1.15; letter-spacing: -.04em; }
 .ap-wordmark svg { width: 40px; height: 40px; flex-shrink: 0; color: var(--ap-accent); }
 .ap-theme .ap-skip { position: absolute; top: var(--ap-space-3); left: var(--ap-space-3); transform: translateY(-200%); z-index: 10; padding: var(--ap-space-3); background: var(--ap-ink); color: var(--ap-white); }
 .ap-theme .ap-skip:focus { transform: none; }

@@ -41,6 +41,16 @@ export class BalloonsController {
   private releaseOwner: (() => Promise<void>) | null = null
   private epoch = crypto.randomUUID()
   private busy = false
+  private drainingActions = false
+  private pendingActions: { kind: 'pump' | 'collect'; source: ActionSource; round: number; sessionId: string; scope: AbortSignal; time: EventTime; done: () => void }[] = []
+  get hasPendingActions() { return this.drainingActions }
+  acceptsRoundActions() {
+    return !this.disposed && !this.scope.signal.aborted && !!this.token && !!this.view.record &&
+      ['playing', 'saving'].includes(this.view.mode) && (!this.busy || this.drainingActions) &&
+      this.view.record.snapshot.core.status === 'active' && this.pendingActions.length < 64
+  }
+  private discardActions() { for (const item of this.pendingActions.splice(0)) item.done() }
+
   private disposed = false
   private armAttempted = false
   private saveFailure: 'write_failed' | 'delivery_uncertain' | null = null
@@ -174,12 +184,43 @@ export class BalloonsController {
     }, signal)
   }
   async action(kind: CoreAction['kind'], source: ActionSource, expectedRound: number, expectedRevision: number) {
-    if (this.busy || this.view.mode !== 'playing' || !this.token || !this.view.record) return
+    if (kind === 'next') { await this.performAction(kind, source, expectedRound, expectedRevision); return }
+    const record = this.view.record
+    if (!this.acceptsRoundActions() || !record || record.snapshot.core.round !== expectedRound || expectedRevision > record.snapshot.core.revision ||
+        (!this.drainingActions && record.snapshot.core.revision !== expectedRevision)) return
+    const pending = new Promise<void>(done => this.pendingActions.push({ kind, source, round: expectedRound,
+      sessionId: record.header.identity.sessionId, scope: this.scope.signal, time: this.time(), done }))
+    if (!this.drainingActions) void this.drainActions()
+    else this.show(this.view.mode, this.view.record, this.pendingActions.length >= 64 ? 'Saving queued choices. Please wait before adding more.' : 'Saving your choices…')
+    await pending
+  }
+  private async drainActions() {
+    this.drainingActions = true
+    const lifetime = this.scope.signal
+    let notice = ''
+    try {
+      while (this.pendingActions.length && !lifetime.aborted && !this.disposed) {
+        const item = this.pendingActions.shift()!, record = this.view.record
+        if (item.scope !== lifetime || !record || record.header.identity.sessionId !== item.sessionId ||
+            record.snapshot.core.round !== item.round || record.snapshot.core.status !== 'active') {
+          item.done(); this.discardActions(); notice = 'This balloon has ended. Further choices were not applied to the next balloon.'; break
+        }
+        try { await this.performAction(item.kind, item.source, item.round, record.snapshot.core.revision, true, item.time) }
+        finally { item.done() }
+        if (!['playing', 'saving'].includes(this.view.mode)) { this.discardActions(); break }
+      }
+    } finally {
+      this.discardActions(); this.drainingActions = false; this.busy = false
+      if (!lifetime.aborted && !this.disposed && ['playing', 'saving'].includes(this.view.mode)) this.show('playing', this.view.record, notice)
+    }
+  }
+  private async performAction(kind: CoreAction['kind'], source: ActionSource, expectedRound: number, expectedRevision: number, queued = false, capturedTime?: EventTime) {
+    if ((this.busy && !queued) || !['playing', ...(queued ? ['saving'] : [])].includes(this.view.mode) || !this.token || !this.view.record || this.scope.signal.aborted || this.disposed) return
     const start = this.view.record
     if (start.snapshot.core.round !== expectedRound || start.snapshot.core.revision !== expectedRevision) return
-    this.busy = true; this.show('saving', start, 'Saving… Further clicks are not accepted yet.')
+    this.busy = true; this.show('saving', start, 'Saving your choices…')
     const signal = this.scope.signal, token = this.token
-    const action: CoreAction = { kind, source, expectedRound, expectedRevision, actionId: start.snapshot.core.nextActionId, time: this.time() }
+    const action: CoreAction = { kind, source, expectedRound, expectedRevision, actionId: start.snapshot.core.nextActionId, time: capturedTime ?? this.time() }
     try {
       await withMutationGate(async signal => {
         canceled(signal)
@@ -195,7 +236,7 @@ export class BalloonsController {
         }
       }, signal)
       if (kind === 'next') await this.present()
-    } catch (e) { await this.failure(e) } finally { this.busy = false }
+    } catch (e) { await this.failure(e) } finally { this.busy = this.drainingActions }
   }
   async report() {
     if (this.busy || !this.token || this.view.record?.snapshot.phase !== 'completed') return
@@ -212,6 +253,7 @@ export class BalloonsController {
   }
   /** Synchronous UI/callback fence precedes any asynchronous cleanup. */
   async pause(reason = 'interrupted', leaving = false) {
+    this.discardActions()
     this.usage.cancel()
     if (reason === 'write_failed' || reason === 'delivery_uncertain') this.saveFailure = reason
     const failure = this.saveFailure

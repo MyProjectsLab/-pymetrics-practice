@@ -1,11 +1,11 @@
 .easy-hard-journey .panel { padding: clamp(1rem, 3vw, 2rem); }
 .easy-hard-journey label { display: block; margin: 1rem 0; }
-.easy-hard-journey select { display: block; margin-top: .35rem; min-height: 44px; }
+.easy-hard-journey select { display: block; margin-top: .35rem; min-height:var(--ap-button-height); }
 .easy-hard-journey button { margin: .35rem; }
 .easy-hard-board { min-height: 470px; background: #fff; color: #183148; text-align: center; }
 .easy-hard-top { display: flex; justify-content: space-between; gap: 1rem; text-align: left; }
 .easy-hard-top p { margin: 0; }
-.easy-hard-top strong { display: block; font-size: clamp(1.3rem, 2.5vw, 1.8rem); }
+.easy-hard-top strong { display: block; font-size:clamp(1.3rem, 2.5vw, 1.8rem); }
 .easy-hard-options { display: flex; align-items: center; justify-content: center; gap: clamp(1rem, 5vw, 3rem); flex-wrap: wrap; margin: 2rem auto; }
 .easy-hard-options button { min-width: 135px; min-height: 130px; border-radius: 14px; line-height: 1.6; }
 .easy-hard-options button:disabled { opacity: .68; }
@@ -24,3 +24,5 @@
 
 .easy-hard-options button { background: #fff; color: #14213d; border-color: #e4e7ef; }
 .easy-hard-options button:hover:not(:disabled) { background: #e3f6fa; border-color: #0891b2; }
+
+.easy-hard-top strong { font-size:var(--ap-font-number); }

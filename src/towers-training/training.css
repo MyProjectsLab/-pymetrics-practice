@@ -3,7 +3,7 @@
 .towers-training .towers-disk { width: min(100%, 96px); }
 .towers-training .towers-target .towers-disk { width: min(100%, 72px); }
 .towers-training button:focus-visible { outline: 3px solid #0891b2; outline-offset: 2px; }
-.towers-training .towers-board button { min-height: 44px; min-width: 44px; }
+.towers-training .towers-board button { min-height:var(--ap-button-height); min-width: 44px; }
 .towers-training table { width: 100%; border-collapse: collapse; display: block; overflow-x: auto; }
 .towers-training th, .towers-training td { padding: .4rem .65rem; border-bottom: 1px solid currentColor; text-align: left; white-space: nowrap; }
-@media (max-width: 420px) { .towers-training .towers-disk { font-size: .55rem; } }
+@media (max-width: 420px) { .towers-training .towers-disk { font-size:var(--ap-font-small); } }

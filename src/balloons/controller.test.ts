@@ -65,9 +65,9 @@ it('delayed action commit delivery suppresses duplicate clicks; next intentional
   await start(); const commit = store.commit.bind(store); let deliver: (() => void) | undefined
   vi.spyOn(store, 'commit').mockImplementation(async (...args) => { const r = await commit(...args); if (args[2].kind === 'action') await new Promise<void>(resolve => { deliver = resolve }); return r })
   const action = controller.action('pump', 'mouse', 1, 0); await vi.waitFor(() => expect(deliver).toBeDefined())
-  await controller.action('pump', 'mouse', 1, 0); expect(controller.view.mode).toBe('saving'); expect(controller.view.record?.snapshot.core.nextActionId).toBe(1)
+  const later = controller.action('pump', 'mouse', 1, 0); expect(controller.view.mode).toBe('saving'); expect(controller.view.record?.snapshot.core.nextActionId).toBe(1)
   expect(Object.values(root.records)[0].snapshot.core.nextActionId).toBe(2)
-  deliver!(); await action; expect(controller.view.record?.snapshot.core.nextActionId).toBe(2)
+  deliver!(); await Promise.all([action, later]); expect(controller.view.record?.snapshot.core.nextActionId).toBe(2)
 })
 it('deletion during delayed commit prevents late delivery from restoring candidate state', async () => {
   await start(); const commit = store.commit.bind(store); let deliver: (() => void) | undefined
@@ -268,3 +268,90 @@ it.each(['unavailable', 'held', 'snapshot', 'journal', 'header', 'owner', 'insta
     expect(root).toEqual(completed); expect(views).toHaveLength(count)
   } finally { vi.useRealTimers() }
 }, 20000)
+
+async function highThresholdRound() {
+  await start()
+  while (true) {
+    const c = controller.view.record!.snapshot.core
+    if (c.manifest.rounds[c.round - 1].threshold > 10) return c
+    await controller.action('collect', 'mouse', c.round, c.revision)
+    const next = controller.view.record!.snapshot.core
+    const task = controller.action('next', 'mouse', next.round, next.revision)
+    await confirm(); await task
+  }
+}
+it('retains ten lawful Pump clicks in under one second while the first save is held', async () => {
+  const before = await highThresholdRound(), commit = store.commit.bind(store)
+  let release!: () => void, held = false
+  vi.spyOn(store, 'commit').mockImplementation(async (...args) => {
+    if (args[2].kind === 'action_pending' && !held) { held = true; await new Promise<void>(resolve => { release = resolve }) }
+    return commit(...args)
+  })
+  const begin = performance.now()
+  const pending = Array.from({ length: 10 }, () => controller.action('pump', 'mouse', before.round, before.revision))
+  expect(performance.now() - begin).toBeLessThan(1000)
+  await vi.waitFor(() => expect(release).toBeDefined())
+  expect(controller.view.record!.snapshot.core.current.successfulPumps).toBe(0)
+  release(); await Promise.all(pending)
+  const after = controller.view.record!.snapshot.core
+  expect(after.current.successfulPumps).toBe(10)
+  expect(after.current.currentCents).toBe(50)
+  const pumps = after.events.filter(e => e.round === before.round && e.type === 'pump_attempted' && e.outcome === 'pump_success')
+  expect(pumps).toHaveLength(10)
+  expect(new Set(pumps.map(e => e.actionId)).size).toBe(10)
+  expect(Object.values(root.records)[0].snapshot.core).toEqual(after)
+})
+
+it('preserves Pump then Collect order and never applies later queued clicks to another balloon', async () => {
+  const before = await highThresholdRound(), commit = store.commit.bind(store)
+  let release!: () => void, held = false
+  vi.spyOn(store, 'commit').mockImplementation(async (...args) => {
+    if (args[2].kind === 'action_pending' && !held) { held = true; await new Promise<void>(r => { release = r }) }
+    return commit(...args)
+  })
+  const pending = ['pump', 'collect', 'pump'].map(kind => controller.action(kind as 'pump' | 'collect', 'mouse', before.round, before.revision))
+  await vi.waitFor(() => expect(release).toBeDefined()); release(); await Promise.all(pending)
+  const after = controller.view.record!.snapshot.core
+  expect(after.round).toBe(before.round)
+  expect(after.results.at(-1)?.bankedCents).toBe(5)
+  expect(after.results.at(-1)?.successfulPumps).toBe(1)
+  expect(after.nextActionId).toBe(before.nextActionId + 2)
+  expect(controller.view.message).toContain('Further choices were not applied')
+})
+it.each(['pause', 'delete', 'failure'])('retires queued choices on %s and fences their late delivery', async reason => {
+  const before = await highThresholdRound(), commit = store.commit.bind(store)
+  let release!: () => void, held = false
+  vi.spyOn(store, 'commit').mockImplementation(async (...args) => {
+    if (args[2].kind === 'action_pending' && !held) {
+      held = true; await new Promise<void>(r => { release = r })
+      if (reason === 'failure') throw new WriteFailure('held first queued write failed')
+    }
+    return commit(...args)
+  })
+  const pending = Array.from({ length: 10 }, () => controller.action('pump', 'touch_or_pen', before.round, before.revision))
+  await vi.waitFor(() => expect(release).toBeDefined())
+  if (reason !== 'failure') await controller.pause('browser_interruption')
+  if (reason === 'delete') await store.delete(controller.view.record!.header.identity.sessionId, Date.now())
+  release(); await Promise.all(pending)
+  expect(controller.acceptsRoundActions()).toBe(false)
+  expect(controller.view.mode).not.toBe('playing')
+  if (reason === 'delete') expect(Object.keys(root.records)).toHaveLength(0)
+  else expect(Object.values(root.records)[0].snapshot.core.current.successfulPumps).toBe(0)
+})
+it('bounds queued admission explicitly and never carries the backlog beyond a burst', async () => {
+  const before = await highThresholdRound(), commit = store.commit.bind(store)
+  let release!: () => void, held = false
+  vi.spyOn(store, 'commit').mockImplementation(async (...args) => {
+    if (args[2].kind === 'action_pending' && !held) { held = true; await new Promise<void>(r => { release = r }) }
+    return commit(...args)
+  })
+  const pending = Array.from({ length: 65 }, () => controller.action('pump', 'mouse', before.round, before.revision))
+  await vi.waitFor(() => expect(release).toBeDefined())
+  expect(controller.acceptsRoundActions()).toBe(false)
+  expect(controller.view.message).toContain('Please wait')
+  release(); await Promise.all(pending)
+  const after = controller.view.record!.snapshot.core, row = before.manifest.rounds[before.round - 1]
+  expect(after.round).toBe(before.round)
+  expect(after.results.at(-1)?.attemptedPumps).toBe(Math.min(row.threshold, 32))
+  expect(after.nextActionId).toBe(before.nextActionId + Math.min(row.threshold, 32))
+})

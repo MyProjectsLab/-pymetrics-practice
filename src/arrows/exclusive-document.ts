@@ -1,11 +1,19 @@
+import sizeTokens from '../design/tokens.css?inline'
 import { loadGameFonts } from '../design/gameFonts'
 /** A deliberately tiny author-owned document. Closed mode is encapsulation;
  * topology/identity, not absence inferred from shadowRoot, is the admission rule. */
-const PROTECTED_CSS = `
+const PROTECTED_CSS = `${sizeTokens}
+
 :host { all: initial; display: block; margin: 0; background: #fff; color: #172d30; font: 16px system-ui; direction: ltr; writing-mode: horizontal-tb; }
 fieldset { all: initial; display: grid; place-items: center; box-sizing: border-box; width: 420px; min-height: 240px; margin: 24px auto; padding: 32px; border: 2px solid #587568; border-radius: 8px; background: #fff; direction: ltr; writing-mode: horizontal-tb; }
 button { all: initial; display: block; box-sizing: border-box; width: 160px; height: 44px; margin: 24px auto; border: 2px solid #18594f; border-radius: 6px; background: #fff; color: #18594f; font: 16px system-ui; text-align: center; cursor: pointer; direction: ltr; writing-mode: horizontal-tb; }
 button:focus-visible { outline: 3px solid #995500; outline-offset: 4px; }
+:host { font-size:var(--ap-font-body); line-height:var(--ap-line-height); }
+button { height:var(--ap-button-height); min-height:var(--ap-button-height); font-size:var(--ap-font-button); line-height:var(--ap-line-height); }
+button[data-mouth-exit] { width:max(160px,var(--ap-button-width)); height:var(--ap-button-height); font-size:var(--ap-font-button); }
+.mouth-responses button { height:var(--ap-button-height); font-size:var(--ap-font-button); }
+@media(min-width:768px) { button { min-width:var(--ap-button-width); } .mouth-responses { width:calc(2 * var(--ap-button-width) + var(--ap-control-gap)); gap:var(--ap-control-gap); } }
+
 `
 const attrs = (node: Element) => JSON.stringify([...node.attributes].map(a => [a.name, a.value]).sort(([a], [b]) => a.localeCompare(b)))
 const children = (node: Node, expected: Node[]) => node.childNodes.length === expected.length && expected.every((child, i) => node.childNodes[i] === child)

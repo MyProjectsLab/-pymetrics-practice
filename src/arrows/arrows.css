@@ -2,7 +2,7 @@
   border: 1px solid #e4e7ef; border-radius: .8rem; background: #fff; box-sizing: border-box;
   display: grid; place-items: center; text-align: center; }
 .arrows-display [data-arrows-stage] { width: 100%; display: grid; gap: 1.3rem; justify-items: center; }
-.arrows-display [data-arrows-cue] { display: block; font-size: clamp(1.15rem, 3vw, 1.6rem); }
+.arrows-display [data-arrows-cue] { display: block; font-size:clamp(1.15rem, 3vw, 1.6rem); }
 .arrows-display [data-arrows-owned] { width: min(100%, 34rem); gap: .3rem; }
 .arrows-display [data-arrows-symbol] { display: inline-grid; place-items: center;
   width: clamp(2rem, 8vw, 3.5rem); height: clamp(2rem, 8vw, 3.5rem); font-weight: 700; }
@@ -10,7 +10,7 @@
 .arrows-example { display: flex; justify-content: center; gap: clamp(.25rem, 2vw, 1rem);
   padding: 1.5rem .5rem; background: #f2fafc; border-radius: .7rem; }
 .arrows-example span { display: grid; place-items: center; width: clamp(2rem, 10vw, 3.5rem);
-  height: clamp(2rem, 10vw, 3.5rem); font-size: clamp(1.4rem, 6vw, 2.5rem); }
+  height: clamp(2rem, 10vw, 3.5rem); font-size:clamp(1.4rem, 6vw, 2.5rem); }
 .arrows-example .target { outline: 2px solid currentColor; }
 .arrows-visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0;
   margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
@@ -24,10 +24,12 @@
 .arrows-key-tiles { display: flex; gap: 1rem; }
 .arrows-key-tile { box-sizing: border-box; width: 96px; min-height: 84px; display: grid;
   justify-items: center; align-content: center; gap: .25rem; border: 2px solid #aab3b5;
-  border-radius: .6rem; background: #fff; color: #26363b; font-size: .7rem; font-weight: 700; }
-.arrows-key-symbol { font-size: 2.3rem; line-height: 1; }
+  border-radius: .6rem; background: #fff; color: #26363b; font-size:var(--ap-font-small); font-weight: 700; }
+.arrows-key-symbol { font-size:2.3rem; line-height: 1; }
 .arrows-key-tile.is-checked { background: #e0f7fa; border-color: #008ba3; color: #005e6e; }
 .arrows-setup-links { display: flex; align-items: baseline; flex-wrap: wrap; gap: .35rem .65rem; margin-block: .5rem 1rem; }
 .arrows-journey .arrows-setup-link { display: inline; border: 0; border-radius: 0; padding: .25rem 0;
-  min-height: 0; background: transparent; color: #4a5368; font: inherit; font-size: .9rem; text-decoration: underline; }
+  min-height: 0; background: transparent; color: #4a5368; font:inherit; font-size:var(--ap-font-small); text-decoration: underline; }
 .arrows-journey .arrows-setup-link:hover { color: #0e7490; background: transparent; }
+
+.arrows-journey .arrows-setup-link { font-size:var(--ap-font-button); min-height:var(--ap-button-height); display:inline-flex; align-items:center; }

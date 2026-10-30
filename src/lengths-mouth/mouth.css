@@ -4,14 +4,14 @@
 .mouth-stage {display:grid;place-items:center;min-height:240px;height:240px;width:100%;font-size:2rem}
 .mouth-stage svg {width:240px;height:240px;display:block}
 .mouth-responses {display:flex;justify-content:space-around;gap:12px;margin-top:12px}
-.mouth-responses button {min-height:48px;flex:1;margin:0;touch-action:none}
+.mouth-responses button {min-height:var(--ap-button-height);flex:1;margin:0;touch-action:none}
 .mouth-examples {display:flex;justify-content:center;flex-wrap:wrap}
 .mouth-examples svg {width:240px;height:240px;color:#111}
 .mouth-examples figure {margin:12px;text-align:center}
 .mouth-journey label {display:block;margin-block:12px}
 .mouth-journey select,.mouth-journey input[type=text] {margin-left:8px}
 .mouth-table {overflow-x:auto}
-.mouth-table table {width:100%;border-collapse:collapse;font-size:.9rem}
+.mouth-table table {width:100%;border-collapse:collapse;font-size:var(--ap-font-small)}
 .mouth-table th,.mouth-table td {padding:8px;text-align:left;border-bottom:1px solid #bbb}
 .mouth-run {max-width:40rem;margin:auto}
 .mouth-journey :focus-visible {outline:3px solid #005fcc;outline-offset:4px}

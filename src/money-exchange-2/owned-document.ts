@@ -1,11 +1,13 @@
+import sizeTokens from '../design/tokens.css?inline'
 import { decorateSiteBrand } from '../design/siteBrand'
 import { loadGameFonts } from '../design/gameFonts'
 import type { Art } from './art'
 const css=':host{display:block}'
-const protectedCss = `
+const protectedCss = `${sizeTokens}
+
 :host{all:initial;display:block;min-height:100vh;background:#ffffff;color:#14213d;font:18px system-ui;direction:ltr;writing-mode:horizontal-tb}
 fieldset[data-money-stage]{all:initial;box-sizing:border-box;display:block;width:calc(100% - 64px);max-width:1800px;min-height:650px;margin:32px auto;padding:32px 48px;border:0;border-radius:12px;background:#fff;color:#14213d;font:18px system-ui;direction:ltr;writing-mode:horizontal-tb}
-.eyebrow{font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#0e7490;margin:0 0 12px;text-align:left}
+.eyebrow{font-size:var(--ap-font-small);font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#0e7490;margin:0 0 12px;text-align:left}
 legend{font-size:1.6rem;font-weight:650;color:#14213d;float:left;width:100%;margin-bottom:24px;text-align:center}
 output{display:block;margin:12px auto;max-width:1000px;line-height:1.5;color:#14213d;text-align:center;clear:both}
 label{display:inline-block;margin:12px 8px;color:#14213d}
@@ -13,18 +15,18 @@ input{box-sizing:border-box;max-width:100%;padding:10px;font:inherit;accent-colo
 input[type=range]{display:block;width:500px;margin:22px auto}
 fieldset[data-card]{display:inline-block;vertical-align:top;box-sizing:border-box;width:calc(50% - 16px);margin:8px;padding:20px;border:1px solid #e4e7ef;border-radius:8px;background:#fff}fieldset[data-card] legend{float:none;width:auto;font-size:1.1rem;text-align:left;margin:0}fieldset[data-card] output:first-of-type{background:#e3f6fa;font-size:1.3rem;padding:12px}fieldset[data-card] output{font-size:1rem}fieldset[aria-label]{display:flex;flex-wrap:wrap;justify-content:center;border:0;gap:4px;margin:24px auto;max-width:1100px}
 fieldset[aria-label] label{display:flex;flex-direction:column;align-items:center;background:#e3f6fa;padding:10px 7px;border-radius:5px;margin:0;min-width:24px}
-button{box-sizing:border-box;min-height:44px;margin:16px 12px 0 0;padding:10px 24px;border:0;border-radius:999px;background:#0e7490;color:#fff;font:inherit;cursor:pointer}
+button{box-sizing:border-box;min-height:var(--ap-button-height);margin:16px 12px 0 0;padding:10px 24px;border:0;border-radius:999px;background:#0e7490;color:#fff;font:inherit;cursor:pointer}
 button:disabled{opacity:.48;cursor:default}
 button:focus-visible,input:focus-visible{outline:3px solid #0891b2;outline-offset:3px}
 img[data-money-result],img[data-money-pair]{display:block;width:100%;max-width:1100px;height:auto;object-fit:contain;background:#fff;margin:30px auto;clear:both}
 output[data-money-semantics]{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-.assessment-usage-notice{display:block;color:#4a5368;font-size:.8rem;line-height:1.6;text-align:left;margin:1.5rem 0 0}
+.assessment-usage-notice{display:block;color:#4a5368;font-size:var(--ap-font-small);line-height:1.6;text-align:left;margin:1.5rem 0 0}
 nav[data-site-nav]{display:flex;clear:both;box-sizing:border-box;width:100%;flex-wrap:wrap;align-items:center;gap:12px;margin:0 0 20px}
-nav[data-site-nav] a{color:#0e7490;min-height:44px;display:inline-flex;align-items:center}
+nav[data-site-nav] a{color:#0e7490;min-height:var(--ap-button-height);display:inline-flex;align-items:center}
 nav[data-site-nav] a.ap-wordmark{gap:1rem;font:600 1rem/1.1 'AP Inter',Arial,sans-serif;color:#14213d;text-decoration:none}nav[data-site-nav] .ap-wordmark svg{width:40px;height:40px;flex-shrink:0;color:#0891b2}
 nav[data-site-nav] a:focus-visible{outline:3px solid #0891b2;outline-offset:3px}
 main[data-money-main]{display:block}
-@media(max-width:600px){fieldset[data-card]{width:100%;margin:8px 0}fieldset[data-money-stage]{width:calc(100% - 16px);margin:8px;padding:16px;min-height:450px}.eyebrow{font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#0e7490;margin:0 0 12px;text-align:left}
+@media(max-width:600px){fieldset[data-card]{width:100%;margin:8px 0}fieldset[data-money-stage]{width:calc(100% - 16px);margin:8px;padding:16px;min-height:450px}.eyebrow{font-size:var(--ap-font-small);font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#0e7490;margin:0 0 12px;text-align:left}
 legend{font-size:1.25rem}img[data-money-result],img[data-money-pair]{margin:16px auto}button{padding:10px 16px}fieldset[aria-label]{gap:6px}fieldset[aria-label] label{min-width:30px}}
 fieldset[data-money-stage^="choice_"]{position:relative;max-width:2400px;height:calc(100svh - 64px);min-height:650px;padding:100px 48px 140px}
 fieldset[data-money-stage^="choice_"] legend{position:absolute;top:25%;left:25%;width:50%;font-size:clamp(24px,1.5vw,40px);float:none}
@@ -38,7 +40,16 @@ fieldset[data-money-stage^="choice_"] input[type=range]{position:absolute;top:56
 fieldset[data-money-stage^="choice_"] button[data-action="Restart"]{position:absolute;top:3%;right:150px}
 fieldset[data-money-stage^="choice_"] button[data-action="Close"]{position:absolute;top:3%;right:32px}
 fieldset[data-money-stage^="choice_"] button[data-action="Confirm"]{position:absolute;bottom:6%;right:6%;min-width:220px}
-@media(max-width:700px){fieldset[data-money-stage^="choice_"]{height:780px;min-height:780px;padding:90px 16px 110px}fieldset[data-money-stage^="choice_"] legend{top:16%;left:5%;width:90%;font-size:22px}fieldset[data-money-stage^="choice_"]>output:not([data-decision-value]):not([data-endpoints]):not([data-money-semantics]){top:22%;left:5%;width:90%;font-size:14px}fieldset[data-money-stage^="choice_"] img[data-money-pair]{top:27%;left:4%;width:92%}[data-decision-value]{top:61%;left:calc(50% - 80px);width:160px;padding:12px 0;font-size:24px}[data-endpoints]{top:71%;left:8%;width:84%;font-size:14px}fieldset[data-money-stage^="choice_"] input[type=range]{top:77%;left:8%;width:84%}[data-decision-label]{position:absolute;top:85%;left:4%;width:92%;margin:0;font-size:12px}fieldset[data-money-stage^="choice_"] button[data-action="Restart"]{top:0;right:110px}fieldset[data-money-stage^="choice_"] button[data-action="Close"]{top:0;right:8px}fieldset[data-money-stage^="choice_"] button[data-action="Confirm"]{bottom:0;right:16px;min-width:140px}}
+@media(max-width:700px){fieldset[data-money-stage^="choice_"]{height:780px;min-height:780px;padding:90px 16px 110px}fieldset[data-money-stage^="choice_"] legend{top:16%;left:5%;width:90%;font-size:22px}fieldset[data-money-stage^="choice_"]>output:not([data-decision-value]):not([data-endpoints]):not([data-money-semantics]){top:22%;left:5%;width:90%;font-size:var(--ap-font-small)}fieldset[data-money-stage^="choice_"] img[data-money-pair]{top:27%;left:4%;width:92%}[data-decision-value]{top:61%;left:calc(50% - 80px);width:160px;padding:12px 0;font-size:24px}[data-endpoints]{top:71%;left:8%;width:84%;font-size:var(--ap-font-small)}fieldset[data-money-stage^="choice_"] input[type=range]{top:77%;left:8%;width:84%}[data-decision-label]{position:absolute;top:85%;left:4%;width:92%;margin:0;font-size:var(--ap-font-small)}fieldset[data-money-stage^="choice_"] button[data-action="Restart"]{top:0;right:110px}fieldset[data-money-stage^="choice_"] button[data-action="Close"]{top:0;right:8px}fieldset[data-money-stage^="choice_"] button[data-action="Confirm"]{bottom:0;right:16px;min-width:140px}}
+
+:host, fieldset[data-money-stage] { font-size:var(--ap-font-body); line-height:var(--ap-line-height); }
+fieldset[data-money-stage] { max-width:var(--ap-panel-width); }
+button { min-height:var(--ap-button-height); font-size:var(--ap-font-button); }
+@media(min-width:768px) { button { min-width:var(--ap-button-width); } }
+
+label:has(input[name="money-comprehension"]) { box-sizing:border-box;display:flex;flex-direction:row;align-items:flex-start;gap:var(--ap-space-3);width:100%;padding:var(--ap-option-padding);border:1px solid #d5dae4;border-radius:var(--ap-radius);font-size:var(--ap-font-option);line-height:var(--ap-line-height); }
+input[name="money-comprehension"] { width:var(--ap-radio-size);height:var(--ap-radio-size);flex:none; }
+[data-decision-value] { font-size:var(--ap-font-number); }
 
 `
 const attrs = (node: Element) => JSON.stringify([...node.attributes].map(a => [a.name, a.value]).sort(([a], [b]) => a.localeCompare(b)))

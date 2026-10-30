@@ -8,7 +8,7 @@
 .lengths-example { display: flex; justify-content: center; gap: clamp(.5rem, 4vw, 2rem);
   padding: 1.5rem .5rem; background: #f2fafc; border-radius: .7rem; }
 .lengths-example-bar { display: grid; place-items: center; height: 2rem;
-  border-top: .75rem solid #111; font-size: .8rem; font-weight: 700; box-sizing: border-box; }
+  border-top: .75rem solid #111; font-size:var(--ap-font-small); font-weight: 700; box-sizing: border-box; }
 .lengths-visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0;
   margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 .lengths-journey li { margin-bottom: 1.5rem; }
