@@ -348,6 +348,10 @@ it('bounds queued admission explicitly and never carries the backlog beyond a bu
   const pending = Array.from({ length: 65 }, () => controller.action('pump', 'mouse', before.round, before.revision))
   await vi.waitFor(() => expect(release).toBeDefined())
   expect(controller.acceptsRoundActions()).toBe(false)
+  expect(controller.atActionCapacity).toBe(true)
+  expect(controller.view.message).toContain('Please wait')
+  await controller.action('pump', 'mouse', before.round, before.revision)
+  expect(controller.atActionCapacity).toBe(true)
   expect(controller.view.message).toContain('Please wait')
   release(); await Promise.all(pending)
   const after = controller.view.record!.snapshot.core, row = before.manifest.rounds[before.round - 1]

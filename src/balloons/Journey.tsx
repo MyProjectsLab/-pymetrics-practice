@@ -4,7 +4,7 @@ import { useEffect, useEffectEvent, useRef, useState } from 'react'
 import { flushSync } from 'react-dom'
 import type { MouseEvent as ReactMouseEvent } from 'react'
 import { Shell } from '../core/Shell'
-import { BalloonsController, CHANGE_CHANNEL, announceChange } from './controller'
+import { BalloonsController, CHANGE_CHANNEL, announceChange, QUEUE_FULL_NOTICE, ROUND_CLOSED_NOTICE } from './controller'
 import type { RunView } from './controller'
 import { BalloonsStore, withMutationGate } from './storage'
 import type { Root } from './storage'
@@ -209,7 +209,7 @@ export function BalloonsJourney({ onLibrary, mock, reportTarget, separateBaselin
   }
   async function makeController() {
     await controller.current?.dispose()
-    const next = new BalloonsController(store!, v => { if (alive.current) setView(v) }, record => {
+    const next = new BalloonsController(store!, v => { if (alive.current) { if (controller.current?.atActionCapacity) flushSync(() => setView(v)); else setView(v) } }, record => {
       flushSync(() => setView({ mode: 'mounting', record, message: 'Confirming balloon display…' }))
       return display.current!
     })
@@ -295,6 +295,7 @@ export function BalloonsJourney({ onLibrary, mock, reportTarget, separateBaselin
     finally { completeChange() }
   }
   const c = view.record?.snapshot.core, interactive = view.mode === 'playing' && !controller.current?.hasPendingActions
+  const roundNotice = controller.current?.atActionCapacity ? QUEUE_FULL_NOTICE : view.message === ROUND_CLOSED_NOTICE ? ROUND_CLOSED_NOTICE : ''
   const roundActionsEnabled = interactive || !!controller.current?.acceptsRoundActions?.()
   const burstResult = c?.status !== 'active' && c?.results.at(-1)?.outcome === 'burst' ? c.results.at(-1)! : null
   if(reportTarget&&(step!=='history'||!selected))return <Shell onLibrary={onLibrary}><div ref={root} className="journey balloons-journey"><section className="panel"><h1>Saved Balloons report</h1><p role={error?'alert':'status'}>{error||'Checking the exact retained result…'}</p><button onClick={onLibrary}>Return to mock</button></section></div></Shell>
@@ -337,7 +338,7 @@ export function BalloonsJourney({ onLibrary, mock, reportTarget, separateBaselin
         {c && ['playing', 'mounting', 'saving'].includes(view.mode) && view.record && ['presentation_armed', 'active', 'resolved', 'completed', 'committing_action'].includes(view.record.snapshot.phase) && <div ref={display} className="balloons-play" aria-busy={!interactive}>
           <div className="balloons-stage"><BalloonIdentity key={`${view.record.header.identity.sessionId}:${c.round}`} type={typeFor(view.record!)} successfulPumps={c.current.successfulPumps} outcome={c.status === 'active' ? null : c.results.at(-1)!.outcome} reducedMotion={view.record.header.settings.reducedMotion} playStage /></div><div className="balloons-balances"><div><span>This balloon</span><strong className={burstResult ? `balloons-loss${burstResult.lostCents === 0 ? ' balloons-no-loss' : ''}` : undefined}>{burstResult ? burstResult.lostCents === 0 ? 'No money lost' : money(burstResult.lostCents) : money(c.current.currentCents)}</strong></div><div><span>Banked</span><strong>{money(c.bankedCents)}</strong></div></div>
           <div className="balloons-actions"><button data-control="pump" disabled={!roundActionsEnabled || c.status !== 'active'} onClick={e => click('pump', e)}>Pump</button><button data-control="collect" disabled={!roundActionsEnabled || c.status !== 'active'} onClick={e => click('collect', e)}>Collect</button></div>
-          <div className="balloons-outcome"><p aria-hidden={c.status === 'active' ? true : undefined}>{c.status !== 'active' ? outcomeText(view.record!) : '\u00a0'}</p>{c.status !== 'active' && (c.status === 'completed' ? <button data-next disabled={!interactive} onClick={() => void controller.current?.report()}>View report</button> : <button data-next disabled={!interactive} onClick={e => click('next', e)}>Next balloon</button>)}</div>
+          <div className="balloons-outcome"><p aria-hidden={c.status === 'active' && !roundNotice ? true : undefined}>{roundNotice || (c.status !== 'active' ? outcomeText(view.record!) : '\u00a0')}</p>{c.status !== 'active' && (c.status === 'completed' ? <button data-next disabled={!interactive} onClick={() => void controller.current?.report()}>View report</button> : <button data-next disabled={!interactive} onClick={e => click('next', e)}>Next balloon</button>)}</div>
         </div>}
         {['paused', 'unsaved'].includes(view.mode) && view.record && <><p>Last visible committed state: round {view.record.snapshot.core.round}, {view.record.snapshot.core.current.successfulPumps} successful pumps, {money(view.record.snapshot.core.bankedCents)} banked. {view.record.header.retest ? 'Unconfirmed or unsaved work cannot complete this training chain.' : 'Unconfirmed or unsaved work cannot establish a baseline.'}</p>{mock ? <button data-mock-return-intent onClick={onLibrary}>Return to mock</button> : view.record.snapshot.phase === 'released' && view.record.header.retest ? <button onClick={() => retest(view.record!.header.retest!.baselineSessionId)}>Reopen retest explanation</button> : view.record.snapshot.core.status === 'completed' ? <button onClick={historyView}>Review saved completion in history</button> : <button onClick={() => resume(view.record!)}>Check and resume saved session</button>}</>}
         {['paused', 'unsaved'].includes(view.mode) && view.record?.header.retest && !view.record.snapshot.comparisonEligible && view.record.snapshot.exposure !== 'released_unseen' && <button onClick={() => retest(view.record!.header.retest!.baselineSessionId, undefined, true)}>Open explanation for a fresh retest attempt</button>}

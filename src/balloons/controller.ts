@@ -8,6 +8,8 @@ import type { OwnerToken } from './storage'
 import type { MockJourneyContext } from '../mock/journey-context'
 
 export type RunView = { mode: 'idle' | 'explanation' | 'saving' | 'mounting' | 'playing' | 'paused' | 'unsaved' | 'write_failed' | 'uncertain' | 'verified_completion' | 'error' | 'report' | 'checking'; record: DurableRecord | null; message: string }
+export const QUEUE_FULL_NOTICE = 'Saving queued choices. Please wait before adding more.'
+export const ROUND_CLOSED_NOTICE = 'Balloon ended. Further choices were not applied.'
 export const CHANGE_CHANNEL = 'assessment-practice-balloons-changes-v1'
 export function announceChange() {
   const id = crypto.randomUUID()
@@ -44,10 +46,11 @@ export class BalloonsController {
   private drainingActions = false
   private pendingActions: { kind: 'pump' | 'collect'; source: ActionSource; round: number; sessionId: string; scope: AbortSignal; time: EventTime; done: () => void }[] = []
   get hasPendingActions() { return this.drainingActions }
+  get atActionCapacity() { return this.pendingActions.length >= 64 }
   acceptsRoundActions() {
     return !this.disposed && !this.scope.signal.aborted && !!this.token && !!this.view.record &&
       ['playing', 'saving'].includes(this.view.mode) && (!this.busy || this.drainingActions) &&
-      this.view.record.snapshot.core.status === 'active' && this.pendingActions.length < 64
+      this.view.record.snapshot.core.status === 'active' && !this.atActionCapacity
   }
   private discardActions() { for (const item of this.pendingActions.splice(0)) item.done() }
 
@@ -186,12 +189,13 @@ export class BalloonsController {
   async action(kind: CoreAction['kind'], source: ActionSource, expectedRound: number, expectedRevision: number) {
     if (kind === 'next') { await this.performAction(kind, source, expectedRound, expectedRevision); return }
     const record = this.view.record
+    if (this.atActionCapacity && !this.disposed && !this.scope.signal.aborted) { this.show(this.view.mode, record, QUEUE_FULL_NOTICE); return }
     if (!this.acceptsRoundActions() || !record || record.snapshot.core.round !== expectedRound || expectedRevision > record.snapshot.core.revision ||
         (!this.drainingActions && record.snapshot.core.revision !== expectedRevision)) return
     const pending = new Promise<void>(done => this.pendingActions.push({ kind, source, round: expectedRound,
       sessionId: record.header.identity.sessionId, scope: this.scope.signal, time: this.time(), done }))
     if (!this.drainingActions) void this.drainActions()
-    else this.show(this.view.mode, this.view.record, this.pendingActions.length >= 64 ? 'Saving queued choices. Please wait before adding more.' : 'Saving your choices…')
+    else this.show(this.view.mode, this.view.record, this.atActionCapacity ? QUEUE_FULL_NOTICE : 'Saving your choices…')
     await pending
   }
   private async drainActions() {
@@ -203,7 +207,7 @@ export class BalloonsController {
         const item = this.pendingActions.shift()!, record = this.view.record
         if (item.scope !== lifetime || !record || record.header.identity.sessionId !== item.sessionId ||
             record.snapshot.core.round !== item.round || record.snapshot.core.status !== 'active') {
-          item.done(); this.discardActions(); notice = 'This balloon has ended. Further choices were not applied to the next balloon.'; break
+          item.done(); this.discardActions(); notice = ROUND_CLOSED_NOTICE; break
         }
         try { await this.performAction(item.kind, item.source, item.round, record.snapshot.core.revision, true, item.time) }
         finally { item.done() }

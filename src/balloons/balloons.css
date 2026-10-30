@@ -101,3 +101,5 @@ body:has(.balloons-play) main { padding-block:var(--ap-space-3); }
 .balloons-outcome p { margin:0; align-self:center; font-size:var(--ap-font-small); line-height:var(--ap-line-height); }
 .balloons-outcome button { margin:0; min-height:var(--ap-button-height); }
 @media(min-width:768px) { .balloons-balances, .balloons-play .balloons-actions { max-width:calc(2 * var(--ap-button-width) + var(--ap-control-gap)); } }
+
+.balloons-journey .panel:has(>.balloons-play)>h1 { margin-bottom:0; }

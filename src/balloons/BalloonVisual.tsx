@@ -31,7 +31,7 @@ export function BalloonIdentity({ type, successfulPumps = 0, outcome = null, red
   const id = useId().replaceAll(':', '')
   const identity = identities[type]
   const pumps = Number.isFinite(successfulPumps) ? Math.max(0, Math.min(32, successfulPumps)) : 0
-  const scale = playStage ? (.4 + pumps * .5 / 32) * 320 / 222 : .5 + pumps * .65 / 32
+  const scale = playStage ? (.6 + pumps * .3 / 32) * 320 / 222 : .5 + pumps * .65 / 32
   return <div className={`balloons-identity${compact ? ' balloons-identity-compact' : ''}`}>
     <svg className="balloon-art" viewBox="0 0 320 320" aria-hidden="true" focusable="false"
       data-motion={reducedMotion ? 'reduced' : 'normal'} data-successful-pumps={pumps} data-outcome={outcome ?? 'active'}>
