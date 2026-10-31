@@ -39,3 +39,20 @@ describe('previous preparation screen', () => {
     expect(trail.back()).toBe('guide')
   })
 })
+
+it('a failed or cancelled durable Back resets to the confirmed screen without inventing a predecessor', () => {
+ for(const actual of ['library','instructions:2','unavailable']) {
+  const trail = new PreparationTrail(['library','instructions:2','ready'])
+  trail.enter('library');trail.enter('instructions:2');trail.enter('ready')
+  expect(trail.back()).toBe('instructions:2')
+  trail.finishBack(false,actual)
+  trail.enter(actual)
+  expect(trail.canBack).toBe(false);expect(trail.back()).toBe(null)
+ }
+})
+it('a successful durable Back preserves the genuine earlier preparation path', () => {
+ const trail = new PreparationTrail(['library','instructions:1','instructions:2','ready'])
+ trail.enter('library');trail.enter('instructions:1');trail.enter('instructions:2');trail.enter('ready')
+ expect(trail.back()).toBe('instructions:2');trail.finishBack(true,'instructions:2')
+ expect(trail.back()).toBe('instructions:1');expect(trail.back()).toBe('library')
+})

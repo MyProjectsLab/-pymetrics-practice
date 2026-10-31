@@ -48,7 +48,7 @@ function render(){
  const lines:string[]=[],buttons:ProtectedView['buttons'][number][]=[];
  const add=(label:string,act:(event:MouseEvent)=>void,disabled=false,sameReturnIntent=false,expanded?:boolean,selected?:boolean)=>buttons.push({label,act:event=>{guideChoiceEpoch++;preparationSkipping=false;if(!sameReturnIntent){controller.mockContext?.retireReturnIntent();returnError=false}act(event)},disabled,expanded,selected});
  const admit=(kind:string,data={})=>(event:MouseEvent)=>{controller.mockContext?.retireReturnIntent();returnError=false;controller.admit(token,kind,{...data,input:event.detail===0?'keyboard or assistive activation':'pointer activation'})};
- const spec:ProtectedView={stage,title:heading,lines,buttons,onViolation:fault,onNavigate:()=>{guideChoiceEpoch++;controller.mockContext?.retireReturnIntent();controller.lifecycle('pagehide')}};
+ const spec:ProtectedView={stage,title:heading,lines,buttons,preserveActionFocus:view.authorityPending,onViolation:fault,onNavigate:()=>{guideChoiceEpoch++;controller.mockContext?.retireReturnIntent();controller.lifecycle('pagehide')}};
  if(stage==='loading')lines.push('Checking local storage and play ownership…');
  else if(stage==='unavailable'){
   lines.push(view.error??'Reload before continuing.');add('Reload',()=>window.location.reload());if(!report)add('Delete all Money Exchange 2 data',()=>{if(window.confirm('Delete every Money Exchange 2 result and form-exposure record on this browser?'))void clearDamaged().then(()=>window.location.reload()).catch(()=>window.alert('Deletion was not confirmed. Reload and check again.'))});add(report?'Back to mock':'Practice library',back);
@@ -143,9 +143,16 @@ function render(){
   const choice=guideChoiceEpoch, current=()=>choice===guideChoiceEpoch
   restoreGuidePart=previous.startsWith('instructions:')?Number(previous.split(':')[1]):null
   preparationReturning=true
+  let returned=false
   void controller.backToPreparation(token, previous==='library'?'library':'instructions', current).then(ok=>{
+   returned=ok
    if (!ok && current()) guideFeedback='The previous screen could not be confirmed. Check the current saved state before continuing.'
-  }).catch(()=>{if(current())guideFeedback='The previous screen could not be confirmed. Retry the saved operation.'}).finally(()=>{preparationReturning=false;restoreGuidePart=null;if(current())render()})
+  }).catch(()=>{if(current())guideFeedback='The previous screen could not be confirmed. Retry the saved operation.'}).finally(()=>{
+   preparationReturning=false;restoreGuidePart=null
+   const visible=controller.view().stage
+   preparationTrail.finishBack(returned,visible==='instructions'?`instructions:${guidePart}`:visible)
+   if(current())render()
+  })
  }, view.busy || view.uncertain || !!view.pendingExit || view.authorityPending || preparationReturning)
  if(mockHint||report){
  buttons.splice(0,buttons.length,...mockMenuButtons(buttons,{label:'Return to mock',act:()=>returnFromOwned(stage)}))}

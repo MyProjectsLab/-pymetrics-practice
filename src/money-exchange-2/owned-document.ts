@@ -72,6 +72,7 @@ export type ProtectedView = {
   title: string
   onViolation: () => void
   onNavigate?: () => void
+  preserveActionFocus?: boolean
   lines: readonly string[]
   buttons: readonly { label: string; act: (event:MouseEvent) => void; disabled?: boolean; expanded?: boolean; selected?: boolean }[]
   cards?: readonly {label:string;value:string;detail:string}[]
@@ -119,6 +120,7 @@ export class OwnedDocument {
   #preparedResultEpoch = 0
   #outerPaint = ''
   #siteNav: HTMLElement | null = null
+  #deferredActionFocus: string | null = null
   #relevant(records: readonly MutationRecord[]): boolean {
     const ancestors: Node[]=[this.#html,this.#head,this.#body]
     const metadata: Node[]=[...ancestors,this.#charset,this.#viewport,this.#title,this.#titleText]
@@ -305,18 +307,25 @@ export class OwnedDocument {
     this.#protectedSurface.replaceChildren(...made)
     this.#protectedNodes=records
     this.#protectedStage=view.stage
-    if(priorStage!==view.stage || focusedHeading)heading.focus()
-    else if(focusedButton) {
-      const target=made.find(node=>node instanceof HTMLButtonElement&&node.textContent===focusedButton)
-      if(target instanceof HTMLButtonElement&&!target.disabled)target.focus();else heading.focus()
-    } else if(focusedInput==='amount') {
+    const focusAction=focusedButton ?? (focusedHeading ? this.#deferredActionFocus : null)
+    if(priorStage!==view.stage) {this.#deferredActionFocus=null;heading.focus()}
+    else if(focusAction) {
+      const target=[...actionRegion.querySelectorAll('button')].find(node=>node.textContent===focusAction)
+      if(target&&!target.disabled){this.#deferredActionFocus=null;target.focus()}
+      else {this.#deferredActionFocus=view.preserveActionFocus?focusAction:null;heading.focus()}
+    } else if(focusedHeading)heading.focus()
+    else if(focusedInput==='amount') {
+      this.#deferredActionFocus=null
       const target=made.find(node=>node instanceof HTMLInputElement&&node.type==='range')
       if(target instanceof HTMLInputElement)target.focus()
     }
-    else if(focusedInput?.startsWith('rating:'))
+    else if(focusedInput?.startsWith('rating:')) {
+      this.#deferredActionFocus=null
       this.#protectedSurface.querySelector<HTMLInputElement>(`input[name="money-fairness"][value="${focusedInput.slice(7)}"]`)?.focus()
-    else if(focusedInput?.startsWith('comprehension:'))
+    } else if(focusedInput?.startsWith('comprehension:')) {
+      this.#deferredActionFocus=null
       this.#protectedSurface.querySelector<HTMLInputElement>(`input[name="money-comprehension"][value="${focusedInput.slice(14)}"]`)?.focus()
+    } else this.#deferredActionFocus=null
     this.#observer.observe(this.#root,{subtree:true,childList:true,attributes:true,characterData:true})
     this.#observer.observe(this.#html,{subtree:true,childList:true,attributes:true,characterData:true})
   }

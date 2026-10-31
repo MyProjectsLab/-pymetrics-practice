@@ -19,5 +19,11 @@ export class PreparationTrail<T extends string = string> {
     if (previous !== null) this.current = previous
     return previous
   }
+  finishBack(success: boolean, visibleScreen: string) {
+    // A failed durable navigation must not turn its attempted destination into
+    // a screen the player can go back to from the confirmed route.
+    if (!success) this.clear()
+    this.enter(visibleScreen)
+  }
   clear() { this.current = null; this.previous = [] }
 }
