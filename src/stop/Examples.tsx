@@ -4,19 +4,21 @@ import type { PreparationRecorder, ResponseBinding } from './preparation'
 import { Stimulus } from './Stimulus'
 import type { StopVisualProfile } from './contracts'
 
-export function Examples({ recorder, binding, profile = 'standard', held, onComplete }: {
-  recorder: PreparationRecorder; binding: ResponseBinding; held: boolean; onComplete: () => void
+export function Examples({ recorder, binding, profile = 'standard', held, onComplete, onBack }: {
+  recorder: PreparationRecorder; binding: ResponseBinding; held: boolean; onComplete: () => void; onBack?: () => void
   profile?: StopVisualProfile
 }) {
   const [index, setIndex] = useState(0)
+  const [reviewIndex, setReviewIndex] = useState<number | null>(null)
   const [pressed, setPressed] = useState(false)
   const [checked, setChecked] = useState(false)
   const response = useRef(false)
   const resolved = useRef(false)
-  const kind = exampleOrder[index]
+  const shownIndex = reviewIndex ?? index
+  const kind = exampleOrder[shownIndex]
   useEffect(() => {
     const down = (event: KeyboardEvent) => {
-      if (event.code !== binding.code || resolved.current) return
+      if (reviewIndex !== null || event.code !== binding.code || resolved.current) return
       // The selected response key must not also activate the focused button.
       event.preventDefault()
       if (held || response.current || !isPlainResponse(event, binding)) return
@@ -32,7 +34,7 @@ export function Examples({ recorder, binding, profile = 'standard', held, onComp
       document.removeEventListener('keydown', down, true)
       document.removeEventListener('keyup', up, true)
     }
-  }, [binding, held])
+  }, [binding, held, reviewIndex])
   function check() {
     if (resolved.current) return
     resolved.current = true
@@ -61,16 +63,21 @@ export function Examples({ recorder, binding, profile = 'standard', held, onComp
     <h1 tabIndex={-1}>Try the rule</h1>
     <p>These four examples are untimed. Select Check example when you are ready to review your response.</p>
     <p>While an example is active, {binding.label} records your response. Use Tab to reach Check example and Enter to activate it.</p>
-    <section className="example" aria-label={`Example ${index + 1} of 4`}>
-      <h2>Example {index + 1} of 4</h2>
+    <section className="example" aria-label={`Example ${shownIndex + 1} of 4`}>
+      <h2>Example {shownIndex + 1} of 4</h2>
       <p>{kind === 'GO' ? `Press ${binding.label} for GO.` : 'Do nothing for NO-GO.'}</p>
       <Stimulus kind={kind} profile={profile} />
     </section>
     <div role="status" aria-live="polite">
-      {checked ? <p className="feedback">{feedback}</p> : pressed ? <p>Response recorded. Select Check example.</p> : null}
+      {reviewIndex !== null ? <p>Earlier example — review only.</p> : checked ? <p className="feedback">{feedback}</p> : pressed ? <p>Response recorded. Select Check example.</p> : null}
     </div>
-    <div className="actions">{checked
+    <div className="actions">{reviewIndex !== null
+      ? <button onClick={() => setReviewIndex(reviewIndex + 1 < index ? reviewIndex + 1 : null)}>Next example</button> : checked
       ? <button onClick={next}>{index === 3 ? 'Check my understanding' : 'Next example'}</button>
       : <button onClick={check}>Check example</button>}</div>
+    <div className="preparation-back"><button className="secondary" onClick={() => {
+      if (shownIndex > 0) setReviewIndex(shownIndex - 1)
+      else onBack?.()
+    }}><span aria-hidden="true">← </span>Back</button></div>
   </>
 }

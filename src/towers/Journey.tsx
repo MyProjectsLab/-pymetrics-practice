@@ -1,3 +1,4 @@
+import { PreparationBack, usePreparationBack } from '../onboarding/PreparationBack'
 import { QuickRules } from '../onboarding/QuickRules'
 import { ReportSummary } from '../reports/Summary'
 import { towersFeedback } from '../reports/feedback'
@@ -155,6 +156,10 @@ export function TowersJourney({ onLibrary, runtime, mock, reportTarget }: { onLi
     setStep(next)
     return ticket
   }
+  const preparationBack = usePreparationBack(step, ['guide', 'example', 'check', 'ready'] as const, previous => {
+    if (busyRef.current || pendingStart || startRequest.current || intentRequest.current || attempt.current || runtime.unsettled) return false
+    goStep(previous)
+  })
   const pendingRef = useRef<{ input: Parameters<TowersStore['append']>[0]; token: number } | null>(null)
   const pendingOnsetResolution = useRef<{ input: Parameters<TowersStore['resolveOnsetFailure']>[0];
     token: number } | null>(null)
@@ -982,5 +987,6 @@ export function TowersJourney({ onLibrary, runtime, mock, reportTarget }: { onLi
       {confirmAll && <div className="panel"><p>Delete every Towers attempt and report in this browser?</p>
         <button onClick={() => setConfirmAll(false)}>Cancel</button>
         <button onClick={() => void eraseAll()}>Delete all</button></div>}</div>}
+    <PreparationBack navigation={preparationBack} disabled={busy || pendingStart || !!startRequest.current || !!intentRequest.current || !!attempt.current || runtime.unsettled} />
   </section></Shell>
 }

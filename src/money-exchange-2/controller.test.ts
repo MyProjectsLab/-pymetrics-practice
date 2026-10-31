@@ -27,3 +27,33 @@ for(const first of ['restart','close'])it(`pending Restart then Close ${first} r
 it('two failed reads stop automatic recovery and deny new scored input',async()=>{const {c,b}=await setup();await ready(c);b.failReads=2;b.lostKind='arm';const reads=b.readCount;c.admit(c.inputToken(),'arm');await settle(c);expect(c.view().uncertain).toBe(true);expect(b.readCount-reads).toBe(2);expect(c.admit(c.inputToken(),'arm')).toBe(false);expect(b.root.formCounter).toBe(1);c.retry(c.inputToken());await settle(c);expect(c.view().stage).toBe('award_1');expect(b.root.formCounter).toBe(1)})
 it('generation loss withdraws old pending presentation',async()=>{const {c,b}=await setup();await ready(c);b.holdKind='arm';c.admit(c.inputToken(),'arm');await tick();b.command('deleteAll');await c.refresh();for(const fn of b.held.splice(0))fn();await tick();expect(c.view().stage).toBe('unavailable');expect(b.root.formCounter).toBe(0)})
 it('duplicate activation admits one request and one form',async()=>{const {c,b}=await setup();await ready(c);const token=c.inputToken();expect(c.admit(token,'arm')).toBe(true);expect(c.admit(token,'arm')).toBe(false);await settle(c);expect(b.root.formCounter).toBe(1)})
+
+it('Back from ready closes the unarmed ticket before returning to the quiz, without using a form',async()=>{
+ const {c,b}=await setup();await ready(c)
+ const oldToken=c.inputToken(),oldTicket=b.root.currentTicketId
+ b.holdKind='exit'
+ const result=c.backToPreparation(oldToken,'instructions',()=>true)
+ await tick();expect(c.view().stage).toBe('checking');expect(b.root.currentTicketId).toBe(oldTicket)
+ expect(b.root.formCounter).toBe(0)
+ for(const deliver of b.held.splice(0))deliver()
+ expect(await result).toBe(true);expect(c.view().stage).toBe('instructions')
+ expect(b.root.currentTicketId).toBe(null);expect(b.root.formCounter).toBe(0)
+ expect(c.admit(oldToken,'arm')).toBe(false)
+})
+it('Back from a skipped guide returns to library, not an invented quiz visit',async()=>{
+ const {c,b}=await setup();await ready(c)
+ expect(await c.backToPreparation(c.inputToken(),'library',()=>true)).toBe(true)
+ expect(c.view().stage).toBe('library');expect(b.root.formCounter).toBe(0)
+})
+it('a cancelled Back cannot reopen preparation after its exit settles',async()=>{
+ const {c,b}=await setup();await ready(c);let current=true;b.holdKind='exit'
+ const result=c.backToPreparation(c.inputToken(),'instructions',()=>current)
+ await tick();current=false;for(const deliver of b.held.splice(0))deliver()
+ expect(await result).toBe(false);expect(c.view().stage).toBe('library');expect(b.root.formCounter).toBe(0)
+})
+it('Back never rewinds an armed exchange or changes its recorded choices',async()=>{
+ const {c,b}=await setup();await ready(c);await act(c,'arm')
+ const before=JSON.stringify(b.root)
+ expect(await c.backToPreparation(c.inputToken(),'instructions',()=>true)).toBe(false)
+ expect(JSON.stringify(b.root)).toBe(before);expect(c.view().stage).toBe('award_1')
+})

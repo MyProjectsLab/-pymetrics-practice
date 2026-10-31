@@ -78,6 +78,18 @@ export class Controller {
   }
   return this.admit(token,'arm',{input})?'started':'stale'
  }
+ async backToPreparation(token: object, destination: 'library' | 'instructions', isCurrent: () => boolean): Promise<boolean> {
+  if (!isCurrent() || token !== this.token || !['instructions','ready'].includes(this.stage) || this.busy || this.pendingExit || this.uncertain || this.authorityPending) return false
+  if (!this.admit(token, 'Close')) return false
+  const closingEpoch = this.epoch
+  await this.waitForStage('library')
+  if (!isCurrent() || !this.alive || this.epoch !== closingEpoch + 1 || this.view().stage !== 'library' || this.busy || this.pendingExit || this.uncertain) return false
+  if (destination === 'library') return true
+  const enteringEpoch = this.epoch
+  if (!this.admit(this.token, 'enter')) return false
+  await this.waitForStage('instructions')
+  return this.epoch === enteringEpoch + 1 && isCurrent() && this.alive && this.view().stage === 'instructions' && !this.busy && !this.pendingExit && !this.uncertain
+ }
  async openExactReport(attemptId:string){
   if(this.stage!=='library'||!this.known?.attempts[attemptId])throw Error('Exact Money Exchange 2 report unavailable')
   if(!this.admit(this.token,'history'))throw Error('Money Exchange 2 history could not open')

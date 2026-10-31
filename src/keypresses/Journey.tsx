@@ -1,3 +1,4 @@
+import { PreparationBack, usePreparationBack } from '../onboarding/PreparationBack'
 import { KeypressesLiveDisplay } from './LiveDisplay'
 import { KeypressesActionCue } from './ActionCue'
 import { QuickRules } from '../onboarding/QuickRules'
@@ -337,6 +338,10 @@ export function KeypressesJourney({ onLibrary, mock, reportTarget }: { onLibrary
       moveStep('guide')
     } catch { setError('Delete all could not be confirmed. Local data may remain.') }
   }
+  const preparationBack = usePreparationBack(step, ['guide', 'example', 'quiz', 'setup', 'ready'] as const, previous => {
+    if (beginPending.current || pendingSetup || run.current) return false
+    armEpoch.current++; preparation.current.capture = null; setCapturing(null); moveStep(previous)
+  })
   const finalState = snapshot.state && ['completed', 'invalid'].includes(snapshot.state.phase)
   useEffect(() => { if (step === 'run' && finalState) completedHeading.current?.focus() }, [step, finalState])
   const displayedState = step === 'saved_report' ? selected?.state : step === 'run' && finalState ? snapshot.state : null
@@ -466,5 +471,6 @@ export function KeypressesJourney({ onLibrary, mock, reportTarget }: { onLibrary
       <div className="actions"><button className="secondary" onClick={() => moveStep('guide')}>Back to Keypresses</button><button className="secondary" onClick={() => setConfirmDeleteAll(true)}>Delete all Keypresses data</button></div></section>}
     {step === 'saved_report' && selected && <section><h1 tabIndex={-1}>{reportUnavailable ? 'Keypresses result unavailable' : 'Saved Keypresses result'}</h1>{reportUnavailable ? <p role="alert">This saved result is no longer available or cannot be verified.</p> : results(selected.state,comparison)}
       <div className="actions">{reportTarget?<button onClick={onLibrary}>Return to mock</button>:<><button onClick={() => { setSelected(null); void loadHistory() }}>Back to history</button><button className="secondary" onClick={() => void remove(selected.sessionId)}>Delete this attempt</button></>}</div></section>}
+    <PreparationBack navigation={preparationBack} disabled={beginPending.current || mockChecking || !!pendingSetup || !!run.current} />
   </div></Shell>
 }

@@ -1,3 +1,4 @@
+import { PreparationBack, usePreparationBack } from '../onboarding/PreparationBack'
 import '../onboarding/simple-start.css'
 import { AssessmentUsageNotice } from '../assessment-usage/Notice'
 import { stopAnalytics } from '../analytics/client'
@@ -291,20 +292,19 @@ export function StopJourney({ recorder, mode = 'baseline', specificationVersion 
     } finally { verifyingStart.current = false }
   }
   const menuLabel = mock ? 'Return to mock' : 'Main menu'
-  function back() {
-    if (newExperience) retireNewAction()
-    if(step!=='guide' && step!=='new-guide')mock?.retireReturnIntent()
-    if (step === 'guide' || step === 'new-guide') onLibrary()
-    else if (step === 'reservation_expired') onRestart()
-    else if (step === 'rule' || step === 'review' || step === 'reminder') setStep('guide')
-    else if (step === 'touch_examples' || step === 'touch_session') moveNewStep(newExperience ? 'new-guide' : 'guide')
-    else if (step === 'readiness') moveNewStep(newExperience ? 'new-device' : 'device')
-    else if (step === 'new-question' || step === 'new-device') moveNewStep('new-guide')
-    else setStep('rule')
-  }
+  const preparationKey = step === 'new-question' ? `new-question:${newQuestion}` : step
+  const preparationBack = usePreparationBack(preparationKey,
+    ['guide', 'new-guide', 'new-question:go', 'new-question:no-go', 'new-device', 'reminder', 'rule', 'examples', 'comprehension', 'review', 'device', 'readiness', 'touch_examples'] as const,
+    previous => {
+      if (verifyingStart.current) return false
+      retireNewAction(); mock?.retireReturnIntent()
+      if (previous === 'new-question:go' || previous === 'new-question:no-go') {
+        setNewQuestion(previous === 'new-question:go' ? 'go' : 'no-go'); setNewAnswer(''); setNewFeedback(''); moveNewStep('new-question')
+      } else moveNewStep(previous)
+    })
   return <section className="journey" ref={content}>
     <div className="journey-top">
-      {step !== 'handoff' && step !== 'touch_session' && <button className="secondary" data-mock-return-intent={mock && (step === 'guide' || step === 'new-guide') ? "" : undefined} onClick={back}><span aria-hidden="true">← </span>{step === 'guide' || step === 'new-guide' ? menuLabel : 'Back'}</button>}
+      {(step === 'guide' || step === 'new-guide') && <button className="secondary" data-mock-return-intent={mock ? "" : undefined} onClick={onLibrary}><span aria-hidden="true">← </span>{menuLabel}</button>}
       <p>Stop · Practice</p>
     </div>
     <div className="panel">
@@ -346,7 +346,7 @@ export function StopJourney({ recorder, mode = 'baseline', specificationVersion 
       {(step === 'rule' || step === 'review') && <Rule review={step === 'review'} responseLabel={setup.binding.label}
         profile={setup.visualProfile} onNext={step === 'review' ? comprehension : examples} />}
       {step === 'examples' && <Examples recorder={recorder} binding={setup.binding} profile={setup.visualProfile}
-        held={input.held} onComplete={comprehension} />}
+        held={input.held} onBack={preparationBack.back} onComplete={comprehension} />}
       {step === 'touch_examples' && <TouchExamples onComplete={() => { if (newExperience) retireNewAction(); moveNewStep('touch_session') }} />}
       {step === 'touch_session' && <TouchSession onMenu={newExperience ? () => { retireNewAction(); moveNewStep('new-guide') } : onLibrary} />}
       {step === 'comprehension' && <Comprehension key={attempt} recorder={recorder} attempt={attempt} binding={setup.binding}
@@ -377,6 +377,7 @@ export function StopJourney({ recorder, mode = 'baseline', specificationVersion 
         onGuide={onRestart} onLibrary={onLibrary} onReplay={onReplay} onTraining={onTraining} onRetestResult={onRetestResult} onRetestInvalid={onRetestInvalid}
         mockReady={mockReady} mockError={mockError} onMockContinue={mock ? () => void mock.continue().catch(cause => setMockError(cause instanceof Error ? cause.message : 'Continue could not be confirmed.')) : undefined} />}
       {step !== 'handoff' && step !== 'touch_session' && step !== 'guide' && step !== 'new-guide' && <div className="actions"><button className="secondary" data-mock-return-intent={mock ? "" : undefined} onClick={onLibrary}>{menuLabel}</button></div>}
+      {step !== 'examples' && <PreparationBack navigation={preparationBack} disabled={verifyingStart.current} />}
       {(step === 'guide' || step === 'new-guide') && <AssessmentUsageNotice />}
     </div>
   </section>

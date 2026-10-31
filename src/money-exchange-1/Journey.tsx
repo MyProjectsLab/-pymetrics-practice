@@ -1,3 +1,4 @@
+import { PreparationBack, usePreparationBack } from '../onboarding/PreparationBack'
 import { mockMenuButtons } from '../onboarding/mockMenuButtons'
 import { QuickRules } from '../onboarding/QuickRules'
 import { feedbackLines, moneyOneFeedback } from '../reports/feedback'
@@ -222,6 +223,7 @@ export function MoneyExchangeJourney({ runtime, boundary, onLibrary, mock, repor
       buttons.splice(0,buttons.length,...mockMenuButtons(buttons,{label:'Return to mock',act:()=>void returnToMock()}))
       if(mock&&returnFailed&&!returnBusy)add('Leave with result unconfirmed',leaveMockUnconfirmed)
     }
+    if (preparationBack.canBack) add('Back', preparationBack.back, busy || !!runtime.state.pendingArm || runtime.state.run?.status === 'active' || runtime.state.settling)
     return {stage:screen,title:stepTitle(screen),lines,detailLines,buttons,amount:amountField,rating:ratingField,comprehension:comprehensionField,pair,result:art,
       onNavigate:(href:string,event:MouseEvent)=>{event.preventDefault();void close(undefined,href)},
       onViolation:()=>{
@@ -229,6 +231,10 @@ export function MoneyExchangeJourney({ runtime, boundary, onLibrary, mock, repor
         void runtime.withdraw('technical','protected_display_changed',runtime.state.exposure).catch(()=>undefined)
       }}
   }
+  const preparationBack = usePreparationBack(screen, ['guide', 'example', 'quiz', 'instructions', 'ready'] as const, previous => {
+    if (busy || runtime.state.pendingArm || runtime.state.run?.status === 'active' || runtime.state.settling) return false
+    competingChoice(); change(previous)
+  })
   function change(next:Screen) {navigationEpochRef.current++;screenRef.current=next;setScreen(next);if(next==='report')setDetailsOpen(false);setError(null);setReturnFailed(false) }
   function competingChoice(){mock?.retireReturnIntent()}
   function problem(reason:unknown) { setError(reason instanceof Error?reason.message:'Local state could not be verified.') }
@@ -511,6 +517,7 @@ export function MoneyExchangeJourney({ runtime, boundary, onLibrary, mock, repor
         <button className="secondary" disabled={!history.length&&!hasUnresolvedActive} onClick={()=>void removeAll()}>Delete all Money Exchange 1 data</button><button className="secondary" onClick={()=>void close()}>Library</button></div></>}
     {screen==='review' && <><p>The previous exchange has not been confirmed as complete. It cannot resume midway.</p>
       <button disabled={busy||runtime.state.settling} onClick={()=>void checkOutcome()}>Check saved outcome</button><button className="secondary" onClick={()=>void showHistory()}>Local history</button><button className="secondary" onClick={()=>void close()}>Library</button></>}
+    <PreparationBack navigation={preparationBack} disabled={busy || !!runtime.state.pendingArm || runtime.state.run?.status === 'active' || runtime.state.settling} />
     {(screen === 'guide' || screen === 'ready') && <AssessmentUsageNotice />}
   </section></Shell>
 }

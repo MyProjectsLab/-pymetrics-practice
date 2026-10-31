@@ -1,3 +1,4 @@
+import { PreparationBack, usePreparationBack } from '../onboarding/PreparationBack'
 import { QuickRules } from '../onboarding/QuickRules'
 import { ReportSummary } from '../reports/Summary'
 import { easyHardFeedback } from '../reports/feedback'
@@ -644,6 +645,10 @@ export function EasyHardJourney({ onLibrary, mock, reportTarget }: { onLibrary: 
   const taskAutomatic = preview === 'task' ? last?.automatic : taskEvent?.automatic
   const currentRow = report?.rows.at(-1)
   const remaining = Math.max(0, GAME_MS - now)
+  const preparationBack = usePreparationBack(step, ['guide', 'example', 'check', 'ready'] as const, previous => {
+    if (uncertainStart || ownerAbort.current || runRef.current) return false
+    mock?.retireReturnIntent(); moveIntroStep(previous)
+  })
   const activeChoice = step === 'play' &&
     ((surface === 'choice' || surface === 'checking' && selectedChoice !== null) && phase === 'choice' || preview === 'choice')
   const activeTask = step === 'play' &&
@@ -743,5 +748,6 @@ export function EasyHardJourney({ onLibrary, mock, reportTarget }: { onLibrary: 
         <button className="secondary" onClick={() => setConfirmAll(false)}>Cancel</button></div> :
         <button className="secondary" onClick={() => setConfirmAll(true)}>Delete all Easy or Hard data</button>}
       <button onClick={() => { setCurrent(null); setReport(null); moveIntroStep('guide') }}>Back to guide</button></section>}
+    <PreparationBack navigation={preparationBack} disabled={uncertainStart || !!ownerAbort.current || !!runRef.current} />
   </div></Shell>
 }

@@ -1,3 +1,4 @@
+import { PreparationBack, usePreparationBack } from '../onboarding/PreparationBack'
 import { QuickRules } from '../onboarding/QuickRules'
 import { AssessmentUsageNotice } from '../assessment-usage/Notice'
 import { useEffect, useEffectEvent, useRef, useState } from 'react'
@@ -309,6 +310,10 @@ export function BalloonsJourney({ onLibrary, mock, reportTarget, separateBaselin
     catch (e) { await refreshHistory(); setError(e instanceof Error ? e.message : 'Deletion failed'); restoreHistoryFocus.current = target; setDeletionStatus('Deletion could not be confirmed. Check the saved history before trying again.') }
     finally { completeChange() }
   }
+  const preparationBack = usePreparationBack(step, ['guide', 'demo', 'quiz', 'ready'] as const, previous => {
+    if (stepRef.current === 'run') return false
+    mock?.retireReturnIntent(); moveIntroStep(previous)
+  })
   const playRecord = playModes.includes(view.mode) && view.record && retainedPlay.current?.controller === controller.current && retainedPlay.current.record.header.identity.sessionId === view.record.header.identity.sessionId ? retainedPlay.current.record : null
   const c = (playRecord ?? view.record)?.snapshot.core, interactive = view.mode === 'playing' && playRecord === view.record && !controller.current?.hasPendingActions
   const roundNotice = controller.current?.atActionCapacity ? QUEUE_FULL_NOTICE : view.message === ROUND_CLOSED_NOTICE ? ROUND_CLOSED_NOTICE : ''
@@ -374,6 +379,7 @@ export function BalloonsJourney({ onLibrary, mock, reportTarget, separateBaselin
         <p>Delete all Balloons data clears results, chains and local sequence exposure. Earlier use can no longer be known; a future sequence may be one you have already seen.</p><button className="secondary" onClick={() => void deleteAll()}>Delete all Balloons data</button></>}
       <button onClick={() => replay()}>Practise again</button><button className="secondary" onClick={() => replay('new_baseline')}>Start a new training baseline</button><p>Uses a sequence not yet recorded as started in this browser.</p>
     </section>}</>}
+    <PreparationBack navigation={preparationBack} />
   </div></Shell>
 }
 function typeFor(record: DurableRecord): VisibleType { const c = record.snapshot.core; return (Object.keys(c.identity.mapping) as VisibleType[]).find(t => c.identity.mapping[t] === c.manifest.rounds[c.round - 1].profile)! }

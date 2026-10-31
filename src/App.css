@@ -139,3 +139,6 @@ button, .game-card-action { min-height:var(--ap-button-height); font-size:var(--
   font-size:var(--ap-font-option); line-height:var(--ap-line-height); cursor:pointer;
 }
 .panel input[type=radio] { width:var(--ap-radio-size); height:var(--ap-radio-size); flex:none; }
+
+/* Previous-screen navigation follows the preparation content, never the site header. */
+.preparation-back { max-width:var(--ap-panel-width); margin:24px auto 0; text-align:left; }

@@ -41,11 +41,19 @@ fieldset[data-money-stage^="choice_"]>:not(img){z-index:1}
 [data-decision-value]{position:absolute;top:40%;left:calc(50% - 110px);width:220px;padding:24px 0;border-radius:24px;background:#148568;color:white;font-size:32px;font-weight:650;z-index:1}
 [data-endpoints]{position:absolute;top:52%;left:34%;width:32%;display:flex;justify-content:space-between;font-weight:600}
 fieldset[data-money-stage^="choice_"] input[type=range]{position:absolute;top:56%;left:34%;width:32%;height:44px;margin:0;padding:0;accent-color:#148568}
-fieldset[data-money-stage^="choice_"] button[data-action="Restart"]{position:absolute;top:3%;right:150px}
-fieldset[data-money-stage^="choice_"] button[data-action="Close"]{position:absolute;top:3%;right:32px}
-fieldset[data-money-stage^="choice_"] button[data-action="Confirm"]{position:absolute;bottom:6%;right:6%;min-width:220px}
-@media(max-width:700px){fieldset[data-money-stage^="choice_"]{height:780px;min-height:780px;padding:90px 16px 110px}fieldset[data-money-stage^="choice_"] legend{top:16%;left:5%;width:90%;font-size:22px}fieldset[data-money-stage^="choice_"]>output:not([data-decision-value]):not([data-endpoints]):not([data-money-semantics]){top:22%;left:5%;width:90%;font-size:var(--ap-font-small)}fieldset[data-money-stage^="choice_"] img[data-money-pair]{top:27%;left:4%;width:92%}[data-decision-value]{top:61%;left:calc(50% - 80px);width:160px;padding:12px 0;font-size:24px}[data-endpoints]{top:71%;left:8%;width:84%;font-size:var(--ap-font-small)}fieldset[data-money-stage^="choice_"] input[type=range]{top:77%;left:8%;width:84%}[data-decision-label]{position:absolute;top:85%;left:4%;width:92%;margin:0;font-size:var(--ap-font-small)}fieldset[data-money-stage^="choice_"] button[data-action="Restart"]{top:0;right:110px}fieldset[data-money-stage^="choice_"] button[data-action="Close"]{top:0;right:8px}fieldset[data-money-stage^="choice_"] button[data-action="Confirm"]{bottom:0;right:16px;min-width:140px}}
 
+
+
+@media(max-width:700px){fieldset[data-money-stage^="choice_"]{height:780px;min-height:780px;padding:90px 16px 110px}fieldset[data-money-stage^="choice_"] legend{top:16%;left:5%;width:90%;font-size:22px}fieldset[data-money-stage^="choice_"]>output:not([data-decision-value]):not([data-endpoints]):not([data-money-semantics]){top:22%;left:5%;width:90%;font-size:var(--ap-font-small)}fieldset[data-money-stage^="choice_"] img[data-money-pair]{top:27%;left:4%;width:92%}[data-decision-value]{top:61%;left:calc(50% - 80px);width:160px;padding:12px 0;font-size:24px}[data-endpoints]{top:71%;left:8%;width:84%;font-size:var(--ap-font-small)}fieldset[data-money-stage^="choice_"] input[type=range]{top:77%;left:8%;width:84%}[data-decision-label]{position:absolute;top:85%;left:4%;width:92%;margin:0;font-size:var(--ap-font-small)}}
+
+[data-money-actions]{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:24px}
+fieldset[data-money-stage^="choice_"] [data-money-actions]{position:absolute;bottom:24px;left:32px;right:32px;justify-content:flex-end}
+[data-money-actions] button{margin:0}
+[data-money-actions] button.quiet-action{min-width:0;padding:8px 12px;border-radius:0}
+[data-money-actions] button[aria-pressed]{font-weight:500;text-decoration:none}
+[data-money-actions] button[aria-pressed="true"]{color:#14213d;text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:8px}
+
+@media(max-width:700px){fieldset[data-money-stage^="choice_"]{margin-bottom:180px}fieldset[data-money-stage^="choice_"] [data-money-actions]{top:100%;bottom:auto;left:0;right:0;justify-content:flex-start;padding-top:24px}fieldset[data-money-stage^="choice_"] [data-money-actions] button:first-child{width:100%}}
 :host, fieldset[data-money-stage] { font-size:var(--ap-font-body); line-height:var(--ap-line-height); }
 fieldset[data-money-stage] { max-width:var(--ap-panel-width); }
 button { min-height:var(--ap-button-height); font-size:var(--ap-font-button); }
@@ -65,7 +73,7 @@ export type ProtectedView = {
   onViolation: () => void
   onNavigate?: () => void
   lines: readonly string[]
-  buttons: readonly { label: string; act: (event:MouseEvent) => void; disabled?: boolean; expanded?: boolean }[]
+  buttons: readonly { label: string; act: (event:MouseEvent) => void; disabled?: boolean; expanded?: boolean; selected?: boolean }[]
   cards?: readonly {label:string;value:string;detail:string}[]
   pairFirst?:boolean
   announceResult?:boolean
@@ -266,15 +274,18 @@ export class OwnedDocument {
         node instanceof HTMLInputElement && node.checked===(Number(node.value)===view.rating?.current()))) &&
       (!view.comprehension || [...this.#protectedSurface.querySelectorAll('input[name="money-comprehension"]')].every(node=>
         node instanceof HTMLInputElement && node.checked===(node.value===view.comprehension?.current())))
+    const actionRegion=document.createElement('div');actionRegion.setAttribute('data-money-actions','')
     for (const action of view.buttons) {
-      const button=document.createElement('button');button.type='button';button.disabled=!!action.disabled; if(action!==view.buttons[0])button.className='quiet-action'
+      const button=document.createElement('button');button.type='button';button.disabled=!!action.disabled; if(action!==view.buttons[0] || action.selected!==undefined)button.className='quiet-action'
+      if(action.selected!==undefined)button.setAttribute('aria-pressed',String(action.selected))
       if(action.expanded!==undefined)button.setAttribute('aria-expanded',String(action.expanded))
       button.setAttribute('data-action',action.label);button.append(document.createTextNode(action.label));button.addEventListener('click',(event)=>{
         if(eventEpoch!==this.#renderEpoch)return
         if (!this.checkProtected(view.stage) || !controlsMatch()) { this.recover(); view.onViolation(); return }
         action.act(event)
-      });made.push(button)
+      });actionRegion.append(button)
     }
+    made.push(actionRegion)
     const privacyLines = made.filter(node => node instanceof HTMLOutputElement && /Privacy/.test(node.textContent ?? ''))
     for (const node of privacyLines) { (node as HTMLElement).classList.add('assessment-usage-notice'); made.splice(made.indexOf(node), 1); made.push(node) }
     const records: UiNode[]=[]

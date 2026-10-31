@@ -994,7 +994,6 @@ export function ArrowsJourney({ onLibrary, exclusive, mock, reportTarget }: { on
   return <Shell onLibrary={mock?returnToMock:leave}>
     <div ref={journey} className="journey arrows-journey">
       <div className="journey-top"><button className="secondary" onClick={mock?returnToMock:leave}><span aria-hidden="true">← </span>{mock?'Return to mock':'Main menu'}</button><p>Arrows · Practice</p></div>
-      {!preparationStarted.current&&!starting&&!startUncertain&&!uncertainStart.current&&isPreparationStep(step)&&(preparationBack.current.length>0||step==='examples'&&example>0)&&<button className="secondary" onClick={backPreparation}>Back</button>}
       {error && <p role="alert" className="feedback">{error}</p>}
       {mockError && step!=='report' && <p role="alert" className="feedback">{mockError} <button onClick={()=>leaveMockUnconfirmed()}>Leave with result unconfirmed</button></p>}
       {storageError && <p role="alert">{storageError} Timed play requires verified local storage.</p>}
@@ -1133,6 +1132,7 @@ export function ArrowsJourney({ onLibrary, exclusive, mock, reportTarget }: { on
         {deleteAllConfirm ? <div role="group" aria-label="Confirm Arrows deletion"><p>This permanently deletes all local Arrows attempts, results, events and form history in this browser. It cannot be undone. Other games are unaffected.</p>
           <button onClick={() => void deleteAll()}>Delete all Arrows data</button><button className="secondary" onClick={() => setDeleteAllConfirm(false)}>Cancel</button></div> : <button className="secondary" onClick={() => setDeleteAllConfirm(true)}>Delete all Arrows data</button>}
         <div className="actions"><button onClick={replay}>Start a new practice</button><button className="secondary" onClick={mock?returnToMock:leave}>{mock?'Return to mock':'Main menu'}</button></div></section>}
+      {!preparationStarted.current&&!starting&&!startUncertain&&!uncertainStart.current&&isPreparationStep(step)&&(preparationBack.current.length>0||step==='examples'&&example>0)&&<div className="preparation-back"><button className="secondary" onClick={backPreparation}><span aria-hidden="true">← </span>Back</button></div>}
     </div>
   </Shell>
 }

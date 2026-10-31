@@ -1,3 +1,4 @@
+import { PreparationBack, usePreparationBack } from '../onboarding/PreparationBack'
 import { QuickRules } from '../onboarding/QuickRules'
 import '../reports/summary.css'
 import { cardsFeedback } from '../reports/feedback'
@@ -225,6 +226,10 @@ export function CardsJourney({ onLibrary, mock, reportTarget }: { onLibrary: () 
     if (next === 'guide') entryClosed.current = false
     setError(''); setPendingLabel(''); setReport(null); setStep(next)
   }
+  const preparationBack = usePreparationBack(step, ['guide', 'example', 'quiz', 'preflight', 'ready'] as const, previous => {
+    if (busy.current || pendingReady.current || pendingStart.current || ownerAbort.current) return false
+    newStep(previous)
+  })
   function library() { newStep('guide',true); onLibrary() }
   useEffect(() => {
     let active = true
@@ -704,5 +709,6 @@ export function CardsJourney({ onLibrary, mock, reportTarget }: { onLibrary: () 
         <button className="secondary" onClick={() => setConfirmAll(false)}>Cancel</button></p> :
         <button className="secondary" onClick={() => setConfirmAll(true)}>Delete all Cards data</button>}
       <button onClick={() => newStep('guide')}>Practice again</button></div>}
+    <PreparationBack navigation={preparationBack} disabled={busy.current || !!pendingReady.current || !!pendingStart.current || !!ownerAbort.current} />
   </section></Shell>
 }

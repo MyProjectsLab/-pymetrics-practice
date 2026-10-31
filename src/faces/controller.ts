@@ -1,3 +1,4 @@
+import { PreparationTrail } from '../onboarding/PreparationTrail'
 import { feedbackLines, facesFeedback } from '../reports/feedback'
 import { Attempt as UsageAttempt } from '../assessment-usage/client'
 import {BANK_HASH,CHECK,CURRENT,EVENT,FEEDBACK,FORM_HASH,FORM_ID,GUIDE,HELP,ITEMS,LABELS,LEGACY,REPORT_PRESENTATION,SCORING,completedGuidePayload,completedGuideSource,currentGuideCompletion,identityForAttempt,invariant,limitUs,management,newId,seal} from './model'
@@ -57,6 +58,7 @@ export class FacesApp {
  private active:Active|null=null
  private clockDocumentId=newId()
  private selectedMode:Mode='standard-v1'
+ private preparationTrail = new PreparationTrail(['instructions', 'guide', 'check', 'ready'] as const)
  private screen='loading'
  private viewEpoch=0
  private viewClaim=0
@@ -91,7 +93,14 @@ export class FacesApp {
    case 'answer':{const a=this.active;if(a&&a.attemptId===action.id&&a.item===action.index)void this.answer(a,action.choice!,event);break}
   }
  }
- private beginView(screen:string){if(screen!=='mock_return_check'&&screen!=='leaving')this.mock?.retireReturnIntent();if(this.exitJob&&screen!=='settling'){const job=this.exitJob;job.retired=true;this.exitJob=null;this.finishExitOwner(job)}this.viewClaim++;this.screen=screen;this.personal=null;this.personalOrigin=null;this.stage.owner=this.active?.attemptId??null;return this.viewClaim}
+ private beginView(screen:string){this.preparationTrail.enter(screen);if(screen!=='mock_return_check'&&screen!=='leaving')this.mock?.retireReturnIntent();if(this.exitJob&&screen!=='settling'){const job=this.exitJob;job.retired=true;this.exitJob=null;this.finishExitOwner(job)}this.viewClaim++;this.screen=screen;this.personal=null;this.personalOrigin=null;this.stage.owner=this.active?.attemptId??null;return this.viewClaim}
+ private preparationBack(){
+  if (this.active || !['instructions', 'guide', 'check', 'ready'].includes(this.screen)) return
+  const previous = this.preparationTrail.back()
+  if (previous === 'instructions') this.instructions()
+  else if (previous === 'guide') this.guide()
+  else if (previous === 'check') this.check()
+ }
  private current(claim:number){return claim===this.viewClaim}
  private navigateAway(){this.beginView('leaving');this.mock?.leave();location.assign(this.mockId?mockReturnUrl(this.mockId):lib())}
  private leave(){this.usage.cancel();this.returnToMock()}
@@ -287,7 +296,7 @@ export class FacesApp {
    for(const [mode,label] of [['standard-v1','Standard · story 30 seconds; picture only 7 seconds'],['extended-v1','Extended · story 60 seconds; picture only 14 seconds (modified form)']] as const){const line=document.createElement('label'),radio=document.createElement('input');radio.type='radio';radio.name='faces-mode';radio.value=mode;radio.checked=this.selectedMode===mode;this.stage.on(radio,'change',()=>{this.viewClaim++;this.selectedMode=mode;this.completedSourceId=null;void this.refresh()});line.append(radio,document.createTextNode(` ${label}`));field.append(line)}mount.append(field,text('p','Extended timing is recorded separately. The photographic task has no equivalent nonvisual substitute.','muted'))
   },actions:[{label:'Continue',run:()=>this.check()},...(this.completedSourceId&&!this.ownerUnavailable?[{label:'Skip instructions',run:()=>void this.skipGuide()}]:[]),{label:'See an example',secondary:true,run:()=>this.guide()},{label:'Saved results',secondary:true,run:()=>void this.history()},{label:this.mock||this.reportTarget?'Return to mock':'Main menu',secondary:true,run:()=>this.leave()}]})
  }
- private guide(){this.beginView('guide');this.stage.render({title:'How this practice works',paragraphs:['Eight situation-and-photo items come first. Six photo-only items follow. The labels stay in the same order on every item.','Standard: 30 seconds with a story, or 7 seconds for a picture only. Extended: 60 seconds with a story, or 14 seconds for a picture only. After the limit, the stimulus disappears, but a late answer still counts toward matching and advances. There is no correctness feedback during play.',GUIDE_DISCLOSURE,'What this kind of task is generally designed to observe: interpreting picture cues and short situations. A face alone cannot prove an emotion. This original practice does not predict a hiring outcome.'],content:mount=>{const card=document.createElement('section');card.className='card';card.append(text('h2','Untimed example'),text('p','After several failed attempts, Robin checks the instructions and tries again carefully.'),text('p','Practice answer: Determination. Robin keeps working after setbacks and changes the approach. That continuing effort is the clue.'));mount.append(card)},actions:[{label:'Check understanding',run:()=>this.check()},{label:'Instructions',secondary:true,run:()=>this.instructions()}]})}
+ private guide(){this.beginView('guide');this.stage.render({title:'How this practice works',paragraphs:['Eight situation-and-photo items come first. Six photo-only items follow. The labels stay in the same order on every item.','Standard: 30 seconds with a story, or 7 seconds for a picture only. Extended: 60 seconds with a story, or 14 seconds for a picture only. After the limit, the stimulus disappears, but a late answer still counts toward matching and advances. There is no correctness feedback during play.',GUIDE_DISCLOSURE,'What this kind of task is generally designed to observe: interpreting picture cues and short situations. A face alone cannot prove an emotion. This original practice does not predict a hiring outcome.'],content:mount=>{const card=document.createElement('section');card.className='card';card.append(text('h2','Untimed example'),text('p','After several failed attempts, Robin checks the instructions and tries again carefully.'),text('p','Practice answer: Determination. Robin keeps working after setbacks and changes the approach. That continuing effort is the clue.'));mount.append(card)},actions:[{label:'Check understanding',run:()=>this.check()},{label:'Back',secondary:true,run:()=>this.preparationBack()}]})}
  private check(){
   this.beginView('check')
   const questions=[
@@ -297,7 +306,7 @@ export class FacesApp {
   this.stage.render({title:'Check understanding',paragraphs:['Choose the answer that gets both rules right. A wrong answer can be reviewed and retried.'],content:mount=>{
    for(let i=0;i<questions.length;i++){const [prompt,options]=questions[i],field=document.createElement('fieldset');field.append(text('legend',prompt));for(const option of options){const line=document.createElement('label'),radio=document.createElement('input');radio.type='radio';radio.name=`check-${i}`;radio.value=option;this.stage.on(radio,'change',()=>selected.set(i,option));line.append(radio,document.createTextNode(` ${option}`));field.append(line)}mount.append(field)}mount.append(feedback)
    const go=this.control('Check answers',()=>{const wrong=questions.findIndex((q,i)=>selected.get(i)!==q[2]);if(wrong>=0){this.stage.updateText(feedback,`Review question ${wrong+1}: ${questions[wrong][2]}. Try again.`);return}void this.finishGuide()});mount.append(go)
-  },actions:[{label:'Back to guide',secondary:true,run:()=>this.guide()}]})
+  },actions:[{label:'Back',secondary:true,run:()=>this.preparationBack()}]})
  }
  private async finishGuide(){
   if(this.screen!=='check'||!this.identity)return
@@ -320,7 +329,7 @@ export class FacesApp {
    if(this.current(claim))this.error(e,true)
   }}
  }
- private ready(){if(!this.guidePassed)return this.guide();this.beginView('ready');this.stage.render({title:'Ready',paragraphs:[`Mode: ${this.selectedMode==='standard-v1'?'Standard: story 30 seconds; picture only 7 seconds':'Extended: story 60 seconds; picture only 14 seconds'}. Fourteen items, one choice per item.`,'The next action starts the first timed item. No answer feedback appears during play.','We collect completion counts and a total matched-answer count. Detailed answers stay in this browser. See Privacy at traitgame.com/privacy.html.'],actions:[{label:'Start',run:()=>void this.start()},{label:'Restart Instructions',secondary:true,run:()=>this.instructions()},{label:'Close',secondary:true,run:()=>this.leave()}]})}
+ private ready(){if(!this.guidePassed)return this.guide();this.beginView('ready');this.stage.render({title:'Ready',paragraphs:[`Mode: ${this.selectedMode==='standard-v1'?'Standard: story 30 seconds; picture only 7 seconds':'Extended: story 60 seconds; picture only 14 seconds'}. Fourteen items, one choice per item.`,'The next action starts the first timed item. No answer feedback appears during play.','We collect completion counts and a total matched-answer count. Detailed answers stay in this browser. See Privacy at traitgame.com/privacy.html.'],actions:[{label:'Start',run:()=>void this.start()},{label:'Back',secondary:true,run:()=>this.preparationBack()},{label:'Close',secondary:true,run:()=>this.leave()}]})}
  private async start(){
   if(this.screen!=='ready'||this.retired)return
   this.usage.begin(this.mock?'mock':'practice')

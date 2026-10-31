@@ -1,3 +1,4 @@
+import { PreparationTrail } from '../onboarding/PreparationTrail'
 import { mockMenuButtons } from '../onboarding/mockMenuButtons'
 import { moneyTwoFeedback } from '../reports/feedback'
 import { Controller } from './controller'
@@ -10,6 +11,8 @@ import { dedicatedHint, claimDedicated, mockReturnUrl } from '../mock/dedicated'
 import {monitorReportTarget,reportHint,verifiedReportTarget} from '../mock/report-route'
 
 const controller=new Controller()
+const preparationTrail = new PreparationTrail(['library', 'instructions:0', 'instructions:1', 'instructions:2', 'ready'] as const)
+let preparationSkipping = false, preparationReturning = false, restoreGuidePart: number | null = null
 let mockHint:ReturnType<typeof dedicatedHint>=null,report:ReturnType<typeof reportHint>=null,routeInvalid=false
 try{mockHint=dedicatedHint();report=reportHint();if(mockHint&&report)throw Error('Conflicting mock routes')}catch{routeInvalid=true}
 const boundary=new OwnedDocument();boundary.enterProtected()
@@ -36,12 +39,14 @@ function fault(){if(quarantined)return;quarantined=true;controller.lifecycle('di
 function render(){
  if(quarantined)return;
  const view=controller.view(),token=controller.inputToken(),stage=view.stage,attempt=view.attempt;
- if(stage!==lastStage){cents=0;rating=null;lastStage=stage;tips=false;page=0;detailedNumbers=false;if(stage==='instructions')guidePart=2;}
+ if(stage!==lastStage){cents=0;rating=null;lastStage=stage;tips=false;page=0;detailedNumbers=false;if(stage==='instructions'){guidePart=restoreGuidePart??2;restoreGuidePart=null;}}
+ if(stage==='ready')preparationSkipping=false;
+ if (!preparationReturning && !preparationSkipping) preparationTrail.enter(stage === 'instructions' ? `instructions:${guidePart}` : stage === 'checking' ? 'pending' : stage);
  const title:Record<string,string>={library:'Money Exchange 2',instructions:'Two rounds, two partners',ready:'Ready?',loading:'Opening local practice',unavailable:'Practice is unavailable',checking:'Checking your saved state',new_partner:'Meet a different partner',test_complete:'Test Complete',history:'Local Money Exchange 2 history',review:'Saved exchange review',report:'Your two-round report'};
  const index=stage.endsWith('_2')?1:0,round=attempt?.rounds[index];
  let heading=title[stage]??`Round ${index+1}`;
  const lines:string[]=[],buttons:ProtectedView['buttons'][number][]=[];
- const add=(label:string,act:(event:MouseEvent)=>void,disabled=false,sameReturnIntent=false,expanded?:boolean)=>buttons.push({label,act:event=>{guideChoiceEpoch++;if(!sameReturnIntent){controller.mockContext?.retireReturnIntent();returnError=false}act(event)},disabled,expanded});
+ const add=(label:string,act:(event:MouseEvent)=>void,disabled=false,sameReturnIntent=false,expanded?:boolean,selected?:boolean)=>buttons.push({label,act:event=>{guideChoiceEpoch++;preparationSkipping=false;if(!sameReturnIntent){controller.mockContext?.retireReturnIntent();returnError=false}act(event)},disabled,expanded,selected});
  const admit=(kind:string,data={})=>(event:MouseEvent)=>{controller.mockContext?.retireReturnIntent();returnError=false;controller.admit(token,kind,{...data,input:event.detail===0?'keyboard or assistive activation':'pointer activation'})};
  const spec:ProtectedView={stage,title:heading,lines,buttons,onViolation:fault,onNavigate:()=>{guideChoiceEpoch++;controller.mockContext?.retireReturnIntent();controller.lifecycle('pagehide')}};
  if(stage==='loading')lines.push('Checking local storage and play ownership…');
@@ -52,7 +57,7 @@ function render(){
   lines.push('Two untimed rounds, with a different simulated partner in each.','Both people start with $5; one receives an extra $5 and chooses an allocation.','Round 1: Give up to $5. Round 2: Give or Take up to $5, in 50-cent steps. Then rate fairness from 0 to 10.','There is no correct amount or fairness rating. Partner choices are scripted. Results stay in this browser; see Privacy.');
   if(guideFeedback)lines.push(guideFeedback)
   add('Next',event=>{guidePart=2;admit('enter')(event)},view.busy);
-  if(view.root&&Object.values(view.root.attempts).some(a=>!view.root!.tombstones[a.id]&&validCompleted(a)))add('Skip guide using a completed saved run',()=>{const choice=guideChoiceEpoch,current=()=>choice===guideChoiceEpoch;void controller.skipGuideWithCompleted(current).then(ok=>{if(!ok&&current()&&controller.view().stage==='library'){guideFeedback='A completed saved run could not be confirmed. Check the rule to continue.';render()}}).catch(()=>{if(current()&&controller.view().stage==='library'){guideFeedback='A completed saved run could not be confirmed. Check the rule to continue.';render()}})},view.busy);
+  if(view.root&&Object.values(view.root.attempts).some(a=>!view.root!.tombstones[a.id]&&validCompleted(a)))add('Skip guide using a completed saved run',()=>{preparationSkipping=true;const choice=guideChoiceEpoch,current=()=>choice===guideChoiceEpoch;void controller.skipGuideWithCompleted(current).then(ok=>{if(!ok&&current()){preparationSkipping=false;guideFeedback='A completed saved run could not be confirmed. Check the rule to continue.';render()}}).catch(()=>{if(current()){preparationSkipping=false;guideFeedback='A completed saved run could not be confirmed. Check the rule to continue.';render()}})},view.busy);
   add('Saved results',admit('history'),view.busy);add('Main menu',back,view.busy);
  }else if(stage==='instructions'){
   if(guidePart===0){lines.push('Each round starts with $5.00 for you and $5.00 for a different simulated partner. One person receives an extra $5.00.','The person who receives the bonus chooses: Give $0.00–$5.00 in round 1; Give or Take up to $5.00 in round 2, in $0.50 steps.','Example: if you have $10.00 and Give $2.00, you keep $8.00 and the partner has $7.00.','After each allocation, choose a fairness rating from 0 (not fair) to 10 (very fair). There is no right fairness answer. Partner choices here are scripted practice choices.');add('See an example',()=>{guidePart=1;render()});}
@@ -93,7 +98,15 @@ function render(){
    if(selected.bonusRecipient==='partner')lines.push('This partner decision is fixed original practice data.');
   }else{lines.push(`${confirmed.length} round(s) completed. No complete two-round report.`);for(const [i,r] of attempt.rounds.entries()){if(r.decision)lines.push(`Round ${i+1} committed ${action(r.decision.signedGiveCents)}: you ${money(r.decision.candidateFinalCents)}, ${r.partner} ${money(r.decision.partnerFinalCents)}. ${r.exposure==='render_receipt'?'The allocation display was confirmed.':'The result may have been revealed; no confirmed render receipt.'} ${r.fairness===null?'Fairness not submitted.':`Fairness ${r.fairness}/10.`}`)}}
   if(attempt.status==='Incomplete'&&selected.terminal&&!tips){for(const [i,r] of attempt.rounds.entries()){if(!r.terminal&&r.decision)lines.push(`Round ${i+1} committed ${action(r.decision.signedGiveCents)}: you ${money(r.decision.candidateFinalCents)}, ${r.partner} ${money(r.decision.partnerFinalCents)}. ${r.exposure==='render_receipt'?'The allocation display was confirmed.':'The result may have been revealed; no confirmed render receipt.'} Fairness not submitted.`)}}
-   if(attempt.status==='Completed'&&!tips){add('Detailed numbers',()=>reviewNavigate(()=>{detailedNumbers=!detailedNumbers}),view.busy,false,detailedNumbers);add('Previous page',()=>reviewNavigate(()=>{page=0}),page===0);add('Next page',()=>reviewNavigate(()=>{page=1}),page===1);add('Page 1',()=>reviewNavigate(()=>{page=0}));add('Page 2',()=>reviewNavigate(()=>{page=1}));add('How the amounts were calculated',()=>reviewNavigate(()=>{tips=true}));if(report)add('Back to mock',back);else if(controller.mockContext){add('Continue full mock',()=>returnFromOwned(stage),view.busy,true);add('Try Again',admit('tryAgain',{attemptId:attempt.id}),view.busy)}else add('Try Again',admit(stage==='review'?'reviewReplay':'tryAgain',{attemptId:attempt.id}),view.busy)}
+   if(attempt.status==='Completed'&&!tips){
+    if(controller.mockContext&&!report){add('Continue full mock',()=>returnFromOwned(stage),view.busy,true);add('Try again',admit('tryAgain',{attemptId:attempt.id}),view.busy)}
+    else if(!report)add('Try again',admit(stage==='review'?'reviewReplay':'tryAgain',{attemptId:attempt.id}),view.busy)
+    add('Round 1',()=>reviewNavigate(()=>{page=0}),view.busy,false,undefined,page===0)
+    add('Round 2',()=>reviewNavigate(()=>{page=1}),view.busy,false,undefined,page===1)
+    add('Details',()=>reviewNavigate(()=>{detailedNumbers=!detailedNumbers}),view.busy,false,detailedNumbers)
+    if(detailedNumbers)add('How the amounts were calculated',()=>reviewNavigate(()=>{tips=true}),view.busy)
+    if(report)add('Back to mock',back)
+   }
   lines.push('These original forms are not calibrated or equivalent to an employer assessment.');
   if(report&&attempt.status!=='Completed')add('Back to mock',back)
   if(stage==='review'&&!report)add('Back to history',admit('historyBack',{destination:'history'}),view.busy);
@@ -120,8 +133,20 @@ function render(){
  if(returnError){lines.push('Return could not be confirmed. The saved status is still unconfirmed.');add('Leave with result unconfirmed',back)}
  if(!report&&!['loading','unavailable','library','history','review'].includes(stage)){
   if(!['instructions','test_complete','report','checking'].includes(stage))add('Restart',admit('Restart'));
-  if(!view.pendingExit||view.pendingExit==='Restart')add('Close',admit('Close'));
+  if(!view.pendingExit||view.pendingExit==='Restart')add(stage==='report'?'Main menu':'Close',admit('Close'));
  }
+ if (!report && preparationTrail.canBack && ['library','instructions','ready'].includes(stage)) add('Back', () => {
+  if (preparationReturning || view.busy || view.uncertain || view.pendingExit || view.authorityPending) return
+  const previous = preparationTrail.back()
+  if (!previous) return
+  if (stage === 'instructions' && previous.startsWith('instructions:')) {guidePart=Number(previous.split(':')[1]);render();return}
+  const choice=guideChoiceEpoch, current=()=>choice===guideChoiceEpoch
+  restoreGuidePart=previous.startsWith('instructions:')?Number(previous.split(':')[1]):null
+  preparationReturning=true
+  void controller.backToPreparation(token, previous==='library'?'library':'instructions', current).then(ok=>{
+   if (!ok && current()) guideFeedback='The previous screen could not be confirmed. Check the current saved state before continuing.'
+  }).catch(()=>{if(current())guideFeedback='The previous screen could not be confirmed. Retry the saved operation.'}).finally(()=>{preparationReturning=false;restoreGuidePart=null;if(current())render()})
+ }, view.busy || view.uncertain || !!view.pendingExit || view.authorityPending || preparationReturning)
  if(mockHint||report){
  buttons.splice(0,buttons.length,...mockMenuButtons(buttons,{label:'Return to mock',act:()=>returnFromOwned(stage)}))}
  spec.title=heading;

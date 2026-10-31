@@ -1,3 +1,4 @@
+import { PreparationBack, usePreparationBack } from '../onboarding/PreparationBack'
 import { QuickRules } from '../onboarding/QuickRules'
 import '../reports/summary.css'
 import { digitsFeedback } from '../reports/feedback'
@@ -278,6 +279,10 @@ export function DigitsJourney({ onLibrary, mock, reportTarget }: { onLibrary: ()
     return ticket
   }
   function go(next: Screen) { begin('prepare', next) }
+  const preparationBack = usePreparationBack(screen, ['guide', 'examples', 'quiz', 'setup', 'ready'] as const, previous => {
+    if (starting || startInFlight.current || pendingArm.current) return false
+    go(previous)
+  })
   function changedSetup() {
     const ticket = navigation.current.begin('prepare', storeRef.current)
     voiceWork.current++
@@ -987,5 +992,6 @@ export function DigitsJourney({ onLibrary, mock, reportTarget }: { onLibrary: ()
       </li>)}</ul>}
       <button className="secondary" onClick={() => void deleteAll()}>Delete all Digits data</button>
       <button onClick={replay}>Practice again</button></section>}
+    <PreparationBack navigation={preparationBack} disabled={starting || pendingStart || !!pendingArm.current || !!startInFlight.current} />
   </div></Shell>
 }
