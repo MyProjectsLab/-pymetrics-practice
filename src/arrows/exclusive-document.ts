@@ -1,8 +1,9 @@
+import { containsInOrder, outerAttributes, outsideOccludes } from '../core/ownedDocumentOuter'
 import sizeTokens from '../design/tokens.css?inline'
 import { loadGameFonts } from '../design/gameFonts'
 /** A deliberately tiny author-owned document. Closed mode is encapsulation;
  * topology/identity, not absence inferred from shadowRoot, is the admission rule. */
-const PROTECTED_CSS = `${sizeTokens}
+const PROTECTED_CSS = `${sizeTokens.replace(/(--ap-[\w-]+\s*:\s*[^;{}]+);/g, '$1 !important;')}
 
 :host { all: initial; display: block; margin: 0; background: #fff; color: #172d30; font: 16px system-ui; direction: ltr; writing-mode: horizontal-tb; }
 fieldset { all: initial; display: grid; place-items: center; box-sizing: border-box; width: 420px; min-height: 240px; margin: 24px auto; padding: 32px; border: 2px solid #587568; border-radius: 8px; background: #fff; direction: ltr; writing-mode: horizontal-tb; }
@@ -82,34 +83,34 @@ export class ExclusiveArrowsDocument implements ArrowsDocumentBoundary {
     this.#root.append(this.#uiStyle, this.#ui)
     this.#html.append(this.#head, this.#body)
     document.replaceChild(this.#html, document.documentElement)
-    for (const node of [this.#head, this.#body, this.#charset, this.#viewport, this.#title, this.#host, this.#exit]) this.#attributes.set(node, attrs(node))
+    for (const node of [this.#head, this.#body, this.#charset, this.#viewport, this.#title, this.#host, this.#exit]) this.#attributes.set(node, node === this.#body || node === this.#head ? outerAttributes(node) : attrs(node))
     this.#uiSheet = sheetRecord(this.#uiStyle, this.#uiCss)
   }
   get uiMount(): HTMLElement { return this.#ui }
   get presentationHost(): HTMLElement { return this.#host }
   get active(): boolean { return this.#active }
   #admittedZoom(): string | null {
-    if (this.#html.lang !== 'en' || [...this.#html.attributes].some(a => !['lang', 'style'].includes(a.name))) return null
+    if (this.#html.lang !== 'en' || [...this.#html.attributes].some(a => !['lang', 'style', 'class'].includes(a.name) && !a.name.startsWith('data-'))) return null
     if (!this.#html.hasAttribute('style')) return ''
     const style = this.#html.style, value = style.getPropertyValue('zoom')
     return style.length === 1 && style.item(0) === 'zoom' && /^\d+(?:\.\d+)?$/.test(value) && Number(value) >= .25 && Number(value) <= 4 && !style.getPropertyPriority('zoom') ? value : null
   }
   #documentIntact(): boolean {
     return document.documentElement === this.#html && document.head === this.#head && document.body === this.#body &&
-      children(document, [this.#doctype!, this.#html]) && children(this.#html, [this.#head, this.#body]) &&
-      children(this.#head, [this.#charset, this.#viewport, this.#title]) && children(this.#title, [this.#titleText]) &&
+      containsInOrder(document, [this.#doctype!, this.#html]) && containsInOrder(this.#html, [this.#head, this.#body]) &&
+      containsInOrder(this.#head, [this.#charset, this.#viewport, this.#title]) && children(this.#title, [this.#titleText]) &&
       this.#titleText.data === 'Arrows — TraitGame' && this.#charset.childNodes.length === 0 && this.#viewport.childNodes.length === 0 &&
-      this.#body.childNodes.length === 0 && this.#body.isConnected && this.#root.host === this.#body && this.#root.mode === 'closed' && this.#body.shadowRoot === null &&
-      document.styleSheets.length === 0 && document.adoptedStyleSheets.length === 0 && this.#root.adoptedStyleSheets.length === 0 &&
+      this.#body.isConnected && this.#root.host === this.#body && this.#root.mode === 'closed' && this.#body.shadowRoot === null &&
+      this.#root.adoptedStyleSheets.length === 0 &&
       document.fullscreenElement === null &&
       [this.#html, ...this.#attributes.keys(), this.#uiStyle, this.#protectedStyle].every(node => node.getAnimations().length === 0) &&
-      [...this.#attributes].every(([node, value]) => attrs(node) === value) && children(this.#exit, [this.#exitText]) && this.#exitText.data === this.#exitLabel
+      [...this.#attributes].every(([node, value]) => (node === this.#body || node === this.#head ? outerAttributes(node) : attrs(node)) === value) && children(this.#exit, [this.#exitText]) && this.#exitText.data === this.#exitLabel
   }
   enter(onExit: () => void): void {
     const zoom = this.#admittedZoom()
     if (this.#quarantined || this.#active || zoom === null || !this.#documentIntact() || !children(this.#root, [this.#uiStyle, this.#ui]) || !sheetIntact(this.#uiSheet) || this.#protectedStyle.textContent !== PROTECTED_CSS || this.#protectedStyle.attributes.length !== 0)
       { this.#recover(); throw Error('The Arrows document changed. Reload this page and complete setup again before starting.') }
-    this.#htmlAttrs = attrs(this.#html)
+    this.#htmlAttrs = outerAttributes(this.#html)
     this.#zoom = zoom; this.#exitAction = onExit
     this.#root.replaceChildren(this.#protectedStyle, this.#exit, this.#host)
     this.#protectedSheet = sheetRecord(this.#protectedStyle, PROTECTED_CSS)
@@ -119,7 +120,7 @@ export class ExclusiveArrowsDocument implements ArrowsDocumentBoundary {
   leave(): void {
     if (!this.#active) return
     this.#active = false; this.#exitAction = null
-    if (this.#compromised || !this.#documentIntact() || attrs(this.#html) !== this.#htmlAttrs) { this.#recover(); return }
+    if (this.#compromised || !this.#documentIntact() || outerAttributes(this.#html) !== this.#htmlAttrs) { this.#recover(); return }
     this.#root.replaceChildren(this.#uiStyle, this.#ui)
     this.#uiSheet = sheetRecord(this.#uiStyle, this.#uiCss)
   }
@@ -144,10 +145,10 @@ export class ExclusiveArrowsDocument implements ArrowsDocumentBoundary {
     if (this.#doctype!.parentNode !== document) document.insertBefore(this.#doctype!, html)
   }
   check(host: HTMLElement, shell: HTMLElement, root: ShadowRoot): boolean {
-    if (!this.#active || host !== this.#host || this.#admittedZoom() !== this.#zoom || attrs(this.#html) !== this.#htmlAttrs || !this.#documentIntact() ||
+    if (!this.#active || host !== this.#host || this.#admittedZoom() !== this.#zoom || outerAttributes(this.#html) !== this.#htmlAttrs || !this.#documentIntact() ||
       !children(this.#root, [this.#protectedStyle, this.#exit, this.#host]) || !children(host, [shell]) ||
       shell.getRootNode() !== this.#root || root.host !== shell || root.mode !== 'closed' || shell.shadowRoot !== null ||
-      !this.#protectedSheet || !sheetIntact(this.#protectedSheet)) { this.#compromised = true; return false }
+      !this.#protectedSheet || !sheetIntact(this.#protectedSheet) || outsideOccludes(this.#host, [this.#html,this.#head,this.#body])) { this.#compromised = true; return false }
     // No protected native element may gain an unobservable author root. The
     // body's and shell's already-owned roots are the only exceptions.
     const palette = new Set(['style', 'fieldset', 'figure', 'output', 'button', 'img'])

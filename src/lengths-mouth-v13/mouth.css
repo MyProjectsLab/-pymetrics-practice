@@ -18,3 +18,8 @@
 
 /* Keep programmatically focused headings quiet; controls retain visible focus. */
 .mouth-journey h1:focus{outline:none}
+
+/* Keep the ready preview and its Start control together in laptop viewports. */
+.mouth-journey:has(.mouth-run) > h1 { margin:8px 0; font-size:var(--ap-font-heading-phone,32px); }
+.mouth-journey:has(.mouth-run) .journey-top { margin-bottom:8px; }
+.mouth-run > p { margin:8px 0; }

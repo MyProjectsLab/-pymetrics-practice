@@ -5,3 +5,6 @@
 
 /* Shared size scale. */
 .money-pair strong, .money-single strong { font-size:var(--ap-font-number); }
+
+.money-journey label:has(input[name="money-comprehension"]) { display:flex; align-items:center; gap:var(--ap-space-3); width:100%; box-sizing:border-box; padding:var(--ap-option-padding); border:1px solid #d5dae4; border-radius:var(--ap-radius); font-size:var(--ap-font-option); }
+.money-journey input[name="money-comprehension"] { width:var(--ap-radio-size);height:var(--ap-radio-size);flex:none; }

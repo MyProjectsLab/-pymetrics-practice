@@ -12,7 +12,7 @@
 .digits-play .digits-stimulus { display: grid; width: 100%; min-height: 240px; place-items: center; font:500 clamp(4.5rem, 18vw, 7.5rem)/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-variant-numeric: tabular-nums; }
 .digits-listen { position: absolute; inset: 0; display: grid; place-items: center; font:400 2.5rem 'AP Newsreader', Georgia, serif; }
 .digits-entry { position: relative; z-index: 1; display: grid; gap: .5rem; width: min(100%, 26rem); margin-inline: auto; text-align: center; }
-.digits-play[data-phase="entry"] .digits-entry, .digits-play[data-screen="feedback"] .digits-entry { margin-top: -160px; }
+
 .digits-play:has(.digits-stimulus:not(:empty)) .digits-entry { visibility: hidden; }
 .digits-entry label { margin: 0; color: #4a5368; font-size:var(--ap-font-small); line-height: 1.5; }
 .digits-entry input { width: 100%; min-width: 0; min-height:var(--ap-button-height); padding: .4rem; border: 0; border-bottom: 2px solid #8993a3; border-radius: 0; background: transparent; color: #14213d; -webkit-text-fill-color: currentColor; opacity: 1; text-align: center; font:500 1.5rem/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: .12em; font-variant-numeric: tabular-nums; }
@@ -52,7 +52,7 @@
   .digits-trial-top { gap: .25rem; }
   .digits-play .digits-trial-top h1 { font-size:var(--ap-font-small); }
   .digits-stage, .digits-play .digits-stimulus { min-height: 176px; }
-  .digits-play[data-phase="entry"] .digits-entry, .digits-play[data-screen="feedback"] .digits-entry { margin-top: -120px; }
+
   .digits-entry { gap: .4rem; }
   .digits-keypad { gap: .3rem; }
   .digits-keypad button:last-child { font-size:var(--ap-font-button); }
@@ -66,3 +66,7 @@ body:has(.digits-play) .site-header nav { display: none; }
 .digits-report .digits-recall-number { font-size:var(--ap-font-number); }
 
 .digits-play .digits-trial-top h1 { font-size:var(--ap-font-heading); }
+
+/* The entry occupies its final position even while hidden during presentation. */
+.digits-entry { margin-top:0; }
+.digits-entry input { box-sizing:border-box; height:var(--ap-button-height); }

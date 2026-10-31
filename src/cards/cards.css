@@ -67,3 +67,6 @@
 
 .cards-deck { font-size:var(--ap-font-button); }
 @media(min-width:768px) { .cards-decks { max-width:calc(4 * var(--ap-button-width) + 3 * var(--ap-control-gap)); gap:var(--ap-control-gap); } }
+
+.cards-save-slot { min-height:5rem; }
+.cards-save-slot p { margin:.5rem 0; }

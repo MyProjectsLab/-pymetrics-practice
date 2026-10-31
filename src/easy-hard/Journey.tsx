@@ -675,7 +675,7 @@ export function EasyHardJourney({ onLibrary, mock, reportTarget }: { onLibrary: 
     {step === 'play' && <section className="panel easy-hard-board" aria-label="Easy or Hard task">
       <div className="easy-hard-top"><p>Earnings <strong>{dollars(report?.earnedCents ?? 0)}</strong></p>
         <p>Time <strong>{(remaining / 1000).toFixed(1)} s</strong></p></div>
-      {activeChoice && currentOffer && <><h1 ref={choiceTitle} tabIndex={-1}>Choose Easy or Hard</h1>
+      <div className="easy-hard-phase">{activeChoice && currentOffer && <><h1 ref={choiceTitle} tabIndex={-1}>Choose Easy or Hard</h1>
         <p>{currentOffer.probabilityPercent}% chance of payment after timely completion.</p>
         <p>{preview === 'choice' ? 'Preparing the five-second choice.' :
           `Choose within ${(choiceTime / 1000).toFixed(1)} seconds.`}</p>
@@ -697,7 +697,7 @@ export function EasyHardJourney({ onLibrary, mock, reportTarget }: { onLibrary: 
       {surface === 'checking' && <p role="status">Checking saved action…</p>}
       {surface === 'uncertain' && <div role="alert"><p>Saved status cannot be confirmed. Review local history before another attempt.</p>
         <button onClick={() => void refreshHistory()}>Check local history</button></div>}
-    </section>}
+    </div></section>}
     {step === 'completion' && report?.status === 'complete' && run?.status === 'complete' &&
       <section className="panel"><h1>Test Complete</h1>
         <p>Your Easy or Hard attempt is saved in this browser.</p>

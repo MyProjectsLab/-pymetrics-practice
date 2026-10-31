@@ -1,9 +1,10 @@
+import { ancestorPaint, ancestorPaintSafe, containsInOrder, outerAttributes, outsideOccludes } from '../core/ownedDocumentOuter'
 import sizeTokens from '../design/tokens.css?inline'
 import { decorateSiteBrand } from '../design/siteBrand'
 import { loadGameFonts } from '../design/gameFonts'
 import type { Art } from './art'
 const css=':host{display:block}'
-const protectedCss = `${sizeTokens}
+const protectedCss = `${sizeTokens.replace(/(--ap-[\w-]+\s*:\s*[^;{}]+);/g, '$1 !important;')}
 
 :host{all:initial;display:block;min-height:100vh;background:#ffffff;color:#14213d;font:18px system-ui;direction:ltr;writing-mode:horizontal-tb}
 fieldset[data-money-stage]{all:initial;box-sizing:border-box;display:block;width:calc(100% - 64px);max-width:1800px;min-height:650px;margin:32px auto;padding:32px 48px;border:0;border-radius:12px;background:#fff;color:#14213d;font:18px system-ui;direction:ltr;writing-mode:horizontal-tb}
@@ -26,6 +27,9 @@ nav[data-site-nav] a{color:#0e7490;min-height:var(--ap-button-height);display:in
 nav[data-site-nav] a.ap-wordmark{gap:1rem;font:600 1rem/1.1 'AP Inter',Arial,sans-serif;color:#14213d;text-decoration:none}nav[data-site-nav] .ap-wordmark svg{width:40px;height:40px;flex-shrink:0;color:#0891b2}
 nav[data-site-nav] a:focus-visible{outline:3px solid #0891b2;outline-offset:3px}
 main[data-money-main]{display:block}
+button.quiet-action{background:transparent;color:#0e7490;text-decoration:underline;text-underline-offset:4px}
+main[data-money-main]>nav{max-width:var(--ap-panel-width);margin:0 auto;padding:12px 16px}
+
 @media(max-width:600px){fieldset[data-card]{width:100%;margin:8px 0}fieldset[data-money-stage]{width:calc(100% - 16px);margin:8px;padding:16px;min-height:450px}.eyebrow{font-size:var(--ap-font-small);font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#0e7490;margin:0 0 12px;text-align:left}
 legend{font-size:1.25rem}img[data-money-result],img[data-money-pair]{margin:16px auto}button{padding:10px 16px}fieldset[aria-label]{gap:6px}fieldset[aria-label] label{min-width:30px}}
 fieldset[data-money-stage^="choice_"]{position:relative;max-width:2400px;height:calc(100svh - 64px);min-height:650px;padding:100px 48px 140px}
@@ -105,7 +109,13 @@ export class OwnedDocument {
   #resultSizeProof: { image: HTMLImageElement; uri: string; epoch: number; width: number; height: number } | null = null
   #renderEpoch = 0
   #preparedResultEpoch = 0
-  readonly #observer = new MutationObserver(() => { this.#fault = true })
+  #outerPaint = ''
+  #siteNav: HTMLElement | null = null
+  #relevant(records: readonly MutationRecord[]): boolean {
+    return records.some(record => record.target === this.#root || record.target.getRootNode() === this.#root ||
+      [this.#charset, this.#viewport, this.#title, this.#titleText].includes(record.target as never))
+  }
+  readonly #observer = new MutationObserver(records => { if (this.#relevant(records)) this.#fault = true })
   #fault = false
 
   constructor() {
@@ -130,7 +140,8 @@ export class OwnedDocument {
     this.#sheet = this.#style.sheet
     this.#rules = this.#sheet ? [...this.#sheet.cssRules].map(rule => rule.cssText).join('\n') : ''
     for (const node of [this.#html, this.#head, this.#body, this.#charset, this.#viewport, this.#title, this.#mount, this.#style])
-      this.#attributes.set(node, attrs(node))
+      this.#attributes.set(node, [this.#html,this.#head,this.#body].includes(node as HTMLHtmlElement) ? outerAttributes(node) : attrs(node))
+    this.#outerPaint = ancestorPaint([this.#html,this.#body])
     this.captureUi()
     if (!this.checkOuter()) throw Error('The Money Exchange document could not be owned.')
   }
@@ -147,6 +158,7 @@ export class OwnedDocument {
     this.#root.replaceChildren(this.#protectedStyle, this.#protectedMain)
     this.#protectedSheet = this.#protectedStyle.sheet
     this.#protectedRules = this.#protectedSheet ? [...this.#protectedSheet.cssRules].map(rule => rule.cssText).join('\n') : ''
+    this.#outerPaint = ancestorPaint([this.#html,this.#body])
     this.#active = true
     this.showProtected({stage:'starting',title:'Starting exchange',lines:['Checking the saved starting state…'],buttons:[],onViolation:()=>undefined})
   }
@@ -173,7 +185,7 @@ export class OwnedDocument {
     this.#resultImage=null;this.#resultMeaning=null;this.#resultSizeProof=null
     const heading = document.createElement('legend');heading.tabIndex=-1
     heading.append(document.createTextNode(view.title)); if(view.stage==='library'){const eyebrow=document.createElement('output');eyebrow.className='eyebrow';eyebrow.textContent='How it works';made.push(eyebrow)}made.push(heading)
-    made.push(siteNav)
+
     for (const line of view.lines) { const item=document.createElement('output'); item.append(document.createTextNode(line)); made.push(item) }
     if (view.amount) {
       const label=document.createElement('label'); label.append(document.createTextNode(view.amount.label));label.htmlFor='money-amount';label.setAttribute('data-decision-label','')
@@ -245,7 +257,7 @@ export class OwnedDocument {
       (!view.comprehension || [...this.#protectedSurface.querySelectorAll('input[name="money-comprehension"]')].every(node=>
         node instanceof HTMLInputElement && node.checked===(node.value===view.comprehension?.current())))
     for (const action of view.buttons) {
-      const button=document.createElement('button');button.type='button';button.disabled=!!action.disabled
+      const button=document.createElement('button');button.type='button';button.disabled=!!action.disabled; if(action!==view.buttons[0])button.className='quiet-action'
       if(action.expanded!==undefined)button.setAttribute('aria-expanded',String(action.expanded))
       button.setAttribute('data-action',action.label);button.append(document.createTextNode(action.label));button.addEventListener('click',(event)=>{
         if(eventEpoch!==this.#renderEpoch)return
@@ -266,6 +278,9 @@ export class OwnedDocument {
     const walk=(node:Node)=>{records.push({node,children:[...node.childNodes],attributes:node instanceof Element?attrs(node):null,
       text:node.nodeType===Node.TEXT_NODE?node.textContent:null});for(const child of node.childNodes)walk(child)}
     for (const node of made) walk(node)
+    walk(siteNav)
+    this.#siteNav=siteNav
+    this.#protectedMain.replaceChildren(siteNav,this.#protectedSurface)
     this.#protectedSurface.replaceChildren(...made)
     this.#protectedNodes=records
     this.#protectedStage=view.stage
@@ -286,10 +301,10 @@ export class OwnedDocument {
   }
 
   checkProtected(stage: string | null = this.#protectedStage): boolean {
-    if (this.#observer.takeRecords().length) this.#fault=true
+    if (this.#relevant(this.#observer.takeRecords())) this.#fault=true
     if (!this.#active || this.#fault || stage!==this.#protectedStage || !this.#outerIntact() ||
       !children(this.#root,[this.#protectedStyle,this.#protectedMain]) ||
-      !children(this.#protectedMain,[this.#protectedSurface]) ||
+      !children(this.#protectedMain,[this.#siteNav!,this.#protectedSurface]) ||
       attrs(this.#protectedMain)!==this.#protectedMainAttributes ||
       !this.#sheetIntact(this.#protectedStyle,protectedCss,this.#protectedSheet,this.#protectedRules) ||
       attrs(this.#protectedStyle)!=='[]' ||
@@ -299,7 +314,12 @@ export class OwnedDocument {
       this.#protectedNodes.some(({node,children:expected,attributes,text})=>
         !children(node,expected) || attributes!==null && (!(node instanceof Element) || attrs(node)!==attributes) ||
         text!==null && node.textContent!==text || node instanceof Element && node.getAnimations().length>0)) return false
-    return true
+    const bodyBox=this.#body.getBoundingClientRect()
+    if(Math.abs(bodyBox.left+scrollX)>1 || Math.abs(bodyBox.width-this.#html.clientWidth)>1 ||
+      outsideOccludes(this.#protectedSurface, [this.#html,this.#head,this.#body])) return false
+    const box=this.#protectedSurface.getBoundingClientRect()
+    const x=Math.max(1,Math.min(innerWidth-1,box.left+box.width/2)), y=Math.max(1,Math.min(innerHeight-1,box.top+Math.min(40,box.height/2)))
+    return document.elementFromPoint(x,y)===this.#body
   }
 
   async prepareResult(): Promise<void> {
@@ -369,12 +389,12 @@ export class OwnedDocument {
 
   #outerIntact(): boolean {
     return document.documentElement===this.#html && document.head===this.#head && document.body===this.#body &&
-      children(document,[this.#doctype!,this.#html]) && children(this.#html,[this.#head,this.#body]) &&
-      children(this.#head,[this.#charset,this.#viewport,this.#title]) && children(this.#title,[this.#titleText]) &&
-      this.#titleText.data==='Money Exchange 2 — TraitGame' && this.#body.childNodes.length===0 &&
+      containsInOrder(document,[this.#doctype!,this.#html]) && containsInOrder(this.#html,[this.#head,this.#body]) &&
+      containsInOrder(this.#head,[this.#charset,this.#viewport,this.#title]) && children(this.#title,[this.#titleText]) &&
+      this.#titleText.data==='Money Exchange 2 — TraitGame' &&
       this.#root.host===this.#body && this.#root.mode==='closed' && this.#body.shadowRoot===null &&
-      document.styleSheets.length===0 && document.adoptedStyleSheets.length===0 && this.#root.adoptedStyleSheets.length===0 &&
-      document.fullscreenElement===null && [...this.#attributes].every(([node,value])=>attrs(node)===value)
+      this.#root.adoptedStyleSheets.length===0 &&
+      document.fullscreenElement===null && (!this.#active || ancestorPaintSafe([this.#html,this.#body])) && ancestorPaint([this.#html,this.#body])===this.#outerPaint && [...this.#attributes].every(([node,value])=>([this.#html,this.#head,this.#body].includes(node as HTMLHtmlElement)?outerAttributes(node):attrs(node))===value)
   }
 
   /** Called by the owned React tree after each completed commit. */

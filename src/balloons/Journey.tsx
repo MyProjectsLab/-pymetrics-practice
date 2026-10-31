@@ -120,6 +120,10 @@ export function BalloonsJourney({ onLibrary, mock, reportTarget, separateBaselin
     const timer = window.setInterval(() => { if (!mock || step !== 'run') void controller.current?.checkAuthority(); if (step === 'history' && deletionPending.current.size === 0) refreshCurrentHistory(true); if (step === 'comparison' && deletionPending.current.size === 0) refreshCurrentComparison(true) }, 1000)
     return () => { active = false; window.removeEventListener('blur', pause); window.removeEventListener('pagehide', pause); window.removeEventListener('focus', recheck); document.removeEventListener('visibilitychange', hidden); document.removeEventListener('visibilitychange', recheck); channel?.close(); clearInterval(timer) }
   }, [step, store, comparisonId, notificationController])
+  useEffect(() => {
+    if (step !== 'ready' || tested.length !== 2 || window.innerWidth > 520) return
+    root.current?.querySelector<HTMLElement>('.balloons-ready > button:last-child')?.scrollIntoView({ block: 'nearest' })
+  }, [step, tested])
   useEffect(() => { root.current?.querySelector<HTMLElement>('h1')?.focus() }, [step, selected?.header.identity.sessionId, comparison?.status])
   useEffect(() => {
     const target = restoreHistoryFocus.current

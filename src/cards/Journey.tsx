@@ -648,7 +648,8 @@ export function CardsJourney({ onLibrary, mock, reportTarget }: { onLibrary: () 
         <label><input type="radio" name="cards-rule" checked={quiz.loss === 'No'} onChange={() => setQuiz({...quiz,loss:'No',draws:'40'})} /> A draw cannot lose money; the game ends after 40 draws.</label></fieldset>
       {quizError && <p role="alert">{quizError}</p>}
       <button onClick={() => { if (quiz.loss === 'Yes' && quiz.draws === '80')
-        { skipSource.current=null;setQuizError(''); newStep('preflight') } else setQuizError('A draw can lose money, and the game ends after 80 draws. Try again.') }}>Check answers</button></div>}
+        { skipSource.current=null;setQuizError(''); newStep('preflight') } else if (!quiz.loss) setQuizError('Choose an answer')
+        else setQuizError('A draw can lose money, and the game ends after 80 draws. Try again.') }}>Check answers</button></div>}
     {(step === 'preflight' || step === 'ready') && <div className="panel cards-ready"><h2>Ready?</h2>
       <p>Start with {money(2000)}. Pick from four decks for 80 cards. Keep this tab open; leaving ends the attempt.</p>
       <p className="note">Results stay in your browser.</p>
@@ -674,9 +675,9 @@ export function CardsJourney({ onLibrary, mock, reportTarget }: { onLibrary: () 
         onBlur={() => { if (lastInput.current?.deck === deck) lastInput.current = null }}
         onClick={event => void draw(deck, event.nativeEvent.isTrusted, event.altKey || event.ctrlKey || event.metaKey || event.shiftKey)}>
           <span className="cards-deck-art" aria-hidden="true">{deckSymbol[deck]}</span><span className="cards-deck-label">Deck {deck}</span></button>)}</div>
-      {phase === 'uncertain' ? <div role="alert"><p>{pendingLabel}</p>
+      <div className="cards-save-slot">{phase === 'uncertain' ? <div role="alert"><p>{pendingLabel}</p>
         {retry.current && <button onClick={() => void retry.current?.()}>Check saved action</button>}</div> :
-        phase === 'saving' ? <p role="status">{pendingLabel}</p> : null}</div>}
+        phase === 'saving' ? <p role="status">{pendingLabel}</p> : null}</div></div>}
     {step === 'report' && report && run && <ReportPanel report={report} run={run} comparison={comparison}
       onHistory={openHistory} onReplay={() => { void (mock?mock.retry():Promise.resolve()).then(()=>newStep('guide')).catch(cause=>setMockError(safeError(cause))) }} onLibrary={library} readOnly={!!reportTarget} returnToMock={!!mock||!!reportTarget} />}
     {step === 'report' && mockError && <p role="alert">{mockError}</p>}

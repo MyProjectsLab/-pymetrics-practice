@@ -89,3 +89,6 @@ input[type=radio] { width:var(--ap-radio-size); height:var(--ap-radio-size); fle
 .question { max-width:var(--ap-panel-width); }
 .question .stimulus { margin:var(--ap-space-3) auto; }
 @media(min-width:768px) { .choices { grid-template-columns:repeat(auto-fit,minmax(var(--ap-button-width),1fr)); } }
+
+/* Reserve the same timer footprint as its digits change. */
+.timer { box-sizing:border-box; width:140px; font-variant-numeric:tabular-nums; }

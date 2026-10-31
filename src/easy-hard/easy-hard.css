@@ -26,3 +26,22 @@
 .easy-hard-options button:hover:not(:disabled) { background: #e3f6fa; border-color: #0891b2; }
 
 .easy-hard-top strong { font-size:var(--ap-font-number); }
+
+/* All choice/task/feedback phases share a stable stage. No stimulus timing changes. */
+.easy-hard-board { box-sizing:border-box; height:min(650px, calc(100svh - 160px)); min-height:480px; display:grid; grid-template-rows:auto 1fr; gap:12px; }
+.easy-hard-phase { min-height:0; display:grid; align-content:center; }
+.easy-hard-phase h1, .easy-hard-phase p { margin:4px 0; }
+.easy-hard-task { gap:6px; }
+.easy-hard-bar { height:min(170px, 22vh); }
+.easy-hard-options { margin:12px auto; }
+.easy-hard-top strong { line-height:1.1; }
+@media(max-width:520px) { .easy-hard-board { height:calc(100svh - 130px); min-height:490px; } }
+.easy-hard-board { height:min(650px,calc(100svh - 230px)); }
+.easy-hard-top p { width:50%; }
+.easy-hard-top p:last-child { text-align:right; }
+.easy-hard-top strong { font-variant-numeric:tabular-nums; }
+.easy-hard-phase { position:relative; }
+.easy-hard-phase > p[role="status"] { position:absolute; inset:auto 0 0; margin:0; }
+.easy-hard-options { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); width:min(100%,560px); gap:24px; }
+.easy-hard-options button { box-sizing:border-box; width:100%; height:144px; min-height:144px; margin:0; }
+.easy-hard-task > p { width:100%; font-variant-numeric:tabular-nums; }
