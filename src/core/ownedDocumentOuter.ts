@@ -50,6 +50,7 @@ export function ancestorPaintSafe(nodes: readonly Element[]): boolean {
 
 /** Extra styles/markers may coexist; competing document definitions may not. */
 export function ownedHeadDefinitions(head: HTMLHeadElement, charset: Element, viewport: Element, title: Element): boolean {
-  const definitions=[...head.querySelectorAll('meta[charset],meta[name="viewport" i],title,base')]
+  const definitions=[...head.ownerDocument.querySelectorAll('meta[charset],meta[name="viewport" i],title,base')]
+    .filter(node=>node.namespaceURI==='http://www.w3.org/1999/xhtml')
   return definitions.length===3 && definitions.includes(charset) && definitions.includes(viewport) && definitions.includes(title)
 }
