@@ -1,4 +1,4 @@
-import { ancestorPaint, ancestorPaintSafe, containsInOrder, outerAttributes, outsideOccludes } from '../core/ownedDocumentOuter'
+import { ancestorPaint, ancestorPaintSafe, containsInOrder, outerAttributes, outsideOccludes, ownedHeadDefinitions } from '../core/ownedDocumentOuter'
 import sizeTokens from '../design/tokens.css?inline'
 import { decorateSiteBrand } from '../design/siteBrand'
 import { loadGameFonts } from '../design/gameFonts'
@@ -112,10 +112,20 @@ export class OwnedDocument {
   #outerPaint = ''
   #siteNav: HTMLElement | null = null
   #relevant(records: readonly MutationRecord[]): boolean {
-    return records.some(record => record.target === this.#root || record.target.getRootNode() === this.#root ||
-      [this.#charset, this.#viewport, this.#title, this.#titleText].includes(record.target as never))
+    const ancestors: Node[]=[this.#html,this.#head,this.#body]
+    const metadata: Node[]=[...ancestors,this.#charset,this.#viewport,this.#title,this.#titleText]
+    return records.some(record => {
+      if(record.target===this.#root || record.target.getRootNode()===this.#root ||
+        [this.#charset,this.#viewport,this.#title,this.#titleText].includes(record.target as never)) return true
+      if(record.type==='attributes' && ancestors.includes(record.target))
+        return record.attributeName!=='class' && !record.attributeName?.startsWith('data-')
+      return record.type==='childList' && [...record.addedNodes,...record.removedNodes].some(changed=>
+        metadata.some(owned=>changed===owned || changed.contains(owned)))
+    })
   }
-  readonly #observer = new MutationObserver(records => { if (this.#relevant(records)) this.#fault = true })
+  readonly #observer = new MutationObserver(records => {
+    if (this.#relevant(records) || this.#active && !this.checkProtected()) this.#fault=true
+  })
   #fault = false
 
   constructor() {
@@ -315,7 +325,7 @@ export class OwnedDocument {
         !children(node,expected) || attributes!==null && (!(node instanceof Element) || attrs(node)!==attributes) ||
         text!==null && node.textContent!==text || node instanceof Element && node.getAnimations().length>0)) return false
     const bodyBox=this.#body.getBoundingClientRect()
-    if(Math.abs(bodyBox.left+scrollX)>1 || Math.abs(bodyBox.width-this.#html.clientWidth)>1 ||
+    if(Math.abs(bodyBox.top+scrollY)>1 || Math.abs(bodyBox.left+scrollX)>1 || Math.abs(bodyBox.width-this.#html.clientWidth)>1 ||
       outsideOccludes(this.#protectedSurface, [this.#html,this.#head,this.#body])) return false
     const box=this.#protectedSurface.getBoundingClientRect()
     const x=Math.max(1,Math.min(innerWidth-1,box.left+box.width/2)), y=Math.max(1,Math.min(innerHeight-1,box.top+Math.min(40,box.height/2)))
@@ -390,7 +400,7 @@ export class OwnedDocument {
   #outerIntact(): boolean {
     return document.documentElement===this.#html && document.head===this.#head && document.body===this.#body &&
       containsInOrder(document,[this.#doctype!,this.#html]) && containsInOrder(this.#html,[this.#head,this.#body]) &&
-      containsInOrder(this.#head,[this.#charset,this.#viewport,this.#title]) && children(this.#title,[this.#titleText]) &&
+      containsInOrder(this.#head,[this.#charset,this.#viewport,this.#title]) && ownedHeadDefinitions(this.#head,this.#charset,this.#viewport,this.#title) && children(this.#title,[this.#titleText]) &&
       this.#titleText.data==='Money Exchange 2 — TraitGame' &&
       this.#root.host===this.#body && this.#root.mode==='closed' && this.#body.shadowRoot===null &&
       this.#root.adoptedStyleSheets.length===0 &&

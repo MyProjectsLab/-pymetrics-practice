@@ -1,4 +1,4 @@
-import { containsInOrder, outerAttributes, outsideOccludes } from '../core/ownedDocumentOuter'
+import { containsInOrder, outerAttributes, outsideOccludes, ownedHeadDefinitions } from '../core/ownedDocumentOuter'
 import sizeTokens from '../design/tokens.css?inline'
 import { loadGameFonts } from '../design/gameFonts'
 /** A deliberately tiny author-owned document. Closed mode is encapsulation;
@@ -98,7 +98,7 @@ export class ExclusiveArrowsDocument implements ArrowsDocumentBoundary {
   #documentIntact(): boolean {
     return document.documentElement === this.#html && document.head === this.#head && document.body === this.#body &&
       containsInOrder(document, [this.#doctype!, this.#html]) && containsInOrder(this.#html, [this.#head, this.#body]) &&
-      containsInOrder(this.#head, [this.#charset, this.#viewport, this.#title]) && children(this.#title, [this.#titleText]) &&
+      containsInOrder(this.#head, [this.#charset, this.#viewport, this.#title]) && ownedHeadDefinitions(this.#head,this.#charset,this.#viewport,this.#title) && children(this.#title, [this.#titleText]) &&
       this.#titleText.data === 'Arrows — TraitGame' && this.#charset.childNodes.length === 0 && this.#viewport.childNodes.length === 0 &&
       this.#body.isConnected && this.#root.host === this.#body && this.#root.mode === 'closed' && this.#body.shadowRoot === null &&
       this.#root.adoptedStyleSheets.length === 0 &&
