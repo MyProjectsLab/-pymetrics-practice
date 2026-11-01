@@ -116,8 +116,8 @@ function render(){
   const number=index+1,form=forms.find(f=>f.id===attempt.formId)!;
   let self=500,other:number|null=500;
   if(stage.startsWith('award_')){heading=`Round ${number}: your starting $5.00`;other=null;lines.push('You receive $5.00 to begin this round.');}
-  if(stage.startsWith('connecting_')){heading='Connecting to simulated partner';other=0;lines.push('Practice partner · no live connection.');}
-  if(stage.startsWith('connected_')){heading='Partner ready';other=0;lines.push(`${round.partner} · simulated partner. Choose Next to begin.`);}
+  if(stage.startsWith('connecting_')){heading='Connecting to simulated partner';other=0;lines.push('Simulated partner. $0.00 is temporary; both start with $5.00.');}
+  if(stage.startsWith('connected_')){heading='Partner ready';other=0;lines.push(`${round.partner} · simulated partner. $0.00 is temporary; both start with $5.00.`);}
   if(stage.startsWith('partner_rules_')){heading=`Round ${number}: ${round.partner}`;lines.push(`You and ${round.partner} each start with $5.00. One person receives an extra $5.00.`,index===0?'The bonus recipient may give up to $5.00.':'The bonus recipient may give or take up to $5.00.');}
   if(/^(bonus|choice|partner_choice|result|fairness)_/.test(stage)){self=round.bonusRecipient==='candidate'?1000:500;other=1500-self;}
   if(stage.startsWith('bonus_')){heading='The extra $5.00';lines.push(`${round.bonusRecipient==='candidate'?'You':round.partner} received the bonus.`);}
@@ -138,7 +138,8 @@ function render(){
    if(!['instructions','test_complete','report','checking'].includes(stage))add('Restart',admit('Restart'));
    if(!view.pendingExit||view.pendingExit==='Restart')add(stage==='report'?'Main menu':'Close',admit('Close'));
   };
-  if(session){add('More options',()=>{sessionOptions=!sessionOptions;render()},false,false,sessionOptions);if(sessionOptions)exits()}
+  const resultPending=stage.startsWith('result_')&&round?.exposure!=='render_receipt';
+  if(session){add('More options',()=>{sessionOptions=!sessionOptions;render()},resultPending,false,sessionOptions);if(sessionOptions||resultPending)exits()}
   else exits();
  }
  if (!report && preparationTrail.canBack && ['library','instructions','ready'].includes(stage)) add('Back', () => {
