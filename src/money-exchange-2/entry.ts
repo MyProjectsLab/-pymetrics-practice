@@ -16,7 +16,7 @@ let preparationSkipping = false, preparationReturning = false, restoreGuidePart:
 let mockHint:ReturnType<typeof dedicatedHint>=null,report:ReturnType<typeof reportHint>=null,routeInvalid=false
 try{mockHint=dedicatedHint();report=reportHint();if(mockHint&&report)throw Error('Conflicting mock routes')}catch{routeInvalid=true}
 const boundary=new OwnedDocument();boundary.enterProtected()
-let cents=0,rating:number|null=null,lastStage='',page=0,tips=false,guidePart=0,guideAnswer:string|null=null,guideFeedback='',detailedNumbers=false;
+let cents=0,rating:number|null=null,lastStage='',page=0,tips=false,guidePart=0,guideAnswer:string|null=null,guideFeedback='',detailedNumbers=false,sessionOptions=false;
 let renderedEpoch=-1,quarantined=false,returnPending=false,returnError=false,guideChoiceEpoch=0;
 const compact=()=> (window.visualViewport?.width??innerWidth)<600
 const back=()=>{guideChoiceEpoch++;controller.mockContext?.retireReturnIntent();window.location.assign(mockHint?mockReturnUrl(mockHint.mockId):report?mockReturnUrl(report.mockId):'/practice')}
@@ -39,7 +39,7 @@ function fault(){if(quarantined)return;quarantined=true;controller.lifecycle('di
 function render(){
  if(quarantined)return;
  const view=controller.view(),token=controller.inputToken(),stage=view.stage,attempt=view.attempt;
- if(stage!==lastStage){cents=0;rating=null;lastStage=stage;tips=false;page=0;detailedNumbers=false;if(stage==='instructions'){guidePart=restoreGuidePart??2;restoreGuidePart=null;}}
+ if(stage!==lastStage){cents=0;rating=null;lastStage=stage;tips=false;page=0;detailedNumbers=false;sessionOptions=false;if(stage==='instructions'){guidePart=restoreGuidePart??2;restoreGuidePart=null;}}
  if(stage==='ready')preparationSkipping=false;
  if (!preparationReturning && !preparationSkipping) preparationTrail.enter(stage === 'instructions' ? `instructions:${guidePart}` : stage === 'checking' ? 'pending' : stage);
  const title:Record<string,string>={library:'Money Exchange 2',instructions:'Two rounds, two partners',ready:'Ready?',loading:'Opening local practice',unavailable:'Practice is unavailable',checking:'Checking your saved state',new_partner:'Meet a different partner',test_complete:'Test Complete',history:'Local Money Exchange 2 history',review:'Saved exchange review',report:'Your two-round report'};
@@ -116,12 +116,12 @@ function render(){
   const number=index+1,form=forms.find(f=>f.id===attempt.formId)!;
   let self=500,other:number|null=500;
   if(stage.startsWith('award_')){heading=`Round ${number}: your starting $5.00`;other=null;lines.push('You receive $5.00 to begin this round.');}
-  if(stage.startsWith('connecting_')){heading='Connecting';other=0;lines.push('Preparing your simulated partner… The temporary $0.00 is a connection placeholder.');}
-  if(stage.startsWith('connected_')){heading='Connected';other=0;lines.push(`${round.partner} is ready. The temporary $0.00 is a connection placeholder.`);}
+  if(stage.startsWith('connecting_')){heading='Connecting to simulated partner';other=0;lines.push('Practice partner · no live connection.');}
+  if(stage.startsWith('connected_')){heading='Partner ready';other=0;lines.push(`${round.partner} · simulated partner. Choose Next to begin.`);}
   if(stage.startsWith('partner_rules_')){heading=`Round ${number}: ${round.partner}`;lines.push(`You and ${round.partner} each start with $5.00. One person receives an extra $5.00.`,index===0?'The bonus recipient may give up to $5.00.':'The bonus recipient may give or take up to $5.00.');}
   if(/^(bonus|choice|partner_choice|result|fairness)_/.test(stage)){self=round.bonusRecipient==='candidate'?1000:500;other=1500-self;}
   if(stage.startsWith('bonus_')){heading='The extra $5.00';lines.push(`${round.bonusRecipient==='candidate'?'You':round.partner} received the bonus.`);}
-  if(stage.startsWith('choice_')){heading=index===0?'How much will you give?':'Will you give or take?';lines.push(index===0?'Give $0.00 to $5.00 in $0.50 steps.':'Take $5.00 ← Give $0.00 → Give $5.00, in $0.50 steps.');spec.amount={label:index===0?'Give amount, $0 to $5':'Give or Take amount, Take $5 to Give $5',display:action(cents),min:index===0?0:-500,value:String(cents),current:()=>String(cents),changed:value=>{cents=Number(value);render()}};add('Confirm',admit('step',{cents}),view.busy);}
+  if(stage.startsWith('choice_')){heading=index===0?'How much will you give?':'Will you give or take?';lines.push(index===0?'Give $0.00 to $5.00 in $0.50 steps.':'Take $5.00 ← Give $0.00 → Give $5.00, in $0.50 steps.');spec.amount={label:index===0?'Give amount, $0 to $5':'Give or Take amount, Take $5 to Give $5',display:action(cents),min:index===0?0:-500,value:String(cents),current:()=>String(cents),changed:value=>{cents=Number(value);render()}};add('Next',admit('step',{cents}),view.busy);}
   else if(stage.startsWith('partner_choice_')){heading=`${round.partner}'s choice`;lines.push(`${action(form.rounds[index].partnerSignedGiveCents!)}. This is a fixed original computer decision.`);add('Next',admit('step',{cents:form.rounds[index].partnerSignedGiveCents}),view.busy);}
   else if(stage.startsWith('result_')){heading='Your allocation';self=round.decision!.candidateFinalCents;other=round.decision!.partnerFinalCents;spec.announceResult=round.exposure==='possibly_revealed';spec.result=pairArt(self,other,round.partner,compact(),{cents:round.decision!.signedGiveCents,actor:round.decision!.actor});add('Next',admit('step'),view.busy||round.exposure!=='render_receipt');}
   else if(stage.startsWith('fairness_')){heading='How fair was this allocation?';self=round.decision!.candidateFinalCents;other=round.decision!.partnerFinalCents;lines.push('0 = not fair · 10 = very fair. Choose one answer, then Next.');spec.rating={value:rating,current:()=>rating,changed:value=>{rating=value;render()}};add('Next',admit(index===0?'step':'terminal',{rating:rating!}),view.busy||rating===null);}
@@ -131,9 +131,15 @@ function render(){
  if(view.busy&&stage!=='checking')lines.push('Checking local save…');
  if(view.error){lines.push(view.error);add('Retry',()=>controller.retry(token));}
  if(returnError){lines.push('Return could not be confirmed. The saved status is still unconfirmed.');add('Leave with result unconfirmed',back)}
+ const session=/^(award|connecting|connected|partner_rules|bonus|choice|partner_choice|result|fairness)_/.test(stage)||stage==='new_partner'||stage==='test_complete';
+ spec.session=session;
  if(!report&&!['loading','unavailable','library','history','review'].includes(stage)){
-  if(!['instructions','test_complete','report','checking'].includes(stage))add('Restart',admit('Restart'));
-  if(!view.pendingExit||view.pendingExit==='Restart')add(stage==='report'?'Main menu':'Close',admit('Close'));
+  const exits=()=>{
+   if(!['instructions','test_complete','report','checking'].includes(stage))add('Restart',admit('Restart'));
+   if(!view.pendingExit||view.pendingExit==='Restart')add(stage==='report'?'Main menu':'Close',admit('Close'));
+  };
+  if(session){add('More options',()=>{sessionOptions=!sessionOptions;render()},false,false,sessionOptions);if(sessionOptions)exits()}
+  else exits();
  }
  if (!report && preparationTrail.canBack && ['library','instructions','ready'].includes(stage)) add('Back', () => {
   if (preparationReturning || view.busy || view.uncertain || view.pendingExit || view.authorityPending) return

@@ -32,28 +32,40 @@ main[data-money-main]>nav{max-width:var(--ap-panel-width);margin:0 auto;padding:
 
 @media(max-width:600px){fieldset[data-card]{width:100%;margin:8px 0}fieldset[data-money-stage]{width:calc(100% - 16px);margin:8px;padding:16px;min-height:450px}.eyebrow{font-size:var(--ap-font-small);font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#0e7490;margin:0 0 12px;text-align:left}
 legend{font-size:1.25rem}img[data-money-result],img[data-money-pair]{margin:16px auto}button{padding:10px 16px}fieldset[aria-label]{gap:6px}fieldset[aria-label] label{min-width:30px}}
-fieldset[data-money-stage^="choice_"]{position:relative;max-width:2400px;height:calc(100svh - 64px);min-height:650px;padding:100px 48px 140px}
-fieldset[data-money-stage^="choice_"] legend{position:absolute;top:25%;left:25%;width:50%;font-size:clamp(24px,1.5vw,40px);float:none}
-fieldset[data-money-stage^="choice_"]>output:not([data-decision-value]):not([data-endpoints]):not([data-money-semantics]){position:absolute;top:31%;left:25%;width:50%;font-size:clamp(16px,1vw,24px)}
-fieldset[data-money-stage^="choice_"] img[data-money-pair]{position:absolute;top:24%;left:4%;width:92%;max-width:none!important;margin:0}
-fieldset[data-money-stage^="choice_"]>:not(img){z-index:1}
-[data-decision-label]{position:absolute;top:60%;left:28%;width:44%;text-align:center}
-[data-decision-value]{position:absolute;top:40%;left:calc(50% - 110px);width:220px;padding:24px 0;border-radius:24px;background:#148568;color:white;font-size:32px;font-weight:650;z-index:1}
-[data-endpoints]{position:absolute;top:52%;left:34%;width:32%;display:flex;justify-content:space-between;font-weight:600}
-fieldset[data-money-stage^="choice_"] input[type=range]{position:absolute;top:56%;left:34%;width:32%;height:44px;margin:0;padding:0;accent-color:#148568}
-
-
-
-@media(max-width:700px){fieldset[data-money-stage^="choice_"]{height:780px;min-height:780px;padding:90px 16px 110px}fieldset[data-money-stage^="choice_"] legend{top:16%;left:5%;width:90%;font-size:22px}fieldset[data-money-stage^="choice_"]>output:not([data-decision-value]):not([data-endpoints]):not([data-money-semantics]){top:22%;left:5%;width:90%;font-size:var(--ap-font-small)}fieldset[data-money-stage^="choice_"] img[data-money-pair]{top:27%;left:4%;width:92%}[data-decision-value]{top:61%;left:calc(50% - 80px);width:160px;padding:12px 0;font-size:24px}[data-endpoints]{top:71%;left:8%;width:84%;font-size:var(--ap-font-small)}fieldset[data-money-stage^="choice_"] input[type=range]{top:77%;left:8%;width:84%}[data-decision-label]{position:absolute;top:85%;left:4%;width:92%;margin:0;font-size:var(--ap-font-small)}}
-
+/* Keep choice controls in separate rows: the slider never overlays the amount. */
+fieldset[data-money-stage^="choice_"]{display:grid;grid-template-columns:minmax(0,1fr) minmax(200px,1.5fr) minmax(0,1fr);gap:12px 0;min-height:620px;padding:24px 32px}
+fieldset[data-money-stage^="choice_"] legend{position:static;float:none;grid-column:1/-1;grid-row:1;width:100%;margin:0;font-size:clamp(24px,2.5vw,40px)}
+fieldset[data-money-stage^="choice_"]>output:not([data-decision-value]):not([data-endpoints]):not([data-money-semantics]){grid-column:1/-1;margin:0 auto}
+fieldset[data-money-stage^="choice_"] img[data-money-pair]{grid-column:1/-1;grid-row:3;width:100%;max-width:none!important;margin:0;align-self:center}
+fieldset[data-money-stage^="choice_"]>output[data-choice-instruction]{grid-row:2}
+[data-decision-label]{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+[data-decision-value]{grid-column:2;grid-row:3;align-self:center;justify-self:center;box-sizing:border-box;width:100%;max-width:240px;margin:0;padding:28px 12px;border-radius:24px;background:#148568;color:white;font-weight:650;z-index:1}
+[data-endpoints]{grid-column:2;grid-row:4;display:flex;justify-content:space-between;width:100%;max-width:none;margin:0;font-size:var(--ap-font-small)}
+fieldset[data-money-stage^="choice_"] input[type=range]{grid-column:2;grid-row:5;width:100%;height:44px;margin:0;padding:0;accent-color:#148568}
 [data-money-actions]{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:24px}
-fieldset[data-money-stage^="choice_"] [data-money-actions]{position:absolute;bottom:24px;left:32px;right:32px;justify-content:flex-end}
 [data-money-actions] button{margin:0}
 [data-money-actions] button.quiet-action{min-width:0;padding:8px 12px;border-radius:0}
 [data-money-actions] button[aria-pressed]{font-weight:500;text-decoration:none}
 [data-money-actions] button[aria-pressed="true"]{color:#14213d;text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:8px}
-
-@media(max-width:700px){fieldset[data-money-stage^="choice_"]{margin-bottom:180px}fieldset[data-money-stage^="choice_"] [data-money-actions]{top:100%;bottom:auto;left:0;right:0;justify-content:flex-start;padding-top:24px}fieldset[data-money-stage^="choice_"] [data-money-actions] button:first-child{width:100%}}
+fieldset[data-money-session] [data-money-actions]{margin-top:24px;min-height:56px}
+fieldset[data-money-session] [data-money-actions]>button:first-child:not(.quiet-action){order:2;margin-left:auto}
+fieldset[data-money-session] [data-money-actions]>button.quiet-action{order:0}
+fieldset[data-money-stage^="choice_"] [data-money-actions]{grid-column:1/-1;grid-row:6;align-self:end}
+fieldset[data-money-stage^="fairness_"] fieldset[aria-label]{gap:0;max-width:660px;justify-content:space-between;padding:16px 0;border:0}
+fieldset[data-money-stage^="fairness_"] fieldset[aria-label] label{background:transparent;min-width:0;flex:1;padding:8px 0;border-radius:0;font-size:var(--ap-font-small)}
+fieldset[data-money-stage^="fairness_"] input[type=radio]{width:22px;height:22px;padding:0;margin:0 0 8px;accent-color:#148568}
+@media(max-width:700px){
+ fieldset[data-money-stage^="choice_"]{grid-template-columns:minmax(0,1fr);gap:12px;min-height:0;padding:20px 16px}
+ fieldset[data-money-stage^="choice_"] legend{grid-column:1;grid-row:1;font-size:24px}
+ fieldset[data-money-stage^="choice_"]>output:not([data-decision-value]):not([data-endpoints]):not([data-money-semantics]){grid-column:1}
+ fieldset[data-money-stage^="choice_"] img[data-money-pair]{grid-column:1;grid-row:3;max-height:190px}
+ [data-decision-value]{grid-column:1;grid-row:4;max-width:200px;padding:16px 12px}
+ [data-endpoints]{grid-column:1;grid-row:5}
+ fieldset[data-money-stage^="choice_"] input[type=range]{grid-column:1;grid-row:6}
+ fieldset[data-money-stage^="choice_"] [data-money-actions]{grid-column:1;grid-row:7;margin-top:8px}
+ fieldset[data-money-session] [data-money-actions]{gap:8px}
+ fieldset[data-money-session] [data-money-actions]>button:first-child:not(.quiet-action){min-width:120px}
+}
 :host, fieldset[data-money-stage] { font-size:var(--ap-font-body); line-height:var(--ap-line-height); }
 fieldset[data-money-stage] { max-width:var(--ap-panel-width); }
 button { min-height:var(--ap-button-height); font-size:var(--ap-font-button); }
@@ -73,6 +85,7 @@ export type ProtectedView = {
   onViolation: () => void
   onNavigate?: () => void
   preserveActionFocus?: boolean
+  session?: boolean
   lines: readonly string[]
   buttons: readonly { label: string; act: (event:MouseEvent) => void; disabled?: boolean; expanded?: boolean; selected?: boolean }[]
   cards?: readonly {label:string;value:string;detail:string}[]
@@ -206,7 +219,7 @@ export class OwnedDocument {
     const heading = document.createElement('legend');heading.tabIndex=-1
     heading.append(document.createTextNode(view.title)); if(view.stage==='library'){const eyebrow=document.createElement('output');eyebrow.className='eyebrow';eyebrow.textContent='How it works';made.push(eyebrow)}made.push(heading)
 
-    for (const line of view.lines) { const item=document.createElement('output'); item.append(document.createTextNode(line)); made.push(item) }
+    for (const [index,line] of view.lines.entries()) { const item=document.createElement('output');if(view.amount&&index===0)item.setAttribute('data-choice-instruction',''); item.append(document.createTextNode(line)); made.push(item) }
     if (view.amount) {
       const label=document.createElement('label'); label.append(document.createTextNode(view.amount.label));label.htmlFor='money-amount';label.setAttribute('data-decision-label','')
       const input=document.createElement('input'); input.type='range'; input.min=String(view.amount.min);input.max='500';input.step='50';input.value=view.amount.value
@@ -267,6 +280,7 @@ export class OwnedDocument {
       this.#resultImage=graphic;this.#resultMeaning=meaning
       made.push(graphic,meaning)
     }
+    if(view.amount){const pair=made.splice(made.length-2,2);made.splice(made.findIndex(node=>node instanceof HTMLLabelElement),0,...pair)}
     if(view.pairFirst){const pair=made.splice(made.length-2,2);made.splice(1,0,...pair)}
     if(view.cards)for(const card of view.cards){const box=document.createElement('fieldset');box.setAttribute('data-card','');const legend=document.createElement('legend');legend.textContent=card.label;const value=document.createElement('output');value.textContent=card.value;const detail=document.createElement('output');detail.textContent=card.detail;box.append(legend,value,detail);made.splice(view.pairFirst?3:made.length,0,box)}
     if(view.detailLines){const detail=document.createElement('section');detail.setAttribute('aria-label','Detailed numbers');for(const line of view.detailLines){const item=document.createElement('output');item.textContent=line;detail.append(item)}made.push(detail)}
@@ -296,6 +310,7 @@ export class OwnedDocument {
       this.#protectedSurface.style.margin=`8px 8px 8px ${Math.round(viewport.offsetLeft+8)}px`
       this.#protectedSurface.style.width=`${Math.max(120,Math.floor(viewport.width-16))}px`
     } else this.#protectedSurface.removeAttribute('style')
+    this.#protectedSurface.toggleAttribute('data-money-session',!!view.session)
     this.#protectedSurface.setAttribute('data-money-stage',view.stage)
     this.#protectedSurfaceAttributes=attrs(this.#protectedSurface)
     const walk=(node:Node)=>{records.push({node,children:[...node.childNodes],attributes:node instanceof Element?attrs(node):null,
