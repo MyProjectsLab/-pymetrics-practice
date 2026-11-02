@@ -48,7 +48,7 @@ function render(){
  const lines:string[]=[],buttons:ProtectedView['buttons'][number][]=[];
  const add=(label:string,act:(event:MouseEvent)=>void,disabled=false,sameReturnIntent=false,expanded?:boolean,selected?:boolean)=>buttons.push({label,act:event=>{guideChoiceEpoch++;preparationSkipping=false;if(!sameReturnIntent){controller.mockContext?.retireReturnIntent();returnError=false}act(event)},disabled,expanded,selected});
  const admit=(kind:string,data={})=>(event:MouseEvent)=>{controller.mockContext?.retireReturnIntent();returnError=false;controller.admit(token,kind,{...data,input:event.detail===0?'keyboard or assistive activation':'pointer activation'})};
- const spec:ProtectedView={stage,title:heading,lines,buttons,preserveActionFocus:view.authorityPending,onViolation:fault,onNavigate:()=>{guideChoiceEpoch++;controller.mockContext?.retireReturnIntent();controller.lifecycle('pagehide')}};
+ const spec:ProtectedView={stage,title:heading,lines,buttons,preserveActionFocus:view.authorityPending,preserveReadingPosition:['report','review'].includes(stage)&&!view.error,onViolation:fault,onNavigate:()=>{guideChoiceEpoch++;controller.mockContext?.retireReturnIntent();controller.lifecycle('pagehide')}};
  if(stage==='loading')lines.push('Checking local storage and play ownership…');
  else if(stage==='unavailable'){
   lines.push(view.error??'Reload before continuing.');add('Reload',()=>window.location.reload());if(!report)add('Delete all Money Exchange 2 data',()=>{if(window.confirm('Delete every Money Exchange 2 result and form-exposure record on this browser?'))void clearDamaged().then(()=>window.location.reload()).catch(()=>window.alert('Deletion was not confirmed. Reload and check again.'))});add(report?'Back to mock':'Practice library',back);
@@ -70,7 +70,7 @@ function render(){
    if(guideFeedback.startsWith('Correct'))add('Next',admit('ready'),view.busy)}
  }else if(stage==='ready'){lines.push('We collect completion counts, not your amounts or ratings. See Privacy at traitgame.com/privacy.html.');lines.push('Select Start to begin the first round.','A reload or leaving during play ends this attempt. Saved choices remain reviewable.');add('Start',event=>{const choice=guideChoiceEpoch,current=()=>choice===guideChoiceEpoch;controller.mockContext?.retireReturnIntent();returnError=false;void controller.startWithGuideProof(token,event.detail===0?'keyboard or assistive activation':'pointer activation',current).then(result=>{if(current()&&result==='missing')guideFeedback='The completed run used to skip the guide was deleted. Check the rule to continue.'}).catch(()=>{if(current()){guideFeedback='The completed run used to skip the guide could not be checked. Close and check the rule to continue.';render()}})},view.busy)}
  else if(stage==='checking'){lines.push('Your requested destination is pending. A timeout does not mean the save failed.');}
- else if(view.authorityPending&&['history','report','review'].includes(stage)){heading='Checking saved data';lines.push('Saved amounts are hidden until local authority is confirmed.');if(stage!=='report')add('Back',admit('historyBack'));}
+ else if((view.authorityPending||view.uncertain)&&['history','report','review'].includes(stage)){heading='Checking saved data';lines.push('Saved amounts are hidden until local authority is confirmed.');if(stage!=='report')add('Back',admit('historyBack'));}
  else if(stage==='history'&&report){lines.push('Checking the exact saved report…')}
  else if(stage==='history'){
   lines.push('Saved on this browser only. Deleting one result retains form familiarity; Delete all also clears that record.');
@@ -166,7 +166,7 @@ function render(){
  spec.title=heading;
  try{boundary.showProtected(spec)}catch{fault();return}
  if(renderedEpoch!==view.epoch){renderedEpoch=view.epoch;
-  if(stage.startsWith('connecting_')){const finish=()=>{if(controller.view().epoch!==view.epoch)return;if(!boundary.checkProtected(stage)){fault();return}controller.completePrepared(view.epoch,'animation')};if(matchMedia('(prefers-reduced-motion: reduce)').matches)requestAnimationFrame(()=>requestAnimationFrame(finish));else setTimeout(finish,600);}
+  if(stage.startsWith('connecting_')){const finish=()=>{if(controller.view().epoch!==view.epoch)return;if(!boundary.checkProtected(stage)){fault();return}controller.completePrepared(view.epoch,'animation')};setTimeout(finish,1500);}
   if(spec.result&&round?.exposure==='possibly_revealed'){const art=spec.result;void boundary.prepareResult().then(()=>new Promise<void>(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve())))).then(()=>{if(controller.view().epoch!==view.epoch)return;if(document.visibilityState!=='visible'||!boundary.resultReady(art)){fault();return}controller.completePrepared(view.epoch,'receipt')}).catch(()=>{if(controller.view().epoch===view.epoch)fault()});}
  }
 }

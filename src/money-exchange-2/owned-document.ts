@@ -85,6 +85,7 @@ export type ProtectedView = {
   onViolation: () => void
   onNavigate?: () => void
   preserveActionFocus?: boolean
+  preserveReadingPosition?: boolean
   session?: boolean
   lines: readonly string[]
   buttons: readonly { label: string; act: (event:MouseEvent) => void; disabled?: boolean; expanded?: boolean; selected?: boolean }[]
@@ -201,6 +202,9 @@ export class OwnedDocument {
     if (!this.#active || this.#protectedStage !== null && !this.checkProtected())
       throw Error('The Money Exchange display changed.')
     const priorStage=this.#protectedStage
+    const keepReadingPosition=priorStage===view.stage&&!!view.preserveReadingPosition
+    const readingScroll={left:scrollX,top:scrollY}
+    const pendingHeight=keepReadingPosition&&view.preserveActionFocus?this.#protectedSurface.getBoundingClientRect().height:null
     const priorFocus=this.#root.activeElement
     const focusedHeading=priorFocus instanceof HTMLLegendElement
     const focusedButton=priorFocus instanceof HTMLButtonElement?priorFocus.textContent:null
@@ -310,6 +314,7 @@ export class OwnedDocument {
       this.#protectedSurface.style.margin=`8px 8px 8px ${Math.round(viewport.offsetLeft+8)}px`
       this.#protectedSurface.style.width=`${Math.max(120,Math.floor(viewport.width-16))}px`
     } else this.#protectedSurface.removeAttribute('style')
+    if(pendingHeight!==null)this.#protectedSurface.style.minHeight=`${Math.ceil(pendingHeight)}px`
     this.#protectedSurface.toggleAttribute('data-money-session',!!view.session)
     this.#protectedSurface.setAttribute('data-money-stage',view.stage)
     this.#protectedSurfaceAttributes=attrs(this.#protectedSurface)
@@ -326,21 +331,22 @@ export class OwnedDocument {
     if(priorStage!==view.stage) {this.#deferredActionFocus=null;heading.focus()}
     else if(focusAction) {
       const target=[...actionRegion.querySelectorAll('button')].find(node=>node.textContent===focusAction)
-      if(target&&!target.disabled){this.#deferredActionFocus=null;target.focus()}
-      else {this.#deferredActionFocus=view.preserveActionFocus?focusAction:null;heading.focus()}
-    } else if(focusedHeading)heading.focus()
+      if(target&&!target.disabled){this.#deferredActionFocus=null;target.focus({preventScroll:true})}
+      else {this.#deferredActionFocus=view.preserveActionFocus?focusAction:null;heading.focus({preventScroll:true})}
+    } else if(focusedHeading)heading.focus({preventScroll:true})
     else if(focusedInput==='amount') {
       this.#deferredActionFocus=null
       const target=made.find(node=>node instanceof HTMLInputElement&&node.type==='range')
-      if(target instanceof HTMLInputElement)target.focus()
+      if(target instanceof HTMLInputElement)target.focus({preventScroll:true})
     }
     else if(focusedInput?.startsWith('rating:')) {
       this.#deferredActionFocus=null
-      this.#protectedSurface.querySelector<HTMLInputElement>(`input[name="money-fairness"][value="${focusedInput.slice(7)}"]`)?.focus()
+      this.#protectedSurface.querySelector<HTMLInputElement>(`input[name="money-fairness"][value="${focusedInput.slice(7)}"]`)?.focus({preventScroll:true})
     } else if(focusedInput?.startsWith('comprehension:')) {
       this.#deferredActionFocus=null
-      this.#protectedSurface.querySelector<HTMLInputElement>(`input[name="money-comprehension"][value="${focusedInput.slice(14)}"]`)?.focus()
+      this.#protectedSurface.querySelector<HTMLInputElement>(`input[name="money-comprehension"][value="${focusedInput.slice(14)}"]`)?.focus({preventScroll:true})
     } else this.#deferredActionFocus=null
+    if(keepReadingPosition)window.scrollTo({...readingScroll,behavior:'instant'})
     this.#observer.observe(this.#root,{subtree:true,childList:true,attributes:true,characterData:true})
     this.#observer.observe(this.#html,{subtree:true,childList:true,attributes:true,characterData:true})
   }
