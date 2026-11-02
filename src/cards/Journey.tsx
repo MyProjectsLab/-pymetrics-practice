@@ -8,7 +8,8 @@ import { Attempt } from '../assessment-usage/client'
 import { useEffect, useRef, useState } from 'react'
 import { flushSync } from 'react-dom'
 import { Shell } from '../core/Shell'
-import { DECKS, loadCardsForms } from './core'
+import { DECKS, loadCardsForms, START_BALANCE } from './core'
+import { CardFace } from './CardFace'
 import type { Deck, Report, Run } from './core'
 import { acquireCardsOwner, CardsStore, withCardsDataOrder } from './storage'
 import type { MockJourneyContext } from '../mock/journey-context'
@@ -632,6 +633,7 @@ export function CardsJourney({ onLibrary, mock, reportTarget }: { onLibrary: () 
   const values = run?.events.filter(event => event.type === 'choice_committed').map(event => event.type === 'choice_committed' ? event.value : 0) ?? []
   const shownGains = values.reduce((sum, value) => sum + Math.max(value, 0), 0)
   const shownLosses = values.reduce((sum, value) => sum + Math.max(-value, 0), 0)
+  const barMaximum = Math.max(START_BALANCE, shownGains, shownLosses)
   // The visible order belongs to the immutable assigned form, not the report's alphabetic grouping.
   const [visibleOrder, setVisibleOrder] = useState<Deck[]>([...DECKS])
   useEffect(() => { if (run) void loadCardsForms().then(forms => {
@@ -668,9 +670,13 @@ export function CardsJourney({ onLibrary, mock, reportTarget }: { onLibrary: () 
       }}>← Exit</button><strong className="cards-game-name">Cards</strong><p>{choices} / 80</p></div>
       <div className="cards-progress" aria-hidden="true"><span style={{ transform: `scaleX(${choices / 80})` }} /></div>
       <div className="cards-balance"><span>Balance</span><strong>{money(display?.balance ?? report?.endingBalance ?? 2000)}</strong></div>
-      <p className="cards-gain-loss">Gains {money(shownGains)} · Losses {money(shownLosses)}</p>
+      <div className="cards-gain-loss">
+        <label className="cards-money-bar cards-money-bar-gain"><span>Gains</span><progress max={barMaximum} value={shownGains} aria-label="Cumulative gains" aria-valuetext={money(shownGains)} /><strong>{money(shownGains)}</strong></label>
+        <label className="cards-money-bar cards-money-bar-loss"><span>Losses</span><progress max={barMaximum} value={shownLosses} aria-label="Cumulative losses" aria-valuetext={money(shownLosses)} /><strong>{money(shownLosses)}</strong></label>
+      </div>
       <p className="cards-feedback" ref={feedbackRef} tabIndex={-1} aria-live="polite">
-        <span aria-hidden="true">{display ? <><strong className={`cards-outcome ${display.value > 0 ? 'cards-outcome-gain' : display.value < 0 ? 'cards-outcome-loss' : ''}`}>{outcomeText(display.value)}</strong> from Deck {display.deck}</> : 'Choose a deck'}</span>
+        <span className="cards-draw-message" aria-hidden="true">{display ? <><strong className={`cards-outcome ${display.value > 0 ? 'cards-outcome-gain' : display.value < 0 ? 'cards-outcome-loss' : ''}`}>{outcomeText(display.value)}</strong><span>from Deck {display.deck}</span></> : 'Choose a deck'}</span>
+        <span className="cards-reveal" aria-hidden="true">{display ? <CardFace turn={choices} /> : <span className="cards-card-placeholder">?</span>}</span>
         <span className="cards-sr-only">{display ? `Deck ${display.deck}: ${outcomeText(display.value)}. Balance ${money(display.balance)}.` : 'Choose a deck'}</span></p>
       <div className="cards-decks" ref={deckHost}>{visibleOrder.map(deck => <button key={deck} type="button" className={`cards-deck${display?.deck === deck ? ' cards-deck-chosen' : ''}`}
         disabled={phase !== 'ready'} onKeyDown={event => { if (event.repeat || event.altKey || event.ctrlKey || event.metaKey || event.nativeEvent.isComposing) { event.preventDefault(); return }
