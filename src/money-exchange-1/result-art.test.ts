@@ -44,6 +44,22 @@ describe('Money result image',()=>{
       expect(art.svg).not.toMatch(/<text|<style|<script|<foreignObject|<use|url\(/)
     }
   })
+  it('keeps every white balance pixel inside its dark pill at every layout',()=>{
+    for(const layout of ['wide','narrow','compact'] as const){
+      const art=moneyResultArt({sentCents:500,potCents:1500,returnedCents:615,selfCents:1115,partnerCents:885},layout)
+      const pills=[...art.svg.matchAll(/<rect x="([\d.]+)" y="([\d.]+)" width="([\d.]+)" height="([\d.]+)" rx="[\d.]+" fill="#2d3342"/g)].map(match=>match.slice(1).map(Number))
+      const amounts=[...art.svg.matchAll(/<path d="([^"]+)" fill="#ffffff"/g)].map(match=>match[1])
+      expect(pills).toHaveLength(2);expect(amounts).toHaveLength(2)
+      amounts.forEach((path,index)=>{
+        const [left,top,width,height]=pills[index]
+        const pixels=[...path.matchAll(/M([\d.]+) ([\d.]+)h([\d.]+)v\3h-\3z/g)]
+        expect(pixels.length).toBeGreaterThan(0)
+        for(const match of pixels){const [x,y,size]=match.slice(1).map(Number)
+          expect(x>=left&&x+size<=left+width&&y>=top&&y+size<=top+height,`${layout} balance ${index}, pixel ${x},${y},${size}, pill ${pills[index]}`).toBe(true)
+        }
+      })
+    }
+  })
   it('draws the correct cents for every form, boundary transfer and layout',()=>{
     for(const rate of [4100,2000,6500,0,8000,3500]) for(const sent of [0,1,5,500,999,1000]) {
       const pot=sent*3, returned=Number((BigInt(pot)*BigInt(rate)+5000n)/10000n)

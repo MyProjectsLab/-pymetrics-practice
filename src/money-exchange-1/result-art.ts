@@ -96,7 +96,7 @@ export function moneyResultArt(amounts:Amounts, layout:'wide'|'narrow'|'compact'
     if(i<2) {
       pieces.push(`<circle data-participant="" cx="${cx}" cy="${compact?65:small?82:98}" r="${compact?26:small?34:42}" fill="${i===0?'#4caaa4':'#d6c8ed'}"/>`)
       pieces.push(`<circle cx="${cx}" cy="${compact?57:small?72:86}" r="${compact?8:small?10:12}" fill="#ffffff"/><ellipse cx="${cx}" cy="${compact?77:small?98:116}" rx="${compact?17:small?22:27}" ry="${compact?12:small?15:19}" fill="#ffffff"/>`)
-      pieces.push(`<rect x="${cx-(small?72:80)}" y="8" width="${small?144:160}" height="${compact?26:small?34:42}" rx="17" fill="#2d3342"/>`)
+      pieces.push(`<rect x="${cx-(small?72:80)}" y="8" width="${small?144:160}" height="${small?34:42}" rx="17" fill="#2d3342"/>`)
     }
     pieces.push(path(label,Math.round((compact&&i===2?66:cx)-(label.length*6-1)*labelScale/2),labelY,labelScale,'#14213d'))
     pieces.push(path(values[i],Math.round((compact&&i===2?238:cx)-(values[i].length*6-1)*scale/2),amountY,scale,i<2?'#ffffff':'#14213d'))

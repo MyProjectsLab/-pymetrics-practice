@@ -53,3 +53,15 @@ Browser input is trusted automation in isolated profiles, not physical iPhone/Sa
 - Screenshots inspected at 1005×805, 1920×1080, 375×667 and compact 800×400. The phone report now fits on one page in the captured 375×667 view, and allocation plus Next fit the same viewport. The reference/default-feature/evidence limits from the seven-game review remain explicit.
 
 Full logs and before/after evidence are retained outside Git in `outputs/money1-reference-20261102/`. No user history was changed; all browser runs used isolated profiles.
+
+## F1 compact glyph repair after the independent FAIL
+
+The separate audit **FAILED at `865931e`** on one display finding: compact numeric paths span y=15…35 but their dark pill ended at y=34. The last two white rows disappeared against the white image background. All independent functional/cents/replay/tamper checks passed at that SHA; they did not establish the missing glyph contrast. The retained exact-SHA audit is external `outputs/money1-reference-20261102/independent-865931e/AUDIT.md`.
+
+A new unit test first reproduced the coverage failure, checking every white balance pixel against its dark pill across wide/narrow/compact layouts. The product repair changes only compact pill height from26 to34px, retaining image dimensions, numeric paths, stage geometry, controls, timing, amounts and authority logic. Focused Money 1 checks now pass26/26. The auditor's native compact reproduction was rerun as a developer check: image rows34/35 now retain white glyph pixels against dark background `[45,51,66]`, while the full image still fits. Before/after tests and pixel output are in `checks/compact-before.log`, `checks/compact-after.log` and `compact-repair/`.
+
+Two full repair-suite runs encountered other unchanged tests: default worker concurrency missed App's Stop-history heading lookup; four workers timed out a Balloons retest fixture at its existing5000ms deadline. These are retained in external logs. No assertion, timeout, skip, product file or test for those games was changed; their cause is not established. A complete one-worker run is used to remove parallel test contention without changing any checks.
+
+The prior33/0/0 browser suite remains evidence for the byte-identical Journey/CSS/owned-document/controls implementation; focused browser rechecks cover the compact SVG-only repair. A new exact-SHA independent F1 closure audit is required before preview handoff. The original FAIL remains historical at865931e.
+
+Repair check results: `npm test -- --maxWorkers=1` completes the full169-file suite with **2,374 passed, 0 failed, 13 skipped** (168 passed files, one skipped). No timeout or test assertion was altered. Lint and production build pass. The post-repair native phone regression passes1/0/0 and the compact pixel reproduction passes; the unchanged broader33-test browser evidence is carried explicitly from865931e. The one-worker outcome does not establish the earlier intermittent failures' cause. A short scroll to Next is still needed at320×568 (the complete result itself fits and confirms);375×667 and compact800×400 fit the captured task/Next.
