@@ -1,7 +1,6 @@
 import { PreparationBack, usePreparationBack } from '../onboarding/PreparationBack'
 import { mockMenuButtons } from '../onboarding/mockMenuButtons'
 import { QuickRules } from '../onboarding/QuickRules'
-import { feedbackLines, moneyOneFeedback } from '../reports/feedback'
 import { AssessmentUsageNotice } from '../assessment-usage/Notice'
 /* oxlint-disable react-hooks/exhaustive-deps */
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
@@ -12,7 +11,7 @@ import type { Form, Report, Run } from './core'
 import { MoneyRuntime } from './runtime'
 import type { ExclusiveMoneyDocument } from './exclusive-document'
 import type { ProtectedView } from './exclusive-document'
-import { moneyPairArt, moneyResultArt } from './result-art'
+import { moneyAwardArt, moneyPairArt, moneyResultArt } from './result-art'
 import type { MockJourneyContext } from '../mock/journey-context'
 import { withSelectedMockReportPublication } from '../mock/report-route'
 import type { ReportTarget } from '../mock/report-route'
@@ -36,7 +35,7 @@ function stepTitle(screen:Screen) { return ({guide:'Money Exchange 1',example:'S
   instructions:'Instructions',ready:'Ready?',award:'You receive $10',connecting:'Connecting',connected:'Partner connected',
   partner_rules:'The exchange',return_explanation:'Choose an amount to send',transfer:'Send an amount',
   transfer_busy:'Sending',response_ready:'Your partner has received the money',final_allocation:'The partner returned an amount',
-  fairness:'How fair was the return?',test_complete:'Test Complete',report:'Your Money Exchange 1 result',
+  fairness:'How fair was the return?',test_complete:'Test Complete',report:'Your exchange',
   help:'How the amounts were calculated',history:'Local Money Exchange 1 history',review:'Checking your exchange'})[screen] }
 function resultLayout(): 'wide'|'narrow'|'compact' {
   const viewport=window.visualViewport
@@ -66,17 +65,21 @@ function compareMoney(root:MoneyRoot,selected:Run):string {
     'No comparable earlier run is currently verified.'
 }
 function reportSummary(report:Report,comparison:string):string[]{return report.status==='complete_valid' ? [
-  'Completed and saved in this browser',...feedbackLines(moneyOneFeedback(report)),
+  'Completed and saved in this browser',
+  report.sentCents===null?'No transfer was saved.':`You sent ${money(report.sentCents)}. The partner returned ${money(report.returnedCents!)}.`,
+  report.rating===null?'Fairness: not applicable (no transfer).':`Your fairness rating: ${report.rating} / 10.`,
   ...(comparison==='No comparable earlier run is currently verified.'?[]:[comparison]),
 ] : ['Incomplete exchange saved for review',report.sentCents===null?'No transfer was confirmed.':`You sent ${money(report.sentCents)}. A complete result was not confirmed.`]}
+function reportFacts(report:Report){return report.status==='complete_valid'?[{label:'You finished with',value:money(report.selfCents!)},{label:'Partner finished with',value:money(report.partnerCents!)}]:[]}
 function ReportView({ report, comparison, onHelp, onAgain, onHistory, onLibrary, readOnly }: {
   report:Report;comparison:string;onHelp:()=>void;onAgain:()=>void;onHistory:()=>void;onLibrary:()=>void;readOnly?:boolean
 }) {
   return <div className="money-report">
     {reportSummary(report,comparison).map((line,index)=><p key={index} role={index===0?'status':undefined}>{line}</p>)}
-    <details><summary>Detailed numbers</summary>{reportLines(report).slice(1,-1).map((line,index)=><p key={index}>{line}</p>)}</details><p>{LIMIT}</p>
-    <div className="money-actions">{!readOnly&&<button onClick={onAgain}>Try Again</button>}<button className="secondary" onClick={onHelp}>How the amounts were calculated</button>
-      {!readOnly&&<button className="secondary" onClick={onHistory}>Local history</button>}<button className="secondary" onClick={onLibrary}>{readOnly?'Back to mock':'Library'}</button></div>
+    <div className="money-report-facts">{reportFacts(report).map(fact=><div key={fact.label}><span>{fact.label}</span><strong>{fact.value}</strong></div>)}</div>
+    <details><summary>Detailed numbers</summary>{reportLines(report).slice(1,-1).map((line,index)=><p key={index}>{line}</p>)}<button className="secondary" onClick={onHelp}>How the amounts were calculated</button></details>
+    <div className="money-actions">{!readOnly&&<button onClick={onAgain}>Try Again</button>}
+      {!readOnly&&<button className="secondary" onClick={onHistory}>History</button>}<button className="secondary" onClick={onLibrary}>{readOnly?'Back to mock':'Main menu'}</button></div><p className="money-note">{LIMIT}</p>
   </div>
 }
 export function MoneyExchangeJourney({ runtime, boundary, onLibrary, mock, reportTarget }: { runtime:MoneyRuntime;boundary:ExclusiveMoneyDocument;onLibrary:()=>void;mock?:MockJourneyContext;reportTarget?:ReportTarget }) {
@@ -89,6 +92,7 @@ export function MoneyExchangeJourney({ runtime, boundary, onLibrary, mock, repor
   const [quiz,setQuiz]=useState(''), [report,setReport]=useState<Report|null>(null)
   const [comparison,setComparison]=useState('No comparable earlier run is currently verified.')
   const [detailsOpen,setDetailsOpen]=useState(false)
+  const [optionsOpen,setOptionsOpen]=useState(false)
   const [canSkip,setCanSkip]=useState(false)
   const skipSource=useRef<string|null>(null)
   const [history,setHistory]=useState<Run[]>([])
@@ -125,6 +129,8 @@ export function MoneyExchangeJourney({ runtime, boundary, onLibrary, mock, repor
     const lines:string[]=error?[error]:[]
     const buttons:ProtectedView['buttons'][number][]=[]
     let detailLines:readonly string[]|undefined
+    let facts:ProtectedView['facts']
+    let secondaryButtons:ProtectedView['secondaryButtons']
     const add=(label:string,act:()=>void,disabled=false,sameReturnIntent=false,expanded?:boolean)=>buttons.push({label,act:()=>{if(!sameReturnIntent)competingChoice();act()},disabled,expanded})
     let amountField:ProtectedView['amount'],ratingField:ProtectedView['rating'],comprehensionField:ProtectedView['comprehension'],art:ProtectedView['result'],pair:ProtectedView['pair']
     switch(screen) {
@@ -145,7 +151,7 @@ export function MoneyExchangeJourney({ runtime, boundary, onLibrary, mock, repor
         lines.push('When you are ready, select Start to see your starting amount.','We collect completion counts, not your amounts or ratings. See Privacy at traitgame.com/privacy.html.')
         add('Start',()=>change('award'),busy);add('Restart',()=>void restart());add('Close',close);break
       case 'award':
-        lines.push('You have $10.00.')
+        lines.push('You have $10.00.');pair=moneyAwardArt()
         add('Next',()=>{change('connecting');window.setTimeout(()=>{if(mounted.current&&screenRef.current==='connecting')change('connected')},300)})
         add('Restart',()=>void restart());add('Close',close);break
       case 'connecting':
@@ -161,7 +167,7 @@ export function MoneyExchangeJourney({ runtime, boundary, onLibrary, mock, repor
         lines.push('Choose a transfer from your $10. The partner response in this practice exercise is scripted.')
         add('Next',()=>void start(),busy);add('Restart',()=>void restart());add('Close',close);break
       case 'transfer':
-        lines.push('You have $10.00. Partner has $0.00. Enter an amount from $0.00 to $10.00.')
+        lines.push('Choose how much to send: $0.00 to $10.00.')
         pair=moneyPairArt(1000,0,resultLayout())
         amountField={value:amountRef.current,current:()=>amountRef.current,changed:value=>{amountRef.current=value}}
         add('Next',()=>void send(),busy);add('Restart',()=>void restart());add('Close',close);break
@@ -189,12 +195,13 @@ export function MoneyExchangeJourney({ runtime, boundary, onLibrary, mock, repor
       case 'report':
         if(report) {
           lines.push(...reportSummary(report,comparison),LIMIT)
+          facts=reportFacts(report)
           if(detailsOpen)detailLines=reportLines(report).slice(1,-1)
           add('Detailed numbers',()=>setDetailsOpen(value=>!value),false,false,detailsOpen)
           if(reportTarget)add('Back to mock',onLibrary)
           else if(mock){add('Continue full mock',()=>void returnToMock(),false,true);add('Try Again',()=>void again())}
           else add('Try Again',again)
-          add('How the amounts were calculated',()=>void showHelp());if(!reportTarget){add('Local history',()=>void showHistory());add('Library',onLibrary)}
+          if(detailsOpen)add('How the amounts were calculated',()=>void showHelp());if(!reportTarget){add('History',()=>void showHistory());add('Main menu',onLibrary)}
         } break
       case 'help':
         lines.push('Your remaining amount is $10 minus what you sent. The partner pot is three times what you sent.')
@@ -219,12 +226,20 @@ export function MoneyExchangeJourney({ runtime, boundary, onLibrary, mock, repor
         add('Check saved outcome',()=>void checkOutcome(),busy||runtime.state.settling)
         add('Local history',()=>void showHistory());add('Library',close);break
     }
+    if(['connecting','connected','partner_rules','return_explanation'].includes(screen))pair=moneyPairArt(1000,0,resultLayout())
     if(mock||reportTarget){
       buttons.splice(0,buttons.length,...mockMenuButtons(buttons,{label:'Return to mock',act:()=>void returnToMock()}))
       if(mock&&returnFailed&&!returnBusy)add('Leave with result unconfirmed',leaveMockUnconfirmed)
     }
+    if(control){
+      const exits=buttons.filter(button=>['Restart','Close','Return to mock'].includes(button.label))
+      for(const exit of exits)buttons.splice(buttons.indexOf(exit),1)
+      const confirming=screen==='final_allocation'&&busy
+      add('More options',()=>setOptionsOpen(value=>!value),confirming,false,optionsOpen||confirming)
+      if(optionsOpen||confirming)secondaryButtons=exits
+    }
     if (preparationBack.canBack) add('Back', preparationBack.back, busy || !!runtime.state.pendingArm || runtime.state.run?.status === 'active' || runtime.state.settling)
-    return {stage:screen,title:stepTitle(screen),lines,detailLines,buttons,amount:amountField,rating:ratingField,comprehension:comprehensionField,pair,result:art,
+    return {stage:screen,title:stepTitle(screen),lines,detailLines,facts,secondaryButtons,buttons,amount:amountField,rating:ratingField,comprehension:comprehensionField,pair,result:art,
       onNavigate:(href:string,event:MouseEvent)=>{event.preventDefault();void close(undefined,href)},
       onViolation:()=>{
         surfaceFaultRef.current=true
@@ -235,7 +250,7 @@ export function MoneyExchangeJourney({ runtime, boundary, onLibrary, mock, repor
     if (busy || runtime.state.pendingArm || runtime.state.run?.status === 'active' || runtime.state.settling) return false
     competingChoice(); change(previous)
   })
-  function change(next:Screen) {navigationEpochRef.current++;screenRef.current=next;setScreen(next);if(next==='report')setDetailsOpen(false);setError(null);setReturnFailed(false) }
+  function change(next:Screen) {navigationEpochRef.current++;screenRef.current=next;setScreen(next);setOptionsOpen(false);if(next==='report')setDetailsOpen(false);setError(null);setReturnFailed(false) }
   function competingChoice(){mock?.retireReturnIntent()}
   function problem(reason:unknown) { setError(reason instanceof Error?reason.message:'Local state could not be verified.') }
   function beginBusy() { const token=++busyTokenRef.current;busyNowRef.current=true;setBusy(true);return token }
@@ -465,11 +480,9 @@ export function MoneyExchangeJourney({ runtime, boundary, onLibrary, mock, repor
   })}
   const control=screen==='instructions' || screen==='ready' || ['award','connecting','connected','partner_rules','return_explanation','transfer','transfer_busy','response_ready','final_allocation','fairness'].includes(screen)
   if(reportTarget&&!['report','help'].includes(screen))return <Shell onLibrary={returnToMock}><section className="journey panel"><h1>Saved Money Exchange 1 report</h1><p role={error?'alert':'status'}>{error||'Checking the exact retained result…'}</p><button onClick={()=>void returnToMock()}>Return to mock</button></section></Shell>
-  return <Shell onLibrary={returnToMock}><div className="journey-top"><button className="secondary" onClick={()=>void returnToMock()}><span aria-hidden="true">← </span>{mock||reportTarget?'Return to mock':'Main menu'}</button><p>Money Exchange 1 · Practice</p></div><section className="panel money-journey" aria-labelledby="money-title">
+  return <Shell onLibrary={returnToMock}><div className="journey-top"><button className="secondary" onClick={()=>void returnToMock()}><span aria-hidden="true">← </span>{mock||reportTarget?'Return to mock':'Main menu'}</button><p>Money Exchange 1 · Practice</p></div><section className="panel money-journey" data-money-screen={screen} aria-labelledby="money-title">
     <div className="money-header"><div>{screen === 'guide' && <p className="eyebrow">How it works</p>}<h1 id="money-title" tabIndex={-1} ref={headingRef}>{stepTitle(screen)}</h1></div>
-      {control && <div className="money-header-actions">{screen!=='instructions' && <button className="secondary" onClick={()=>void restart()}>Restart</button>}
-        <button className="secondary" onClick={()=>void returnToMock()}>{mock||reportTarget?'Return to mock':'Close'}</button></div>}
-      {screen==='test_complete' && <button className="secondary" onClick={()=>void returnToMock()}>{mock||reportTarget?'Return to mock':'Close'}</button>}</div>
+      </div>
     {!ready && <p role="status">Checking local storage…</p>}
     {error && <p role="alert" className="money-error">{error}</p>}
     {mock && returnFailed && !returnBusy && <button className="secondary" onClick={leaveMockUnconfirmed}>Leave with result unconfirmed</button>}
@@ -517,6 +530,8 @@ export function MoneyExchangeJourney({ runtime, boundary, onLibrary, mock, repor
         <button className="secondary" disabled={!history.length&&!hasUnresolvedActive} onClick={()=>void removeAll()}>Delete all Money Exchange 1 data</button><button className="secondary" onClick={()=>void close()}>Library</button></div></>}
     {screen==='review' && <><p>The previous exchange has not been confirmed as complete. It cannot resume midway.</p>
       <button disabled={busy||runtime.state.settling} onClick={()=>void checkOutcome()}>Check saved outcome</button><button className="secondary" onClick={()=>void showHistory()}>Local history</button><button className="secondary" onClick={()=>void close()}>Library</button></>}
+    {control && <div className="money-options"><button className="secondary" aria-expanded={optionsOpen} onClick={()=>setOptionsOpen(value=>!value)}>More options</button>{optionsOpen&&<div className="money-actions">{screen!=='instructions'&&<button className="secondary" onClick={()=>void restart()}>Restart</button>}<button className="secondary" onClick={()=>void returnToMock()}>{mock||reportTarget?'Return to mock':'Close'}</button></div>}</div>}
+    {screen==='test_complete'&&<button className="secondary" onClick={()=>void returnToMock()}>{mock||reportTarget?'Return to mock':'Close'}</button>}
     <PreparationBack navigation={preparationBack} disabled={busy || !!runtime.state.pendingArm || runtime.state.run?.status === 'active' || runtime.state.settling} />
     {(screen === 'guide' || screen === 'ready') && <AssessmentUsageNotice />}
   </section></Shell>

@@ -8,33 +8,56 @@ import type { MoneyResultArt } from './result-art'
 
 const css = `${indexCss.replace(':root', ':host')}\n${appCss}\n${moneyCss}\n:host{display:block}`
 const protectedCss = `${sizeTokens}
-
-:host{all:initial;display:block;min-height:100vh;background:#fafbf9;color:#172d30;font:16px system-ui;direction:ltr;writing-mode:horizontal-tb}
-fieldset[data-money-stage]{all:initial;box-sizing:border-box;display:block;max-width:760px;min-height:340px;margin:24px auto;padding:24px;border:2px solid #276251;border-radius:12px;background:#fff;color:#172d30;font:16px system-ui;direction:ltr;writing-mode:horizontal-tb}
-legend{font-size:1.5rem;font-weight:700;color:#172d30}
-output{display:block;margin:12px 0;line-height:1.5;color:#172d30}
-label{display:block;margin:12px 0;color:#172d30}
-input{box-sizing:border-box;max-width:100%;padding:10px;font:inherit}
-button{box-sizing:border-box;min-height:var(--ap-button-height);margin:10px 10px 0 0;padding:9px 16px;border:2px solid #18594f;border-radius:6px;background:#fff;color:#18594f;font:inherit;cursor:pointer}
-button:focus-visible,input:focus-visible{outline:3px solid #995500;outline-offset:3px}
-img[data-money-result]{display:block;width:100%;max-width:700px;height:auto;object-fit:contain;background:#fff}
-img[data-money-pair]{display:block;width:100%;max-width:700px;height:auto;object-fit:contain;background:#fff}
+${moneyCss}
+:host{all:initial;display:block;min-height:100vh;background:#fff;color:#14213d;font:var(--ap-font-body)/var(--ap-line-height) 'AP Inter',Arial,sans-serif;direction:ltr;writing-mode:horizontal-tb}
+main[data-money-main]{display:block;padding:0 16px 24px}
+nav[data-site-nav]{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;box-sizing:border-box;max-width:var(--ap-panel-width);margin:0 auto;padding:16px 0}
+nav[data-site-nav] a{display:inline-flex;align-items:center;min-height:44px;color:#0e7490;text-underline-offset:4px}
+nav[data-site-nav] a.ap-wordmark{gap:16px;color:#14213d;font:600 18px/1.1 'AP Inter',Arial,sans-serif;text-decoration:none}
+nav[data-site-nav] .ap-wordmark svg{width:40px;height:40px;flex-shrink:0;color:#0891b2}
+fieldset[data-money-stage]{all:initial;display:flex;flex-direction:column;box-sizing:border-box;width:100%;max-width:var(--ap-panel-width);min-height:560px;margin:0 auto;padding:24px 32px;background:#fff;color:#14213d;font:var(--ap-font-body)/var(--ap-line-height) 'AP Inter',Arial,sans-serif;direction:ltr;writing-mode:horizontal-tb;border:0}
+fieldset[data-money-stage]>legend{float:left;width:100%;box-sizing:border-box;margin:0 0 24px;text-align:center;color:#14213d;font:400 var(--ap-font-heading)/1.15 'AP Newsreader',Georgia,serif}
+fieldset[data-money-stage]>legend:focus{outline:none}
+fieldset[data-money-stage]>legend:focus-visible{outline:3px solid #0891b2;outline-offset:3px}
+output{display:block;line-height:1.5;margin:8px 0;text-align:center;color:#14213d}
+label{display:block;margin:12px 0;color:#14213d;text-align:center}
+input{box-sizing:border-box;max-width:100%;padding:10px;font:inherit;accent-color:#0e7490}
+input[type=text]{display:block;width:200px;margin:0 auto 20px;text-align:center;font-size:var(--ap-font-number);border:0;border-bottom:2px solid #a7b4bc;border-radius:0}
+button{box-sizing:border-box;min-height:var(--ap-button-height);min-width:var(--ap-button-width);padding:12px 24px;border:0;border-radius:999px;background:#0e7490;color:#fff;font:500 var(--ap-font-button)/1.4 'AP Inter',Arial,sans-serif;cursor:pointer}
+button.quiet-action{min-width:0;padding:8px 0;background:transparent;color:#0e7490;text-decoration:underline;text-underline-offset:4px;border-radius:0}
+button:disabled{opacity:.45;cursor:default}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid #0891b2;outline-offset:3px}
+[data-money-actions]{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px;margin-top:24px;min-height:56px}
+[data-money-actions]>button[data-primary]{order:2;margin-left:auto}
+fieldset[data-money-stage="report"] [data-money-actions]>button[data-primary]{order:0;margin-left:0}
+[data-money-options]{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:12px}
+img[data-money-result],img[data-money-pair]{display:block;width:100%;height:auto;object-fit:contain;background:#fff;margin:12px auto 20px;clear:both}
+img[data-money-result]{max-height:320px}
 output[data-money-semantics]{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-.assessment-usage-notice{display:block;color:#4a5368;font-size:var(--ap-font-small);line-height:1.6;text-align:left;margin:1.5rem 0 0}
-nav[data-site-nav]{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:0 0 22px}
-nav[data-site-nav] a{color:#18594f;min-height:var(--ap-button-height);display:inline-flex;align-items:center}
-nav[data-site-nav] a.ap-wordmark{gap:1rem;font:600 1rem/1.1 'AP Inter',Arial,sans-serif;color:#14213d;text-decoration:none}nav[data-site-nav] .ap-wordmark svg{width:40px;height:40px;flex-shrink:0;color:#0891b2}
-nav[data-site-nav] a:focus-visible{outline:3px solid #995500;outline-offset:3px}
-@media(max-width:600px){fieldset[data-money-stage]{margin:8px;padding:16px}}
-:host, fieldset[data-money-stage] { font-size:var(--ap-font-body); line-height:var(--ap-line-height); }
-fieldset[data-money-stage] { max-width:var(--ap-panel-width); }
-button { min-height:var(--ap-button-height); font-size:var(--ap-font-button); }
-@media(min-width:768px) { button { min-width:var(--ap-button-width); } }
-
-label:has(input[name="money-comprehension"]) { box-sizing:border-box;display:flex;flex-direction:row;align-items:flex-start;gap:var(--ap-space-3);width:100%;padding:var(--ap-option-padding);border:1px solid #d5dae4;border-radius:var(--ap-radius);font-size:var(--ap-font-option);line-height:var(--ap-line-height); }
-input[name="money-comprehension"] { width:var(--ap-radio-size);height:var(--ap-radio-size);flex:none; }
-
+fieldset[aria-label="Fairness from 0 to 10"]{display:flex;flex-wrap:wrap;justify-content:center;gap:0;padding:12px 0;border:0;margin:12px auto}
+fieldset[aria-label="Fairness from 0 to 10"] label{display:flex;flex-direction:column;align-items:center;min-width:36px;margin:0;padding:8px 2px;font-size:var(--ap-font-small)}
+fieldset[aria-label="Fairness from 0 to 10"] input{width:22px;height:22px;margin:0 0 8px;padding:0}
+[data-money-facts]{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:640px;width:100%;margin:12px auto 20px}
+[data-money-fact]{display:flex;flex-direction:column;text-align:center;gap:4px}
+[data-money-fact] span{font-size:var(--ap-font-label);color:#596878}
+[data-money-fact] strong{font:400 var(--ap-font-number)/1.2 'AP Newsreader',Georgia,serif}
+[data-money-details]{margin-top:24px}
+.assessment-usage-notice{font-size:var(--ap-font-small);color:#596878;margin-top:24px}
+@media(max-width:600px){main[data-money-main]{padding:0 12px 16px}nav[data-site-nav]{gap:8px 16px;padding:8px 0}fieldset[data-money-stage]{padding:16px 4px;min-height:460px}fieldset[data-money-stage]>legend{margin-bottom:16px}fieldset[data-money-stage="final_allocation"]{min-height:0}img[data-money-result]{max-height:260px;margin:8px auto 12px}img[data-money-pair]{margin:8px auto 12px}fieldset[data-money-stage="transfer"] input[type=text]{font-size:40px}fieldset[data-money-stage="fairness"] [data-money-actions]{margin-top:12px}[data-money-actions]{gap:12px;margin-top:16px}[data-money-actions]>button[data-primary]{min-width:120px}[data-money-options]{gap:8px 20px}}
+/* The amount stays between the participants on desktop, below them on phones. */
+fieldset[data-money-stage="transfer"]{display:grid;grid-template-columns:minmax(0,1fr) minmax(200px,1.4fr) minmax(0,1fr);gap:12px 0}
+fieldset[data-money-stage="transfer"]>legend{grid-column:1/-1;grid-row:1;float:none}
+fieldset[data-money-stage="transfer"]>output:not([data-money-semantics]){grid-column:2;grid-row:2;align-self:end;margin:24px 0 0;position:relative;z-index:1;background:#fff}
+fieldset[data-money-stage="transfer"]>label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+fieldset[data-money-stage="transfer"]>input{grid-column:2;grid-row:3;align-self:start;width:160px;height:80px;padding:8px 12px;margin:0 auto 32px;font-family:'AP Newsreader',Georgia,serif;z-index:1;background:#fff}
+fieldset[data-money-stage="transfer"]>input:focus{outline:none;border-bottom:3px solid #0e7490}
+fieldset[data-money-stage="transfer"]>img[data-money-pair]{grid-column:1/-1;grid-row:2/4;align-self:center;width:100%;max-width:none!important;margin:0;pointer-events:none}
+fieldset[data-money-stage="transfer"]>[data-money-actions]{grid-column:1/-1;grid-row:4}
+fieldset[data-money-stage="transfer"]>[data-money-options]{grid-column:1/-1;grid-row:5}
+@media(max-width:600px){fieldset[data-money-stage="transfer"]{display:flex;gap:0}fieldset[data-money-stage="transfer"]>img[data-money-pair]{order:-1;width:100%;max-width:320px!important}fieldset[data-money-stage="transfer"]>legend{order:-3}fieldset[data-money-stage="transfer"]>output:not([data-money-semantics]){order:-2;margin:4px 0 8px}fieldset[data-money-stage="transfer"]>input{margin:0 auto 12px;height:68px}}
+@media(max-height:500px){nav[data-site-nav]{padding:0;gap:8px 16px}nav[data-site-nav] a{min-height:36px}fieldset[data-money-stage]{min-height:0;padding:12px 4px}fieldset[data-money-stage]>legend{font-size:28px;margin-bottom:8px}img[data-money-result]{max-height:180px;margin:4px auto 8px}[data-money-actions]{margin-top:8px}}
 `
+
 const attrs = (node: Element) => JSON.stringify([...node.attributes].map(a => [a.name, a.value]).sort(([a], [b]) => a.localeCompare(b)))
 const children = (node: Node, expected: Node[]) => node.childNodes.length === expected.length && expected.every((item, index) => node.childNodes[index] === item)
 type UiNode = { node: Node; children: Node[]; attributes: string | null; text: string | null }
@@ -49,6 +72,8 @@ export type ProtectedView = {
   amount?: { value: string; current: () => string; changed: (value: string) => void }
   rating?: { value: number | null; current: () => number | null; changed: (value: number) => void }
   comprehension?: { value: string; current: () => string; changed: (value: string) => void }
+  facts?: readonly {label:string;value:string}[]
+  secondaryButtons?: readonly {label:string;act:()=>void;disabled?:boolean}[]
   pair?: { src: string; width: number; height: number; semantics: string }
   result?: { src: string; width: number; height: number; semantics: string }
 }
@@ -67,6 +92,8 @@ export class ExclusiveMoneyDocument {
   readonly #style = document.createElement('style')
   readonly #mount = document.createElement('div')
   readonly #protectedStyle = document.createElement('style')
+  readonly #protectedMain = document.createElement('main')
+  #siteNav: HTMLElement | null = null
   readonly #protectedSurface = document.createElement('fieldset')
   readonly #attributes = new Map<Element, string>()
   readonly #sheet: CSSStyleSheet | null
@@ -97,6 +124,7 @@ export class ExclusiveMoneyDocument {
     this.#head.append(this.#charset, this.#viewport, this.#title)
     this.#style.textContent = css
     this.#protectedStyle.textContent = protectedCss
+    this.#protectedMain.setAttribute('data-money-main','')
     this.#protectedSurface.setAttribute('data-money-stage', '')
     this.#mount.id = 'money-owned-app'
     this.#root.append(this.#style, this.#mount)
@@ -118,7 +146,8 @@ export class ExclusiveMoneyDocument {
     if (this.#active || !this.#outerIntact() || !children(this.#root, [this.#style, this.#mount]) ||
       !this.#sheetIntact(this.#style, css, this.#sheet, this.#rules))
       throw Error('The Money Exchange document changed before Start.')
-    this.#root.replaceChildren(this.#protectedStyle, this.#protectedSurface)
+    this.#protectedMain.replaceChildren(this.#protectedSurface)
+    this.#root.replaceChildren(this.#protectedStyle, this.#protectedMain)
     this.#protectedSheet = this.#protectedStyle.sheet
     this.#protectedRules = this.#protectedSheet ? [...this.#protectedSheet.cssRules].map(rule => rule.cssText).join('\n') : ''
     this.#active = true
@@ -147,9 +176,9 @@ export class ExclusiveMoneyDocument {
     this.#resultImage=null;this.#resultMeaning=null
     const heading = document.createElement('legend');heading.tabIndex=-1
     heading.append(document.createTextNode(view.title)); made.push(heading)
-    made.push(siteNav)
-    for (const line of view.lines) { const item=document.createElement('output'); item.append(document.createTextNode(line)); made.push(item) }
-    if (view.detailLines?.length) { const region=document.createElement('section');region.setAttribute('aria-label','Detailed numbers');for(const line of view.detailLines){const item=document.createElement('output');item.append(document.createTextNode(line));region.append(item)}made.push(region) }
+    for (const line of view.lines) { const item=document.createElement('output');if(line.startsWith('This is an original practice exercise.'))item.className='assessment-usage-notice'; item.append(document.createTextNode(line)); made.push(item) }
+    if(view.facts){const facts=document.createElement('div');facts.setAttribute('data-money-facts','');for(const fact of view.facts){const item=document.createElement('div');item.setAttribute('data-money-fact','');const label=document.createElement('span'),value=document.createElement('strong');label.textContent=fact.label;value.textContent=fact.value;item.append(label,value);facts.append(item)}made.push(facts)}
+    if (view.detailLines?.length) { const region=document.createElement('section');region.setAttribute('data-money-details','');region.setAttribute('aria-label','Detailed numbers');for(const line of view.detailLines){const item=document.createElement('output');item.append(document.createTextNode(line));region.append(item)}made.push(region) }
     if (view.amount) {
       const label=document.createElement('label'); label.append(document.createTextNode('Amount to send in dollars'))
       const input=document.createElement('input'); input.type='text'; input.inputMode='decimal'; input.value=view.amount.value
@@ -212,15 +241,30 @@ export class ExclusiveMoneyDocument {
         node instanceof HTMLInputElement && node.checked===(Number(node.value)===view.rating?.current()))) &&
       (!view.comprehension || [...this.#protectedSurface.querySelectorAll<HTMLInputElement>('input[name="money-comprehension"]')].every(node=>
         node.checked===(node.value===view.comprehension?.current())))
-    for (const action of view.buttons) {
+    const actions=document.createElement('div');actions.setAttribute('data-money-actions','')
+    const appendAction=(action:ProtectedView['buttons'][number],region:HTMLElement,primary=false)=>{
       const button=document.createElement('button');button.type='button';button.disabled=!!action.disabled
+      if(primary)button.setAttribute('data-primary','');else button.className='quiet-action'
       if(action.expanded!==undefined)button.setAttribute('aria-expanded',String(action.expanded))
       button.append(document.createTextNode(action.label));button.addEventListener('click',()=>{
         if (!this.checkProtected(view.stage) || !controlsMatch()) { this.recover(); view.onViolation(); return }
         action.act()
-      });made.push(button)
+      });region.append(button)
     }
-    const privacyLines = made.filter(node => node instanceof HTMLOutputElement && /Privacy/.test(node.textContent ?? ''))
+    const primary=view.buttons.find(action=>!['Restart','Close','Back','More options','Detailed numbers','How the amounts were calculated','Local history','History','Library','Main menu','Return to mock','Back to mock'].includes(action.label))
+    for (const action of view.buttons){
+      if(view.stage==='report'&&action.label==='Detailed numbers'){
+        const disclosure=document.createElement('div');disclosure.setAttribute('data-money-disclosure','');appendAction(action,disclosure)
+        const detailIndex=made.findIndex(node=>node instanceof HTMLElement&&node.hasAttribute('data-money-details'))
+        made.splice(detailIndex<0?made.length:detailIndex,0,disclosure)
+      }else if(view.stage==='report'&&action.label==='How the amounts were calculated'){
+        const details=made.find(node=>node instanceof HTMLElement&&node.hasAttribute('data-money-details'))
+        appendAction(action,details instanceof HTMLElement?details:actions)
+      }else appendAction(action,actions,action===primary)
+    }
+    made.push(actions)
+    if(view.secondaryButtons?.length){const options=document.createElement('div');options.setAttribute('data-money-options','');for(const action of view.secondaryButtons)appendAction(action,options);made.push(options)}
+    const privacyLines = made.filter(node => node instanceof HTMLOutputElement && (/Privacy/.test(node.textContent ?? '') || node.classList.contains('assessment-usage-notice')))
     for (const node of privacyLines) { (node as HTMLElement).classList.add('assessment-usage-notice'); made.splice(made.indexOf(node), 1); made.push(node) }
     const records: UiNode[]=[]
     const viewport=window.visualViewport
@@ -228,24 +272,29 @@ export class ExclusiveMoneyDocument {
       this.#protectedSurface.style.margin=`8px 8px 8px ${Math.round(viewport.offsetLeft+8)}px`
       this.#protectedSurface.style.width=`${Math.max(120,Math.floor(viewport.width-16))}px`
     } else this.#protectedSurface.removeAttribute('style')
+    this.#protectedSurface.setAttribute('data-money-stage',view.stage)
     this.#protectedSurfaceAttributes=attrs(this.#protectedSurface)
     const walk=(node:Node)=>{records.push({node,children:[...node.childNodes],attributes:node instanceof Element?attrs(node):null,
       text:node.nodeType===Node.TEXT_NODE?node.textContent:null});for(const child of node.childNodes)walk(child)}
     for (const node of made) walk(node)
+    walk(siteNav)
+    this.#siteNav=siteNav
+    this.#protectedMain.replaceChildren(siteNav,this.#protectedSurface)
     this.#protectedSurface.replaceChildren(...made)
     this.#protectedNodes=records
     this.#protectedStage=view.stage
-    if(priorStage!==view.stage || focusedHeading)heading.focus()
+    if(priorStage!==view.stage)heading.focus()
+    else if(focusedHeading)heading.focus({preventScroll:true})
     else if(focusedButton) {
-      const target=made.find(node=>node instanceof HTMLButtonElement&&node.textContent===focusedButton)
-      if(target instanceof HTMLButtonElement)target.focus()
+      const target=[...this.#protectedSurface.querySelectorAll('button')].find(node=>node.textContent===focusedButton)
+      if(target instanceof HTMLButtonElement)target.focus({preventScroll:true})
     } else if(focusedInput==='amount') {
       const target=made.find(node=>node instanceof HTMLInputElement&&node.type==='text')
-      if(target instanceof HTMLInputElement)target.focus()
+      if(target instanceof HTMLInputElement)target.focus({preventScroll:true})
     }
     else if(focusedInput?.includes(':')) {
       const [name,value]=focusedInput.split(':')
-      this.#protectedSurface.querySelector<HTMLInputElement>(`input[name="${name}"][value="${value}"]`)?.focus()
+      this.#protectedSurface.querySelector<HTMLInputElement>(`input[name="${name}"][value="${value}"]`)?.focus({preventScroll:true})
     }
     this.#observer.observe(this.#root,{subtree:true,childList:true,attributes:true,characterData:true})
     this.#observer.observe(this.#html,{subtree:true,childList:true,attributes:true,characterData:true})
@@ -254,12 +303,14 @@ export class ExclusiveMoneyDocument {
   checkProtected(stage: string | null = this.#protectedStage): boolean {
     if (this.#observer.takeRecords().length) this.#fault=true
     if (!this.#active || this.#fault || stage!==this.#protectedStage || !this.#outerIntact() ||
-      !children(this.#root,[this.#protectedStyle,this.#protectedSurface]) ||
+      !children(this.#root,[this.#protectedStyle,this.#protectedMain]) ||
+      attrs(this.#protectedMain)!=='[["data-money-main",""]]' ||
+      !this.#siteNav || !children(this.#protectedMain,[this.#siteNav,this.#protectedSurface]) ||
       !this.#sheetIntact(this.#protectedStyle,protectedCss,this.#protectedSheet,this.#protectedRules) ||
       attrs(this.#protectedStyle)!=='[]' ||
       attrs(this.#protectedSurface)!==this.#protectedSurfaceAttributes ||
       !children(this.#protectedSurface,this.#protectedNodes.filter(item=>item.node.parentNode===this.#protectedSurface).map(item=>item.node)) ||
-      [this.#html,this.#head,this.#body,this.#protectedStyle,this.#protectedSurface].some(node=>node.getAnimations().length>0) ||
+      [this.#html,this.#head,this.#body,this.#protectedStyle,this.#protectedMain,this.#protectedSurface].some(node=>node.getAnimations().length>0) ||
       this.#protectedNodes.some(({node,children:expected,attributes,text})=>
         !children(node,expected) || attributes!==null && (!(node instanceof Element) || attrs(node)!==attributes) ||
         text!==null && node.textContent!==text || node instanceof Element && node.getAnimations().length>0)) return false

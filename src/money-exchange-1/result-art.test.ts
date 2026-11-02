@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { moneyPairArt, moneyResultArt } from './result-art'
+import { moneyAwardArt, moneyPairArt, moneyResultArt } from './result-art'
 
 // Independent pixel oracle for the numeric glyphs used by the result image.
 const digits:Record<string,string[]>={
@@ -24,18 +24,23 @@ function readValue(path:string,x:number,y:number,scale:number,length:number):str
 const dollars=(cents:number)=>`$${(cents/100).toFixed(2)}`
 
 describe('Money result image',()=>{
+  it('shows only the starting participant with the exact $10 balance on replay',()=>{
+    const art=moneyAwardArt(),paths=[...decodeURIComponent(art.src).matchAll(/<path d="([^"]+)" fill=/g)].map(match=>match[1])
+    expect(readValue(paths[0],70,15,4,6)).toEqual([...'$10.00'].map(char=>digits[char].join('/')))
+    expect(art.semantics).toBe('You have $10.00.')
+    expect(decodeURIComponent(art.src)).not.toContain('#d6c8ed')
+  })
   it('keeps paired participant shapes and exact balance pills across layouts',()=>{
     for(const layout of ['wide','narrow','compact'] as const) {
       const art=moneyPairArt(1000,0,layout)
       const paths=[...art.svg.matchAll(/<path d="([^"]+)" fill=/g)].map(match=>match[1])
       expect(paths).toHaveLength(4)
-      const positions=layout==='wide'?[[131,114,4],[461,114,4]]:
-        layout==='narrow'?[[118,108,4],[118,268,4]]:[[27,87,3],[181,87,3]]
+      const small=layout!=='wide'
       ;['$10.00','$0.00'].forEach((value,index)=>{
-        const [x,y,scale]=positions[index]
-        expect(readValue(paths[index*2+1],x,y,scale,value.length)).toEqual([...value].map(char=>digits[char].join('/')))
+        const scale=small?3:4,cx=small?80+index*160:120+index*440
+        expect(readValue(paths[index*2+1],Math.round(cx-(value.length*6-1)*scale/2),small?14:15,scale,value.length)).toEqual([...value].map(char=>digits[char].join('/')))
       })
-      expect(art.svg.match(/<circle /g)).toHaveLength(2)
+      expect(art.svg.match(/<circle data-participant=/g)).toHaveLength(2)
       expect(art.svg).not.toMatch(/<text|<style|<script|<foreignObject|<use|url\(/)
     }
   })
@@ -47,14 +52,16 @@ describe('Money result image',()=>{
         const art=moneyResultArt({sentCents:sent,potCents:pot,returnedCents:returned,selfCents:1000-sent+returned,partnerCents:pot-returned},layout)
         const paths=[...art.svg.matchAll(/<path d="([^"]+)" fill=/g)].map(match=>match[1])
         expect(paths).toHaveLength(8)
-        const positions=layout==='wide'?[[24,84,5],[244,84,5],[464,84,5],[104,220,3]]:
-          layout==='narrow'?[[20,74,6],[20,203,6],[20,332,6],[100,420,3]]:
-          [[20,37,4],[20,107,4],[20,177,4],[80,222,2]]
+        const small=layout!=='wide',compact=layout==='compact'
         expected.forEach((value,index)=>{
-          const [x,y,scale]=positions[index]
-          expect(readValue(paths[index<3?index*2+1:7],x,y,scale,value.length)).toEqual(
-            [...value].map(char=>digits[char].join('/')))
+          const scale=index<2?(small?3:4):index===2?(compact?3:small?4:5):3
+          const cx=index<2?(small?80+index*160:120+index*440):(compact?238:small?160:340)
+          const x=index===3?(compact?185:small?140:330):Math.round(cx-(value.length*6-1)*scale/2)
+          const y=index<2?15:index===2?(compact?131:small?202:111):(compact?157:small?239:205)
+          expect(readValue(paths[index<3?index*2+1:7],x,y,scale,value.length)).toEqual([...value].map(char=>digits[char].join('/')))
         })
+        expect(art.svg.match(/<circle data-participant=/g)).toHaveLength(2)
+        expect(art.height).toBeLessThanOrEqual(260)
         expect(art.svg).not.toMatch(/<text|<style|<script|<foreignObject|<use|url\(/)
         expect(art.semantics).toContain(expected[0])
         expect(art.semantics).toContain(expected[1])

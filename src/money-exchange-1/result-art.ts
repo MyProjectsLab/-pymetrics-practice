@@ -48,26 +48,28 @@ function path(value:string,x:number,y:number,scale:number,color:string) {
 
 export type MoneyResultArt = { src:string; svg:string; width:number; height:number; semantics:string; values:readonly [string,string,string] }
 export type MoneyPairArt = { src:string; svg:string; width:number; height:number; semantics:string; values:readonly [string,string] }
+export function moneyAwardArt(){
+  const width=280,height=190,semantics='You have $10.00.'
+  const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="280" height="190" viewBox="0 0 280 190"><rect width="280" height="190" fill="#ffffff"/><circle cx="140" cy="98" r="42" fill="#4caaa4"/><circle cx="140" cy="86" r="12" fill="#ffffff"/><ellipse cx="140" cy="116" rx="27" ry="19" fill="#ffffff"/><rect x="60" y="8" width="160" height="42" rx="17" fill="#2d3342"/>${path('$10.00',70,15,4,'#ffffff')}${path('YOU',115,152,3,'#14213d')}</svg>`
+  return {src:`data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`,width,height,semantics}
+}
 export function moneyPairArt(selfCents:number,partnerCents:number,layout:'wide'|'narrow'|'compact',partnerIsPot=false):MoneyPairArt {
   if (![selfCents,partnerCents].every(value=>Number.isSafeInteger(value)&&value>=0&&value<=3000))
     throw Error('Participant amount outside reviewed support')
   const values=[money(selfCents),money(partnerCents)] as const
-  const narrow=layout==='narrow',compact=layout==='compact'
-  const width=narrow||compact?320:680,height=narrow?330:compact?145:185
-  const cards=narrow?[[12,10],[12,170]]:compact?[[8,8],[162,8]]:[[20,12],[350,12]]
-  const cardWidth=compact?150:narrow?296:310,cardHeight=compact?125:narrow?150:160
+  const small=layout!=='wide'
+  const width=small?320:680,height=small?170:190
   const pieces=[`<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">`,
     `<rect width="${width}" height="${height}" fill="#ffffff"/>`]
   for(let i=0;i<2;i++) {
-    const [x,y]=cards[i],color=i===0?'#4caaa4':'#d6c8ed',border=i===0?'#225f60':'#8068aa'
-    pieces.push(`<rect x="${x}" y="${y}" width="${cardWidth}" height="${cardHeight}" rx="12" fill="${i===0?'#e7f3f0':'#eeeafa'}"/>`)
-    const cx=x+(compact?26:narrow?55:58),cy=y+(compact?35:narrow?56:60),radius=compact?17:30
-    pieces.push(`<circle cx="${cx}" cy="${cy}" r="${radius}" fill="${color}" stroke="${border}" stroke-width="3"/>`)
-    const label=i===0?'YOU':'PARTNER',scale=compact?2:3
-    pieces.push(path(label,x+(compact?52:narrow?105:110),y+(compact?22:40),scale,'#1f514c'))
-    const pillX=x+(compact?9:narrow?100:105),pillY=y+(compact?70:narrow?91:95)
-    pieces.push(`<rect x="${pillX}" y="${pillY}" width="${compact?132:narrow?181:185}" height="${compact?40:45}" rx="18" fill="#2d3342"/>`)
-    pieces.push(path(values[i],pillX+(compact?10:6),pillY+(compact?9:7),compact?3:4,'#ffffff'))
+    const cx=small?80+i*160:120+i*440,pillX=cx-(small?72:80)
+    pieces.push(`<circle data-participant="" cx="${cx}" cy="${small?82:98}" r="${small?34:42}" fill="${i===0?'#4caaa4':'#d6c8ed'}"/>`)
+    pieces.push(`<circle cx="${cx}" cy="${small?72:86}" r="${small?10:12}" fill="#ffffff"/><ellipse cx="${cx}" cy="${small?98:116}" rx="${small?22:27}" ry="${small?15:19}" fill="#ffffff"/>`)
+    const label=i===0?'YOU':'PARTNER',labelScale=3
+    pieces.push(path(label,Math.round(cx-(label.length*6-1)*labelScale/2),small?130:152,labelScale,'#14213d'))
+    pieces.push(`<rect x="${pillX}" y="8" width="${small?144:160}" height="${small?34:42}" rx="17" fill="#2d3342"/>`)
+    const scale=small?3:4
+    pieces.push(path(values[i],Math.round(cx-(values[i].length*6-1)*scale/2),small?14:15,scale,'#ffffff'))
   }
   pieces.push('</svg>')
   const svg=pieces.join('')
@@ -81,22 +83,26 @@ export function moneyResultArt(amounts:Amounts, layout:'wide'|'narrow'|'compact'
     amounts.partnerCents!==amounts.potCents-amounts.returnedCents) throw Error('Result arithmetic mismatch')
   const values=[money(amounts.selfCents),money(amounts.partnerCents),money(amounts.returnedCents)] as const
   const semantics=`You have ${values[0]}. The partner has ${values[1]}. The partner returned ${values[2]} from a ${money(amounts.potCents)} pot.`
-  const narrow=layout==='narrow', compact=layout==='compact'
-  const width=narrow||compact?320:680, height=narrow?450:250
-  const locations=narrow?[[20,36],[20,165],[20,294]]:compact?[[20,17],[20,87],[20,157]]:[[24,46],[244,46],[464,46]]
-  const labels=['YOU','PARTNER','RETURNED'] as const
+  const small=layout!=='wide'
+  const compact=layout==='compact'
+  const width=small?320:680,height=compact?180:small?260:240
   const pieces=[`<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img">`,
     `<rect width="${width}" height="${height}" fill="#ffffff"/>`]
   for(let i=0;i<3;i++) {
-    const [x,y]=locations[i]
-    pieces.push(`<rect x="${x-8}" y="${y-13}" width="${narrow||compact?296:200}" height="${narrow?111:compact?65:166}" rx="8" fill="#e8f4f0" stroke="#276251" stroke-width="2"/>`)
-    if(i<2) pieces.push(`<circle cx="${x+(narrow||compact?260:168)}" cy="${y+(narrow?35:compact?18:36)}" r="${compact?15:23}" fill="${i===0?'#4caaa4':'#d6c8ed'}" stroke="${i===0?'#225f60':'#8068aa'}" stroke-width="2"/>`)
-    pieces.push(path(labels[i],x,y,compact?2:3,'#1f514c'))
-    pieces.push(`<rect x="${x-4}" y="${y+(compact?16:34)}" width="${narrow?234:compact?160:193}" height="${compact?34:narrow?52:43}" rx="16" fill="#2d3342"/>`)
-    pieces.push(path(values[i],x,y+(compact?20:38),compact?4:narrow?6:5,'#ffffff'))
+    const cx=i<2?(small?80+i*160:120+i*440):(small?160:340)
+    const label=['YOU','PARTNER','RETURNED'][i],labelScale=compact&&i===2?2.5:3
+    const labelY=i<2?(compact?99:small?130:152):(compact?133:small?171:72)
+    const amountY=i<2?15:(compact?131:small?202:111),scale=i<2?(small?3:4):(compact?3:small?4:5)
+    if(i<2) {
+      pieces.push(`<circle data-participant="" cx="${cx}" cy="${compact?65:small?82:98}" r="${compact?26:small?34:42}" fill="${i===0?'#4caaa4':'#d6c8ed'}"/>`)
+      pieces.push(`<circle cx="${cx}" cy="${compact?57:small?72:86}" r="${compact?8:small?10:12}" fill="#ffffff"/><ellipse cx="${cx}" cy="${compact?77:small?98:116}" rx="${compact?17:small?22:27}" ry="${compact?12:small?15:19}" fill="#ffffff"/>`)
+      pieces.push(`<rect x="${cx-(small?72:80)}" y="8" width="${small?144:160}" height="${compact?26:small?34:42}" rx="17" fill="#2d3342"/>`)
+    }
+    pieces.push(path(label,Math.round((compact&&i===2?66:cx)-(label.length*6-1)*labelScale/2),labelY,labelScale,'#14213d'))
+    pieces.push(path(values[i],Math.round((compact&&i===2?238:cx)-(values[i].length*6-1)*scale/2),amountY,scale,i<2?'#ffffff':'#14213d'))
   }
-  pieces.push(path('POT',narrow||compact?20:24,narrow?420:compact?222:220,compact?2:3,'#1f514c'))
-  pieces.push(path(money(amounts.potCents),narrow?100:compact?80:104,narrow?420:compact?222:220,compact?2:3,'#123c37'))
+  pieces.push(path('POT',compact?8:small?65:245,compact?159:small?239:205,compact?2.5:3,'#14213d'))
+  pieces.push(path(money(amounts.potCents),compact?185:small?140:330,compact?157:small?239:205,3,'#14213d'))
   pieces.push('</svg>')
   const svg=pieces.join('')
   return {src:`data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`,svg,width,height,semantics,values}
