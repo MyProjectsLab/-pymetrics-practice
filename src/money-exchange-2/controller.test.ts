@@ -6,8 +6,8 @@ import {Store} from './storage'
 import type {Backend} from './storage'
 let serial=0
 class Memory implements Backend {
- root=initialRoot();holdKind:string|null=null;holdDeliveryKind:string|null=null;deliveries:(()=>void)[]=[];held:(()=>void)[]=[];lostKind:string|null=null;failReads=0;readCount=0;writeCount=0;
- read(signal:AbortSignal){this.readCount++;if(this.failReads){this.failReads--;return Promise.reject(Error('failed read'))}if(signal.aborted)return Promise.reject(Error('aborted'));return Promise.resolve(structuredClone(this.root))}
+ root=initialRoot();holdKind:string|null=null;holdDeliveryKind:string|null=null;deliveries:(()=>void)[]=[];held:(()=>void)[]=[];lostKind:string|null=null;readDelay=0;failReads=0;readCount=0;writeCount=0;
+ async read(signal:AbortSignal){this.readCount++;if(this.failReads){this.failReads--;return Promise.reject(Error('failed read'))}if(this.readDelay)await new Promise(resolve=>setTimeout(resolve,this.readDelay));if(signal.aborted)return Promise.reject(Error('aborted'));return Promise.resolve(structuredClone(this.root))}
  change(fn:(r:Root)=>Root,signal:AbortSignal){this.writeCount++;return new Promise<void>((resolve,reject)=>{
   const run=()=>{if(signal.aborted){reject(Error('aborted'));return}try{const next=fn(structuredClone(this.root));const cmd=Object.values(next.outcomes).at(-1)?.command;if(cmd?.kind===this.holdKind){this.held.push(()=>{this.holdKind=null;run()});return}this.root=next;if(cmd?.kind===this.holdDeliveryKind){this.deliveries.push(resolve);return}if(cmd?.kind===this.lostKind){reject(Error('committed but delivery lost'));return}resolve()}catch(e){reject(e)}};run()
  })}
@@ -56,4 +56,36 @@ it('Back never rewinds an armed exchange or changes its recorded choices',async(
  const before=JSON.stringify(b.root)
  expect(await c.backToPreparation(c.inputToken(),'instructions',()=>true)).toBe(false)
  expect(JSON.stringify(b.root)).toBe(before);expect(c.view().stage).toBe('award_1')
+})
+
+async function completedReport(c:Controller){
+ await ready(c);await act(c,'arm')
+ for(let i=0;i<40&&c.view().stage!=='report';i++){
+  const stage=c.view().stage
+  if(stage.startsWith('connecting_')){c.completePrepared(c.view().epoch,'animation');await settle(c)}
+  else if(stage.startsWith('result_')&&c.view().attempt?.rounds[stage.endsWith('_2')?1:0].exposure!=='render_receipt'){c.completePrepared(c.view().epoch,'receipt');await settle(c)}
+  else if(stage.startsWith('result_'))await act(c,'step')
+  else if(stage==='test_complete')await act(c,'report')
+  else if(stage==='fairness_2')await act(c,'terminal',{rating:4})
+  else await act(c,'step',stage.startsWith('fairness_')?{rating:4}:stage.startsWith('choice_')?{cents:250}:{})
+ }
+ expect(c.view().stage).toBe('report')
+}
+for(const stage of ['history','report'])for(const delay of[0,80])it(`verified ${stage} reread recovers a failed read with ${delay}ms delivery`,async()=>{
+ const {c,b}=await setup();if(stage==='report')await completedReport(c);else await act(c,'history')
+ b.failReads=1;await c.refresh();expect(c.view().uncertain).toBe(true);expect(c.view().error).not.toBe(null)
+ b.readDelay=delay;await c.refresh()
+ expect(c.view().stage).toBe(stage);expect(c.view().uncertain).toBe(false);expect(c.view().error).toBe(null);expect(c.view().authorityPending).toBe(false)
+})
+it('a successful passive reread cannot settle uncertainty of a held report replay write',async()=>{
+ const {c,b}=await setup();await completedReport(c);b.holdDeliveryKind='tryAgain'
+ expect(c.admit(c.inputToken(),'tryAgain')).toBe(true);await tick();expect(b.deliveries.length).toBe(1)
+ b.failReads=1;await c.refresh();expect(c.view().uncertain).toBe(true);b.readDelay=80;await c.refresh()
+ expect(c.view().busy).toBe(true);expect(c.view().uncertain).toBe(true);expect(c.view().error).not.toBe(null)
+ b.readDelay=0;for(const deliver of b.deliveries.splice(0))deliver();for(let i=0;i<30&&c.view().stage!=='ready';i++)await tick()
+ expect(c.view().stage).toBe('ready');expect(c.view().uncertain).toBe(false)
+})
+it('a failed report read followed by confirmed generation loss still retires the report',async()=>{
+ const {c,b}=await setup();await completedReport(c);b.failReads=1;await c.refresh();expect(c.view().uncertain).toBe(true)
+ b.command('deleteAll');await c.refresh();expect(c.view().stage).toBe('unavailable');expect(c.view().attempt).toBe(null)
 })

@@ -214,7 +214,9 @@ export class Controller {
    if((this.attemptId&&!root.attempts[this.attemptId]&&!ownPending)||!this.reportMatches(root)){this.revoked(root);return}
    if(root.currentTicketId!==this.ticketId&&!ownPending){this.revoked(root);return}
    const viewChanged=['history','report','review','library'].includes(this.stage)&&this.known?.revision!==root.revision;
-   this.known=root;this.refreshFailures=0;if(this.authorityPending&&!this.reviewPending){this.authorityPending=false;this.error=null;this.emit()}else if(viewChanged)this.emit()
+   const recovered=this.uncertain&&!this.busy&&!this.pendingExit&&!this.reviewPending&&['report','review','history'].includes(this.stage);
+   if(recovered)this.uncertain=false;
+   this.known=root;this.refreshFailures=0;if((this.authorityPending||recovered)&&!this.reviewPending){this.authorityPending=false;if(!this.uncertain)this.error=null;this.emit()}else if(viewChanged)this.emit()
   })}catch{if(epoch===this.epoch){this.refreshFailures++;this.uncertain=true;this.error='Local authority is unavailable. Retry before continuing.';this.emit();if(!['report','review','history'].includes(this.stage))this.lifecycle('authority-unavailable')}}finally{settled=true;this.checking=false}
  }
 }

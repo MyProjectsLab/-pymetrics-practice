@@ -19,7 +19,7 @@ test('Money2 report holds reading position during pending authority reads, then 
    await p.addInitScript(()=>{
     // Controlled transaction-delivery delay only after the native report exists.
     const descriptor=Object.getOwnPropertyDescriptor(IDBTransaction.prototype,'oncomplete')
-    Object.defineProperty(IDBTransaction.prototype,'oncomplete',{...descriptor,set(callback){descriptor.set.call(this,typeof callback==='function'?function(event){const delay=this.mode==='readonly'&&this.db.name==='assessment-practice-money-exchange-2-v1'?window.__tgReadDelay||0:0;if(delay)setTimeout(()=>callback.call(this,event),delay);else callback.call(this,event)}:callback)}})
+    Object.defineProperty(IDBTransaction.prototype,'oncomplete',{...descriptor,set(callback){descriptor.set.call(this,typeof callback==='function'?function(event){const delay=this.mode==='readonly'&&this.db.name==='assessment-practice-money-exchange-2-v1'?window.__tgReadDelay||0:0;const run=()=>{if(this.mode==='readonly'&&window.__tgFailReads>0){window.__tgFailReads--;this.onerror?.call(this,new Event('error'))}else callback.call(this,event)};if(delay)setTimeout(run,delay);else run()}:callback)}})
    })
    const ui=await firstPlay(p,games.find(g=>g[0]==='Money 2'),origin)
    const stage=async()=>{const [id]=await ui.elements('[data-money-stage]');return ui.call(id,function(){return this.getAttribute('data-money-stage')})}
@@ -45,6 +45,15 @@ test('Money2 report holds reading position during pending authority reads, then 
      await p.waitForTimeout(50)
     }
     assert.ok(pendingSeen&&resolvedSeen,'Exercise both pending and confirmed report renders')
+    await p.evaluate(()=>window.__tgFailReads=1)
+    let failedSeen=false,recovered=false
+    for(let i=0;i<55;i++){
+     const state=await ui.call(surface,function(){return {failed:this.textContent.includes('Local authority is unavailable.'),money:!!this.querySelector('[data-money-pair]')}})
+     if(state.failed){failedSeen=true;assert.equal(state.money,false,'A failed read must hide old money')}
+     if(failedSeen&&state.money){recovered=true;break}
+     await p.waitForTimeout(50)
+    }
+    assert.ok(failedSeen&&recovered,'Transient read failure must recover after verified slow reread')
     await p.evaluate(()=>window.__tgReadDelay=0)
     await p.waitForTimeout(400)
     // Replace only this disposable installation with a source-validated empty root, under its normal data lock.
