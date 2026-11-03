@@ -23,10 +23,23 @@ type Screen = 'guide' | 'example' | 'quiz' | 'instructions' | 'ready' | 'award' 
   'connected' | 'partner_rules' | 'return_explanation' | 'transfer' | 'transfer_busy' |
   'response_ready' | 'final_allocation' | 'fairness' | 'test_complete' | 'report' | 'help' | 'history' | 'review'
 const LIMIT = 'This is an original practice exercise. The partner response is scripted, not another person. This report does not reproduce a provider score or predict a hiring outcome.'
+const GAME_PURPOSE = 'This exercise explores trust under uncertainty and how you judge fairness. Sending more gives your partner more to share back, but puts more of your $10 at stake.'
 const GUIDE_RULES = [
-  'You start with $10 in practice money. Choose how much to send.',
-  'The game triples what you send. If you send $1, you keep $9 and your partner receives $3.',
-  'See how much your partner returns, then rate how fair it feels. There is no correct amount or fairness rating.',
+  'Start with $10 in practice money. Choose how much to send, from $0 to $10.',
+  'The game triples what you send for your simulated partner. You keep the rest.',
+  'See how much the partner returns, then rate how fair that return felt.',
+]
+const WORKED_EXAMPLE = [
+  'You start with $10 and send $5. You keep $5 and your partner receives $15.',
+  'If your partner returns $6.15, you finish with $11.15 and your partner keeps $8.85.',
+]
+const REFLECT_ON_FAIRNESS = 'Compare what came back with what you sent, then look at how the money was split. Your fairness rating is your own judgment.'
+const RETURN_RULE = 'Your final balance is the money you keep plus any money returned. The simulated partner’s response is set for this round and revealed after you send.'
+const FAIRNESS_PROMPT = 'How fair did the return feel? Choose from 0 (not fair) to 10 (very fair).'
+const REPORT_HELP = [
+  'To see whether you gained or lost money, compare what came back with what you sent.',
+  'To understand the split, compare both final balances. An even split is one way to think about fairness. You can also consider how much you put at stake.',
+  'Your final balance is $10 minus what you sent, plus what came back. The partner keeps the tripled transfer minus what they returned.',
 ]
 const QUIZ_RULE = 'You start with $10 in practice money. The game triples only the amount you send.'
 const QUIZ_QUESTION = 'If you send $2, how much does your partner receive before sending anything back?'
@@ -72,10 +85,20 @@ function compareMoney(root:MoneyRoot,selected:Run):string {
     `Previous compatible saved run: sent ${money(previous.report.sentCents)} and received ${money(previous.report.returnedCents)} back. This run: sent ${money(selected.report.sentCents)} and received ${money(selected.report.returnedCents)} back.`:
     'No comparable earlier run is currently verified.'
 }
+function outcomeReflection(report: Report): string[] {
+  if (report.sentCents === null || report.returnedCents === null || report.sentCents === 0) return []
+  const difference = report.returnedCents - report.sentCents
+  const outcome = difference === 0
+    ? 'You got back exactly what you sent and finished at your $10 starting balance.'
+    : `You got back ${money(Math.abs(difference))} ${difference > 0 ? 'more' : 'less'} than you sent.`
+  return [outcome, REFLECT_ON_FAIRNESS]
+}
+
 function reportSummary(report:Report,comparison:string):string[]{return report.status==='complete_valid' ? [
   'Completed and saved in this browser',
   report.sentCents===null?'No transfer was saved.':`You sent ${money(report.sentCents)}. The partner returned ${money(report.returnedCents!)}.`,
   report.rating===null?'Fairness: not applicable (no transfer).':`Your fairness rating: ${report.rating} / 10.`,
+  ...outcomeReflection(report),
   ...(comparison==='No comparable earlier run is currently verified.'?[]:[comparison]),
 ] : ['Incomplete exchange saved for review',report.sentCents===null?'No transfer was confirmed.':`You sent ${money(report.sentCents)}. A complete result was not confirmed.`]}
 function reportFacts(report:Report){return report.status==='complete_valid'?[{label:'You finished with',value:money(report.selfCents!)},{label:'Partner finished with',value:money(report.partnerCents!)}]:[]}
@@ -143,10 +166,10 @@ export function MoneyExchangeJourney({ runtime, boundary, onLibrary, mock, repor
     let amountField:ProtectedView['amount'],ratingField:ProtectedView['rating'],comprehensionField:ProtectedView['comprehension'],art:ProtectedView['result'],pair:ProtectedView['pair']
     switch(screen) {
       case 'guide':
-        lines.push(...GUIDE_RULES,'Untimed practice. All money and partners are simulated. Results stay in this browser; see Privacy.')
+        lines.push(GAME_PURPOSE,...GUIDE_RULES,...WORKED_EXAMPLE,'Untimed practice. All money and partners are simulated. Results stay in this browser; see Privacy.')
         add('Continue',()=>change('quiz'));add('See an example',()=>change('example'));if(canSkip)add('Skip instructions',()=>void skipGuide());add('Saved results',()=>void showHistory(),!ready);add(mock||reportTarget?'Return to mock':'Main menu',onLibrary);break
       case 'example':
-        lines.push('Send $5. The partner receives $15 and returns $6.15. You finish with $11.15; the partner keeps $8.85.')
+        lines.push(...WORKED_EXAMPLE, 'In this example, you gained $1.15. The final balances also show how the money was split.', REFLECT_ON_FAIRNESS)
         add('Next',()=>change('quiz'));break
       case 'quiz':
         lines.push(QUIZ_RULE)
@@ -172,7 +195,7 @@ export function MoneyExchangeJourney({ runtime, boundary, onLibrary, mock, repor
         lines.push('Any amount you send is tripled for the partner. You will see how much the partner returns.')
         add('Next',()=>change('return_explanation'));add('Restart',()=>void restart());add('Close',close);break
       case 'return_explanation':
-        lines.push('Choose a transfer from your $10. The partner response in this practice exercise is scripted.')
+        lines.push(RETURN_RULE)
         add('Next',()=>void start(),busy);add('Restart',()=>void restart());add('Close',close);break
       case 'transfer':
         lines.push('Choose how much to send: $0.00 to $10.00.')
@@ -192,7 +215,7 @@ export function MoneyExchangeJourney({ runtime, boundary, onLibrary, mock, repor
         add('Restart',()=>void restart());add('Close',close);break
       case 'fairness':
         if(transfer?.kind==='transfer_committed' && transfer.sentCents>0) {
-          lines.push('How fair do you feel the partner return was? Choose 0 to 10.')
+          lines.push(FAIRNESS_PROMPT)
           ratingField={value:ratingRef.current,current:()=>ratingRef.current,changed:value=>{ratingRef.current=value}}
         } else lines.push('You sent nothing, so there was no partner return to rate.')
         add('Next',()=>void finish(),busy);add('Restart',()=>void restart());add('Close',close);break
@@ -212,9 +235,7 @@ export function MoneyExchangeJourney({ runtime, boundary, onLibrary, mock, repor
           if(detailsOpen)add('How the amounts were calculated',()=>void showHelp());if(!reportTarget){add('History',()=>void showHistory());add('Main menu',onLibrary)}
         } break
       case 'help':
-        lines.push('Your remaining amount is $10 minus what you sent. The partner pot is three times what you sent.')
-        lines.push('Your final amount adds the return. The partner final amount is the pot minus the return.')
-        lines.push('This explains arithmetic only; it does not advise which amount or rating to choose.')
+        lines.push(...REPORT_HELP)
         if(report)add('Back to result',()=>void openReport(report.runId))
         add('Close',close);break
       case 'history':
@@ -503,14 +524,17 @@ export function MoneyExchangeJourney({ runtime, boundary, onLibrary, mock, repor
   const control=screen==='instructions' || screen==='ready' || ['award','connecting','connected','partner_rules','return_explanation','transfer','transfer_busy','response_ready','final_allocation','fairness'].includes(screen)
   if(reportTarget&&!['report','help'].includes(screen))return <Shell onLibrary={returnToMock}><section className="journey panel"><h1>Saved Money Exchange 1 report</h1><p role={error?'alert':'status'}>{error||'Checking the exact retained result…'}</p><button onClick={()=>void returnToMock()}>Return to mock</button></section></Shell>
   return <Shell onLibrary={returnToMock}><div className="journey-top"><button className="secondary" onClick={()=>void returnToMock()}><span aria-hidden="true">← </span>{mock||reportTarget?'Return to mock':'Main menu'}</button><p>Money Exchange 1 · Practice</p></div><section className="panel money-journey" data-money-screen={screen} aria-labelledby="money-title">
-    <div className="money-header"><div>{screen === 'guide' && <p className="eyebrow">How it works</p>}<h1 id="money-title" tabIndex={-1} ref={headingRef}>{stepTitle(screen)}</h1></div>
+    <div className="money-header"><div>{screen === 'guide' && <p className="eyebrow">Practice guide</p>}<h1 id="money-title" tabIndex={-1} ref={headingRef}>{stepTitle(screen)}</h1></div>
       </div>
     {!ready && <p role="status">Checking local storage…</p>}
     {error && <p role="alert" className="money-error">{error}</p>}
     {mock && returnFailed && !returnBusy && <button className="secondary" onClick={leaveMockUnconfirmed}>Leave with result unconfirmed</button>}
-    {screen==='guide' && <><QuickRules rules={GUIDE_RULES} note="Untimed practice. All money and partners are simulated."/>
+    {screen==='guide' && <><h2>What this explores</h2><p>{GAME_PURPOSE}</p><h2>How it works</h2><QuickRules rules={GUIDE_RULES} note="Untimed practice. All money and partners are simulated."/>
+      <div className="money-example"><h2>Worked example</h2>{WORKED_EXAMPLE.map(line => <p key={line}>{line}</p>)}</div>
       <button onClick={()=>change('quiz')}>Continue</button><details className="start-options"><summary>Examples and saved results</summary><div className="money-actions"><button className="secondary" onClick={()=>change('example')}>See an example</button>{canSkip&&<button className="secondary" onClick={()=>void skipGuide()}>Skip instructions</button>}<button className="secondary" disabled={!ready} onClick={()=>void showHistory()}>Saved results</button></div></details></>}
-    {screen==='example' && <><p>In this example, you send $5 from your $10. The partner receives $15 and returns $6.15. You have $10 − $5 + $6.15 = $11.15. The partner keeps $15 − $6.15 = $8.85. Practice returns can vary.</p><button onClick={()=>change('quiz')}>Next</button></>}
+    {screen==='example' && <>{WORKED_EXAMPLE.map(line => <p key={line}>{line}</p>)}
+      <p>In this example, you gained $1.15. The final balances also show how the money was split.</p>
+      <p>{REFLECT_ON_FAIRNESS}</p><button onClick={()=>change('quiz')}>Next</button></>}
     {screen==='quiz' && <><p>{QUIZ_RULE}</p><fieldset><legend>{QUIZ_QUESTION}</legend>
       {(['2','6','20'] as const).map(value=><label key={value}><input type="radio" name="money-comprehension" value={value} checked={quiz===value} onChange={()=>chooseQuiz(value)} />${value}</label>)}
       </fieldset><button disabled={!quiz} onClick={checkQuiz}>Check answer</button></>}
@@ -523,7 +547,7 @@ export function MoneyExchangeJourney({ runtime, boundary, onLibrary, mock, repor
     {screen==='partner_rules' && <><div className="money-pair"><p>You <strong>$10.00</strong></p><p>Partner <strong>$0.00</strong></p></div>
       <p>Any amount you send is tripled for the partner. You will see how much the partner returns.</p><button onClick={()=>change('return_explanation')}>Next</button></>}
     {screen==='return_explanation' && <><div className="money-pair"><p>You <strong>$10.00</strong></p><p>Partner <strong>$0.00</strong></p></div>
-      <p>Choose a transfer from your $10. The partner response in this practice exercise is scripted.</p><button disabled={busy} onClick={()=>void start()}>Next</button></>}
+      <p>{RETURN_RULE}</p><button disabled={busy} onClick={()=>void start()}>Next</button></>}
     {screen==='transfer' && <><div className="money-pair"><p>You <strong>$10.00</strong></p><p>Partner <strong>$0.00</strong></p></div>
       <label htmlFor="money-amount">Amount to send in dollars</label><input id="money-amount" inputMode="decimal" value={amount} onChange={e=>setAmount(e.target.value)} placeholder="0.00" />
       <p>From $0.00 to $10.00. Your choice is saved after Next.</p><button disabled={busy||parseCents(amount)===null} onClick={()=>void send()}>Next</button></>}
@@ -533,15 +557,13 @@ export function MoneyExchangeJourney({ runtime, boundary, onLibrary, mock, repor
     {screen==='final_allocation' && result && <><div ref={resultRef} className="money-allocation"><div className="money-pair"><p>You <strong>{money(result.selfCents)}</strong></p><p>Partner <strong>{money(result.partnerCents)}</strong></p></div>
       <p>The partner received {money(result.potCents)} and returned <strong>{money(result.returnedCents)}</strong> to you.</p></div>
       <button disabled={busy||!chosen?.events.some(e=>e.kind==='return_presented')} onClick={()=>change('fairness')}>Next</button></>}
-    {screen==='fairness' && <><p>{transfer?.kind==='transfer_committed' && transfer.sentCents===0?'You sent nothing, so there was no partner return to rate.':'How fair do you feel the partner return was?'}</p>
+    {screen==='fairness' && <><p>{transfer?.kind==='transfer_committed' && transfer.sentCents===0?'You sent nothing, so there was no partner return to rate.':FAIRNESS_PROMPT}</p>
       {transfer?.kind==='transfer_committed' && transfer.sentCents>0 && <fieldset className="money-rating"><legend>Fairness from 0 (not fair) to 10 (very fair)</legend>
         {Array.from({length:11},(_,i)=><label key={i}><input type="radio" name="fairness" value={i} checked={rating===i} onChange={()=>setRating(i)} />{i}</label>)}</fieldset>}
       <button disabled={busy||transfer?.kind==='transfer_committed'&&transfer.sentCents>0&&rating===null} onClick={()=>void finish()}>Next</button></>}
     {screen==='test_complete' && <><p>Your exchange is saved in this browser.</p><button disabled={busy||!chosen||chosen.status!=='complete'} onClick={()=>{if(chosen)void openReport(chosen.id)}}>Next</button></>}
     {screen==='report' && report && (mock?<><div className="money-report">{reportSummary(report,comparison).map((line,index)=><p key={index}>{line}</p>)}<details><summary>Detailed numbers</summary>{reportLines(report).slice(1,-1).map((line,index)=><p key={index}>{line}</p>)}</details><p>{LIMIT}</p><button onClick={()=>void returnToMock()}>Return to mock</button>{!reportTarget&&<button onClick={()=>void again()}>Try Again</button>}</div></>:<ReportView report={report} comparison={comparison} onHelp={()=>void showHelp()} onAgain={()=>void again()} onHistory={()=>void showHistory()} onLibrary={onLibrary} readOnly={!!reportTarget} />)}
-    {screen==='help' && report && <><p>Your remaining amount is $10 minus what you sent. The partner's pot is three times what you sent.</p>
-      <p>Your final amount adds the return to your remainder. The partner's final amount is the pot minus the return.</p>
-      <p>This explains arithmetic only; it is not advice about which amount or rating to choose.</p>
+    {screen==='help' && report && <>{REPORT_HELP.map(line => <p key={line}>{line}</p>)}
       <div className="money-actions"><button onClick={()=>{if(report)void openReport(report.runId)}}>Back to result</button><button className="secondary" onClick={()=>void close()}>Close</button></div></>}
     {screen==='history' && <><p>Saved in this browser only. Removing a result cannot be undone.</p>
       {hasUnresolvedActive && <p role="status">An exchange is still active or unresolved. Resolve it or delete this game's data before starting another.</p>}

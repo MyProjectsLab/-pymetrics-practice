@@ -57,8 +57,9 @@ async function root(page){return page.evaluate(()=>new Promise((resolve,reject)=
 async function reachResponse(page,ui,origin,amount,checkQuizCopy=false){
  await page.goto(origin+'/money.html');await page.waitForTimeout(300)
  if(checkQuizCopy){
-  assert.ok(await ui.visibleText('You start with $10 in practice money. Choose how much to send.'))
-  assert.ok(await ui.visibleText('The game triples what you send. If you send $1, you keep $9 and your partner receives $3.'))
+  assert.ok(await ui.visibleText('This exercise explores trust under uncertainty and how you judge fairness. Sending more gives your partner more to share back, but puts more of your $10 at stake.'))
+  assert.ok(await ui.visibleText('Start with $10 in practice money. Choose how much to send, from $0 to $10.'))
+  assert.ok(await ui.visibleText('If your partner returns $6.15, you finish with $11.15 and your partner keeps $8.85.'))
  }
  await ui.click('Continue')
  if(checkQuizCopy){
@@ -102,6 +103,8 @@ test('Money 1 completes the $2 exchange in WebKit and Chromium without treating 
      assert.equal((await ui.state()).stage,'final_allocation','A normal decoded, visible result must not become incomplete')
      await ui.click('Next');await expectStage(ui,page,'fairness');await ui.click('4','label');await ui.click('Next')
      await expectStage(ui,page,'test_complete');await ui.click('Next');await expectStage(ui,page,'report')
+     assert.ok(await ui.visibleText('You got back $0.46 more than you sent.'))
+     assert.ok(await ui.visibleText('Compare what came back with what you sent, then look at how the money was split. Your fairness rating is your own judgment.'))
      const run=Object.values((await root(page)).runs).find(run=>run.status==='complete')
      assert.ok(run);assert.equal(run.report.status,'complete_valid')
      for(const [key,value]of Object.entries({sentCents:200,returnedCents:246,selfCents:1046,partnerCents:354,rating:4}))assert.equal(run.report[key],value,key)
