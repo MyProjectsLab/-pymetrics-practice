@@ -309,13 +309,15 @@ export function StopJourney({ recorder, mode = 'baseline', specificationVersion 
     </div>
     <div className="panel">
       {step === 'new-guide' && <div className="simple-stop-guide">
-        <p className="eyebrow">How it works</p><h1 tabIndex={-1}>Stop</h1>
+        <p className="eyebrow">Practice guide</p><h1 tabIndex={-1}>Stop</h1>
+        <p><strong>What this explores.</strong> Reacting quickly to one signal while holding back for another.</p>
+        <p>Symbols flash one at a time. Use the rule below to decide whether to press.</p>
         <div className="rule-grid"><div><Stimulus kind="GO" profile={setup.visualProfile}/><p>GO — press {setup.binding.label} once</p></div><div><Stimulus kind="NO_GO" profile={setup.visualProfile}/><p>NO-GO — wait</p></div></div>
         <p>You can respond after the signal disappears, until its response window closes.</p><button onClick={()=>{retireNewAction();setNewQuestion('go');setNewAnswer('');setNewFeedback('');moveNewStep('new-question')}}>Continue</button>
         <details className="start-options"><summary>Examples and previous practice</summary>
           {!mock&&<button className="secondary" onClick={()=>{retireNewAction();moveNewStep('touch_examples')}}>Try an untimed example</button>}
           {skipAvailable&&<button className="secondary" onClick={()=>{void skipNewIntroduction()}}>Skip instructions</button>}
-          {storageDisclosure()===PERSISTENT_DISCLOSURE&&<p>{storageDisclosure()}</p>}<p>This exercise practises responding to a signal while holding back on another. It is not an employer score.</p>
+          {storageDisclosure()===PERSISTENT_DISCLOSURE&&<p>{storageDisclosure()}</p>}<p>Your report describes your responses in this practice task.</p>
         </details>
       </div>}
       {step === 'new-question' && <>

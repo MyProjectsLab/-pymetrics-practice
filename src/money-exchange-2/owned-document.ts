@@ -221,7 +221,7 @@ export class OwnedDocument {
     this.#renderEpoch++;const eventEpoch=this.#renderEpoch;this.#preparedResultEpoch=0
     this.#resultImage=null;this.#resultMeaning=null;this.#resultSizeProof=null
     const heading = document.createElement('legend');heading.tabIndex=-1
-    heading.append(document.createTextNode(view.title)); if(view.stage==='library'){const eyebrow=document.createElement('output');eyebrow.className='eyebrow';eyebrow.textContent='How it works';made.push(eyebrow)}made.push(heading)
+    heading.append(document.createTextNode(view.title)); if(view.stage==='library'){const eyebrow=document.createElement('output');eyebrow.className='eyebrow';eyebrow.textContent='Practice guide';made.push(eyebrow)}made.push(heading)
 
     for (const [index,line] of view.lines.entries()) { const item=document.createElement('output');if(view.amount&&index===0)item.setAttribute('data-choice-instruction',''); item.append(document.createTextNode(line)); made.push(item) }
     if (view.amount) {

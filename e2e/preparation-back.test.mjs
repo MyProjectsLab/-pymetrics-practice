@@ -6,6 +6,21 @@ import {chromium} from 'playwright'
 import {gameBrowser} from './game-browser.helper.mjs'
 import {games} from './live-game-audit.helper.mjs'
 
+const guidePurpose = {
+ Stop: 'Reacting quickly to one signal while holding back for another',
+ Balloons: 'Deciding how much risk to take',
+ Keypresses: 'How quickly you can repeat a keypress',
+ Arrows: 'Staying focused on the relevant arrows',
+ Lengths: 'Spotting a small visual difference',
+ Digits: 'Holding a short sequence in memory',
+ Cards: 'Learning from gains and losses',
+ 'Easy or Hard': 'Weighing how much effort',
+ Towers: 'Planning a sequence of moves',
+ 'Money 1': 'This exercise explores trust under uncertainty',
+ 'Money 2': 'This task explores how you share money and judge fairness',
+ Faces: 'This task explores how you use facial clues',
+}
+
 // Native clicks/keys only. Inspect author-owned closed roots without altering them.
 test('all twelve preparation flows return to their visited screen with Back below content', {timeout:120000}, async()=>{
  const origin='http://127.0.0.1:4979',server=spawn(process.execPath,[resolve('node_modules/vite/bin/vite.js'),'preview','--host','127.0.0.1','--port','4979','--strictPort'],{stdio:'pipe'})
@@ -19,7 +34,14 @@ test('all twelve preparation flows return to their visited screen with Back belo
    try{
     await page.goto(origin+path);await page.waitForTimeout(400)
     const initial=(await ui.snapshot()).filter(n=>/^H[12]$/.test(n.tag)).map(n=>n.text)
-    await click(name==='Money 2'?'Next':'Continue')
+    const advance = name === 'Money 2' ? 'Next' : 'Continue'
+    const [purpose] = await ui.elements('p,output', guidePurpose[name])
+    const [advanceButton] = await ui.elements('button', advance, true)
+    assert.ok(purpose && advanceButton, `${name}: first screen must explain the purpose before continuing`)
+    const purposeBottom = await ui.call(purpose, function () { return this.getBoundingClientRect().bottom })
+    const advanceTop = await ui.call(advanceButton, function () { return this.getBoundingClientRect().top })
+    assert.ok(purposeBottom <= advanceTop, `${name}: purpose should be above the advance button`)
+    await click(advance)
     const [back]=await ui.elements('button','Back',false);assert.ok(back,`${name}: no Back on second screen`)
     const buttons=await ui.snapshot(),backBox=buttons.find(n=>n.tag==='BUTTON'&&/^(← )?Back$/.test(n.text))
     assert.ok(backBox,`${name}: exact previous-screen action missing`)
