@@ -1,0 +1,29 @@
+# Money 1 Safari result confirmation: development evidence
+
+Base: `faae53b4b1d4d4d8b0ea4e2b2c1ded9b96668235`. Preview branch only; main/production unchanged. External logs and captures: `outputs/money1-safari-20261103/` in the project mirror.
+
+## Reproduced failure
+
+The founder’s $2 transfer reaches “Your partner has received the money”, showing $8 retained/$6 pot. On the next screen WebKit rejected an unchanged, completely decoded and visible 680×240 SVG: the connected image reports natural dimensions 679×239. Detached decoding of exactly the same URI reports the declared 680×240. This was reproduced at 1512×830 and 1190×626; phone 320×260 art did not round. The before-fix regression fails because the ordinary result becomes incomplete. Native dimension probes and initial failure are retained, rather than inferred from a passing rerun.
+
+## Repair boundary
+
+Only `exclusive-document.ts` changes product behavior. Source dimensions are proved by decoding an exact-source detached image, as Money2 already does, then bound to the displayed image, URI and render epoch. Displayed image decoding/completeness, exact source/currentSrc, owned-tree proof, complete semantics, viewport containment and center hit testing stay required. Every same-stage rerender clears the old proof. There is no tolerance, user-agent exemption or fabricated success. Artwork, rules, Next boundaries, animation delays, rates, arithmetic, storage and events are unchanged; seven relevant files are independently hashed byte-identical to base in external `preserved.json`.
+
+## Added browser regression
+
+`e2e/money1-webkit.test.mjs` observes native closed shadow roots without changing closed mode, receipts, clocks or journal. Native input completes $2 transfers in Chromium and WebKit at 1512×830, 1190×626, 375×667 and 800×400, through the exact result, fairness and saved report. It reconciles sent200, returned246, self1046, partner354, rating4 and one return/completion event each.
+
+Controlled WebKit probes hold only the detached decode, then exercise normal completion, wrong dimensions, wrong resource, invisible attached pixels, Close and Restart. Pending Next/options are disabled while both exits remain directly reachable; invalid/cancelled attempts have no return or completion receipt. These are labelled fault injections rather than native device behavior. Existing Money1 presentation, help/history/reload, zero/$5 and attached-decode/source/cancellation tests are unchanged.
+
+The first after-fix test run passed the former failure but checked fairness before asynchronous navigation settled. The harness now waits a bounded interval for the exact required stage; it does not change assertions or app timing. Initial and subsequent logs remain external.
+
+## Actual Safari check
+
+A disposable private Safari window on the local production build completed the full native $2/4-rating exchange, including the previously failing Next. The drawn result stayed visible; report showed completed and saved, $10.46 player/$3.54 partner, return $2.46. Native AX text and screenshot were inspected in the computer-use tool. External `NATIVE-SAFARI.md` records the exact journey and tool limitation when closing the disposable window. This establishes this desktop Safari journey, not broad Safari/iPhone, screen-reader or physical timing qualification.
+
+## Checks
+
+Focused browser groups: 5 passed, 0 failed, 0 skipped (two new WebKit/Chromium groups plus three existing Money1 groups). Full suite and exact-SHA audit results are recorded at handoff. Build and lint pass; inherited non-Money1 warnings remain.
+
+Final developer unit check: `npm test -- --maxWorkers=1` — 2,374 passed, 0 failed, 13 skipped; 168 passed files, one skipped (383.73s). No assertion, timeout or skip was changed. This uses the same serial execution as the preceding milestone because of its retained, unrelated parallel-run timing failures. Test-generated Money2 evidence files were restored, excluded from the change. Production build and lint exit0; `git diff --check` passes. A complete browser-suite rerun and independent exact-SHA audit are required before preview push; their final outcomes are external handoff records so the audited commit is not changed by its own verdict.

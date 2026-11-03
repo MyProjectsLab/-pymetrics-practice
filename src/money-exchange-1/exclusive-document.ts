@@ -109,6 +109,7 @@ export class ExclusiveMoneyDocument {
   #resultMeaning: HTMLOutputElement | null = null
   #renderEpoch = 0
   #preparedResultEpoch = 0
+  #resultSizeProof: { image:HTMLImageElement; uri:string; epoch:number; width:number; height:number } | null = null
   readonly #observer = new MutationObserver(() => { this.#fault = true })
   #fault = false
 
@@ -173,7 +174,7 @@ export class ExclusiveMoneyDocument {
       siteNav.append(link)
     }
     this.#renderEpoch++;this.#preparedResultEpoch=0
-    this.#resultImage=null;this.#resultMeaning=null
+    this.#resultImage=null;this.#resultMeaning=null;this.#resultSizeProof=null
     const heading = document.createElement('legend');heading.tabIndex=-1
     heading.append(document.createTextNode(view.title)); made.push(heading)
     for (const line of view.lines) { const item=document.createElement('output');if(line.startsWith('This is an original practice exercise.'))item.className='assessment-usage-notice'; item.append(document.createTextNode(line)); made.push(item) }
@@ -320,18 +321,32 @@ export class ExclusiveMoneyDocument {
   async prepareResult(): Promise<void> {
     const image=this.#resultImage, epoch=this.#renderEpoch
     if (!image || !this.checkProtected('final_allocation')) throw Error('Result display is not owned')
+    const uri=image.getAttribute('src')
+    if(!uri)throw Error('Result source is missing')
     await image.decode()
-    if (this.#resultImage!==image || this.#renderEpoch!==epoch || !this.checkProtected('final_allocation'))
+    if (this.#resultImage!==image || this.#renderEpoch!==epoch || !this.checkProtected('final_allocation') ||
+      image.getAttribute('src')!==uri || image.currentSrc!==uri || !image.complete)
       throw Error('Result display changed during preparation')
+    // WebKit rounds naturalWidth/naturalHeight of a laid-out SVG. Decode the
+    // exact same resource detached, then bind its strict size proof to this view.
+    const detached=new Image()
+    detached.src=uri
+    await detached.decode()
+    if(this.#resultImage!==image || this.#renderEpoch!==epoch || !this.checkProtected('final_allocation') ||
+      image.getAttribute('src')!==uri || image.currentSrc!==uri || !image.complete || detached.isConnected ||
+      detached.getAttribute('src')!==uri || detached.src!==uri || detached.currentSrc!==uri || !detached.complete)
+      throw Error('Result display changed during decoded-size preparation')
+    this.#resultSizeProof={image,uri,epoch,width:detached.naturalWidth,height:detached.naturalHeight}
     this.#preparedResultEpoch=epoch
   }
 
   resultReady(expected:MoneyResultArt):boolean {
-    const image=this.#resultImage, meaning=this.#resultMeaning
+    const image=this.#resultImage, meaning=this.#resultMeaning, sizeProof=this.#resultSizeProof
     if (!image || !meaning || this.#preparedResultEpoch!==this.#renderEpoch ||
       !this.checkProtected('final_allocation') || image.ownerDocument!==document ||
       image.getAttribute('src')!==expected.src || image.currentSrc!==expected.src ||
-      !image.complete || image.naturalWidth!==expected.width || image.naturalHeight!==expected.height ||
+      !image.complete || !sizeProof || sizeProof.image!==image || sizeProof.uri!==expected.src ||
+      sizeProof.epoch!==this.#renderEpoch || sizeProof.width!==expected.width || sizeProof.height!==expected.height ||
       meaning.textContent!==expected.semantics) return false
     const rect=image.getBoundingClientRect(), viewport=window.visualViewport
     const left=viewport?.offsetLeft??0, top=viewport?.offsetTop??0
