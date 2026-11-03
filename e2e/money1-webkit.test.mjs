@@ -63,7 +63,9 @@ async function expectStage(ui,page,stage){
  for(let i=0;i<50&&(await ui.state()).stage!==stage;i++)await page.waitForTimeout(50)
  assert.equal((await ui.state()).stage,stage,JSON.stringify(await ui.state()))
 }
-async function capture(page,name){if(process.env.TRAITGAME_MONEY1_OUTPUT){await mkdir(process.env.TRAITGAME_MONEY1_OUTPUT,{recursive:true});await page.screenshot({path:resolve(process.env.TRAITGAME_MONEY1_OUTPUT,name+'.png')})}}
+// WebKit page.screenshot() inserts/removes a HEAD stylesheet to sync animations.
+// That is real owned-document tampering; never do it inside a functional journey.
+async function capture(page,name){if(name.startsWith('money1-webkit-'))return;if(process.env.TRAITGAME_MONEY1_OUTPUT){await mkdir(process.env.TRAITGAME_MONEY1_OUTPUT,{recursive:true});await page.screenshot({path:resolve(process.env.TRAITGAME_MONEY1_OUTPUT,name+'.png')})}}
 
 test('Money 1 completes the $2 exchange in WebKit and Chromium without treating laid-out SVG rounding as corrupt source',{timeout:120000},async()=>{
  const origin='http://127.0.0.1:4967',server=spawn(process.execPath,[resolve('node_modules/vite/bin/vite.js'),'preview','--host','127.0.0.1','--port','4967','--strictPort'],{stdio:'pipe'})
@@ -98,7 +100,7 @@ test('Money 1 detached-size proof stays source-bound and cancellation-safe in We
  try{
   await waitForServer(server,origin)
   browser=await webkit.launch()
-  for(const fault of ['none','wrong-size','wrong-source','opacity','close','restart']){
+  for(const fault of ['none','wrong-size','wrong-source','opacity','head-style','close','restart']){
    const context=await browser.newContext({viewport:{width:1512,height:830}}),page=await context.newPage()
    // Fault injection holds only a real detached decode, then corrupts its
    // dimensions or resource where requested. No receipt or journal is injected.
@@ -127,6 +129,7 @@ test('Money 1 detached-size proof stays source-bound and cancellation-safe in We
     for(const label of ['Close','Restart'])assert.equal(pending.buttons.find(b=>b.text===label)?.disabled,false)
     assert.equal(Object.values((await root(page)).runs)[0].events.filter(e=>e.kind==='return_presented').length,0)
     if(fault==='opacity')await page.evaluate(()=>window.__moneyTestRoots.filter(r=>r.host.isConnected).flatMap(r=>[...r.querySelectorAll('[data-money-result]')])[0].style.opacity='0')
+    if(fault==='head-style')await page.evaluate(()=>{const style=document.createElement('style');style.textContent='body {}';document.head.append(style);style.remove()})
     if(fault==='close')await ui.click('Close')
     if(fault==='restart')await ui.click('Restart')
     await page.waitForTimeout(1600)

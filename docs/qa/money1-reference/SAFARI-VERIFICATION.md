@@ -16,7 +16,7 @@ Only `exclusive-document.ts` changes product behavior. Source dimensions are pro
 
 Controlled WebKit probes hold only the detached decode, then exercise normal completion, wrong dimensions, wrong resource, invisible attached pixels, Close and Restart. Pending Next/options are disabled while both exits remain directly reachable; invalid/cancelled attempts have no return or completion receipt. These are labelled fault injections rather than native device behavior. Existing Money1 presentation, help/history/reload, zero/$5 and attached-decode/source/cancellation tests are unchanged.
 
-The first after-fix test run passed the former failure but checked fairness before asynchronous navigation settled. The harness now waits a bounded interval for the exact required stage; it does not change assertions or app timing. Initial and subsequent logs remain external.
+The first after-fix test run passed the original size check but then observed an empty stage after Next. A following run passed without captures. A bounded stage wait preserved the exact expected assertion but did not resolve the later screenshot-enabled failure; independent mutation traces subsequently established Playwright screenshot-induced HEAD changes as its cause (below). No app timing or guard exemption was changed. Initial and subsequent logs remain external.
 
 ## Actual Safari check
 
@@ -31,3 +31,5 @@ Final developer unit check: `npm test -- --maxWorkers=1` — 2,374 passed, 0 fai
 ## Browser-suite harness correction
 
 The first complete browser rerun exposed port collisions introduced by the new test:4973 belongs to Digits and4972 to Cards. Four Digits tests failed their shared server-start hook before gameplay. No Digits product/test change is made. The new Money1 test now owns unused4967/4968 and requires its own server startup output plus successful fetch, rejecting an early server exit instead of accidentally using another test's server. The failed complete log is retained externally; the complete suite is rerun after this harness-only correction. Product bytes and the2,374/0/13 unit result are unchanged.
+
+The first full run ended28 passed/7 failed: four Digits server-start hook failures, one Money1 detached-test disconnected server from the Cards port collision, one WebKit functional failure after optional screenshot capture, and one unchanged Money2 history-control lookup failure. The WebKit failure is independently traced to Playwright screenshotter injecting/removing a HEAD `body {}` stylesheet. Protected DOM rejection is correct; no production exemption is added. Optional capture now skips WebKit (actual native Safari screenshots use the computer-use bridge), and a controlled HEAD stylesheet insertion/removal joins the negative proof cases. Functional browser checks run without that observer interference. The Money2 lookup is retained for the fresh complete rerun, without changing its code or check.
