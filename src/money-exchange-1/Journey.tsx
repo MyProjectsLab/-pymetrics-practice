@@ -41,6 +41,7 @@ const REPORT_HELP = [
   'To understand the split, compare both final balances. An even split is one way to think about fairness. You can also consider how much you put at stake.',
   'Your final balance is $10 minus what you sent, plus what came back. The partner keeps the tripled transfer minus what they returned.',
 ]
+const CONNECTION_DISPLAY_MS = 3500
 const QUIZ_RULE = 'You start with $10 in practice money. The game triples only the amount you send.'
 const QUIZ_QUESTION = 'If you send $2, how much does your partner receive before sending anything back?'
 
@@ -152,6 +153,16 @@ export function MoneyExchangeJourney({ runtime, boundary, onLibrary, mock, repor
       void runtime.withdraw('technical','protected_display_changed',runtime.state.exposure).catch(()=>undefined)
     }
   })
+  useEffect(() => {
+    if (screen !== 'connecting') return
+    const epoch = navigationEpochRef.current
+    const timer = window.setTimeout(() => {
+      if (mounted.current && screenRef.current === 'connecting' && navigationEpochRef.current === epoch) {
+        change('connected')
+      }
+    }, CONNECTION_DISPLAY_MS)
+    return () => window.clearTimeout(timer)
+  }, [screen])
   const chosen=run && runtime.state.run?.id===run.id ? run : runtime.state.run
   const transfer=chosen?.events.find(e=>e.kind==='transfer_committed')
   const result=transfer?.kind==='transfer_committed' && chosen && forms.length ? outcome(transfer.sentCents,
@@ -183,7 +194,7 @@ export function MoneyExchangeJourney({ runtime, boundary, onLibrary, mock, repor
         add('Start',()=>change('award'),busy);add('Restart',()=>void restart());add('Close',close);break
       case 'award':
         lines.push('You have $10.00.');pair=moneyAwardArt()
-        add('Next',()=>{change('connecting');window.setTimeout(()=>{if(mounted.current&&screenRef.current==='connecting')change('connected')},300)})
+        add('Next',()=>change('connecting'))
         add('Restart',()=>void restart());add('Close',close);break
       case 'connecting':
         lines.push('You have $10.00. Partner has $0.00. Connecting to the scripted partner…')
@@ -541,7 +552,7 @@ export function MoneyExchangeJourney({ runtime, boundary, onLibrary, mock, repor
     {screen==='instructions' && <><p>You begin with $10. Choose one amount to send. You will see what comes back, then give one fairness rating. There is no scored countdown.</p>
       <p>You can stop or restart before completion. An already started exchange will remain in local history as incomplete.</p><button disabled={!ready||busy} onClick={()=>change('ready')}>Continue</button></>}
     {screen==='ready' && <><p>When you are ready, select Start to see your starting amount.</p><button disabled={busy} onClick={()=>change('award')}>Start</button></>}
-    {screen==='award' && <><div className="money-single"><span className="money-person">You</span><strong>$10.00</strong></div><button onClick={()=>{change('connecting');window.setTimeout(()=>{if(mounted.current&&screenRef.current==='connecting')change('connected')},300)}}>Next</button></>}
+    {screen==='award' && <><div className="money-single"><span className="money-person">You</span><strong>$10.00</strong></div><button onClick={()=>change('connecting')}>Next</button></>}
     {screen==='connecting' && <><div className="money-pair"><p>You <strong>$10.00</strong></p><p>Partner <strong>$0.00</strong></p></div><p>Connecting to the scripted partner…</p><button disabled>Next</button></>}
     {screen==='connected' && <><div className="money-pair"><p>You <strong>$10.00</strong></p><p>Partner <strong>$0.00</strong></p></div><p>Your practice partner is ready.</p><button onClick={()=>change('partner_rules')}>Next</button></>}
     {screen==='partner_rules' && <><div className="money-pair"><p>You <strong>$10.00</strong></p><p>Partner <strong>$0.00</strong></p></div>
