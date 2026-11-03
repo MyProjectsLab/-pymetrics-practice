@@ -6,6 +6,16 @@ import {resolve} from 'node:path'
 import {chromium,webkit} from 'playwright'
 
 const pause=ms=>new Promise(resolve=>setTimeout(resolve,ms))
+async function waitForServer(server,origin){
+ let output=''
+ server.stdout.on('data',data=>{output+=data});server.stderr.on('data',data=>{output+=data})
+ for(let i=0;i<100;i++){
+  assert.equal(server.exitCode,null,`The test server exited before owning ${origin}: ${output}`)
+  try{if(output.includes(origin)&&(await fetch(origin)).ok)return}catch{ /* starting */ }
+  await pause(100)
+ }
+ assert.fail(`The test server did not become ready at ${origin}: ${output}`)
+}
 async function observeClosedRoots(page){
  await page.addInitScript(()=>{
   // Retain references for test observation only. Closed mode, real nodes,
@@ -56,9 +66,9 @@ async function expectStage(ui,page,stage){
 async function capture(page,name){if(process.env.TRAITGAME_MONEY1_OUTPUT){await mkdir(process.env.TRAITGAME_MONEY1_OUTPUT,{recursive:true});await page.screenshot({path:resolve(process.env.TRAITGAME_MONEY1_OUTPUT,name+'.png')})}}
 
 test('Money 1 completes the $2 exchange in WebKit and Chromium without treating laid-out SVG rounding as corrupt source',{timeout:120000},async()=>{
- const origin='http://127.0.0.1:4973',server=spawn(process.execPath,[resolve('node_modules/vite/bin/vite.js'),'preview','--host','127.0.0.1','--port','4973','--strictPort'],{stdio:'pipe'})
+ const origin='http://127.0.0.1:4967',server=spawn(process.execPath,[resolve('node_modules/vite/bin/vite.js'),'preview','--host','127.0.0.1','--port','4967','--strictPort'],{stdio:'pipe'})
  try{
-  for(let i=0;i<100;i++){try{if((await fetch(origin)).ok)break}catch{}await pause(100)}
+  await waitForServer(server,origin)
   for(const [name,type]of [['webkit',webkit],['chromium',chromium]]){
    const browser=await type.launch()
    try{for(const viewport of[{width:1512,height:830},{width:1190,height:626},{width:375,height:667},{width:800,height:400}]){
@@ -83,10 +93,10 @@ test('Money 1 completes the $2 exchange in WebKit and Chromium without treating 
 
 
 test('Money 1 detached-size proof stays source-bound and cancellation-safe in WebKit',{timeout:120000},async()=>{
- const origin='http://127.0.0.1:4972',server=spawn(process.execPath,[resolve('node_modules/vite/bin/vite.js'),'preview','--host','127.0.0.1','--port','4972','--strictPort'],{stdio:'pipe'})
+ const origin='http://127.0.0.1:4968',server=spawn(process.execPath,[resolve('node_modules/vite/bin/vite.js'),'preview','--host','127.0.0.1','--port','4968','--strictPort'],{stdio:'pipe'})
  let browser
  try{
-  for(let i=0;i<100;i++){try{if((await fetch(origin)).ok)break}catch{}await pause(100)}
+  await waitForServer(server,origin)
   browser=await webkit.launch()
   for(const fault of ['none','wrong-size','wrong-source','opacity','close','restart']){
    const context=await browser.newContext({viewport:{width:1512,height:830}}),page=await context.newPage()
