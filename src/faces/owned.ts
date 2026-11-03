@@ -138,7 +138,7 @@ export class OwnedStage {
   this.drain();if(!this.intact())this.fault=true
   this.observer.disconnect()
   this.currentImage?.remove();this.currentContext?.remove();this.currentImage=null;this.currentContext=null
-  if(expired){if(this.timerNode)this.replaceText(this.timerNode,'Time expired — choose an answer');if(this.statusNode&&!this.statusNode.textContent)this.replaceText(this.statusNode,'Time expired — choose an answer')}
+  if(expired){if(this.timerNode)this.replaceText(this.timerNode,'Time expired');if(this.statusNode&&!this.statusNode.textContent)this.replaceText(this.statusNode,'Time expired — choose an answer')}
   this.capture()
  }
  setTimer(value:string){if(!this.timerNode||this.timerNode.textContent===value)return;this.mutate(()=>{this.replaceText(this.timerNode!,value)})}
