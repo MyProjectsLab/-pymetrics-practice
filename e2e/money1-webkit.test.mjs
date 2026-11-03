@@ -30,6 +30,11 @@ async function observeClosedRoots(page){
   return {stage:find('[data-money-stage]')[0]?.getAttribute('data-money-stage'),heading:find('h1,fieldset[data-money-stage]>legend')[0]?.textContent,
    buttons:find('button').map(button=>({text:button.textContent,disabled:button.disabled}))}
  })
+ const visibleText = text => page.evaluate(text => {
+  const roots = [document, ...window.__moneyTestRoots.filter(root => root.host.isConnected)]
+  return roots.some(root => [...root.querySelectorAll('output, p, li')].some(element =>
+   element.textContent.trim() === text && element.getClientRects().length > 0))
+ },text)
  const click=async(text,selector='button')=>{
   for(let i=0;i<50;i++){
    const point=await page.evaluate(({text,selector})=>{
@@ -43,15 +48,30 @@ async function observeClosedRoots(page){
   }
   throw Error('No enabled control '+text+'; '+JSON.stringify(await state()))
  }
- return {state,click}
+ return {state,click,visibleText}
 }
 async function root(page){return page.evaluate(()=>new Promise((resolve,reject)=>{
  const request=indexedDB.open('assessment-practice-money-exchange-1-v1',1)
  request.onerror=()=>reject(request.error);request.onsuccess=()=>{const db=request.result,read=db.transaction('installation').objectStore('installation').get('root');read.onerror=()=>{db.close();reject(read.error)};read.onsuccess=()=>{db.close();resolve(read.result)}}
 }))}
-async function reachResponse(page,ui,origin,amount){
+async function reachResponse(page,ui,origin,amount,checkQuizCopy=false){
  await page.goto(origin+'/money.html');await page.waitForTimeout(300)
- await ui.click('Continue');await ui.click('$6','label');await ui.click('Check answer');await ui.click('Start')
+ if(checkQuizCopy){
+  assert.ok(await ui.visibleText('You start with $10 in practice money. Choose how much to send.'))
+  assert.ok(await ui.visibleText('The game triples what you send. If you send $1, you keep $9 and your partner receives $3.'))
+ }
+ await ui.click('Continue')
+ if(checkQuizCopy){
+  assert.ok(await ui.visibleText('You start with $10 in practice money. The game triples only the amount you send.'))
+  const retry = 'Multiply the $2 you send by 3, then try again.'
+  await ui.click('$2','label')
+  assert.equal(await ui.visibleText(retry),false)
+  await ui.click('Check answer')
+  assert.ok(await ui.visibleText(retry))
+  await ui.click('$6','label')
+  assert.equal(await ui.visibleText(retry),false)
+ }else await ui.click('$6','label')
+ await ui.click('Check answer');await ui.click('Start')
  for(let i=0;i<4;i++)await ui.click('Next')
  assert.equal((await ui.state()).stage,'transfer')
  const point=await page.evaluate(()=>{const e=window.__moneyTestRoots.filter(r=>r.host.isConnected).flatMap(r=>[...r.querySelectorAll('input[type=text]')])[0];e.scrollIntoView({block:'nearest'});const r=e.getBoundingClientRect();return{x:r.x+r.width/2,y:r.y+r.height/2}})
@@ -77,7 +97,7 @@ test('Money 1 completes the $2 exchange in WebKit and Chromium without treating 
     const context=await browser.newContext({viewport}),page=await context.newPage(),errors=[];page.on('pageerror',error=>errors.push(String(error)))
     const ui=await observeClosedRoots(page)
     try{
-     await reachResponse(page,ui,origin,'2');await ui.click('Next');await page.waitForTimeout(350)
+     await reachResponse(page,ui,origin,'2',true);await ui.click('Next');await page.waitForTimeout(350)
      await capture(page,`money1-${name}-result-${viewport.width}`)
      assert.equal((await ui.state()).stage,'final_allocation','A normal decoded, visible result must not become incomplete')
      await ui.click('Next');await expectStage(ui,page,'fairness');await ui.click('4','label');await ui.click('Next')

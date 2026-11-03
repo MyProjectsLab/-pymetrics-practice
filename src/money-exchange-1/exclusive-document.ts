@@ -71,7 +71,7 @@ export type ProtectedView = {
   buttons: readonly { label: string; act: () => void; disabled?: boolean; expanded?: boolean }[]
   amount?: { value: string; current: () => string; changed: (value: string) => void }
   rating?: { value: number | null; current: () => number | null; changed: (value: number) => void }
-  comprehension?: { value: string; current: () => string; changed: (value: string) => void }
+  comprehension?: { question: string; value: string; current: () => string; changed: (value: string) => void }
   facts?: readonly {label:string;value:string}[]
   secondaryButtons?: readonly {label:string;act:()=>void;disabled?:boolean}[]
   pair?: { src: string; width: number; height: number; semantics: string }
@@ -205,7 +205,7 @@ export class ExclusiveMoneyDocument {
     }
     if (view.comprehension) {
       const group=document.createElement('fieldset'),legend=document.createElement('legend')
-      legend.textContent='If you send $2, how much does the partner receive before returning anything?';group.append(legend)
+      legend.textContent=view.comprehension.question;group.append(legend)
       for(const [value,labelText] of [['2','$2'],['6','$6'],['20','$20']]) {
         const label=document.createElement('label'),input=document.createElement('input')
         input.type='radio';input.name='money-comprehension';input.value=value;input.checked=view.comprehension.value===value

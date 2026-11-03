@@ -23,6 +23,14 @@ type Screen = 'guide' | 'example' | 'quiz' | 'instructions' | 'ready' | 'award' 
   'connected' | 'partner_rules' | 'return_explanation' | 'transfer' | 'transfer_busy' |
   'response_ready' | 'final_allocation' | 'fairness' | 'test_complete' | 'report' | 'help' | 'history' | 'review'
 const LIMIT = 'This is an original practice exercise. The partner response is scripted, not another person. This report does not reproduce a provider score or predict a hiring outcome.'
+const GUIDE_RULES = [
+  'You start with $10 in practice money. Choose how much to send.',
+  'The game triples what you send. If you send $1, you keep $9 and your partner receives $3.',
+  'See how much your partner returns, then rate how fair it feels. There is no correct amount or fairness rating.',
+]
+const QUIZ_RULE = 'You start with $10 in practice money. The game triples only the amount you send.'
+const QUIZ_QUESTION = 'If you send $2, how much does your partner receive before sending anything back?'
+
 function nextPaint() { return new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))) }
 async function confirmDisplayWithin<T>(work:Promise<T>):Promise<T> {
   let timer:ReturnType<typeof setTimeout>|undefined
@@ -31,7 +39,7 @@ async function confirmDisplayWithin<T>(work:Promise<T>):Promise<T> {
   })]) }
   finally {if(timer)clearTimeout(timer)}
 }
-function stepTitle(screen:Screen) { return ({guide:'Money Exchange 1',example:'See one example',quiz:'Check the arithmetic',
+function stepTitle(screen:Screen) { return ({guide:'Money Exchange 1',example:'See one example',quiz:'Check the transfer rule',
   instructions:'Instructions',ready:'Ready?',award:'You receive $10',connecting:'Connecting',connected:'Partner connected',
   partner_rules:'The exchange',return_explanation:'Choose an amount to send',transfer:'Send an amount',
   transfer_busy:'Sending',response_ready:'Your partner has received the money',final_allocation:'The partner returned an amount',
@@ -135,15 +143,15 @@ export function MoneyExchangeJourney({ runtime, boundary, onLibrary, mock, repor
     let amountField:ProtectedView['amount'],ratingField:ProtectedView['rating'],comprehensionField:ProtectedView['comprehension'],art:ProtectedView['result'],pair:ProtectedView['pair']
     switch(screen) {
       case 'guide':
-        lines.push('Choose how much of your simulated $10 to send.','The partner receives three times that amount and returns a scripted share.','Rate how fair the return feels. There is no correct amount or fairness rating.','Untimed practice. All money and partners are simulated. Results stay in this browser; see Privacy.')
+        lines.push(...GUIDE_RULES,'Untimed practice. All money and partners are simulated. Results stay in this browser; see Privacy.')
         add('Continue',()=>change('quiz'));add('See an example',()=>change('example'));if(canSkip)add('Skip instructions',()=>void skipGuide());add('Saved results',()=>void showHistory(),!ready);add(mock||reportTarget?'Return to mock':'Main menu',onLibrary);break
       case 'example':
         lines.push('Send $5. The partner receives $15 and returns $6.15. You finish with $11.15; the partner keeps $8.85.')
         add('Next',()=>change('quiz'));break
       case 'quiz':
-        comprehensionField={value:quiz,current:()=>quiz,changed:value=>{competingChoice();setQuiz(value)}}
-        if(quiz&&quiz!=='6')lines.push('The partner receives three times what you send. Try again.')
-        add('Check answer',()=>{if(quiz==='6'){skipSource.current=null;change('ready')}},!quiz);break
+        lines.push(QUIZ_RULE)
+        comprehensionField={question:QUIZ_QUESTION,value:quiz,current:()=>quiz,changed:value=>{competingChoice();chooseQuiz(value)}}
+        add('Check answer',checkQuiz,!quiz);break
       case 'instructions':
         lines.push('You begin with $10. Send one amount, see what comes back and give one fairness rating. There is no scored countdown.')
         add('Continue',()=>change('ready'),!ready||busy);add('Close',close);break
@@ -251,6 +259,20 @@ export function MoneyExchangeJourney({ runtime, boundary, onLibrary, mock, repor
     competingChoice(); change(previous)
   })
   function change(next:Screen) {navigationEpochRef.current++;screenRef.current=next;setScreen(next);setOptionsOpen(false);if(next==='report')setDetailsOpen(false);setError(null);setReturnFailed(false) }
+  function chooseQuiz(value: string) {
+    setQuiz(value)
+    setError(null)
+  }
+
+  function checkQuiz() {
+    if (quiz === '6') {
+      skipSource.current = null
+      change('ready')
+    } else if (quiz) {
+      setError('Multiply the $2 you send by 3, then try again.')
+    }
+  }
+
   function competingChoice(){mock?.retireReturnIntent()}
   function problem(reason:unknown) { setError(reason instanceof Error?reason.message:'Local state could not be verified.') }
   function beginBusy() { const token=++busyTokenRef.current;busyNowRef.current=true;setBusy(true);return token }
@@ -486,12 +508,12 @@ export function MoneyExchangeJourney({ runtime, boundary, onLibrary, mock, repor
     {!ready && <p role="status">Checking local storage…</p>}
     {error && <p role="alert" className="money-error">{error}</p>}
     {mock && returnFailed && !returnBusy && <button className="secondary" onClick={leaveMockUnconfirmed}>Leave with result unconfirmed</button>}
-    {screen==='guide' && <><QuickRules rules={['Choose how much of your simulated $10 to send.','The partner receives three times that amount and returns a scripted share.','Rate how fair the return feels. There is no correct amount or fairness rating.']} note="Untimed practice. All money and partners are simulated."/>
+    {screen==='guide' && <><QuickRules rules={GUIDE_RULES} note="Untimed practice. All money and partners are simulated."/>
       <button onClick={()=>change('quiz')}>Continue</button><details className="start-options"><summary>Examples and saved results</summary><div className="money-actions"><button className="secondary" onClick={()=>change('example')}>See an example</button>{canSkip&&<button className="secondary" onClick={()=>void skipGuide()}>Skip instructions</button>}<button className="secondary" disabled={!ready} onClick={()=>void showHistory()}>Saved results</button></div></details></>}
     {screen==='example' && <><p>In this example, you send $5 from your $10. The partner receives $15 and returns $6.15. You have $10 − $5 + $6.15 = $11.15. The partner keeps $15 − $6.15 = $8.85. Practice returns can vary.</p><button onClick={()=>change('quiz')}>Next</button></>}
-    {screen==='quiz' && <><fieldset><legend>If you send $2, how much does the partner receive before returning anything?</legend>
-      {(['2','6','20'] as const).map(value=><label key={value}><input type="radio" name="money-comprehension" value={value} checked={quiz===value} onChange={()=>setQuiz(value)} />${value}</label>)}
-      </fieldset><button disabled={!quiz} onClick={()=>{if(quiz==='6'){skipSource.current=null;change('ready')}}}>Check answer</button>{quiz && quiz!=='6' && <p>Multiply the sent amount by three. Try again.</p>}</>}
+    {screen==='quiz' && <><p>{QUIZ_RULE}</p><fieldset><legend>{QUIZ_QUESTION}</legend>
+      {(['2','6','20'] as const).map(value=><label key={value}><input type="radio" name="money-comprehension" value={value} checked={quiz===value} onChange={()=>chooseQuiz(value)} />${value}</label>)}
+      </fieldset><button disabled={!quiz} onClick={checkQuiz}>Check answer</button></>}
     {screen==='instructions' && <><p>You begin with $10. Choose one amount to send. You will see what comes back, then give one fairness rating. There is no scored countdown.</p>
       <p>You can stop or restart before completion. An already started exchange will remain in local history as incomplete.</p><button disabled={!ready||busy} onClick={()=>change('ready')}>Continue</button></>}
     {screen==='ready' && <><p>When you are ready, select Start to see your starting amount.</p><button disabled={busy} onClick={()=>change('award')}>Start</button></>}
