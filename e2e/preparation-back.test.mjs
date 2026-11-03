@@ -41,6 +41,10 @@ test('all twelve preparation flows return to their visited screen with Back belo
     const purposeBottom = await ui.call(purpose, function () { return this.getBoundingClientRect().bottom })
     const advanceTop = await ui.call(advanceButton, function () { return this.getBoundingClientRect().top })
     assert.ok(purposeBottom <= advanceTop, `${name}: purpose should be above the advance button`)
+    if (name === 'Lengths') {
+     assert.equal((await ui.elements('p', 'If the mouth is short, choose Short.')).length, 1)
+     assert.equal((await ui.elements('li', 'With the default keyboard controls, Left arrow means Short and Right arrow means Long.')).length, 1)
+    }
     await click(advance)
     const [back]=await ui.elements('button','Back',false);assert.ok(back,`${name}: no Back on second screen`)
     const buttons=await ui.snapshot(),backBox=buttons.find(n=>n.tag==='BUTTON'&&/^(← )?Back$/.test(n.text))
