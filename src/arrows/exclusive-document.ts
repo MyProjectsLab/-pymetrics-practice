@@ -6,7 +6,7 @@ import { loadGameFonts } from '../design/gameFonts'
 const PROTECTED_CSS = `${sizeTokens.replace(/(--ap-[\w-]+\s*:\s*[^;{}]+);/g, '$1 !important;')}
 
 :host { all: initial; display: block; margin: 0; background: #fff; color: #172d30; font: 16px system-ui; direction: ltr; writing-mode: horizontal-tb; }
-fieldset { all: initial; display: grid; place-items: center; box-sizing: border-box; width: 420px; min-height: 240px; margin: 24px auto; padding: 32px; border: 2px solid #587568; border-radius: 8px; background: #fff; direction: ltr; writing-mode: horizontal-tb; }
+fieldset { all: initial; display: grid; place-items: center; box-sizing: border-box; width: min(420px, 100%); min-height: 240px; margin: max(24px, calc((100svh - 408px) / 2)) auto 24px; padding: 24px 0; border: 2px solid #587568; border-radius: 8px; background: #fff; direction: ltr; writing-mode: horizontal-tb; }
 button { all: initial; display: block; box-sizing: border-box; width: 160px; height: 44px; margin: 24px auto; border: 2px solid #18594f; border-radius: 6px; background: #fff; color: #18594f; font: 16px system-ui; text-align: center; cursor: pointer; direction: ltr; writing-mode: horizontal-tb; }
 button:focus-visible { outline: 3px solid #995500; outline-offset: 4px; }
 :host { font-size:var(--ap-font-body); line-height:var(--ap-line-height); }

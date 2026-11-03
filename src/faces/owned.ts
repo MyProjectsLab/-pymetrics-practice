@@ -87,16 +87,19 @@ export class OwnedStage {
   this.views.add(view);this.ownership.own(this.owner??this.ownership.generationKey,view)
   this.currentImage=null;this.currentContext=null;this.timerNode=null;this.statusNode=null
   const frame=document.createElement('div');frame.className=view.question?'question':'journey'
-  const header=document.createElement('header'),siteNav=document.createElement('nav');header.className='site-header';siteNav.setAttribute('aria-label','Site navigation')
-  for(const [label,href] of [['TraitGame','/'],['Home','/'],['Assessments','/practice'],['Full mock','/mock']]){
-   const link=document.createElement('a');link.href=href;link.textContent=label;if(label==='TraitGame')decorateSiteBrand(link)
-   this.on(link,'click',()=>this.onNavigate?.());if(label==='TraitGame')header.append(link);else siteNav.append(link)
+  if(!view.question){
+   const header=document.createElement('header'),siteNav=document.createElement('nav');header.className='site-header';siteNav.setAttribute('aria-label','Site navigation')
+   for(const [label,href] of [['TraitGame','/'],['Home','/'],['Assessments','/practice'],['Full mock','/mock']]){
+    const link=document.createElement('a');link.href=href;link.textContent=label;if(label==='TraitGame')decorateSiteBrand(link)
+    this.on(link,'click',()=>this.onNavigate?.());if(label==='TraitGame')header.append(link);else siteNav.append(link)
+   }
+   header.append(siteNav)
+   if(this.mockReturn){const back=document.createElement('button');back.type='button';back.textContent='Return to mock';this.on(back,'click',this.mockReturn);header.append(back)}
+   frame.append(header)
   }
-  header.append(siteNav)
-  if(this.mockReturn){const back=document.createElement('button');back.type='button';back.textContent='Return to mock';this.on(back,'click',this.mockReturn);header.append(back)}
   const heading=document.createElement('h1');heading.tabIndex=-1;heading.textContent=view.title
   const panel=view.question?frame:document.createElement('section');if(!view.question)panel.className='panel'
-  frame.append(header);if(view.eyebrow){const eyebrow=document.createElement('p');eyebrow.className='eyebrow';eyebrow.textContent=view.eyebrow;panel.append(eyebrow)}panel.append(heading)
+  if(view.eyebrow){const eyebrow=document.createElement('p');eyebrow.className='eyebrow';eyebrow.textContent=view.eyebrow;panel.append(eyebrow)}panel.append(heading)
   const privacy:HTMLElement[]=[]
   for(const line of view.paragraphs??[]){const p=document.createElement('p');p.textContent=line;if(!view.question&&line.includes('Privacy')){p.className='assessment-usage-notice';const parts=line.split('Privacy');const link=document.createElement('a');link.href='/privacy.html';link.textContent='Privacy';p.replaceChildren(document.createTextNode(parts[0]),link,document.createTextNode(parts.slice(1).join('Privacy')));privacy.push(p)}else panel.append(p)}
   if(view.notice){const note=document.createElement('p');note.className='notice';note.textContent=view.notice;panel.append(note)}

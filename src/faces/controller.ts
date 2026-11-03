@@ -421,7 +421,7 @@ export class FacesApp {
    const stimulus=document.createElement('section');stimulus.className=ITEMS[ui.index].context===null?'stimulus':'stimulus contextual';stimulus.append(ui.image)
    if(ITEMS[ui.index].context!==null){ui.context=text('p',ITEMS[ui.index].context!,'context');stimulus.append(ui.context)}mount.append(stimulus)
    const choices=document.createElement('div');choices.className='choices';choices.setAttribute('role','group');choices.setAttribute('aria-label',`Emotion choices for item ${ui.index+1}`)
-   for(const label of LABELS){const choice=document.createElement('button');choice.type='button';choice.textContent=label;choice.disabled=true;this.stage.on(choice,'click',this.actionHandler({kind:'answer',id:a.attemptId,index:ui.index,choice:label}));choices.append(choice)}mount.append(choices,text('p',`Item ${ui.index+1} of 14`,'counter'))
+   for(const label of LABELS){const choice=document.createElement('button');choice.type='button';choice.textContent=label;choice.disabled=true;this.stage.on(choice,'click',this.actionHandler({kind:'answer',id:a.attemptId,index:ui.index,choice:label}));choices.append(choice)}mount.append(choices)
   },actions:[{label:'Restart',secondary:true,run:()=>void this.exit('restart','instructions',false)},{label:'Close',secondary:true,run:()=>void this.exit('close','library',true)}]})
   this.ownItem(a,ui);a.image=ui.image;a.context=ui.context;this.stage.setQuestionControls(ui.image,ui.context,ui.timer!,ui.status!)
  }

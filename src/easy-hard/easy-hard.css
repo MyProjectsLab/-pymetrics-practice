@@ -11,8 +11,8 @@
 .easy-hard-options button:disabled { opacity: .68; }
 .easy-hard-options button.easy-hard-selected { outline: 4px solid #0891b2; outline-offset: 3px; }
 .easy-hard-task { outline: none; display: grid; justify-items: center; gap: .7rem; }
-.easy-hard-task:focus-visible { outline: 4px solid #0891b2; outline-offset: 3px; }
-.easy-hard-bar { width: min(150px, 30vw); height: min(230px, 34vh); border: 3px solid #46566d; border-radius: 28px; overflow: hidden; display: flex; flex-direction: column-reverse; background: #fff; }
+.easy-hard-task:focus-visible { outline: 2px solid #0891b2; outline-offset: 2px; }
+.easy-hard-bar { width: min(74px, 24vw); border: 3px solid #46566d; border-radius: 28px; overflow: hidden; display: flex; flex-direction: column-reverse; background: #fff; }
 .easy-hard-bar div { width: 100%; background: #0891b2; transition: height 100ms linear; }
 .easy-hard-table { overflow-x: auto; }
 .easy-hard-table table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
@@ -25,14 +25,14 @@
 .easy-hard-options button { background: #fff; color: #14213d; border-color: #e4e7ef; }
 .easy-hard-options button:hover:not(:disabled) { background: #e3f6fa; border-color: #0891b2; }
 
-.easy-hard-top strong { font-size:var(--ap-font-number); }
+.easy-hard-top strong { font-size:clamp(28px, 7vw, var(--ap-font-number)); white-space:nowrap; }
 
 /* All choice/task/feedback phases share a stable stage. No stimulus timing changes. */
 .easy-hard-board { box-sizing:border-box; height:min(650px, calc(100svh - 160px)); min-height:480px; display:grid; grid-template-rows:auto 1fr; gap:12px; }
 .easy-hard-phase { min-height:0; display:grid; align-content:center; }
 .easy-hard-phase h1, .easy-hard-phase p { margin:4px 0; }
 .easy-hard-task { gap:6px; }
-.easy-hard-bar { height:min(170px, 22vh); }
+.easy-hard-bar { height:min(180px, 24svh); }
 .easy-hard-options { margin:12px auto; }
 .easy-hard-top strong { line-height:1.1; }
 @media(max-width:520px) { .easy-hard-board { height:calc(100svh - 130px); min-height:490px; } }
