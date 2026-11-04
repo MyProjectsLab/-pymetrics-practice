@@ -360,8 +360,18 @@ export function ArrowsJourney({ onLibrary, exclusive, mock, reportTarget }: { on
   }, [step])
   useEffect(() => {
     if (mock || step !== 'break' || checkpointStatus !== 'saved') return
-    if (document.visibilityState === 'visible' && document.hasFocus()) void continueBlock()
-  // Checkpoint readiness is the trigger; a failed automatic attempt stays on the recovery screen.
+    const resume = () => {
+      if (document.visibilityState === 'visible' && document.hasFocus() && run.current?.canContinue()) void continueBlock()
+    }
+    resume()
+    const events = ['focus', 'keyup', 'pointerup', 'pointercancel'] as const
+    for (const event of events) window.addEventListener(event, resume)
+    document.addEventListener('visibilitychange', resume)
+    return () => {
+      for (const event of events) window.removeEventListener(event, resume)
+      document.removeEventListener('visibilitychange', resume)
+    }
+  // Checkpoint readiness is the trigger; the browser runner rechecks admission inside its write order.
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mock, step, checkpointStatus])
   useEffect(() => {

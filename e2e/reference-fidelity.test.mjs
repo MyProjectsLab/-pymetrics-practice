@@ -78,13 +78,18 @@ test('Lengths renders the smaller standard face and a distinct earned-reward tic
     assert.equal(face.length, 43, 'Fresh form first stimulus is Long')
     await page.keyboard.press('ArrowRight')
     const witness = await page.waitForFunction(() => window.referenceEvidence().firstReward)
-    assert.deepEqual(await witness.jsonValue(), { mark: '✓', amount: '✓+50¢ simulated', width: 112 })
+    assert.deepEqual(await witness.jsonValue(), { mark: '✓', amount: '✓+50¢ simulated', width: 116 })
   })
 })
 
 test('Arrows resumes from a confirmed checkpoint and shows position marks without text', { timeout: 95000 }, async () => {
   await runGame('Arrows', async page => {
-    await page.waitForFunction(() => window.referenceEvidence().arrows.length >= 28, undefined, { timeout: 80000 })
+    await page.waitForFunction(() => window.referenceEvidence().arrows.length >= 27, undefined, { timeout: 80000 })
+    await page.keyboard.down('ArrowLeft')
+    await page.waitForTimeout(2200)
+    assert.equal(await page.evaluate(() => window.referenceEvidence().arrows.length), 27, 'A held response delays the next block')
+    await page.keyboard.up('ArrowLeft')
+    await page.waitForFunction(() => window.referenceEvidence().arrows.length >= 28)
     const { arrows } = await page.evaluate(() => window.referenceEvidence())
     assert.equal(arrows.length, 28)
     for (const source of arrows) {

@@ -365,6 +365,7 @@ it('keeps the exclusive document protected when automatic continuation republish
     return state
   })
   const publish = () => (runner as unknown as { publish: (state: State) => void }).publish(state)
+  vi.spyOn(ArrowsBrowserRun.prototype, 'canContinue').mockImplementation(() => !state.heldCodes.length)
   const continuation = vi.spyOn(ArrowsBrowserRun.prototype, 'continue').mockImplementation(async () => {
     state = advance(state, { kind: 'keyup', atMs: state.commands.at(-1)!.atMs + 1, code: 'ArrowLeft' })
     publish() // Same break, extended prefix while asynchronous Continue work is held.
@@ -396,6 +397,10 @@ it('keeps the exclusive document protected when automatic continuation republish
   state = advance(state, { kind: 'keydown', atMs: state.commands.at(-1)!.atMs + 1, code: 'ArrowLeft', repeat: false, modified: false })
   act(publish)
   expect(leave).toHaveBeenCalledOnce()
+  expect(continuation).not.toHaveBeenCalled()
+  state = advance(state, { kind: 'keyup', atMs: state.commands.at(-1)!.atMs + 1, code: 'ArrowLeft' })
+  act(publish)
+  fireEvent.keyUp(window, { code: 'ArrowLeft' })
   await waitFor(() => expect(continuation).toHaveBeenCalledOnce())
   expect(active).toBe(true)
   expect(container.isConnected).toBe(false)

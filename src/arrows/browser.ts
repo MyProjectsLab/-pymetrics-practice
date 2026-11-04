@@ -430,6 +430,12 @@ export class ArrowsBrowserRun {
     }
   }
 
+  canContinue(): boolean {
+    const state = this.state
+    return !!state && state.phase === 'break' && !this.responseHeld(state.profile) &&
+      state.heldCodes.length === 0 && state.activePointer === null
+  }
+
   async continue(): Promise<State> {
     if (this.disposed || this.closed || this.state?.phase !== 'break' || !this.attempt) throw Error('No Arrows block is ready to continue')
     const epoch = this.epoch, arm = this.attempt
@@ -447,9 +453,11 @@ export class ArrowsBrowserRun {
           if (this.state !== state) throw new ArrowsAdmissionChanged('Arrows break input changed')
           target.confirmed()
           if (!this.layoutReady()) throw Error('The Arrows display is not fully visible. Resize or zoom out before continuing.')
+          if (document.visibilityState !== 'visible' || !document.hasFocus()) throw Error('Return to this tab before continuing.')
+          if (!this.canContinue()) throw Error('Release the response control before continuing.')
           this.detachBreak?.(); this.detachBreak = null; this.breakAuthority = null
           this.admissionToken = token
-          this.apply({ kind: 'continue', atMs: this.clock(), responseHeld: this.responseHeld(state.profile) })
+          this.apply({ kind: 'continue', atMs: this.clock(), responseHeld: false })
           if (this.closed || this.snapshot()?.phase !== 'fixation_pending') throw Error('Arrows continuation was canceled')
           try { this.monitor(); this.fixation() } catch (error) { this.technical(); throw error }
         })
