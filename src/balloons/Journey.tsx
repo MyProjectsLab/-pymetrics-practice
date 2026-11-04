@@ -33,6 +33,10 @@ const EMPLOYER = 'Some employers use game-based assessments that combine informa
 const initialView: RunView = { mode: 'idle', record: null, message: '' }
 const playModes: RunView['mode'][] = ['playing', 'saving', 'mounting', 'checking']
 const displayedPhases = ['presentation_armed', 'active', 'resolved', 'completed', 'committing_action']
+function canSkipFrom(record: DurableRecord, extendedPractice: boolean) {
+  return !!record.header.formVersion === extendedPractice && record.snapshot.phase === 'completed' &&
+    record.snapshot.confirmedRounds.length === 39 && basicReport(record.snapshot.core).status === 'headless_complete'
+}
 type Step = 'guide' | 'demo' | 'quiz' | 'setup' | 'ready' | 'run' | 'history' | 'training' | 'comparison'
 export function BalloonsJourney({ onLibrary, mock, reportTarget, separateBaseline = false }: { onLibrary: () => void; mock?: MockJourneyContext; reportTarget?: ReportTarget; separateBaseline?: boolean }) {
   const [step, setStep] = useState<Step>('guide'), [store, setStore] = useState<BalloonsStore | null>(null)
@@ -192,15 +196,11 @@ export function BalloonsJourney({ onLibrary, mock, reportTarget, separateBaselin
     finally { finished = true; cancelAnimationFrame(frame); if (historyBusy.current === request) historyBusy.current = null }
   }
   const extendedPractice = !mock && mode !== 'new_baseline'
-  function canSkipFrom(record: DurableRecord) {
-    return !!record.header.formVersion === extendedPractice && record.snapshot.phase === 'completed' &&
-      record.snapshot.confirmedRounds.length === 39 && basicReport(record.snapshot.core).status === 'headless_complete'
-  }
   useEffect(()=>{
     if(!store||step!=='guide')return
     let active=true,pending=false
     const check=()=>{if(pending||document.hidden||!document.hasFocus())return;pending=true;void store.read().then(data=>{
-      if(active)setSkipAvailable(Object.values(data.records).some(canSkipFrom))
+      if(active)setSkipAvailable(Object.values(data.records).some(record => canSkipFrom(record, extendedPractice)))
     }).catch(()=>{if(active)setSkipAvailable(false)}).finally(()=>{pending=false})}
     check();const timer=window.setInterval(check,1000)
     return()=>{active=false;window.clearInterval(timer)}
@@ -211,7 +211,7 @@ export function BalloonsJourney({ onLibrary, mock, reportTarget, separateBaselin
     try{
       const data=await store.read()
       if(!alive.current||stepRef.current!=='guide'||ticket!==historyRequest.current||nav!==startNavigation.current)return
-      const source=Object.values(data.records).find(canSkipFrom)
+      const source=Object.values(data.records).find(record => canSkipFrom(record, extendedPractice))
       if(!source){
         setSkipAvailable(false);setError('A current completed Balloons run is no longer saved. Check the rules instead.');return
       }
@@ -241,7 +241,7 @@ export function BalloonsJourney({ onLibrary, mock, reportTarget, separateBaselin
     if(skipSource.current){const sourceId=skipSource.current,nav=startNavigation.current;skipChecking.current=true
       try{const data=await store.read();if(!alive.current||stepRef.current!=='ready'||nav!==startNavigation.current)return
         const source=data.records[sourceId]
-        if(!source||!canSkipFrom(source)){
+        if(!source||!canSkipFrom(source, extendedPractice)){
           skipSource.current=null;setSkipAvailable(false);setAnswers([-1,-1]);setSubmitted(false);setError('The completed run used to skip the guide was deleted or changed. Check the rules to continue.');moveIntroStep('quiz');return
         }
         skipSource.current=null

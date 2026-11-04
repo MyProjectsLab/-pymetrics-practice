@@ -303,4 +303,8 @@ it('reopens capped history and keeps extended exposure separate across deletion 
   const training = await store.assign('training', 'new_baseline', settings, 'test', time(), undefined, undefined, true)
   expect(training.record.header.formVersion).toBeUndefined()
   expect(training.record.header.formId).toBe('BL1')
+  const mock = await store.assign('mock', 'replay', settings, 'test', time(), undefined, '00000000-0000-4000-8000-000000000022', true)
+  expect(mock.record.header.identity.stage).toBe('mock')
+  expect(mock.record.header.formVersion).toBeUndefined()
+  expect(mock.record.header.formId).toBe('RP1')
 })
