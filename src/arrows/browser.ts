@@ -453,8 +453,7 @@ export class ArrowsBrowserRun {
           if (this.state !== state) throw new ArrowsAdmissionChanged('Arrows break input changed')
           target.confirmed()
           if (!this.layoutReady()) throw Error('The Arrows display is not fully visible. Resize or zoom out before continuing.')
-          if (document.visibilityState !== 'visible' || !document.hasFocus()) throw Error('Return to this tab before continuing.')
-          if (!this.canContinue()) throw Error('Release the response control before continuing.')
+          if (!this.canContinue()) throw Error('Arrows: response control held. Release it before continuing.')
           this.detachBreak?.(); this.detachBreak = null; this.breakAuthority = null
           this.admissionToken = token
           this.apply({ kind: 'continue', atMs: this.clock(), responseHeld: false })

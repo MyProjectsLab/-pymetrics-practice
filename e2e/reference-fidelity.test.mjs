@@ -86,7 +86,8 @@ test('Arrows resumes from a confirmed checkpoint and shows position marks withou
   await runGame('Arrows', async page => {
     await page.waitForFunction(() => window.referenceEvidence().arrows.length >= 27, undefined, { timeout: 80000 })
     await page.keyboard.down('ArrowLeft')
-    await page.waitForTimeout(2200)
+    await page.getByRole('heading', { name: 'Block complete' }).waitFor({ timeout: 5000 })
+    await page.waitForTimeout(1100)
     assert.equal(await page.evaluate(() => window.referenceEvidence().arrows.length), 27, 'A held response delays the next block')
     await page.keyboard.up('ArrowLeft')
     await page.waitForFunction(() => window.referenceEvidence().arrows.length >= 28)
