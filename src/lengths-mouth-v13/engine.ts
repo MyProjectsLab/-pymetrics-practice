@@ -7,7 +7,8 @@ export const HEADLESS_VALIDITY = 'headless_unconfirmed' as const
 export type PointerSource = 'mouse' | 'touch' | 'pen'
 export type Route = 'standalone' | Readonly<{kind:'mock'; mockRunId:string; mockVersion:string; gameIndex:7}>
 export const MOUTH_PRESENTATION_VERSION = 'lengths_mouth_presentation_v1_2' as const
-export type InputProfile = Readonly<({kind:'keyboard';leftCode:string;rightCode:string}|{kind:'pointer';pointerSource:PointerSource}) & {variant:Variant;deviceClass:string;alternative:boolean;contrast:'dark_on_light'|'light_on_dark';magnification:'none'|'browser_zoom';reducedMotion:boolean;presentationVersion:typeof MOUTH_PRESENTATION_VERSION}>
+export const MOUTH_COMPACT_PRESENTATION = 'lengths_mouth_presentation_v1_3_compact' as const
+export type InputProfile = Readonly<({kind:'keyboard';leftCode:string;rightCode:string}|{kind:'pointer';pointerSource:PointerSource}) & {variant:Variant;deviceClass:string;alternative:boolean;contrast:'dark_on_light'|'light_on_dark';magnification:'none'|'browser_zoom';reducedMotion:boolean;presentationVersion:typeof MOUTH_PRESENTATION_VERSION|typeof MOUTH_COMPACT_PRESENTATION}>
 export interface Identity { readonly installationId:string;readonly sessionId:string;readonly clockDomainId:string;readonly route:Route }
 export type Phase = 'armed'|'fixation_pending'|'fixation'|'stimulus'|'removed'|'resolved'|'feedback'|'break'|'completed'|'invalid'
 export type InvalidReason = 'hidden'|'blur'|'freeze'|'page_exit'|'viewport'|'ownership'|'settings'|'timing'|'frame_gap'|'watchdog'|'technical'
@@ -63,7 +64,7 @@ function profileValid(profile: InputProfile) {
     typeof profile.alternative === 'boolean' && typeof profile.reducedMotion === 'boolean' &&
     (profile.contrast === 'dark_on_light' || profile.contrast === 'light_on_dark') &&
     (profile.magnification === 'none' || profile.magnification === 'browser_zoom') &&
-    profile.presentationVersion === MOUTH_PRESENTATION_VERSION, 'invalid profile')
+    (profile.presentationVersion === MOUTH_PRESENTATION_VERSION || profile.presentationVersion === MOUTH_COMPACT_PRESENTATION), 'invalid profile')
   const common = ['kind', 'variant', 'deviceClass', 'alternative', 'contrast', 'magnification', 'reducedMotion', 'presentationVersion']
   if (profile.kind === 'keyboard') {
     keys(profile, [...common, 'leftCode', 'rightCode'])

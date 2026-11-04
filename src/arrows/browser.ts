@@ -1,3 +1,4 @@
+import { ARROWS_POSITION_MARKERS } from './v11/contracts'
 import { advance } from './versions'
 import type { ArrowsDocumentBoundary } from './exclusive-document'
 import { ArrowsStaticSurface } from './v11/static-surface'
@@ -397,7 +398,7 @@ export class ArrowsBrowserRun {
     this.pendingProfile = pendingProfile
     try {
       if (this.useStaticSurface) {
-        this.#surface = new ArrowsStaticSurface(this.host, pendingProfile.kind === 'pointer', (event, direction) => this.pointerdown(event, direction))
+        this.#surface = new ArrowsStaticSurface(this.host, pendingProfile.kind === 'pointer', (event, direction) => this.pointerdown(event, direction), pendingProfile.accommodation === ARROWS_POSITION_MARKERS)
         this.preparation = await this.#surface.prepare()
         if (epoch !== this.epoch || this.disposed || !this.#surface.prepared(this.preparation)) throw Error('Arrows preparation canceled')
       }
@@ -432,7 +433,7 @@ export class ArrowsBrowserRun {
   async continue(): Promise<State> {
     if (this.disposed || this.closed || this.state?.phase !== 'break' || !this.attempt) throw Error('No Arrows block is ready to continue')
     const epoch = this.epoch, arm = this.attempt
-    if (isV11(this.state) && !this.#surface) this.#surface = new ArrowsStaticSurface(this.host, this.state.profile.kind === 'pointer', (event, direction) => this.pointerdown(event, direction))
+    if (isV11(this.state) && !this.#surface) this.#surface = new ArrowsStaticSurface(this.host, this.state.profile.kind === 'pointer', (event, direction) => this.pointerdown(event, direction), this.state.profile.accommodation === ARROWS_POSITION_MARKERS)
     const preparation = this.#surface ? await this.#surface.prepare() : 0
     this.preparation = preparation
     if (epoch !== this.epoch || this.closed || (this.#surface && !this.#surface.prepared(preparation))) throw Error('Arrows continuation was canceled')

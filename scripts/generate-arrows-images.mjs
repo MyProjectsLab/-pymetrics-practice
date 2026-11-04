@@ -31,13 +31,17 @@ for(const [color,condition] of [['red','aligned'],['red','opposed'],['blue','ali
  const symbols=Array.from({length:5},(_,i)=>condition==='neutral'?(i===2?direction:'bar'):condition==='aligned'?direction:(color==='red'?(i===2?opposite:direction):(i===2?direction:opposite)))
  const paint={red:'#b11f2f',blue:'#184dab',black:'#171717'}[color]
  const shapes=symbols.map((s,i)=>path(move(s==='bar'?'M8 24H40':s==='left'?'M40 24H8M22 10L8 24L22 38':'M8 24H40M26 10L40 24L26 38',8+i*72,48),`fill="none" stroke="${paint}" stroke-width="4" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4"`)).join('')
- add(`${color}-${condition}-${direction}`,352,112,backing(352,112)+lettering(cue,352,12,'#172d30')+shapes,{color,condition,direction,cue,symbols})
+ // Position marks preserve a non-color rule cue without placing words in the timed row.
+ const positions=color==='red'?[0,1,3,4]:[2]
+ const markers=positions.map(i=>path(`M${24+i*72} 94H${40+i*72}`,'fill="none" stroke="#172d30" stroke-width="3" stroke-linecap="round"')).join('')
+ const markedSvg=svg(352,112,backing(352,112)+shapes+markers)
+ add(`${color}-${condition}-${direction}`,352,112,backing(352,112)+lettering(cue,352,12,'#172d30')+shapes,{color,condition,direction,cue,symbols,markedSvg,markedSha256:createHash('sha256').update(markedSvg).digest('hex')})
 }
 for(const direction of ['left','right']) { const word=direction==='left'?'Left':'Right'; add(direction,96,40,backing(96,40)+lettering(word,96,8,'#18594f')) }
 add('fixation',352,112,backing(352,112)+path('M164 56H188M176 44V68','fill="none" stroke="#172d30" stroke-width="3"'))
 // Reject everything outside the static grammar, including optional SVG features.
-for(const e of entries) {
- const rest=e.svg.replace(/^<svg xmlns="http:\/\/www.w3.org\/2000\/svg" width="\d+" height="\d+" viewBox="0 0 \d+ \d+">/,'').replace(/<\/svg>$/,'').replace(/<path d="[MLHVZ\d .-]+" (?:fill="(?:none|#[a-f\d]{6})"|stroke="#[a-f\d]{6}"|stroke-width="[\d.]+"|stroke-linecap="(?:butt|round)"|stroke-linejoin="(?:miter|round)"|stroke-miterlimit="4"| )+\/>/g,'')
+for(const e of entries) for(const bytes of [e.svg,e.markedSvg].filter(Boolean)) {
+ const rest=bytes.replace(/^<svg xmlns="http:\/\/www.w3.org\/2000\/svg" width="\d+" height="\d+" viewBox="0 0 \d+ \d+">/,'').replace(/<\/svg>$/,'').replace(/<path d="[MLHVZ\d .-]+" (?:fill="(?:none|#[a-f\d]{6})"|stroke="#[a-f\d]{6}"|stroke-width="[\d.]+"|stroke-linecap="(?:butt|round)"|stroke-linejoin="(?:miter|round)"|stroke-miterlimit="4"| )+\/>/g,'')
  if(rest) throw Error(`Unsupported image grammar: ${e.id}: ${rest}`)
 }
 const output=JSON.stringify(entries,null,2)+'\n', target=new URL('../src/arrows/v11/static-images.json',import.meta.url)

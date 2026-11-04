@@ -155,7 +155,10 @@ export class BalloonsStore {
       const retained = [...Object.values(root.records).map(r => ({ formId: r.header.formId, exposure: r.snapshot.exposure })), ...Object.values(root.tombstones)]
       const anyBL = retained.some(r => r.formId.startsWith('BL') && r.exposure !== 'released_unseen')
       const family = mode === 'new_baseline' || (mode === 'auto' && !anyBL) ? 'BL' : 'RP'
-      const ids = [1, 2, 3].map(n => `${family}${n}` as FormId)
+      // Prefer the existing baseline whose opening balloon survives eight pumps,
+      // as observed in the practice recording. Keep previously exposed forms bound to their records.
+      const order = family === 'BL' && !anyBL ? [3, 1, 2] : [1, 2, 3]
+      const ids = order.map(n => `${family}${n}` as FormId)
       const unused = ids.find(id => !retained.some(r => r.formId === id && r.exposure !== 'released_unseen'))
       const repeat = !unused
       requireIntegrity(unused || family === 'RP', 'no unseen baseline remains')

@@ -1,4 +1,4 @@
-import { advance, requiredDue } from './engine'
+import { advance, MOUTH_COMPACT_PRESENTATION, requiredDue } from './engine'
 import type { Command, InputProfile, InvalidReason, PointerSource, State } from './engine'
 import type { Side } from './contracts'
 import { MouthEntry } from './entry'
@@ -8,15 +8,24 @@ import type { ArmedAttempt, MouthStore, StartRequest } from './storage'
 import { captureMouthDisplayContext } from './display-context'
 import type { ExclusiveMouthDocument } from './exclusive-document'
 
+function faceInset(profile:InputProfile) {
+ return profile.presentationVersion===MOUTH_COMPACT_PRESENTATION&&profile.variant==='standard'?40:0
+}
 export function faceSvg(mouth:Side,profile:InputProfile):string {
  const length=profile.variant==='standard'?(mouth==='short'?38:43):(mouth==='short'?34:56)
  const body=profile.contrast==='dark_on_light'?'#006153':'#FFFFFF'
  const feature=profile.contrast==='dark_on_light'?'#FFFFFF':'#111111'
- return `<svg viewBox="0 0 120 120" aria-hidden="true" focusable="false" data-mouth-v12="face"><circle cx="60" cy="60" r="48" fill="${body}"/><circle cx="42" cy="53" r="11.5" fill="${feature}"/><circle cx="78" cy="53" r="11.5" fill="${feature}"/><line x1="${60-length/2}" x2="${60+length/2}" y1="84" y2="84" stroke="${feature}" stroke-width="3" stroke-linecap="round"/></svg>`
+ const inset=faceInset(profile),size=120+2*inset
+ return `<svg viewBox="${-inset} ${-inset} ${size} ${size}" aria-hidden="true" focusable="false" data-mouth-v12="face"><circle cx="60" cy="60" r="48" fill="${body}"/><circle cx="42" cy="53" r="11.5" fill="${feature}"/><circle cx="78" cy="53" r="11.5" fill="${feature}"/><line x1="${60-length/2}" x2="${60+length/2}" y1="84" y2="84" stroke="${feature}" stroke-width="3" stroke-linecap="round"/></svg>`
 }
 export function fixationSvg(profile:InputProfile):string {
  const ink=profile.contrast==='dark_on_light'?'#111111':'#FFFFFF'
  return `<svg viewBox="0 0 120 120" aria-hidden="true" focusable="false" data-mouth-v12="fixation"><rect x="20" y="57" width="80" height="6" fill="${ink}"/><rect x="57" y="20" width="6" height="80" fill="${ink}"/></svg>`
+}
+function rewardMarkup(cents:number,profile:InputProfile):string {
+ const tick=profile.presentationVersion===MOUTH_COMPACT_PRESENTATION
+  ?'<span class="mouth-reward-tick" aria-hidden="true">✓</span>':''
+ return `<output>${tick}+${cents}¢ simulated</output>`
 }
 const terminal=(s:State)=>s.phase==='invalid'||s.phase==='completed'
 export type RunUpdate = {state:State|null;message:string;recovery:MouthRecovery|null;checkpoint:'none'|'pending'|'uncertain'|'confirmed';gated:boolean}
@@ -118,9 +127,19 @@ export class MouthBrowserRun {
   if(phase==='feedback'){
    const trial=this.state.form.trials[this.state.trialIndex-1]
    const earned=this.state.firstResponse?.side===trial.mouth&&trial.rewardCents>0
-   return earned?!!stage&&stage.textContent===`+${trial.rewardCents}¢ simulated`&&stage.children.length===1&&stage.firstElementChild?.tagName==='OUTPUT'&&this.contentVisible(stage.firstElementChild):!!stage&&stage.children.length===0&&stage.textContent===''
+   return this.feedbackValid(stage,earned?trial.rewardCents:0)
   }
   return !!stage&&stage.children.length===0&&stage.textContent===''
+ }
+ private feedbackValid(stage:HTMLElement|null|undefined,cents:number):boolean {
+  if(!stage||!this.profile)return false
+  if(!cents)return stage.childNodes.length===0
+  const expected=document.createElement('div')
+  expected.innerHTML=rewardMarkup(cents,this.profile)
+  const output=stage.firstElementChild
+  if(stage.childNodes.length!==1||!output||output.outerHTML!==expected.firstElementChild?.outerHTML||!this.contentVisible(output))return false
+  const tick=output.firstElementChild
+  return !tick||this.contentVisible(tick)
  }
  private exactSvg(svg:Element,source:string):boolean {
   let expected=this.normalizedSvg.get(source)
@@ -167,11 +186,14 @@ export class MouthBrowserRun {
     const circles=svg.querySelectorAll('circle'),line=svg.querySelector('line')
     if(circles.length!==3||!line)return false
     const x1=Number(line.getAttribute('x1')),x2=Number(line.getAttribute('x2'))
-    const strokeRadius=3*(bounds.width/120)/2
-    const lineGeometry=at(line,x1*2,168,(x2-x1)*2,0)||
-     at(line,x1*2-strokeRadius,168-strokeRadius,(x2-x1)*2+2*strokeRadius,2*strokeRadius)
-    const geometry=at(circles[0],24,24,192,192)&&at(circles[1],61,83,46,46)&&
-     at(circles[2],133,83,46,46)&&lineGeometry
+    const inset=faceInset(this.profile),scale=bounds.width/(120+2*inset)
+    const position=(value:number)=>(value+inset)*scale
+    const strokeRadius=3*scale/2, lineY=position(84), lineWidth=(x2-x1)*scale
+    const lineGeometry=at(line,position(x1),lineY,lineWidth,0)||
+     at(line,position(x1)-strokeRadius,lineY-strokeRadius,lineWidth+2*strokeRadius,2*strokeRadius)
+    const geometry=at(circles[0],position(12),position(12),96*scale,96*scale)&&
+     at(circles[1],position(30.5),position(41.5),23*scale,23*scale)&&
+     at(circles[2],position(66.5),position(41.5),23*scale,23*scale)&&lineGeometry
     const lineStyle=getComputedStyle(line)
     return geometry&&getComputedStyle(circles[0]).fill===body&&
      [...circles].every(node=>getComputedStyle(node).stroke==='none')&&
@@ -221,9 +243,9 @@ export class MouthBrowserRun {
    const currentTrial=this.state!.form.trials[this.state!.trialIndex-1]
    const reward=phase==='resolved'&&this.state!.firstResponse?.side===currentTrial.mouth&&currentTrial.rewardCents>0
    const prospective=this.state!.bankedCents+(reward?currentTrial.rewardCents:0)
-   const expected=phase==='fixation_pending'?!!svg&&svg.querySelectorAll('rect').length===2:phase==='fixation'?!!svg&&svg.querySelectorAll('circle').length===3&&svg.querySelectorAll('line').length===1:phase==='resolved'?stage?.textContent===(reward?`+${currentTrial.rewardCents}¢ simulated`:'')&&!svg:!!stage&&!svg&&stage.childElementCount===0&&stage.textContent===''
+   const expected=phase==='fixation_pending'?!!svg&&svg.querySelectorAll('rect').length===2:phase==='fixation'?!!svg&&svg.querySelectorAll('circle').length===3&&svg.querySelectorAll('line').length===1:phase==='resolved'?this.feedbackValid(stage,reward?currentTrial.rewardCents:0):!!stage&&!svg&&stage.childElementCount===0&&stage.textContent===''
    const visibleSvg=!!svg&&this.contentVisible(svg)&&this.svgPaintValid(svg,phase==='fixation'?'face':'fixation')
-   const visibleContent=phase==='fixation'||phase==='fixation_pending'?visibleSvg:reward?!!stage?.firstElementChild&&this.contentVisible(stage.firstElementChild):true
+   const visibleContent=phase==='fixation'||phase==='fixation_pending'?visibleSvg:true
    if(!expected||!exactFace||!visibleContent||!stage?.isConnected||!this.layoutReady()||this.boundary&&!this.boundary.check(this.host)||this.boundary&&!this.boundary.bankValid(prospective)){
     this.pendingConfirmation=null;this.interrupt('viewport');return
    }
@@ -247,7 +269,7 @@ export class MouthBrowserRun {
     if(phase==='resolved'){
      const s=this.state!,trial=s.form.trials[s.trialIndex-1],reward=s.firstResponse?.side===trial.mouth&&trial.rewardCents>0
      this.boundary?.setBank(s.bankedCents+(reward?trial.rewardCents:0))
-     this.draw(reward?`<output>+${trial.rewardCents}¢ simulated</output>`:'')
+     this.draw(reward?rewardMarkup(trial.rewardCents,this.profile!):'')
     }
     this.pendingConfirmation=confirm
     this.stageFrame=requestAnimationFrame(()=>confirm())

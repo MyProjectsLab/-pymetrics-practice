@@ -1,3 +1,4 @@
+import { ARROWS_POSITION_MARKERS } from './v11/contracts'
 import { QuickRules } from '../onboarding/QuickRules'
 import { ReportSummary } from '../reports/Summary'
 import { choiceFeedback } from '../reports/feedback'
@@ -149,6 +150,7 @@ export function ArrowsJourney({ onLibrary, exclusive, mock, reportTarget }: { on
     storeGeneration: number } | null>(null)
   const [deleteAllConfirm, setDeleteAllConfirm] = useState(false)
   const run = useRef<ArrowsBrowserRun | null>(null)
+  const continuingBlock = useRef<ArrowsBrowserRun | null>(null)
   const breakExitRun = useRef<ArrowsBrowserRun | null>(null)
   const display = useRef<HTMLDivElement>(null)
   const journey = useRef<HTMLDivElement>(null)
@@ -357,6 +359,12 @@ export function ArrowsJourney({ onLibrary, exclusive, mock, reportTarget }: { on
     return () => window.clearInterval(timer)
   }, [step])
   useEffect(() => {
+    if (mock || step !== 'break' || checkpointStatus !== 'saved') return
+    if (document.visibilityState === 'visible' && document.hasFocus()) void continueBlock()
+  // Checkpoint readiness is the trigger; a failed automatic attempt stays on the recovery screen.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mock, step, checkpointStatus])
+  useEffect(() => {
     if (step !== 'report' || !store || !selected || saveStatus !== 'saved') return
     const expected = selected.snapshot
     const sessionId = selected.sessionId
@@ -534,9 +542,10 @@ export function ArrowsJourney({ onLibrary, exclusive, mock, reportTarget }: { on
   }
 
   function profile(): InputProfile {
+    const accommodation = mock ? 'default' : ARROWS_POSITION_MARKERS
     return mode === 'keyboard' ? { kind: 'keyboard', leftCode, rightCode, alternative,
-      accommodation: 'default', reducedMotion } : { kind: 'pointer', pointerSource: pointerSource ?? 'mouse',
-      alternative, accommodation: 'default', reducedMotion }
+      accommodation, reducedMotion } : { kind: 'pointer', pointerSource: pointerSource ?? 'mouse',
+      alternative, accommodation, reducedMotion }
   }
   function startCapture(next: Capture) {
     retireSetupChoice();setCapturedDown(null);observedDown.current=null
@@ -685,7 +694,8 @@ export function ArrowsJourney({ onLibrary, exclusive, mock, reportTarget }: { on
     }
   }
   async function continueBlock() {
-    if (!run.current || (!exclusive && !display.current)) return
+    if (!run.current || continuingBlock.current === run.current || (!exclusive && !display.current)) return
+    continuingBlock.current = run.current
     setError('')
     if (!exclusive) display.current?.scrollIntoView({ block: 'center' })
     const current = run.current, generation = navigationEpoch.current
@@ -698,6 +708,8 @@ export function ArrowsJourney({ onLibrary, exclusive, mock, reportTarget }: { on
         exclusive?.leave()
         setError(cause instanceof Error ? cause.message : 'The next block could not start.')
       }
+    } finally {
+      if (continuingBlock.current === current) continuingBlock.current = null
     }
   }
   async function verifyCheckpoint() {
@@ -1004,7 +1016,7 @@ export function ArrowsJourney({ onLibrary, exclusive, mock, reportTarget }: { on
         <button className="secondary" onClick={() => setDeleteAllConfirm(false)}>Cancel</button>
       </div> : <button className="secondary" onClick={() => setDeleteAllConfirm(true)}>Delete all Arrows data</button>)}
     {step === 'guide' && <section className="panel"><p className="eyebrow">Practice guide</p><h1 ref={heading} tabIndex={-1}>Arrows</h1>
-      <QuickRules purpose="Staying focused on the relevant arrows when other arrows point the opposite way." example="On a red SIDES trial, if the four side arrows point right and the middle arrow points left, choose Right." rules={['Red / SIDES: follow the four side arrows.', 'Blue or black / MIDDLE: follow the middle arrow.', 'Choose Left or Right. Your first response within 1.5 seconds counts.']} note="Five sets of 27, with breaks between sets. Keep this tab open and focused during each set."/>
+      <QuickRules purpose="Staying focused on the relevant arrows when other arrows point the opposite way." example="On a red trial, if the four side arrows point right and the middle arrow points left, choose Right." rules={['Red: follow the four side arrows.', 'Blue or black: follow the middle arrow.', 'Choose Left or Right. Your first response within 1.5 seconds counts.']} note={mock ? "Five sets of 27, with breaks between sets." : "The small marks sit below the arrows to follow. The game continues when local progress is saved."}/>
       <button onClick={()=>prepare('quiz')}>Continue</button>
       <details className="start-options"><summary>Examples and saved results</summary><div className="actions"><button className="secondary" onClick={()=>prepare('examples')}>See an example</button><button className="secondary" disabled={!orderedReportsAvailable} onClick={()=>void loadHistory()}>Saved results</button>{canSkip&&<button className="secondary" onClick={()=>void skipGuide()}>Skip instructions</button>}</div><p>Black rows can show horizontal marks on either side of the middle arrow.</p><p>{disclosure}</p></details>
         {!orderedReportsAvailable && <p role="alert">This browser cannot verify saved Arrows reports or protect timed play across tabs. The untimed guide remains available.</p>}
@@ -1019,7 +1031,7 @@ export function ArrowsJourney({ onLibrary, exclusive, mock, reportTarget }: { on
         <p>The answer is <strong>{example === 0 ? 'Right' : 'Left'}</strong>.</p>
         <div className="actions"><button onClick={() => example < 2 ? setExample(example + 1) : prepare('quiz')}>{example < 2 ? 'Next example' : 'Check understanding'}</button></div></section>}
       {step === 'quiz' && <section className="panel"><h1 ref={heading} tabIndex={-1}>Check the rule</h1>
-        <fieldset><legend>On a red SIDES row, which arrows and response count?</legend>
+        <fieldset><legend>On a red row, which arrows and response count?</legend>
         <label className="choice"><input type="radio" name="arrow-quiz" checked={quiz === 'center'} onChange={() => {setQuiz('center');setFirstResponseRule('last')}} />Follow the middle arrow and use my last response</label>
         <label className="choice"><input type="radio" name="arrow-quiz" checked={quiz === 'outer'} onChange={() => {setQuiz('outer');setFirstResponseRule('first')}} />Follow the four side arrows and use my first eligible response before the deadline</label></fieldset>
         <div className="actions"><button onClick={() => { if (quiz === 'outer' && firstResponseRule === 'first') { skipSource.current=null;setError(''); prepare('setup') } else setError('On red rows follow the four side arrows; your first eligible response before the deadline counts. Try again.') }}>Check answers</button></div></section>}
@@ -1060,7 +1072,7 @@ export function ArrowsJourney({ onLibrary, exclusive, mock, reportTarget }: { on
         </div>}{(spoken||alternative)&&<p role="alert">{spoken?disclosure:'Alternative controls selected; timing is reported separately.'}</p>}
       </section>}
       {step === 'ready' && <section className="panel"><h1 ref={heading} tabIndex={-1}>Ready for Block 1?</h1>
-        <p>Keep this tab visible and focused once you start. A hidden, blurred or interrupted scored block becomes review-only. The breaks after each block are untimed.</p>
+        <p>Keep this tab visible and focused once you start. A hidden, blurred or interrupted scored block becomes review-only. {mock ? "The breaks after each block are untimed." : "Keep this tab open while the game saves progress between blocks."}</p>
         <p>Input: {mode === 'keyboard' ? `${leftCode} = Left; ${rightCode} = Right` : `${pointerSource} controls`} {alternative ? '(alternative input declared)' : ''}.</p>
         {startUncertain && <p role="status">{retrySameStart ? 'A form may already be reserved. Verify or retry the same Start request before timed play begins.' : 'Input setup changed after an unconfirmed Start. A new request may use the next form.'}</p>}
         <div className="actions"><button disabled={!store || !orderedReportsAvailable || !checked.left || !checked.right || spoken || starting} onClick={() => void begin()}>{starting ? 'Checking Start' : retrySameStart ? 'Verify or retry same Start' : startUncertain ? 'Start with changed setup' : 'Start Arrows'}</button><button className="secondary" disabled={starting} onClick={() => prepare('setup')}>Review setup</button></div>
@@ -1101,7 +1113,7 @@ export function ArrowsJourney({ onLibrary, exclusive, mock, reportTarget }: { on
             <details><summary>Review recorded events</summary><ol>{observed?.events.map(event => <li key={event.sequenceNumber}>{event.sequenceNumber}. {event.type} · trial {event.trialIndex} · {event.atMs.toFixed(1)} ms{eventDetail(event)}</li>)}</ol></details>
             <p>Events after the last durable checkpoint may be missing.</p></>}
           {review.metrics && <p>In this TraitGame sequence, you followed the cued direction on {review.metrics.overall.correct} of {review.presented} trials. This describes only this run.</p>}
-          <p>Input: {review.profile.kind === 'keyboard' ? `${review.profile.leftCode} Left / ${review.profile.rightCode} Right` : `${review.profile.pointerSource} pointer`}. Alternative input declared: {review.profile.alternative ? 'yes' : 'no'}; display accommodation: {review.profile.accommodation}; reduced motion: {review.profile.reducedMotion ? 'yes' : 'no'}.</p>
+          <p>Input: {review.profile.kind === 'keyboard' ? `${review.profile.leftCode} Left / ${review.profile.rightCode} Right` : `${review.profile.pointerSource} pointer`}. Alternative input declared: {review.profile.alternative ? 'yes' : 'no'}; display cue: {review.profile.accommodation === ARROWS_POSITION_MARKERS ? 'position marks' : review.profile.accommodation}; reduced motion: {review.profile.reducedMotion ? 'yes' : 'no'}.</p>
           </details>
           <p className="note">{limitation}</p>
           {activityRetry && reportSurface?.handleId === activityRetry.handle.id &&

@@ -34,3 +34,18 @@ it('independently reconciles all frozen trials to exact static row geometry, col
     expect(artifact.symbols).toEqual(symbols)
   }
 })
+
+it('keeps only the arrow geometry and non-color position marks in standalone trial artwork', async () => {
+  for (const artifact of inventory.filter(item => item.markedSvg)) {
+    const digest = [...new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(artifact.markedSvg)))].map(n => n.toString(16).padStart(2, '0')).join('')
+    expect(digest).toBe(artifact.markedSha256)
+    const paths = (svg: string) => [...new DOMParser().parseFromString(svg, 'image/svg+xml').querySelectorAll('path')]
+    const marked = paths(artifact.markedSvg!)
+    expect(marked.slice(0, 6).map(node => node.outerHTML)).toEqual(
+      [paths(artifact.svg)[0], ...paths(artifact.svg).slice(-5)].map(node => node.outerHTML),
+    )
+    expect(marked.slice(6).map(node => node.getAttribute('d'))).toEqual(artifact.color === 'red'
+      ? ['M24 94H40', 'M96 94H112', 'M240 94H256', 'M312 94H328']
+      : ['M168 94H184'])
+  }
+})

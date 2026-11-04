@@ -42,3 +42,5 @@ export interface Stimulus {
 }
 
 export const ARROWS_PRESENTATION_VERSION = 'arrows_presentation_v1_1' as const
+
+export const ARROWS_POSITION_MARKERS = 'position_markers' as const

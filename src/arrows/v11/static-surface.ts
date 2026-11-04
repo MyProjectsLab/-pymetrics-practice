@@ -3,7 +3,6 @@ import type { Stimulus } from './contracts'
 
 const registry = Object.freeze(inventory.map(item => Object.freeze({ ...item,
   symbols: item.symbols ? Object.freeze([...item.symbols]) : undefined,
-  url: `data:image/svg+xml;charset=utf-8,${encodeURIComponent(item.svg)}`,
 })))
 const CSS = `
 :host { all: initial; display: block; position: relative; z-index: 100; isolation: isolate; background: #fff; width: 352px; direction: ltr; writing-mode: horizontal-tb; color: #172d30; font: 16px system-ui; }
@@ -19,7 +18,7 @@ output { all: initial; display: block; position: absolute; width: 1px; height: 1
 `
 const childrenAre = (node: Node, children: Node[]) => node.childNodes.length === children.length && children.every((child, i) => node.childNodes[i] === child)
 const attributes = (node: Element) => [...node.attributes].map(a => [a.name, a.value]).sort(([a], [b]) => a.localeCompare(b)).map(a => a.join('=')).join('\n')
-type Resource = { artifact: typeof registry[number]; image: HTMLImageElement; attrs: string; ready: number }
+type Resource = { artifact: typeof registry[number]; url: string; bytes: string; digest: string; image: HTMLImageElement; attrs: string; ready: number }
 export type SurfaceStage = 'empty' | 'fixation' | 'stimulus'
 
 /** Retained refs are JavaScript-private. Closed shadow is encapsulation, not an
@@ -52,7 +51,7 @@ export class ArrowsStaticSurface {
   #observer: MutationObserver
   #host: HTMLElement
 
-  constructor(host: HTMLElement, pointer: boolean, press: (event: PointerEvent, direction: 'left' | 'right') => void) {
+  constructor(host: HTMLElement, pointer: boolean, press: (event: PointerEvent, direction: 'left' | 'right') => void, marked = false) {
     this.#host = host; this.#pointer = pointer
     this.#shell.setAttribute('data-arrows-shell', '')
     this.#root = this.#shell.attachShadow({ mode: 'closed' })
@@ -62,10 +61,13 @@ export class ArrowsStaticSurface {
     this.#controls.setAttribute('aria-label', 'Response controls')
     this.#status.setAttribute('role', 'status'); this.#status.setAttribute('aria-live', 'polite'); this.#status.setAttribute('aria-atomic', 'true')
     this.#resources = registry.map(artifact => {
+      const bytes = marked ? artifact.markedSvg ?? artifact.svg : artifact.svg
+      const digest = marked ? artifact.markedSha256 ?? artifact.sha256 : artifact.sha256
+      const url = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(bytes)}`
       const image = document.createElement('img')
-      image.setAttribute('src', artifact.url); image.setAttribute('alt', ''); image.setAttribute('aria-hidden', 'true')
+      image.setAttribute('src', url); image.setAttribute('alt', ''); image.setAttribute('aria-hidden', 'true')
       image.setAttribute('width', String(artifact.width)); image.setAttribute('height', String(artifact.height)); image.setAttribute('draggable', 'false')
-      return { artifact, image, attrs: attributes(image), ready: 0 }
+      return { artifact, url, bytes, digest, image, attrs: attributes(image), ready: 0 }
     })
     this.#buttons.forEach((button, i) => {
       const direction = i ? 'right' : 'left'
@@ -100,8 +102,8 @@ export class ArrowsStaticSurface {
       artifact.symbols?.length === 5 && artifact.symbols.every((symbol, i) => symbol === expected.symbols[i])) ?? null
   }
   #identity(resource: Resource): boolean {
-    const { image, artifact } = resource
-    return attributes(image) === resource.attrs && image.getAttribute('src') === artifact.url && image.currentSrc === artifact.url &&
+    const { image, artifact, url } = resource
+    return attributes(image) === resource.attrs && image.getAttribute('src') === url && image.currentSrc === url &&
       !image.hasAttribute('srcset') && !image.hasAttribute('sizes') && image.complete && image.naturalWidth === artifact.width && image.naturalHeight === artifact.height &&
       image.childNodes.length === 0 && image.ownerDocument === document
   }
@@ -117,8 +119,8 @@ export class ArrowsStaticSurface {
     const timeout = setTimeout(() => reject(Error('Arrows images could not be prepared. Retry Start or Continue.')), 5000)
     try {
       await Promise.race([canceled, Promise.all(this.#resources.map(async resource => {
-        const digest = [...new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(resource.artifact.svg)))].map(n => n.toString(16).padStart(2, '0')).join('')
-        if (digest !== resource.artifact.sha256) throw Error('Arrows artwork integrity failed')
+        const digest = [...new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(resource.bytes)))].map(n => n.toString(16).padStart(2, '0')).join('')
+        if (digest !== resource.digest) throw Error('Arrows artwork integrity failed')
         await resource.image.decode()
         if (this.#disposed || epoch !== this.#epoch || this.#fault || !this.#identity(resource)) throw Error('Arrows images changed during preparation')
         resource.ready = epoch

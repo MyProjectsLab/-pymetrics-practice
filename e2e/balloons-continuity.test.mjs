@@ -179,7 +179,7 @@ for (const viewport of [{ width: 1005, height: 805 }, { width: 375, height: 667 
       console.log(JSON.stringify(result))
       if (out) await writeFile(`${out}/RESULT.json`, JSON.stringify(result, null, 2) + '\n')
       assert.equal(c.results.length, 39); assert.equal(c.bankedCents + c.lostCents, c.results.reduce((n, r) => n + r.successfulPumps * 5, 0))
-      assert.deepEqual(firstBurst, { form: 'BL1', outcome: 'burst', attempted: 1 })
+      assert.deepEqual(firstBurst, { form: 'BL3', outcome: 'burst', attempted: 9 })
       assert.ok(growth && maxGrowth && fast, 'Growth and rapid-input witnesses must execute')
       assert.ok(monitor.checkingSamples > 0, 'Held background authority check must be observed')
       assert.equal(await page.evaluate(() => window.delayedBalloonsReads), 1)

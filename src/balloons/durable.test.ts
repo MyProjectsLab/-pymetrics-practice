@@ -194,15 +194,15 @@ describe('atomic installation / assignment / deletion authority', () => {
     expect(fresh.record.snapshot.core.round).toBe(1)
   })
   async function setup() { const b = new MemoryBackend(), s = new BalloonsStore(b, b.root.installationId); const a = await s.assign('one', 'auto', settings, 'test', time()); return { b, s, ...a } }
-  it('releases pending BL1 with a new chain and unchanged mapping; consumed BL advances only explicit new chain', async () => {
+  it('releases pending BL3 with a new chain and unchanged mapping; consumed BL advances only explicit new chain', async () => {
     const { s, token, record } = await setup()
     await s.commit(token, record, { kind: 'release' }, time())
     const b = await s.assign('two', 'auto', settings, 'test', time())
-    expect(b.record.header.formId).toBe('BL1'); expect(b.record.header.identity.chainId).not.toBe(record.header.identity.chainId)
+    expect(b.record.header.formId).toBe('BL3'); expect(b.record.snapshot.core.manifest.rounds[0].threshold).toBe(9); expect(b.record.header.identity.chainId).not.toBe(record.header.identity.chainId)
     const armed = await s.commit(b.token, b.record, { kind: 'arm' }, time())
     await s.commit(b.token, armed, { kind: 'pause' }, time())
     const c = await s.assign('three', 'auto', settings, 'test', time()); expect(c.record.header.formId).toBe('RP1')
-    const d = await s.assign('four', 'new_baseline', settings, 'test', time()); expect(d.record.header.formId).toBe('BL2'); expect(d.record.header.identity.mapping).toEqual(mappingFor('BL2'))
+    const d = await s.assign('four', 'new_baseline', settings, 'test', time()); expect(d.record.header.formId).toBe('BL1'); expect(d.record.header.identity.mapping).toEqual(mappingFor('BL1'))
   })
   it('serialized assignments never allocate a reserved form twice; stale owner cannot arm', async () => {
     const { s, record, token } = await setup()
@@ -239,7 +239,7 @@ describe('atomic installation / assignment / deletion authority', () => {
       current = await s.commit(token, current, { kind: 'confirm' }, time())
       const t = time(); current = await s.commit(token, current, { kind: 'action_pending', action: { kind: 'collect', actionId: 1, expectedRound: 1, expectedRevision: 0, source: 'mouse', time: t } }, t)
     }
-    if (phase === 'completed') { /* Separate coherent completed record used only for deletion authority. */ const full = complete('BL1', 0); const h = { ...full.header, identity: record.header.identity }; let r = createRecord(h); for (const e of full.journal.slice(1)) r = advance(r, e.command!, { wallTimeMs: e.wallTimeMs, monotonicMs: e.monotonicMs, clockEpochId: e.clockEpochId }); b.root.records[token.sessionId] = r; current = r }
+    if (phase === 'completed') { /* Separate coherent completed record used only for deletion authority. */ const full = complete(record.header.formId, 0); const h = { ...full.header, identity: record.header.identity }; let r = createRecord(h); for (const e of full.journal.slice(1)) r = advance(r, e.command!, { wallTimeMs: e.wallTimeMs, monotonicMs: e.monotonicMs, clockEpochId: e.clockEpochId }); b.root.records[token.sessionId] = r; current = r }
     if (phase === 'completed') { const opened = await s.viewReport(token.sessionId, time()); expect(opened.snapshot.core).toEqual(current.snapshot.core); expect(opened.journal.at(-1)?.type).toBe('report_viewed'); current = opened }
     await s.delete(token.sessionId, 123)
     expect((await s.read()).tombstones[token.sessionId].exposure).toBe(current.snapshot.exposure)

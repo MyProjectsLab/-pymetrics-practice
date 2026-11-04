@@ -23,3 +23,4 @@
 .mouth-journey:has(.mouth-run) > h1 { margin:8px 0; font-size:var(--ap-font-heading-phone,32px); }
 .mouth-journey:has(.mouth-run) .journey-top { margin-bottom:8px; }
 .mouth-run > p { margin:8px 0; }
+.mouth-reward-tick { display:block; width:112px; height:112px; margin:0 auto 12px; border:2px solid currentColor; border-radius:50%; background:#006153; color:#fff; font:700 72px/108px system-ui; text-align:center; }

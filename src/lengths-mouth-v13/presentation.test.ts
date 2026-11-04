@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it } from 'vitest'
 import { faceSvg, fixationSvg } from './browser'
-import { MOUTH_PRESENTATION_VERSION, advance, armHeadless, requiredDue, verifyHeadless } from './engine'
+import { MOUTH_COMPACT_PRESENTATION, MOUTH_PRESENTATION_VERSION, advance, armHeadless, requiredDue, verifyHeadless } from './engine'
 import { loadMouthForms } from './manifests'
 import { MOUTH_DATABASE, MouthStore, freshMouthRoot, inspectMouthRoot } from './storage'
 import type { MouthBackend, MouthRoot, StartRequest } from './storage'
@@ -37,6 +37,12 @@ describe('V1.3 presentation and separated saves',()=>{
   expect(faceSvg('short',inverse)).toContain('fill="#FFFFFF"')
   expect(faceSvg('short',inverse)).toContain('stroke="#111111"')
   expect(fixationSvg(inverse)).toContain('fill="#FFFFFF"')
+ })
+ it('keeps the compact standard face separate from the previous and accommodation artwork',()=>{
+  const compact={...profile,presentationVersion:MOUTH_COMPACT_PRESENTATION}
+  expect(faceSvg('short',compact)).toContain('viewBox="-40 -40 200 200"')
+  expect(faceSvg('short',profile)).toContain('viewBox="0 0 120 120"')
+  expect(faceSvg('short',{...compact,variant:'visual_accommodation'})).toContain('viewBox="0 0 120 120"')
  })
  it('rejects missing, unknown and extra presentation fields at new arm',async()=>{
   const form=(await loadMouthForms()).get('LM13-1')!

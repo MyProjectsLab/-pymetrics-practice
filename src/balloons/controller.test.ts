@@ -61,13 +61,26 @@ it('post-arm cancel and late frames never confirm exposure or enable controls', 
   expect(controller.view.mode).toBe('paused'); const r = Object.values(root.records)[0]
   expect(r.snapshot.exposure).toBe('exposure_uncertain'); expect(r.snapshot.confirmedRounds).toEqual([]); expect(r.snapshot.comparisonEligible).toBe(false)
 })
-it('delayed action commit delivery suppresses duplicate clicks; next intentional click after commit is new', async () => {
-  await start(); const commit = store.commit.bind(store); let deliver: (() => void) | undefined
-  vi.spyOn(store, 'commit').mockImplementation(async (...args) => { const r = await commit(...args); if (args[2].kind === 'action') await new Promise<void>(resolve => { deliver = resolve }); return r })
-  const action = controller.action('pump', 'mouse', 1, 0); await vi.waitFor(() => expect(deliver).toBeDefined())
-  const later = controller.action('pump', 'mouse', 1, 0); expect(controller.view.mode).toBe('saving'); expect(controller.view.record?.snapshot.core.nextActionId).toBe(1)
+it('queues a second intentional pump while the first commit is delayed', async () => {
+  await start()
+  const commit = store.commit.bind(store)
+  let deliver: (() => void) | undefined
+  vi.spyOn(store, 'commit').mockImplementation(async (...args) => {
+    const record = await commit(...args)
+    if (args[2].kind === 'action' && args[2].action.actionId === 1) {
+      await new Promise<void>(resolve => { deliver = resolve })
+    }
+    return record
+  })
+  const first = controller.action('pump', 'mouse', 1, 0)
+  await vi.waitFor(() => expect(deliver).toBeDefined())
+  const second = controller.action('pump', 'mouse', 1, 0)
+  expect(controller.view.mode).toBe('saving')
   expect(Object.values(root.records)[0].snapshot.core.nextActionId).toBe(2)
-  deliver!(); await Promise.all([action, later]); expect(controller.view.record?.snapshot.core.nextActionId).toBe(2)
+  deliver!()
+  await Promise.all([first, second])
+  expect(controller.view.record?.snapshot.core.nextActionId).toBe(3)
+  expect(controller.view.record?.snapshot.core.current.successfulPumps).toBe(2)
 })
 it('deletion during delayed commit prevents late delivery from restoring candidate state', async () => {
   await start(); const commit = store.commit.bind(store); let deliver: (() => void) | undefined

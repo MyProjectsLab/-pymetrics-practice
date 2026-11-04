@@ -13,7 +13,8 @@ const TASK_CSS = `${sizeTokens}
 .mouth-stage svg { display:block; width:240px; height:240px; }
 .mouth-responses { box-sizing:border-box; display:flex; gap:12px; width:240px; margin:12px auto 0; padding:0; border:0; min-width:0; }
 .mouth-responses button { box-sizing:border-box; display:block; flex:1; min-width:0; height:48px; margin:0; padding:0; border:2px solid #162a20; border-radius:6px; background:#fff; color:#111; font:16px system-ui; text-align:center; touch-action:none; cursor:pointer; }
-.mouth-stage output { display:block; color:inherit; font:32px system-ui; }
+.mouth-stage output { display:block; color:inherit; font:32px system-ui; text-align:center; }
+.mouth-reward-tick { display:block; width:112px; height:112px; margin:0 auto 12px; border:2px solid currentColor; border-radius:50%; background:#006153; color:#fff; font:700 72px/108px system-ui; text-align:center; }
 button:focus-visible { outline:3px solid #005fcc; outline-offset:4px; }
 button[data-mouth-exit] { box-sizing:border-box; display:block; width:160px; height:48px; margin:12px auto; border:2px solid #162a20; border-radius:6px; background:#fff; color:#111; font:16px system-ui; cursor:pointer; }
 :host { font-size:var(--ap-font-body); line-height:var(--ap-line-height); }

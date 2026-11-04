@@ -342,7 +342,7 @@ it('confirms history publication inside the retained closed-root journey', async
 })
 
 
-it('keeps the exclusive document protected when Continue republishes a break after key release', async () => {
+it('keeps the exclusive document protected when automatic continuation republishes a break after key release', async () => {
   class Backend implements ArrowsBackend {
     root = freshArrowsRoot()
     async read() { return structuredClone(this.root) }
@@ -396,7 +396,6 @@ it('keeps the exclusive document protected when Continue republishes a break aft
   state = advance(state, { kind: 'keydown', atMs: state.commands.at(-1)!.atMs + 1, code: 'ArrowLeft', repeat: false, modified: false })
   act(publish)
   expect(leave).toHaveBeenCalledOnce()
-  fireEvent.click(screen.getByRole('button', { name: 'Continue next block' }))
   await waitFor(() => expect(continuation).toHaveBeenCalledOnce())
   expect(active).toBe(true)
   expect(container.isConnected).toBe(false)
