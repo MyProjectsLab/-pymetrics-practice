@@ -2,10 +2,13 @@
 export const BALLOONS_SPEC_VERSION = 'balloons-v1.0' as const
 export const BALLOONS_SCORING_VERSION = 'balloons-scoring-v1' as const
 export const BALLOONS_FORM_VERSION = 'balloons-scored-v1' as const
+export const BALLOONS_EXTENDED_FORM_VERSION = 'balloons-scored-v2' as const
+export type BalloonsFormVersion = typeof BALLOONS_FORM_VERSION | typeof BALLOONS_EXTENDED_FORM_VERSION
 export const BALLOONS_ROUTER_VERSION = 'balloons-router-v1' as const
 export const BALLOONS_EVENT_VERSION = 'balloons-event-v1' as const
 export const BALLOONS_PAYOUT_CENTS = 5 as const
 export const BALLOONS_CAP = 32 as const
+export const BALLOONS_EXTENDED_MAX_THRESHOLD = 80 as const
 export const BALLOONS_ROUND_COUNT = 39 as const
 
 export type Profile = 'A' | 'B' | 'C'
@@ -16,6 +19,7 @@ export type FormFamily = 'baseline' | 'replay' | 'retest'
 export interface ManifestRound { readonly round: number; readonly profile: Profile; readonly threshold: number }
 export interface ScoredManifest {
   readonly id: FormId
+  readonly formVersion?: typeof BALLOONS_EXTENDED_FORM_VERSION
   readonly family: FormFamily
   readonly candidateSeed: number
   readonly rounds: readonly ManifestRound[]
@@ -48,7 +52,7 @@ export type EventType = 'round_presented' | 'pump_attempted' | 'voluntary_collec
 export interface CoreEvent {
   readonly schemaVersion: typeof BALLOONS_EVENT_VERSION
   readonly specificationVersion: typeof BALLOONS_SPEC_VERSION
-  readonly formVersion: typeof BALLOONS_FORM_VERSION
+  readonly formVersion: BalloonsFormVersion
   readonly scoringVersion: typeof BALLOONS_SCORING_VERSION
   readonly routerVersion: typeof BALLOONS_ROUTER_VERSION
   readonly installationId: string

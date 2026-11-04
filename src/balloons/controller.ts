@@ -90,7 +90,7 @@ export class BalloonsController {
     this.releaseOwner = () => { unbind(); ownerScope.abort(); return release() }
     canceled(scope.signal)
   }
-  async start(mode: 'auto' | 'replay' | 'new_baseline', settings: Settings, mock?: { context: MockJourneyContext; sessionId: string }) {
+  async start(mode: 'auto' | 'replay' | 'new_baseline', settings: Settings, mock?: { context: MockJourneyContext; sessionId: string }, extended = false) {
     if (this.busy) return
     this.usage.begin(mock ? 'mock' : 'practice')
     this.busy = true; this.show('saving', null, 'Assigning and saving your sequence…')
@@ -104,7 +104,7 @@ export class BalloonsController {
       }
       await withMutationGate(async signal => {
         canceled(signal)
-        const result = await this.store.assign(this.ownerId, mode, settings, navigator.userAgent, this.time(), signal, mock?.sessionId)
+        const result = await this.store.assign(this.ownerId, mode, settings, navigator.userAgent, this.time(), signal, mock?.sessionId, extended)
         if (signal.aborted) {
           if (this.scope.signal === runSignal) { this.token = result.token; void this.pause('navigation', true) }
           canceled(signal)

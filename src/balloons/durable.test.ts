@@ -1,6 +1,7 @@
 import { beforeAll, describe, expect, it } from 'vitest'
 import { webcrypto } from 'node:crypto'
 import { loadScoredManifests } from './manifests'
+import { BALLOONS_EXTENDED_FORM_VERSION } from './contracts'
 import type { CoreAction, EventTime, FormId } from './contracts'
 import { advance, createRecord, DURABLE_VERSION, durableBaseline, mappingFor, reconcileDurable } from './durable'
 import type { DurableRecord, Settings } from './durable'
@@ -278,4 +279,28 @@ it('legacy recovery journals retain their recorded semantics; new recovery uses 
   expect(current.snapshot.comparisonEligible).toBe(false)
   expect(current.journal.slice(0, -1)).toEqual(old.journal)
   expect(reconcileDurable(current)).toEqual(current)
+})
+
+it('reopens capped history and keeps extended exposure separate across deletion and restart', async () => {
+  const backend = new MemoryBackend(), store = new BalloonsStore(backend, backend.root.installationId)
+  const legacy = await store.assign('legacy', 'auto', settings, 'test', time())
+  const armed = await store.commit(legacy.token, legacy.record, { kind: 'arm' }, time())
+  const old = await store.commit(legacy.token, armed, { kind: 'pause' }, time())
+  const next = await store.assign('new', 'auto', settings, 'test', time(), undefined, undefined, true)
+  expect(next.record.header.formId).toBe(old.header.formId)
+  expect(next.record.header.formVersion).toBe(BALLOONS_EXTENDED_FORM_VERSION)
+  expect(next.record.snapshot.core.manifest.sha256).not.toBe(old.snapshot.core.manifest.sha256)
+  expect(reconcileDurable((await store.read()).records[old.header.identity.sessionId])).toEqual(old)
+  expect(reconcileDurable(next.record)).toEqual(next.record)
+  const nextArmed = await store.commit(next.token, next.record, { kind: 'arm' }, time())
+  await store.commit(next.token, nextArmed, { kind: 'pause' }, time())
+  await store.delete(next.token.sessionId, time().wallTimeMs)
+  const root = await store.read()
+  expect(root.tombstones[next.token.sessionId].formVersion).toBe(BALLOONS_EXTENDED_FORM_VERSION)
+  const replay = await store.assign('replay', 'auto', settings, 'test', time(), undefined, undefined, true)
+  expect(replay.record.header.formId).toBe('RP1')
+  expect(replay.record.header.formVersion).toBe(BALLOONS_EXTENDED_FORM_VERSION)
+  const training = await store.assign('training', 'new_baseline', settings, 'test', time(), undefined, undefined, true)
+  expect(training.record.header.formVersion).toBeUndefined()
+  expect(training.record.header.formId).toBe('BL1')
 })

@@ -3,18 +3,19 @@ import type { NativeLossHandler } from '../mock/authority'
 import { NativePresenceError, requireObservedNativeVersion } from '../mock/native-presence'
 import { openNativeForMock, validateObservedNative } from '../mock/native-presence'
 import { admitRetest, closeRetest, reserveRetest } from './retest'
-import type { EventTime, FormId } from './contracts'
+import type { EventTime, FormId, ScoredManifest } from './contracts'
 import { advance, createRecord, DURABLE_VERSION, mappingFor, reconcileDurable, recordFingerprint, requireIntegrity } from './durable'
 import type { Command, DurableRecord, Exposure, Settings } from './durable'
 import type { TrainingData } from './training-storage'
 import { loadDrillManifests } from './drill-manifests'
+import { BALLOONS_EXTENDED_FORM_VERSION } from './contracts'
 import { loadScoredManifests } from './manifests'
 import { openExistingNativeDatabase, readExistingNativeKey } from '../mock/native-presence'
 
 export const DATABASE = 'assessment-practice-balloons-v1'
 const GATE = `${DATABASE}:mutation`
 const OWNER = `${DATABASE}:owner`
-export interface Tombstone { sessionId: string; chainId: string | null; formId: FormId; exposure: Exposure; deletedAtMs: number }
+export interface Tombstone { sessionId: string; chainId: string | null; formId: FormId; formVersion?: ScoredManifest['formVersion']; exposure: Exposure; deletedAtMs: number }
 export interface Root {
   version: typeof DURABLE_VERSION
   installationId: string
@@ -40,7 +41,7 @@ export function inspectRoot(root: Root) {
     requireIntegrity(id === record.header.identity.sessionId && record.header.identity.installationId === root.installationId && !root.tombstones[id], 'record installation/deletion mismatch')
     reconcileDurable(record)
   }
-  for (const [id, t] of Object.entries(root.tombstones)) requireIntegrity(id === t.sessionId && /^(BL|RP|RT)[123]$/.test(t.formId) && ['pending_exposure', 'exposure_uncertain', 'form_exposed', 'released_unseen'].includes(t.exposure), 'invalid exposure tombstone')
+  for (const [id, t] of Object.entries(root.tombstones)) requireIntegrity(id === t.sessionId && /^(BL|RP|RT)[123]$/.test(t.formId) && (t.formVersion === undefined || t.formVersion === BALLOONS_EXTENDED_FORM_VERSION && !t.formId.startsWith('RT')) && ['pending_exposure', 'exposure_uncertain', 'form_exposed', 'released_unseen'].includes(t.exposure), 'invalid exposure tombstone')
 }
 class IndexedBackend implements Backend {
   private db: IDBDatabase
@@ -138,7 +139,7 @@ export class BalloonsStore {
     if (expected) requireIntegrity(recordFingerprint(record) === recordFingerprint(expected), 'stale record revision')
     return record
   }
-  async assign(ownerId: string, mode: 'auto' | 'replay' | 'new_baseline', settings: Settings, device: string, time: EventTime, signal?: AbortSignal, mockSessionId?: string): Promise<{ record: DurableRecord; token: OwnerToken }> {
+  async assign(ownerId: string, mode: 'auto' | 'replay' | 'new_baseline', settings: Settings, device: string, time: EventTime, signal?: AbortSignal, mockSessionId?: string, extended = false): Promise<{ record: DurableRecord; token: OwnerToken }> {
     return this.backend.change(root => {
       this.authority(root); inspectRoot(root)
       if (mockSessionId) {
@@ -152,7 +153,9 @@ export class BalloonsStore {
           return { record: existing, token: { id: ownerId, sessionId: mockSessionId, generation: existing.snapshot.ownershipGeneration } }
         }
       }
-      const retained = [...Object.values(root.records).map(r => ({ formId: r.header.formId, exposure: r.snapshot.exposure })), ...Object.values(root.tombstones)]
+      const formVersion = extended && !mockSessionId && mode !== 'new_baseline' ? BALLOONS_EXTENDED_FORM_VERSION : undefined
+      const retained = [...Object.values(root.records).map(r => ({ formId: r.header.formId, formVersion: r.header.formVersion, exposure: r.snapshot.exposure })), ...Object.values(root.tombstones)]
+        .filter(record => record.formVersion === formVersion)
       const anyBL = retained.some(r => r.formId.startsWith('BL') && r.exposure !== 'released_unseen')
       const family = mode === 'new_baseline' || (mode === 'auto' && !anyBL) ? 'BL' : 'RP'
       // Prefer the existing baseline whose opening balloon survives eight pumps,
@@ -163,11 +166,11 @@ export class BalloonsStore {
       const repeat = !unused
       requireIntegrity(unused || family === 'RP', 'no unseen baseline remains')
       // Only consumed forms can be repeats; pending reservations are not repeat inventory.
-      const formId = unused ?? ids.find(id => retained.some(r => r.formId === id && ['exposure_uncertain', 'form_exposed'].includes(r.exposure)) && !Object.values(root.records).some(r => r.header.formId === id && !['completed', 'released', 'paused'].includes(r.snapshot.phase)))
+      const formId = unused ?? ids.find(id => retained.some(r => r.formId === id && ['exposure_uncertain', 'form_exposed'].includes(r.exposure)) && !Object.values(root.records).some(r => r.header.formId === id && r.header.formVersion === formVersion && !['completed', 'released', 'paused'].includes(r.snapshot.phase)))
       requireIntegrity(formId, 'no replay form is available')
       const sessionId = mockSessionId ?? crypto.randomUUID(), generation = ++root.generation
       const token = { id: ownerId, sessionId, generation }
-      const record = createRecord({ version: DURABLE_VERSION, formId, repeat, settings: structuredClone(settings), device,
+      const record = createRecord({ version: DURABLE_VERSION, formId, ...(formVersion ? { formVersion } : {}), repeat, settings: structuredClone(settings), device,
         created: time, identity: { installationId: root.installationId, sessionId, chainId: family === 'BL' ? crypto.randomUUID() : null,
           stage: mockSessionId ? 'mock' : family === 'BL' ? 'baseline' : 'replay', mapping: mappingFor(formId), ownershipGeneration: generation, exposureGeneration: generation } })
       root.owner = token; root.records[sessionId] = record
@@ -252,7 +255,7 @@ export class BalloonsStore {
       this.authority(root)
       const r = root.records[sessionId]
       if (!r) return
-      root.tombstones[sessionId] = { sessionId, chainId: r.header.identity.chainId, formId: r.header.formId, exposure: r.header.retest && r.snapshot.exposure === 'pending_exposure' ? 'released_unseen' : r.snapshot.exposure, deletedAtMs: wallTimeMs }
+      root.tombstones[sessionId] = { sessionId, chainId: r.header.identity.chainId, formId: r.header.formId, ...(r.header.formVersion ? { formVersion: r.header.formVersion } : {}), exposure: r.header.retest && r.snapshot.exposure === 'pending_exposure' ? 'released_unseen' : r.snapshot.exposure, deletedAtMs: wallTimeMs }
       delete root.records[sessionId]
       if (root.owner?.sessionId === sessionId) { root.owner = null; root.generation++ }
     }, signal)

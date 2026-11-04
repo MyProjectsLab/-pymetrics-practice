@@ -1,6 +1,6 @@
 import committed from '../../docs/specifications/ASSESSMENT_PRACTICE_BALLOONS_FIXED_MANIFESTS_V1_0.json'
 import type { FormFamily, FormId, ManifestRound, Profile, ScoredManifest } from './contracts'
-import { BALLOONS_FORM_VERSION } from './contracts'
+import { BALLOONS_CAP, BALLOONS_EXTENDED_FORM_VERSION, BALLOONS_EXTENDED_MAX_THRESHOLD, BALLOONS_FORM_VERSION } from './contracts'
 
 const forms: readonly { id: FormId; family: FormFamily; seed: number }[] = [
   { id: 'BL1', family: 'baseline', seed: 1 }, { id: 'BL2', family: 'baseline', seed: 3 },
@@ -26,14 +26,15 @@ const approvedHashes = [
 ] as const
 const verified = new WeakSet<ScoredManifest>()
 const verifiedById = new Map<FormId, ScoredManifest>()
+const verifiedExtended = new Map<FormId, ScoredManifest>()
 
 export function isVerifiedScoredManifest(value: ScoredManifest): boolean {
   return verified.has(value)
 }
 
 /** Read-only authority for report replay; populated only by a successful hash-verified load. */
-export function verifiedScoredManifest(id: FormId): ScoredManifest | undefined {
-  return verifiedById.get(id)
+export function verifiedScoredManifest(id: FormId, version?: ScoredManifest['formVersion']): ScoredManifest | undefined {
+  return (version === BALLOONS_EXTENDED_FORM_VERSION ? verifiedExtended : verifiedById).get(id)
 }
 
 function assert(condition: unknown, message: string): asserts condition {
@@ -143,6 +144,24 @@ export async function loadScoredManifests(raw: unknown = committed): Promise<Rea
     output.set(manifest.id, immutable)
   }
   assert(BALLOONS_FORM_VERSION === 'balloons-scored-v1', 'unsupported form generator')
+  const extended = new Map<FormId, ScoredManifest>()
+  for (const [id, manifest] of output) {
+    if (manifest.family === 'retest') continue
+    // Previously these high thresholds were indistinguishable because the run
+    // stopped at 32. Spread only that unreachable tail for extended practice.
+    const rounds = manifest.rounds.map(round => round.threshold > BALLOONS_CAP
+      ? { ...round, threshold: BALLOONS_CAP + (round.threshold - BALLOONS_CAP) * 3 }
+      : round)
+    assert(rounds.every(round => round.threshold <= BALLOONS_EXTENDED_MAX_THRESHOLD), 'extended threshold outside support')
+    assert(rounds.some(round => round.threshold > 53), 'extended form cannot reach the observed amount')
+    const playableSignatureSha256 = await sha256(canonicalJson(rounds.map(round => [round.profile, round.threshold])))
+    const body = { id, family: manifest.family, candidateSeed: manifest.candidateSeed, rounds, playableSignatureSha256, formVersion: BALLOONS_EXTENDED_FORM_VERSION }
+    extended.set(id, freeze({ ...body, sha256: await sha256(canonicalJson(body)) }))
+  }
   for (const [id, manifest] of output) verifiedById.set(id, manifest)
+  for (const [id, manifest] of extended) {
+    verified.add(manifest)
+    verifiedExtended.set(id, manifest)
+  }
   return output
 }

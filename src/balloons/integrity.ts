@@ -28,7 +28,7 @@ function eventTime(event: CoreEvent) {
  * No browser presentation, storage durability or chain eligibility is established here.
  */
 export function reconcileSessionPrefix(state: CoreState): CoreState {
-  const manifest = verifiedScoredManifest(state.manifest.id)
+  const manifest = verifiedScoredManifest(state.manifest.id, state.manifest.formVersion)
   assert(manifest && sameData(state.manifest, manifest), 'manifest bytes do not match a verified approved form')
   const saved = state.identity
   assert(typeof saved.installationId === 'string' && saved.installationId.length > 0 && typeof saved.sessionId === 'string' && saved.sessionId.length > 0, 'invalid session identity')

@@ -42,7 +42,7 @@ function append(state: CoreState, type: CoreEvent['type'], time: EventTime, acti
   return freeze({
     schemaVersion: BALLOONS_EVENT_VERSION,
     specificationVersion: BALLOONS_SPEC_VERSION,
-    formVersion: BALLOONS_FORM_VERSION,
+    formVersion: state.manifest.formVersion ?? BALLOONS_FORM_VERSION,
     scoringVersion: BALLOONS_SCORING_VERSION,
     routerVersion: BALLOONS_ROUTER_VERSION,
     installationId: state.identity.installationId,
@@ -78,6 +78,7 @@ export function startScoredSession(manifest: ScoredManifest, identity: SessionId
     requireValid(visibleTypes.every((type, index) => identity.mapping[type] === expected[(index + rotation) % 3]), 'BL/RP mapping must follow form number')
   }
   requireValid(identity.stage === (manifest.family === 'baseline' ? 'baseline' : manifest.family === 'retest' ? 'retest' : identity.stage) && (manifest.family !== 'replay' || ['replay', 'mock'].includes(identity.stage)), 'stage/form family mismatch')
+  requireValid(!manifest.formVersion || identity.stage === 'baseline' || identity.stage === 'replay', 'extended form requires standalone practice')
   validateTime(time)
   const frozenIdentity = freeze({ ...identity, mapping: { ...identity.mapping } })
   const initial: CoreState = freeze({
@@ -106,7 +107,8 @@ export function transition(state: CoreState, action: CoreAction): TransitionResu
   const threshold = state.manifest.rounds[state.round - 1].threshold
   if (action.kind === 'pump') {
     const attempt = state.current.attemptedPumps + 1
-    requireValid(attempt <= BALLOONS_CAP, 'pump attempted past cap')
+    const cap = state.manifest.formVersion ? null : BALLOONS_CAP
+    requireValid(attempt <= (cap ?? threshold), 'pump attempted past round limit')
     if (attempt === threshold) {
       const result = resolvedRound(state, 'burst', attempt, state.current.successfulPumps)
       const next: CoreState = { ...base, status: finalStatus(state), current: { ...state.current, attemptedPumps: attempt, currentCents: 0 }, lostCents: state.lostCents + state.current.currentCents, results: [...state.results, result] }
@@ -114,7 +116,7 @@ export function transition(state: CoreState, action: CoreAction): TransitionResu
     }
     const successes = state.current.successfulPumps + 1
     const cents = successes * BALLOONS_PAYOUT_CENTS
-    if (successes === BALLOONS_CAP) {
+    if (successes === cap) {
       const result = resolvedRound(state, 'cap_collect', attempt, successes)
       const next: CoreState = { ...base, status: finalStatus(state), current: { attemptedPumps: attempt, successfulPumps: successes, currentCents: 0 }, bankedCents: state.bankedCents + cents, results: [...state.results, result] }
       return finishAction(next, 'pump_attempted', action, pre, 'pump_success', 'cap_collected')

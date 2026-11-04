@@ -28,7 +28,7 @@ export function BalloonsReport({ record, comparisonText, onReplay, onHistory, on
 
     <p>{record.header.identity.stage==='mock'?'Full mock practice result':record.snapshot.comparisonEligible ? 'Complete standalone result' : record.header.retest ? 'Review only; assigned comparison unavailable' : 'Review only; baseline unavailable'} · Form {report.formId} · {report.specificationVersion} · {report.formVersion} · {report.scoringVersion}.</p>
     <Counts rows={[{ label: 'All balloons', summary: report.total }, ...report.categories.toSorted((a, b) => a.visibleType.localeCompare(b.visibleType)).map(c => ({ label: c.visibleType, summary: c }))]} />
-    <h2>Voluntary collection points</h2><p>Bursts are censored observations of intended attempts. Automatic cap collections are censored at 32 successful pumps. Neither supplies a voluntary stopping point.</p>
+    <h2>Voluntary collection points</h2><p>Bursts do not show where you would have chosen to collect.{!record.header.formVersion && ' Automatic collection at 32 pumps is also excluded from your voluntary stopping points.'}</p>
     {report.categories.toSorted((a, b) => a.visibleType.localeCompare(b.visibleType)).map(c => <section key={c.visibleType}><h3>{c.visibleType}</h3>
       <p>{c.voluntaryMedian.status === 'supported' ? `Median: ${c.voluntaryMedian.value} pumps (${c.voluntaryMedian.count} voluntary collections).` : c.voluntaryMedian.message}</p>
       <p>{c.earlyLate.status === 'supported' ? `Early median ${c.earlyLate.earlyMedian} (${c.earlyLate.earlyCount} voluntary); late median ${c.earlyLate.lateMedian} (${c.earlyLate.lateCount} voluntary). Late minus early: ${c.earlyLate.lateMinusEarly > 0 ? '+' : ''}${c.earlyLate.lateMinusEarly} pumps.` : c.earlyLate.message}</p>

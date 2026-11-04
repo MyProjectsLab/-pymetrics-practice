@@ -1,5 +1,5 @@
-import type { ActionSource, ActionTotals, CoreAction, CoreState, EventTime, FormId, Mapping, Profile, SessionIdentity } from './contracts'
-import { BALLOONS_EVENT_VERSION, BALLOONS_FORM_VERSION, BALLOONS_ROUTER_VERSION, BALLOONS_SCORING_VERSION, BALLOONS_SPEC_VERSION } from './contracts'
+import type { BalloonsFormVersion, ScoredManifest, ActionSource, ActionTotals, CoreAction, CoreState, EventTime, FormId, Mapping, Profile, SessionIdentity } from './contracts'
+import { BALLOONS_EXTENDED_FORM_VERSION, BALLOONS_EVENT_VERSION, BALLOONS_FORM_VERSION, BALLOONS_ROUTER_VERSION, BALLOONS_SCORING_VERSION, BALLOONS_SPEC_VERSION } from './contracts'
 import { startScoredSession, transition } from './core'
 import { reconcileSessionPrefix } from './integrity'
 import { canonicalJson, verifiedScoredManifest } from './manifests'
@@ -11,6 +11,7 @@ export const RETEST_RESERVATION_MS = 30 * 60 * 1000
 export interface RetestBinding { baselineSessionId: string; baselineFormId: FormId; drillAttemptId: string; issuedAtMs: number; expiresAtMs: number }
 export interface Header {
   retest?: RetestBinding
+  formVersion?: ScoredManifest['formVersion']
   version: typeof DURABLE_VERSION
   identity: SessionIdentity
   formId: FormId
@@ -36,7 +37,7 @@ export interface DurableEvent {
   schemaVersion: typeof DURABLE_VERSION
   coreSchemaVersion: typeof BALLOONS_EVENT_VERSION
   specificationVersion: typeof BALLOONS_SPEC_VERSION
-  formVersion: typeof BALLOONS_FORM_VERSION
+  formVersion: BalloonsFormVersion
   scoringVersion: typeof BALLOONS_SCORING_VERSION
   routerVersion: typeof BALLOONS_ROUTER_VERSION
   installationId: string; sessionId: string; chainId: string | null
@@ -69,7 +70,7 @@ function event(header: Header, before: Snapshot, after: Snapshot, command: Comma
   if (header.retest) type = type === 'pending_exposure' ? 'retest_reserved' : type === 'pre_display_released' ? 'retest_released' : type === 'form_exposed' ? 'retest_exposed' : type === 'session_completed' ? 'retest_completed' : type
   return {
     schemaVersion: DURABLE_VERSION, coreSchemaVersion: BALLOONS_EVENT_VERSION, specificationVersion: BALLOONS_SPEC_VERSION,
-    formVersion: BALLOONS_FORM_VERSION, scoringVersion: BALLOONS_SCORING_VERSION, routerVersion: BALLOONS_ROUTER_VERSION,
+    formVersion: after.core.manifest.formVersion ?? BALLOONS_FORM_VERSION, scoringVersion: BALLOONS_SCORING_VERSION, routerVersion: BALLOONS_ROUTER_VERSION,
     ...header.identity, manifestId: header.formId, manifestSha256: after.core.manifest.sha256,
     sequenceNumber: n, round: after.core.round, actionId: a?.actionId ?? null, source: a?.source ?? null,
     ...time, timeOriginMs: (time as EventTime & { timeOriginMs?: number }).timeOriginMs ?? null, ownershipGeneration: after.ownershipGeneration, pre: totals(before.core), post: totals(after.core),
@@ -90,7 +91,8 @@ export function createRecord(header: Header): DurableRecord {
   requireIntegrity((header.identity.stage === 'mock' ? header.formId.startsWith('RP') && !rt :
     header.identity.stage === (rt ? 'retest' : header.formId.startsWith('BL') ? 'baseline' : 'replay')) &&
     (!!header.identity.chainId === !header.formId.startsWith('RP')) && !(header.repeat && header.formId.startsWith('BL')), 'chain/family mismatch')
-  const form = verifiedScoredManifest(header.formId)
+  requireIntegrity(header.formVersion === undefined || header.formVersion === BALLOONS_EXTENDED_FORM_VERSION, 'unsupported form version')
+  const form = verifiedScoredManifest(header.formId, header.formVersion)
   requireIntegrity(form, 'unverified form')
   const core = startScoredSession(form, header.identity, header.created)
   const snapshot: Snapshot = { core, phase: 'pending_exposure', exposure: 'pending_exposure', confirmedRounds: [], ownershipGeneration: header.identity.ownershipGeneration, comparisonEligible: !header.repeat, interruptions: 0, pendingAction: null }
@@ -178,5 +180,5 @@ export function reconcileDurable(record: DurableRecord): DurableRecord {
 export function recordFingerprint(record: DurableRecord): string { return canonicalJson(record) }
 export function durableBaseline(record: DurableRecord): boolean {
   reconcileDurable(record)
-  return record.header.formId.startsWith('BL') && !record.header.repeat && record.snapshot.phase === 'completed' && record.snapshot.comparisonEligible && record.snapshot.exposure === 'form_exposed' && record.snapshot.confirmedRounds.length === 39
+  return !record.header.formVersion && record.header.formId.startsWith('BL') && !record.header.repeat && record.snapshot.phase === 'completed' && record.snapshot.comparisonEligible && record.snapshot.exposure === 'form_exposed' && record.snapshot.confirmedRounds.length === 39
 }

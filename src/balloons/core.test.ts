@@ -2,7 +2,8 @@ import { beforeAll, describe, expect, it } from 'vitest'
 import committed from '../../docs/specifications/ASSESSMENT_PRACTICE_BALLOONS_FIXED_MANIFESTS_V1_0.json'
 import { startScoredSession, transition } from './core'
 import type { CoreAction, CoreState, FormId, ScoredManifest, SessionIdentity } from './contracts'
-import { loadScoredManifests } from './manifests'
+import { BALLOONS_EXTENDED_FORM_VERSION } from './contracts'
+import { loadScoredManifests, verifiedScoredManifest } from './manifests'
 import { basicReport } from './report'
 
 let forms: ReadonlyMap<FormId, ScoredManifest>
@@ -200,4 +201,23 @@ describe('Balloons B1-A boundaries', () => {
     await expect(loadScoredManifests(alteredHash)).rejects.toThrow(/hash mismatch/)
     expect(() => startScoredSession(forms.get('BL2')!, identity, { wallTimeMs: 0, monotonicMs: 0, clockEpochId: 'epoch-1' })).toThrow(/mapping must follow form number/)
   })
+})
+
+it('keeps both choices at $2.65 and only banks or loses it after the player acts', () => {
+  for (const id of ['BL1', 'BL2', 'BL3', 'RP1', 'RP2', 'RP3'] as const) {
+    const original = start(id)
+    const manifest = verifiedScoredManifest(id, BALLOONS_EXTENDED_FORM_VERSION)!
+    let state = startScoredSession(manifest, original.identity, original.events[0])
+    const target = manifest.rounds.find(round => round.threshold > 53)!
+    while (state.round < target.round) state = accepted(accepted(state, 'collect'), 'next')
+    for (let pump = 0; pump < 53; pump++) state = accepted(state, 'pump')
+    expect(state.current.currentCents).toBe(265)
+    expect(state.status).toBe('active')
+    expect(state.events.at(-1)?.formVersion).toBe(BALLOONS_EXTENDED_FORM_VERSION)
+    const collected = accepted(state, 'collect')
+    expect(collected.results.at(-1)).toMatchObject({ outcome: 'voluntary_collect', bankedCents: 265 })
+    let pumped = state
+    for (let pump = 53; pump < target.threshold; pump++) pumped = accepted(pumped, 'pump')
+    expect(pumped.results.at(-1)).toMatchObject({ outcome: 'burst', lostCents: (target.threshold - 1) * 5 })
+  }
 })

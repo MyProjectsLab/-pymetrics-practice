@@ -1,5 +1,6 @@
 import { useId } from 'react'
 import type { CSSProperties } from 'react'
+import { BALLOONS_EXTENDED_MAX_THRESHOLD } from './contracts'
 import type { Outcome, VisibleType } from './contracts'
 
 const identities = {
@@ -19,7 +20,7 @@ const shards = [
 ] as const
 
 /** Decorative projection of public, committed state; it receives no risk profile or threshold. */
-export function BalloonIdentity({ type, successfulPumps = 0, outcome = null, reducedMotion = false, compact = false, showIdentity = true, playStage = false }: {
+export function BalloonIdentity({ type, successfulPumps = 0, outcome = null, reducedMotion = false, compact = false, showIdentity = true, playStage = false, extended = false }: {
   type: VisibleType
   successfulPumps?: number
   outcome?: Outcome | null
@@ -27,11 +28,14 @@ export function BalloonIdentity({ type, successfulPumps = 0, outcome = null, red
   compact?: boolean
   showIdentity?: boolean
   playStage?: boolean
+  extended?: boolean
 }) {
   const id = useId().replaceAll(':', '')
   const identity = identities[type]
-  const pumps = Number.isFinite(successfulPumps) ? Math.max(0, Math.min(32, successfulPumps)) : 0
-  const scale = playStage ? (3 / 7 + pumps / 56) * 320 / 222 : .5 + pumps * .65 / 32
+  const maxPumps = extended ? BALLOONS_EXTENDED_MAX_THRESHOLD - 1 : 32
+  const pumps = Number.isFinite(successfulPumps) ? Math.max(0, Math.min(maxPumps, successfulPumps)) : 0
+  const growth = extended && pumps > 20 ? 20 + (pumps - 20) * 12 / (maxPumps - 20) : pumps
+  const scale = playStage ? (3 / 7 + growth / 56) * 320 / 222 : .5 + growth * .65 / 32
   return <div className={`balloons-identity${compact ? ' balloons-identity-compact' : ''}`}>
     <svg className="balloon-art" viewBox="0 0 320 320" aria-hidden="true" focusable="false"
       data-motion={reducedMotion ? 'reduced' : 'normal'} data-successful-pumps={pumps} data-outcome={outcome ?? 'active'}>

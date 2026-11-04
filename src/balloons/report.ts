@@ -1,4 +1,4 @@
-import type { CoreState, Outcome, Profile, RoundResult, VisibleType } from './contracts'
+import type { BalloonsFormVersion, CoreState, Outcome, Profile, RoundResult, VisibleType } from './contracts'
 import { BALLOONS_FORM_VERSION, BALLOONS_PAYOUT_CENTS, BALLOONS_ROUND_COUNT, BALLOONS_SCORING_VERSION, BALLOONS_SPEC_VERSION } from './contracts'
 import { reconcileCompletedSession } from './integrity'
 
@@ -43,7 +43,7 @@ export interface RoundReview {
 export interface BasicReport {
   readonly status: 'headless_complete'
   readonly formId: string
-  readonly formVersion: typeof BALLOONS_FORM_VERSION
+  readonly formVersion: BalloonsFormVersion
   readonly specificationVersion: typeof BALLOONS_SPEC_VERSION
   readonly scoringVersion: typeof BALLOONS_SCORING_VERSION
   readonly total: CountSummary
@@ -154,7 +154,7 @@ export function basicReport(state: CoreState): ReportResult {
   blocks.forEach(block => { checkConservation(block.summary); assert(block.summary.rounds === 13, 'block denominator') })
   const postBurst = postBurstWindows(state.results)
   return {
-    status: 'headless_complete', formId: state.manifest.id, formVersion: BALLOONS_FORM_VERSION, specificationVersion: BALLOONS_SPEC_VERSION, scoringVersion: BALLOONS_SCORING_VERSION,
+    status: 'headless_complete', formId: state.manifest.id, formVersion: state.manifest.formVersion ?? BALLOONS_FORM_VERSION, specificationVersion: BALLOONS_SPEC_VERSION, scoringVersion: BALLOONS_SCORING_VERSION,
     total, categories, blocks, postBurst,
     supportedObservation: `${total.collectedCount} collected and ${total.burstCount} burst out of 39 balloons.`,
     rounds: state.results.map(review), limitation: LIMITATION,

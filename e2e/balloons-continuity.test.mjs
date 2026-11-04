@@ -120,7 +120,7 @@ for (const viewport of [{ width: 1005, height: 805 }, { width: 375, height: 667 
       await page.getByRole('button', { name: 'Start', exact: true }).click()
       await settled(page)
       await shot('play')
-      let growth = null, maxGrowth = null, firstBurst = null, fast = null
+      let growth = null, extended = null, firstBurst = null, fast = null
       for (let round = 1; round <= 39; round++) {
         let run = await readRun(page), c = run.snapshot.core
         assert.equal(c.round, round)
@@ -132,7 +132,19 @@ for (const viewport of [{ width: 1005, height: 805 }, { width: 375, height: 667 
           await settled(page)
         } else if (round > 36) { await page.waitForTimeout(1100); await settled(page) } // exercise background checks with the largest real journals
         let intendedPumps = 0
-        if (!growth && c.manifest.rounds[round - 1].threshold > 20) {
+        const threshold = c.manifest.rounds[round - 1].threshold
+        if (!extended && threshold > 53) {
+          intendedPumps = 53
+          for (let n = 0; n < intendedPumps; n++) await press('[data-control="pump"]')
+          await settled(page)
+          c = (await readRun(page)).snapshot.core
+          assert.equal(c.status, 'active')
+          assert.equal(c.current.currentCents, 265)
+          assert.ok(await page.locator('[data-control="pump"]').isEnabled())
+          assert.ok(await page.locator('[data-control="collect"]').isEnabled())
+          extended = { round, pumps: c.current.successfulPumps, amount: c.current.currentCents }
+          await shot('53-pumps')
+        } else if (!growth && threshold > 20) {
           intendedPumps = 20
           const body = page.locator('[data-balloon-body] > path').first()
           await page.waitForTimeout(180)
@@ -150,8 +162,7 @@ for (const viewport of [{ width: 1005, height: 805 }, { width: 375, height: 667 
           if (Math.abs(growth.initial - expected.initial) > 3 || Math.abs(growth.after20 - expected.after20) > 3) problems.push(`Growth ${JSON.stringify(growth)}, expected ${JSON.stringify(expected)}`)
           await shot('pump20')
         } else {
-          const threshold = c.manifest.rounds[round - 1].threshold
-          const pumps = threshold > 32 ? 32 : round % 3 === 0 ? Math.min(threshold - 1, 24) : Math.min(threshold, 32)
+          const pumps = round % 3 === 0 ? Math.min(threshold - 1, 24) : threshold
           intendedPumps = pumps
           for (let n = 0; n < pumps; n++) await press('[data-control="pump"]')
           await settled(page)
@@ -162,11 +173,6 @@ for (const viewport of [{ width: 1005, height: 805 }, { width: 375, height: 667 
         const savedPumps = c.results.at(-1).attemptedPumps
         rounds.push({ round, intendedPumps, savedPumps })
         if (savedPumps !== intendedPumps) problems.push(`Round ${round}: ${intendedPumps} native Pumps but ${savedPumps} recorded`)
-        if (!maxGrowth && c.results.at(-1)?.outcome === 'cap_collect') {
-          await page.waitForTimeout(180)
-          maxGrowth = (await page.locator('[data-balloon-body] > path').first().boundingBox()).height
-          if (Math.abs(maxGrowth - (viewport.width >= 768 ? 280 : 210)) > 3) problems.push(`Maximum growth ${maxGrowth}`)
-        }
         if (round === 1) { firstBurst = { form: run.header.formId, outcome: c.results[0].outcome, attempted: c.results[0].attemptedPumps }; await shot('burst') }
         if (round < 39) { await page.getByRole('button', { name: 'Next balloon', exact: true }).click(); await settled(page) }
         else await page.getByRole('button', { name: 'View report', exact: true }).click()
@@ -175,12 +181,15 @@ for (const viewport of [{ width: 1005, height: 805 }, { width: 375, height: 667 
       await page.waitForTimeout(100)
       await shot('report')
       const monitor = await page.evaluate(() => window.balloonsContinuity), c = (await readRun(page)).snapshot.core
-      const result = { viewport, monitor, growth, maxGrowth, fast, firstBurst, ready: { colours, startBottom: startBox.y + startBox.height }, rounds, errors, problems }
+      const result = { viewport, monitor, growth, extended, fast, firstBurst, ready: { colours, startBottom: startBox.y + startBox.height }, rounds, errors, problems }
       console.log(JSON.stringify(result))
       if (out) await writeFile(`${out}/RESULT.json`, JSON.stringify(result, null, 2) + '\n')
       assert.equal(c.results.length, 39); assert.equal(c.bankedCents + c.lostCents, c.results.reduce((n, r) => n + r.successfulPumps * 5, 0))
       assert.deepEqual(firstBurst, { form: 'BL3', outcome: 'burst', attempted: 9 })
-      assert.ok(growth && maxGrowth && fast, 'Growth and rapid-input witnesses must execute')
+      assert.ok(growth && extended && fast, 'Growth, extended choice and rapid-input witnesses must execute')
+      assert.equal(c.results[extended.round - 1].outcome, 'voluntary_collect')
+      assert.equal(c.results[extended.round - 1].bankedCents, 265)
+      assert.ok(c.results.every(round => round.outcome !== 'cap_collect'))
       assert.ok(monitor.checkingSamples > 0, 'Held background authority check must be observed')
       assert.equal(await page.evaluate(() => window.delayedBalloonsReads), 1)
       assert.ok(monitor.active && monitor.ended && monitor.frames > 39)
