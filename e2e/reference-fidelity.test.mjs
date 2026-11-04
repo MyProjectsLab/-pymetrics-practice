@@ -61,7 +61,11 @@ async function runGame(name, check) {
       requestAnimationFrame(sample)
     }
     requestAnimationFrame(sample)
-    window.referenceEvidence = () => ({ arrows, firstFace, firstReward })
+    window.referenceEvidence = () => ({
+      arrows, firstFace, firstReward,
+      atArrowsCheckpoint: [document, ...roots].some(root =>
+        [...root.querySelectorAll('h1')].some(heading => heading.isConnected && heading.textContent === 'Block complete' && heading.getClientRects().length > 0)),
+    })
   })
   try {
     const ui = await firstPlay(page, games.find(game => game[0] === name), origin)
@@ -86,7 +90,7 @@ test('Arrows resumes from a confirmed checkpoint and shows position marks withou
   await runGame('Arrows', async page => {
     await page.waitForFunction(() => window.referenceEvidence().arrows.length >= 27, undefined, { timeout: 80000 })
     await page.keyboard.down('ArrowLeft')
-    await page.getByRole('heading', { name: 'Block complete' }).waitFor({ timeout: 5000 })
+    await page.waitForFunction(() => window.referenceEvidence().atArrowsCheckpoint, undefined, { timeout: 5000 })
     await page.waitForTimeout(1100)
     assert.equal(await page.evaluate(() => window.referenceEvidence().arrows.length), 27, 'A held response delays the next block')
     await page.keyboard.up('ArrowLeft')
